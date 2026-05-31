@@ -1,0 +1,119 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  white-space: nowrap;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+  cursor: pointer;
+  outline: none;
+
+  &:disabled {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+
+  &:focus-visible {
+    box-shadow: 0 0 0 2px rgba(0, 173, 192, 0.3);
+  }
+}
+
+/* ================= Sizes ================= */
+.size_sm {
+  height: 32px;
+  padding: 0 12px;
+  font-size: 12px;
+}
+.size_md {
+  height: 36px;
+  padding: 0 16px;
+  font-size: 14px;
+}
+.size_lg {
+  height: 40px;
+  padding: 0 24px;
+  font-size: 14px;
+}
+.size_icon {
+  height: 36px;
+  width: 36px;
+  padding: 0;
+}
+.full_width {
+  width: 100%;
+}
+
+/* ================= Colors & Variants ================= */
+@mixin variant-styles($solid-bg, $solid-text, $solid-hover, $outline-text, $outline-hover-bg) {
+  &.variant_solid {
+    background-color: $solid-bg;
+    color: $solid-text;
+    &:hover:not(:disabled) { background-color: $solid-hover; }
+  }
+  &.variant_outline {
+    border-color: $solid-bg;
+    color: $outline-text;
+    background-color: transparent;
+    &:hover:not(:disabled) { background-color: $outline-hover-bg; }
+  }
+  &.variant_ghost {
+    color: $outline-text;
+    background-color: transparent;
+    &:hover:not(:disabled) { background-color: $outline-hover-bg; }
+  }
+  &.variant_text {
+    color: $outline-text;
+    background-color: transparent;
+    padding-left: 0;
+    padding-right: 0;
+    &:hover:not(:disabled) { text-decoration: underline; }
+  }
+}
+
+.color_default {
+  @include variant-styles(#111827, #ffffff, #374151, #111827, #f3f4f6);
+  &.variant_outline { border-color: #d1d5db; }
+}
+.color_primary {
+  @include variant-styles(#00adc0, #ffffff, #009ba9, #00adc0, rgba(0, 173, 192, 0.05));
+}
+.color_secondary {
+  @include variant-styles(#6b7280, #ffffff, #4b5563, #4b5563, rgba(107, 114, 128, 0.05));
+}
+.color_success {
+  @include variant-styles(#10b981, #ffffff, #059669, #10b981, rgba(16, 185, 129, 0.05));
+}
+.color_danger {
+  @include variant-styles(#ef4444, #ffffff, #dc2626, #ef4444, rgba(239, 68, 68, 0.05));
+}
+.color_warning {
+  @include variant-styles(#f59e0b, #ffffff, #d97706, #f59e0b, rgba(245, 158, 11, 0.05));
+}
+.color_info {
+  @include variant-styles(#3b82f6, #ffffff, #2563eb, #3b82f6, rgba(59, 130, 246, 0.05));
+}
+
+/* ================= Icons & Loaders ================= */
+.icon_wrapper {
+  display: flex;
+  align-items: center;
+  svg { width: 16px; height: 16px; }
+}
+
+.loader {
+  width: 14px;
+  height: 14px;
+  border: 2px solid currentColor;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

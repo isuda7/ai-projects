@@ -1,0 +1,1 @@
+import{j as t,O as n}from"./index-DNEMbFym.js";const o="_layout_1ag2s_1",e="_container_1ag2s_14",a={layout:o,container:e},c=({children:s})=>t.jsx("div",{className:a.layout,children:t.jsx("div",{className:a.container,children:s})}),u=()=>t.jsx(c,{children:t.jsx(n,{})});export{u as default};
