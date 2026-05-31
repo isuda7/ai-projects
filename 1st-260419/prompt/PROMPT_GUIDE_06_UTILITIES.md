@@ -23,6 +23,7 @@
 ```tsx
 import React from 'react';
 import styles from './template.module.scss';
+import GuideSection from './components/guide-section';
 
 // 가이드 블록 렌더링용 공통 내부 컴포넌트
 const UtilityBlock = ({ title, classNameText, children, description }: any) => (
@@ -47,14 +48,11 @@ const UtilitiesGuidePage = () => {
         </p>
       </header>
 
-      <section className={styles.section}>
-        <div>
-          <h2 className={styles.title_h2}>1. Width (너비)</h2>
+      <GuideSection title="1. Width (너비)">
           {/* UtilityBlock을 활용하여 w-{size} (px) 및 w-{size}p (%) 구현 예시 배치 */}
-        </div>
         
         {/* Grid, Align 등 하위 섹션 추가 */}
-      </section>
+      </GuideSection>
     </div>
   );
 };

@@ -1,4 +1,5 @@
 import React from 'react';
+import GuideSection from './components/guide-section';
 import styles from './template.module.scss';
 
 // 가이드 블록 렌더링용 공통 내부 컴포넌트
@@ -24,9 +25,7 @@ const UtilitiesGuidePage = () => {
         </p>
       </header>
 
-      <section className={styles.section}>
-        <div>
-          <h2 className={styles.title_h2}>1. Sizing (Width)</h2>
+      <GuideSection title="1. Sizing (Width)">
           <p className={styles.description}>
             요소의 너비를 제어하는 클래스입니다. 고정값(px)과 퍼센트(%) 단위를 명확히 구분하여 사용합니다.
           </p>
@@ -43,7 +42,6 @@ const UtilitiesGuidePage = () => {
               <li><strong>500~:</strong> 필요 시 사용자 정의 커스텀 추가</li>
             </ul>
           </div>
-        </div>
         
         <div className={styles.sub_section}>
           <UtilityBlock title="Percentage Width (%)" classNameText="w-{size}p" description="부모 요소에 비례하는 퍼센트 너비입니다.">
@@ -65,13 +63,10 @@ const UtilitiesGuidePage = () => {
             </div>
           </UtilityBlock>
         </div>
-      </section>
+      </GuideSection>
 
-      <section className={styles.section}>
-        <div>
-          <h2 className={styles.title_h2}>2. Grid Layout</h2>
+      <GuideSection title="2. Grid Layout">
           <p className={styles.description}>그리드 기반의 레이아웃 배치를 돕는 클래스입니다.</p>
-        </div>
         
         <div className={styles.sub_section}>
           <UtilityBlock title="Grid Container & Items" classNameText="grid, col, row" description="부모 요소에 grid를 선언하고, 자식 요소에 col, row를 배치합니다.">
@@ -86,13 +81,10 @@ const UtilitiesGuidePage = () => {
             </div>
           </UtilityBlock>
         </div>
-      </section>
+      </GuideSection>
 
-      <section className={styles.section}>
-        <div>
-          <h2 className={styles.title_h2}>3. Alignment</h2>
+      <GuideSection title="3. Alignment">
           <p className={styles.description}>콘텐츠나 요소의 정렬 위치를 제어합니다.</p>
-        </div>
         
         <div className={styles.sub_section}>
           <UtilityBlock title="Top Align" classNameText="align-t" description="위쪽으로 정렬합니다.">
@@ -125,7 +117,7 @@ const UtilitiesGuidePage = () => {
             </div>
           </UtilityBlock>
         </div>
-      </section>
+      </GuideSection>
     </div>
   );
 };

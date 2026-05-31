@@ -36,8 +36,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         ref={ref}
         className={cn(
           styles.button,
-          styles[`variant_${variant}`],
-          styles[`color_${color}`],
+          styles[`${variant}_${color}`], // 조합된 단일 클래스명 호출로 변경
           styles[`size_${size}`],
           fullWidth && styles.full_width,
           loading && styles.is_loading,

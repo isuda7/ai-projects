@@ -14,6 +14,7 @@
 
 ```tsx
 import styles from './colors.module.scss';
+import GuideSection from './components/guide-section';
 
 // 단일 컬러 블록 렌더링을 위한 공통 컴포넌트
 const ColorBlock = ({ label, hex, main }: { label: string; hex: string; main?: boolean }) => (
@@ -50,8 +51,7 @@ const ColorsGuidePage = () => {
         </p>
       </header>
 
-      <section>
-        <h2 className={styles.title_h2}>Brand & Semantic Colors</h2>
+      <GuideSection title="Brand & Semantic Colors">
 
         {/* 컬러 그룹 렌더링 영역 */}
         <div className={styles.color_group}>
@@ -69,7 +69,7 @@ const ColorsGuidePage = () => {
             <ColorBlock label="900" hex="#[HexCode]" />
           </div>
         </div>
-      </section>
+      </GuideSection>
     </div>
   );
 };

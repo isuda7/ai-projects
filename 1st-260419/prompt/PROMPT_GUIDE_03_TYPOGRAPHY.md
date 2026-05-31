@@ -14,6 +14,7 @@
 
 ```tsx
 import styles from './typography.module.scss';
+import GuideSection from './components/guide-section';
 
 // 단일 타이포그래피 스펙 렌더링을 위한 공통 컴포넌트
 const TypeRow = ({ name, size, weight, sample }: { name: string; size: number; weight: number; sample: string }) => (
@@ -46,13 +47,10 @@ const TypographyGuidePage = () => {
       </header>
 
       {/* 1. Headline 영역 */}
-      <section className={styles.section}>
-        <h2 className={styles.title_h2}>1. Headline (20~36px)</h2>
-        <div>
+      <GuideSection title="1. Headline (20~36px)">
           <TypeRow name="Headline 1" size={36} weight={800} sample={sampleText} />
           {/* 추가 스케일 행 작성 */}
-        </div>
-      </section>
+      </GuideSection>
       
       {/* 2. Title, 3. Body, 4. Label 영역도 동일한 형식으로 작성 */}
 

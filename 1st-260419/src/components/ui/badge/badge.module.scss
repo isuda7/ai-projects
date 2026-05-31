@@ -1,0 +1,69 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  font-family: inherit;
+  font-weight: 600;
+  border-radius: 9999px;
+  white-space: nowrap;
+  border: 1px solid transparent;
+  user-select: none;
+}
+
+/* ================= Sizes ================= */
+.size_sm {
+  height: 20px;
+  padding: 0 8px;
+  font-size: 11px;
+}
+
+.size_md {
+  height: 24px;
+  padding: 0 10px;
+  font-size: 12px;
+}
+
+.size_lg {
+  height: 28px;
+  padding: 0 12px;
+  font-size: 13px;
+}
+
+/* ================= Variants & Colors ================= */
+$colors: (
+  default: (var(--color-gray-200), var(--color-gray-800), var(--color-gray-100)),
+  primary: (var(--color-primary-500), var(--color-white), var(--color-primary-50)),
+  secondary: (var(--color-secondary-500), var(--color-white), var(--color-secondary-50)),
+  success: (var(--color-success-500), var(--color-white), var(--color-success-50)),
+  danger: (var(--color-danger-500), var(--color-white), var(--color-danger-50)),
+  warning: (var(--color-warning-500, #f59e0b), var(--color-white), var(--color-warning-50, #fffbeb)),
+  info: (var(--color-info-500, #3b82f6), var(--color-white), var(--color-info-50, #eff6ff))
+);
+
+/* 1. Solid Variant */
+@each $name, $vals in $colors {
+  .solid_#{$name} {
+    background-color: nth($vals, 1);
+    color: nth($vals, 2);
+    border-color: nth($vals, 1);
+  }
+}
+
+/* 2. Outline Variant */
+@each $name, $vals in $colors {
+  .outline_#{$name} {
+    background-color: transparent;
+    color: nth($vals, 1);
+    border-color: nth($vals, 1);
+  }
+}
+
+/* 3. Soft Variant */
+@each $name, $vals in $colors {
+  .soft_#{$name} {
+    background-color: nth($vals, 3);
+    color: nth($vals, 1);
+    border-color: transparent;
+  }
+}

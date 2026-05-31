@@ -1,3 +1,4 @@
+import GuideSection from './components/guide-section';
 import styles from './colors.module.scss';
 
 const ColorBlock = ({ label, hex, main }: { label: string; hex: string; main?: boolean }) => (
@@ -34,9 +35,7 @@ const ColorsGuidePage = () => {
         </p>
       </header>
 
-      <section>
-        <h2 className={styles.title_h2}>Brand & Semantic Colors</h2>
-
+      <GuideSection title="Brand & Semantic Colors">
         <div className={styles.color_group}>
           <h3 className={styles.group_title}>Primary (기본 액션 / 브랜드 컬러)</h3>
           <div className={styles.color_grid}>
@@ -116,7 +115,7 @@ const ColorsGuidePage = () => {
             <ColorBlock label="900" hex="#78350f" />
           </div>
         </div>
-      </section>
+      </GuideSection>
     </div>
   );
 };

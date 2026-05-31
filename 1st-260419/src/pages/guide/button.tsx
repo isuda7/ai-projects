@@ -1,7 +1,8 @@
 import React from 'react';
 import styles from './template.module.scss';
-import Button from '@/components/ui/button';
+import Button from '@/components/ui/button/button';
 import { Settings, ArrowRight } from 'lucide-react';
+import GuideSection from './components/guide-section';
 
 const ButtonGuidePage = () => {
   return (
@@ -13,9 +14,7 @@ const ButtonGuidePage = () => {
         </p>
       </header>
 
-      <section className={styles.section}>
-        <div>
-          <h2 className={styles.title_h2}>1. Overview & Specs</h2>
+      <GuideSection title="1. Overview & Specs">
           <p className={styles.description}>
             버튼은 4가지의 Variant(Solid, Outline, Ghost, Text)와 3가지의 Size(sm, md, lg), 그리고 시맨틱 컬러 테마를 조합하여 사용합니다.
           </p>
@@ -77,16 +76,12 @@ const ButtonGuidePage = () => {
               </code>
             </pre>
           </div>
-        </div>
-      </section>
+      </GuideSection>
 
-      <section className={styles.section}>
-        <div>
-          <h2 className={styles.title_h2}>2. Variants & Colors</h2>
+      <GuideSection title="2. Variants & Colors">
           <p className={styles.description}>
             액션의 중요도와 목적에 따라 형태(variant)와 시맨틱 컬러(color)를 조합하여 사용합니다.
           </p>
-        </div>
 
         <div className={styles.sub_section}>
           <h3 className={styles.title_h3}>2.1. Solid (Primary Actions)</h3>
@@ -147,12 +142,9 @@ const ButtonGuidePage = () => {
             </pre>
           </div>
         </div>
-      </section>
+      </GuideSection>
 
-      <section className={styles.section}>
-        <div>
-          <h2 className={styles.title_h2}>3. Sizes & States</h2>
-        </div>
+      <GuideSection title="3. Sizes & States">
 
         <div className={styles.sub_section}>
           <h3 className={styles.title_h3}>3.1. Sizes</h3>
@@ -213,7 +205,7 @@ const ButtonGuidePage = () => {
             </pre>
           </div>
         </div>
-      </section>
+      </GuideSection>
     </div>
   );
 };

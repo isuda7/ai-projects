@@ -27,7 +27,9 @@ const GUIDE_MENU: GuideMenuGroup[] = [
   {
     title: 'Components',
     items: [
+      { label: 'Badge', path: '/guide/badge' },
       { label: 'Button', path: '/guide/button' },
+      { label: 'Input', path: '/guide/input' },
     ],
   }
 ];

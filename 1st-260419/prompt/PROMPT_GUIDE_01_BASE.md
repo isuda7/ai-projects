@@ -8,6 +8,7 @@
 3. **계층 구조 및 구성 준수**:
    - `H1`부터 `H4`까지의 위계를 준수합니다.
    - 문서 시작 부분(`H2`)에는 반드시 **Overview & Specs** 섹션을 배치하여 컴포넌트의 기본 스펙(Props 표)과 사용법을 명확히 정리합니다.
+   - 모든 H2 섹션은 `src/pages/guide/components/guide-section.tsx`의 `<GuideSection>`을 사용하여 접고 펼칠 수 있도록 감싸야 합니다.
    - 특별히 강조할 주의사항은 `<div className={styles.guideline}>` 내부에 작성합니다.
 4. **다양한 상태 렌더링**: 컴포넌트의 Props에 따른 다양한 상태(Variants, Sizes, States)를 시각적으로 잘 나타내야 합니다.
 5. **프리뷰 (오픈형)**: 사용자 화면을 그대로 보여주는 렌더링 영역(`.preview`)은 박스에 가두지 않고 오픈형으로 구성합니다.
@@ -20,6 +21,7 @@
 ```tsx
 import styles from './template.module.scss';
 // TODO: 작성할 컴포넌트 import (예: import Button from '@/components/ui/Button';)
+import GuideSection from './components/guide-section';
 
 const [ComponentName]GuidePage = () => {
   return (
@@ -33,9 +35,7 @@ const [ComponentName]GuidePage = () => {
       </header>
 
       {/* 2. 컴포넌트 스펙 및 사용법 (H2) - Overview & Specs */}
-      <section className={styles.section}>
-        <div>
-          <h2 className={styles.title_h2}>1. Overview & Specs</h2>
+      <GuideSection title="1. Overview & Specs">
           <p className={styles.description}>
             컴포넌트의 핵심 속성(Props)과 기본 사용법을 안내합니다.
           </p>
@@ -72,17 +72,13 @@ const [ComponentName]GuidePage = () => {
               </code>
             </pre>
           </div>
-        </div>
-      </section>
+      </GuideSection>
 
       {/* 3. 대분류 섹션 (H2) - Basic Usage */}
-      <section className={styles.section}>
-        <div>
-          <h2 className={styles.title_h2}>2. Basic Usage</h2>
+      <GuideSection title="2. Basic Usage">
           <p className={styles.description}>
             컴포넌트의 가장 기본적인 형태와 핵심 사용법을 보여줍니다.
           </p>
-        </div>
 
         {/* 3. 중분류 섹션 (H3) */}
         <div className={styles.sub_section}>
@@ -100,14 +96,11 @@ const [ComponentName]GuidePage = () => {
             </pre>
           </div>
         </div>
-      </section>
+      </GuideSection>
 
       {/* 4. 대분류 섹션 (H2) - Variants & States */}
-      <section className={styles.section}>
-        <div>
-          <h2 className={styles.title_h2}>3. Variants & States</h2>
+      <GuideSection title="3. Variants & States">
           <p className={styles.description}>크기, 색상, 비활성화 등 다양한 옵션과 상태 변화를 나열합니다.</p>
-        </div>
 
         <div className={styles.sub_section}>
           <h3 className={styles.title_h3}>3.1. Sizes</h3>
@@ -128,7 +121,7 @@ const [ComponentName]GuidePage = () => {
             </div>
           </div>
         </div>
-      </section>
+      </GuideSection>
     </div>
   );
 };
