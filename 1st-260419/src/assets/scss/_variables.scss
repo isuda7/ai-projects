@@ -1,0 +1,19 @@
+:root {
+  /* 폰트 패밀리 전역 설정 */
+  --font-family-base: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+  
+  /* 기본 여백 스케일 (Spacing) */
+  --spacing-2xs: 4px;
+  --spacing-xs: 8px;
+  --spacing-sm: 12px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 48px;
+
+  /* 기본 레이아웃 및 본문 사이즈 제한 */
+  --content-max-width: 1024px;
+  --side-padding: 20px;
+  --header-height: 60px;
+  --sidebar-width: 240px;
+}

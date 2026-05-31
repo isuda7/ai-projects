@@ -1,4 +1,6 @@
+import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { ChevronDown, ChevronRight } from 'lucide-react';
 import styles from './guide-layout.module.scss';
 import Header from '@/components/layout/header';
 
@@ -7,10 +9,27 @@ interface GuideMenuItem {
   path: string;
 }
 
-const GUIDE_MENU: GuideMenuItem[] = [
-  { label: 'Colors', path: '/guide/colors' },
-  { label: 'Typography', path: '/guide/typography' },
-  { label: 'Button', path: '/guide/button' },
+interface GuideMenuGroup {
+  title: string;
+  items: GuideMenuItem[];
+}
+
+const GUIDE_MENU: GuideMenuGroup[] = [
+  {
+    title: 'Generals',
+    items: [
+      { label: 'Colors', path: '/guide/colors' },
+      { label: 'Typography', path: '/guide/typography' },
+      { label: 'Elevator', path: '/guide/elevator' },
+      { label: 'Utilities', path: '/guide/utilities' },
+    ],
+  },
+  {
+    title: 'Components',
+    items: [
+      { label: 'Button', path: '/guide/button' },
+    ],
+  }
 ];
 
 interface GuideLayoutProps {
@@ -21,6 +40,19 @@ const GuideLayout = ({ children }: GuideLayoutProps) => {
   const location = useLocation();
 
   const isDashboard = location.pathname.startsWith('/guide/dashboard');
+  
+  // 메뉴 토글 상태 관리
+  const [expandedGroups, setExpandedGroups] = useState<Record<string, boolean>>({
+    Generals: true,
+    Components: true,
+  });
+
+  const toggleGroup = (title: string) => {
+    setExpandedGroups(prev => ({
+      ...prev,
+      [title]: !prev[title]
+    }));
+  };
 
   const isActive = (path: string) => {
     return location.pathname === path;
@@ -36,19 +68,31 @@ const GuideLayout = ({ children }: GuideLayoutProps) => {
       {!isDashboard && (
         <aside className={styles.sidebar}>
           <nav className={styles.menu}>
-            <h3 className={styles.menu_title}>Guide</h3>
-            <ul className={styles.menu_list}>
-              {GUIDE_MENU.map((item) => (
-                <li key={item.path}>
-                  <Link
-                    to={item.path}
-                    className={`${styles.menu_item} ${isActive(item.path) ? styles.active : ''}`}
-                  >
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            {GUIDE_MENU.map((group, groupIdx) => (
+              <div key={groupIdx} className={styles.menu_group}>
+                <div 
+                  className={styles.menu_title_wrapper}
+                  onClick={() => toggleGroup(group.title)}
+                >
+                  <h3 className={styles.menu_title}>{group.title}</h3>
+                  {expandedGroups[group.title] ? <ChevronDown size={14} /> : <ChevronRight size={14} />}
+                </div>
+                {expandedGroups[group.title] && (
+                  <ul className={styles.menu_list}>
+                    {group.items.map((item) => (
+                      <li key={item.path}>
+                        <Link
+                          to={item.path}
+                          className={`${styles.menu_item} ${isActive(item.path) ? styles.active : ''}`}
+                        >
+                          {item.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            ))}
           </nav>
         </aside>
       )}
