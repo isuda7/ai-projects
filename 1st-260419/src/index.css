@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand Primary Blue Scale */
+  --color-primary: hsl(221 83% 53%); /* 500 (Main) */
+  --color-primary-50: hsl(210 100% 97%);
+  --color-primary-100: hsl(214 95% 91%);
+  --color-primary-200: hsl(213 97% 85%);
+  --color-primary-300: hsl(212 96% 78%);
+  --color-primary-400: hsl(213 94% 68%);
+  --color-primary-500: hsl(221 83% 53%);
+  --color-primary-600: hsl(224 76% 48%);
+  --color-primary-700: hsl(226 70% 40%);
+  --color-primary-800: hsl(226 58% 34%);
+  --color-primary-900: hsl(224 47% 26%);
+
+  /* Neutrals Gray Scale */
+  --color-neutral-white: #ffffff;
+  --color-neutral-100: #F3F4F6;
+  --color-neutral-300: #D1D5DB;
+  --color-neutral-500: #6B7280;
+  --color-neutral-700: #374151;
+  --color-neutral-900: #111827;
+
+  /* Semantic Colors */
+  --color-success: #10B981;
+  --color-warning: #F59E0B;
+  --color-error: #EF4444;
+
+  /* shadcn/ui Compatibility Tokens */
+  --color-background: #ffffff;
+  --color-foreground: hsl(222 47% 11%);
+  --color-card: #ffffff;
+  --color-card-foreground: hsl(222 47% 11%);
+  --color-muted: hsl(210 40% 96%);
+  --color-muted-foreground: hsl(215 16% 47%);
+  --color-accent: hsl(210 40% 96%);
+  --color-accent-foreground: hsl(222 47% 11%);
+  --color-border: hsl(214 32% 91%);
+  
+  --radius-lg: 0.5rem;
+  --radius-md: calc(0.5rem - 2px);
+  --radius-sm: calc(0.5rem - 4px);
+
+  --font-sans: "Inter", "Manrope", system-ui, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight text-neutral-900;
+  }
+}
+
+/* Custom Scrollbar */
+@layer utilities {
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-neutral-300 rounded-full hover:bg-neutral-400 transition-colors;
+  }
+}

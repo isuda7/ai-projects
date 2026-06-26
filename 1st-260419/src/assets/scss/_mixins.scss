@@ -1,0 +1,41 @@
+@use 'sass:math';
+
+/* 1. 전체너비의 양측 사이드 여백 */
+@mixin side-padding {
+  padding-left: var(--side-padding, 20px);
+  padding-right: var(--side-padding, 20px);
+}
+
+/* 2. 본문 컨텐츠의 최대 너비 고정 및 중앙 정렬 */
+@mixin content-max-width {
+  width: 100%;
+  max-width: var(--content-max-width, 1024px);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 3. 텍스트 말줄임 (단일 줄 및 다중 줄) */
+@mixin text-ellipsis($lines: 1) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  @if $lines == 1 {
+    white-space: nowrap;
+  } @else {
+    display: -webkit-box;
+    -webkit-line-clamp: $lines;
+    -webkit-box-orient: vertical;
+  }
+}
+
+/* 4. 커스텀 스크롤바 디자인 (Webkit 기반 브라우저 전용) */
+@mixin custom-scroll($width: 6px, $bg: transparent, $thumb-bg: var(--color-gray-300)) {
+  &::-webkit-scrollbar {
+    width: $width;
+    height: $width;
+    background-color: $bg;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $thumb-bg;
+    border-radius: math.div($width, 2);
+  }
+}

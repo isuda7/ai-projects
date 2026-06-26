@@ -1,0 +1,23 @@
+.layout {
+  min-height: 100vh;
+  background: #f8faff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  color: #1e293b;
+  font-family: var(--font-sans);
+}
+
+.container {
+  width: 100%;
+  max-width: 448px;
+  border-radius: 24px;
+  background: #ffffff;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e2e8f0;
+  padding: 32px;
+  padding-bottom: 40px;
+}
