@@ -1,0 +1,130 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 32rem; /* space-y-8 */
+  padding-bottom: 48rem; /* pb-12 */
+  max-width: 896rem; /* max-w-4xl */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.backLinkWrapper {
+  display: flex;
+  align-items: center;
+  gap: 8rem;
+  margin-bottom: 24rem;
+}
+
+.backLink {
+  color: #64748b; /* slate-500 */
+  text-decoration: none;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 4rem;
+  transition: color 0.2s;
+
+  &:hover {
+    color: #4f46e5; /* indigo-600 */
+  }
+}
+
+.backIcon {
+  width: 16rem;
+  height: 16rem;
+}
+
+.card {
+  background-color: white;
+  border-radius: 12rem; /* rounded-xl */
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2e8f0; /* border-slate-200 */
+  overflow: hidden;
+}
+
+.cardHeader {
+  padding: 24rem; /* p-6 */
+  border-bottom: 1px solid #e2e8f0;
+  background-color: #f8fafc; /* slate-50 */
+}
+
+.title {
+  font-size: 24rem; /* text-2xl */
+  font-weight: 700;
+  color: #0f172a; /* slate-900 */
+  margin: 0;
+}
+
+.form {
+  padding: 32rem; /* p-8 */
+  display: flex;
+  flex-direction: column;
+  gap: 24rem; /* space-y-6 */
+}
+
+.formField {
+  display: flex;
+  flex-direction: column;
+  gap: 8rem;
+}
+
+.label {
+  display: block;
+  font-size: 14rem; /* text-sm */
+  font-weight: 600; /* font-semibold */
+  color: #0f172a;
+}
+
+.required {
+  color: #ef4444; /* text-red-500 */
+  margin-left: 2rem;
+}
+
+.textarea {
+  width: 100%;
+  padding: 12rem 16rem; /* px-4 py-3 */
+  border-radius: 6rem; /* rounded-md */
+  border: 1px solid #cbd5e1; /* slate-300 */
+  outline: none;
+  font-family: inherit;
+  font-size: 16rem;
+  resize: vertical;
+  transition: border-color 0.2s, box-shadow 0.2s;
+
+  &:focus {
+    border-color: #6366f1; /* indigo-500 */
+    box-shadow: 0 0 0 2px #6366f1;
+  }
+}
+
+.fileInput {
+  display: block;
+  width: 100%;
+  font-size: 14rem;
+  color: #64748b; /* slate-500 */
+
+  &::file-selector-button {
+    margin-right: 16rem;
+    padding: 8rem 16rem;
+    border-radius: 6rem;
+    border: none;
+    font-size: 14rem;
+    font-weight: 600;
+    background-color: #eef2ff; /* indigo-50 */
+    color: #4338ca; /* indigo-700 */
+    cursor: pointer;
+    transition: background-color 0.2s;
+
+    &:hover {
+      background-color: #e0e7ff; /* indigo-100 */
+    }
+  }
+}
+
+.formActions {
+  padding-top: 24rem;
+  border-top: 1px solid #e2e8f0;
+  display: flex;
+  justify-content: flex-end;
+  gap: 12rem;
+}

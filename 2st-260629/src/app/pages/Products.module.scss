@@ -1,0 +1,128 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 48rem; /* space-y-12 */
+  padding-bottom: 48rem; /* pb-12 */
+}
+
+.header {
+  border-bottom: 1px solid #e2e8f0; /* border-slate-200 */
+  padding-bottom: 32rem; /* pb-8 */
+}
+
+.title {
+  font-size: 36rem; /* text-4xl */
+  font-weight: 700;
+  color: #0f172a; /* slate-900 */
+  margin-bottom: 16rem;
+}
+
+.desc {
+  font-size: 18rem; /* text-lg */
+  color: #475569; /* slate-600 */
+  margin: 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40rem; /* gap-10 */
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.card {
+  background-color: white;
+  border-radius: 16rem; /* rounded-2xl */
+  overflow: hidden;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+  border: 1px solid #f1f5f9; /* border-slate-100 */
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+
+  &:hover {
+    .image {
+      transform: scale(1.05);
+    }
+  }
+}
+
+.imageWrapper {
+  position: relative;
+  height: 256rem; /* h-64 */
+  overflow: hidden;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.tags {
+  position: absolute;
+  top: 16rem;
+  left: 16rem;
+  display: flex;
+  gap: 8rem;
+}
+
+.tagCategory {
+  background-color: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(4px);
+  color: #1e293b; /* slate-800 */
+  font-size: 12rem;
+  font-weight: 700;
+  padding: 4rem 12rem;
+  border-radius: 9999px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.tagStatus {
+  color: white;
+  font-size: 12rem;
+  font-weight: 700;
+  padding: 4rem 12rem;
+  border-radius: 9999px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+
+  &--completed {
+    background-color: #4f46e5; /* indigo-600 */
+  }
+
+  &--active {
+    background-color: #f59e0b; /* amber-500 */
+  }
+}
+
+.cardBody {
+  padding: 32rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.year {
+  font-size: 14rem;
+  font-weight: 600;
+  color: #4f46e5;
+  margin-bottom: 8rem;
+}
+
+.cardTitle {
+  font-size: 24rem; /* text-2xl */
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 12rem;
+}
+
+.cardDesc {
+  color: #475569;
+  line-height: 1.625;
+  margin: 0;
+  flex-grow: 1;
+}

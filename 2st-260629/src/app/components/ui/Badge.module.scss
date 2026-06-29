@@ -1,0 +1,71 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 9999px; /* rounded-full */
+  padding: 2rem 10rem; /* py-0.5 px-2.5 */
+  font-size: 12rem; /* text-xs */
+  font-weight: 600; /* font-semibold */
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); /* shadow-sm */
+  transition: background-color 0.2s, color 0.2s;
+  border: 1px solid transparent;
+
+  /* Default */
+  &--default-fill {
+    background-color: #f1f5f9; /* slate-100 */
+    color: #1e293b; /* slate-800 */
+  }
+  &--default-outline {
+    background-color: white;
+    color: #1e293b; /* slate-800 */
+    border-color: #e2e8f0; /* slate-200 */
+    box-shadow: none;
+  }
+
+  /* Primary */
+  &--primary-fill {
+    background-color: #4f46e5; /* indigo-600 */
+    color: white;
+  }
+  &--primary-outline {
+    background-color: white;
+    color: #4f46e5;
+    border-color: #4f46e5;
+    box-shadow: none;
+  }
+
+  /* Success */
+  &--success-fill {
+    background-color: #10b981; /* emerald-500 */
+    color: white;
+  }
+  &--success-outline {
+    background-color: white;
+    color: #10b981;
+    border-color: #10b981;
+    box-shadow: none;
+  }
+
+  /* Warning */
+  &--warning-fill {
+    background-color: #f59e0b; /* amber-500 */
+    color: white;
+  }
+  &--warning-outline {
+    background-color: white;
+    color: #f59e0b;
+    border-color: #f59e0b;
+    box-shadow: none;
+  }
+
+  /* Danger */
+  &--danger-fill {
+    background-color: #ef4444; /* red-500 */
+    color: white;
+  }
+  &--danger-outline {
+    background-color: white;
+    color: #ef4444;
+    border-color: #ef4444;
+    box-shadow: none;
+  }
+}
