@@ -1,4 +1,4 @@
-import React from 'react';
+
 import GuideSection from './components/guide-section';
 import styles from './template.module.scss';
 

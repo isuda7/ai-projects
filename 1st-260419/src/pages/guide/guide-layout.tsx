@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { ChevronDown, ChevronRight } from 'lucide-react';
 import styles from './guide-layout.module.scss';
-import Header from '@/components/layout/header';
+import Header from '@/components/layout/Header';
 
 interface GuideMenuItem {
   label: string;
@@ -27,9 +27,52 @@ const GUIDE_MENU: GuideMenuGroup[] = [
   {
     title: 'Components',
     items: [
+      { label: 'Accordion', path: '/guide/accordion' },
+      { label: 'Alert', path: '/guide/alert' },
+      { label: 'Alert Dialog', path: '/guide/alert-dialog' },
+      { label: 'Aspect Ratio', path: '/guide/aspect-ratio' },
+      { label: 'Avatar', path: '/guide/avatar' },
       { label: 'Badge', path: '/guide/badge' },
+      { label: 'Breadcrumb', path: '/guide/breadcrumb' },
       { label: 'Button', path: '/guide/button' },
+      { label: 'Calendar', path: '/guide/calendar' },
+      { label: 'Card', path: '/guide/card' },
+      { label: 'Carousel', path: '/guide/carousel' },
+      { label: 'Chart', path: '/guide/chart' },
+      { label: 'Checkbox', path: '/guide/checkbox' },
+      { label: 'Collapsible', path: '/guide/collapsible' },
+      { label: 'Command', path: '/guide/command' },
+      { label: 'Context Menu', path: '/guide/context-menu' },
+      { label: 'Dialog', path: '/guide/dialog' },
+      { label: 'Drawer', path: '/guide/drawer' },
+      { label: 'Dropdown Menu', path: '/guide/dropdown-menu' },
+      { label: 'Form', path: '/guide/form' },
+      { label: 'Hover Card', path: '/guide/hover-card' },
       { label: 'Input', path: '/guide/input' },
+      { label: 'Input Otp', path: '/guide/input-otp' },
+      { label: 'Label', path: '/guide/label' },
+      { label: 'Menubar', path: '/guide/menubar' },
+      { label: 'Navigation Menu', path: '/guide/navigation-menu' },
+      { label: 'Pagination', path: '/guide/pagination' },
+      { label: 'Popover', path: '/guide/popover' },
+      { label: 'Progress', path: '/guide/progress' },
+      { label: 'Radio Group', path: '/guide/radio-group' },
+      { label: 'Resizable', path: '/guide/resizable' },
+      { label: 'Scroll Area', path: '/guide/scroll-area' },
+      { label: 'Select', path: '/guide/select' },
+      { label: 'Separator', path: '/guide/separator' },
+      { label: 'Sheet', path: '/guide/sheet' },
+      { label: 'Sidebar', path: '/guide/sidebar' },
+      { label: 'Skeleton', path: '/guide/skeleton' },
+      { label: 'Slider', path: '/guide/slider' },
+      { label: 'Sonner', path: '/guide/sonner' },
+      { label: 'Switch', path: '/guide/switch' },
+      { label: 'Table', path: '/guide/table' },
+      { label: 'Tabs', path: '/guide/tabs' },
+      { label: 'Textarea', path: '/guide/textarea' },
+      { label: 'Toggle', path: '/guide/toggle' },
+      { label: 'Toggle Group', path: '/guide/toggle-group' },
+      { label: 'Tooltip', path: '/guide/tooltip' }
     ],
   }
 ];

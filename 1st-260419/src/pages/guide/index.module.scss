@@ -1,13 +1,13 @@
 .wrapper {
   display: flex;
   flex-direction: column;
-  gap: 6rem;
+  gap: 6px;
 }
 
 .section {
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 3px;
 }
 
 .sectionHeader {
@@ -15,17 +15,17 @@
   align-items: baseline;
   justify-content: space-between;
   border-bottom: 1px solid #1f2937;
-  padding-bottom: 1rem;
+  padding-bottom: 1px;
 }
 
 .sectionTitle {
-  font-size: 1.875rem;
+  font-size: 30px;
   font-weight: 700;
   color: #111827;
 }
 
 .sectionVersion {
-  font-size: 0.625rem;
+  font-size: 10px;
   font-family: 'Courier New', monospace;
   color: #d1d5db;
   font-weight: 700;
@@ -35,10 +35,10 @@
 
 .sectionMeta {
   display: flex;
-  gap: 1rem;
+  gap: 1px;
 
   span {
-    font-size: 0.625rem;
+    font-size: 10px;
     font-weight: 700;
     color: #6b7280;
 
@@ -49,18 +49,18 @@
 }
 
 .subsectionTitle {
-  font-size: 0.75rem;
+  font-size: 12px;
   font-weight: 700;
   color: #111827;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 8px;
 }
 
 .colorGrid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 0.5rem;
+  gap: 8px;
 
   @media (min-width: 768px) {
     grid-template-columns: repeat(10, 1fr);
@@ -70,13 +70,13 @@
 .colorBlock {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 8px;
   cursor: pointer;
 
   .box {
-    height: 4rem;
+    height: 4px;
     width: 100%;
-    border-radius: 0.375rem;
+    border-radius: 6px;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
     transition: transform 0.2s ease;
 
@@ -86,13 +86,13 @@
   }
 
   .label {
-    font-size: 0.625rem;
+    font-size: 10px;
     font-weight: 700;
     color: #111827;
   }
 
   .hex {
-    font-size: 0.5rem;
+    font-size: 8px;
     font-family: 'Courier New', monospace;
     font-weight: 700;
     color: #d1d5db;
@@ -103,7 +103,7 @@
 .neutralGrid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
+  gap: 24px;
 
   @media (min-width: 768px) {
     grid-template-columns: repeat(6, 1fr);
@@ -111,12 +111,12 @@
 }
 
 .neutralBlock {
-  padding: 1rem;
-  border-radius: 0.375rem;
+  padding: 1px;
+  border-radius: 6px;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 1px;
   transition: box-shadow 0.2s ease;
   cursor: pointer;
 
@@ -125,14 +125,14 @@
   }
 
   .label {
-    font-size: 0.625rem;
+    font-size: 10px;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.05em;
   }
 
   .hex {
-    font-size: 0.5rem;
+    font-size: 8px;
     font-family: 'Courier New', monospace;
     text-transform: uppercase;
   }
@@ -141,7 +141,7 @@
 .semanticGrid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.5rem;
+  gap: 24px;
 
   @media (min-width: 768px) {
     grid-template-columns: repeat(3, 1fr);
@@ -149,12 +149,12 @@
 }
 
 .semanticCard {
-  padding: 1.5rem;
-  border-radius: 0.375rem;
+  padding: 24px;
+  border-radius: 6px;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1px;
 
   .header {
     display: flex;
@@ -163,24 +163,24 @@
   }
 
   .icon {
-    width: 1rem;
-    height: 1rem;
+    width: 1px;
+    height: 1px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 0.625rem;
+    font-size: 10px;
     color: #ffffff;
   }
 
   .bars {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 0.5rem;
-    height: 2rem;
+    gap: 8px;
+    height: 2px;
 
     .bar {
-      border-radius: 0.125rem;
+      border-radius: 2px;
     }
   }
 }
@@ -188,7 +188,7 @@
 .typographyGrid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 4rem;
+  gap: 4px;
 
   @media (min-width: 1024px) {
     grid-template-columns: 1fr 2fr;
@@ -198,7 +198,7 @@
 .typographyDescription {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1px;
 
   h3 {
     font-weight: 700;
@@ -206,7 +206,7 @@
   }
 
   p {
-    font-size: 0.75rem;
+    font-size: 12px;
     color: #6b7280;
     line-height: 1.5;
   }
@@ -215,15 +215,15 @@
 .typographyItems {
   display: flex;
   flex-direction: column;
-  gap: 5rem;
+  gap: 5px;
 
   @media (min-width: 1024px) {
-    gap: 5rem;
+    gap: 5px;
 
     @media (min-width: 1280px) {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 3rem;
+      gap: 3px;
     }
   }
 }
@@ -231,17 +231,17 @@
 .typographyPreview {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1px;
 
   .label {
     display: flex;
     align-items: center;
     justify-content: space-between;
     border-bottom: 1px solid #f3f4f6;
-    padding-bottom: 0.5rem;
+    padding-bottom: 8px;
 
     .name {
-      font-size: 0.625rem;
+      font-size: 10px;
       font-weight: 700;
       color: #d1d5db;
       text-transform: uppercase;
@@ -250,12 +250,12 @@
 
     .meta {
       display: flex;
-      gap: 1rem;
+      gap: 1px;
       opacity: 0;
       transition: opacity 0.2s ease;
 
       span {
-        font-size: 0.5rem;
+        font-size: 8px;
         font-weight: 700;
         color: #d1d5db;
       }
@@ -274,31 +274,31 @@
 .bodySection {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1rem;
+  gap: 1px;
 
   @media (min-width: 768px) {
     grid-template-columns: repeat(2, 1fr);
-    gap: 3rem;
+    gap: 3px;
   }
 }
 
 .bodyItem {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1px;
 
   .label {
-    font-size: 0.625rem;
+    font-size: 10px;
     font-weight: 700;
     text-transform: uppercase;
     color: #6b7280;
     letter-spacing: 0.2em;
     border-bottom: 1px solid #e5e7eb;
-    padding-bottom: 0.25rem;
+    padding-bottom: 4px;
   }
 
   .size {
-    font-size: 0.625rem;
+    font-size: 10px;
     color: #d1d5db;
   }
 
@@ -309,7 +309,7 @@
 }
 
 .viewButton {
-  font-size: 0.625rem;
+  font-size: 10px;
   font-weight: 700;
   color: #9ca3af;
   background: none;

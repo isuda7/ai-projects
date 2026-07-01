@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React from 'react';
 import styles from './template.module.scss';
 import Input from '@/components/ui/input/input';

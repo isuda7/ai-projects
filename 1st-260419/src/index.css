@@ -51,9 +51,9 @@
   --color-accent-foreground: hsl(222 47% 11%);
   --color-border: hsl(214 32% 91%);
   
-  --radius-lg: 0.5rem;
-  --radius-md: calc(0.5rem - 2px);
-  --radius-sm: calc(0.5rem - 4px);
+  --radius-lg: 8px;
+  --radius-md: calc(8px - 2px);
+  --radius-sm: calc(8px - 4px);
 
   --font-sans: "Inter", "Manrope", system-ui, sans-serif;
 }

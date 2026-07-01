@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
-import { Home, Search, User } from 'lucide-react';
+import { Home } from 'lucide-react';
 import styles from './header.module.scss';
 
 const Header = () => {

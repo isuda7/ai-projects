@@ -1,0 +1,16 @@
+.form_1 {
+  @apply grid gap-2;
+}
+
+.form_2 {
+  @apply data-[error=true]:text-destructive;
+}
+
+.form_3 {
+  @apply text-muted-foreground text-sm;
+}
+
+.form_4 {
+  @apply text-destructive text-sm;
+}
+
