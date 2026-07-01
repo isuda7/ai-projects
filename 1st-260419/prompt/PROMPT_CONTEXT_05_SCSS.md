@@ -28,10 +28,10 @@
 
 ### A. Colors (`_colors.scss`)
 모든 시맨틱 컬러는 50부터 900까지 10단계 스케일로 구성되며, 500을 기본 메인 컬러로 사용합니다.
-- **Primary**: 기본 액션 대표 컬러 (예: `--color-primary-500: #009688;`)
-- **Secondary**: 일반 보조 컬러 (예: `--color-secondary-500: #3f51b5;`)
-- **Success**: 상승, 성공 긍정 - 적색 계열 (예: `--color-success-500: #e53935;`)
-- **Danger**: 하락, 위험, 실패 - 청색 계열 (예: `--color-danger-500: #2196f3;`)
+- **Primary**: 기본 액션 대표 컬러 (예: `--color-primary-500: #0294de;`)
+- **Secondary**: 일반 보조 컬러 (예: `--color-secondary-500: #923eaa;`)
+- **Success**: 성공, 완료, 긍정 - 녹색 계열 (예: `--color-success-500: #10b981;`)
+- **Danger**: 위험, 실패 - 적색 계열 (예: `--color-danger-500: #ef4444;`)
 - **Grayscale**: 무채색 배경 및 텍스트 (예: `--color-gray-500: #6b7280;`, `--color-white`, `--color-black`)
 
 ### B. Typography (`_typography.scss`)

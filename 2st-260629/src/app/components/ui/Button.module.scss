@@ -10,7 +10,7 @@
   border: 1px solid transparent;
 
   &:focus-visible {
-    box-shadow: 0 0 0 2px white, 0 0 0 4px #6366f1; /* indigo-500 */
+    box-shadow: 0 0 0 2px var(--background), 0 0 0 4px var(--ring);
   }
   &:disabled {
     opacity: 0.5;
@@ -19,38 +19,38 @@
 
   /* Primary */
   &--primary-fill {
-    background-color: #4f46e5; /* indigo-600 */
-    color: white;
-    &:hover { background-color: #4338ca; }
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+    &:hover { background-color: color-mix(in srgb, var(--primary) 85%, black); }
   }
   &--primary-outline {
-    background-color: white;
-    color: #4f46e5;
-    border-color: #cbd5e1;
-    &:hover { background-color: #eef2ff; }
+    background-color: var(--background);
+    color: var(--primary);
+    border-color: var(--border);
+    &:hover { background-color: var(--accent); }
   }
   &--primary-ghost {
     background-color: transparent;
-    color: #4f46e5;
-    &:hover { background-color: #eef2ff; }
+    color: var(--primary);
+    &:hover { background-color: var(--accent); }
   }
 
   /* Secondary */
   &--secondary-fill {
-    background-color: #eef2ff; /* indigo-50 */
-    color: #4338ca; /* indigo-700 */
-    &:hover { background-color: #e0e7ff; }
+    background-color: var(--secondary);
+    color: var(--secondary-foreground);
+    &:hover { background-color: color-mix(in srgb, var(--secondary) 85%, black); }
   }
   &--secondary-outline {
-    background-color: white;
-    color: #4338ca;
-    border-color: #cbd5e1;
-    &:hover { background-color: #eef2ff; }
+    background-color: var(--background);
+    color: var(--secondary-foreground);
+    border-color: var(--border);
+    &:hover { background-color: var(--accent); }
   }
   &--secondary-ghost {
     background-color: transparent;
-    color: #4338ca;
-    &:hover { background-color: #eef2ff; }
+    color: var(--secondary-foreground);
+    &:hover { background-color: var(--accent); }
   }
 
   /* Danger */
@@ -74,7 +74,7 @@
   /* Link */
   &--link {
     background-color: transparent;
-    color: #4f46e5;
+    color: var(--primary);
     border: none;
     text-decoration: none;
     &:hover { text-decoration: underline; }

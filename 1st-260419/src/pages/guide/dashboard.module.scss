@@ -35,7 +35,7 @@
 }
 
 .dashboard_value_cyan {
-  color: #00adc0;
+  color: #4f46e5;
 }
 
 .dashboard_value_amber {
@@ -130,7 +130,7 @@
       .group_label {
         font-size: 12px;
         font-weight: 700;
-        color: #00897b;
+        color: #4f46e5;
         letter-spacing: 2px;
         text-transform: uppercase;
       }
@@ -177,7 +177,7 @@
 
     &.url_cell {
       a {
-        color: #00897b;
+        color: #4f46e5;
 
         &:hover {
           text-decoration: underline;
@@ -202,8 +202,8 @@
   text-align: center;
 
   &.published {
-    background: #e0f2f1;
-    color: #00897b;
+    background: #ecfdf5;
+    color: #059669;
   }
 
   &.review {

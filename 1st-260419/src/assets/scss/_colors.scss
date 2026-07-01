@@ -1,51 +1,51 @@
 :root {
-  /* Primary (기본 액션 대표 컬러) */
-  --color-primary-50: #e0f2f1;
-  --color-primary-100: #b2dfdb;
-  --color-primary-200: #80cbc4;
-  --color-primary-300: #4db6ac;
-  --color-primary-400: #26a69a;
-  --color-primary-500: #009688;
-  --color-primary-600: #00897b;
-  --color-primary-700: #00796b;
-  --color-primary-800: #00695c;
-  --color-primary-900: #004d40;
+  /* Primary (기본 액션 대표 컬러 - 스카이블루 계열) */
+  --color-primary-50: #f0f9ff;
+  --color-primary-100: #e0f2fe;
+  --color-primary-200: #bae6fd;
+  --color-primary-300: #7dd3fc;
+  --color-primary-400: #38bdf8;
+  --color-primary-500: #0294de;
+  --color-primary-600: #0284c7;
+  --color-primary-700: #0369a1;
+  --color-primary-800: #075985;
+  --color-primary-900: #0c4a6e;
 
-  /* Secondary (일반 보조 컬러) */
-  --color-secondary-50: #e8eaf6;
-  --color-secondary-100: #c5cae9;
-  --color-secondary-200: #9fa8da;
-  --color-secondary-300: #7986cb;
-  --color-secondary-400: #5c6bc0;
-  --color-secondary-500: #3f51b5;
-  --color-secondary-600: #3949ab;
-  --color-secondary-700: #303f9f;
-  --color-secondary-800: #283593;
-  --color-secondary-900: #1a237e;
+  /* Secondary (일반 보조 컬러 - 퍼플 계열) */
+  --color-secondary-50: #faf5ff;
+  --color-secondary-100: #f3e8ff;
+  --color-secondary-200: #e9d5ff;
+  --color-secondary-300: #d8b4fe;
+  --color-secondary-400: #c084fc;
+  --color-secondary-500: #923eaa;
+  --color-secondary-600: #9333ea;
+  --color-secondary-700: #7e22ce;
+  --color-secondary-800: #6b21a8;
+  --color-secondary-900: #581c87;
 
-  /* Success (상승, 성공 긍정 - 적색 계열) */
-  --color-success-50: #fdeaea;
-  --color-success-100: #f9caca;
-  --color-success-200: #f5a6a6;
-  --color-success-300: #ef8080;
-  --color-success-400: #eb6464;
-  --color-success-500: #e53935;
-  --color-success-600: #d32f2f;
-  --color-success-700: #c62828;
-  --color-success-800: #b71c1c;
-  --color-success-900: #7f0000;
+  /* Success (성공, 긍정 - 녹색 계열) */
+  --color-success-50: #ecfdf5;
+  --color-success-100: #d1fae5;
+  --color-success-200: #a7f3d0;
+  --color-success-300: #6ee7b7;
+  --color-success-400: #34d399;
+  --color-success-500: #10b981;
+  --color-success-600: #059669;
+  --color-success-700: #047857;
+  --color-success-800: #065f46;
+  --color-success-900: #064e3b;
 
-  /* Danger (하락, 위험, 실패 - 청색 계열) */
-  --color-danger-50: #e3f2fd;
-  --color-danger-100: #bbdefb;
-  --color-danger-200: #90caf9;
-  --color-danger-300: #64b5f6;
-  --color-danger-400: #42a5f5;
-  --color-danger-500: #2196f3;
-  --color-danger-600: #1e88e5;
-  --color-danger-700: #1976d2;
-  --color-danger-800: #1565c0;
-  --color-danger-900: #0d47a1;
+  /* Danger (위험, 실패 - 적색 계열) */
+  --color-danger-50: #fef2f2;
+  --color-danger-100: #fee2e2;
+  --color-danger-200: #fecaca;
+  --color-danger-300: #fca5a5;
+  --color-danger-400: #f87171;
+  --color-danger-500: #ef4444;
+  --color-danger-600: #dc2626;
+  --color-danger-700: #b91c1c;
+  --color-danger-800: #991b1b;
+  --color-danger-900: #7f1d1d;
 
   /* Grayscale (무채색 배경 및 텍스트) */
   --color-gray-50: #f9fafb;

@@ -1,21 +1,39 @@
 export default function ColorsGuide() {
   const colorPalettes = [
     {
-      name: "Indigo",
+      name: "Sky",
       description: "브랜드의 메인 컬러로, 프라이머리 액션 및 주요 강조 요소에 사용됩니다.",
-      defaultStep: "600",
+      defaultStep: "500",
       shades: [
-        { step: "50", tw: "bg-indigo-50", text: "text-indigo-900" },
-        { step: "100", tw: "bg-indigo-100", text: "text-indigo-900" },
-        { step: "200", tw: "bg-indigo-200", text: "text-indigo-900" },
-        { step: "300", tw: "bg-indigo-300", text: "text-indigo-900" },
-        { step: "400", tw: "bg-indigo-400", text: "text-indigo-900" },
-        { step: "500", tw: "bg-indigo-500", text: "text-white" },
-        { step: "600", tw: "bg-indigo-600", text: "text-white" },
-        { step: "700", tw: "bg-indigo-700", text: "text-white" },
-        { step: "800", tw: "bg-indigo-800", text: "text-white" },
-        { step: "900", tw: "bg-indigo-900", text: "text-white" },
-        { step: "950", tw: "bg-indigo-950", text: "text-white" },
+        { step: "50", tw: "bg-sky-50", text: "text-sky-900" },
+        { step: "100", tw: "bg-sky-100", text: "text-sky-900" },
+        { step: "200", tw: "bg-sky-200", text: "text-sky-900" },
+        { step: "300", tw: "bg-sky-300", text: "text-sky-900" },
+        { step: "400", tw: "bg-sky-400", text: "text-sky-900" },
+        { step: "500", tw: "bg-sky-500", text: "text-white" },
+        { step: "600", tw: "bg-sky-600", text: "text-white" },
+        { step: "700", tw: "bg-sky-700", text: "text-white" },
+        { step: "800", tw: "bg-sky-800", text: "text-white" },
+        { step: "900", tw: "bg-sky-900", text: "text-white" },
+        { step: "950", tw: "bg-sky-950", text: "text-white" },
+      ]
+    },
+    {
+      name: "Purple",
+      description: "브랜드의 보조 컬러로, 서브 액션 및 추가 강조 요소에 사용됩니다.",
+      defaultStep: "500",
+      shades: [
+        { step: "50", tw: "bg-purple-50", text: "text-purple-900" },
+        { step: "100", tw: "bg-purple-100", text: "text-purple-900" },
+        { step: "200", tw: "bg-purple-200", text: "text-purple-900" },
+        { step: "300", tw: "bg-purple-300", text: "text-purple-900" },
+        { step: "400", tw: "bg-purple-400", text: "text-purple-900" },
+        { step: "500", tw: "bg-purple-500", text: "text-white" },
+        { step: "600", tw: "bg-purple-600", text: "text-white" },
+        { step: "700", tw: "bg-purple-700", text: "text-white" },
+        { step: "800", tw: "bg-purple-800", text: "text-white" },
+        { step: "900", tw: "bg-purple-900", text: "text-white" },
+        { step: "950", tw: "bg-purple-950", text: "text-white" },
       ]
     },
     {
@@ -110,9 +128,9 @@ export default function ColorsGuide() {
         <div className="space-y-10">
           <h3 className="text-xl font-semibold text-slate-700">1.1. Brand & Neutral Colors</h3>
 
-          {/* 4단계: 소유형 (Brand) */}
+          {/* 4단계: 소유형 (Brand Primary) */}
           <div className="space-y-4">
-            <h4 className="text-sm font-bold text-slate-500 uppercase tracking-wider">A. Brand Color (Indigo)</h4>
+            <h4 className="text-sm font-bold text-slate-500 uppercase tracking-wider">A. Brand Primary Color (Sky Blue)</h4>
             <p className="text-sm text-slate-600">{colorPalettes[0].description}</p>
             
             <div className="mt-4 flex w-full h-24 rounded-lg overflow-hidden border border-slate-200 shadow-sm relative">
@@ -131,14 +149,35 @@ export default function ColorsGuide() {
             </div>
           </div>
 
-          {/* 4단계: 소유형 (Neutral) */}
+          {/* 4단계: 소유형 (Brand Secondary) */}
           <div className="space-y-4 pt-6">
-            <h4 className="text-sm font-bold text-slate-500 uppercase tracking-wider">B. Neutral Color (Slate)</h4>
+            <h4 className="text-sm font-bold text-slate-500 uppercase tracking-wider">B. Brand Secondary Color (Purple)</h4>
             <p className="text-sm text-slate-600">{colorPalettes[1].description}</p>
             
             <div className="mt-4 flex w-full h-24 rounded-lg overflow-hidden border border-slate-200 shadow-sm relative">
               {colorPalettes[1].shades.map((shade) => {
                 const isDefault = shade.step === colorPalettes[1].defaultStep;
+                return (
+                  <div key={shade.step} className={`flex-1 flex flex-col justify-end p-2 ${shade.tw} relative group`}>
+                    {isDefault && (
+                      <div className="absolute inset-0 border-4 border-slate-900/10 pointer-events-none"></div>
+                    )}
+                    {isDefault && <span className={`text-[10px] font-bold tracking-wide mb-1 ${shade.text}`}>DEFAULT</span>}
+                    <span className={`text-xs font-medium ${shade.text}`}>{shade.step}</span>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* 4단계: 소유형 (Neutral) */}
+          <div className="space-y-4 pt-6">
+            <h4 className="text-sm font-bold text-slate-500 uppercase tracking-wider">C. Neutral Color (Slate)</h4>
+            <p className="text-sm text-slate-600">{colorPalettes[2].description}</p>
+            
+            <div className="mt-4 flex w-full h-24 rounded-lg overflow-hidden border border-slate-200 shadow-sm relative">
+              {colorPalettes[2].shades.map((shade) => {
+                const isDefault = shade.step === colorPalettes[2].defaultStep;
                 return (
                   <div key={shade.step} className={`flex-1 flex flex-col justify-end p-2 ${shade.tw} relative group`}>
                     {isDefault && (
@@ -158,7 +197,7 @@ export default function ColorsGuide() {
           <h3 className="text-xl font-semibold text-slate-700">1.2. Semantic Colors</h3>
 
           {/* 4단계: 소유형 (Semantic 반복) */}
-          {colorPalettes.slice(2).map((palette, idx) => {
+          {colorPalettes.slice(3).map((palette, idx) => {
             const letters = ["A", "B", "C", "D"];
             return (
               <div key={palette.name} className="space-y-4 pt-4">

@@ -39,21 +39,37 @@ const ColorsGuidePage = () => {
         <div className={styles.color_group}>
           <h3 className={styles.group_title}>Primary (기본 액션 / 브랜드 컬러)</h3>
           <div className={styles.color_grid}>
-            <ColorBlock label="50" hex="#ecfeff" />
-            <ColorBlock label="100" hex="#cffafe" />
-            <ColorBlock label="200" hex="#99f6e4" />
-            <ColorBlock label="300" hex="#5eead4" />
-            <ColorBlock label="400" hex="#2dd4bf" />
-            <ColorBlock label="500" hex="#00adc0" main />
-            <ColorBlock label="600" hex="#0d9488" />
-            <ColorBlock label="700" hex="#0f766e" />
-            <ColorBlock label="800" hex="#115e59" />
-            <ColorBlock label="900" hex="#134e4a" />
+            <ColorBlock label="50" hex="#f0f9ff" />
+            <ColorBlock label="100" hex="#e0f2fe" />
+            <ColorBlock label="200" hex="#bae6fd" />
+            <ColorBlock label="300" hex="#7dd3fc" />
+            <ColorBlock label="400" hex="#38bdf8" />
+            <ColorBlock label="500" hex="#0294de" main />
+            <ColorBlock label="600" hex="#0284c7" />
+            <ColorBlock label="700" hex="#0369a1" />
+            <ColorBlock label="800" hex="#075985" />
+            <ColorBlock label="900" hex="#0c4a6e" />
           </div>
         </div>
 
         <div className={styles.color_group}>
-          <h3 className={styles.group_title}>Secondary & Neutral (보조 액션 / 회색조)</h3>
+          <h3 className={styles.group_title}>Secondary (보조 액션 컬러)</h3>
+          <div className={styles.color_grid}>
+            <ColorBlock label="50" hex="#faf5ff" />
+            <ColorBlock label="100" hex="#f3e8ff" />
+            <ColorBlock label="200" hex="#e9d5ff" />
+            <ColorBlock label="300" hex="#d8b4fe" />
+            <ColorBlock label="400" hex="#c084fc" />
+            <ColorBlock label="500" hex="#923eaa" main />
+            <ColorBlock label="600" hex="#9333ea" />
+            <ColorBlock label="700" hex="#7e22ce" />
+            <ColorBlock label="800" hex="#6b21a8" />
+            <ColorBlock label="900" hex="#581c87" />
+          </div>
+        </div>
+
+        <div className={styles.color_group}>
+          <h3 className={styles.group_title}>Neutral (회색조)</h3>
           <div className={styles.color_grid}>
             <ColorBlock label="50" hex="#f9fafb" />
             <ColorBlock label="100" hex="#f3f4f6" />
@@ -69,7 +85,23 @@ const ColorsGuidePage = () => {
         </div>
 
         <div className={styles.color_group}>
-          <h3 className={styles.group_title}>Success (성공 / 긍정 / 상승)</h3>
+          <h3 className={styles.group_title}>Success (성공 / 긍정)</h3>
+          <div className={styles.color_grid}>
+            <ColorBlock label="50" hex="#ecfdf5" />
+            <ColorBlock label="100" hex="#d1fae5" />
+            <ColorBlock label="200" hex="#a7f3d0" />
+            <ColorBlock label="300" hex="#6ee7b7" />
+            <ColorBlock label="400" hex="#34d399" />
+            <ColorBlock label="500" hex="#10b981" main />
+            <ColorBlock label="600" hex="#059669" />
+            <ColorBlock label="700" hex="#047857" />
+            <ColorBlock label="800" hex="#065f46" />
+            <ColorBlock label="900" hex="#064e3b" />
+          </div>
+        </div>
+
+        <div className={styles.color_group}>
+          <h3 className={styles.group_title}>Danger (위험 / 실패)</h3>
           <div className={styles.color_grid}>
             <ColorBlock label="50" hex="#fef2f2" />
             <ColorBlock label="100" hex="#fee2e2" />
@@ -81,22 +113,6 @@ const ColorsGuidePage = () => {
             <ColorBlock label="700" hex="#b91c1c" />
             <ColorBlock label="800" hex="#991b1b" />
             <ColorBlock label="900" hex="#7f1d1d" />
-          </div>
-        </div>
-
-        <div className={styles.color_group}>
-          <h3 className={styles.group_title}>Danger (위험 / 실패 / 하락)</h3>
-          <div className={styles.color_grid}>
-            <ColorBlock label="50" hex="#eff6ff" />
-            <ColorBlock label="100" hex="#dbeafe" />
-            <ColorBlock label="200" hex="#bfdbfe" />
-            <ColorBlock label="300" hex="#93c5fd" />
-            <ColorBlock label="400" hex="#60a5fa" />
-            <ColorBlock label="500" hex="#3b82f6" main />
-            <ColorBlock label="600" hex="#2563eb" />
-            <ColorBlock label="700" hex="#1d4ed8" />
-            <ColorBlock label="800" hex="#1e40af" />
-            <ColorBlock label="900" hex="#1e3a8a" />
           </div>
         </div>
 

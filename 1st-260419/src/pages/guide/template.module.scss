@@ -111,13 +111,13 @@
 
 .guideline {
   padding: 16px;
-  background-color: #eff6ff; // 임시 info 색상
+  background-color: #eef2ff; // Indigo 50
   border-radius: 8px;
   font-size: var(--font-size-body-sm);
   color: var(--color-gray-700);
 
   strong {
-    color: #2563eb;
+    color: #4f46e5; // Indigo 600
     margin-right: 8px;
   }
 }

@@ -29,8 +29,8 @@
   }
 
   &:focus {
-    border-color: #6366f1; /* indigo-500 */
-    box-shadow: 0 0 0 2px white, 0 0 0 4px #6366f1; /* focus:ring */
+    border-color: var(--ring);
+    box-shadow: 0 0 0 2px var(--background), 0 0 0 4px var(--ring);
   }
 
   &:disabled {
