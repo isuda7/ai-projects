@@ -1,7 +1,7 @@
 // @ts-nocheck
 import * as React from "react";
-import styles from "./Alert.module.scss";
-import { cn } from "./utils";
+import styles from "./alert.module.scss";
+import { cn } from "@/utils/cn";
 
 export interface AlertProps extends React.HTMLAttributes<HTMLDivElement> {
   variant?: "default" | "destructive";

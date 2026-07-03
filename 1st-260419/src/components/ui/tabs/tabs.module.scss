@@ -1,0 +1,40 @@
+.list {
+  display: inline-flex;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background-color: var(--color-muted, #f3f4f6);
+  padding: 4px;
+  color: var(--color-muted-foreground, #6b7280);
+}
+.trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  border-radius: 4px;
+  padding: 6px 12px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.2s;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  &[data-state="active"] {
+    background-color: var(--color-background, #ffffff);
+    color: var(--color-foreground, #111827);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  }
+}
+.content {
+  margin-top: 8px;
+  padding: 16px;
+  border: 1px solid var(--color-border, #e5e7eb);
+  border-radius: 8px;
+}
+
+// Missing classes recovered
+.tabs {
+  display: flex; position: relative;
+}

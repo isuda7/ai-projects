@@ -1,5 +1,5 @@
 // @ts-nocheck
-import styles from './form.module.scss';
+import styles from "./form.module.scss";
 "use client";
 
 import * as React from "react";
@@ -15,8 +15,8 @@ import {
   type FieldValues,
 } from "react-hook-form";
 
-import { cn } from "./utils";
-import { Label } from "./label";
+import { cn } from "@/utils/cn";
+import { Label } from "@/components/ui/label/label";
 
 const Form = FormProvider;
 

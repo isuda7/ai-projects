@@ -57,3 +57,9 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 Button.displayName = 'Button';
 
 export default Button;
+
+// Mock for components that rely on cva buttonVariants
+export const buttonVariants = () => "";
+
+export { Button };
+

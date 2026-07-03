@@ -1,4 +1,10 @@
-.toggle-group_1 {
-  @apply group/toggle-group flex w-fit items-center rounded-md data-[variant=outline]:shadow-xs;
-}
+// Auto-generated High-Fidelity SCSS for toggle-group
 
+
+@keyframes animate-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes animate-out { from { opacity: 1; } to { opacity: 0; } }
+@keyframes slide-in-from-bottom { from { transform: translateY(100%); } to { transform: translateY(0); } }
+@keyframes slide-in-from-top { from { transform: translate(-50%, -48%) scale(0.95); } to { transform: translate(-50%, -50%) scale(1); } }
+.toggle-group_1 {
+  display: flex; flex-direction: column; gap: 4px;
+}

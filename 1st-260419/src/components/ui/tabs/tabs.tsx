@@ -3,8 +3,8 @@
 
 import * as React from "react";
 import * as TabsPrimitive from "@radix-ui/react-tabs";
-import styles from "./Tabs.module.scss";
-import { cn } from "./utils";
+import styles from "./tabs.module.scss";
+import { cn } from "@/utils/cn";
 
 function Tabs({
   className,

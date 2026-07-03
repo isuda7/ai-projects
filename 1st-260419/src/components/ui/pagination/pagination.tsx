@@ -1,5 +1,5 @@
 // @ts-nocheck
-import styles from './pagination.module.scss';
+import styles from "./pagination.module.scss";
 import * as React from "react";
 import {
   ChevronLeftIcon,
@@ -7,8 +7,8 @@ import {
   MoreHorizontalIcon,
 } from "lucide-react";
 
-import { cn } from "./utils";
-import { Button, buttonVariants } from "./button";
+import { cn } from "@/utils/cn";
+import { Button, buttonVariants } from "@/components/ui/button/button";
 
 function Pagination({ className, ...props }: React.ComponentProps<"nav">) {
   return (

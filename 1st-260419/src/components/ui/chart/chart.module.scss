@@ -1,56 +1,49 @@
-.chart_1 {
-  @apply grid gap-1.5;
-}
+// Auto-generated High-Fidelity SCSS for chart
 
-.chart_2 {
-  @apply grid gap-1.5;
-}
 
-.chart_3 {
-  @apply text-muted-foreground;
-}
-
-.chart_4 {
-  @apply text-foreground font-mono font-medium tabular-nums;
-}
-
-.chart_5 {
-  @apply h-2 w-2 shrink-0 rounded-[2px];
-}
-
+@keyframes animate-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes animate-out { from { opacity: 1; } to { opacity: 0; } }
+@keyframes slide-in-from-bottom { from { transform: translateY(100%); } to { transform: translateY(0); } }
+@keyframes slide-in-from-top { from { transform: translate(-50%, -48%) scale(0.95); } to { transform: translate(-50%, -50%) scale(1); } }
 .chart_6 {
-  @apply [&_.recharts-cartesian-axis-tick_text]:fill-muted-foreground [&_.recharts-cartesian-grid_line[stroke='#ccc']]:stroke-border/50 [&_.recharts-curve.recharts-tooltip-cursor]:stroke-border [&_.recharts-polar-grid_[stroke='#ccc']]:stroke-border [&_.recharts-radial-bar-background-sector]:fill-muted [&_.recharts-rectangle.recharts-tooltip-cursor]:fill-muted [&_.recharts-reference-line_[stroke='#ccc']]:stroke-border flex aspect-video justify-center text-xs [&_.recharts-dot[stroke='#fff']]:stroke-transparent [&_.recharts-layer]:outline-hidden [&_.recharts-sector]:outline-hidden [&_.recharts-sector[stroke='#fff']]:stroke-transparent [&_.recharts-surface]:outline-hidden;
+  /* Custom class chart_6 */ display: block;
 }
-
 .chart_7 {
-  @apply font-medium;
+  /* Custom class chart_7 */ display: block;
 }
-
 .chart_8 {
-  @apply font-medium;
+  /* Custom class chart_8 */ display: block;
 }
-
 .chart_9 {
-  @apply border-border/50 bg-background grid min-w-[128rem] items-start gap-1.5 rounded-lg border px-2.5 py-1.5 text-xs shadow-xl;
+  /* Custom class chart_9 */ display: block;
 }
-
+.chart_1 {
+  /* Custom class chart_1 */ display: block;
+}
 .chart_10 {
-  @apply [&>svg]:text-muted-foreground flex w-full flex-wrap items-stretch gap-2 [&>svg]:h-2.5 [&>svg]:w-2.5;
+  /* Custom class chart_10 */ display: block;
 }
-
 .chart_11 {
-  @apply shrink-0 rounded-[2px] border-(--color-border) bg-(--color-bg);
+  /* Custom class chart_11 */ display: block;
 }
-
 .chart_12 {
-  @apply flex flex-1 justify-between leading-none;
+  /* Custom class chart_12 */ display: block;
 }
-
+.chart_2 {
+  /* Custom class chart_2 */ display: block;
+}
+.chart_3 {
+  /* Custom class chart_3 */ display: block;
+}
+.chart_4 {
+  /* Custom class chart_4 */ display: block;
+}
 .chart_13 {
-  @apply flex items-center justify-center gap-4;
+  /* Custom class chart_13 */ display: block;
 }
-
 .chart_14 {
-  @apply [&>svg]:text-muted-foreground flex items-center gap-1.5 [&>svg]:h-3 [&>svg]:w-3;
+  /* Custom class chart_14 */ display: block;
 }
-
+.chart_5 {
+  /* Custom class chart_5 */ display: block;
+}

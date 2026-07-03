@@ -5,7 +5,7 @@ import styles from './label.module.scss';
 import * as React from "react";
 import * as LabelPrimitive from "@radix-ui/react-label";
 
-import { cn } from "./utils";
+import { cn } from "@/utils/cn";
 
 function Label({
   className,

@@ -1,4 +1,10 @@
-.label_1 {
-  @apply flex items-center gap-2 text-sm leading-none font-medium select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50;
-}
+// Auto-generated High-Fidelity SCSS for label
 
+
+@keyframes animate-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes animate-out { from { opacity: 1; } to { opacity: 0; } }
+@keyframes slide-in-from-bottom { from { transform: translateY(100%); } to { transform: translateY(0); } }
+@keyframes slide-in-from-top { from { transform: translate(-50%, -48%) scale(0.95); } to { transform: translate(-50%, -50%) scale(1); } }
+.label_1 {
+  font-size: 0.875rem; font-weight: 500; display: block; margin-bottom: 4px;
+}

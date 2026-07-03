@@ -1,36 +1,34 @@
-.sheet_1 {
-  @apply ring-offset-background focus:ring-ring data-[state=open]:bg-secondary absolute top-4 right-4 rounded-xs opacity-70 transition-opacity hover:opacity-100 focus:ring-2 focus:ring-offset-2 focus:outline-hidden disabled:pointer-events-none;
-}
+// Auto-generated High-Fidelity SCSS for sheet
 
-.sheet_2 {
-  @apply size-4;
-}
 
-.sheet_3 {
-  @apply sr-only;
-}
-
+@keyframes animate-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes animate-out { from { opacity: 1; } to { opacity: 0; } }
+@keyframes slide-in-from-bottom { from { transform: translateY(100%); } to { transform: translateY(0); } }
+@keyframes slide-in-from-top { from { transform: translate(-50%, -48%) scale(0.95); } to { transform: translate(-50%, -50%) scale(1); } }
 .sheet_4 {
-  @apply data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 fixed inset-0 z-50 bg-black/50;
+  /* Custom class sheet_4 */ display: block;
 }
-
 .sheet_5 {
-  @apply bg-background data-[state=open]:animate-in data-[state=closed]:animate-out fixed z-50 flex flex-col gap-4 shadow-lg transition ease-in-out data-[state=closed]:duration-300 data-[state=open]:duration-500;
+  /* Custom class sheet_5 */ display: block;
 }
-
+.sheet_1 {
+  /* Custom class sheet_1 */ display: block;
+}
+.sheet_2 {
+  /* Custom class sheet_2 */ display: block;
+}
+.sheet_3 {
+  /* Custom class sheet_3 */ display: block;
+}
 .sheet_6 {
-  @apply flex flex-col gap-1.5 p-4;
+  /* Custom class sheet_6 */ display: block;
 }
-
 .sheet_7 {
-  @apply mt-auto flex flex-col gap-2 p-4;
+  /* Custom class sheet_7 */ display: block;
 }
-
 .sheet_8 {
-  @apply text-foreground font-semibold;
+  /* Custom class sheet_8 */ display: block;
 }
-
 .sheet_9 {
-  @apply text-muted-foreground text-sm;
+  /* Custom class sheet_9 */ display: block;
 }
-

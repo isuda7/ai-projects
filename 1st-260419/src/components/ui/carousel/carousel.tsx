@@ -1,5 +1,5 @@
 // @ts-nocheck
-import styles from './carousel.module.scss';
+import styles from "./carousel.module.scss";
 "use client";
 
 import * as React from "react";
@@ -8,8 +8,8 @@ import useEmblaCarousel, {
 } from "embla-carousel-react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
-import { cn } from "./utils";
-import { Button } from "./button";
+import { cn } from "@/utils/cn";
+import { Button } from "@/components/ui/button/button";
 
 type CarouselApi = UseEmblaCarouselType[1];
 type UseCarouselParameters = Parameters<typeof useEmblaCarousel>;

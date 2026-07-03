@@ -1,13 +1,13 @@
 // @ts-nocheck
-import styles from './toggle-group.module.scss';
+import styles from "./toggle-group.module.scss";
 "use client";
 
 import * as React from "react";
 import * as ToggleGroupPrimitive from "@radix-ui/react-toggle-group";
 import { type VariantProps } from "class-variance-authority";
 
-import { cn } from "./utils";
-import { toggleVariants } from "./toggle";
+import { cn } from "@/utils/cn";
+import { toggleVariants } from "@/components/ui/toggle/toggle";
 
 const ToggleGroupContext = React.createContext<
   VariantProps<typeof toggleVariants>
@@ -29,7 +29,7 @@ function ToggleGroup({
       data-slot="toggle-group"
       data-variant={variant}
       data-size={size}
-      className={cn(styles.toggle-group_1,
+      className={cn(styles['toggle-group_1'],
         className,
       )}
       {...props}

@@ -136,9 +136,38 @@
   display: flex;
   flex-wrap: wrap;
   gap: 24px;
+  width: 100%;
+  min-height: 120px;
+  padding: 24px 0;
+  align-items: center; /* 뷰포트 내 컴포넌트 세로 중앙 정렬 */
+  justify-content: center; /* 뷰포트 내 컴포넌트 가로 중앙 정렬 */
+
+  /* 내부 컴포넌트들이 100% 너비를 필요로 할 때 찌그러지지 않도록 보호 */
+  > * {
+    max-width: 100%;
+  }
+
+  /* 100% 폭을 강제로 차지해야 하는 블록 컴포넌트 호환성 */
+  > div, > form, > table, > ul {
+    flex-shrink: 0;
+  }
 }
 
-.preview+.code_view {
+.preview_center {
+  @extend .preview;
+  align-items: center;
+  justify-content: center;
+}
+
+.preview_column {
+  @extend .preview;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.preview+.code_view,
+.preview_center+.code_view,
+.preview_column+.code_view {
   margin-top: 16px;
 }
 

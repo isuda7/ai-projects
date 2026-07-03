@@ -6,7 +6,7 @@ import * as React from "react";
 import * as DropdownMenuPrimitive from "@radix-ui/react-dropdown-menu";
 import { CheckIcon, ChevronRightIcon, CircleIcon } from "lucide-react";
 
-import { cn } from "./utils";
+import { cn } from "@/utils/cn";
 
 function DropdownMenu({
   ...props
@@ -43,7 +43,7 @@ function DropdownMenuContent({
       <DropdownMenuPrimitive.Content
         data-slot="dropdown-menu-content"
         sideOffset={sideOffset}
-        className={cn(styles.dropdown-menu_6,
+        className={cn(styles['dropdown-menu_6'],
           className,
         )}
         {...props}
@@ -74,7 +74,7 @@ function DropdownMenuItem({
       data-slot="dropdown-menu-item"
       data-inset={inset}
       data-variant={variant}
-      className={cn(styles.dropdown-menu_7,
+      className={cn(styles['dropdown-menu_7'],
         className,
       )}
       {...props}
@@ -91,15 +91,15 @@ function DropdownMenuCheckboxItem({
   return (
     <DropdownMenuPrimitive.CheckboxItem
       data-slot="dropdown-menu-checkbox-item"
-      className={cn(styles.dropdown-menu_8,
+      className={cn(styles['dropdown-menu_8'],
         className,
       )}
       checked={checked}
       {...props}
     >
-      <span className={styles.dropdown-menu_1}>
+      <span className={styles['dropdown-menu_1']}>
         <DropdownMenuPrimitive.ItemIndicator>
-          <CheckIcon className={styles.dropdown-menu_2} />
+          <CheckIcon className={styles['dropdown-menu_2']} />
         </DropdownMenuPrimitive.ItemIndicator>
       </span>
       {children}
@@ -126,14 +126,14 @@ function DropdownMenuRadioItem({
   return (
     <DropdownMenuPrimitive.RadioItem
       data-slot="dropdown-menu-radio-item"
-      className={cn(styles.dropdown-menu_9,
+      className={cn(styles['dropdown-menu_9'],
         className,
       )}
       {...props}
     >
-      <span className={styles.dropdown-menu_3}>
+      <span className={styles['dropdown-menu_3']}>
         <DropdownMenuPrimitive.ItemIndicator>
-          <CircleIcon className={styles.dropdown-menu_4} />
+          <CircleIcon className={styles['dropdown-menu_4']} />
         </DropdownMenuPrimitive.ItemIndicator>
       </span>
       {children}
@@ -152,7 +152,7 @@ function DropdownMenuLabel({
     <DropdownMenuPrimitive.Label
       data-slot="dropdown-menu-label"
       data-inset={inset}
-      className={cn(styles.dropdown-menu_10,
+      className={cn(styles['dropdown-menu_10'],
         className,
       )}
       {...props}
@@ -167,7 +167,7 @@ function DropdownMenuSeparator({
   return (
     <DropdownMenuPrimitive.Separator
       data-slot="dropdown-menu-separator"
-      className={cn(styles.dropdown-menu_11, className)}
+      className={cn(styles['dropdown-menu_11'], className)}
       {...props}
     />
   );
@@ -180,7 +180,7 @@ function DropdownMenuShortcut({
   return (
     <span
       data-slot="dropdown-menu-shortcut"
-      className={cn(styles.dropdown-menu_12,
+      className={cn(styles['dropdown-menu_12'],
         className,
       )}
       {...props}
@@ -206,13 +206,13 @@ function DropdownMenuSubTrigger({
     <DropdownMenuPrimitive.SubTrigger
       data-slot="dropdown-menu-sub-trigger"
       data-inset={inset}
-      className={cn(styles.dropdown-menu_13,
+      className={cn(styles['dropdown-menu_13'],
         className,
       )}
       {...props}
     >
       {children}
-      <ChevronRightIcon className={styles.dropdown-menu_5} />
+      <ChevronRightIcon className={styles['dropdown-menu_5']} />
     </DropdownMenuPrimitive.SubTrigger>
   );
 }
@@ -224,7 +224,7 @@ function DropdownMenuSubContent({
   return (
     <DropdownMenuPrimitive.SubContent
       data-slot="dropdown-menu-sub-content"
-      className={cn(styles.dropdown-menu_14,
+      className={cn(styles['dropdown-menu_14'],
         className,
       )}
       {...props}

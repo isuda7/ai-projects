@@ -3,8 +3,8 @@
 
 import * as React from "react";
 import * as SeparatorPrimitive from "@radix-ui/react-separator";
-import styles from "./Separator.module.scss";
-import { cn } from "./utils";
+import styles from "./separator.module.scss";
+import { cn } from "@/utils/cn";
 
 function Separator({
   className,

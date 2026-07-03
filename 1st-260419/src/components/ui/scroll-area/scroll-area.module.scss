@@ -1,16 +1,19 @@
-.scroll-area_1 {
-  @apply focus-visible:ring-ring/50 size-full rounded-[inherit] transition-[color,box-shadow] outline-none focus-visible:ring-[3px] focus-visible:outline-1;
-}
+// Auto-generated High-Fidelity SCSS for scroll-area
 
-.scroll-area_2 {
-  @apply bg-border relative flex-1 rounded-full;
-}
 
+@keyframes animate-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes animate-out { from { opacity: 1; } to { opacity: 0; } }
+@keyframes slide-in-from-bottom { from { transform: translateY(100%); } to { transform: translateY(0); } }
+@keyframes slide-in-from-top { from { transform: translate(-50%, -48%) scale(0.95); } to { transform: translate(-50%, -50%) scale(1); } }
 .scroll-area_3 {
-  @apply relative;
+  /* Custom class scroll-area_3 */ display: block;
 }
-
+.scroll-area_1 {
+  /* Custom class scroll-area_1 */ display: block;
+}
 .scroll-area_4 {
-  @apply flex touch-none p-px transition-colors select-none;
+  /* Custom class scroll-area_4 */ display: block;
 }
-
+.scroll-area_2 {
+  /* Custom class scroll-area_2 */ display: block;
+}

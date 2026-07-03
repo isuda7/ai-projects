@@ -1,7 +1,7 @@
 // @ts-nocheck
 import * as React from "react";
-import styles from "./Skeleton.module.scss";
-import { cn } from "./utils";
+import styles from "./skeleton.module.scss";
+import { cn } from "@/utils/cn";
 
 function Skeleton({ className, ...props }: React.ComponentProps<"div">) {
   return (

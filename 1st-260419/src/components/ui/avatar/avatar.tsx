@@ -5,7 +5,7 @@ import styles from './avatar.module.scss';
 import * as React from "react";
 import * as AvatarPrimitive from "@radix-ui/react-avatar";
 
-import { cn } from "./utils";
+import { cn } from "@/utils/cn";
 
 function Avatar({
   className,

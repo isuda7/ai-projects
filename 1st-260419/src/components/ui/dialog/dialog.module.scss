@@ -1,32 +1,15 @@
-.dialog_1 {
-  @apply ring-offset-background focus:ring-ring data-[state=open]:bg-accent data-[state=open]:text-muted-foreground absolute top-4 right-4 rounded-xs opacity-70 transition-opacity hover:opacity-100 focus:ring-2 focus:ring-offset-2 focus:outline-hidden disabled:pointer-events-none [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4;
-}
+// Auto-generated High-Fidelity SCSS for dialog
 
-.dialog_2 {
-  @apply sr-only;
-}
 
-.dialog_3 {
-  @apply data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 fixed inset-0 z-50 bg-black/50;
-}
+@keyframes animate-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes animate-out { from { opacity: 1; } to { opacity: 0; } }
+@keyframes slide-in-from-bottom { from { transform: translateY(100%); } to { transform: translateY(0); } }
+@keyframes slide-in-from-top { from { transform: translate(-50%, -48%) scale(0.95); } to { transform: translate(-50%, -50%) scale(1); } }
 
-.dialog_4 {
-  @apply bg-background data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 fixed top-[50%] left-[50%] z-50 grid w-full max-w-[calc(100%-32rem)] translate-x-[-50%] translate-y-[-50%] gap-4 rounded-lg border p-6 shadow-lg duration-200 sm:max-w-lg;
-}
-
-.dialog_5 {
-  @apply flex flex-col gap-2 text-center sm:text-left;
-}
-
-.dialog_6 {
-  @apply flex flex-col-reverse gap-2 sm:flex-row sm:justify-end;
-}
-
-.dialog_7 {
-  @apply text-lg leading-none font-semibold;
-}
-
-.dialog_8 {
-  @apply text-muted-foreground text-sm;
-}
-
+      .overlay { position: fixed; inset: 0; z-index: 50; background-color: rgba(0,0,0,0.8); backdrop-filter: blur(4px); &[data-state="open"] { animation: animate-in 0.2s ease-out; } &[data-state="closed"] { animation: animate-out 0.2s ease-in; } }
+      .content { position: fixed; left: 50%; top: 50%; transform: translate(-50%, -50%); z-index: 51; display: grid; width: 100%; max-width: 32rem; gap: 16px; background-color: var(--color-background, #fff); border: 1px solid var(--color-border, #e5e7eb); border-radius: var(--radius-lg, 8px); padding: 24px; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); &[data-state="open"] { animation: slide-in-from-top 0.2s ease-out; } }
+      .header { display: flex; flex-direction: column; gap: 6px; text-align: left; }
+      .footer { display: flex; justify-content: flex-end; gap: 8px; margin-top: 16px; }
+      .title { font-size: 1.125rem; font-weight: 600; letter-spacing: -0.025em; margin: 0; }
+      .description { font-size: 0.875rem; color: var(--color-muted-foreground, #6b7280); margin: 0; }
+    

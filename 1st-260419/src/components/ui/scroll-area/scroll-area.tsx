@@ -5,7 +5,7 @@ import styles from './scroll-area.module.scss';
 import * as React from "react";
 import * as ScrollAreaPrimitive from "@radix-ui/react-scroll-area";
 
-import { cn } from "./utils";
+import { cn } from "@/utils/cn";
 
 function ScrollArea({
   className,
@@ -15,12 +15,12 @@ function ScrollArea({
   return (
     <ScrollAreaPrimitive.Root
       data-slot="scroll-area"
-      className={cn(styles.scroll-area_3, className)}
+      className={cn(styles['scroll-area_3'], className)}
       {...props}
     >
       <ScrollAreaPrimitive.Viewport
         data-slot="scroll-area-viewport"
-        className={styles.scroll-area_1}
+        className={styles['scroll-area_1']}
       >
         {children}
       </ScrollAreaPrimitive.Viewport>
@@ -39,7 +39,7 @@ function ScrollBar({
     <ScrollAreaPrimitive.ScrollAreaScrollbar
       data-slot="scroll-area-scrollbar"
       orientation={orientation}
-      className={cn(styles.scroll-area_4,
+      className={cn(styles['scroll-area_4'],
         orientation === "vertical" &&
           "h-full w-2.5 border-l border-l-transparent",
         orientation === "horizontal" &&
@@ -50,7 +50,7 @@ function ScrollBar({
     >
       <ScrollAreaPrimitive.ScrollAreaThumb
         data-slot="scroll-area-thumb"
-        className={styles.scroll-area_2}
+        className={styles['scroll-area_2']}
       />
     </ScrollAreaPrimitive.ScrollAreaScrollbar>
   );

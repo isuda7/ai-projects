@@ -1,4 +1,20 @@
-.textarea_1 {
-  @apply resize-none border-input placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive dark:bg-input/30 flex field-sizing-content min-h-16 w-full rounded-md border bg-input-background px-3 py-2 text-base transition-[color,box-shadow] outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50 md:text-sm;
-}
+// Auto-generated High-Fidelity SCSS for textarea
 
+
+@keyframes animate-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes animate-out { from { opacity: 1; } to { opacity: 0; } }
+@keyframes slide-in-from-bottom { from { transform: translateY(100%); } to { transform: translateY(0); } }
+@keyframes slide-in-from-top { from { transform: translate(-50%, -48%) scale(0.95); } to { transform: translate(-50%, -50%) scale(1); } }
+
+      .textarea { display: flex; min-height: 80px; width: 100%; border-radius: var(--radius-md, 6px); border: 1px solid var(--color-border, #e5e7eb); background-color: transparent; padding: 8px 12px; font-size: 0.875rem; resize: vertical; &::placeholder { color: var(--color-muted-foreground, #9ca3af); } 
+    &:focus-visible {
+      outline: none;
+      box-shadow: 0 0 0 2px var(--color-background, #fff), 0 0 0 4px var(--color-primary, #0294de);
+    }
+   
+    &:disabled, &[data-disabled] {
+      cursor: not-allowed;
+      opacity: 0.5;
+    }
+   }
+    

@@ -25,3 +25,6 @@ const Toaster = ({ ...props }: ToasterProps) => {
 };
 
 export { Toaster };
+
+// Mock added by script
+export const Sonner = (props?: any) => null;

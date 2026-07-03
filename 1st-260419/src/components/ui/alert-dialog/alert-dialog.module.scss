@@ -1,24 +1,17 @@
-.alert-dialog_1 {
-  @apply data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 fixed inset-0 z-50 bg-black/50;
-}
+// Auto-generated High-Fidelity SCSS for alert-dialog
 
-.alert-dialog_2 {
-  @apply bg-background data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 fixed top-[50%] left-[50%] z-50 grid w-full max-w-[calc(100%-32rem)] translate-x-[-50%] translate-y-[-50%] gap-4 rounded-lg border p-6 shadow-lg duration-200 sm:max-w-lg;
-}
 
-.alert-dialog_3 {
-  @apply flex flex-col gap-2 text-center sm:text-left;
-}
-
-.alert-dialog_4 {
-  @apply flex flex-col-reverse gap-2 sm:flex-row sm:justify-end;
-}
-
-.alert-dialog_5 {
-  @apply text-lg font-semibold;
-}
-
-.alert-dialog_6 {
-  @apply text-muted-foreground text-sm;
-}
-
+@keyframes animate-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes animate-out { from { opacity: 1; } to { opacity: 0; } }
+@keyframes slide-in-from-bottom { from { transform: translateY(100%); } to { transform: translateY(0); } }
+@keyframes slide-in-from-top { from { transform: translate(-50%, -48%) scale(0.95); } to { transform: translate(-50%, -50%) scale(1); } }
+// Uses dialog structure mostly, so copy it
+      .overlay { position: fixed; inset: 0; z-index: 50; background-color: rgba(0,0,0,0.8); backdrop-filter: blur(4px); &[data-state="open"] { animation: animate-in 0.2s ease-out; } }
+      .content { position: fixed; left: 50%; top: 50%; transform: translate(-50%, -50%); z-index: 51; display: grid; width: 100%; max-width: 32rem; gap: 16px; background-color: var(--color-background, #fff); border: 1px solid var(--color-border, #e5e7eb); border-radius: var(--radius-lg, 8px); padding: 24px; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); &[data-state="open"] { animation: slide-in-from-top 0.2s ease-out; } }
+      .header { display: flex; flex-direction: column; gap: 6px; text-align: center; @media (min-width: 640px) { text-align: left; } }
+      .footer { display: flex; flex-direction: column-reverse; gap: 8px; margin-top: 16px; @media (min-width: 640px) { flex-direction: row; justify-content: flex-end; gap: 8px; } }
+      .title { font-size: 1.125rem; font-weight: 600; margin: 0; }
+      .description { font-size: 0.875rem; color: var(--color-muted-foreground, #6b7280); margin: 0; }
+      .cancel { margin-top: 8px; @media (min-width: 640px) { margin-top: 0; } }
+      .action { }
+    

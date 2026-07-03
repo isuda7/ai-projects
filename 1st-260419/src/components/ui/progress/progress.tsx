@@ -3,8 +3,8 @@
 
 import * as React from "react";
 import * as ProgressPrimitive from "@radix-ui/react-progress";
-import styles from "./Progress.module.scss";
-import { cn } from "./utils";
+import styles from "./progress.module.scss";
+import { cn } from "@/utils/cn";
 
 function Progress({
   className,

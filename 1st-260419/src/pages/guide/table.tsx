@@ -1,23 +1,110 @@
 // @ts-nocheck
 import React from 'react';
-import GuideSection from '@/components/guide/GuideSection';
-import * as Comp from '@/components/ui/table/table';
+import styles from './template.module.scss';
+import GuideSection from './components/guide-section';
+import { Table, TableHeader, TableRow, TableHead, TableBody, TableCell, TableCaption, TableFooter } from '@/components/ui/table/table';
 
-const TableGuide = () => {
+
+
+const TableGuidePage = () => {
   return (
-    <div className="guide-wrapper">
-      <div style={{ padding: '32px' }}>
-        <h1 style={{ fontSize: '24px', fontWeight: 'bold', marginBottom: '16px' }}>Table</h1>
-        <p style={{ marginBottom: '32px' }}>This is the automatically generated guide page for the Table component.</p>
-        <div style={{ border: '1px solid #e2e8f0', borderRadius: '8px', padding: '24px' }}>
+    <div className={styles.wrapper}>
+      <header className={styles.header}>
+        <h1 className={styles.title_h1}>Table</h1>
+        <p className={styles.description}>
+          행과 열로 이루어진 복잡한 데이터를 표시하는 표 형태의 컴포넌트입니다.
+        </p>
+      </header>
+
+      <GuideSection title="1. Overview & Specs">
+          <p className={styles.description}>
+            Table 컴포넌트의 기본 사용법과 지원하는 주요 속성(Props)을 안내합니다.
+          </p>
           
-          <div style={{ fontSize: '14px', color: '#64748b', display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100px' }}>
-            Component <strong>{ ' ' + 'Table' + ' ' }</strong> has been successfully migrated to SCSS module format.
-            <br/>(Detailed props usage guide to be added)
+          <div className={styles.guideline}>
+            <strong>Guideline:</strong> 프로젝트의 디자인 시스템 규칙에 맞추어 사용하세요.
+          </div>
+          <div className={styles.code_view}>
+            <pre>
+              <code>
+{`import { Table, TableHeader, TableRow, TableHead, TableBody, TableCell, TableCaption, TableFooter } from '@/components/ui/table/table';
+
+// Basic Component Usage
+<Table>
+  <TableCaption>A list of your recent invoices.</TableCaption>
+  <TableHeader>
+    <TableRow>
+      <TableHead className="w-[100px]">Invoice</TableHead>
+      <TableHead className="text-right">Amount</TableHead>
+    </TableRow>
+  </TableHeader>
+  <TableBody>
+    <TableRow>
+      <TableCell className="font-medium">INV001</TableCell>
+      <TableCell className="text-right">$250.00</TableCell>
+    </TableRow>
+  </TableBody>
+</Table>`}
+              </code>
+            </pre>
+          </div>
+      </GuideSection>
+
+      <GuideSection title="2. Basic Usage">
+          <p className={styles.description}>
+            가장 기본적인 형태의 렌더링 예제입니다.
+          </p>
+        <div className={styles.sub_section}>
+          <h3 className={styles.title_h3}>2.1. Default State</h3>
+          <div className={styles.preview}>
+            
+              <Table className="border rounded-md shadow-sm">
+  <TableCaption>A list of your recent invoices.</TableCaption>
+  <TableHeader>
+    <TableRow>
+      <TableHead className="w-[100px]">Invoice</TableHead>
+      <TableHead>Status</TableHead>
+      <TableHead>Method</TableHead>
+      <TableHead className="text-right">Amount</TableHead>
+    </TableRow>
+  </TableHeader>
+  <TableBody>
+    <TableRow><TableCell className="font-medium">INV001</TableCell><TableCell>Paid</TableCell><TableCell>Credit Card</TableCell><TableCell className="text-right">$250.00</TableCell></TableRow>
+    <TableRow><TableCell className="font-medium">INV002</TableCell><TableCell>Pending</TableCell><TableCell>PayPal</TableCell><TableCell className="text-right">$150.00</TableCell></TableRow>
+    <TableRow><TableCell className="font-medium">INV003</TableCell><TableCell>Unpaid</TableCell><TableCell>Bank Transfer</TableCell><TableCell className="text-right">$350.00</TableCell></TableRow>
+  </TableBody>
+  <TableFooter>
+    <TableRow><TableCell colSpan={3}>Total</TableCell><TableCell className="text-right">$750.00</TableCell></TableRow>
+  </TableFooter>
+</Table>
+            </div>
+          <div className={styles.code_view}>
+            <pre>
+              <code>
+{`<Table>
+  <TableCaption>A list of your recent invoices.</TableCaption>
+  <TableHeader>
+    <TableRow>
+      <TableHead className="w-[100px]">Invoice</TableHead>
+      <TableHead className="text-right">Amount</TableHead>
+    </TableRow>
+  </TableHeader>
+  <TableBody>
+    <TableRow>
+      <TableCell className="font-medium">INV001</TableCell>
+      <TableCell className="text-right">$250.00</TableCell>
+    </TableRow>
+  </TableBody>
+</Table>`}
+              </code>
+            </pre>
           </div>
         </div>
-      </div>
+      </GuideSection>
+
+      
     </div>
   );
 };
-export default TableGuide;
+
+export default TableGuidePage;

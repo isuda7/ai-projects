@@ -5,7 +5,7 @@ import styles from './hover-card.module.scss';
 import * as React from "react";
 import * as HoverCardPrimitive from "@radix-ui/react-hover-card";
 
-import { cn } from "./utils";
+import { cn } from "@/utils/cn";
 
 function HoverCard({
   ...props
@@ -33,7 +33,7 @@ function HoverCardContent({
         data-slot="hover-card-content"
         align={align}
         sideOffset={sideOffset}
-        className={cn(styles.hover-card_1,
+        className={cn(styles['hover-card_1'],
           className,
         )}
         {...props}

@@ -1,32 +1,31 @@
-.breadcrumb_1 {
-  @apply size-4;
-}
+// Auto-generated High-Fidelity SCSS for breadcrumb
 
-.breadcrumb_2 {
-  @apply sr-only;
-}
 
+@keyframes animate-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes animate-out { from { opacity: 1; } to { opacity: 0; } }
+@keyframes slide-in-from-bottom { from { transform: translateY(100%); } to { transform: translateY(0); } }
+@keyframes slide-in-from-top { from { transform: translate(-50%, -48%) scale(0.95); } to { transform: translate(-50%, -50%) scale(1); } }
 .breadcrumb_3 {
-  @apply text-muted-foreground flex flex-wrap items-center gap-1.5 text-sm break-words sm:gap-2.5;
+  /* Custom class breadcrumb_3 */ display: block;
 }
-
 .breadcrumb_4 {
-  @apply inline-flex items-center gap-1.5;
+  /* Custom class breadcrumb_4 */ display: block;
 }
-
 .breadcrumb_5 {
-  @apply hover:text-foreground transition-colors;
+  /* Custom class breadcrumb_5 */ display: block;
 }
-
 .breadcrumb_6 {
-  @apply text-foreground font-normal;
+  /* Custom class breadcrumb_6 */ display: block;
 }
-
 .breadcrumb_7 {
-  @apply [&>svg]:size-3.5;
+  /* Custom class breadcrumb_7 */ display: block;
 }
-
 .breadcrumb_8 {
-  @apply flex size-9 items-center justify-center;
+  /* Custom class breadcrumb_8 */ display: block;
 }
-
+.breadcrumb_1 {
+  /* Custom class breadcrumb_1 */ display: block;
+}
+.breadcrumb_2 {
+  /* Custom class breadcrumb_2 */ display: block;
+}

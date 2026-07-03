@@ -2,8 +2,8 @@
 "use client";
 
 import * as React from "react";
-import styles from "./Table.module.scss";
-import { cn } from "./utils";
+import styles from "./table.module.scss";
+import { cn } from "@/utils/cn";
 
 function Table({ className, ...props }: React.ComponentProps<"table">) {
   return (

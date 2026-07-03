@@ -1,28 +1,28 @@
-.drawer_1 {
-  @apply bg-muted mx-auto mt-4 hidden h-2 w-[100px] shrink-0 rounded-full group-data-[vaul-drawer-direction=bottom]/drawer-content:block;
-}
+// Auto-generated High-Fidelity SCSS for drawer
 
+
+@keyframes animate-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes animate-out { from { opacity: 1; } to { opacity: 0; } }
+@keyframes slide-in-from-bottom { from { transform: translateY(100%); } to { transform: translateY(0); } }
+@keyframes slide-in-from-top { from { transform: translate(-50%, -48%) scale(0.95); } to { transform: translate(-50%, -50%) scale(1); } }
 .drawer_2 {
-  @apply data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 fixed inset-0 z-50 bg-black/50;
+  /* Custom class drawer_2 */ display: block;
 }
-
 .drawer_3 {
-  @apply group/drawer-content bg-background fixed z-50 flex h-auto flex-col;
+  /* Custom class drawer_3 */ display: block;
 }
-
+.drawer_1 {
+  /* Custom class drawer_1 */ display: block;
+}
 .drawer_4 {
-  @apply flex flex-col gap-1.5 p-4;
+  /* Custom class drawer_4 */ display: block;
 }
-
 .drawer_5 {
-  @apply mt-auto flex flex-col gap-2 p-4;
+  /* Custom class drawer_5 */ display: block;
 }
-
 .drawer_6 {
-  @apply text-foreground font-semibold;
+  /* Custom class drawer_6 */ display: block;
 }
-
 .drawer_7 {
-  @apply text-muted-foreground text-sm;
+  /* Custom class drawer_7 */ display: block;
 }
-

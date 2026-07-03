@@ -1,12 +1,12 @@
 // @ts-nocheck
-import styles from './alert-dialog.module.scss';
+import styles from "./alert-dialog.module.scss";
 "use client";
 
 import * as React from "react";
 import * as AlertDialogPrimitive from "@radix-ui/react-alert-dialog";
 
-import { cn } from "./utils";
-import { buttonVariants } from "./button";
+import { cn } from "@/utils/cn";
+import { buttonVariants } from "@/components/ui/button/button";
 
 function AlertDialog({
   ...props
@@ -37,7 +37,7 @@ function AlertDialogOverlay({
   return (
     <AlertDialogPrimitive.Overlay
       data-slot="alert-dialog-overlay"
-      className={cn(styles.alert-dialog_1,
+      className={cn(styles['alert-dialog_1'],
         className,
       )}
       {...props}
@@ -54,7 +54,7 @@ function AlertDialogContent({
       <AlertDialogOverlay />
       <AlertDialogPrimitive.Content
         data-slot="alert-dialog-content"
-        className={cn(styles.alert-dialog_2,
+        className={cn(styles['alert-dialog_2'],
           className,
         )}
         {...props}
@@ -70,7 +70,7 @@ function AlertDialogHeader({
   return (
     <div
       data-slot="alert-dialog-header"
-      className={cn(styles.alert-dialog_3, className)}
+      className={cn(styles['alert-dialog_3'], className)}
       {...props}
     />
   );
@@ -83,7 +83,7 @@ function AlertDialogFooter({
   return (
     <div
       data-slot="alert-dialog-footer"
-      className={cn(styles.alert-dialog_4,
+      className={cn(styles['alert-dialog_4'],
         className,
       )}
       {...props}
@@ -98,7 +98,7 @@ function AlertDialogTitle({
   return (
     <AlertDialogPrimitive.Title
       data-slot="alert-dialog-title"
-      className={cn(styles.alert-dialog_5, className)}
+      className={cn(styles['alert-dialog_5'], className)}
       {...props}
     />
   );
@@ -111,7 +111,7 @@ function AlertDialogDescription({
   return (
     <AlertDialogPrimitive.Description
       data-slot="alert-dialog-description"
-      className={cn(styles.alert-dialog_6, className)}
+      className={cn(styles['alert-dialog_6'], className)}
       {...props}
     />
   );

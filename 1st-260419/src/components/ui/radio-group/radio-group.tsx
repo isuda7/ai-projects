@@ -6,7 +6,7 @@ import * as React from "react";
 import * as RadioGroupPrimitive from "@radix-ui/react-radio-group";
 import { CircleIcon } from "lucide-react";
 
-import { cn } from "./utils";
+import { cn } from "@/utils/cn";
 
 function RadioGroup({
   className,
@@ -15,7 +15,7 @@ function RadioGroup({
   return (
     <RadioGroupPrimitive.Root
       data-slot="radio-group"
-      className={cn(styles.radio-group_3, className)}
+      className={cn(styles['radio-group_3'], className)}
       {...props}
     />
   );
@@ -28,16 +28,16 @@ function RadioGroupItem({
   return (
     <RadioGroupPrimitive.Item
       data-slot="radio-group-item"
-      className={cn(styles.radio-group_4,
+      className={cn(styles['radio-group_4'],
         className,
       )}
       {...props}
     >
       <RadioGroupPrimitive.Indicator
         data-slot="radio-group-indicator"
-        className={styles.radio-group_1}
+        className={styles['radio-group_1']}
       >
-        <CircleIcon className={styles.radio-group_2} />
+        <CircleIcon className={styles['radio-group_2']} />
       </RadioGroupPrimitive.Indicator>
     </RadioGroupPrimitive.Item>
   );
