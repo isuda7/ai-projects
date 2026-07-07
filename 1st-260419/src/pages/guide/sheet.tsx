@@ -2,6 +2,7 @@
 import React from 'react';
 import styles from './template.module.scss';
 import GuideSection from './components/guide-section';
+import CodeBlock from './components/code-block';
 import { Sheet, SheetTrigger, SheetContent, SheetHeader, SheetTitle, SheetDescription, SheetFooter, SheetClose  } from '@/components/ui/sheet';
 import { Button  } from '@/components/ui/button';
 import { Input  } from '@/components/ui/input';
@@ -59,7 +60,7 @@ const SheetGuidePage = () => {
           <div className={styles.guideline}>
             <strong>Guideline:</strong> 프로젝트의 디자인 시스템 규칙에 맞추어 사용하세요.
           </div>
-          <div className={styles.code_view}>
+          <CodeBlock>
             <pre>
               <code>
 {`import { Sheet, SheetTrigger, SheetContent, SheetHeader, SheetTitle, SheetDescription, SheetFooter, SheetClose  } from '@/components/ui/sheet';
@@ -83,7 +84,7 @@ import { Label  } from '@/components/ui/label';
 </Sheet>`}
               </code>
             </pre>
-          </div>
+          </CodeBlock>
       </GuideSection>
 
       <GuideSection title="2. Basic Usage">
@@ -111,7 +112,7 @@ import { Label  } from '@/components/ui/label';
   </SheetContent>
 </Sheet>
             </div>
-          <div className={styles.code_view}>
+          <CodeBlock>
             <pre>
               <code>
 {`<Sheet>
@@ -129,7 +130,7 @@ import { Label  } from '@/components/ui/label';
 </Sheet>`}
               </code>
             </pre>
-          </div>
+          </CodeBlock>
         </div>
       </GuideSection>
 
@@ -147,13 +148,13 @@ import { Label  } from '@/components/ui/label';
   <SheetContent side="left"><SheetHeader><SheetTitle>Left Panel</SheetTitle></SheetHeader><div className="py-4">Content aligned to the left.</div></SheetContent>
 </Sheet>
             </div>
-          <div className={styles.code_view}>
+          <CodeBlock>
             <pre>
               <code>
 {`<SheetContent side="left">...</SheetContent>`}
               </code>
             </pre>
-          </div>
+          </CodeBlock>
         </div>
       </GuideSection>
       

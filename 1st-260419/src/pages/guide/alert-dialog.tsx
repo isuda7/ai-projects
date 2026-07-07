@@ -2,6 +2,7 @@
 import React from 'react';
 import styles from './template.module.scss';
 import GuideSection from './components/guide-section';
+import CodeBlock from './components/code-block';
 import { AlertDialog, AlertDialogTrigger, AlertDialogContent, AlertDialogHeader, AlertDialogTitle, AlertDialogDescription, AlertDialogFooter, AlertDialogCancel, AlertDialogAction  } from '@/components/ui/alert-dialog';
 import { Button  } from '@/components/ui/button';
 
@@ -57,7 +58,7 @@ const AlertDialogGuidePage = () => {
           <div className={styles.guideline}>
             <strong>Guideline:</strong> 프로젝트의 디자인 시스템 규칙에 맞추어 사용하세요.
           </div>
-          <div className={styles.code_view}>
+          <CodeBlock>
             <pre>
               <code>
 {`import { AlertDialog, AlertDialogTrigger, AlertDialogContent, AlertDialogHeader, AlertDialogTitle, AlertDialogDescription, AlertDialogFooter, AlertDialogCancel, AlertDialogAction  } from '@/components/ui/alert-dialog';
@@ -79,7 +80,7 @@ import { Button  } from '@/components/ui/button';
 </AlertDialog>`}
               </code>
             </pre>
-          </div>
+          </CodeBlock>
       </GuideSection>
 
       <GuideSection title="2. Basic Usage">
@@ -104,7 +105,7 @@ import { Button  } from '@/components/ui/button';
   </AlertDialogContent>
 </AlertDialog>
             </div>
-          <div className={styles.code_view}>
+          <CodeBlock>
             <pre>
               <code>
 {`<AlertDialog>
@@ -122,7 +123,7 @@ import { Button  } from '@/components/ui/button';
 </AlertDialog>`}
               </code>
             </pre>
-          </div>
+          </CodeBlock>
         </div>
       </GuideSection>
 
@@ -149,13 +150,13 @@ import { Button  } from '@/components/ui/button';
   </AlertDialogContent>
 </AlertDialog>
             </div>
-          <div className={styles.code_view}>
+          <CodeBlock>
             <pre>
               <code>
 {`<AlertDialogAction className="bg-red-600 text-white hover:bg-red-700">Yes, Revoke</AlertDialogAction>`}
               </code>
             </pre>
-          </div>
+          </CodeBlock>
         </div>
       </GuideSection>
       

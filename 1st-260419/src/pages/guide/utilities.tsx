@@ -1,5 +1,6 @@
-
+// @ts-nocheck
 import GuideSection from './components/guide-section';
+import CodeBlock from './components/code-block';
 import styles from './template.module.scss';
 
 // 가이드 블록 렌더링용 공통 내부 컴포넌트

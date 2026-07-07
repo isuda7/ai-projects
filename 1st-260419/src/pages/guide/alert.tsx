@@ -2,6 +2,7 @@
 import React from 'react';
 import styles from './template.module.scss';
 import GuideSection from './components/guide-section';
+import CodeBlock from './components/code-block';
 import { Alert, AlertTitle, AlertDescription  } from '@/components/ui/alert';
 import { AlertCircle, Terminal } from 'lucide-react';
 
@@ -51,7 +52,7 @@ const AlertGuidePage = () => {
           <div className={styles.guideline}>
             <strong>Guideline:</strong> 프로젝트의 디자인 시스템 규칙에 맞추어 사용하세요.
           </div>
-          <div className={styles.code_view}>
+          <CodeBlock>
             <pre>
               <code>
 {`import { Alert, AlertTitle, AlertDescription  } from '@/components/ui/alert';
@@ -65,7 +66,7 @@ import { AlertCircle, Terminal } from 'lucide-react';
 </Alert>`}
               </code>
             </pre>
-          </div>
+          </CodeBlock>
       </GuideSection>
 
       <GuideSection title="2. Basic Usage">
@@ -82,7 +83,7 @@ import { AlertCircle, Terminal } from 'lucide-react';
   <AlertDescription>You can add components to your app using the cli.</AlertDescription>
 </Alert>
             </div>
-          <div className={styles.code_view}>
+          <CodeBlock>
             <pre>
               <code>
 {`<Alert>
@@ -92,7 +93,7 @@ import { AlertCircle, Terminal } from 'lucide-react';
 </Alert>`}
               </code>
             </pre>
-          </div>
+          </CodeBlock>
         </div>
       </GuideSection>
 
@@ -111,7 +112,7 @@ import { AlertCircle, Terminal } from 'lucide-react';
   <AlertDescription>Your session has expired. Please log in again to continue.</AlertDescription>
 </Alert>
             </div>
-          <div className={styles.code_view}>
+          <CodeBlock>
             <pre>
               <code>
 {`<Alert variant="destructive">
@@ -121,7 +122,7 @@ import { AlertCircle, Terminal } from 'lucide-react';
 </Alert>`}
               </code>
             </pre>
-          </div>
+          </CodeBlock>
         </div>
       </GuideSection>
       

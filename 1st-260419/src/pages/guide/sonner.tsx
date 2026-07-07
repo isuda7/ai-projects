@@ -2,6 +2,7 @@
 import React from 'react';
 import styles from './template.module.scss';
 import GuideSection from './components/guide-section';
+import CodeBlock from './components/code-block';
 import { toast } from "sonner";
 import { Toaster  } from '@/components/ui/sonner';
 import { Button  } from '@/components/ui/button';
@@ -52,7 +53,7 @@ const SonnerGuidePage = () => {
           <div className={styles.guideline}>
             <strong>Guideline:</strong> 프로젝트의 디자인 시스템 규칙에 맞추어 사용하세요.
           </div>
-          <div className={styles.code_view}>
+          <CodeBlock>
             <pre>
               <code>
 {`import { toast } from "sonner";
@@ -77,7 +78,7 @@ import { Button  } from '@/components/ui/button';
 </Button>`}
               </code>
             </pre>
-          </div>
+          </CodeBlock>
       </GuideSection>
 
       <GuideSection title="2. Basic Usage">
@@ -90,7 +91,7 @@ import { Button  } from '@/components/ui/button';
             
               <div><Toaster /><Button variant="outline" onClick={() => toast("Event has been created", { description: "Sunday, December 03, 2023 at 9:00 AM" })}>Show Toast</Button></div>
             </div>
-          <div className={styles.code_view}>
+          <CodeBlock>
             <pre>
               <code>
 {`// In your root layout:
@@ -110,7 +111,7 @@ import { Button  } from '@/components/ui/button';
 </Button>`}
               </code>
             </pre>
-          </div>
+          </CodeBlock>
         </div>
       </GuideSection>
 

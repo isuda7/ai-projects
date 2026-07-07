@@ -2,6 +2,7 @@
 import React from 'react';
 import styles from './template.module.scss';
 import GuideSection from './components/guide-section';
+import CodeBlock from './components/code-block';
 import { Table, TableHeader, TableRow, TableHead, TableBody, TableCell, TableCaption, TableFooter  } from '@/components/ui/table';
 
 
@@ -24,7 +25,7 @@ const TableGuidePage = () => {
           <div className={styles.guideline}>
             <strong>Guideline:</strong> 프로젝트의 디자인 시스템 규칙에 맞추어 사용하세요.
           </div>
-          <div className={styles.code_view}>
+          <CodeBlock>
             <pre>
               <code>
 {`import { Table, TableHeader, TableRow, TableHead, TableBody, TableCell, TableCaption, TableFooter  } from '@/components/ui/table';
@@ -47,7 +48,7 @@ const TableGuidePage = () => {
 </Table>`}
               </code>
             </pre>
-          </div>
+          </CodeBlock>
       </GuideSection>
 
       <GuideSection title="2. Basic Usage">
@@ -78,7 +79,7 @@ const TableGuidePage = () => {
   </TableFooter>
 </Table>
             </div>
-          <div className={styles.code_view}>
+          <CodeBlock>
             <pre>
               <code>
 {`<Table>
@@ -98,7 +99,7 @@ const TableGuidePage = () => {
 </Table>`}
               </code>
             </pre>
-          </div>
+          </CodeBlock>
         </div>
       </GuideSection>
 

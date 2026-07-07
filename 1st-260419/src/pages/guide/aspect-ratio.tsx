@@ -2,6 +2,7 @@
 import React from 'react';
 import styles from './template.module.scss';
 import GuideSection from './components/guide-section';
+import CodeBlock from './components/code-block';
 import { AspectRatio  } from '@/components/ui/aspect-ratio';
 
 
@@ -44,7 +45,7 @@ const AspectRatioGuidePage = () => {
           <div className={styles.guideline}>
             <strong>Guideline:</strong> 프로젝트의 디자인 시스템 규칙에 맞추어 사용하세요.
           </div>
-          <div className={styles.code_view}>
+          <CodeBlock>
             <pre>
               <code>
 {`import { AspectRatio  } from '@/components/ui/aspect-ratio';
@@ -57,7 +58,7 @@ const AspectRatioGuidePage = () => {
 </div>`}
               </code>
             </pre>
-          </div>
+          </CodeBlock>
       </GuideSection>
 
       <GuideSection title="2. Basic Usage">
@@ -70,7 +71,7 @@ const AspectRatioGuidePage = () => {
             
               <div className="w-[300px] shadow-sm"><AspectRatio ratio={16 / 9} className="bg-muted"><img src="https://images.unsplash.com/photo-1588345921523-c2dcdb7f1dcd?w=800&dpr=2&q=80" alt="Photo" className="rounded-md object-cover w-full h-full" /></AspectRatio></div>
             </div>
-          <div className={styles.code_view}>
+          <CodeBlock>
             <pre>
               <code>
 {`<div className="w-[300px]">
@@ -80,7 +81,7 @@ const AspectRatioGuidePage = () => {
 </div>`}
               </code>
             </pre>
-          </div>
+          </CodeBlock>
         </div>
       </GuideSection>
 
@@ -95,7 +96,7 @@ const AspectRatioGuidePage = () => {
             
               <div className="w-[150px] shadow-sm"><AspectRatio ratio={1} className="bg-muted"><img src="https://images.unsplash.com/photo-1588345921523-c2dcdb7f1dcd?w=400&dpr=2&q=80" alt="Photo" className="rounded-md object-cover w-full h-full" /></AspectRatio></div>
             </div>
-          <div className={styles.code_view}>
+          <CodeBlock>
             <pre>
               <code>
 {`<AspectRatio ratio={1}>
@@ -103,7 +104,7 @@ const AspectRatioGuidePage = () => {
 </AspectRatio>`}
               </code>
             </pre>
-          </div>
+          </CodeBlock>
         </div>
         <div className={styles.sub_section}>
           <h3 className={styles.title_h3}>3.2. Ultrawide (21:9)</h3>
@@ -112,13 +113,13 @@ const AspectRatioGuidePage = () => {
             
               <div className="w-[400px] shadow-sm"><AspectRatio ratio={21 / 9} className="bg-muted"><img src="https://images.unsplash.com/photo-1588345921523-c2dcdb7f1dcd?w=1200&dpr=2&q=80" alt="Photo" className="rounded-md object-cover w-full h-full" /></AspectRatio></div>
             </div>
-          <div className={styles.code_view}>
+          <CodeBlock>
             <pre>
               <code>
 {`<AspectRatio ratio={21 / 9}>...</AspectRatio>`}
               </code>
             </pre>
-          </div>
+          </CodeBlock>
         </div>
       </GuideSection>
       

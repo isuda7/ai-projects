@@ -2,6 +2,7 @@
 import React from 'react';
 import styles from './template.module.scss';
 import GuideSection from './components/guide-section';
+import CodeBlock from './components/code-block';
 import { RadioGroup, RadioGroupItem  } from '@/components/ui/radio-group';
 import { Label  } from '@/components/ui/label';
 
@@ -57,7 +58,7 @@ const RadioGroupGuidePage = () => {
           <div className={styles.guideline}>
             <strong>Guideline:</strong> 프로젝트의 디자인 시스템 규칙에 맞추어 사용하세요.
           </div>
-          <div className={styles.code_view}>
+          <CodeBlock>
             <pre>
               <code>
 {`import { RadioGroup, RadioGroupItem  } from '@/components/ui/radio-group';
@@ -76,7 +77,7 @@ import { Label  } from '@/components/ui/label';
 </RadioGroup>`}
               </code>
             </pre>
-          </div>
+          </CodeBlock>
       </GuideSection>
 
       <GuideSection title="2. Basic Usage">
@@ -102,7 +103,7 @@ import { Label  } from '@/components/ui/label';
   </div>
 </RadioGroup>
             </div>
-          <div className={styles.code_view}>
+          <CodeBlock>
             <pre>
               <code>
 {`<RadioGroup defaultValue="comfortable">
@@ -117,7 +118,7 @@ import { Label  } from '@/components/ui/label';
 </RadioGroup>`}
               </code>
             </pre>
-          </div>
+          </CodeBlock>
         </div>
       </GuideSection>
 
@@ -141,13 +142,13 @@ import { Label  } from '@/components/ui/label';
   </div>
 </RadioGroup>
             </div>
-          <div className={styles.code_view}>
+          <CodeBlock>
             <pre>
               <code>
 {`<RadioGroupItem value="option-two" id="o2" disabled />`}
               </code>
             </pre>
-          </div>
+          </CodeBlock>
         </div>
 
         <div className={styles.sub_section}>

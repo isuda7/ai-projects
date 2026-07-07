@@ -2,6 +2,7 @@
 import React from 'react';
 import styles from './template.module.scss';
 import GuideSection from './components/guide-section';
+import CodeBlock from './components/code-block';
 import { Switch  } from '@/components/ui/switch';
 import { Label  } from '@/components/ui/label';
 
@@ -57,7 +58,7 @@ const SwitchGuidePage = () => {
           <div className={styles.guideline}>
             <strong>Guideline:</strong> 프로젝트의 디자인 시스템 규칙에 맞추어 사용하세요.
           </div>
-          <div className={styles.code_view}>
+          <CodeBlock>
             <pre>
               <code>
 {`import { Switch  } from '@/components/ui/switch';
@@ -70,7 +71,7 @@ import { Label  } from '@/components/ui/label';
 </div>`}
               </code>
             </pre>
-          </div>
+          </CodeBlock>
       </GuideSection>
 
       <GuideSection title="2. Basic Usage">
@@ -83,7 +84,7 @@ import { Label  } from '@/components/ui/label';
             
               <div className="flex items-center space-x-2"><Switch id="airplane-mode" /><Label htmlFor="airplane-mode">Airplane Mode</Label></div>
             </div>
-          <div className={styles.code_view}>
+          <CodeBlock>
             <pre>
               <code>
 {`<div className="flex items-center space-x-2">
@@ -92,7 +93,7 @@ import { Label  } from '@/components/ui/label';
 </div>`}
               </code>
             </pre>
-          </div>
+          </CodeBlock>
         </div>
       </GuideSection>
 
@@ -107,13 +108,13 @@ import { Label  } from '@/components/ui/label';
             
               <div className="flex items-center space-x-2"><Switch id="bluetooth" disabled checked /><Label htmlFor="bluetooth" className="text-gray-400">Bluetooth (Always On)</Label></div>
             </div>
-          <div className={styles.code_view}>
+          <CodeBlock>
             <pre>
               <code>
 {`<Switch id="bluetooth" disabled checked />`}
               </code>
             </pre>
-          </div>
+          </CodeBlock>
         </div>
       </GuideSection>
       

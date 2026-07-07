@@ -2,6 +2,7 @@
 import React from 'react';
 import styles from './template.module.scss';
 import GuideSection from './components/guide-section';
+import CodeBlock from './components/code-block';
 import { Label  } from '@/components/ui/label';
 import { Input  } from '@/components/ui/input';
 import { Checkbox  } from '@/components/ui/checkbox';
@@ -52,7 +53,7 @@ const LabelGuidePage = () => {
           <div className={styles.guideline}>
             <strong>Guideline:</strong> 프로젝트의 디자인 시스템 규칙에 맞추어 사용하세요.
           </div>
-          <div className={styles.code_view}>
+          <CodeBlock>
             <pre>
               <code>
 {`import { Label  } from '@/components/ui/label';
@@ -66,7 +67,7 @@ import { Checkbox  } from '@/components/ui/checkbox';
 </div>`}
               </code>
             </pre>
-          </div>
+          </CodeBlock>
       </GuideSection>
 
       <GuideSection title="2. Basic Usage">
@@ -79,7 +80,7 @@ import { Checkbox  } from '@/components/ui/checkbox';
             
               <div className="flex flex-col space-y-2 w-[300px]"><Label htmlFor="email">Email address</Label><Input type="email" id="email" placeholder="Email" /></div>
             </div>
-          <div className={styles.code_view}>
+          <CodeBlock>
             <pre>
               <code>
 {`<div className="flex flex-col space-y-2 w-[300px]">
@@ -88,7 +89,7 @@ import { Checkbox  } from '@/components/ui/checkbox';
 </div>`}
               </code>
             </pre>
-          </div>
+          </CodeBlock>
         </div>
       </GuideSection>
 
@@ -103,7 +104,7 @@ import { Checkbox  } from '@/components/ui/checkbox';
             
               <div className="flex items-center space-x-2"><Checkbox id="terms" /><Label htmlFor="terms">Accept terms and conditions</Label></div>
             </div>
-          <div className={styles.code_view}>
+          <CodeBlock>
             <pre>
               <code>
 {`<div className="flex items-center space-x-2">
@@ -112,7 +113,7 @@ import { Checkbox  } from '@/components/ui/checkbox';
 </div>`}
               </code>
             </pre>
-          </div>
+          </CodeBlock>
         </div>
       </GuideSection>
       

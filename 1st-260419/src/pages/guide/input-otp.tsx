@@ -2,6 +2,7 @@
 import React from 'react';
 import styles from './template.module.scss';
 import GuideSection from './components/guide-section';
+import CodeBlock from './components/code-block';
 import { InputOTP, InputOTPGroup, InputOTPSlot, InputOTPSeparator  } from '@/components/ui/input-otp';
 
 
@@ -56,7 +57,7 @@ const InputOtpGuidePage = () => {
           <div className={styles.guideline}>
             <strong>Guideline:</strong> 프로젝트의 디자인 시스템 규칙에 맞추어 사용하세요.
           </div>
-          <div className={styles.code_view}>
+          <CodeBlock>
             <pre>
               <code>
 {`import { InputOTP, InputOTPGroup, InputOTPSlot, InputOTPSeparator  } from '@/components/ui/input-otp';
@@ -77,7 +78,7 @@ const InputOtpGuidePage = () => {
 </InputOTP>`}
               </code>
             </pre>
-          </div>
+          </CodeBlock>
       </GuideSection>
 
       <GuideSection title="2. Basic Usage">
@@ -102,7 +103,7 @@ const InputOtpGuidePage = () => {
   </InputOTPGroup>
 </InputOTP>
             </div>
-          <div className={styles.code_view}>
+          <CodeBlock>
             <pre>
               <code>
 {`<InputOTP maxLength={6}>
@@ -120,7 +121,7 @@ const InputOtpGuidePage = () => {
 </InputOTP>`}
               </code>
             </pre>
-          </div>
+          </CodeBlock>
         </div>
       </GuideSection>
 

@@ -2,6 +2,7 @@
 import React from 'react';
 import styles from './template.module.scss';
 import GuideSection from './components/guide-section';
+import CodeBlock from './components/code-block';
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext, type CarouselApi  } from '@/components/ui/carousel';
 import { Card, CardContent  } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -113,7 +114,7 @@ const CarouselGuidePage = () => {
           <div className={styles.guideline}>
             <strong>Guideline:</strong> 프로젝트의 디자인 시스템 규칙에 맞추어 사용하세요.
           </div>
-          <div className={styles.code_view}>
+          <CodeBlock>
             <pre>
               <code>
 {`import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext  } from '@/components/ui/carousel';
@@ -130,7 +131,7 @@ import { Card, CardContent  } from '@/components/ui/card';
 </Carousel>`}
               </code>
             </pre>
-          </div>
+          </CodeBlock>
       </GuideSection>
 
       <GuideSection title="2. Basic Usage">
@@ -159,7 +160,7 @@ import { Card, CardContent  } from '@/components/ui/card';
   <CarouselNext />
 </Carousel></div>
             </div>
-          <div className={styles.code_view}>
+          <CodeBlock>
             <pre>
               <code>
 {`<Carousel opts={{ align: "start", loop: true }}>
@@ -172,7 +173,7 @@ import { Card, CardContent  } from '@/components/ui/card';
 </Carousel>`}
               </code>
             </pre>
-          </div>
+          </CodeBlock>
         </div>
       </GuideSection>
 
@@ -197,13 +198,13 @@ import { Card, CardContent  } from '@/components/ui/card';
   <CarouselNext />
 </Carousel></div>
             </div>
-          <div className={styles.code_view}>
+          <CodeBlock>
             <pre>
               <code>
 {`<CarouselItem className="md:basis-1/2 lg:basis-1/3">...</CarouselItem>`}
               </code>
             </pre>
-          </div>
+          </CodeBlock>
         </div>
         <div className={styles.sub_section}>
           <h3 className={styles.title_h3}>3.2. Outside Navigation Buttons</h3>

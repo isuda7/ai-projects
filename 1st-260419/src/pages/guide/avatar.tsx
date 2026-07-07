@@ -2,6 +2,7 @@
 import React from 'react';
 import styles from './template.module.scss';
 import GuideSection from './components/guide-section';
+import CodeBlock from './components/code-block';
 import { Avatar, AvatarImage, AvatarFallback  } from '@/components/ui/avatar';
 
 
@@ -45,10 +46,10 @@ const AvatarGuidePage = () => {
                   <td>하위 요소를 슬롯으로 렌더링</td>
                 </tr>
                 <tr>
-                  <td><code>size</code></td>
-                  <td><code>"sm" | "md" | "lg" | "xl" | "2xl"</code></td>
-                  <td><code>"md"</code></td>
-                  <td>아바타의 크기를 지정합니다.</td>
+                  <td><code>className</code></td>
+                  <td><code>string</code></td>
+                  <td><code>undefined</code></td>
+                  <td>아바타의 크기 등 스타일을 지정합니다. (예: w-10 h-10)</td>
                 </tr>
               </tbody>
             </table>
@@ -56,7 +57,7 @@ const AvatarGuidePage = () => {
           <div className={styles.guideline}>
             <strong>Guideline:</strong> 프로젝트의 디자인 시스템 규칙에 맞추어 사용하세요.
           </div>
-          <div className={styles.code_view}>
+          <CodeBlock>
             <pre>
               <code>
 {`import { Avatar, AvatarImage, AvatarFallback  } from '@/components/ui/avatar';
@@ -68,7 +69,7 @@ const AvatarGuidePage = () => {
 </Avatar>`}
               </code>
             </pre>
-          </div>
+          </CodeBlock>
       </GuideSection>
 
       <GuideSection title="2. Basic Usage">
@@ -81,7 +82,7 @@ const AvatarGuidePage = () => {
             
               <Avatar><AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" /><AvatarFallback>CN</AvatarFallback></Avatar>
             </div>
-          <div className={styles.code_view}>
+          <CodeBlock>
             <pre>
               <code>
 {`<Avatar>
@@ -90,7 +91,7 @@ const AvatarGuidePage = () => {
 </Avatar>`}
               </code>
             </pre>
-          </div>
+          </CodeBlock>
         </div>
       </GuideSection>
 
@@ -105,7 +106,7 @@ const AvatarGuidePage = () => {
             
               <Avatar><AvatarFallback className="bg-blue-100 text-blue-700 font-semibold">JD</AvatarFallback></Avatar>
             </div>
-          <div className={styles.code_view}>
+          <CodeBlock>
             <pre>
               <code>
 {`<Avatar>
@@ -113,28 +114,28 @@ const AvatarGuidePage = () => {
 </Avatar>`}
               </code>
             </pre>
-          </div>
+          </CodeBlock>
         </div>
         <div className={styles.sub_section}>
           <h3 className={styles.title_h3}>3.2. Sizes</h3>
           <p className={styles.description} style={{marginBottom: '12px'}}>Avatar 컴포넌트의 w, h 클래스를 조정하여 크기를 바꿉니다.</p>
           <div className={styles.preview}>
             
-              <div className="flex items-center space-x-4">
-  <Avatar size="sm"><AvatarImage src="https://github.com/shadcn.png" /></Avatar>
-  <Avatar size="md"><AvatarImage src="https://github.com/shadcn.png" /></Avatar>
-  <Avatar size="lg"><AvatarImage src="https://github.com/shadcn.png" /></Avatar>
-  <Avatar size="xl"><AvatarImage src="https://github.com/shadcn.png" /></Avatar>
-  <Avatar size="2xl"><AvatarImage src="https://github.com/shadcn.png" /></Avatar>
+              <div className="flex items-end space-x-4">
+  <Avatar className="w-8 h-8"><AvatarImage src="https://github.com/shadcn.png" /></Avatar>
+  <Avatar className="w-10 h-10"><AvatarImage src="https://github.com/shadcn.png" /></Avatar>
+  <Avatar className="w-12 h-12"><AvatarImage src="https://github.com/shadcn.png" /></Avatar>
+  <Avatar className="w-16 h-16"><AvatarImage src="https://github.com/shadcn.png" /></Avatar>
+  <Avatar className="w-24 h-24"><AvatarImage src="https://github.com/shadcn.png" /></Avatar>
 </div>
             </div>
-          <div className={styles.code_view}>
+          <CodeBlock>
             <pre>
               <code>
-{`<Avatar size="xl">...</Avatar>`}
+{`<Avatar className="w-16 h-16">...</Avatar>`}
               </code>
             </pre>
-          </div>
+          </CodeBlock>
         </div>
       </GuideSection>
       

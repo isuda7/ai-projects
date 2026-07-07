@@ -2,6 +2,7 @@
 import React from 'react';
 import styles from './template.module.scss';
 import GuideSection from './components/guide-section';
+import CodeBlock from './components/code-block';
 import { Popover, PopoverTrigger, PopoverContent  } from '@/components/ui/popover';
 import { Button  } from '@/components/ui/button';
 import { Input  } from '@/components/ui/input';
@@ -53,7 +54,7 @@ const PopoverGuidePage = () => {
           <div className={styles.guideline}>
             <strong>Guideline:</strong> 프로젝트의 디자인 시스템 규칙에 맞추어 사용하세요.
           </div>
-          <div className={styles.code_view}>
+          <CodeBlock>
             <pre>
               <code>
 {`import { Popover, PopoverTrigger, PopoverContent  } from '@/components/ui/popover';
@@ -70,7 +71,7 @@ import { Label  } from '@/components/ui/label';
 </Popover>`}
               </code>
             </pre>
-          </div>
+          </CodeBlock>
       </GuideSection>
 
       <GuideSection title="2. Basic Usage">
@@ -97,7 +98,7 @@ import { Label  } from '@/components/ui/label';
   </PopoverContent>
 </Popover>
             </div>
-          <div className={styles.code_view}>
+          <CodeBlock>
             <pre>
               <code>
 {`<Popover>
@@ -108,7 +109,7 @@ import { Label  } from '@/components/ui/label';
 </Popover>`}
               </code>
             </pre>
-          </div>
+          </CodeBlock>
         </div>
       </GuideSection>
 

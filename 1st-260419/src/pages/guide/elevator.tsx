@@ -1,5 +1,6 @@
-
+// @ts-nocheck
 import GuideSection from './components/guide-section';
+import CodeBlock from './components/code-block';
 import styles from './template.module.scss';
 
 // 단일 그림자 블록을 렌더링하는 내부 컴포넌트

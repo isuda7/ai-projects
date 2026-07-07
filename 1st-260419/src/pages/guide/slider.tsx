@@ -2,6 +2,7 @@
 import React from 'react';
 import styles from './template.module.scss';
 import GuideSection from './components/guide-section';
+import CodeBlock from './components/code-block';
 import { Slider  } from '@/components/ui/slider';
 
 
@@ -68,7 +69,7 @@ const SliderGuidePage = () => {
           <div className={styles.guideline}>
             <strong>Guideline:</strong> 프로젝트의 디자인 시스템 규칙에 맞추어 사용하세요.
           </div>
-          <div className={styles.code_view}>
+          <CodeBlock>
             <pre>
               <code>
 {`import { Slider  } from '@/components/ui/slider';
@@ -77,7 +78,7 @@ const SliderGuidePage = () => {
 <Slider defaultValue={[33]} max={100} step={1} className="w-[60%]" />`}
               </code>
             </pre>
-          </div>
+          </CodeBlock>
       </GuideSection>
 
       <GuideSection title="2. Basic Usage">
@@ -90,13 +91,13 @@ const SliderGuidePage = () => {
             
               <Slider defaultValue={[33]} max={100} step={1} className="w-[60%]" />
             </div>
-          <div className={styles.code_view}>
+          <CodeBlock>
             <pre>
               <code>
 {`<Slider defaultValue={[33]} max={100} step={1} className="w-[60%]" />`}
               </code>
             </pre>
-          </div>
+          </CodeBlock>
         </div>
       </GuideSection>
 

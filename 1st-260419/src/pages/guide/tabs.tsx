@@ -2,6 +2,7 @@
 import React from 'react';
 import styles from './template.module.scss';
 import GuideSection from './components/guide-section';
+import CodeBlock from './components/code-block';
 import { Tabs, TabsList, TabsTrigger, TabsContent  } from '@/components/ui/tabs';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter  } from '@/components/ui/card';
 import { Label  } from '@/components/ui/label';
@@ -60,7 +61,7 @@ const TabsGuidePage = () => {
           <div className={styles.guideline}>
             <strong>Guideline:</strong> 프로젝트의 디자인 시스템 규칙에 맞추어 사용하세요.
           </div>
-          <div className={styles.code_view}>
+          <CodeBlock>
             <pre>
               <code>
 {`import { Tabs, TabsList, TabsTrigger, TabsContent  } from '@/components/ui/tabs';
@@ -80,7 +81,7 @@ import { Button  } from '@/components/ui/button';
 </Tabs>`}
               </code>
             </pre>
-          </div>
+          </CodeBlock>
       </GuideSection>
 
       <GuideSection title="2. Basic Usage">
@@ -104,7 +105,7 @@ import { Button  } from '@/components/ui/button';
   </TabsContent>
 </Tabs>
             </div>
-          <div className={styles.code_view}>
+          <CodeBlock>
             <pre>
               <code>
 {`<Tabs defaultValue="account" className="w-[400px]">
@@ -117,7 +118,7 @@ import { Button  } from '@/components/ui/button';
 </Tabs>`}
               </code>
             </pre>
-          </div>
+          </CodeBlock>
         </div>
       </GuideSection>
 

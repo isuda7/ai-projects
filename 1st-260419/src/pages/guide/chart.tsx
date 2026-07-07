@@ -2,6 +2,7 @@
 import React from 'react';
 import styles from './template.module.scss';
 import GuideSection from './components/guide-section';
+import CodeBlock from './components/code-block';
 import { ChartContainer, ChartTooltip, ChartTooltipContent  } from '@/components/ui/chart';
 import { BarChart, Bar, LineChart, Line, XAxis, YAxis, CartesianGrid, ResponsiveContainer } from 'recharts';
 
@@ -57,7 +58,7 @@ const ChartGuidePage = () => {
           <div className={styles.guideline}>
             <strong>Guideline:</strong> 프로젝트의 디자인 시스템 규칙에 맞추어 사용하세요.
           </div>
-          <div className={styles.code_view}>
+          <CodeBlock>
             <pre>
               <code>
 {`import { ChartContainer, ChartTooltip, ChartTooltipContent  } from '@/components/ui/chart';
@@ -74,7 +75,7 @@ import { BarChart, Bar, LineChart, Line, XAxis, YAxis, CartesianGrid, Responsive
 </ChartContainer>`}
               </code>
             </pre>
-          </div>
+          </CodeBlock>
       </GuideSection>
 
       <GuideSection title="2. Basic Usage">
@@ -87,7 +88,7 @@ import { BarChart, Bar, LineChart, Line, XAxis, YAxis, CartesianGrid, Responsive
             
               <div className="w-full max-w-lg border p-4 rounded-lg bg-background shadow-sm"><h3 className="font-semibold mb-4">Monthly Traffic (Bar)</h3><div className="h-[250px] w-full"><ChartContainer config={chartConfig} className="h-full w-full"><ResponsiveContainer width="100%" height="100%"><BarChart data={chartData}><CartesianGrid strokeDasharray="3 3" vertical={false}/><XAxis dataKey="month" /><YAxis /><ChartTooltip content={<ChartTooltipContent />} /><Bar dataKey="desktop" fill="var(--color-desktop)" radius={[4, 4, 0, 0]} /><Bar dataKey="mobile" fill="var(--color-mobile)" radius={[4, 4, 0, 0]} /></BarChart></ResponsiveContainer></ChartContainer></div></div>
             </div>
-          <div className={styles.code_view}>
+          <CodeBlock>
             <pre>
               <code>
 {`<ChartContainer config={chartConfig}>
@@ -100,7 +101,7 @@ import { BarChart, Bar, LineChart, Line, XAxis, YAxis, CartesianGrid, Responsive
 </ChartContainer>`}
               </code>
             </pre>
-          </div>
+          </CodeBlock>
         </div>
       </GuideSection>
 
@@ -115,7 +116,7 @@ import { BarChart, Bar, LineChart, Line, XAxis, YAxis, CartesianGrid, Responsive
             
               <div className="w-full max-w-lg border p-4 rounded-lg bg-background shadow-sm"><h3 className="font-semibold mb-4">Monthly Trend (Line)</h3><div className="h-[250px] w-full"><ChartContainer config={chartConfig} className="h-full w-full"><ResponsiveContainer width="100%" height="100%"><LineChart data={chartData} margin={{ top: 5, right: 20, left: 20, bottom: 5 }}><CartesianGrid strokeDasharray="3 3" vertical={false}/><XAxis dataKey="month" /><YAxis /><ChartTooltip content={<ChartTooltipContent />} /><Line type="monotone" dataKey="desktop" stroke="var(--color-desktop)" strokeWidth={3} dot={{r: 4}} /><Line type="monotone" dataKey="mobile" stroke="var(--color-mobile)" strokeWidth={3} dot={{r: 4}} /></LineChart></ResponsiveContainer></ChartContainer></div></div>
             </div>
-          <div className={styles.code_view}>
+          <CodeBlock>
             <pre>
               <code>
 {`<ChartContainer config={chartConfig}>
@@ -125,7 +126,7 @@ import { BarChart, Bar, LineChart, Line, XAxis, YAxis, CartesianGrid, Responsive
 </ChartContainer>`}
               </code>
             </pre>
-          </div>
+          </CodeBlock>
         </div>
       </GuideSection>
       

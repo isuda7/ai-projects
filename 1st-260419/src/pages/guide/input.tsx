@@ -3,6 +3,7 @@ import React from 'react';
 import styles from './template.module.scss';
 import { Input } from '@/components/ui/input';
 import GuideSection from './components/guide-section';
+import CodeBlock from './components/code-block';
 import { Mail, Search } from 'lucide-react';
 
 const InputGuidePage = () => {
@@ -54,7 +55,7 @@ const InputGuidePage = () => {
         <div className={styles.guideline}>
           <strong>Guideline:</strong> 입력 목적이 명확하도록 <code>placeholder</code>를 반드시 제공하는 것을 권장합니다. 에러 상태일 경우 하단에 피드백 메시지를 함께 제공하세요.
         </div>
-        <div className={styles.code_view}>
+        <CodeBlock>
           <pre>
             <code>
 {`import { Input } from '@/components/ui/input';
@@ -63,7 +64,7 @@ const InputGuidePage = () => {
 <Input placeholder="내용을 입력해주세요" />`}
             </code>
           </pre>
-        </div>
+        </CodeBlock>
       </GuideSection>
 
       <GuideSection title="2. Sizes & States">
@@ -74,7 +75,7 @@ const InputGuidePage = () => {
             <Input inputSize="md" placeholder="Medium size (36px)" />
             <Input inputSize="lg" placeholder="Large size (40px)" />
           </div>
-          <div className={styles.code_view}>
+          <CodeBlock>
             <pre>
               <code>
 {`<Input inputSize="sm" placeholder="Small size (32px)" />
@@ -82,7 +83,7 @@ const InputGuidePage = () => {
 <Input inputSize="lg" placeholder="Large size (40px)" />`}
               </code>
             </pre>
-          </div>
+          </CodeBlock>
         </div>
 
         <div className={styles.sub_section}>
@@ -92,7 +93,7 @@ const InputGuidePage = () => {
             <Input disabled placeholder="Disabled state" />
             <Input error placeholder="Error state" defaultValue="Wrong input!" />
           </div>
-          <div className={styles.code_view}>
+          <CodeBlock>
             <pre>
               <code>
 {`<Input placeholder="Default state" />
@@ -100,7 +101,7 @@ const InputGuidePage = () => {
 <Input error placeholder="Error state" defaultValue="Wrong input!" />`}
               </code>
             </pre>
-          </div>
+          </CodeBlock>
         </div>
       </GuideSection>
 
@@ -112,14 +113,14 @@ const InputGuidePage = () => {
             <Input leftIcon={<Mail size={16} />} placeholder="Email address" />
             <Input rightIcon={<Search size={16} />} placeholder="Search items..." />
           </div>
-          <div className={styles.code_view}>
+          <CodeBlock>
             <pre>
               <code>
 {`<Input leftIcon={<Mail size={16} />} placeholder="Email address" />
 <Input rightIcon={<Search size={16} />} placeholder="Search items..." />`}
               </code>
             </pre>
-          </div>
+          </CodeBlock>
         </div>
       </GuideSection>
     </div>

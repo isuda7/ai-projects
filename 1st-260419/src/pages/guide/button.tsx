@@ -4,6 +4,7 @@ import styles from './template.module.scss';
 import { Button } from '@/components/ui/button';
 import { Settings, ArrowRight } from 'lucide-react';
 import GuideSection from './components/guide-section';
+import CodeBlock from './components/code-block';
 
 const ButtonGuidePage = () => {
   console.log("Guide Page Rendered! CSS Variables should be active.");
@@ -68,7 +69,7 @@ const ButtonGuidePage = () => {
           <strong>Guideline:</strong> 화면 내 주요 액션에는 <code>Solid</code> 버튼을, 보조 액션에는 <code>Outline</code> 버튼을 사용하세요.
           가장 덜 중요한 취소/닫기 등의 액션에는 <code>Ghost</code>나 <code>Text</code> 형식의 버튼을 배치하여 화면 내 시각적 위계를 조절합니다.
         </div>
-        <div className={styles.code_view}>
+        <CodeBlock>
           <pre>
             <code>
               {`import { Button } from '@/components/ui/button';
@@ -77,7 +78,7 @@ const ButtonGuidePage = () => {
 <Button variant="solid" color="default">Button</Button>`}
             </code>
           </pre>
-        </div>
+        </CodeBlock>
       </GuideSection>
 
       <GuideSection title="2. Variants & Colors">
@@ -94,7 +95,7 @@ const ButtonGuidePage = () => {
             <Button variant="solid" color="success">Success</Button>
             <Button variant="solid" color="danger">Danger</Button>
           </div>
-          <div className={styles.code_view}>
+          <CodeBlock>
             <pre>
               <code>
                 {`<Button variant="solid" color="default">Default</Button>
@@ -104,7 +105,7 @@ const ButtonGuidePage = () => {
 <Button variant="solid" color="danger">Danger</Button>`}
               </code>
             </pre>
-          </div>
+          </CodeBlock>
         </div>
 
         <div className={styles.sub_section}>
@@ -116,7 +117,7 @@ const ButtonGuidePage = () => {
             <Button variant="outline" color="success">Success</Button>
             <Button variant="outline" color="danger">Danger</Button>
           </div>
-          <div className={styles.code_view}>
+          <CodeBlock>
             <pre>
               <code>
                 {`<Button variant="outline" color="default">Default</Button>
@@ -126,7 +127,7 @@ const ButtonGuidePage = () => {
 <Button variant="outline" color="danger">Danger</Button>`}
               </code>
             </pre>
-          </div>
+          </CodeBlock>
         </div>
 
         <div className={styles.sub_section}>
@@ -135,14 +136,14 @@ const ButtonGuidePage = () => {
             <Button variant="ghost" color="primary">Ghost Primary</Button>
             <Button variant="text" color="default">Text Default</Button>
           </div>
-          <div className={styles.code_view}>
+          <CodeBlock>
             <pre>
               <code>
                 {`<Button variant="ghost" color="primary">Ghost Primary</Button>
 <Button variant="text" color="default">Text Default</Button>`}
               </code>
             </pre>
-          </div>
+          </CodeBlock>
         </div>
       </GuideSection>
 
@@ -156,7 +157,7 @@ const ButtonGuidePage = () => {
             <Button size="lg">Large (40px)</Button>
             <Button size="icon" variant="outline" color="default"><Settings size={18} /></Button>
           </div>
-          <div className={styles.code_view}>
+          <CodeBlock>
             <pre>
               <code>
                 {`<Button size="sm">Small (32px)</Button>
@@ -165,7 +166,7 @@ const ButtonGuidePage = () => {
 <Button size="icon" variant="outline" color="default"><Settings size={18} /></Button>`}
               </code>
             </pre>
-          </div>
+          </CodeBlock>
         </div>
 
         <div className={styles.sub_section}>
@@ -175,7 +176,7 @@ const ButtonGuidePage = () => {
             <Button loading>Loading...</Button>
             <Button loading variant="outline" color="primary">Saving</Button>
           </div>
-          <div className={styles.code_view}>
+          <CodeBlock>
             <pre>
               <code>
                 {`<Button disabled>Disabled</Button>
@@ -183,7 +184,7 @@ const ButtonGuidePage = () => {
 <Button loading variant="outline" color="primary">Saving</Button>`}
               </code>
             </pre>
-          </div>
+          </CodeBlock>
         </div>
 
         <div className={styles.sub_section}>
@@ -195,7 +196,7 @@ const ButtonGuidePage = () => {
             </div>
             <Button fullWidth color="primary">Full Width Button</Button>
           </div>
-          <div className={styles.code_view}>
+          <CodeBlock>
             <pre>
               <code>
                 {`<div style={{ display: 'flex', gap: 'var(--spacing-md)' }}>
@@ -205,7 +206,7 @@ const ButtonGuidePage = () => {
 <Button fullWidth color="primary">Full Width Button</Button>`}
               </code>
             </pre>
-          </div>
+          </CodeBlock>
         </div>
       </GuideSection>
     </div>

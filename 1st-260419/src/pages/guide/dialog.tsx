@@ -2,6 +2,7 @@
 import React from 'react';
 import styles from './template.module.scss';
 import GuideSection from './components/guide-section';
+import CodeBlock from './components/code-block';
 import { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter, DialogClose  } from '@/components/ui/dialog';
 import { Button  } from '@/components/ui/button';
 import { Input  } from '@/components/ui/input';
@@ -60,7 +61,7 @@ const DialogGuidePage = () => {
           <div className={styles.guideline}>
             <strong>Guideline:</strong> 프로젝트의 디자인 시스템 규칙에 맞추어 사용하세요.
           </div>
-          <div className={styles.code_view}>
+          <CodeBlock>
             <pre>
               <code>
 {`import { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter, DialogClose  } from '@/components/ui/dialog';
@@ -83,7 +84,7 @@ import { Copy } from 'lucide-react';
 </Dialog>`}
               </code>
             </pre>
-          </div>
+          </CodeBlock>
       </GuideSection>
 
       <GuideSection title="2. Basic Usage">
@@ -111,7 +112,7 @@ import { Copy } from 'lucide-react';
   </DialogContent>
 </Dialog>
             </div>
-          <div className={styles.code_view}>
+          <CodeBlock>
             <pre>
               <code>
 {`<Dialog>
@@ -127,7 +128,7 @@ import { Copy } from 'lucide-react';
 </Dialog>`}
               </code>
             </pre>
-          </div>
+          </CodeBlock>
         </div>
       </GuideSection>
 
@@ -154,7 +155,7 @@ import { Copy } from 'lucide-react';
   </DialogContent>
 </Dialog>
             </div>
-          <div className={styles.code_view}>
+          <CodeBlock>
             <pre>
               <code>
 {`<DialogFooter className="sm:justify-start">
@@ -162,7 +163,7 @@ import { Copy } from 'lucide-react';
 </DialogFooter>`}
               </code>
             </pre>
-          </div>
+          </CodeBlock>
         </div>
       </GuideSection>
       

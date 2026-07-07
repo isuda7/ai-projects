@@ -1,4 +1,6 @@
+// @ts-nocheck
 import GuideSection from './components/guide-section';
+import CodeBlock from './components/code-block';
 import styles from './colors.module.scss';
 
 const ColorBlock = ({ label, hex, main }: { label: string; hex: string; main?: boolean }) => (

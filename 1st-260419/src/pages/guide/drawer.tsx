@@ -2,6 +2,7 @@
 import React from 'react';
 import styles from './template.module.scss';
 import GuideSection from './components/guide-section';
+import CodeBlock from './components/code-block';
 import { Drawer, DrawerTrigger, DrawerContent, DrawerHeader, DrawerTitle, DrawerDescription, DrawerFooter, DrawerClose  } from '@/components/ui/drawer';
 import { Button  } from '@/components/ui/button';
 
@@ -51,7 +52,7 @@ const DrawerGuidePage = () => {
           <div className={styles.guideline}>
             <strong>Guideline:</strong> 프로젝트의 디자인 시스템 규칙에 맞추어 사용하세요.
           </div>
-          <div className={styles.code_view}>
+          <CodeBlock>
             <pre>
               <code>
 {`import { Drawer, DrawerTrigger, DrawerContent, DrawerHeader, DrawerTitle, DrawerDescription, DrawerFooter, DrawerClose  } from '@/components/ui/drawer';
@@ -73,7 +74,7 @@ import { Button  } from '@/components/ui/button';
 </Drawer>`}
               </code>
             </pre>
-          </div>
+          </CodeBlock>
       </GuideSection>
 
       <GuideSection title="2. Basic Usage">
@@ -103,7 +104,7 @@ import { Button  } from '@/components/ui/button';
   </DrawerContent>
 </Drawer>
             </div>
-          <div className={styles.code_view}>
+          <CodeBlock>
             <pre>
               <code>
 {`<Drawer>
@@ -121,7 +122,7 @@ import { Button  } from '@/components/ui/button';
 </Drawer>`}
               </code>
             </pre>
-          </div>
+          </CodeBlock>
         </div>
       </GuideSection>
 

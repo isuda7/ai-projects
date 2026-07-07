@@ -2,6 +2,7 @@
 import React from 'react';
 import styles from './template.module.scss';
 import GuideSection from './components/guide-section';
+import CodeBlock from './components/code-block';
 import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuShortcut, DropdownMenuGroup, DropdownMenuSub, DropdownMenuSubTrigger, DropdownMenuSubContent, DropdownMenuPortal  } from '@/components/ui/dropdown-menu';
 import { Button  } from '@/components/ui/button';
 import { CreditCard, Keyboard, LifeBuoy, LogOut, Mail, MessageSquare, Plus, PlusCircle, Settings, User, UserPlus, Users } from "lucide-react";
@@ -52,7 +53,7 @@ const DropdownMenuGuidePage = () => {
           <div className={styles.guideline}>
             <strong>Guideline:</strong> 프로젝트의 디자인 시스템 규칙에 맞추어 사용하세요.
           </div>
-          <div className={styles.code_view}>
+          <CodeBlock>
             <pre>
               <code>
 {`import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuShortcut, DropdownMenuGroup, DropdownMenuSub, DropdownMenuSubTrigger, DropdownMenuSubContent, DropdownMenuPortal  } from '@/components/ui/dropdown-menu';
@@ -72,7 +73,7 @@ import { CreditCard, Keyboard, LifeBuoy, LogOut, Mail, MessageSquare, Plus, Plus
 </DropdownMenu>`}
               </code>
             </pre>
-          </div>
+          </CodeBlock>
       </GuideSection>
 
       <GuideSection title="2. Basic Usage">
@@ -116,7 +117,7 @@ import { CreditCard, Keyboard, LifeBuoy, LogOut, Mail, MessageSquare, Plus, Plus
   </DropdownMenuContent>
 </DropdownMenu>
             </div>
-          <div className={styles.code_view}>
+          <CodeBlock>
             <pre>
               <code>
 {`<DropdownMenu>
@@ -131,7 +132,7 @@ import { CreditCard, Keyboard, LifeBuoy, LogOut, Mail, MessageSquare, Plus, Plus
 </DropdownMenu>`}
               </code>
             </pre>
-          </div>
+          </CodeBlock>
         </div>
       </GuideSection>
 

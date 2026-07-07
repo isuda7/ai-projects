@@ -2,6 +2,7 @@
 import React from 'react';
 import styles from './template.module.scss';
 import GuideSection from './components/guide-section';
+import CodeBlock from './components/code-block';
 import { Textarea  } from '@/components/ui/textarea';
 import { Label  } from '@/components/ui/label';
 import { Button  } from '@/components/ui/button';
@@ -58,7 +59,7 @@ const TextareaGuidePage = () => {
           <div className={styles.guideline}>
             <strong>Guideline:</strong> 프로젝트의 디자인 시스템 규칙에 맞추어 사용하세요.
           </div>
-          <div className={styles.code_view}>
+          <CodeBlock>
             <pre>
               <code>
 {`import { Textarea  } from '@/components/ui/textarea';
@@ -69,7 +70,7 @@ import { Button  } from '@/components/ui/button';
 <Textarea placeholder="Type your message here." />`}
               </code>
             </pre>
-          </div>
+          </CodeBlock>
       </GuideSection>
 
       <GuideSection title="2. Basic Usage">
@@ -82,13 +83,13 @@ import { Button  } from '@/components/ui/button';
             
               <div className="grid w-full max-w-sm items-center gap-1.5"><Label htmlFor="message">Your message</Label><Textarea placeholder="Type your message here." id="message" /></div>
             </div>
-          <div className={styles.code_view}>
+          <CodeBlock>
             <pre>
               <code>
 {`<Textarea placeholder="Type your message here." />`}
               </code>
             </pre>
-          </div>
+          </CodeBlock>
         </div>
       </GuideSection>
 
@@ -103,7 +104,7 @@ import { Button  } from '@/components/ui/button';
             
               <div className="grid w-full max-w-sm gap-2"><Textarea placeholder="Type your message here." /><Button>Send message</Button></div>
             </div>
-          <div className={styles.code_view}>
+          <CodeBlock>
             <pre>
               <code>
 {`<div className="grid w-full gap-2">
@@ -112,7 +113,7 @@ import { Button  } from '@/components/ui/button';
 </div>`}
               </code>
             </pre>
-          </div>
+          </CodeBlock>
         </div>
       </GuideSection>
       

@@ -2,6 +2,7 @@
 import React from 'react';
 import styles from './template.module.scss';
 import GuideSection from './components/guide-section';
+import CodeBlock from './components/code-block';
 import { ToggleGroup, ToggleGroupItem  } from '@/components/ui/toggle-group';
 import { Bold, Italic, Underline } from 'lucide-react';
 
@@ -57,7 +58,7 @@ const ToggleGroupGuidePage = () => {
           <div className={styles.guideline}>
             <strong>Guideline:</strong> 프로젝트의 디자인 시스템 규칙에 맞추어 사용하세요.
           </div>
-          <div className={styles.code_view}>
+          <CodeBlock>
             <pre>
               <code>
 {`import { ToggleGroup, ToggleGroupItem  } from '@/components/ui/toggle-group';
@@ -77,7 +78,7 @@ import { Bold, Italic, Underline } from 'lucide-react';
 </ToggleGroup>`}
               </code>
             </pre>
-          </div>
+          </CodeBlock>
       </GuideSection>
 
       <GuideSection title="2. Basic Usage">
@@ -94,7 +95,7 @@ import { Bold, Italic, Underline } from 'lucide-react';
   <ToggleGroupItem value="underline" aria-label="Toggle underline"><Underline className="h-4 w-4" /></ToggleGroupItem>
 </ToggleGroup>
             </div>
-          <div className={styles.code_view}>
+          <CodeBlock>
             <pre>
               <code>
 {`<ToggleGroup type="multiple">
@@ -110,7 +111,7 @@ import { Bold, Italic, Underline } from 'lucide-react';
 </ToggleGroup>`}
               </code>
             </pre>
-          </div>
+          </CodeBlock>
         </div>
       </GuideSection>
 
@@ -129,13 +130,13 @@ import { Bold, Italic, Underline } from 'lucide-react';
   <ToggleGroupItem value="c">C</ToggleGroupItem>
 </ToggleGroup>
             </div>
-          <div className={styles.code_view}>
+          <CodeBlock>
             <pre>
               <code>
 {`<ToggleGroup type="single" variant="outline">...</ToggleGroup>`}
               </code>
             </pre>
-          </div>
+          </CodeBlock>
         </div>
       </GuideSection>
       

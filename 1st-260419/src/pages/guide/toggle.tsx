@@ -2,6 +2,7 @@
 import React from 'react';
 import styles from './template.module.scss';
 import GuideSection from './components/guide-section';
+import CodeBlock from './components/code-block';
 import { Toggle  } from '@/components/ui/toggle';
 import { Bold, Italic } from 'lucide-react';
 
@@ -57,7 +58,7 @@ const ToggleGuidePage = () => {
           <div className={styles.guideline}>
             <strong>Guideline:</strong> 프로젝트의 디자인 시스템 규칙에 맞추어 사용하세요.
           </div>
-          <div className={styles.code_view}>
+          <CodeBlock>
             <pre>
               <code>
 {`import { Toggle  } from '@/components/ui/toggle';
@@ -67,7 +68,7 @@ import { Bold, Italic } from 'lucide-react';
 <Toggle aria-label="Toggle italic"><Bold className="h-4 w-4" /></Toggle>`}
               </code>
             </pre>
-          </div>
+          </CodeBlock>
       </GuideSection>
 
       <GuideSection title="2. Basic Usage">
@@ -80,13 +81,13 @@ import { Bold, Italic } from 'lucide-react';
             
               <Toggle aria-label="Toggle italic"><Bold className="h-4 w-4" /></Toggle>
             </div>
-          <div className={styles.code_view}>
+          <CodeBlock>
             <pre>
               <code>
 {`<Toggle aria-label="Toggle italic"><Bold className="h-4 w-4" /></Toggle>`}
               </code>
             </pre>
-          </div>
+          </CodeBlock>
         </div>
       </GuideSection>
 
@@ -101,13 +102,13 @@ import { Bold, Italic } from 'lucide-react';
             
               <Toggle variant="outline" aria-label="Toggle italic"><Italic className="mr-2 h-4 w-4" /> Italic</Toggle>
             </div>
-          <div className={styles.code_view}>
+          <CodeBlock>
             <pre>
               <code>
 {`<Toggle variant="outline" aria-label="Toggle italic"><Italic className="mr-2 h-4 w-4" /> Italic</Toggle>`}
               </code>
             </pre>
-          </div>
+          </CodeBlock>
         </div>
       </GuideSection>
       

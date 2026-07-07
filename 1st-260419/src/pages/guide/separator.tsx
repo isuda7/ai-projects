@@ -2,6 +2,7 @@
 import React from 'react';
 import styles from './template.module.scss';
 import GuideSection from './components/guide-section';
+import CodeBlock from './components/code-block';
 import { Separator  } from '@/components/ui/separator';
 
 
@@ -50,7 +51,7 @@ const SeparatorGuidePage = () => {
           <div className={styles.guideline}>
             <strong>Guideline:</strong> 프로젝트의 디자인 시스템 규칙에 맞추어 사용하세요.
           </div>
-          <div className={styles.code_view}>
+          <CodeBlock>
             <pre>
               <code>
 {`import { Separator  } from '@/components/ui/separator';
@@ -72,7 +73,7 @@ const SeparatorGuidePage = () => {
 </div>`}
               </code>
             </pre>
-          </div>
+          </CodeBlock>
       </GuideSection>
 
       <GuideSection title="2. Basic Usage">
@@ -98,7 +99,7 @@ const SeparatorGuidePage = () => {
   </div>
 </div>
             </div>
-          <div className={styles.code_view}>
+          <CodeBlock>
             <pre>
               <code>
 {`<div>
@@ -117,7 +118,7 @@ const SeparatorGuidePage = () => {
 </div>`}
               </code>
             </pre>
-          </div>
+          </CodeBlock>
         </div>
       </GuideSection>
 

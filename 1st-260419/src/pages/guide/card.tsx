@@ -2,6 +2,7 @@
 import React from 'react';
 import styles from './template.module.scss';
 import GuideSection from './components/guide-section';
+import CodeBlock from './components/code-block';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter  } from '@/components/ui/card';
 import { Button  } from '@/components/ui/button';
 import { Input  } from '@/components/ui/input';
@@ -47,7 +48,7 @@ const CardGuidePage = () => {
           <div className={styles.guideline}>
             <strong>Guideline:</strong> 프로젝트의 디자인 시스템 규칙에 맞추어 사용하세요.
           </div>
-          <div className={styles.code_view}>
+          <CodeBlock>
             <pre>
               <code>
 {`import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter  } from '@/components/ui/card';
@@ -71,7 +72,7 @@ import { Label  } from '@/components/ui/label';
 </Card>`}
               </code>
             </pre>
-          </div>
+          </CodeBlock>
       </GuideSection>
 
       <GuideSection title="2. Basic Usage">
@@ -100,7 +101,7 @@ import { Label  } from '@/components/ui/label';
   </CardFooter>
 </Card>
             </div>
-          <div className={styles.code_view}>
+          <CodeBlock>
             <pre>
               <code>
 {`<Card className="w-[350px]">
@@ -118,7 +119,7 @@ import { Label  } from '@/components/ui/label';
 </Card>`}
               </code>
             </pre>
-          </div>
+          </CodeBlock>
         </div>
       </GuideSection>
 
@@ -136,13 +137,13 @@ import { Label  } from '@/components/ui/label';
   <p className="text-sm text-slate-500">This is a simple card without headers and footers. Ideal for brief notifications or stats.</p>
 </Card>
             </div>
-          <div className={styles.code_view}>
+          <CodeBlock>
             <pre>
               <code>
 {`<Card className="p-6">...</Card>`}
               </code>
             </pre>
-          </div>
+          </CodeBlock>
         </div>
         <div className={styles.sub_section}>
           <h3 className={styles.title_h3}>3.2. Horizontal Thumbnail</h3>

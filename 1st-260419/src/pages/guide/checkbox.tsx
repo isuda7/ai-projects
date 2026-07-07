@@ -2,6 +2,7 @@
 import React from 'react';
 import styles from './template.module.scss';
 import GuideSection from './components/guide-section';
+import CodeBlock from './components/code-block';
 import { Checkbox  } from '@/components/ui/checkbox';
 import { Label  } from '@/components/ui/label';
 
@@ -57,7 +58,7 @@ const CheckboxGuidePage = () => {
           <div className={styles.guideline}>
             <strong>Guideline:</strong> 프로젝트의 디자인 시스템 규칙에 맞추어 사용하세요.
           </div>
-          <div className={styles.code_view}>
+          <CodeBlock>
             <pre>
               <code>
 {`import { Checkbox  } from '@/components/ui/checkbox';
@@ -70,7 +71,7 @@ import { Label  } from '@/components/ui/label';
 </div>`}
               </code>
             </pre>
-          </div>
+          </CodeBlock>
       </GuideSection>
 
       <GuideSection title="2. Basic Usage">
@@ -83,7 +84,7 @@ import { Label  } from '@/components/ui/label';
             
               <div className="flex items-center space-x-2"><Checkbox id="terms" /><Label htmlFor="terms">Accept terms and conditions</Label></div>
             </div>
-          <div className={styles.code_view}>
+          <CodeBlock>
             <pre>
               <code>
 {`<div className="flex items-center space-x-2">
@@ -92,7 +93,7 @@ import { Label  } from '@/components/ui/label';
 </div>`}
               </code>
             </pre>
-          </div>
+          </CodeBlock>
         </div>
       </GuideSection>
 
@@ -107,13 +108,13 @@ import { Label  } from '@/components/ui/label';
             
               <div className="flex items-center space-x-2"><Checkbox id="terms2" disabled /><Label htmlFor="terms2" className="text-gray-400">Accept terms and conditions</Label></div>
             </div>
-          <div className={styles.code_view}>
+          <CodeBlock>
             <pre>
               <code>
 {`<Checkbox id="terms2" disabled />`}
               </code>
             </pre>
-          </div>
+          </CodeBlock>
         </div>
         <div className={styles.sub_section}>
           <h3 className={styles.title_h3}>3.2. With Description</h3>
@@ -128,7 +129,7 @@ import { Label  } from '@/components/ui/label';
   </div>
 </div>
             </div>
-          <div className={styles.code_view}>
+          <CodeBlock>
             <pre>
               <code>
 {`<div className="items-top flex space-x-2">
@@ -140,7 +141,7 @@ import { Label  } from '@/components/ui/label';
 </div>`}
               </code>
             </pre>
-          </div>
+          </CodeBlock>
         </div>
 
         <div className={styles.sub_section}>

@@ -2,6 +2,7 @@
 import React from 'react';
 import styles from './template.module.scss';
 import GuideSection from './components/guide-section';
+import CodeBlock from './components/code-block';
 import { Calendar  } from '@/components/ui/calendar';
 import { useState } from 'react';
 
@@ -70,7 +71,7 @@ const CalendarGuidePage = () => {
           <div className={styles.guideline}>
             <strong>Guideline:</strong> 프로젝트의 디자인 시스템 규칙에 맞추어 사용하세요.
           </div>
-          <div className={styles.code_view}>
+          <CodeBlock>
             <pre>
               <code>
 {`import { Calendar  } from '@/components/ui/calendar';
@@ -87,7 +88,7 @@ const [date, setDate] = React.useState<Date | undefined>(new Date())
 />`}
               </code>
             </pre>
-          </div>
+          </CodeBlock>
       </GuideSection>
 
       <GuideSection title="2. Basic Usage">
@@ -100,7 +101,7 @@ const [date, setDate] = React.useState<Date | undefined>(new Date())
             
               <CalendarDemo />
             </div>
-          <div className={styles.code_view}>
+          <CodeBlock>
             <pre>
               <code>
 {`const [date, setDate] = React.useState<Date | undefined>(new Date())
@@ -113,7 +114,7 @@ const [date, setDate] = React.useState<Date | undefined>(new Date())
 />`}
               </code>
             </pre>
-          </div>
+          </CodeBlock>
         </div>
       </GuideSection>
 
@@ -128,13 +129,13 @@ const [date, setDate] = React.useState<Date | undefined>(new Date())
             
               <CalendarMultipleDemo />
             </div>
-          <div className={styles.code_view}>
+          <CodeBlock>
             <pre>
               <code>
 {`<Calendar mode="multiple" selected={dates} onSelect={setDates} />`}
               </code>
             </pre>
-          </div>
+          </CodeBlock>
         </div>
       </GuideSection>
       

@@ -2,6 +2,7 @@
 import React from 'react';
 import styles from './template.module.scss';
 import GuideSection from './components/guide-section';
+import CodeBlock from './components/code-block';
 import { Progress  } from '@/components/ui/progress';
 import { useState, useEffect } from 'react';
 
@@ -58,7 +59,7 @@ const ProgressGuidePage = () => {
           <div className={styles.guideline}>
             <strong>Guideline:</strong> 프로젝트의 디자인 시스템 규칙에 맞추어 사용하세요.
           </div>
-          <div className={styles.code_view}>
+          <CodeBlock>
             <pre>
               <code>
 {`import { Progress  } from '@/components/ui/progress';
@@ -75,7 +76,7 @@ React.useEffect(() => {
 return <Progress value={progress} className="w-[60%]" />`}
               </code>
             </pre>
-          </div>
+          </CodeBlock>
       </GuideSection>
 
       <GuideSection title="2. Basic Usage">
@@ -88,7 +89,7 @@ return <Progress value={progress} className="w-[60%]" />`}
             
               <ProgressDemo />
             </div>
-          <div className={styles.code_view}>
+          <CodeBlock>
             <pre>
               <code>
 {`const [progress, setProgress] = React.useState(13)
@@ -101,7 +102,7 @@ React.useEffect(() => {
 return <Progress value={progress} className="w-[60%]" />`}
               </code>
             </pre>
-          </div>
+          </CodeBlock>
         </div>
       </GuideSection>
 
@@ -116,13 +117,13 @@ return <Progress value={progress} className="w-[60%]" />`}
             
               <Progress value={100} className="w-full" />
             </div>
-          <div className={styles.code_view}>
+          <CodeBlock>
             <pre>
               <code>
 {`<Progress value={100} className="w-full" />`}
               </code>
             </pre>
-          </div>
+          </CodeBlock>
         </div>
       </GuideSection>
       
