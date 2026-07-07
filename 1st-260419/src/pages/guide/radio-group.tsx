@@ -2,8 +2,8 @@
 import React from 'react';
 import styles from './template.module.scss';
 import GuideSection from './components/guide-section';
-import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group/radio-group';
-import { Label } from '@/components/ui/label/label';
+import { RadioGroup, RadioGroupItem  } from '@/components/ui/radio-group';
+import { Label  } from '@/components/ui/label';
 
 
 
@@ -60,8 +60,8 @@ const RadioGroupGuidePage = () => {
           <div className={styles.code_view}>
             <pre>
               <code>
-{`import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group/radio-group';
-import { Label } from '@/components/ui/label/label';
+{`import { RadioGroup, RadioGroupItem  } from '@/components/ui/radio-group';
+import { Label  } from '@/components/ui/label';
 
 // Basic Component Usage
 <RadioGroup defaultValue="comfortable">
@@ -147,6 +147,47 @@ import { Label } from '@/components/ui/label/label';
 {`<RadioGroupItem value="option-two" id="o2" disabled />`}
               </code>
             </pre>
+          </div>
+        </div>
+
+        <div className={styles.sub_section}>
+          <h3 className={styles.title_h3}>3.2. Block Type</h3>
+          <p className={styles.description} style={{marginBottom: '12px'}}>라디오 버튼을 숨기고 영역 전체를 버튼처럼 만듭니다.</p>
+          <div className={styles.preview}>
+            <RadioGroup defaultValue="cpu" className="grid grid-cols-3 gap-4 max-w-lg">
+              <Label htmlFor="cpu-i5" className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground has-[:checked]:border-primary has-[:checked]:bg-primary/5 cursor-pointer">
+                <RadioGroupItem value="cpu" id="cpu-i5" className="sr-only" />
+                <span className="font-semibold text-lg">Core i5</span>
+                <span className="text-sm text-muted-foreground">Standard</span>
+              </Label>
+              <Label htmlFor="cpu-i7" className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground has-[:checked]:border-primary has-[:checked]:bg-primary/5 cursor-pointer">
+                <RadioGroupItem value="i7" id="cpu-i7" className="sr-only" />
+                <span className="font-semibold text-lg">Core i7</span>
+                <span className="text-sm text-muted-foreground">Performance</span>
+              </Label>
+              <Label htmlFor="cpu-i9" className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground has-[:checked]:border-primary has-[:checked]:bg-primary/5 cursor-pointer">
+                <RadioGroupItem value="i9" id="cpu-i9" className="sr-only" />
+                <span className="font-semibold text-lg">Core i9</span>
+                <span className="text-sm text-muted-foreground">Extreme</span>
+              </Label>
+            </RadioGroup>
+          </div>
+        </div>
+
+        <div className={styles.sub_section}>
+          <h3 className={styles.title_h3}>3.3. Image Type</h3>
+          <p className={styles.description} style={{marginBottom: '12px'}}>시각적인 썸네일을 선택하는 라디오 버튼입니다.</p>
+          <div className={styles.preview}>
+            <RadioGroup defaultValue="light" className="flex gap-4">
+              <Label htmlFor="theme-light" className="relative cursor-pointer rounded-lg border-2 border-transparent hover:border-primary/50 has-[:checked]:border-primary overflow-hidden">
+                <RadioGroupItem value="light" id="theme-light" className="sr-only" />
+                <div className="w-32 h-20 bg-slate-100 flex items-center justify-center font-semibold text-slate-800">Light</div>
+              </Label>
+              <Label htmlFor="theme-dark" className="relative cursor-pointer rounded-lg border-2 border-transparent hover:border-primary/50 has-[:checked]:border-primary overflow-hidden">
+                <RadioGroupItem value="dark" id="theme-dark" className="sr-only" />
+                <div className="w-32 h-20 bg-slate-900 flex items-center justify-center font-semibold text-slate-100">Dark</div>
+              </Label>
+            </RadioGroup>
           </div>
         </div>
       </GuideSection>

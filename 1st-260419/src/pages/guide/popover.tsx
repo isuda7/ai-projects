@@ -2,10 +2,10 @@
 import React from 'react';
 import styles from './template.module.scss';
 import GuideSection from './components/guide-section';
-import { Popover, PopoverTrigger, PopoverContent } from '@/components/ui/popover/popover';
-import { Button } from '@/components/ui/button/button';
-import { Input } from '@/components/ui/input/input';
-import { Label } from '@/components/ui/label/label';
+import { Popover, PopoverTrigger, PopoverContent  } from '@/components/ui/popover';
+import { Button  } from '@/components/ui/button';
+import { Input  } from '@/components/ui/input';
+import { Label  } from '@/components/ui/label';
 
 
 
@@ -56,15 +56,15 @@ const PopoverGuidePage = () => {
           <div className={styles.code_view}>
             <pre>
               <code>
-{`import { Popover, PopoverTrigger, PopoverContent } from '@/components/ui/popover/popover';
-import { Button } from '@/components/ui/button/button';
-import { Input } from '@/components/ui/input/input';
-import { Label } from '@/components/ui/label/label';
+{`import { Popover, PopoverTrigger, PopoverContent  } from '@/components/ui/popover';
+import { Button  } from '@/components/ui/button';
+import { Input  } from '@/components/ui/input';
+import { Label  } from '@/components/ui/label';
 
 // Basic Component Usage
 <Popover>
   <PopoverTrigger asChild><Button variant="outline">Open Popover</Button></PopoverTrigger>
-  <PopoverContent className="w-80">
+  <PopoverContent>
     <div>Popover Content (Forms, Inputs, etc.)</div>
   </PopoverContent>
 </Popover>`}
@@ -83,7 +83,7 @@ import { Label } from '@/components/ui/label/label';
             
               <Popover>
   <PopoverTrigger asChild><Button variant="outline">Open Popover</Button></PopoverTrigger>
-  <PopoverContent className="w-80">
+  <PopoverContent>
     <div className="grid gap-4">
       <div className="space-y-2">
         <h4 className="font-medium leading-none">Dimensions</h4>
@@ -102,7 +102,7 @@ import { Label } from '@/components/ui/label/label';
               <code>
 {`<Popover>
   <PopoverTrigger asChild><Button variant="outline">Open Popover</Button></PopoverTrigger>
-  <PopoverContent className="w-80">
+  <PopoverContent>
     <div>Popover Content (Forms, Inputs, etc.)</div>
   </PopoverContent>
 </Popover>`}

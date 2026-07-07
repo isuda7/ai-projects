@@ -2,7 +2,7 @@
 import React from 'react';
 import styles from './template.module.scss';
 import GuideSection from './components/guide-section';
-import { Toggle } from '@/components/ui/toggle/toggle';
+import { Toggle  } from '@/components/ui/toggle';
 import { Bold, Italic } from 'lucide-react';
 
 
@@ -60,7 +60,7 @@ const ToggleGuidePage = () => {
           <div className={styles.code_view}>
             <pre>
               <code>
-{`import { Toggle } from '@/components/ui/toggle/toggle';
+{`import { Toggle  } from '@/components/ui/toggle';
 import { Bold, Italic } from 'lucide-react';
 
 // Basic Component Usage

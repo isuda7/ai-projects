@@ -2,7 +2,7 @@
 import React from 'react';
 import styles from './template.module.scss';
 import GuideSection from './components/guide-section';
-import { ResizablePanelGroup, ResizablePanel, ResizableHandle } from '@/components/ui/resizable/resizable';
+import { ResizablePanelGroup, ResizablePanel, ResizableHandle  } from '@/components/ui/resizable';
 
 
 
@@ -59,7 +59,7 @@ const ResizableGuidePage = () => {
           <div className={styles.code_view}>
             <pre>
               <code>
-{`import { ResizablePanelGroup, ResizablePanel, ResizableHandle } from '@/components/ui/resizable/resizable';
+{`import { ResizablePanelGroup, ResizablePanel, ResizableHandle  } from '@/components/ui/resizable';
 
 // Basic Component Usage
 <ResizablePanelGroup direction="horizontal">

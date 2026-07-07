@@ -2,10 +2,10 @@
 import React from 'react';
 import styles from './template.module.scss';
 import GuideSection from './components/guide-section';
-import { Sheet, SheetTrigger, SheetContent, SheetHeader, SheetTitle, SheetDescription, SheetFooter, SheetClose } from '@/components/ui/sheet/sheet';
-import { Button } from '@/components/ui/button/button';
-import { Input } from '@/components/ui/input/input';
-import { Label } from '@/components/ui/label/label';
+import { Sheet, SheetTrigger, SheetContent, SheetHeader, SheetTitle, SheetDescription, SheetFooter, SheetClose  } from '@/components/ui/sheet';
+import { Button  } from '@/components/ui/button';
+import { Input  } from '@/components/ui/input';
+import { Label  } from '@/components/ui/label';
 
 
 
@@ -62,10 +62,10 @@ const SheetGuidePage = () => {
           <div className={styles.code_view}>
             <pre>
               <code>
-{`import { Sheet, SheetTrigger, SheetContent, SheetHeader, SheetTitle, SheetDescription, SheetFooter, SheetClose } from '@/components/ui/sheet/sheet';
-import { Button } from '@/components/ui/button/button';
-import { Input } from '@/components/ui/input/input';
-import { Label } from '@/components/ui/label/label';
+{`import { Sheet, SheetTrigger, SheetContent, SheetHeader, SheetTitle, SheetDescription, SheetFooter, SheetClose  } from '@/components/ui/sheet';
+import { Button  } from '@/components/ui/button';
+import { Input  } from '@/components/ui/input';
+import { Label  } from '@/components/ui/label';
 
 // Basic Component Usage
 <Sheet>

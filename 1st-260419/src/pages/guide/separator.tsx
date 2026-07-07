@@ -2,7 +2,7 @@
 import React from 'react';
 import styles from './template.module.scss';
 import GuideSection from './components/guide-section';
-import { Separator } from '@/components/ui/separator/separator';
+import { Separator  } from '@/components/ui/separator';
 
 
 
@@ -53,7 +53,7 @@ const SeparatorGuidePage = () => {
           <div className={styles.code_view}>
             <pre>
               <code>
-{`import { Separator } from '@/components/ui/separator/separator';
+{`import { Separator  } from '@/components/ui/separator';
 
 // Basic Component Usage
 <div>

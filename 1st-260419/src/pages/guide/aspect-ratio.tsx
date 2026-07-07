@@ -2,7 +2,7 @@
 import React from 'react';
 import styles from './template.module.scss';
 import GuideSection from './components/guide-section';
-import { AspectRatio } from '@/components/ui/aspect-ratio/aspect-ratio';
+import { AspectRatio  } from '@/components/ui/aspect-ratio';
 
 
 
@@ -47,7 +47,7 @@ const AspectRatioGuidePage = () => {
           <div className={styles.code_view}>
             <pre>
               <code>
-{`import { AspectRatio } from '@/components/ui/aspect-ratio/aspect-ratio';
+{`import { AspectRatio  } from '@/components/ui/aspect-ratio';
 
 // Basic Component Usage
 <div className="w-[300px]">

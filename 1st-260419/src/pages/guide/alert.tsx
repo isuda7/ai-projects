@@ -2,7 +2,7 @@
 import React from 'react';
 import styles from './template.module.scss';
 import GuideSection from './components/guide-section';
-import { Alert, AlertTitle, AlertDescription } from '@/components/ui/alert/alert';
+import { Alert, AlertTitle, AlertDescription  } from '@/components/ui/alert';
 import { AlertCircle, Terminal } from 'lucide-react';
 
 
@@ -54,7 +54,7 @@ const AlertGuidePage = () => {
           <div className={styles.code_view}>
             <pre>
               <code>
-{`import { Alert, AlertTitle, AlertDescription } from '@/components/ui/alert/alert';
+{`import { Alert, AlertTitle, AlertDescription  } from '@/components/ui/alert';
 import { AlertCircle, Terminal } from 'lucide-react';
 
 // Basic Component Usage

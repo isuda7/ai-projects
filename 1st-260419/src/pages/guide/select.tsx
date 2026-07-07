@@ -2,7 +2,7 @@
 import React from 'react';
 import styles from './template.module.scss';
 import GuideSection from './components/guide-section';
-import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem, SelectGroup, SelectLabel } from '@/components/ui/select/select';
+import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem, SelectGroup, SelectLabel  } from '@/components/ui/select';
 
 
 
@@ -59,7 +59,7 @@ const SelectGuidePage = () => {
           <div className={styles.code_view}>
             <pre>
               <code>
-{`import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem, SelectGroup, SelectLabel } from '@/components/ui/select/select';
+{`import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem, SelectGroup, SelectLabel  } from '@/components/ui/select';
 
 // Basic Component Usage
 <Select>

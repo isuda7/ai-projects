@@ -3,8 +3,8 @@ import React from 'react';
 import styles from './template.module.scss';
 import GuideSection from './components/guide-section';
 import { toast } from "sonner";
-import { Toaster } from "@/components/ui/sonner/sonner";
-import { Button } from "@/components/ui/button/button";
+import { Toaster  } from '@/components/ui/sonner';
+import { Button  } from '@/components/ui/button';
 
 
 
@@ -56,8 +56,8 @@ const SonnerGuidePage = () => {
             <pre>
               <code>
 {`import { toast } from "sonner";
-import { Toaster } from "@/components/ui/sonner/sonner";
-import { Button } from "@/components/ui/button/button";
+import { Toaster  } from '@/components/ui/sonner';
+import { Button  } from '@/components/ui/button';
 
 // Basic Component Usage
 // In your root layout:
@@ -114,7 +114,45 @@ import { Button } from "@/components/ui/button/button";
         </div>
       </GuideSection>
 
-      
+      <GuideSection title="3. Variants & States">
+        <p className={styles.description}>실무에서 자주 사용되는 다양한 옵션과 상태 변화 예시입니다.</p>
+
+        <div className={styles.sub_section}>
+          <h3 className={styles.title_h3}>3.1. Success, Error, Info, Warning States</h3>
+          <p className={styles.description} style={{marginBottom: '12px'}}>의도에 맞는 시각적 아이콘과 색상을 표시합니다.</p>
+          <div className={styles.preview}>
+            <div className="flex flex-wrap gap-4">
+              <Button variant="outline" onClick={() => toast.success("Successfully saved", { description: "Your profile has been updated." })}>Success</Button>
+              <Button variant="outline" onClick={() => toast.error("Failed to save", { description: "An error occurred while updating." })}>Error</Button>
+              <Button variant="outline" onClick={() => toast.info("Update available", { description: "A new version of the app is ready." })}>Info</Button>
+              <Button variant="outline" onClick={() => toast.warning("Connection lost", { description: "Please check your network." })}>Warning</Button>
+            </div>
+          </div>
+        </div>
+
+        <div className={styles.sub_section}>
+          <h3 className={styles.title_h3}>3.2. Action Buttons</h3>
+          <p className={styles.description} style={{marginBottom: '12px'}}>실행 취소(Undo) 등 사용자가 알림 내에서 직접 액션을 취할 수 있습니다.</p>
+          <div className={styles.preview}>
+            <Button variant="outline" onClick={() => toast("Item deleted", { action: { label: "Undo", onClick: () => toast.success("Item restored") }})}>Show Action Toast</Button>
+          </div>
+        </div>
+
+        <div className={styles.sub_section}>
+          <h3 className={styles.title_h3}>3.3. Promise Toast</h3>
+          <p className={styles.description} style={{marginBottom: '12px'}}>비동기 작업의 로딩, 성공, 실패 상태를 자동으로 처리하여 보여줍니다.</p>
+          <div className={styles.preview}>
+            <Button variant="outline" onClick={() => {
+              const promise = new Promise((resolve, reject) => setTimeout(() => Math.random() > 0.5 ? resolve({ name: 'Sonner' }) : reject('Network error'), 2000));
+              toast.promise(promise, {
+                loading: 'Loading user data...',
+                success: (data: any) => `Successfully loaded data for ${data.name}`,
+                error: 'Failed to load user data',
+              });
+            }}>Load Data</Button>
+          </div>
+        </div>
+      </GuideSection>
     </div>
   );
 };

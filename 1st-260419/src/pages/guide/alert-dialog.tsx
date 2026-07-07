@@ -2,8 +2,8 @@
 import React from 'react';
 import styles from './template.module.scss';
 import GuideSection from './components/guide-section';
-import { AlertDialog, AlertDialogTrigger, AlertDialogContent, AlertDialogHeader, AlertDialogTitle, AlertDialogDescription, AlertDialogFooter, AlertDialogCancel, AlertDialogAction } from '@/components/ui/alert-dialog/alert-dialog';
-import { Button } from '@/components/ui/button/button';
+import { AlertDialog, AlertDialogTrigger, AlertDialogContent, AlertDialogHeader, AlertDialogTitle, AlertDialogDescription, AlertDialogFooter, AlertDialogCancel, AlertDialogAction  } from '@/components/ui/alert-dialog';
+import { Button  } from '@/components/ui/button';
 
 
 
@@ -60,8 +60,8 @@ const AlertDialogGuidePage = () => {
           <div className={styles.code_view}>
             <pre>
               <code>
-{`import { AlertDialog, AlertDialogTrigger, AlertDialogContent, AlertDialogHeader, AlertDialogTitle, AlertDialogDescription, AlertDialogFooter, AlertDialogCancel, AlertDialogAction } from '@/components/ui/alert-dialog/alert-dialog';
-import { Button } from '@/components/ui/button/button';
+{`import { AlertDialog, AlertDialogTrigger, AlertDialogContent, AlertDialogHeader, AlertDialogTitle, AlertDialogDescription, AlertDialogFooter, AlertDialogCancel, AlertDialogAction  } from '@/components/ui/alert-dialog';
+import { Button  } from '@/components/ui/button';
 
 // Basic Component Usage
 <AlertDialog>

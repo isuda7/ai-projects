@@ -2,7 +2,7 @@
 import React from 'react';
 import styles from './template.module.scss';
 import GuideSection from './components/guide-section';
-import { Table, TableHeader, TableRow, TableHead, TableBody, TableCell, TableCaption, TableFooter } from '@/components/ui/table/table';
+import { Table, TableHeader, TableRow, TableHead, TableBody, TableCell, TableCaption, TableFooter  } from '@/components/ui/table';
 
 
 
@@ -27,7 +27,7 @@ const TableGuidePage = () => {
           <div className={styles.code_view}>
             <pre>
               <code>
-{`import { Table, TableHeader, TableRow, TableHead, TableBody, TableCell, TableCaption, TableFooter } from '@/components/ui/table/table';
+{`import { Table, TableHeader, TableRow, TableHead, TableBody, TableCell, TableCaption, TableFooter  } from '@/components/ui/table';
 
 // Basic Component Usage
 <Table>
@@ -102,6 +102,73 @@ const TableGuidePage = () => {
         </div>
       </GuideSection>
 
+      <GuideSection title="3. Variants & States">
+        <p className={styles.description}>실무에서 자주 사용되는 다양한 옵션과 상태 변화 예시입니다.</p>
+
+        <div className={styles.sub_section}>
+          <h3 className={styles.title_h3}>3.1. Striped Rows</h3>
+          <p className={styles.description} style={{marginBottom: '12px'}}>행마다 배경색을 다르게 주어 가독성을 높인 스타일입니다.</p>
+          <div className={styles.preview}>
+            <Table className="border rounded-md shadow-sm overflow-hidden [&_tr:nth-child(even)]:bg-muted/50">
+              <TableHeader className="bg-muted">
+                <TableRow>
+                  <TableHead className="w-[100px]">Invoice</TableHead>
+                  <TableHead>Status</TableHead>
+                  <TableHead className="text-right">Amount</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                <TableRow><TableCell className="font-medium">INV001</TableCell><TableCell>Paid</TableCell><TableCell className="text-right">$250.00</TableCell></TableRow>
+                <TableRow><TableCell className="font-medium">INV002</TableCell><TableCell>Pending</TableCell><TableCell className="text-right">$150.00</TableCell></TableRow>
+                <TableRow><TableCell className="font-medium">INV003</TableCell><TableCell>Unpaid</TableCell><TableCell className="text-right">$350.00</TableCell></TableRow>
+                <TableRow><TableCell className="font-medium">INV004</TableCell><TableCell>Paid</TableCell><TableCell className="text-right">$450.00</TableCell></TableRow>
+              </TableBody>
+            </Table>
+          </div>
+        </div>
+
+        <div className={styles.sub_section}>
+          <h3 className={styles.title_h3}>3.2. Dense (Compact)</h3>
+          <p className={styles.description} style={{marginBottom: '12px'}}>패딩을 줄여 더 많은 데이터를 한 화면에 보여주는 밀집 형태입니다.</p>
+          <div className={styles.preview}>
+            <Table className="border rounded-md shadow-sm [&_td]:py-1 [&_th]:py-1">
+              <TableHeader>
+                <TableRow>
+                  <TableHead className="w-[100px] h-8">Invoice</TableHead>
+                  <TableHead className="h-8">Status</TableHead>
+                  <TableHead className="text-right h-8">Amount</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                <TableRow><TableCell className="font-medium">INV001</TableCell><TableCell>Paid</TableCell><TableCell className="text-right">$250.00</TableCell></TableRow>
+                <TableRow><TableCell className="font-medium">INV002</TableCell><TableCell>Pending</TableCell><TableCell className="text-right">$150.00</TableCell></TableRow>
+                <TableRow><TableCell className="font-medium">INV003</TableCell><TableCell>Unpaid</TableCell><TableCell className="text-right">$350.00</TableCell></TableRow>
+              </TableBody>
+            </Table>
+          </div>
+        </div>
+
+        <div className={styles.sub_section}>
+          <h3 className={styles.title_h3}>3.3. Borderless</h3>
+          <p className={styles.description} style={{marginBottom: '12px'}}>외곽선이나 내부 구분선 없이 깔끔하게 보여주는 형태입니다.</p>
+          <div className={styles.preview}>
+            <Table className="[&_tr]:border-none">
+              <TableHeader>
+                <TableRow>
+                  <TableHead className="w-[100px]">Invoice</TableHead>
+                  <TableHead>Status</TableHead>
+                  <TableHead className="text-right">Amount</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                <TableRow><TableCell className="font-medium">INV001</TableCell><TableCell>Paid</TableCell><TableCell className="text-right">$250.00</TableCell></TableRow>
+                <TableRow><TableCell className="font-medium">INV002</TableCell><TableCell>Pending</TableCell><TableCell className="text-right">$150.00</TableCell></TableRow>
+                <TableRow><TableCell className="font-medium">INV003</TableCell><TableCell>Unpaid</TableCell><TableCell className="text-right">$350.00</TableCell></TableRow>
+              </TableBody>
+            </Table>
+          </div>
+        </div>
+      </GuideSection>
       
     </div>
   );

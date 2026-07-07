@@ -1,7 +1,7 @@
 // @ts-nocheck
 import React from 'react';
 import styles from './template.module.scss';
-import Input from '@/components/ui/input/input';
+import { Input } from '@/components/ui/input';
 import GuideSection from './components/guide-section';
 import { Mail, Search } from 'lucide-react';
 
@@ -57,7 +57,7 @@ const InputGuidePage = () => {
         <div className={styles.code_view}>
           <pre>
             <code>
-{`import Input from '@/components/ui/input/input';
+{`import { Input } from '@/components/ui/input';
 
 // Basic usage
 <Input placeholder="내용을 입력해주세요" />`}

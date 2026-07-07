@@ -2,16 +2,16 @@
 import React from 'react';
 import styles from './template.module.scss';
 import GuideSection from './components/guide-section';
-import { Calendar } from '@/components/ui/calendar/calendar';
+import { Calendar  } from '@/components/ui/calendar';
 import { useState } from 'react';
 
 const CalendarDemo = () => {
   const [date, setDate] = React.useState(new Date());
-  return <Calendar mode="single" selected={date} onSelect={setDate} className="rounded-md border shadow max-w-fit bg-white" />;
+  return <Calendar mode="single" selected={date} onSelect={setDate} className="rounded-md border shadow max-w-fit bg-background" />;
 };
 const CalendarMultipleDemo = () => {
   const [dates, setDates] = React.useState([new Date()]);
-  return <Calendar mode="multiple" selected={dates} onSelect={setDates} className="rounded-md border shadow max-w-fit bg-white" />;
+  return <Calendar mode="multiple" selected={dates} onSelect={setDates} className="rounded-md border shadow max-w-fit bg-background" />;
 };
 
 const CalendarGuidePage = () => {
@@ -73,7 +73,7 @@ const CalendarGuidePage = () => {
           <div className={styles.code_view}>
             <pre>
               <code>
-{`import { Calendar } from '@/components/ui/calendar/calendar';
+{`import { Calendar  } from '@/components/ui/calendar';
 import { useState } from 'react';
 
 // Basic Component Usage

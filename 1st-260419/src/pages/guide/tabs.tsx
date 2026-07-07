@@ -2,11 +2,11 @@
 import React from 'react';
 import styles from './template.module.scss';
 import GuideSection from './components/guide-section';
-import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs/tabs';
-import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/ui/card/card';
-import { Label } from '@/components/ui/label/label';
-import { Input } from '@/components/ui/input/input';
-import { Button } from '@/components/ui/button/button';
+import { Tabs, TabsList, TabsTrigger, TabsContent  } from '@/components/ui/tabs';
+import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter  } from '@/components/ui/card';
+import { Label  } from '@/components/ui/label';
+import { Input  } from '@/components/ui/input';
+import { Button  } from '@/components/ui/button';
 
 
 
@@ -63,11 +63,11 @@ const TabsGuidePage = () => {
           <div className={styles.code_view}>
             <pre>
               <code>
-{`import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs/tabs';
-import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/ui/card/card';
-import { Label } from '@/components/ui/label/label';
-import { Input } from '@/components/ui/input/input';
-import { Button } from '@/components/ui/button/button';
+{`import { Tabs, TabsList, TabsTrigger, TabsContent  } from '@/components/ui/tabs';
+import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter  } from '@/components/ui/card';
+import { Label  } from '@/components/ui/label';
+import { Input  } from '@/components/ui/input';
+import { Button  } from '@/components/ui/button';
 
 // Basic Component Usage
 <Tabs defaultValue="account" className="w-[400px]">
@@ -121,7 +121,62 @@ import { Button } from '@/components/ui/button/button';
         </div>
       </GuideSection>
 
-      
+      <GuideSection title="3. Variants & States">
+        <p className={styles.description}>실무에서 자주 사용되는 다양한 옵션과 상태 변화 예시입니다.</p>
+
+        <div className={styles.sub_section}>
+          <h3 className={styles.title_h3}>3.1. Line Tabs</h3>
+          <p className={styles.description} style={{marginBottom: '12px'}}>하단 텍스트 밑줄(Border)로 활성화 상태를 나타냅니다.</p>
+          <div className={styles.preview}>
+            <Tabs defaultValue="tab1" className="w-[400px]">
+              <TabsList className="bg-transparent border-b rounded-none w-full justify-start h-auto p-0">
+                <TabsTrigger value="tab1" className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-transparent data-[state=active]:shadow-none px-4 py-2">Profile</TabsTrigger>
+                <TabsTrigger value="tab2" className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-transparent data-[state=active]:shadow-none px-4 py-2">Settings</TabsTrigger>
+              </TabsList>
+            </Tabs>
+          </div>
+        </div>
+
+        <div className={styles.sub_section}>
+          <h3 className={styles.title_h3}>3.2. Pill Tabs</h3>
+          <p className={styles.description} style={{marginBottom: '12px'}}>둥근 알약 형태의 탭 디자인입니다.</p>
+          <div className={styles.preview}>
+            <Tabs defaultValue="tab1" className="w-[400px]">
+              <TabsList className="rounded-full bg-slate-100 dark:bg-slate-800 p-1">
+                <TabsTrigger value="tab1" className="rounded-full data-[state=active]:bg-white dark:data-[state=active]:bg-slate-950 px-4">Daily</TabsTrigger>
+                <TabsTrigger value="tab2" className="rounded-full data-[state=active]:bg-white dark:data-[state=active]:bg-slate-950 px-4">Weekly</TabsTrigger>
+                <TabsTrigger value="tab3" className="rounded-full data-[state=active]:bg-white dark:data-[state=active]:bg-slate-950 px-4">Monthly</TabsTrigger>
+              </TabsList>
+            </Tabs>
+          </div>
+        </div>
+
+        <div className={styles.sub_section}>
+          <h3 className={styles.title_h3}>3.3. Text Tabs</h3>
+          <p className={styles.description} style={{marginBottom: '12px'}}>배경 없이 텍스트의 굵기나 색상만으로 활성화를 표현합니다.</p>
+          <div className={styles.preview}>
+            <Tabs defaultValue="tab1" className="w-[400px]">
+              <TabsList className="bg-transparent gap-4">
+                <TabsTrigger value="tab1" className="bg-transparent data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:text-primary text-muted-foreground p-0 hover:text-primary">Music</TabsTrigger>
+                <TabsTrigger value="tab2" className="bg-transparent data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:text-primary text-muted-foreground p-0 hover:text-primary">Podcasts</TabsTrigger>
+              </TabsList>
+            </Tabs>
+          </div>
+        </div>
+
+        <div className={styles.sub_section}>
+          <h3 className={styles.title_h3}>3.4. Outline Tabs</h3>
+          <p className={styles.description} style={{marginBottom: '12px'}}>탭 자체에 외곽선을 주어 명확하게 구분하는 형태입니다.</p>
+          <div className={styles.preview}>
+            <Tabs defaultValue="tab1" className="w-[400px]">
+              <TabsList className="bg-transparent border p-1 rounded-md">
+                <TabsTrigger value="tab1" className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">General</TabsTrigger>
+                <TabsTrigger value="tab2" className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">Security</TabsTrigger>
+              </TabsList>
+            </Tabs>
+          </div>
+        </div>
+      </GuideSection>
     </div>
   );
 };

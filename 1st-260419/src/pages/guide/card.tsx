@@ -2,10 +2,10 @@
 import React from 'react';
 import styles from './template.module.scss';
 import GuideSection from './components/guide-section';
-import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/ui/card/card';
-import { Button } from '@/components/ui/button/button';
-import { Input } from '@/components/ui/input/input';
-import { Label } from '@/components/ui/label/label';
+import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter  } from '@/components/ui/card';
+import { Button  } from '@/components/ui/button';
+import { Input  } from '@/components/ui/input';
+import { Label  } from '@/components/ui/label';
 
 
 
@@ -50,10 +50,10 @@ const CardGuidePage = () => {
           <div className={styles.code_view}>
             <pre>
               <code>
-{`import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/ui/card/card';
-import { Button } from '@/components/ui/button/button';
-import { Input } from '@/components/ui/input/input';
-import { Label } from '@/components/ui/label/label';
+{`import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter  } from '@/components/ui/card';
+import { Button  } from '@/components/ui/button';
+import { Input  } from '@/components/ui/input';
+import { Label  } from '@/components/ui/label';
 
 // Basic Component Usage
 <Card className="w-[350px]">
@@ -142,6 +142,58 @@ import { Label } from '@/components/ui/label/label';
 {`<Card className="p-6">...</Card>`}
               </code>
             </pre>
+          </div>
+        </div>
+        <div className={styles.sub_section}>
+          <h3 className={styles.title_h3}>3.2. Horizontal Thumbnail</h3>
+          <p className={styles.description} style={{marginBottom: '12px'}}>이미지가 좌측에 배치되는 가로형 카드입니다.</p>
+          <div className={styles.preview}>
+            <Card className="flex flex-row w-[500px] overflow-hidden">
+              <div className="w-2/5 shrink-0 bg-muted">
+                <img src="https://images.unsplash.com/photo-1550439062-609e1531270e?w=800&q=80" alt="Thumbnail" className="w-full h-full object-cover" />
+              </div>
+              <div className="flex flex-col p-6">
+                <h3 className="font-bold text-lg mb-1">Building the Future</h3>
+                <p className="text-sm text-muted-foreground mb-4">Discover how AI is transforming the web development landscape.</p>
+                <div className="mt-auto flex gap-2">
+                  <Button variant="outline" size="sm">Read More</Button>
+                </div>
+              </div>
+            </Card>
+          </div>
+        </div>
+
+        <div className={styles.sub_section}>
+          <h3 className={styles.title_h3}>3.3. Vertical Thumbnail</h3>
+          <p className={styles.description} style={{marginBottom: '12px'}}>상단에 큰 이미지가 배치되는 세로형 카드입니다.</p>
+          <div className={styles.preview}>
+            <Card className="w-[350px] overflow-hidden">
+              <div className="w-full h-[200px] bg-muted">
+                <img src="https://images.unsplash.com/photo-1550439062-609e1531270e?w=800&q=80" alt="Thumbnail" className="w-full h-full object-cover" />
+              </div>
+              <CardHeader>
+                <CardTitle>Design System</CardTitle>
+                <CardDescription>A comprehensive guide to creating scalable UIs.</CardDescription>
+              </CardHeader>
+              <CardFooter>
+                <Button fullWidth>View Details</Button>
+              </CardFooter>
+            </Card>
+          </div>
+        </div>
+
+        <div className={styles.sub_section}>
+          <h3 className={styles.title_h3}>3.4. Overlay Thumbnail</h3>
+          <p className={styles.description} style={{marginBottom: '12px'}}>이미지 위에 텍스트가 오버레이 되는 카드입니다.</p>
+          <div className={styles.preview}>
+            <Card className="relative w-[350px] h-[250px] overflow-hidden text-white border-0">
+              <img src="https://images.unsplash.com/photo-1550439062-609e1531270e?w=800&q=80" alt="Thumbnail" className="absolute inset-0 w-full h-full object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-6">
+                <h3 className="font-bold text-xl mb-1 text-white">Next.js Conf</h3>
+                <p className="text-sm text-gray-300">Join us for the ultimate React framework event of the year.</p>
+              </div>
+            </Card>
           </div>
         </div>
       </GuideSection>

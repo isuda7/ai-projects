@@ -2,10 +2,10 @@
 import React from 'react';
 import styles from './template.module.scss';
 import GuideSection from './components/guide-section';
-import { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter, DialogClose } from '@/components/ui/dialog/dialog';
-import { Button } from '@/components/ui/button/button';
-import { Input } from '@/components/ui/input/input';
-import { Label } from '@/components/ui/label/label';
+import { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter, DialogClose  } from '@/components/ui/dialog';
+import { Button  } from '@/components/ui/button';
+import { Input  } from '@/components/ui/input';
+import { Label  } from '@/components/ui/label';
 import { Copy } from 'lucide-react';
 
 
@@ -63,10 +63,10 @@ const DialogGuidePage = () => {
           <div className={styles.code_view}>
             <pre>
               <code>
-{`import { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter, DialogClose } from '@/components/ui/dialog/dialog';
-import { Button } from '@/components/ui/button/button';
-import { Input } from '@/components/ui/input/input';
-import { Label } from '@/components/ui/label/label';
+{`import { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter, DialogClose  } from '@/components/ui/dialog';
+import { Button  } from '@/components/ui/button';
+import { Input  } from '@/components/ui/input';
+import { Label  } from '@/components/ui/label';
 import { Copy } from 'lucide-react';
 
 // Basic Component Usage

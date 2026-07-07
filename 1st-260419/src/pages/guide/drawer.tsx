@@ -2,8 +2,8 @@
 import React from 'react';
 import styles from './template.module.scss';
 import GuideSection from './components/guide-section';
-import { Drawer, DrawerTrigger, DrawerContent, DrawerHeader, DrawerTitle, DrawerDescription, DrawerFooter, DrawerClose } from '@/components/ui/drawer/drawer';
-import { Button } from '@/components/ui/button/button';
+import { Drawer, DrawerTrigger, DrawerContent, DrawerHeader, DrawerTitle, DrawerDescription, DrawerFooter, DrawerClose  } from '@/components/ui/drawer';
+import { Button  } from '@/components/ui/button';
 
 
 
@@ -54,8 +54,8 @@ const DrawerGuidePage = () => {
           <div className={styles.code_view}>
             <pre>
               <code>
-{`import { Drawer, DrawerTrigger, DrawerContent, DrawerHeader, DrawerTitle, DrawerDescription, DrawerFooter, DrawerClose } from '@/components/ui/drawer/drawer';
-import { Button } from '@/components/ui/button/button';
+{`import { Drawer, DrawerTrigger, DrawerContent, DrawerHeader, DrawerTitle, DrawerDescription, DrawerFooter, DrawerClose  } from '@/components/ui/drawer';
+import { Button  } from '@/components/ui/button';
 
 // Basic Component Usage
 <Drawer>

@@ -2,7 +2,7 @@
 import React from 'react';
 import styles from './template.module.scss';
 import GuideSection from './components/guide-section';
-import { Progress } from '@/components/ui/progress/progress';
+import { Progress  } from '@/components/ui/progress';
 import { useState, useEffect } from 'react';
 
 const ProgressDemo = () => {
@@ -61,7 +61,7 @@ const ProgressGuidePage = () => {
           <div className={styles.code_view}>
             <pre>
               <code>
-{`import { Progress } from '@/components/ui/progress/progress';
+{`import { Progress  } from '@/components/ui/progress';
 import { useState, useEffect } from 'react';
 
 // Basic Component Usage

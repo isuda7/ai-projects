@@ -2,7 +2,7 @@
 import React from 'react';
 import styles from './template.module.scss';
 import GuideSection from './components/guide-section';
-import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@/components/ui/accordion/accordion';
+import { Accordion, AccordionItem, AccordionTrigger, AccordionContent  } from '@/components/ui/accordion';
 
 
 
@@ -65,7 +65,7 @@ const AccordionGuidePage = () => {
           <div className={styles.code_view}>
             <pre>
               <code>
-{`import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@/components/ui/accordion/accordion';
+{`import { Accordion, AccordionItem, AccordionTrigger, AccordionContent  } from '@/components/ui/accordion';
 
 // Basic Component Usage
 <Accordion type="single" collapsible className="w-full">

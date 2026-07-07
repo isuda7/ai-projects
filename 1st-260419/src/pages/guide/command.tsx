@@ -2,7 +2,7 @@
 import React from 'react';
 import styles from './template.module.scss';
 import GuideSection from './components/guide-section';
-import { Command, CommandInput, CommandList, CommandEmpty, CommandGroup, CommandItem, CommandSeparator, CommandShortcut } from '@/components/ui/command/command';
+import { Command, CommandInput, CommandList, CommandEmpty, CommandGroup, CommandItem, CommandSeparator, CommandShortcut  } from '@/components/ui/command';
 import { Calculator, Calendar, CreditCard, Settings, Smile, User } from 'lucide-react';
 
 
@@ -60,7 +60,7 @@ const CommandGuidePage = () => {
           <div className={styles.code_view}>
             <pre>
               <code>
-{`import { Command, CommandInput, CommandList, CommandEmpty, CommandGroup, CommandItem, CommandSeparator, CommandShortcut } from '@/components/ui/command/command';
+{`import { Command, CommandInput, CommandList, CommandEmpty, CommandGroup, CommandItem, CommandSeparator, CommandShortcut  } from '@/components/ui/command';
 import { Calculator, Calendar, CreditCard, Settings, Smile, User } from 'lucide-react';
 
 // Basic Component Usage

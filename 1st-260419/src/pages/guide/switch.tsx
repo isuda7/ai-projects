@@ -2,8 +2,8 @@
 import React from 'react';
 import styles from './template.module.scss';
 import GuideSection from './components/guide-section';
-import { Switch } from '@/components/ui/switch/switch';
-import { Label } from '@/components/ui/label/label';
+import { Switch  } from '@/components/ui/switch';
+import { Label  } from '@/components/ui/label';
 
 
 
@@ -60,8 +60,8 @@ const SwitchGuidePage = () => {
           <div className={styles.code_view}>
             <pre>
               <code>
-{`import { Switch } from '@/components/ui/switch/switch';
-import { Label } from '@/components/ui/label/label';
+{`import { Switch  } from '@/components/ui/switch';
+import { Label  } from '@/components/ui/label';
 
 // Basic Component Usage
 <div className="flex items-center space-x-2">

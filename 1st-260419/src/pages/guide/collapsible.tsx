@@ -2,8 +2,8 @@
 import React from 'react';
 import styles from './template.module.scss';
 import GuideSection from './components/guide-section';
-import { Collapsible, CollapsibleTrigger, CollapsibleContent } from '@/components/ui/collapsible/collapsible';
-import { Button } from '@/components/ui/button/button';
+import { Collapsible, CollapsibleTrigger, CollapsibleContent  } from '@/components/ui/collapsible';
+import { Button  } from '@/components/ui/button';
 import { ChevronDown, ChevronsUpDown } from 'lucide-react';
 
 
@@ -61,8 +61,8 @@ const CollapsibleGuidePage = () => {
           <div className={styles.code_view}>
             <pre>
               <code>
-{`import { Collapsible, CollapsibleTrigger, CollapsibleContent } from '@/components/ui/collapsible/collapsible';
-import { Button } from '@/components/ui/button/button';
+{`import { Collapsible, CollapsibleTrigger, CollapsibleContent  } from '@/components/ui/collapsible';
+import { Button  } from '@/components/ui/button';
 import { ChevronDown, ChevronsUpDown } from 'lucide-react';
 
 // Basic Component Usage
@@ -122,7 +122,76 @@ import { ChevronDown, ChevronsUpDown } from 'lucide-react';
         </div>
       </GuideSection>
 
-      
+      <GuideSection title="3. Variants & States">
+        <p className={styles.description}>실무에서 자주 사용되는 다양한 옵션과 상태 변화 예시입니다.</p>
+
+        <div className={styles.sub_section}>
+          <h3 className={styles.title_h3}>3.1. Specific Target (Show Details)</h3>
+          <p className={styles.description} style={{marginBottom: '12px'}}>특정 대상(상세 정보 등)만 열어서 보여주는 UI 패턴입니다.</p>
+          <div className={styles.preview}>
+            <Collapsible className="w-[400px] rounded-md border bg-background p-4 shadow-sm">
+              <div className="flex items-center justify-between">
+                <div>
+                  <h4 className="font-semibold text-lg">Transaction #8924</h4>
+                  <p className="text-sm text-muted-foreground">Successful payment</p>
+                </div>
+                <CollapsibleTrigger asChild>
+                  <Button variant="outline" size="sm">Show details</Button>
+                </CollapsibleTrigger>
+              </div>
+              <CollapsibleContent className="mt-4 text-sm text-muted-foreground border-t pt-4">
+                <ul className="space-y-2">
+                  <li className="flex justify-between"><span>Date:</span> <span>Oct 24, 2026</span></li>
+                  <li className="flex justify-between"><span>Amount:</span> <span>$149.00</span></li>
+                  <li className="flex justify-between"><span>Card:</span> <span>**** **** **** 4242</span></li>
+                </ul>
+              </CollapsibleContent>
+            </Collapsible>
+          </div>
+        </div>
+
+        <div className={styles.sub_section}>
+          <h3 className={styles.title_h3}>3.2. Expand Height (Animation)</h3>
+          <p className={styles.description} style={{marginBottom: '12px'}}>숨겨진 높이만큼 부드럽게 애니메이션되며 확장되는 케이스입니다. (animate-collapsible-down/up)</p>
+          <div className={styles.preview}>
+            <Collapsible className="w-[400px] overflow-hidden rounded-md border bg-background shadow-sm group">
+              <CollapsibleTrigger className="flex w-full items-center justify-between p-4 hover:bg-accent hover:text-accent-foreground font-semibold">
+                Advanced Settings
+                <ChevronDown className="h-4 w-4 transition-transform duration-200 group-data-[state=open]:rotate-180" />
+              </CollapsibleTrigger>
+              <CollapsibleContent className="px-4 py-3 border-t bg-slate-50 data-[state=open]:animate-collapsible-down data-[state=closed]:animate-collapsible-up text-sm">
+                <p className="mb-2">Enable beta features</p>
+                <p className="mb-2">Developer mode</p>
+                <p>Delete account data</p>
+              </CollapsibleContent>
+            </Collapsible>
+          </div>
+        </div>
+
+        <div className={styles.sub_section}>
+          <h3 className={styles.title_h3}>3.3. Expand Count</h3>
+          <p className={styles.description} style={{marginBottom: '12px'}}>기본 목록을 보여주고, '더보기'를 통해 숨겨진 항목들을 노출합니다.</p>
+          <div className={styles.preview}>
+            <Collapsible className="w-[300px] space-y-2">
+              <div className="rounded-md border bg-background px-4 py-2 text-sm font-semibold">Top 2 Users</div>
+              <div className="rounded-md border bg-background px-4 py-2 text-sm text-muted-foreground">1. Alice</div>
+              <div className="rounded-md border bg-background px-4 py-2 text-sm text-muted-foreground">2. Bob</div>
+              
+              <CollapsibleContent className="space-y-2 data-[state=open]:animate-collapsible-down data-[state=closed]:animate-collapsible-up">
+                <div className="rounded-md border bg-background px-4 py-2 text-sm text-muted-foreground">3. Charlie</div>
+                <div className="rounded-md border bg-background px-4 py-2 text-sm text-muted-foreground">4. Dave</div>
+                <div className="rounded-md border bg-background px-4 py-2 text-sm text-muted-foreground">5. Eve</div>
+              </CollapsibleContent>
+
+              <CollapsibleTrigger asChild>
+                <Button variant="ghost" size="sm" className="w-full text-muted-foreground text-xs">
+                  Show 3 more...
+                </Button>
+              </CollapsibleTrigger>
+            </Collapsible>
+          </div>
+        </div>
+      </GuideSection>
     </div>
   );
 };

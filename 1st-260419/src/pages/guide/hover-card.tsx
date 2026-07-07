@@ -2,9 +2,9 @@
 import React from 'react';
 import styles from './template.module.scss';
 import GuideSection from './components/guide-section';
-import { HoverCard, HoverCardTrigger, HoverCardContent } from '@/components/ui/hover-card/hover-card';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar/avatar';
-import { Button } from '@/components/ui/button/button';
+import { HoverCard, HoverCardTrigger, HoverCardContent  } from '@/components/ui/hover-card';
+import { Avatar, AvatarFallback, AvatarImage  } from '@/components/ui/avatar';
+import { Button  } from '@/components/ui/button';
 import { CalendarDays } from 'lucide-react';
 
 
@@ -56,15 +56,15 @@ const HoverCardGuidePage = () => {
           <div className={styles.code_view}>
             <pre>
               <code>
-{`import { HoverCard, HoverCardTrigger, HoverCardContent } from '@/components/ui/hover-card/hover-card';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar/avatar';
-import { Button } from '@/components/ui/button/button';
+{`import { HoverCard, HoverCardTrigger, HoverCardContent  } from '@/components/ui/hover-card';
+import { Avatar, AvatarFallback, AvatarImage  } from '@/components/ui/avatar';
+import { Button  } from '@/components/ui/button';
 import { CalendarDays } from 'lucide-react';
 
 // Basic Component Usage
 <HoverCard>
   <HoverCardTrigger asChild><Button variant="link">@nextjs</Button></HoverCardTrigger>
-  <HoverCardContent className="w-80">
+  <HoverCardContent>
     <div>Detail Profile Info</div>
   </HoverCardContent>
 </HoverCard>`}
@@ -83,7 +83,7 @@ import { CalendarDays } from 'lucide-react';
             
               <HoverCard>
   <HoverCardTrigger asChild><Button variant="link">@nextjs</Button></HoverCardTrigger>
-  <HoverCardContent className="w-80">
+  <HoverCardContent>
     <div className="flex justify-between space-x-4">
       <Avatar><AvatarImage src="https://github.com/vercel.png" /><AvatarFallback>VC</AvatarFallback></Avatar>
       <div className="space-y-1">
@@ -100,7 +100,7 @@ import { CalendarDays } from 'lucide-react';
               <code>
 {`<HoverCard>
   <HoverCardTrigger asChild><Button variant="link">@nextjs</Button></HoverCardTrigger>
-  <HoverCardContent className="w-80">
+  <HoverCardContent>
     <div>Detail Profile Info</div>
   </HoverCardContent>
 </HoverCard>`}

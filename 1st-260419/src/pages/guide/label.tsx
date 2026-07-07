@@ -2,9 +2,9 @@
 import React from 'react';
 import styles from './template.module.scss';
 import GuideSection from './components/guide-section';
-import { Label } from '@/components/ui/label/label';
-import { Input } from '@/components/ui/input/input';
-import { Checkbox } from '@/components/ui/checkbox/checkbox';
+import { Label  } from '@/components/ui/label';
+import { Input  } from '@/components/ui/input';
+import { Checkbox  } from '@/components/ui/checkbox';
 
 
 
@@ -55,9 +55,9 @@ const LabelGuidePage = () => {
           <div className={styles.code_view}>
             <pre>
               <code>
-{`import { Label } from '@/components/ui/label/label';
-import { Input } from '@/components/ui/input/input';
-import { Checkbox } from '@/components/ui/checkbox/checkbox';
+{`import { Label  } from '@/components/ui/label';
+import { Input  } from '@/components/ui/input';
+import { Checkbox  } from '@/components/ui/checkbox';
 
 // Basic Component Usage
 <div className="flex flex-col space-y-2 w-[300px]">

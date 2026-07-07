@@ -2,7 +2,7 @@
 import React from 'react';
 import styles from './template.module.scss';
 import GuideSection from './components/guide-section';
-import { NavigationMenu, NavigationMenuList, NavigationMenuItem, NavigationMenuTrigger, NavigationMenuContent, NavigationMenuLink, navigationMenuTriggerStyle } from '@/components/ui/navigation-menu/navigation-menu';
+import { NavigationMenu, NavigationMenuList, NavigationMenuItem, NavigationMenuTrigger, NavigationMenuContent, NavigationMenuLink, navigationMenuTriggerStyle  } from '@/components/ui/navigation-menu';
 import { cn } from '@/utils/cn';
 
 
@@ -54,7 +54,7 @@ const NavigationMenuGuidePage = () => {
           <div className={styles.code_view}>
             <pre>
               <code>
-{`import { NavigationMenu, NavigationMenuList, NavigationMenuItem, NavigationMenuTrigger, NavigationMenuContent, NavigationMenuLink, navigationMenuTriggerStyle } from '@/components/ui/navigation-menu/navigation-menu';
+{`import { NavigationMenu, NavigationMenuList, NavigationMenuItem, NavigationMenuTrigger, NavigationMenuContent, NavigationMenuLink, navigationMenuTriggerStyle  } from '@/components/ui/navigation-menu';
 import { cn } from '@/utils/cn';
 
 // Basic Component Usage

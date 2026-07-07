@@ -1,30 +1,30 @@
 .wrapper {
   display: flex;
   flex-direction: column;
-  gap: 48px;
+  gap: var(--spacing-2xl);
 }
 
 .header {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: var(--spacing-xs);
 }
 
 .title_h1 {
   margin: 0;
   font-size: 32px;
   font-weight: 800;
-  color: #111827;
+  color: var(--color-gray-900);
 }
 
 .title_h2 {
   margin: 0;
-  font-size: 24px;
+  font-size: var(--font-size-h3);
   font-weight: 700;
-  color: #111827;
-  border-bottom: 1px solid #e5e7eb;
-  padding-bottom: 8px;
-  margin-bottom: 24px;
+  color: var(--color-gray-900);
+  border-bottom: 1px solid var(--color-gray-200);
+  padding-bottom: var(--spacing-xs);
+  margin-bottom: var(--spacing-lg);
 }
 
 .color_group {
@@ -32,16 +32,16 @@
 }
 
 .group_title {
-  font-size: 16px;
+  font-size: var(--font-size-title-md);
   font-weight: 600;
-  color: #374151;
-  margin-bottom: 16px;
+  color: var(--color-gray-700);
+  margin-bottom: var(--spacing-md);
 }
 
 .color_grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 12px;
+  gap: var(--spacing-sm);
 
   @media (min-width: 768px) {
     grid-template-columns: repeat(10, 1fr);
@@ -51,7 +51,7 @@
 .color_block {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: var(--spacing-xs);
 }
 
 .box {
@@ -67,15 +67,15 @@
 
 .label {
   margin: 0;
-  font-size: 12px;
+  font-size: var(--font-size-label-md);
   font-weight: 700;
-  color: #111827;
+  color: var(--color-gray-900);
 }
 
 .hex {
   margin: 0;
-  font-size: 10px;
-  color: #6b7280;
+  font-size: var(--font-size-label-sm);
+  color: var(--color-gray-500);
   font-family: monospace;
   text-transform: uppercase;
 }

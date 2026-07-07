@@ -2,7 +2,7 @@
 import React from 'react';
 import styles from './template.module.scss';
 import GuideSection from './components/guide-section';
-import { Slider } from '@/components/ui/slider/slider';
+import { Slider  } from '@/components/ui/slider';
 
 
 
@@ -71,7 +71,7 @@ const SliderGuidePage = () => {
           <div className={styles.code_view}>
             <pre>
               <code>
-{`import { Slider } from '@/components/ui/slider/slider';
+{`import { Slider  } from '@/components/ui/slider';
 
 // Basic Component Usage
 <Slider defaultValue={[33]} max={100} step={1} className="w-[60%]" />`}

@@ -2,7 +2,7 @@
 import React from 'react';
 import styles from './template.module.scss';
 import GuideSection from './components/guide-section';
-import { ScrollArea } from '@/components/ui/scroll-area/scroll-area';
+import { ScrollArea  } from '@/components/ui/scroll-area';
 
 const tags = Array.from({ length: 50 }).map((_, i, a) => `v1.2.${a.length - i}`)
 
@@ -47,7 +47,7 @@ const ScrollAreaGuidePage = () => {
           <div className={styles.code_view}>
             <pre>
               <code>
-{`import { ScrollArea } from '@/components/ui/scroll-area/scroll-area';
+{`import { ScrollArea  } from '@/components/ui/scroll-area';
 
 // Basic Component Usage
 <ScrollArea className="h-72 w-48 rounded-md border">

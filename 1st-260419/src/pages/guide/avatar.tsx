@@ -2,7 +2,7 @@
 import React from 'react';
 import styles from './template.module.scss';
 import GuideSection from './components/guide-section';
-import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar/avatar';
+import { Avatar, AvatarImage, AvatarFallback  } from '@/components/ui/avatar';
 
 
 
@@ -44,6 +44,12 @@ const AvatarGuidePage = () => {
                   <td><code>false</code></td>
                   <td>하위 요소를 슬롯으로 렌더링</td>
                 </tr>
+                <tr>
+                  <td><code>size</code></td>
+                  <td><code>"sm" | "md" | "lg" | "xl" | "2xl"</code></td>
+                  <td><code>"md"</code></td>
+                  <td>아바타의 크기를 지정합니다.</td>
+                </tr>
               </tbody>
             </table>
           </div>
@@ -53,7 +59,7 @@ const AvatarGuidePage = () => {
           <div className={styles.code_view}>
             <pre>
               <code>
-{`import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar/avatar';
+{`import { Avatar, AvatarImage, AvatarFallback  } from '@/components/ui/avatar';
 
 // Basic Component Usage
 <Avatar>
@@ -115,15 +121,17 @@ const AvatarGuidePage = () => {
           <div className={styles.preview}>
             
               <div className="flex items-center space-x-4">
-  <Avatar className="w-8 h-8"><AvatarImage src="https://github.com/shadcn.png" /></Avatar>
-  <Avatar className="w-12 h-12"><AvatarImage src="https://github.com/shadcn.png" /></Avatar>
-  <Avatar className="w-16 h-16"><AvatarImage src="https://github.com/shadcn.png" /></Avatar>
+  <Avatar size="sm"><AvatarImage src="https://github.com/shadcn.png" /></Avatar>
+  <Avatar size="md"><AvatarImage src="https://github.com/shadcn.png" /></Avatar>
+  <Avatar size="lg"><AvatarImage src="https://github.com/shadcn.png" /></Avatar>
+  <Avatar size="xl"><AvatarImage src="https://github.com/shadcn.png" /></Avatar>
+  <Avatar size="2xl"><AvatarImage src="https://github.com/shadcn.png" /></Avatar>
 </div>
             </div>
           <div className={styles.code_view}>
             <pre>
               <code>
-{`<Avatar className="w-16 h-16">...</Avatar>`}
+{`<Avatar size="xl">...</Avatar>`}
               </code>
             </pre>
           </div>

@@ -2,8 +2,8 @@
 import React from 'react';
 import styles from './template.module.scss';
 import GuideSection from './components/guide-section';
-import { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider } from '@/components/ui/tooltip/tooltip';
-import { Button } from '@/components/ui/button/button';
+import { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider  } from '@/components/ui/tooltip';
+import { Button  } from '@/components/ui/button';
 import { Plus } from 'lucide-react';
 
 
@@ -55,8 +55,8 @@ const TooltipGuidePage = () => {
           <div className={styles.code_view}>
             <pre>
               <code>
-{`import { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider } from '@/components/ui/tooltip/tooltip';
-import { Button } from '@/components/ui/button/button';
+{`import { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider  } from '@/components/ui/tooltip';
+import { Button  } from '@/components/ui/button';
 import { Plus } from 'lucide-react';
 
 // Basic Component Usage
@@ -109,7 +109,52 @@ import { Plus } from 'lucide-react';
         </div>
       </GuideSection>
 
-      
+      <GuideSection title="3. Variants & States">
+        <p className={styles.description}>실무에서 자주 사용되는 다양한 옵션과 상태 변화 예시입니다.</p>
+
+        <div className={styles.sub_section}>
+          <h3 className={styles.title_h3}>3.1. Direction Cases</h3>
+          <p className={styles.description} style={{marginBottom: '12px'}}>툴팁이 나타나는 방향을 제어할 수 있습니다.</p>
+          <div className={styles.preview}>
+            <TooltipProvider>
+              <div className="flex flex-wrap gap-4">
+                <Tooltip>
+                  <TooltipTrigger asChild><Button variant="outline">Top</Button></TooltipTrigger>
+                  <TooltipContent side="top"><p>Tooltip on Top</p></TooltipContent>
+                </Tooltip>
+                
+                <Tooltip>
+                  <TooltipTrigger asChild><Button variant="outline">Bottom</Button></TooltipTrigger>
+                  <TooltipContent side="bottom"><p>Tooltip on Bottom</p></TooltipContent>
+                </Tooltip>
+
+                <Tooltip>
+                  <TooltipTrigger asChild><Button variant="outline">Left</Button></TooltipTrigger>
+                  <TooltipContent side="left"><p>Tooltip on Left</p></TooltipContent>
+                </Tooltip>
+
+                <Tooltip>
+                  <TooltipTrigger asChild><Button variant="outline">Right</Button></TooltipTrigger>
+                  <TooltipContent side="right"><p>Tooltip on Right</p></TooltipContent>
+                </Tooltip>
+              </div>
+            </TooltipProvider>
+          </div>
+        </div>
+
+        <div className={styles.sub_section}>
+          <h3 className={styles.title_h3}>3.2. Without Delay (Fast Hover)</h3>
+          <p className={styles.description} style={{marginBottom: '12px'}}>호버 즉시 나타나게 하려면 Provider의 delayDuration을 0으로 설정합니다.</p>
+          <div className={styles.preview}>
+            <TooltipProvider delayDuration={0}>
+              <Tooltip>
+                <TooltipTrigger asChild><Button variant="outline">Fast Hover</Button></TooltipTrigger>
+                <TooltipContent><p>Instantly shows up!</p></TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
+          </div>
+        </div>
+      </GuideSection>
     </div>
   );
 };

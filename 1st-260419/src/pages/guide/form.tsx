@@ -2,9 +2,9 @@
 import React from 'react';
 import styles from './template.module.scss';
 import GuideSection from './components/guide-section';
-import { Form, FormField, FormItem, FormLabel, FormControl, FormDescription, FormMessage } from '@/components/ui/form/form';
-import { Input } from '@/components/ui/input/input';
-import { Button } from '@/components/ui/button/button';
+import { Form, FormField, FormItem, FormLabel, FormControl, FormDescription, FormMessage  } from '@/components/ui/form';
+import { Input  } from '@/components/ui/input';
+import { Button  } from '@/components/ui/button';
 import { useForm } from 'react-hook-form';
 
 const FormDemoComponent = () => {
@@ -79,9 +79,9 @@ const FormGuidePage = () => {
           <div className={styles.code_view}>
             <pre>
               <code>
-{`import { Form, FormField, FormItem, FormLabel, FormControl, FormDescription, FormMessage } from '@/components/ui/form/form';
-import { Input } from '@/components/ui/input/input';
-import { Button } from '@/components/ui/button/button';
+{`import { Form, FormField, FormItem, FormLabel, FormControl, FormDescription, FormMessage  } from '@/components/ui/form';
+import { Input  } from '@/components/ui/input';
+import { Button  } from '@/components/ui/button';
 import { useForm } from 'react-hook-form';
 
 // Basic Component Usage

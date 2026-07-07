@@ -2,7 +2,7 @@
 import React from 'react';
 import styles from './template.module.scss';
 import GuideSection from './components/guide-section';
-import { InputOTP, InputOTPGroup, InputOTPSlot, InputOTPSeparator } from '@/components/ui/input-otp/input-otp';
+import { InputOTP, InputOTPGroup, InputOTPSlot, InputOTPSeparator  } from '@/components/ui/input-otp';
 
 
 
@@ -59,7 +59,7 @@ const InputOtpGuidePage = () => {
           <div className={styles.code_view}>
             <pre>
               <code>
-{`import { InputOTP, InputOTPGroup, InputOTPSlot, InputOTPSeparator } from '@/components/ui/input-otp/input-otp';
+{`import { InputOTP, InputOTPGroup, InputOTPSlot, InputOTPSeparator  } from '@/components/ui/input-otp';
 
 // Basic Component Usage
 <InputOTP maxLength={6}>

@@ -2,8 +2,8 @@
 import React from 'react';
 import styles from './template.module.scss';
 import GuideSection from './components/guide-section';
-import { Checkbox } from '@/components/ui/checkbox/checkbox';
-import { Label } from '@/components/ui/label/label';
+import { Checkbox  } from '@/components/ui/checkbox';
+import { Label  } from '@/components/ui/label';
 
 
 
@@ -60,8 +60,8 @@ const CheckboxGuidePage = () => {
           <div className={styles.code_view}>
             <pre>
               <code>
-{`import { Checkbox } from '@/components/ui/checkbox/checkbox';
-import { Label } from '@/components/ui/label/label';
+{`import { Checkbox  } from '@/components/ui/checkbox';
+import { Label  } from '@/components/ui/label';
 
 // Basic Component Usage
 <div className="flex items-center space-x-2">
@@ -140,6 +140,42 @@ import { Label } from '@/components/ui/label/label';
 </div>`}
               </code>
             </pre>
+          </div>
+        </div>
+
+        <div className={styles.sub_section}>
+          <h3 className={styles.title_h3}>3.3. Block Type</h3>
+          <p className={styles.description} style={{marginBottom: '12px'}}>체크박스를 숨기고 전체 영역을 클릭 가능한 블록 형태로 만듭니다.</p>
+          <div className={styles.preview}>
+            <div className="grid grid-cols-2 gap-4 max-w-md">
+              <Label htmlFor="plan-basic" className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground has-[:checked]:border-primary has-[:checked]:bg-primary/5 cursor-pointer">
+                <Checkbox id="plan-basic" className="sr-only" />
+                <span className="font-semibold">Basic Plan</span>
+                <span className="text-sm text-muted-foreground">$9.99/mo</span>
+              </Label>
+              <Label htmlFor="plan-pro" className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground has-[:checked]:border-primary has-[:checked]:bg-primary/5 cursor-pointer">
+                <Checkbox id="plan-pro" className="sr-only" />
+                <span className="font-semibold">Pro Plan</span>
+                <span className="text-sm text-muted-foreground">$29.99/mo</span>
+              </Label>
+            </div>
+          </div>
+        </div>
+
+        <div className={styles.sub_section}>
+          <h3 className={styles.title_h3}>3.4. Image Type</h3>
+          <p className={styles.description} style={{marginBottom: '12px'}}>이미지를 선택하는 시각적인 체크박스 예시입니다.</p>
+          <div className={styles.preview}>
+            <div className="grid grid-cols-3 gap-4 max-w-lg">
+              <Label htmlFor="img1" className="relative cursor-pointer rounded-lg border-2 border-transparent hover:border-primary/50 has-[:checked]:border-primary overflow-hidden">
+                <Checkbox id="img1" className="sr-only" />
+                <img src="https://images.unsplash.com/photo-1550439062-609e1531270e?w=300&q=80" alt="Theme 1" className="object-cover w-full h-24" />
+              </Label>
+              <Label htmlFor="img2" className="relative cursor-pointer rounded-lg border-2 border-transparent hover:border-primary/50 has-[:checked]:border-primary overflow-hidden">
+                <Checkbox id="img2" className="sr-only" />
+                <img src="https://images.unsplash.com/photo-1550439062-609e1531270e?w=300&q=80" alt="Theme 2" className="object-cover w-full h-24 grayscale" />
+              </Label>
+            </div>
           </div>
         </div>
       </GuideSection>
