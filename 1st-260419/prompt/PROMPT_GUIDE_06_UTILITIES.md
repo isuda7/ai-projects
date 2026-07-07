@@ -1,6 +1,7 @@
 # 디자인 시스템 Utilities 가이드 생성 프롬프트
 
-새로운 공통 유틸리티 클래스(Utility Classes)를 추가하거나 가이드 페이지를 갱신할 때는 아래의 규칙과 뼈대 구조를 준수하여 React 코드를 작성해 주세요.
+- **공통 뼈대**: 반드시 `PROMPT_GUIDE_01_BASE.md`에 정의된 마스터 템플릿 규칙(메뉴 분류, `// @ts-nocheck`, `<GuideSection>`, `<CodeBlock>` 등)을 최우선으로 준수합니다.
+- **개별 구성**: 새로운 공통 유틸리티 클래스(Utility Classes)를 추가하거나 가이드 페이지를 갱신할 때는 아래의 개별 규칙과 뼈대 구조를 활용합니다.
 
 ## 📝 Utilities 가이드 작성 규칙
 1. **파일 경로**: `src/pages/guide/utilities.tsx`
