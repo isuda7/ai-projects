@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>바이브코딩 (Vibe Coding) | 미래를 여는 코딩 커리큘럼</title>
+    <meta name="description" content="최신 AI와 트렌드를 반영한 바이브코딩 커리큘럼으로 코딩의 새로운 패러다임을 경험하세요.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">VibeCoding.</div>
+                <ul class="nav-links">
+                    <li><a href="#about">개요</a></li>
+                    <li><a href="#editor">에디터</a></li>
+                    <li><a href="#process">프로세스</a></li>
+                    <li><a href="#practical">실무단계</a></li>
+                </ul>
+                <a href="#editor" class="cta-button">에디터 알아보기</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="about">
+        <div class="container">
+            <h1>실무자를 위한<br>바이브코딩 가이드</h1>
+            <p>AI 페어 프로그래밍을 활용하여 실제 프로덕트를 기획하고 개발하는 실무적인 접근 방식과 단계별 워크플로우를 안내합니다.</p>
+            <div class="hero-buttons">
+                <a href="#editor" class="cta-button">에디터 알아보기</a>
+                <a href="#process" class="secondary-button">프로세스 보기</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Editor Section -->
+    <section class="target" id="editor" style="padding-top: 80px; padding-bottom: 80px;">
+        <div class="container">
+            <h2 class="section-title">Choose Your AI Editor</h2>
+            <p style="text-align: center; color: var(--text-muted); margin-bottom: 60px;">당신의 코딩 스타일에 완벽하게 동기화될 최적의 AI 무기를 선택하세요.</p>
+            <!-- Unified Editor Comparison -->
+            <div class="comparison-container" style="margin-top: 40px;">
+                <table class="editor-comparison-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 16%; text-align: left; vertical-align: bottom; padding-bottom: 30px; font-size: 1.2rem; color: var(--text-muted);">비교 기준</th>
+                            <th style="width: 28%;">
+                                <div class="editor-header">
+                                    <div class="logo-wrapper">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48">
+                                            <path fill="#0078d7" d="M23.15 2.587L18.21.21a1.494 1.494 0 0 0-1.705.29l-9.46 8.63-4.12-3.128a.999.999 0 0 0-1.276.057L.327 7.261A1 1 0 0 0 .326 8.74L3.899 12 .326 15.26a1 1 0 0 0 .001 1.479L1.65 17.94a.999.999 0 0 0 1.276.057l4.12-3.128 9.46 8.63a1.492 1.492 0 0 0 1.704.29l4.942-2.377A1.5 1.5 0 0 0 24 20.06V3.939a1.5 1.5 0 0 0-.85-1.352zm-5.146 14.861L10.826 12l7.178-5.448v10.896z"/>
+                                        </svg>
+                                    </div>
+                                    <h3>VS Code <span style="font-size:0.8em; font-weight:normal;">(w/ Copilot)</span></h3>
+                                    <span class="editor-badge plugin">플러그인 확장형</span>
+                                </div>
+                            </th>
+                            <th style="width: 28%;">
+                                <div class="editor-header">
+                                    <div class="logo-wrapper">
+                                        <img src="https://www.google.com/s2/favicons?sz=128&domain=cursor.com" alt="Cursor AI Logo" width="48" height="48" style="border-radius: 10px;" />
+                                    </div>
+                                    <h3>Cursor</h3>
+                                    <span class="editor-badge native">AI 네이티브 통합형</span>
+                                </div>
+                            </th>
+                            <th style="width: 28%;">
+                                <div class="editor-header">
+                                    <div class="logo-wrapper">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24">
+                                            <defs>
+                                                <linearGradient id="agLogoGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                                                    <stop offset="0%" stop-color="#3b82f6"/>
+                                                    <stop offset="25%" stop-color="#10b981"/>
+                                                    <stop offset="50%" stop-color="#ef4444"/>
+                                                    <stop offset="75%" stop-color="#8b5cf6"/>
+                                                    <stop offset="100%" stop-color="#3b82f6"/>
+                                                </linearGradient>
+                                            </defs>
+                                            <path d="M 6 20 Q 12 2 18 20" fill="none" stroke="url(#agLogoGrad)" stroke-width="5" stroke-linecap="round" />
+                                        </svg>
+                                    </div>
+                                    <h3>Antigravity</h3>
+                                    <span class="editor-badge agent">자율형 AI 에이전트</span>
+                                </div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="pros-cons-row">
+                            <td><strong>장단점 요약</strong></td>
+                            <td>
+                                <ul class="pros-cons-list">
+                                    <li><strong class="pro">장점:</strong> 대중적인 생태계</li>
+                                    <li><strong class="con">단점:</strong> 프로젝트 전체 문맥 파악 제한적</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul class="pros-cons-list">
+                                    <li><strong class="pro">장점:</strong> 압도적인 인라인 편집</li>
+                                    <li><strong class="con">단점:</strong> 새로운 환경 적응 필요</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul class="pros-cons-list">
+                                    <li><strong class="pro">장점:</strong> 능동적 분석 및 문제 해결</li>
+                                    <li><strong class="con">단점:</strong> 작업 방향에 대한 모니터링 필요</li>
+                                </ul>
+                        </tr>
+                        <tr>
+                            <td><strong>비용</strong></td>
+                            <td>AI 플러그인 유료 (본체 무료)</td>
+                            <td>유료 구독형</td>
+                            <td><strong>전면 무료</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>AI 개입 수준</strong></td>
+                            <td>수동적<br>(코드 자동완성, 채팅 보조)</td>
+                            <td>반자동<br>(강력한 인라인 편집, 다중 파일 생성)</td>
+                            <td><strong>완전 자율<br>(계획 수립부터 실행, 검증까지)</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>컨텍스트 이해도</strong></td>
+                            <td>주로 열려있는 파일 및 선택된 코드 조각</td>
+                            <td>전체 코드베이스 기반의 깊은 이해</td>
+                            <td><strong>코드베이스, 터미널, 시스템 환경까지 능동적 파악</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>작업 방식</strong></td>
+                            <td>개발자가 주도하고 AI가 질문에 답하는 형태</td>
+                            <td>AI와 실시간으로 티키타카하며 공동 개발</td>
+                            <td><strong>목표를 주면 AI가 툴을 사용해 주도적으로 문제 해결</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>도입 추천 대상</strong></td>
+                            <td>기존 세팅을 유지하며 가볍게 AI를 경험하고 싶은 분</td>
+                            <td>개발 속도를 극대화하고 싶은 프론트/백엔드 실무자</td>
+                            <td><strong>복잡한 문제 해결과 기획, 아키텍처 설계에 집중하고 싶은 분</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Final Recommendation -->
+            <div style="text-align: center; margin-top: 40px; padding: 25px; background: rgba(59, 130, 246, 0.05); border: 1px solid rgba(59, 130, 246, 0.15); border-radius: 16px;">
+                <p style="margin: 0; font-size: 1.15rem; color: var(--text-color); font-weight: 500;">
+                    💡 결론: <span style="color: var(--text-muted); font-weight: normal;">단순 코딩을 넘어 기획과 설계에 집중하는 진짜 '바이브코딩'을 원한다면, </span><strong style="color: #60a5fa;">Antigravity</strong>가 완벽한 해답입니다.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="curriculum" id="process">
+        <div class="container">
+            <h2 class="section-title" style="margin-bottom: 20px;">바이브코딩 프로세스</h2>
+            <p style="text-align: center; color: var(--text-muted); margin-bottom: 40px;">작업의 규모와 성격에 따라 두 가지 개발 방식을 선택할 수 있습니다.</p>
+            
+            <!-- Tab Buttons -->
+            <div class="process-tabs">
+                <button class="process-tab active" onclick="switchProcessTab('freestyle', this)">🎨 프리스타일 방식</button>
+                <button class="process-tab" onclick="switchProcessTab('project', this)">🏗️ 프로젝트 방식</button>
+            </div>
+
+            <!-- Freestyle Tab Content -->
+            <div id="freestyle-tab" class="process-tab-content active">
+                <div class="target-content" style="padding: 40px; background: rgba(0,0,0,0.2);">
+                    <h3 style="text-align: center; font-size: 1.6rem; margin-bottom: 40px; color: #fff;">아이디어에서 완성까지, 거침없는 3단계 전개</h3>
+                    <div class="features-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+                        <div class="feature-card clickable-card" onclick="openModal('f1')">
+                            <div class="feature-icon">1</div>
+                            <h4 style="font-size: 1.2rem; color: #fff; margin-bottom: 10px;">큰 그림 던지기 (초안)</h4>
+                            <p style="font-size: 0.95rem;">완벽한 기획서 없이, 만들고자 하는 서비스의 핵심 컨셉과 뼈대만 AI에게 묘사하여 빠르게 첫 결과물을 뽑아냅니다.</p>
+                            <div class="view-prompt-btn">프롬프트 예시 보기 ↗</div>
+                        </div>
+                        <div class="feature-card clickable-card" onclick="openModal('f2')">
+                            <div class="feature-icon">2</div>
+                            <h4 style="font-size: 1.2rem; color: #fff; margin-bottom: 10px;">내용 및 기능 채우기</h4>
+                            <p style="font-size: 0.95rem;">생성된 초안을 바탕으로 더미 데이터를 넣거나, 화면 간의 이동 로직 등 실질적인 살을 붙입니다.</p>
+                            <div class="view-prompt-btn">프롬프트 예시 보기 ↗</div>
+                        </div>
+                        <div class="feature-card clickable-card" onclick="openModal('f3')">
+                            <div class="feature-icon">3</div>
+                            <h4 style="font-size: 1.2rem; color: #fff; margin-bottom: 10px;">디테일 개선 (폴리싱)</h4>
+                            <p style="font-size: 0.95rem;">애니메이션, 모바일 반응형 대응, 예외 처리 등 완성도를 끌어올리기 위한 세부 디테일을 다듬습니다.</p>
+                            <div class="view-prompt-btn">프롬프트 예시 보기 ↗</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Tab Content -->
+            <div id="project-tab" class="process-tab-content">
+                <!-- 준비 vs 실무 -->
+                <div class="curriculum-grid" style="margin-bottom: 30px;">
+                    <div class="curriculum-card clickable-card" style="border: 1px solid rgba(16, 185, 129, 0.3); box-shadow: 0 0 30px rgba(16, 185, 129, 0.05);" onclick="openModal('prep')">
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+                            <div style="font-size: 2.5rem;">⚙️</div>
+                            <span class="editor-badge" style="background: rgba(16, 185, 129, 0.1); color: #34d399;">환경설정</span>
+                        </div>
+                        <h3>Phase 1. 전체 방향 잡기</h3>
+                        <ul style="list-style: none; padding: 0; margin-bottom: 25px; line-height: 1.8; color: var(--text-muted); font-size: 0.95rem;">
+                            <li>• 프로젝트 기술 스택(언어/프레임워크) 정의</li>
+                            <li>• 폴더 구조 및 아키텍처 규칙 세팅</li>
+                            <li>• 코딩 컨벤션 및 네이밍 규칙 확립</li>
+                            <li style="color: #34d399; font-weight: 600; margin-top: 5px;">🔥 핵심: AI가 지켜야 할 절대 규칙(System Prompt) 주입</li>
+                        </ul>
+                        <div class="view-prompt-btn">시스템 프롬프트 템플릿 보기 ↗</div>
+                    </div>
+                    <div class="curriculum-card clickable-card" style="border: 1px solid rgba(139, 92, 246, 0.3); box-shadow: 0 0 30px rgba(139, 92, 246, 0.05);" onclick="openModal('guide')">
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+                            <div style="font-size: 2.5rem;">📐</div>
+                            <span class="editor-badge" style="background: rgba(139, 92, 246, 0.1); color: #a78bfa;">가이드</span>
+                        </div>
+                        <h3>Phase 2. 뼈대 및 디자인</h3>
+                        <ul style="list-style: none; padding: 0; margin-bottom: 25px; line-height: 1.8; color: var(--text-muted); font-size: 0.95rem;">
+                            <li>• 프론트 페이지 목록(대시보드) 정리</li>
+                            <li>• 파운데이션(디자인 토큰 등) 세팅</li>
+                            <li>• 공통 UI 컴포넌트 산출물 정리</li>
+                            <li style="color: #a78bfa; font-weight: 600; margin-top: 5px;">🔥 핵심: 본격적인 기능구현 전 가이드 정리를 위한 단계</li>
+                        </ul>
+                        <div class="view-prompt-btn">가이드 프롬프트 템플릿 보기 ↗</div>
+                    </div>
+                    <div class="curriculum-card clickable-card" style="border: 1px solid rgba(59, 130, 246, 0.3); box-shadow: 0 0 30px rgba(59, 130, 246, 0.05);" onclick="openModal('exec')">
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+                            <div style="font-size: 2.5rem;">🛠️</div>
+                            <span class="editor-badge" style="background: rgba(59, 130, 246, 0.1); color: #60a5fa;">기능구현</span>
+                        </div>
+                        <h3>Phase 3. 핑퐁하며 구현하기</h3>
+                        <ul style="list-style: none; padding: 0; margin-bottom: 25px; line-height: 1.8; color: var(--text-muted); font-size: 0.95rem;">
+                            <li>• 정해진 규칙 위에서 지속적인 대화(핑퐁) 진행</li>
+                            <li>• 기능 검증 및 에러 발생 시 즉각 피드백</li>
+                            <li>• 구현된 코드의 주기적인 리뷰 및 리팩토링</li>
+                            <li style="color: #60a5fa; font-weight: 600; margin-top: 5px;">🔥 핵심: 거대한 지시 대신 작은 기능 단위(Chunk)로 쪼개서 요청</li>
+                        </ul>
+                        <div class="view-prompt-btn">실무 티키타카 예시 보기 ↗</div>
+                    </div>
+                </div>
+
+                <div class="target-content" style="padding: 40px; background: rgba(0,0,0,0.2);">
+                    <h3 style="text-align: center; font-size: 1.8rem; margin-bottom: 20px; color: #fff;">기능구현 시 무한 반복되는 6가지 기본 공식</h3>
+                    <p style="text-align: center; color: var(--text-muted); margin-bottom: 40px;">어떤 기능을 만들든 이 6가지 순서만 똑같이 반복하면 됩니다.</p>
+                    <div class="features-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+                        <div class="feature-card clickable-card" onclick="openModal(1)">
+                            <div class="feature-icon">1️⃣</div>
+                            <h4 style="font-size: 1.2rem; color: #fff; margin-bottom: 10px;">요구사항 구체화</h4>
+                        </div>
+                        <div class="feature-card clickable-card" onclick="openModal(4)">
+                            <div class="feature-icon">4️⃣</div>
+                            <h4 style="font-size: 1.2rem; color: #fff; margin-bottom: 10px;">에러 복붙 디버깅</h4>
+                            <p style="font-size: 0.95rem;">오류 발생 시 에러 로그 전문과 상황을 그대로 복사해 AI에게 해결책을 묻습니다.</p>
+                            <div class="view-prompt-btn">프롬프트 예시 보기 ↗</div>
+                        </div>
+                        <div class="feature-card clickable-card" onclick="openModal(5)">
+                            <div class="feature-icon">5️⃣</div>
+                            <h4 style="font-size: 1.2rem; color: #fff; margin-bottom: 10px;">코드 리뷰 및 리팩토링</h4>
+                            <p style="font-size: 0.95rem;">코드가 작동하더라도 "더 나은 패턴이나 취약점은 없는지" 되물어 코드를 다듬습니다.</p>
+                            <div class="view-prompt-btn">프롬프트 예시 보기 ↗</div>
+                        </div>
+                        <div class="feature-card clickable-card" onclick="openModal(6)">
+                            <div class="feature-icon">6️⃣</div>
+                            <h4 style="font-size: 1.2rem; color: #fff; margin-bottom: 10px;">컨텍스트 업데이트</h4>
+                            <p style="font-size: 0.95rem;">새로운 라이브러 추가나 요구사항 변경 시, AI의 메모리(Context)를 다시 갱신해줍니다.</p>
+                            <div class="view-prompt-btn">프롬프트 예시 보기 ↗</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+                            <h4 style="font-size: 1.2rem; color: #fff; margin-bottom: 10px;">코드 리뷰 및 리팩토링</h4>
+                            <p style="font-size: 0.95rem;">코드가 작동하더라도 "더 나은 패턴이나 취약점은 없는지" 되물어 코드를 다듬습니다.</p>
+                            <div class="view-prompt-btn">프롬프트 예시 보기 ↗</div>
+                        </div>
+                        <div class="feature-card clickable-card" onclick="openModal(6)">
+                            <div class="feature-icon">6️⃣</div>
+                            <h4 style="font-size: 1.2rem; color: #fff; margin-bottom: 10px;">컨텍스트 업데이트</h4>
+                            <p style="font-size: 0.95rem;">새로운 라이브러 추가나 요구사항 변경 시, AI의 메모리(Context)를 다시 갱신해줍니다.</p>
+                            <div class="view-prompt-btn">프롬프트 예시 보기 ↗</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Practical Stages Section -->
+        <div class="container">
+            <h2 class="section-title" style="margin-bottom: 20px;">실전 프롬프트 작성 기법</h2>
+            <p style="text-align: center; color: var(--text-muted); margin-bottom: 60px;">명확한 기획이 있을 때와 없을 때의 접근법, 그리고 필수 바이브코딩 작성 기법입니다.</p>
+            
+            <div class="curriculum-grid" style="margin-bottom: 40px;">
+                <div class="curriculum-card clickable-card" onclick="openModal('approach_a')" style="cursor: pointer;">
+                    <span class="week-badge">접근 방식 A</span>
+                    <h3>결과 기반 프롬프트 도출 (역추론)</h3>
+                    <p>결과물을 직접 만들며 프롬프트를 역추론할 때는 <strong>'대화와 요약'</strong>을 활용합니다. 단편적인 기능들을 AI와 함께 구현하며 성공적인 결과를 찾아내고, "방금 우리가 만든 결과물을 처음부터 단번에 도출하려면 어떤 프롬프트가 필요할까?"라고 지시하여 <strong>AI 스스로 최적의 프롬프트를 역산</strong>하도록 유도합니다.</p>
+                    <div class="view-prompt-btn" style="margin-top: 20px; font-weight: 500;">진행과정 템플릿 보기 ↗</div>
+                </div>
+                <div class="curriculum-card clickable-card" onclick="openModal('approach_b')" style="cursor: pointer;">
+                    <span class="week-badge">접근 방식 B</span>
+                    <h3>프롬프트 자체 사전 제작 (설계)</h3>
+                    <p>프롬프트 자체를 먼저 제작할 때는 <strong>'구조화와 제약'</strong>이 핵심입니다. 프로젝트의 목적, 절대 어겨선 안 될 규칙, 기술 스택, 그리고 기대하는 출력 포맷(Output)을 마크다운 문법으로 뼈대부터 명확히 규격화하여, AI가 딴 길로 새지 않도록 완벽히 통제하는 지시문을 설계합니다.</p>
+                    <div class="view-prompt-btn" style="margin-top: 20px; font-weight: 500;">진행과정 템플릿 보기 ↗</div>
+                </div>
+            </div>
+
+            <div class="target-content" style="padding: 40px;">
+                <h3 style="margin-bottom: 25px; font-size: 1.5rem; color: #fff;">💡 바이브코딩 작성기법 기본 가이드</h3>
+                <ul style="display: flex; flex-direction: column; gap: 24px; list-style: none; padding-left: 0;">
+                    <li style="display: flex; flex-wrap: wrap; gap: 20px; align-items: center; padding-bottom: 24px; border-bottom: 1px solid rgba(255,255,255,0.05);">
+                        <div style="flex: 0 0 200px; display: flex; align-items: center; gap: 10px;">
+                            <span style="color: var(--primary-color); font-size: 1.2rem; font-weight: bold;">✓</span>
+                            <strong style="color: #fff; font-size: 1.05rem; word-break: keep-all;">'How'보다 'What'</strong>
+                        </div>
+                        <div style="flex: 1 1 400px; line-height: 1.6; color: var(--text-muted); font-size: 0.95rem;">
+                            구현 과정(How)을 CSS 속성으로 하나씩 지시하지 마세요.<br>원하는 최종 결과물의 시각적 형태(What)만 명확하게 묘사하세요.
+                        </div>
+                        <div style="flex-shrink: 0; padding-right: 10px;">
+                            <div class="view-prompt-btn" onclick="openModal('guide_what')" style="cursor: pointer; display: inline-flex; align-items: center; white-space: nowrap; font-size: 0.9rem; margin-top: 0;">예시 보기 ↗</div>
+                        </div>
+                    </li>
+                    <li style="display: flex; flex-wrap: wrap; gap: 20px; align-items: center; padding-bottom: 24px; border-bottom: 1px solid rgba(255,255,255,0.05);">
+const modalData = {
+            'f1': {
+                title: "1️⃣ 큰 그림 던지기 (초안)",
+                desc: "기획서 없이 핵심 컨셉과 원하는 레이아웃만 묘사하여 전체적인 UI 틀을 빠르게 뽑아냅니다.",
+                prompt: "나 지금 프론트엔드 포트폴리오 사이트를 만들려고 해.\n핵심 섹션은 딱 3개야.\n1. Hero 섹션: 내 이름과 3D 아바타, 큰 타이포그래피\n2. 프로젝트 리스트: 썸네일과 스택 뱃지가 있는 카드 형태\n3. 푸터: 깃허브, 링크드인 소셜 아이콘\n\nTailwind CSS로 다크 모드(글래스모피즘) 기반의 시안을 짜줘.\n일단 뼈대가 되는 전체 레이아웃과 Hero 섹션 퍼블리싱 코드부터 작성해 봐."
+            },
+            'f2': {
+                title: "2️⃣ 내용 및 기능 채우기",
+                desc: "만들어진 UI 뼈대 위에 실질적인 디자인 에셋, 더미 데이터, 그리고 CSS 인터랙션 요소를 추가합니다.",
+                prompt: "방금 만들어준 프로젝트 리스트 카드에 더미 데이터 이미지(Unsplash placeholder)와 타이틀을 넣어서 6개로 맵핑해 줘.\n\n그리고 각 카드에 마우스를 올렸을 때(hover) 부드럽게 위로 10px 정도 떠오르면서 카드 하단에 숨겨져 있던 '프로젝트 자세히 보기' 버튼이 스르륵 나타나게 CSS 트랜지션을 추가해 줘."
+            },
+            'f3': {
+                title: "3️⃣ 디테일 개선 (폴리싱)",
+                desc: "레이아웃이 얼추 나오면 모바일 반응형 대응, 스크롤 애니메이션 등 시각적 완성도를 극대화합니다.",
+                prompt: "UI는 예쁘게 잘 나왔어. 이제 디테일을 좀 잡을게.\n1. 브라우저 폭이 768px 이하가 되면 프로젝트 카드 그리드가 2열에서 1열로 꽉 차게 반응형(Responsive) 처리를 해줘.\n2. 사용자가 스크롤을 내려서 각 섹션이 뷰포트에 들어올 때마다 페이드 인(Fade-in)되면서 나타나도록 CSS 키프레임 애니메이션이나 Intersection Observer를 활용한 스크롤 애니메이션을 추가해 줘."
+            },
+            'prep': {
+                title: "⚙️ Phase 1. 전체 방향 잡기 (환경설정)",
+                tabs: [
+                    {
+                        tabName: "디자인 컨셉 정의",
+                        desc: "퍼블리싱할 프로젝트의 디자인 톤앤매너, 컬러 팔레트, 메인 타이포그래피를 명확히 지정합니다.",
+                        prompt: "우리가 만들 랜딩 페이지는 '애플(Apple)' 스타일의 미니멀하고 고급스러운 톤앤매너를 가질 거야.\n배경은 #000000 퓨어 블랙, 포인트 컬러는 #F5F5F7 실버 화이트로 지정해.\n폰트는 SF Pro(혹은 Inter)를 메인으로 쓸 거야."
+                    },
+                    {
+                        tabName: "컴포넌트 구조",
+                        desc: "UI 요소들을 어떻게 쪼개고 재사용할 것인지 뷰(View) 구조를 세팅합니다.",
+                        prompt: "퍼블리싱할 때 파일 구조는 기능별로 명확히 분리할 거야.\n/styles: 글로벌 CSS 및 디자인 토큰\n/components/layout: Header, Footer, Sidebar 등 틀이 되는 요소\n/components/ui: Button, Card, Badge 등 재사용 컴포넌트\n이 규칙에 맞춰서 마크업 뼈대 파일들을 생성해 줘."
+                    },
+                    {
+                        tabName: "CSS 컨벤션",
+                        desc: "클래스 네이밍 규칙이나 Tailwind 사용 여부를 명시합니다.",
+                        prompt: "모든 스타일링은 Tailwind CSS로만 작성하고, 인라인 스타일(style=)은 절대 금지야.\n반복되는 버튼이나 뱃지 스타일은 @apply를 활용해서 글로벌 CSS에 유틸리티 클래스로 분리해서 관리해 줘."
+                    },
+                    {
+                        tabName: "🔥 System Prompt",
+                        desc: "AI에게 퍼블리셔로서의 정체성을 부여하고 공통 규칙을 주입합니다.",
+                        prompt: "# Role\n당신은 픽셀 퍼펙트(Pixel-perfect)와 미세한 UX 인터랙션을 집요하게 챙기는 15년 차 시니어 UI 퍼블리셔입니다.\n\n# Design Rules\n- TailwindCSS, 다크모드, 글래스모피즘(backdrop-blur) 적극 활용\n- 모바일 First 반응형 필수\n- 모든 버튼과 카드엔 반드시 hover/active 트랜지션 추가\n\n위 컨텍스트를 완벽히 숙지했다면 '퍼블리싱 준비 완료'라고 대답해 줘."
+                    }
+                ]
+            },
+            'guide': {
+                title: "📐 Phase 2. 뼈대 및 디자인 (가이드)",
+                tabs: [
+                    {
+                        tabName: "대시보드 정리",
+                        desc: "앞으로 만들 프론트엔드 페이지들의 목록과 역할을 문서화합니다.",
+                        prompt: "본격적인 로직 구현에 앞서, 우리가 만들 전체 프론트엔드 페이지들의 목록(Dashboard)과 각각의 역할을 주석이나 마크다운 형태로 깔끔하게 리스트업해 줘."
+                    },
+                    {
+                        tabName: "파운데이션 세팅",
+                        desc: "메인 테마 컬러와 타이포그래피 등 디자인 토큰을 선언합니다.",
+                        prompt: "styles.css(혹은 Tailwind Config)에 프로젝트 전반에 사용할 메인 테마 컬러(브랜드 컬러, 배경색, 텍스트색)와 타이포그래피 변수들을 CSS 변수(:root)로 선언해 줘."
+                    },
+                    {
+                        tabName: "공통 UI 산출물",
+                        desc: "자주 쓰일 공통 UI 요소들의 뼈대를 미리 만듭니다.",
+                        prompt: "프로젝트에서 가장 많이 재사용될 Button, Input, Card 컴포넌트의 기본 구조와 스타일이 적용된 뼈대 코드를 미리 작성해 둬. 컴포넌트는 추후에 바로 가져다 쓸 수 있도록 props를 유연하게 열어둬."
+                    },
+                    {
+                        tabName: "🔥 가이드 확립",
+                        desc: "본격 구현 전에 디자인과 레이아웃의 기준점을 한 번에 통합하여 지시하는 프롬프트입니다.",
+                        prompt: "본격적인 로직 구현 전 가이드를 확립하겠습니다.\n\n1. 페이지 목록(Dashboard) 마크다운으로 문서화\n2. 디자인 테마 컬러/글꼴 변수 선언\n3. 재사용 공통 컴포넌트(Button, Input) 뼈대 구축\n\n위 사항들을 반영한 초기 산출물 코드들을 먼저 차례대로 제시해 줘."
+                    }
+                ]
+            },
+            'exec': {
+                title: "🛠️ Phase 3. 핑퐁하며 구현하기 (실무)",
+                tabs: [
+                    {
+                        tabName: "지속적 핑퐁",
+                        desc: "미리 정해둔 규칙과 뼈대 위에서 AI와 대화(핑퐁)하며 코드를 발전시킵니다.",
+                        prompt: "(제안받은 폴더 구조 승인 후)\n좋아, 제안해준 구조대로 갈게.\n가장 먼저 `app/layout.tsx`와 `app/page.tsx`를 생성하고 글로벌 스타일(bg-slate-900)을 적용해 줘. 작업이 끝나면 결과 화면을 확인할 수 있도록 로컬 서버 실행 명령어를 알려줘."
+                    },
+                    {
+                        tabName: "즉각 피드백",
+                        desc: "기능 검증 후 문제나 에러가 발생하면 콘솔 로그를 그대로 복붙하여 즉시 해결합니다.",
+                        prompt: "컴포넌트를 렌더링했는데 브라우저 콘솔에 다음과 같은 에러가 발생했어:\n`Error: Hydration failed because the initial UI does not match what was rendered on the server.`\n이 에러의 원인을 분석하고 필요한 위치에 'use client'를 추가해서 수정해 줘."
+                    },
+                    {
+                        tabName: "리뷰 및 리팩토링",
+                        desc: "기능이 돌아가더라도 주기적으로 리뷰를 요청하여 품질을 끌어올립니다.",
+                        prompt: "작성된 `useAuth` 훅이 의도대로 동작하긴 하는데, 이 코드에 보안상 취약점이나 불필요한 리렌더링 이슈가 있는지 시니어 개발자 관점에서 검토해 줘. 더 나은 디자인 패턴이 있다면 적용해서 리팩토링해 줘."
+                    },
+                    {
+                        tabName: "🔥 마이크로 쪼개기",
+                        desc: "거대한 기능 전체를 지시하는 대신, 작은 단위(Chunk)로 쪼개서 요청하는 것이 실무의 핵심입니다.",
+                        prompt: "이 페이지를 한 번에 다 만들지 말고 마이크로 태스크로 쪼개서 순서대로 가자.\n\n먼저 1단계: 'Header 컴포넌트의 레이아웃만 퍼블리싱' 해줘.\n이 코드가 완벽하게 동작하고 내 승인이 떨어지면, 그때 2단계: '상태 관리를 연동한 메뉴 토글 로직'을 진행할 거야. 지금은 1단계만 작성해."
+                    }
+                ]
+            },
+            'approach_a': {
+                title: "🔄 결과 기반 프롬프트 도출 (역추론 프로세스)",
+                tabs: [
+                    {
+                        tabName: "1단계: 파편화된 구현",
+                        desc: "완벽한 프롬프트가 없는 상태에서, 머릿속에 있는 작은 단위의 기능을 말로 편하게 풀어 설명하며 1차 코드를 뽑아냅니다.",
+                        prompt: "안녕, 나 지금 사내 어드민 페이지 만들고 있는데, 유저 목록을 보여주는 테이블 컴포넌트가 하나 필요해.\n\n데이터는 `{id, name, email, role, status, lastLogin}` 이렇게 생겼어. 아직 프로젝트 초기라 공통 컴포넌트나 테마 규칙 같은 건 딱히 없거든? 일단 Next.js(App Router)랑 TailwindCSS 써서 다크 모드에 어울리게 표 하나만 예쁘게 뽑아줘. 더미 데이터 5개 정도 넣어서 스크롤 되게 해주고."
+                    },
+                    {
+                        tabName: "2단계: 피드백과 맥락 쌓기",
+                        desc: "AI가 준 초안 코드를 보고, 부족한 디테일이나 추가 요구사항을 덧붙여 결과물의 퀄리티를 목표치까지 끌어올립니다.",
+                        prompt: "음, 표 디자인은 깔끔해서 좋은데 기능이 부족해.\n\n1. 각 행(row) 우측 끝에 '수정', '삭제' 버튼을 추가해 줘.\n2. 'status' 값에 따라서 뱃지(Badge) 색상을 다르게 해줘. (active는 초록색, inactive는 회색, suspended는 빨간색)\n3. 테이블 헤더를 클릭하면 해당 컬럼 기준으로 오름차순/내림차순 정렬되는 로직을 `useState`로 추가해.\n4. 코드는 무조건 분리하지 말고 하나의 파일에 다 넣어줘.\n\n위 조건 반영해서 다시 짜봐."
+                    },
+                    {
+                        tabName: "3단계: 역추론 추출",
+                        desc: "결과물이 완벽해지면, 지금까지의 대화 맥락을 바탕으로 AI에게 해당 코드를 한 번에 만들어낼 수 있는 템플릿 작성을 지시합니다.",
+                        prompt: "완벽해! 딱 내가 생각한 동작이야.\n자, 이제 집중해. 내가 앞으로 이 어드민 프로젝트에서 이런 형태의 데이터 테이블(상품 목록, 주문 목록, 결제 내역 등)을 20개는 더 만들어야 하거든? 매번 이렇게 하나하나 요구사항을 설명하기 귀찮아.\n\n방금 네가 만든 '완벽한 유저 목록 테이블' 코드를 기준점으로 삼아서, **내가 다음에 다른 데이터를 줄 때 한 번에 이 정도 퀄리티와 규칙을 반영한 테이블 컴포넌트를 자동 생성해 낼 수 있는 '시스템 프롬프트 템플릿'**을 네가 직접 작성해 줘. 마크다운으로 구조화해서 정리해."
+                    },
+                    {
+                        tabName: "🔥 4단계: 도출 결과물",
+                        desc: "AI가 스스로 분석하여 정리해 준 최종 프롬프트입니다. 앞으로 다른 데이터를 다룰 때 이 템플릿을 재사용합니다.",
+                        prompt: "당신은 사내 어드민 대시보드를 전담하는 시니어 프론트엔드 개발자입니다.\n앞으로 제공되는 데이터 스키마를 바탕으로, 아래의 **[테이블 컴포넌트 구현 규칙]**을 엄격하게 준수하여 React 컴포넌트를 작성하세요.\n\n### 🛠 기술 스택\n- Next.js 14 (App Router), React (useState, useMemo)\n- TailwindCSS (다크 모드 최적화 UI)\n\n### 📌 구현 규칙 (필수)\n1. **정렬 기능**: 모든 컬럼 헤더는 클릭 가능하며, 오름/내림차순 토글 로직 내장 (`useMemo` 최적화)\n2. **상태 뱃지**: 상태 문자열 데이터는 값에 따라 색상이 구분되는 뱃지 UI 렌더링\n3. **액션 버튼**: 마지막 열에 '수정', '삭제' Action 버튼 그룹 배치\n4. **단일 파일**: 지시가 없는 한 1개의 `.tsx` 파일 내에 서브 컴포넌트까지 모두 작성\n\n### 📥 입력될 데이터\n- 컴포넌트명: [사용자가 입력할 컴포넌트명]\n- 스키마 정의: [사용자가 제공할 JSON]\n\n위 규칙을 완벽히 이해했다면 '준비 완료'라고 대답하고 데이터 입력을 기다리세요."
+                    }
+                ]
+            },
+                        prompt: "styles.css(혹은 Tailwind Config)에 프로젝트 전반에 사용할 메인 테마 컬러(브랜드 컬러, 배경색, 텍스트색)와 타이포그래피 변수들을 CSS 변수(:root)로 선언해 줘."
+                    },
+                    {
+                        tabName: "공통 UI 산출물",
+                        desc: "자주 쓰일 공통 UI 요소들의 뼈대를 미리 만듭니다.",
+                        prompt: "프로젝트에서 가장 많이 재사용될 Button, Input, Card 컴포넌트의 기본 구조와 스타일이 적용된 뼈대 코드를 미리 작성해 둬. 컴포넌트는 추후에 바로 가져다 쓸 수 있도록 props를 유연하게 열어둬."
+                    },
+                    {
+                        tabName: "🔥 가이드 확립",
+                        desc: "본격 구현 전에 디자인과 레이아웃의 기준점을 한 번에 통합하여 지시하는 프롬프트입니다.",
+                        prompt: "본격적인 로직 구현 전 가이드를 확립하겠습니다.\n\n1. 페이지 목록(Dashboard) 마크다운으로 문서화\n2. 디자인 테마 컬러/글꼴 변수 선언\n3. 재사용 공통 컴포넌트(Button, Input) 뼈대 구축\n\n위 사항들을 반영한 초기 산출물 코드들을 먼저 차례대로 제시해 줘."
+                    }
+                ]
+            },
+            'exec': {
+                title: "🛠️ Phase 3. 핑퐁하며 구현하기 (실무)",
+                tabs: [
+                    {
+                        tabName: "지속적 핑퐁",
+                        desc: "미리 정해둔 규칙과 뼈대 위에서 AI와 대화(핑퐁)하며 코드를 발전시킵니다.",
+                        prompt: "(제안받은 폴더 구조 승인 후)\n좋아, 제안해준 구조대로 갈게.\n가장 먼저 `app/layout.tsx`와 `app/page.tsx`를 생성하고 글로벌 스타일(bg-slate-900)을 적용해 줘. 작업이 끝나면 결과 화면을 확인할 수 있도록 로컬 서버 실행 명령어를 알려줘."
+                    },
+                    {
+                        tabName: "즉각 피드백",
+                        desc: "기능 검증 후 문제나 에러가 발생하면 콘솔 로그를 그대로 복붙하여 즉시 해결합니다.",
+                        prompt: "컴포넌트를 렌더링했는데 브라우저 콘솔에 다음과 같은 에러가 발생했어:\n`Error: Hydration failed because the initial UI does not match what was rendered on the server.`\n이 에러의 원인을 분석하고 필요한 위치에 'use client'를 추가해서 수정해 줘."
+                    },
+                    {
+                        tabName: "리뷰 및 리팩토링",
+                        desc: "기능이 돌아가더라도 주기적으로 리뷰를 요청하여 품질을 끌어올립니다.",
+                        prompt: "작성된 `useAuth` 훅이 의도대로 동작하긴 하는데, 이 코드에 보안상 취약점이나 불필요한 리렌더링 이슈가 있는지 시니어 개발자 관점에서 검토해 줘. 더 나은 디자인 패턴이 있다면 적용해서 리팩토링해 줘."
+                    },
+                    {
+                        tabName: "🔥 마이크로 쪼개기",
+                        desc: "거대한 기능 전체를 지시하는 대신, 작은 단위(Chunk)로 쪼개서 요청하는 것이 실무의 핵심입니다.",
+                        prompt: "이 페이지를 한 번에 다 만들지 말고 마이크로 태스크로 쪼개서 순서대로 가자.\n\n먼저 1단계: 'Header 컴포넌트의 레이아웃만 퍼블리싱' 해줘.\n이 코드가 완벽하게 동작하고 내 승인이 떨어지면, 그때 2단계: '상태 관리를 연동한 메뉴 토글 로직'을 진행할 거야. 지금은 1단계만 작성해."
+                    }
+                ]
+            },
+            'approach_a': {
+                title: "🔄 결과 기반 프롬프트 도출 (역추론 프로세스)",
+                tabs: [
+                    {
+                        tabName: "1단계: 파편화된 구현",
+                        desc: "완벽한 프롬프트가 없는 상태에서, 머릿속에 있는 작은 단위의 기능을 말로 편하게 풀어 설명하며 1차 코드를 뽑아냅니다.",
+                        prompt: "안녕, 나 지금 사내 어드민 페이지 만들고 있는데, 유저 목록을 보여주는 테이블 컴포넌트가 하나 필요해.\n\n데이터는 `{id, name, email, role, status, lastLogin}` 이렇게 생겼어. 아직 프로젝트 초기라 공통 컴포넌트나 테마 규칙 같은 건 딱히 없거든? 일단 Next.js(App Router)랑 TailwindCSS 써서 다크 모드에 어울리게 표 하나만 예쁘게 뽑아줘. 더미 데이터 5개 정도 넣어서 스크롤 되게 해주고."
+                    },
+                    {
+                        tabName: "2단계: 피드백과 맥락 쌓기",
+                        desc: "AI가 준 초안 코드를 보고, 부족한 디테일이나 추가 요구사항을 덧붙여 결과물의 퀄리티를 목표치까지 끌어올립니다.",
+                        prompt: "음, 표 디자인은 깔끔해서 좋은데 기능이 부족해.\n\n1. 각 행(row) 우측 끝에 '수정', '삭제' 버튼을 추가해 줘.\n2. 'status' 값에 따라서 뱃지(Badge) 색상을 다르게 해줘. (active는 초록색, inactive는 회색, suspended는 빨간색)\n3. 테이블 헤더를 클릭하면 해당 컬럼 기준으로 오름차순/내림차순 정렬되는 로직을 `useState`로 추가해.\n4. 코드는 무조건 분리하지 말고 하나의 파일에 다 넣어줘.\n\n위 조건 반영해서 다시 짜봐."
+                    },
+                    {
+                        tabName: "3단계: 역추론 추출",
+                        desc: "결과물이 완벽해지면, 지금까지의 대화 맥락을 바탕으로 AI에게 해당 코드를 한 번에 만들어낼 수 있는 템플릿 작성을 지시합니다.",
+                        prompt: "완벽해! 딱 내가 생각한 동작이야.\n자, 이제 집중해. 내가 앞으로 이 어드민 프로젝트에서 이런 형태의 데이터 테이블(상품 목록, 주문 목록, 결제 내역 등)을 20개는 더 만들어야 하거든? 매번 이렇게 하나하나 요구사항을 설명하기 귀찮아.\n\n방금 네가 만든 '완벽한 유저 목록 테이블' 코드를 기준점으로 삼아서, **내가 다음에 다른 데이터를 줄 때 한 번에 이 정도 퀄리티와 규칙을 반영한 테이블 컴포넌트를 자동 생성해 낼 수 있는 '시스템 프롬프트 템플릿'**을 네가 직접 작성해 줘. 마크다운으로 구조화해서 정리해."
+                    },
+                    {
+                        tabName: "🔥 4단계: 도출 결과물",
+                        desc: "AI가 스스로 분석하여 정리해 준 최종 프롬프트입니다. 앞으로 다른 데이터를 다룰 때 이 템플릿을 재사용합니다.",
+                        prompt: "당신은 사내 어드민 대시보드를 전담하는 시니어 프론트엔드 개발자입니다.\n앞으로 제공되는 데이터 스키마를 바탕으로, 아래의 **[테이블 컴포넌트 구현 규칙]**을 엄격하게 준수하여 React 컴포넌트를 작성하세요.\n\n### 🛠 기술 스택\n- Next.js 14 (App Router), React (useState, useMemo)\n- TailwindCSS (다크 모드 최적화 UI)\n\n### 📌 구현 규칙 (필수)\n1. **정렬 기능**: 모든 컬럼 헤더는 클릭 가능하며, 오름/내림차순 토글 로직 내장 (`useMemo` 최적화)\n2. **상태 뱃지**: 상태 문자열 데이터는 값에 따라 색상이 구분되는 뱃지 UI 렌더링\n3. **액션 버튼**: 마지막 열에 '수정', '삭제' Action 버튼 그룹 배치\n4. **단일 파일**: 지시가 없는 한 1개의 `.tsx` 파일 내에 서브 컴포넌트까지 모두 작성\n\n### 📥 입력될 데이터\n- 컴포넌트명: [사용자가 입력할 컴포넌트명]\n- 스키마 정의: [사용자가 제공할 JSON]\n\n위 규칙을 완벽히 이해했다면 '준비 완료'라고 대답하고 데이터 입력을 기다리세요."
+                    }
+                ]
+            },
+            'guide_what': {
+                title: "🎯 'How'보다 'What' (결과 중심 지시)",
+                desc: "코드를 '어떻게(How)' 짜야 하는지 CSS 속성을 하나하나 부르려 하지 마세요. AI가 무엇(What)을 만들어내야 하는지 시각적인 최종 스펙과 느낌을 묘사하는 것이 훨씬 결과가 좋습니다.",
+                prompt: "❌ **Bad (나쁜 예시)**\n```text\ndiv에 margin-top 20px 주고, 그 안의 span에는 color red를 주고, hover하면 background를 파란색으로 바꾸게 CSS 코드를 작성해 줘.\n```\n\n✅ **Good (좋은 예시)**\n```text\n'최근 본 상품' 영역을 카드 형태로 퍼블리싱 해줘. 기본적으로 다크 톤 배경에 모던한 느낌을 주고, 마우스를 올렸을 때(hover) 부드럽게 카드가 위로 떠오르면서 네온 글로우(Neon Glow) 그림자가 생기는 고급스러운 시각적 효과를 구현해 줘.\n```"
+            },
+            'guide_error': {
+                title: "🚨 문제 상황의 구체적 묘사 (디버깅)",
+                desc: "UI가 깨지거나 애니메이션이 안 먹힐 때 대충 말하지 마세요. 현재 발생하는 시각적 문제 현상과 본인이 의도했던 동작을 명확히 대조해서 설명하세요.",
+                prompt: "✅ **Good (좋은 예시)**\n```text\n사이드바 메뉴를 퍼블리싱했는데 문제가 생겼어. 아래 현상을 보고 원인을 분석해 줘.\n\n[문제 상황]\n메뉴 버튼을 클릭하면 너비가 250px로 늘어나면서 부드럽게 열려야 하는데, 트랜지션(애니메이션) 없이 갑자기 뚝뚝 끊기면서 열리고 있어.\n\n내가 작성한 `.sidebar` 클래스의 애니메이션 코드는 `transition: width 0.3s ease;`인데, 혹시 숨김 처리할 때 사용한 `display: none` 속성 때문에 애니메이션이 무시되는 건지 분석하고, 자연스럽게 스르륵 열리도록 코드를 수정해 봐.\n```"
+            },
+            'guide_micro': {
+                title: "🧩 마이크로 태스크 (작은 단위) 분할",
+                desc: "AI의 컨텍스트(기억력) 창은 한계가 있습니다. 거대한 페이지 전체 퍼블리싱을 한 번에 지시하면 레이아웃이 박살 나거나 엉뚱한 코드를 짜게 됩니다.",
+                prompt: "❌ **Bad (나쁜 예시)**\n```text\n넷플릭스 같은 메인 페이지 화면을 통째로 다 퍼블리싱 해줘. 헤더, 풀스크린 영상 배너, 캐러셀 슬라이드 5개, 푸터까지 전부 다 반응형으로 짜줘!\n```\n\n✅ **Good (마이크로 태스크 1단계 지시)**\n```text\n넷플릭스 스타일의 메인 페이지를 순서대로 퍼블리싱 할 거야.\n우선 1단계로 [최상단 헤더(GNB) 영역]만 TailwindCSS를 써서 레이아웃을 잡아줘. 스크롤을 내리기 전에는 배경이 투명하다가, 스크롤을 내리면 검은색 반투명(Glassmorphism)으로 배경이 서서히 채워지는 블러 효과까지만 지금 당장 구현해.\n```"
+            },
+            'guide_review': {
+                title: "🧐 비판적 리뷰 (크로스 브라우징/반응형)",
+                desc: "PC 화면에서 UI가 잘 나온다고 완벽한 것은 아닙니다. 시니어 퍼블리셔 페르소나를 부여해 모바일 반응형이나 접근성을 깐깐하게 스스로 점검하게 유도하세요.",
+                prompt: "✅ **Good (좋은 예시)**\n```text\n방금 네가 작성해준 '제품 상세 페이지' 레이아웃을 브라우저에 적용해 봤더니 PC 화면에서는 아주 깔끔하게 잘 나와.\n\n하지만 이 코드를 모바일 환경에서도 완벽하게 보여주기 위해 한 번 더 검토해 볼게. 10년 차 시니어 UI/UX 퍼블리셔의 깐깐한 관점에서, 화면 폭이 375px로 줄어들었을 때 텍스트가 겹치거나 이미지가 컨테이너 밖으로 삐져나갈 만한 반응형(Responsive) 이슈가 없는지 비판적으로 분석해 줘. \n문제가 예상된다면 모바일 친화적으로 1열 배치가 되도록 미디어 쿼리(Media Query)를 추가해서 완전히 리팩토링된 코드를 다시 제시해.\n```"
+            },
+            'exec': {
+                title: "🛠️ Phase 3. 핑퐁하며 구현하기 (실무)",
+                tabs: [
+                    {
+                        tabName: "지속적 핑퐁",
+                        desc: "미리 정해둔 규칙과 뼈대 위에서 AI와 대화(핑퐁)하며 코드를 발전시킵니다.",
+                        prompt: "(제안받은 폴더 구조 승인 후)\n좋아, 제안해준 구조대로 갈게.\n가장 먼저 `app/layout.tsx`와 `app/page.tsx`를 생성하고 글로벌 스타일(bg-slate-900)을 적용해 줘. 작업이 끝나면 결과 화면을 확인할 수 있도록 로컬 서버 실행 명령어를 알려줘."
+                    },
+                    {
+                        tabName: "즉각 피드백",
+                        desc: "기능 검증 후 문제나 에러가 발생하면 콘솔 로그를 그대로 복붙하여 즉시 해결합니다.",
+                        prompt: "컴포넌트를 렌더링했는데 브라우저 콘솔에 다음과 같은 에러가 발생했어:\n`Error: Hydration failed because the initial UI does not match what was rendered on the server.`\n이 에러의 원인을 분석하고 필요한 위치에 'use client'를 추가해서 수정해 줘."
+                    },
+                    {
+                        tabName: "리뷰 및 리팩토링",
+                        desc: "기능이 돌아가더라도 주기적으로 리뷰를 요청하여 품질을 끌어올립니다.",
+                        prompt: "작성된 `useAuth` 훅이 의도대로 동작하긴 하는데, 이 코드에 보안상 취약점이나 불필요한 리렌더링 이슈가 있는지 시니어 개발자 관점에서 검토해 줘. 더 나은 디자인 패턴이 있다면 적용해서 리팩토링해 줘."
+                    },
+                    {
+                        tabName: "🔥 마이크로 쪼개기",
+                        desc: "거대한 기능 전체를 지시하는 대신, 작은 단위(Chunk)로 쪼개서 요청하는 것이 실무의 핵심입니다.",
+                        prompt: "이 페이지를 한 번에 다 만들지 말고 마이크로 태스크로 쪼개서 순서대로 가자.\n\n먼저 1단계: 'Header 컴포넌트의 레이아웃만 퍼블리싱' 해줘.\n이 코드가 완벽하게 동작하고 내 승인이 떨어지면, 그때 2단계: '상태 관리를 연동한 메뉴 토글 로직'을 진행할 거야. 지금은 1단계만 작성해."
+                    }
+                ]
+            },
+            'approach_a': {
+                title: "🔄 결과 기반 프롬프트 도출 (역추론 프로세스)",
+                tabs: [
+                    {
+                        tabName: "1단계: 파편화된 구현",
+                        desc: "완벽한 프롬프트가 없는 상태에서, 머릿속에 있는 작은 단위의 기능을 말로 편하게 풀어 설명하며 1차 코드를 뽑아냅니다.",
+                        prompt: "안녕, 나 지금 사내 어드민 페이지 만들고 있는데, 유저 목록을 보여주는 테이블 컴포넌트가 하나 필요해.\n\n데이터는 `{id, name, email, role, status, lastLogin}` 이렇게 생겼어. 아직 프로젝트 초기라 공통 컴포넌트나 테마 규칙 같은 건 딱히 없거든? 일단 Next.js(App Router)랑 TailwindCSS 써서 다크 모드에 어울리게 표 하나만 예쁘게 뽑아줘. 더미 데이터 5개 정도 넣어서 스크롤 되게 해주고."
+                    },
+                    {
+                        tabName: "2단계: 피드백과 맥락 쌓기",
+                        desc: "AI가 준 초안 코드를 보고, 부족한 디테일이나 추가 요구사항을 덧붙여 결과물의 퀄리티를 목표치까지 끌어올립니다.",
+                        prompt: "음, 표 디자인은 깔끔해서 좋은데 기능이 부족해.\n\n1. 각 행(row) 우측 끝에 '수정', '삭제' 버튼을 추가해 줘.\n2. 'status' 값에 따라서 뱃지(Badge) 색상을 다르게 해줘. (active는 초록색, inactive는 회색, suspended는 빨간색)\n3. 테이블 헤더를 클릭하면 해당 컬럼 기준으로 오름차순/내림차순 정렬되는 로직을 `useState`로 추가해.\n4. 코드는 무조건 분리하지 말고 하나의 파일에 다 넣어줘.\n\n위 조건 반영해서 다시 짜봐."
+                    },
+                    {
+                        tabName: "3단계: 역추론 추출",
+                        desc: "결과물이 완벽해지면, 지금까지의 대화 맥락을 바탕으로 AI에게 해당 코드를 한 번에 만들어낼 수 있는 템플릿 작성을 지시합니다.",
+                        prompt: "완벽해! 딱 내가 생각한 동작이야.\n자, 이제 집중해. 내가 앞으로 이 어드민 프로젝트에서 이런 형태의 데이터 테이블(상품 목록, 주문 목록, 결제 내역 등)을 20개는 더 만들어야 하거든? 매번 이렇게 하나하나 요구사항을 설명하기 귀찮아.\n\n방금 네가 만든 '완벽한 유저 목록 테이블' 코드를 기준점으로 삼아서, **내가 다음에 다른 데이터를 줄 때 한 번에 이 정도 퀄리티와 규칙을 반영한 테이블 컴포넌트를 자동 생성해 낼 수 있는 '시스템 프롬프트 템플릿'**을 네가 직접 작성해 줘. 마크다운으로 구조화해서 정리해."
+                    },
+                    {
+                        tabName: "🔥 4단계: 도출 결과물",
+                        desc: "AI가 스스로 분석하여 정리해 준 최종 프롬프트입니다. 앞으로 다른 데이터를 다룰 때 이 템플릿을 재사용합니다.",
+                        prompt: "당신은 사내 어드민 대시보드를 전담하는 시니어 프론트엔드 개발자입니다.\n앞으로 제공되는 데이터 스키마를 바탕으로, 아래의 **[테이블 컴포넌트 구현 규칙]**을 엄격하게 준수하여 React 컴포넌트를 작성하세요.\n\n### 🛠 기술 스택\n- Next.js 14 (App Router), React (useState, useMemo)\n- TailwindCSS (다크 모드 최적화 UI)\n\n### 📌 구현 규칙 (필수)\n1. **정렬 기능**: 모든 컬럼 헤더는 클릭 가능하며, 오름/내림차순 토글 로직 내장 (`useMemo` 최적화)\n2. **상태 뱃지**: 상태 문자열 데이터는 값에 따라 색상이 구분되는 뱃지 UI 렌더링\n3. **액션 버튼**: 마지막 열에 '수정', '삭제' Action 버튼 그룹 배치\n4. **단일 파일**: 지시가 없는 한 1개의 `.tsx` 파일 내에 서브 컴포넌트까지 모두 작성\n\n### 📥 입력될 데이터\n- 컴포넌트명: [사용자가 입력할 컴포넌트명]\n- 스키마 정의: [사용자가 제공할 JSON]\n\n위 규칙을 완벽히 이해했다면 '준비 완료'라고 대답하고 데이터 입력을 기다리세요."
+                    }
+                ]
+            },
+            'guide_what': {
+                title: "🎯 'How'보다 'What' (결과 중심 지시)",
+                desc: "코드를 '어떻게(How)' 짜야 하는지 알고리즘을 설명하려 하지 마세요. AI가 무엇(What)을 만들어내야 하는지 최종 스펙을 명확히 정의하는 것이 훨씬 결과가 좋습니다.",
+                prompt: "❌ **Bad (나쁜 예시)**\n```text\n배열을 for문으로 돌면서 id값을 찾고, 찾은 요소의 name을 바꿔서 새로운 배열을 만든 다음 set 상태 함수를 호출해줘.\n```\n\n✅ **Good (좋은 예시)**\n```text\n`users` 배열 상태에서 특정 `id`를 가진 유저의 `name`을 업데이트하는 핸들러 함수(handleNameChange)를 작성해 줘. React 불변성(Immutability)을 엄격하게 지키면서 상태를 업데이트해야 해.\n```"
+            },
+            'guide_error': {
+                title: "🚨 에러 로그의 적극적인 활용",
+                desc: "오류가 났을 때 원인을 짐작해서 말로 설명하지 마세요. 터미널의 에러 로그 전체를 복사+붙여넣기 하고, 에러가 발생한 상황만 덧붙이는 것이 가장 정확합니다.",
+                prompt: "✅ **Good (좋은 예시)**\n```text\n버튼을 클릭했더니 터미널에 아래와 같은 에러가 떴어. 원인이 뭐야?\n\n[Error Log]\nTypeError: Cannot read properties of undefined (reading 'map')\n    at UserList (UserList.tsx:42:25)\n    at renderWithHooks (react-dom.development.js:16305:18)\n\n`UserList` 컴포넌트에서 API 데이터를 받아오기 전에 렌더링이 먼저 돼서 그런 것 같은데, 데이터가 없을 때를 대비한 렌더링 방어 로직(Optional Chaining 또는 Early Return)을 추가해서 코드를 수정해 봐.\n```"
+            },
+            'guide_micro': {
+                title: "🧩 마이크로 태스크 (작은 단위) 분할",
+                desc: "AI의 컨텍스트(기억력) 창은 한계가 있습니다. 거대한 페이지 전체를 한 번에 지시하면 기능 누락이나 환각(Hallucination)이 필연적으로 발생하므로 쪼개어 지시해야 합니다.",
+                prompt: "❌ **Bad (나쁜 예시)**\n```text\n회원가입 폼을 만들어줘. 이메일 정규식 체크하고, 비밀번호는 특수문자 포함 8자리 이상이어야 해. 카카오 소셜 로그인 연동 기능도 넣고, 가입 완료되면 축하 이메일 전송 API도 호출되게 전부 다 짜줘.\n```\n\n✅ **Good (마이크로 태스크 1단계 지시)**\n```text\n우선 1단계로 [이메일과 비밀번호 입력란만 있는 UI 레이아웃]부터 TailwindCSS로 깔끔하게 퍼블리싱 해줘. 내가 유효성 검사 로직이나 API 연동을 다음 단계에서 지시할 때까지 절대 먼저 복잡한 로직을 추가하지 마. 오직 눈에 보이는 껍데기 UI만 작성해.\n```"
+            },
+            'guide_review': {
+                title: "🧐 비판적 코드 리뷰",
+                desc: "AI가 당장 동작하는 코드를 줬다고 해서 완벽한 것은 아닙니다. 시니어 개발자 페르소나를 부여해 스스로 자신의 코드를 비판적으로 점검하도록 유도하면 퀄리티가 크게 상승합니다.",
+                prompt: "✅ **Good (좋은 예시)**\n```text\n방금 네가 작성해준 무한 스크롤(Infinite Scroll) 코드를 적용하니까 동작은 잘 되네.\n\n하지만 이 코드를 프로덕션 환경에 배포하기 전에 한 번 더 검토해 볼게. 시니어 프론트엔드 엔지니어의 깐깐한 관점에서, 현재 코드에 메모리 누수(Memory Leak) 위험이 있거나 스크롤 이벤트가 너무 자주 발생해 렌더링 성능(FPS)이 떨어질 만한 잠재적 이슈가 없는지 비판적으로 분석해 줘. \n만약 문제가 조금이라도 있다면 Throttling이나 Intersection Observer를 적용하여 완전히 리팩토링된 코드를 다시 제시해.\n```"
+            },
+            'approach_b': {
+                title: "📝 프롬프트 자체 사전 제작 (Top-Down 설계)",
+                tabs: [
+                    {
+                        tabName: "1단계: 페르소나 및 목표",
+                        desc: "AI가 어떤 관점과 전문성을 가지고 코드를 작성해야 하는지, 그리고 현재 지시의 최종 목표가 무엇인지 가장 위에 명시합니다.",
+                        prompt: "# Role & Persona\n당신은 토스나 당근마켓 수준의 대규모 트래픽을 감당하는 프로덕트를 설계하는 15년 차 프론트엔드 아키텍트입니다. 단순히 기능만 돌아가는 코드를 혐오하며, 재사용성, 확장성, 렌더링 최적화를 최우선으로 고려합니다.\n\n# Objective\n현재 우리는 Next.js 14 기반의 글로벌 이커머스 웹사이트를 구축 중입니다. 당신의 임무는 장바구니(Cart) 도메인의 전역 상태 관리를 위한 Zustand 스토어 모듈을 설계하고, 이를 컴포넌트와 연결하는 커스텀 훅을 작성하는 것입니다."
+                    },
+                    {
+                        tabName: "2단계: 룰과 제약사항",
+                        desc: "AI가 자의적으로 코드를 짜지 못하도록 기술 스택, 아키텍처 규칙, 그리고 절대 해서는 안 될 금지 사항을 촘촘하게 설정합니다.",
+                        prompt: "# Strict Rules & Constraints\n코드를 작성할 때 다음 규칙을 하나라도 어길 경우 실패로 간주합니다.\n\n1. **상태 관리**: Zustand를 사용하되, 상태(State)와 액션(Action)을 명확하게 분리할 것.\n2. **타입스크립트**: 엄격한 타입 시스템 적용. `any`와 `unknown` 사용을 지양하며, Store 인터페이스를 최상단에 `type`으로 명시할 것.\n3. **영속성(Persist)**: 브라우저 새로고침 시 데이터 보존을 위해 `persist` 미들웨어로 `localStorage`와 연동. 단, Next.js SSR 환경의 Hydration 에러 방어 로직 필수 포함.\n4. **금지 사항**: UI 컴포넌트 렌더링 코드는 절대 작성 금지. 오직 스토어 로직과 커스텀 훅만 작성할 것."
+                    },
+                    {
+                        tabName: "3단계: 출력 형식 강제",
+                        desc: "AI가 응답할 결과물의 형태를 마크다운(Markdown)이나 특정 구조로 강제하여, 불필요한 설명을 제거하고 가독성을 높입니다.",
+                        prompt: "# Output Format Requirements\n응답은 반드시 아래의 마크다운 형식을 그대로 복사하여 내용을 채워넣는 방식으로 출력하세요. 다른 잡담이나 설명은 일절 금지합니다.\n\n```markdown\n## 🏗 아키텍처 요약\n- (선택한 상태 관리 구조와 Hydration 방어 로직에 대한 3줄 이내 설명)\n\n## 📁 파일 구조\n[디렉토리 구조 트리]\n\n## 💻 코드 구현\n### `store/useCartStore.ts`\n[전체 코드 내용]\n```"
+                    },
+                    {
+                        tabName: "🔥 4단계: 최종 설계본",
+                        desc: "위 요소들을 마크다운 구조로 완벽히 결합한 템플릿(System Prompt)입니다. 대형 기능 개발이나 AI 에이전트(.cursorrules 등)의 초기 설정에 그대로 복사해서 사용합니다.",
+                        prompt: "# Role & Persona\n당신은 대규모 프로덕트를 설계하는 15년 차 프론트엔드 아키텍트입니다.\n\n# Objective\n이커머스 웹사이트 장바구니 도메인의 Zustand 스토어 및 커스텀 훅 작성\n\n# Strict Rules & Constraints\n1. Zustand 사용, 상태(State)와 액션(Action) 분리\n2. TypeScript `any` 금지, 인터페이스 명시적 선언\n3. `persist` 미들웨어 사용 및 SSR Hydration 에러 방어 로직 필수\n4. UI 렌더링 코드 작성 금지\n\n# Output Format Requirements\n아래 마크다운 형식을 따르며 인사말, 부연 설명 일절 금지.\n\n```markdown\n## 🏗 아키텍처 요약\n(3줄 이내 설명)\n## 📁 파일 구조\n(트리)\n## 💻 코드 구현\n(코드)\n```\n\n지시를 완벽히 숙지했다면 위 포맷에 맞추어 즉시 코드를 작성하세요."
+                    }
+                ]
+            },
+            1: {
+                title: "1️⃣ 요구사항 구체화 (확실한 컨텍스트 주입)",
+                desc: "AI가 엉뚱한 코드를 짜지 않도록 기술 스택과 작업 목표를 명확히 제시합니다.",
+                prompt: "우리는 Next.js 14 (App Router)와 TailwindCSS를 사용해서 'AI 에디터 랜딩 페이지'를 만들 거야.\n디자인은 어두운 테마(Dark mode)의 글래스모피즘(Glassmorphism) 스타일을 유지해줘.\n현재 요구사항: 헤더 네비게이션과 Hero 섹션을 만들어줘."
+            },
+            2: {
+                title: "2️⃣ UI 레이아웃 및 구획 뼈대 잡기",
+                desc: "구체적인 스타일링과 로직을 적용하기 전, 화면의 레이아웃 구조와 각 영역의 위치를 시각적으로 먼저 확인합니다.",
+                prompt: "디테일한 스타일링을 하기 전에,\n먼저 헤더와 메인 콘텐츠 영역이 나뉘는 레이아웃 뼈대 코드를 작성해 줘.\n각 영역이 잘 배치되었는지 눈으로 확인할 수 있도록 임시 배경색(border나 bg-color)과 더미 텍스트만 넣어서 화면 구조를 잡아줘."
+            },
+            3: {
+                title: "3️⃣ 마이크로 태스크 진행 (작은 단위로 핑퐁)",
+                desc: "하나의 명확하고 작은 지시를 내려 검증과 수정을 쉽게 만듭니다.",
+                prompt: "(앞서 만든 Header 컴포넌트를 보며)\nHeader 컴포넌트의 로고 영역을 텍스트 대신 첨부한 SVG 아이콘으로 교체해 줘.\n그리고 메뉴 항목에 hover 했을 때 하단에 언더라인이 부드럽게 나타나는 애니메이션을 CSS로 추가해 줘."
+            },
+            4: {
+                title: "4️⃣ 에러 복붙 디버깅 (에러 로그 활용)",
+                desc: "문제가 발생했을 때 AI에게 에러 내용을 그대로 제공하여 원인을 파악합니다.",
+                prompt: "컴포넌트를 렌더링했는데 브라우저 콘솔에 다음과 같은 에러가 발생했어:\n`Error: Hydration failed because the initial UI does not match what was rendered on the server.`\n이 에러가 발생한 원인을 분석하고, 'use client' 디렉티브가 필요한 위치를 찾아 수정해 줘."
+            },
+            5: {
+                title: "5️⃣ 코드 리뷰 및 리팩토링 (품질 검증)",
+                desc: "기능이 완성된 후, AI에게 코드 품질을 검토하도록 지시합니다.",
+                prompt: "작성된 `useAuth` 훅이 의도대로 동작하긴 하는데,\n이 코드에 보안상 취약점이나 성능 최적화가 필요한 부분(예: 불필요한 리렌더링)이 있는지 검토해줘.\n더 나은 디자인 패턴이 있다면 제안하고 코드를 리팩토링해줘."
+            },
+            6: {
+                title: "6️⃣ 컨텍스트 업데이트 (상태 동기화)",
+                desc: "라이브러리를 추가하거나 구조가 크게 바뀌었을 때 AI의 메모리를 갱신합니다.",
+                prompt: "방금 우리는 상태 관리를 위해 `zustand` 라이브러리를 새로 설치했어.\n앞으로 전역 상태는 모두 `store/` 폴더 내에 zustand로 관리할 거야.\n이 사실을 컨텍스트에 기억하고, 이전에 만든 컴포넌트들의 로컬 상태를 zustand로 이관하는 작업을 시작하자."
+            }
+        };
+
+        const modal = document.getElementById('promptModal');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalDesc = document.getElementById('modalDesc');
+        const modalPrompt = document.getElementById('modalPrompt');
+
+        function openModal(stepId) {
+            const data = modalData[stepId];
+            if (data) {
+                modalTitle.innerText = data.title;
+                const tabsContainer = document.getElementById('modalTabs');
+                
+                if (data.tabs && data.tabs.length > 0) {
+                    tabsContainer.style.display = 'flex';
+                    tabsContainer.innerHTML = '';
+                    
+                    data.tabs.forEach((tab, index) => {
+                        const btn = document.createElement('button');
+                        btn.className = 'modal-tab-btn' + (index === 0 ? ' active' : '');
+                        btn.innerText = tab.tabName;
+                        btn.onclick = () => {
+                            document.querySelectorAll('.modal-tab-btn').forEach(b => b.classList.remove('active'));
+                            btn.classList.add('active');
+                            modalDesc.innerText = tab.desc;
+                            modalPrompt.innerText = tab.prompt;
+                        };
+                        tabsContainer.appendChild(btn);
+                    });
+                    
+                    modalDesc.innerText = data.tabs[0].desc;
+                    modalPrompt.innerText = data.tabs[0].prompt;
+                } else {
+                    tabsContainer.style.display = 'none';
+                    modalDesc.innerText = data.desc;
+                    modalPrompt.innerText = data.prompt;
+                }
+                
+                modal.classList.add('active');
+            }
+        }
+
+        function closeModal() {
+            modal.classList.remove('active');
+        }
+
+        // 모달 외부 영역 클릭 시 닫기
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+
+        // 탭 영역 PC 마우스 휠 가로 스크롤 지원
+        const tabsContainer = document.getElementById('modalTabs');
+        tabsContainer.addEventListener('wheel', (e) => {
+            if (e.deltaY !== 0) {
+                e.preventDefault();
+                tabsContainer.scrollLeft += e.deltaY;
+            }
+        }, { passive: false });
