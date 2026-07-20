@@ -1,16 +1,16 @@
 .wrapper {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: var(--spacing-md);
   --table-row-height: 36px;
-  --table-font-size: 12px;
+  --table-font-size: var(--font-size-label-md);
 }
 
 .dashboard {
   display: flex;
   align-items: center;
   margin-left: auto;
-  gap: 48px;
+  gap: var(--spacing-2xl);
 }
 
 .dashboard_item {
@@ -20,22 +20,22 @@
 }
 
 .dashboard_label {
-  font-size: 14px;
+  font-size: var(--font-size-body-sm);
   font-weight: 700;
   color: #666;
   letter-spacing: 1px;
 }
 
 .dashboard_value {
-  font-size: 24px;
+  font-size: var(--font-size-h3);
   font-weight: 500;
-  color: #111827;
+  color: var(--color-gray-900);
   line-height: 1;
   letter-spacing: -0.6px;
 }
 
 .dashboard_value_cyan {
-  color: #00adc0;
+  color: var(--color-primary-600);
 }
 
 .dashboard_value_amber {
@@ -45,12 +45,12 @@
 .dashboard_divider {
   height: 32px;
   width: 1px;
-  background: #e5e7eb;
+  background: var(--color-gray-200);
 }
 
 .table_wrapper {
-  background: #ffffff;
-  border: 1px solid #e5e7eb;
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-200);
   border-radius: 6px;
   box-shadow: 0 1px 2px rgba(15, 23, 42, 0.05);
   overflow: hidden;
@@ -64,14 +64,14 @@
 
   thead {
     background: #edf1fd;
-    border-bottom: 1px solid #e5e7eb;
+    border-bottom: 1px solid var(--color-gray-200);
     color: #383e4b;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.5px;
 
     th {
-      padding: 4px 24px;
+      padding: var(--spacing-2xs) 24px;
       font-size: var(--table-font-size);
       font-weight: 700;
       height: var(--table-row-height);
@@ -90,7 +90,7 @@
 
   tbody {
     tr {
-      border-bottom: 1px solid #f3f4f6;
+      border-bottom: 1px solid var(--color-gray-100);
       transition: background-color 0.2s ease;
 
       &:last-child {
@@ -102,13 +102,13 @@
       }
 
       td {
-        padding: 4px 24px;
+        padding: var(--spacing-2xs) 24px;
         font-size: var(--table-font-size);
         height: var(--table-row-height);
       }
       &.group_row {
         background: rgba(241, 245, 249, 1);
-        border-bottom: 1px solid #f3f4f6;
+        border-bottom: 1px solid var(--color-gray-100);
         cursor: pointer;
         transition: background-color 0.2s ease;
       
@@ -117,7 +117,7 @@
         }
       
         td {
-          padding: 4px 16px;
+          padding: var(--spacing-2xs) 16px;
         }
       }
       
@@ -128,9 +128,9 @@
       }
       
       .group_label {
-        font-size: 12px;
+        font-size: var(--font-size-label-md);
         font-weight: 700;
-        color: #00897b;
+        color: var(--color-primary-600);
         letter-spacing: 2px;
         text-transform: uppercase;
       }
@@ -151,17 +151,17 @@
 
 .item_row {
   td {
-    font-size: 12px;
+    font-size: var(--font-size-label-md);
 
     &.no_cell {
       text-align: center;
-      color: #9ca3af;
+      color: var(--color-gray-400);
       font-weight: 500;
     }
 
     &.path_cell {
       font-weight: 700;
-      color: #1f2937;
+      color: var(--color-gray-800);
     }
 
     &.type_cell {
@@ -169,7 +169,7 @@
 
       span {
         font-weight: 700;
-        color: #6b7280;
+        color: var(--color-gray-500);
         text-transform: uppercase;
         letter-spacing: 0.5px;
       }
@@ -177,7 +177,7 @@
 
     &.url_cell {
       a {
-        color: #00897b;
+        color: var(--color-primary-600);
 
         &:hover {
           text-decoration: underline;
@@ -196,14 +196,14 @@
   min-width: 50px;
   padding: 2px 10px;
   border-radius: 9999px;
-  font-size: 12px;
+  font-size: var(--font-size-label-md);
   font-weight: 700;
   letter-spacing: 0.5px;
   text-align: center;
 
   &.published {
-    background: #e0f2f1;
-    color: #00897b;
+    background: #ecfdf5;
+    color: #059669;
   }
 
   &.review {

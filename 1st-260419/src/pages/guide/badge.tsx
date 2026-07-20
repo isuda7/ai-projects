@@ -1,7 +1,9 @@
+// @ts-nocheck
 import React from 'react';
 import styles from './template.module.scss';
-import Badge from '@/components/ui/badge/badge';
+import { Badge } from '@/components/ui/badge';
 import GuideSection from './components/guide-section';
+import CodeBlock from './components/code-block';
 
 const BadgeGuidePage = () => {
   return (

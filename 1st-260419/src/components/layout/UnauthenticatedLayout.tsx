@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import styles from './UnauthenticatedLayout.module.scss';
+import styles from './unauthenticated-layout.module.scss';
 
 interface UnauthenticatedLayoutProps {
   children: ReactNode;

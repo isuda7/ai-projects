@@ -1,0 +1,61 @@
+.tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 8rem;
+}
+
+.list {
+  background-color: var(--muted);
+  color: var(--muted-foreground);
+  display: inline-flex;
+  height: 36rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12rem;
+  padding: 3px;
+  box-sizing: border-box;
+}
+
+.trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6rem;
+  font-size: 14rem;
+  font-weight: 500;
+  height: 100%;
+  flex: 1;
+  border-radius: 8rem;
+  border: 1px solid transparent;
+  padding: 4rem 8rem;
+  background-color: transparent;
+  color: var(--muted-foreground);
+  cursor: pointer;
+  transition: color 0.2s, background-color 0.2s, box-shadow 0.2s;
+
+  &:hover {
+    color: var(--foreground);
+  }
+
+  &[data-state="active"] {
+    background-color: var(--card);
+    color: var(--foreground);
+    border-color: rgba(0, 0, 0, 0.05);
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  }
+
+  &:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--ring);
+  }
+
+  &:disabled {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+}
+
+.content {
+  flex: 1;
+  outline: none;
+}
