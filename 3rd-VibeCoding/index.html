@@ -297,25 +297,28 @@
     <!-- Practical Stages Section -->
     <section class="target" id="practical" style="padding-top: 50px; padding-bottom: 100px;">
         <div class="container">
-            <h2 class="section-title" style="margin-bottom: 20px;">실무 단계 가이드 및 작성 기법</h2>
-            <p style="text-align: center; color: var(--text-muted); margin-bottom: 60px;">명확한 기획이 있을 때와 없을 때의 접근법, 그리고
-                필수 바이브코딩 작성 기법입니다.</p>
+            <h2 class="section-title" style="margin-bottom: 20px;">바이브코딩 필수 프롬프트</h2>
+            <p style="text-align: center; color: var(--text-muted); margin-bottom: 60px;">어떤 도구를 쓰든, 성공적인 바이브코딩을 위해 반드시
+                준비해야 할 2가지 핵심 프롬프트입니다.</p>
 
             <div class="curriculum-grid" style="margin-bottom: 40px;">
-                <div class="curriculum-card clickable-card" onclick="openModal('approach_a')" style="cursor: pointer;">
-                    <span class="week-badge">접근 방식 A</span>
-                    <h3>결과 기반 프롬프트 도출 (역추론)</h3>
-                    <p>결과물을 직접 만들며 프롬프트를 역추론할 때는 <strong>'대화와 요약'</strong>을 활용합니다. 단편적인 기능들을 AI와 함께 구현하며 성공적인 결과를 찾아내고,
-                        "방금 우리가 만든 결과물을 처음부터 단번에 도출하려면 어떤 프롬프트가 필요할까?"라고 지시하여 <strong>AI 스스로 최적의 프롬프트를 역산</strong>하도록
-                        유도합니다.</p>
-                    <div class="view-prompt-btn" style="margin-top: 20px; font-weight: 500;">진행과정 템플릿 보기 ↗</div>
+                <div class="curriculum-card clickable-card" onclick="openModal('prompt_system')"
+                    style="cursor: pointer;">
+                    <span class="week-badge" style="background: rgba(16, 185, 129, 0.1); color: #34d399;">Core Prompt
+                        1</span>
+                    <h3>절대 규칙을 지배하는<br>시스템 프롬프트</h3>
+                    <p>AI에게 <strong>페르소나, 기술 스택, 코딩 컨벤션, 출력 포맷</strong> 등 '절대 어겨서는 안 될 제약사항'을 강력하게 주입하여, 프로젝트 내내 환각을
+                        방지하고 일관된 결과물을 내도록 통제합니다.</p>
+                    <div class="view-prompt-btn" style="margin-top: 20px; font-weight: 500;">프롬프트 템플릿 보기 ↗</div>
                 </div>
-                <div class="curriculum-card clickable-card" onclick="openModal('approach_b')" style="cursor: pointer;">
-                    <span class="week-badge">접근 방식 B</span>
-                    <h3>프롬프트 자체 사전 제작 (설계)</h3>
-                    <p>프롬프트 자체를 먼저 제작할 때는 <strong>'구조화와 제약'</strong>이 핵심입니다. 프로젝트의 목적, 절대 어겨선 안 될 규칙, 기술 스택, 그리고 기대하는 출력
-                        포맷(Output)을 마크다운 문법으로 뼈대부터 명확히 규격화하여, AI가 딴 길로 새지 않도록 완벽히 통제하는 지시문을 설계합니다.</p>
-                    <div class="view-prompt-btn" style="margin-top: 20px; font-weight: 500;">진행과정 템플릿 보기 ↗</div>
+                <div class="curriculum-card clickable-card" onclick="openModal('prompt_micro')"
+                    style="cursor: pointer;">
+                    <span class="week-badge" style="background: rgba(59, 130, 246, 0.1); color: #60a5fa;">Core Prompt
+                        2</span>
+                    <h3>실무 핑퐁을 주도하는<br>마이크로 프롬프트</h3>
+                    <p>실제 코드를 작성할 때 반복 사용하는 프롬프트입니다. 한 번에 거대한 결과물을 요구하는 대신, <strong>단일 컴포넌트, 시각적 묘사(What), 오류 로그
+                            복붙</strong> 등 작고 명확한 단위(Chunk)로 쪼개어 지시함으로써 완벽한 디테일을 얻어냅니다.</p>
+                    <div class="view-prompt-btn" style="margin-top: 20px; font-weight: 500;">프롬프트 템플릿 보기 ↗</div>
                 </div>
             </div>
             <div class="target-content" style="padding: 40px;">
@@ -529,53 +532,53 @@
                     }
                 ]
             },
-            'approach_a': {
-                title: "🔄 결과 기반 프롬프트 도출 (역추론 프로세스)",
+            'prompt_system': {
+                title: "⚙️ 핵심 1: 시스템 프롬프트 (System Prompt)",
                 tabs: [
                     {
-                        tabName: "1단계: 파편화된 구현",
-                        desc: "일단 만들고 싶은 UI 컴포넌트의 생김새를 말로 편하게 풀어 설명하며 첫 코드를 뽑습니다.",
-                        prompt: "안녕, 나 지금 쇼핑몰 상세 페이지 만들고 있는데, '상품 리뷰'를 보여주는 카드 디자인이 하나 필요해.\n별점(5개), 유저 프사, 작성일, 리뷰텍스트, 그리고 리뷰 이미지 썸네일이 들어갈 거야.\n일단 TailwindCSS로 요즘 유행하는 둥글둥글하고 깔끔한 UI로 리뷰 카드 하나만 마크업 해줘."
+                        tabName: "1단계: 페르소나 주입",
+                        desc: "AI에게 전문가적 자아를 부여하여 결과물의 품질 기준을 높입니다.",
+                        prompt: "# Role\n당신은 애플(Apple) 웹사이트 수준의 정교한 퍼블리싱을 추구하는 15년 차 시니어 인터랙션 UI 퍼블리셔입니다. 대충 짠 레이아웃을 혐오하며, 1px의 오차와 어색한 애니메이션을 용납하지 않습니다."
                     },
                     {
-                        tabName: "2단계: 피드백과 맥락 쌓기",
-                        desc: "AI가 준 초안 화면을 보고, 디자인 디테일이나 레이아웃 요구사항을 덧붙여 UI 퀄리티를 끌어올립니다.",
-                        prompt: "음, 깔끔하긴 한데 몇 개 고쳐야겠어.\n\n1. 텍스트 줄간격이 너무 좁아. `leading-relaxed` 정도로 넓혀줘.\n2. 별점 아이콘 색상을 샛노란색 말고 살짝 주황빛 도는 `#F59E0B`로 바꿔.\n3. 리뷰 이미지가 여러 장일 수 있으니, 이미지 썸네일 컨테이너는 가로 스크롤(overflow-x-auto)이 되게 처리해 줘.\n\n위 조건들 반영해서 다시 마크업 짜봐."
+                        tabName: "2단계: 기술 스택 및 제약",
+                        desc: "사용할 언어와 절대 어겨선 안 될 코딩 규칙을 명확히 못 박습니다.",
+                        prompt: "# Strict Rules\n1. Next.js 14 (App Router)와 Tailwind CSS만 사용하세요.\n2. 반응형 필수: 모바일 First로 작성하며, 모든 컴포넌트는 크로스 브라우징을 지원해야 합니다.\n3. 디자인 규칙: 다크모드(Dark mode) 기반의 글래스모피즘(backdrop-blur) 스타일을 유지하세요."
                     },
                     {
-                        tabName: "3단계: 역추론 추출",
-                        desc: "UI가 완벽해지면, 지금까지 수정한 내역을 바탕으로 템플릿 작성을 지시합니다.",
-                        prompt: "완벽해! 딱 내가 원하던 디자인 퀄리티야.\n자, 이제 집중해. 내가 앞으로 이 쇼핑몰에서 상품 리스트, 장바구니 아이템 등 비슷한 퀄리티의 UI 카드를 여러 개 만들어야 하거든?\n\n방금 네가 만든 '완벽한 리뷰 카드'의 여백, 둥근 모서리, 반응형 처리, 스크롤 처리 규칙을 기준점으로 삼아서, **내가 다음에 다른 디자인을 지시할 때 한 번에 이 정도 디테일 퀄리티를 유지하며 퍼블리싱해 내는 'UI 퍼블리싱 전용 시스템 프롬프트 템플릿'**을 네가 직접 마크다운으로 정리해 줘."
+                        tabName: "3단계: 출력 형식 통제",
+                        desc: "불필요한 설명 없이 깔끔하게 코드만 받아내기 위해 포맷을 강제합니다.",
+                        prompt: "# Output Format\n응답은 반드시 아래의 마크다운 형식을 그대로 복사하여 내용을 채워넣는 방식으로 출력하세요. 잡다한 설명은 금지합니다.\n\n```markdown\n## 🎨 UI 구조 요약\n- (3줄 이내 설명)\n\n## 💻 코드\n[전체 퍼블리싱 코드]\n```"
                     },
                     {
-                        tabName: "🔥 4단계: 도출 결과물",
-                        desc: "AI가 스스로 분석하여 정리해 준 최종 프롬프트 템플릿입니다.",
-                        prompt: "당신은 쇼핑몰 전담 시니어 UI 퍼블리셔입니다.\n아래의 **[UI 컴포넌트 마크업 규칙]**을 엄격하게 준수하여 HTML/CSS를 작성하세요.\n\n### 🎨 디자인 룰\n- 여백/비율: 내부 여백은 넉넉하게(`p-6`), 텍스트 줄간격은 `leading-relaxed` 기본 적용\n- 둥근 모서리: 모든 카드는 `rounded-2xl` 적용 및 부드러운 외곽선\n- 스크롤/반응형: 넘치는 콘텐츠는 네이티브 가로 스크롤 허용, 데스크톱/모바일 폰트 사이즈 반응형 분기\n\n### 📥 입력될 지시사항\n- 만들 UI 요소: [사용자가 입력할 내용]\n- 포함될 콘텐츠: [요소 목록]\n\n위 규칙을 완벽히 이해했다면 '디자인 룰 숙지 완료'라고 대답하고 지시를 기다리세요."
+                        tabName: "🔥 4단계: 완성된 템플릿",
+                        desc: "위 항목들을 결합하여 새로운 채팅을 시작할 때마다 가장 먼저 입력할 베이스 프롬프트입니다.",
+                        prompt: "당신은 15년 차 시니어 UI 퍼블리셔입니다.\n아래의 **[절대 규칙]**을 엄격하게 준수하여 코드를 작성하세요.\n\n### 🎨 기술 스택 및 룰\n- Tailwind CSS 활용, 다크모드 기반 글래스모피즘 적용\n- 모바일 반응형 필수, 불필요한 JS 로직 배제\n- 모든 버튼과 카드엔 반드시 hover 트랜지션 추가\n\n### 📝 출력 포맷\n마크다운 형식으로 3줄 요약과 전체 코드만 출력할 것 (부연 설명 금지)\n\n위 규칙을 완벽히 이해했다면 '시스템 룰 숙지 완료'라고 대답하고 첫 지시를 기다리세요."
                     }
                 ]
             },
-            'approach_b': {
-                title: "📝 프롬프트 자체 사전 제작 (설계)",
+            'prompt_micro': {
+                title: "🧩 핵심 2: 마이크로 태스크 프롬프트 (Micro Prompt)",
                 tabs: [
                     {
-                        tabName: "1단계: 페르소나 및 목표",
-                        desc: "퍼블리싱의 시각적 목표와 AI가 가져야 할 전문가적 깐깐함을 윗단에 명시합니다.",
-                        prompt: "# Role\n당신은 애플(Apple) 웹사이트 수준의 정교한 퍼블리싱과 극강의 시각적 완성도를 추구하는 15년 차 인터랙션 UI 퍼블리셔입니다. 대충 짠 레이아웃을 혐오하며, 1px의 오차와 어색한 애니메이션을 용납하지 않습니다.\n\n# Objective\n현재 우리는 핀터레스트 스타일의 이미지 갤러리 메인 화면을 퍼블리싱 중입니다. 당신의 임무는 다단계 카테고리 필터 버튼과 Masonry 그리드 레이아웃 구조를 TailwindCSS로 마크업하는 것입니다."
+                        tabName: "1단계: 시각적 목표 묘사",
+                        desc: "코드 속성(How)이 아닌, 만들고자 하는 결과물의 느낌(What)을 전달합니다.",
+                        prompt: "'결제하기' 버튼을 퍼블리싱 해줘. 평소에는 다크 그레이 톤으로 둥글고 모던한 느낌이다가, 마우스를 올렸을 때(hover) 부드럽게 버튼이 떠오르며 메인 컬러(보라색)의 네온 글로우(Neon Glow) 그림자가 생기는 고급스러운 CSS 인터랙션을 구현해 줘."
                     },
                     {
-                        tabName: "2단계: 룰과 제약사항",
-                        desc: "UI가 틀어지거나 마음대로 디자인을 변형하지 못하도록 촘촘하게 제약을 둡니다.",
-                        prompt: "# Strict Rules\n마크업 작성 시 다음 규칙을 절대 어기지 마세요.\n\n1. **반응형**: 모바일에선 2열, 태블릿 3열, PC 5열 그리드로 완벽하게 변환될 것.\n2. **스크롤바**: 브라우저 기본 스크롤바는 CSS로 숨기고(Custom scrollbar 적용), 가로 스크롤은 부드러운 스크롤(smooth)을 적용할 것.\n3. **호버 이펙트**: 갤러리 이미지에 마우스를 올리면 사진이 살짝 확대되며(scale) 하단에 그라데이션 어둡기가 깔리고 타이틀 텍스트가 위로 스르륵 올라오는 애니메이션 필수.\n4. **금지 사항**: JavaScript 로직(상태 관리, API 호출 등) 작성 금지. 오직 순수 HTML 구조와 Tailwind CSS 클래스만 출력할 것."
+                        tabName: "2단계: 뼈대 우선 마크업",
+                        desc: "전체를 한 번에 만들지 않고, 레이아웃의 구획부터 먼저 잡습니다.",
+                        prompt: "디테일한 스타일링을 하기 전에, 먼저 헤더와 메인 콘텐츠 영역이 나뉘는 레이아웃 뼈대 코드를 작성해 줘.\n각 영역이 잘 배치되었는지 눈으로 확인할 수 있도록 임시 배경색(border나 bg-color)과 더미 텍스트만 넣어서 화면 구조를 잡아줘."
                     },
                     {
-                        tabName: "3단계: 출력 형식 강제",
-                        desc: "코드 결과물만 깔끔하게 받아내기 위해 마크다운 포맷을 강제합니다.",
-                        prompt: "# Output Format\n응답은 반드시 아래의 마크다운 형식을 그대로 복사하여 내용을 채워넣는 방식으로 출력하세요. 잡다한 설명은 금지합니다.\n\n```markdown\n## 🎨 UI 구조 설계 요약\n- (그리드 설계 및 CSS 애니메이션 구현 방식에 대한 3줄 이내 설명)\n\n## 💻 HTML/Tailwind 마크업\n[전체 퍼블리싱 코드]\n```"
+                        tabName: "3단계: 디테일 추가",
+                        desc: "뼈대 위에 점진적으로 디자인 디테일과 반응형 처리를 요구합니다.",
+                        prompt: "방금 만들어준 카드 레이아웃 좋아. 이제 디테일을 잡을게.\n1. 브라우저 폭이 768px 이하가 되면 카드 그리드가 2열에서 1열로 변환되게 반응형 처리를 해줘.\n2. 이미지가 로드될 때 부드럽게 페이드인 되도록 트랜지션을 추가해 줘."
                     },
                     {
-                        tabName: "🔥 4단계: 최종 설계본",
-                        desc: "위 항목들을 모두 결합한 강력한 UI 퍼블리싱 전용 시스템 프롬프트입니다.",
-                        prompt: "# Role\n당신은 1px의 오차도 허용하지 않는 15년 차 인터랙션 UI 퍼블리셔입니다.\n\n# Objective\n핀터레스트 스타일의 갤러리 뷰 및 카테고리 필터 마크업 작성\n\n# Strict Rules\n1. 모바일 2열 -> PC 5열 반응형 분기 완벽 적용\n2. 기본 스크롤바 숨김 처리 및 Custom 스타일링\n3. 이미지 Hover 시 Scale up 및 그라데이션 오버레이 캡션 애니메이션\n4. JS 로직 금지, 순수 마크업 구조만 작성\n\n# Output Format\n아래 포맷 준수 (부연 설명 절대 금지)\n```markdown\n## 🎨 UI 구조 요약\n(3줄 요약)\n## 💻 HTML/Tailwind 마크업\n(코드)\n```\n\n지시를 숙지했다면 위 포맷에 맞추어 즉시 마크업을 출력하세요."
+                        tabName: "🔥 4단계: 에러 상황 복붙",
+                        desc: "문제가 생겼을 때 추측하지 않고 현상과 로그를 그대로 던집니다.",
+                        prompt: "모바일 화면(폭 500px 이하)에서 확인해보니, 우측 '문의하기' 버튼이 아래로 줄바꿈 되면서 영역을 벗어나 레이아웃이 깨지고 있어.\nFlexbox의 wrap 속성이나 flex-shrink 쪽에 문제가 있는 것 같은데, 모바일에서 1열에 꽉 차게 나오도록 반응형 코드를 다시 리팩토링 해줘."
                     }
                 ]
             },
