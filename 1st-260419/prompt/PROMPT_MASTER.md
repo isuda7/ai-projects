@@ -22,8 +22,9 @@
 2.  **레이아웃 설정 (Layout Setup):** 전역 공통 헤더/푸터 및 기본 레이아웃 컴포넌트(`Layout`, `UnauthenticatedLayout`) 생성.
 3.  **가이드와 프론트의 구분 (Separation of Guide and Front):** 사용자 화면(포털/대시보드)과 디자인 시스템 가이드 영역의 라우팅 및 레이아웃(`guide-layout`) 완벽 분리.
 4.  **대시보드와 가이드 템플릿 (Dashboard & Guide Template):** 가이드 메인 진입점인 퍼블리싱 대시보드 페이지 구현 및 가이드 문서 작성을 위한 표준 템플릿(`PROMPT_GUIDE_01_BASE.md`) 확립.
-5.  **가이드 유형들의 단계적 추가 (Step-by-step Guide Addition):** 파운데이션 요소(Colors, Typography, Spacing 등) 전용 가이드 페이지 생성.
-6.  **가이드의 유형 확장 (Expansion of Component Guides):** 기본 UI 컴포넌트(Button, Input 등)부터 복합 컨테이너 컴포넌트까지 컴포넌트 스펙 규격(`PROMPT_CONTEXT_COMPONENT.md`)에 맞춰 점진적 확장.
+5.  **가이드 유형들의 일괄 추가 (Batch Guide Addition):** 파운데이션 요소(Colors, Typography, Spacing 등) 전용 가이드 페이지를 한 번에 일괄 생성.
+6.  **전체 컴포넌트 가이드 일괄 생성 (Batch Generation of Component Guides):** 기본 UI 컴포넌트(Button, Input 등)부터 복합 컨테이너 컴포넌트까지 컴포넌트 스펙 규격(`PROMPT_CONTEXT_COMPONENT.md`)에 맞춰 **점진적이 아닌 한 번에 모두 일괄 생성 및 적용**.
+7.  **마무리 검수 (Final Review & Checklist):** 모든 컴포넌트/가이드 생성이 끝난 후, 반드시 `PROMPT_CONTEXT_06_CHECKLIST.md`를 읽고 프리뷰 오픈형 강제 여부, SCSS 규칙 등을 스스로 최종 점검하고 어긋난 부분을 수정 적용.
 
 ---
 

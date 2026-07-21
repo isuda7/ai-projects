@@ -25,7 +25,7 @@ interface GuideMenuGroup {
 
 const GUIDE_MENU: GuideMenuGroup[] = [
   {
-    title: 'Generals',
+    title: 'Foundations',
     items: [
       { label: 'Colors', path: '/guide/colors' },
       { label: 'Typography', path: '/guide/typography' },
@@ -119,7 +119,7 @@ const GuideLayout = ({ children }: GuideLayoutProps) => {
   
   // 메뉴 토글 상태 관리
   const [expandedGroups, setExpandedGroups] = useState<Record<string, boolean>>({
-    Generals: true,
+    Foundations: true,
     Elements: true,
     Forms: true,
     Navigation: true,

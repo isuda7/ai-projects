@@ -2,11 +2,15 @@
 
 이 프로젝트는 특정 주제에 국한되지 않고 다양한 주제의 웹 프로젝트에 대응하기 위한 범용 데모 포털입니다. 또한, '바이브 코딩'을 단계별로 학습하며 그 과정의 프롬프트를 자동으로 기록하고 자산화하는 것을 목표로 합니다.
 
+## 🏷️ 프로젝트 기본 정보 (Project Info)
+- **Project Name**: `Vibe Design System` (작업 시 프로젝트 성격에 맞게 이곳의 이름을 변경하십시오.)
+- 이 프로젝트 이름은 가이드 시스템 및 대시보드의 **헤더 좌측 상단 로고(Logo) 텍스트**로 전역적으로 사용되어야 합니다.
+
 ## 🛠️ 기술 스택 (Universal Stack)
 - **Framework**: React 19 (Vite 기반)
 - **Language**: TypeScript
 - **UI Library**: **shadcn/ui (Radix UI 기반)** - 표준적이고 세련된 UI 컴포넌트 시스템 구축.
-- **Styling**: Tailwind CSS 는 사용하지 않는다. 전적으로 SCSS만 사용한다.
+- **Styling**: Tailwind CSS 기반으로 스타일링을 적용한다.
 - **Routing**: `react-router-dom` + `vite-plugin-pages` (파일 기반 자동 라우팅).
 - **State Management**: Zustand (클라이언트/퍼시스트), React Query (서버 데이터).
 - **Animation**: Framer Motion.
