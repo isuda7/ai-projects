@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>산출물 가이드 | Vibe Coding</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">VibeCoding. <span class="version-badge">v1.3</span></div>
+                <ul class="nav-links">
+                    <li class="dropdown">
+                        <a href="index.html#about" class="dropbtn">개요 <svg class="dropdown-icon" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg></a>
+                        <div class="dropdown-content">
+                            <a href="index.html#about">Intro</a>
+                            <a href="index.html#preparation">에디터 선택</a>
+                            <a href="index.html#process">전체 흐름</a>
+                            <a href="index.html#practical">치트시트</a>
+                            <a href="index.html#workflow">작업 사이클</a>
+                            <a href="index.html#archive">자산화</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="system.html" class="dropbtn">시스템 <svg class="dropdown-icon" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg></a>
+                        <div class="dropdown-content">
+                            <a href="system.html#setup">환경설정</a>
+                            <a href="system.html#rules">설계규칙</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="guide.html" class="dropbtn active">산출물 <svg class="dropdown-icon" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg></a>
+                        <div class="dropdown-content">
+                            <a href="guide.html#dashboard">페이지리스트</a>
+                            <a href="guide.html#design-system">디자인시스템</a>
+                            <a href="guide.html#prototype">프로토타입</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="implementation.html" class="dropbtn">구현/검증 <svg class="dropdown-icon" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg></a>
+                        <div class="dropdown-content">
+                            <a href="implementation.html#micro-prompt">마이크로 프롬프트</a>
+                            <a href="implementation.html#arch-prompt">아키텍쳐 프롬프트</a>
+                            <a href="implementation.html#refactor-prompt">리팩토링 프롬프트</a>
+                            <a href="implementation.html#review-prompt">코드리뷰 프롬프트</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="rules.html" class="dropbtn">학습/감시 <svg class="dropdown-icon" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg></a>
+                        <div class="dropdown-content">
+                            <a href="rules.html#a11y">웹 접근성 (A11y)</a>
+                            <a href="rules.html#custom-rules">퍼블리싱 커스텀 룰</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" style="min-height: 40vh; padding-top: 150px; padding-bottom: 50px;">
+        <div class="container">
+            <h1 style="font-size: 3.5rem; margin-bottom: 20px; background: linear-gradient(135deg, #f59e0b, #ef4444); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">산출물 가이드</h1>
+            <p style="font-size: 1.2rem; color: var(--text-muted);">AI가 참고할 수 있는 명확한 디자인 및 페이지 자산을 관리하는 공간입니다.</p>
+        </div>
+    </section>
+
+    <!-- Dashboard Section -->
+    <section id="dashboard" class="section">
+        <div class="container">
+            <h2 class="section-title">대시보드 (페이지리스트)</h2>
+            <p class="section-desc">프로젝트의 전체 페이지 구조와 진행 상황을 한눈에 파악합니다.</p>
+            <div class="curriculum-grid">
+                <div class="curriculum-card" style="text-align: center; padding: 60px 30px;">
+                    <div style="font-size: 3rem; margin-bottom: 20px;">📊</div>
+                    <h3 style="margin-bottom: 15px;">페이지 목록 준비 중</h3>
+                    <p style="color: var(--text-muted); line-height: 1.6;">메인, 서브 페이지들의 트리 구조 및<br>각 화면의 역할 정의 콘텐츠가 업데이트 될 예정입니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Design System Section -->
+    <section id="design-system" class="section" style="background: rgba(255, 255, 255, 0.02);">
+        <div class="container">
+            <h2 class="section-title">디자인시스템</h2>
+            <p class="section-desc">일관된 톤앤매너를 위한 폰트, 컬러 팔레트, 아이콘 에셋 등을 정리합니다.</p>
+            <div class="curriculum-grid">
+                <div class="curriculum-card" style="text-align: center; padding: 60px 30px;">
+                    <div style="font-size: 3rem; margin-bottom: 20px;">🎨</div>
+                    <h3 style="margin-bottom: 15px;">디자인 토큰 준비 중</h3>
+                    <p style="color: var(--text-muted); line-height: 1.6;">컬러코드(Hex), 타이포그래피 스케일,<br>여백(Spacing) 규칙 등의 콘텐츠가 업데이트 될 예정입니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Prototype Section -->
+    <section id="prototype" class="section">
+        <div class="container">
+            <h2 class="section-title">프로토타입</h2>
+            <p class="section-desc">퍼블리싱의 결과물과 인터랙션 테스트를 위한 프로토타입 결과물입니다.</p>
+            <div class="curriculum-grid">
+                <div class="curriculum-card" style="text-align: center; padding: 60px 30px;">
+                    <div style="font-size: 3rem; margin-bottom: 20px;">✨</div>
+                    <h3 style="margin-bottom: 15px;">프로토타입 뷰어 준비 중</h3>
+                    <p style="color: var(--text-muted); line-height: 1.6;">바이브코딩으로 완성된 주요 컴포넌트 및<br>페이지 단위의 라이브 데모가 연결될 예정입니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container" style="text-align: center; color: rgba(255, 255, 255, 0.4); padding: 40px 0; border-top: 1px solid rgba(255,255,255,0.05);">
+            <p>&copy; 2026 VibeCoding Guide. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>데모 화면 | Vibe Coding</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Outfit:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(-45deg, rgba(124, 58, 237, 0.05), rgba(6, 182, 212, 0.05), rgba(236, 72, 153, 0.05), rgba(13, 13, 18, 1));
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .demo-container {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 60px 80px;
+            border-radius: 24px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            max-width: 600px;
+            width: 90%;
+        }
+
+        .demo-title {
+            font-size: 2.5rem;
+            background: linear-gradient(135deg, #a855f7, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+        }
+
+        .demo-desc {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .back-btn {
+            display: inline-block;
+            padding: 12px 32px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .back-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+
+<body>
+    
+    <div class="demo-container">
+        <div style="font-size: 3rem; margin-bottom: 20px;">🚧</div>
+        <h1 class="demo-title" id="pageTitle">메뉴 데모 화면</h1>
+        <p class="demo-desc">해당 대메뉴에 대한 콘텐츠 및 서브메뉴는 <br>현재 준비 및 구성 중에 있습니다.</p>
+        <a href="index.html" class="back-btn">돌아가기</a>
+    </div>
+
+    <script>
+        // URL에서 title 파라미터 추출
+        const urlParams = new URLSearchParams(window.location.search);
+        let title = urlParams.get('title');
+        
+        if (title) {
+            title = title.replace('_', '/'); // 특수문자 처리
+            document.getElementById('pageTitle').innerText = title + ' 데모 화면';
+            document.title = title + ' | Vibe Coding';
+        }
+    </script>
+</body>
+
+</html>

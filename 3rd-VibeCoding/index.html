@@ -23,14 +23,83 @@
     <header>
         <div class="container">
             <nav>
-                <div class="logo">VibeCoding.</div>
+                <div class="logo">VibeCoding. <span class="version-badge">v0.3</span></div>
                 <ul class="nav-links">
-                    <li><a href="#about">개요</a></li>
-                    <li><a href="#editor">에디터</a></li>
-                    <li><a href="#process">프로세스</a></li>
-                    <li><a href="#practical">실무단계</a></li>
-                </ul>
+                    <li class="dropdown">
+                        <a href="#about" class="dropbtn active">개요 <svg class="dropdown-icon" viewBox="0 0 20 20"
+                                fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                    clip-rule="evenodd" />
+                            </svg></a>
+                        <div class="dropdown-content">
+                            <a href="index.html#about">Intro</a>
+                            <a href="index.html#preparation">에디터 선택</a>
+                            <a href="index.html#process">전체 흐름</a>
+                            <a href="index.html#practical">치트시트</a>
+                            <a href="index.html#workflow">작업 사이클</a>
+                            <a href="index.html#archive">자산화</a>
+                        </div>
+                    </li>
+                    <!-- Environment / Setup -->
+                    <li class="dropdown">
+                        <a href="system.html" class="dropbtn">시스템 <svg class="dropdown-icon" viewBox="0 0 20 20"
+                                fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                    clip-rule="evenodd" />
+                            </svg></a>
+                        <div class="dropdown-content">
+                            <a href="system.html#setup">환경설정</a>
+                            <a href="system.html#rules">설계규칙</a>
+                        </div>
+                    </li>
 
+                    <!-- Design System -->
+                    <li class="dropdown">
+                        <a href="guide.html" class="dropbtn">산출물 <svg class="dropdown-icon" viewBox="0 0 20 20"
+                                fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                    clip-rule="evenodd" />
+                            </svg></a>
+                        <div class="dropdown-content">
+                            <a href="guide.html#dashboard">페이지리스트</a>
+                            <a href="guide.html#design-system">디자인시스템</a>
+                            <a href="guide.html#prototype">프로토타입</a>
+                        </div>
+                    </li>
+
+                    <!-- Implementation -->
+                    <li class="dropdown">
+                        <a href="implementation.html" class="dropbtn">구현/검증 <svg class="dropdown-icon"
+                                viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                    clip-rule="evenodd" />
+                            </svg></a>
+                        <div class="dropdown-content">
+                            <a href="implementation.html#micro-prompt">마이크로 프롬프트</a>
+                            <a href="implementation.html#arch-prompt">아키텍쳐 프롬프트</a>
+                            <a href="implementation.html#refactor-prompt">리팩토링 프롬프트</a>
+                            <a href="implementation.html#review-prompt">코드리뷰 프롬프트</a>
+                        </div>
+                    </li>
+
+                    <!-- Conventions -->
+                    <li class="dropdown">
+                        <a href="rules.html" class="dropbtn">학습/감시 <svg class="dropdown-icon" viewBox="0 0 20 20"
+                                fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                    clip-rule="evenodd" />
+                            </svg></a>
+                        <div class="dropdown-content">
+                            <a href="rules.html#a11y">웹 접근성 (A11y)</a>
+                            <a href="rules.html#custom-rules">퍼블리싱 커스텀 룰</a>
+                        </div>
+                    </li>
+                </ul>
             </nav>
         </div>
     </header>
@@ -39,136 +108,130 @@
         <div class="container">
             <h1>VibeCoding Guide</h1>
             <p>AI 페어 프로그래밍을 활용하여 실제 프로덕트를 기획하고 개발하는 실무적인 접근 방식과 단계별 워크플로우를 안내합니다.</p>
-            
+
             <!-- Premium Phase Flow Summary -->
-            <div class="hero-flow-container" style="margin: 50px auto 40px; max-width: 900px; display: flex; justify-content: space-between; align-items: center; gap: 15px; flex-wrap: wrap; position: relative;">
-                
+            <div class="hero-flow-container"
+                style="margin: 50px auto 40px; max-width: 900px; display: flex; justify-content: space-between; align-items: center; gap: 15px; flex-wrap: wrap; position: relative;">
+
                 <style>
                     .flow-step {
-                        flex: 1; min-width: 150px; z-index: 1; padding: 25px 15px; 
-                        background: rgba(255,255,255,0.03); 
+                        flex: 1;
+                        min-width: 150px;
+                        z-index: 1;
+                        padding: 25px 15px;
+                        background: rgba(255, 255, 255, 0.03);
                         backdrop-filter: blur(10px);
-                        border-radius: 20px; 
-                        border: 1px solid rgba(255,255,255,0.1); 
+                        border-radius: 20px;
+                        border: 1px solid rgba(255, 255, 255, 0.1);
                         text-align: center;
                         transition: all 0.3s ease;
                         cursor: default;
                     }
+
                     .flow-step:hover {
                         transform: translateY(-8px);
-                        background: rgba(255,255,255,0.08);
-                        border-color: rgba(255,255,255,0.2);
-                        box-shadow: 0 15px 35px -10px rgba(0,0,0,0.5);
+                        background: rgba(255, 255, 255, 0.08);
+                        border-color: rgba(255, 255, 255, 0.2);
+                        box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.5);
                     }
+
                     .step-number {
-                        width: 48px; height: 48px; 
-                        border-radius: 50%; 
-                        display: flex; align-items: center; justify-content: center; 
+                        width: 48px;
+                        height: 48px;
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
                         margin: 0 auto 15px;
-                        font-weight: 700; font-size: 1.2rem;
+                        font-weight: 700;
+                        font-size: 1.2rem;
                     }
+
                     .arrow-icon {
-                        color: rgba(255,255,255,0.2);
+                        color: rgba(255, 255, 255, 0.2);
                         font-size: 1.5rem;
                     }
+
                     @media (max-width: 768px) {
-                        .arrow-icon { display: none; }
+                        .arrow-icon {
+                            display: none;
+                        }
                     }
                 </style>
 
                 <!-- Phase 1 -->
                 <div class="flow-step" style="color: #818cf8;">
-                    <div class="step-number" style="background: rgba(99,102,241,0.15); box-shadow: 0 0 20px rgba(99,102,241,0.3); border: 1px solid rgba(99,102,241,0.3);">01</div>
-                    <div style="font-size: 0.8rem; color: #94a3b8; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1px;">Phase 1</div>
+                    <div class="step-number"
+                        style="background: rgba(99,102,241,0.15); box-shadow: 0 0 20px rgba(99,102,241,0.3); border: 1px solid rgba(99,102,241,0.3);">
+                        01</div>
+                    <div
+                        style="font-size: 0.8rem; color: #94a3b8; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1px;">
+                        Phase 1</div>
                     <div style="font-weight: 700; font-size: 1.05rem; color: #fff; margin-bottom: 8px;">감 잡기 (실습)</div>
-                    <div style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.4; word-break: keep-all;">튜토리얼을 따라하며 AI와의 호흡을 맞춥니다.</div>
+                    <div style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.4; word-break: keep-all;">
+                        튜토리얼을 따라하며 AI와의 호흡을 맞춥니다.</div>
                 </div>
-                
+
                 <div class="arrow-icon">➔</div>
 
                 <!-- Phase 2 -->
                 <div class="flow-step" style="color: #f472b6;">
-                    <div class="step-number" style="background: rgba(236,72,153,0.15); box-shadow: 0 0 20px rgba(236,72,153,0.3); border: 1px solid rgba(236,72,153,0.3);">02</div>
-                    <div style="font-size: 0.8rem; color: #94a3b8; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1px;">Phase 2</div>
-                    <div style="font-weight: 700; font-size: 1.05rem; color: #fff; margin-bottom: 8px;">무기 장착 (치트시트)</div>
-                    <div style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.4; word-break: keep-all;">상황별 최적화된 프롬프트 패턴을 익힙니다.</div>
+                    <div class="step-number"
+                        style="background: rgba(236,72,153,0.15); box-shadow: 0 0 20px rgba(236,72,153,0.3); border: 1px solid rgba(236,72,153,0.3);">
+                        02</div>
+                    <div
+                        style="font-size: 0.8rem; color: #94a3b8; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1px;">
+                        Phase 2</div>
+                    <div style="font-weight: 700; font-size: 1.05rem; color: #fff; margin-bottom: 8px;">무기 장착 (치트시트)
+                    </div>
+                    <div style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.4; word-break: keep-all;">
+                        상황별 최적화된 프롬프트 패턴을 익힙니다.</div>
                 </div>
 
                 <div class="arrow-icon">➔</div>
 
                 <!-- Phase 3 -->
                 <div class="flow-step" style="color: #facc15;">
-                    <div class="step-number" style="background: rgba(234,179,8,0.15); box-shadow: 0 0 20px rgba(234,179,8,0.3); border: 1px solid rgba(234,179,8,0.3);">03</div>
-                    <div style="font-size: 0.8rem; color: #94a3b8; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1px;">Phase 3</div>
+                    <div class="step-number"
+                        style="background: rgba(234,179,8,0.15); box-shadow: 0 0 20px rgba(234,179,8,0.3); border: 1px solid rgba(234,179,8,0.3);">
+                        03</div>
+                    <div
+                        style="font-size: 0.8rem; color: #94a3b8; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1px;">
+                        Phase 3</div>
                     <div style="font-weight: 700; font-size: 1.05rem; color: #fff; margin-bottom: 8px;">실무 돌입 (루프)</div>
-                    <div style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.4; word-break: keep-all;">뼈대 구축부터 에러 해결까지 실전을 반복합니다.</div>
+                    <div style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.4; word-break: keep-all;">
+                        뼈대 구축부터 에러 해결까지 실전을 반복합니다.</div>
                 </div>
 
                 <div class="arrow-icon">➔</div>
 
                 <!-- Phase 4 -->
                 <div class="flow-step" style="color: #4ade80;">
-                    <div class="step-number" style="background: rgba(34,197,94,0.15); box-shadow: 0 0 20px rgba(34,197,94,0.3); border: 1px solid rgba(34,197,94,0.3);">04</div>
-                    <div style="font-size: 0.8rem; color: #94a3b8; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1px;">Phase 4</div>
-                    <div style="font-weight: 700; font-size: 1.05rem; color: #fff; margin-bottom: 8px;">자산화 (에셋 구축)</div>
-                    <div style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.4; word-break: keep-all;">축적된 핵심 노하우를<br>다음 프로젝트를 위해 캡슐화합니다.</div>
+                    <div class="step-number"
+                        style="background: rgba(34,197,94,0.15); box-shadow: 0 0 20px rgba(34,197,94,0.3); border: 1px solid rgba(34,197,94,0.3);">
+                        04</div>
+                    <div
+                        style="font-size: 0.8rem; color: #94a3b8; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1px;">
+                        Phase 4</div>
+                    <div style="font-weight: 700; font-size: 1.05rem; color: #fff; margin-bottom: 8px;">자산화 (에셋 구축)
+                    </div>
+                    <div style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.4; word-break: keep-all;">
+                        축적된 핵심 노하우를<br>다음를 위해 캡슐화합니다.</div>
                 </div>
 
             </div>
 
-            <div class="hero-buttons">
-
-                <a href="#process" class="secondary-button">프로세스 보기</a>
-            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse"></div>
         </div>
     </section>
     <!-- Preparation Section -->
     <section class="target" id="preparation" style="padding-top: 80px; padding-bottom: 80px;">
         <div class="container">
-            <h2 class="section-title">Phase 0. 사전 준비 (Preparation)</h2>
-            <p style="text-align: center; color: var(--text-muted); margin-bottom: 60px;">AI 에디터를 켜기 전에 반드시 준비되어 있어야 할
-                3가지 필수 요소입니다.</p>
-
-            <div class="curriculum-grid">
-                <div class="curriculum-card">
-                    <div style="font-size: 2.5rem; margin-bottom: 15px;">📝</div>
-                    <h3>1. 아이디어 및 화면 구도</h3>
-                    <p>만들고자 하는 웹사이트의 목적과 대략적인 화면 구도를 정의합니다. 텍스트 줄글이어도 충분합니다.</p>
-                    <ul
-                        style="list-style: none; padding: 0; margin-top: 15px; color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">
-                        <li style="color: #fff;"><strong>예시:</strong></li>
-                        <li>• "Hero 섹션엔 내 아바타와 텍스트"</li>
-                        <li>• "그 아래엔 3x2 배열의 카드형 포트폴리오"</li>
-                    </ul>
-                </div>
-
-                <div class="curriculum-card">
-                    <div style="font-size: 2.5rem; margin-bottom: 15px;">⚙️</div>
-                    <h3>2. 시스템 프롬프트 (System)</h3>
-                    <p>AI에게 <strong>'전문가 페르소나'</strong>와 <strong>'절대 기술 규칙'</strong>을 주입하는 초기 프롬프트입니다. 가장 중요한 뼈대입니다.</p>
-                    <div class="view-prompt-btn" onclick="openModal('prompt_system')" style="margin-top: 20px;">복붙용 템플릿
-                        보기 ↗</div>
-                </div>
-
-                <div class="curriculum-card">
-                    <div style="font-size: 2.5rem; margin-bottom: 15px;">💻</div>
-                    <h3>3. AI 에디터 세팅</h3>
-                    <p>Cursor, Windsurf 등 AI 에디터를 설치하고, 빈 프로젝트(빈 폴더)를 열어둘 준비를 합니다.</p>
-                    <ul
-                        style="list-style: none; padding: 0; margin-top: 15px; color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">
-                        <li>• Node.js 등 기본 런타임 설치</li>
-                        <li>• 빈 폴더를 생성하고 에디터로 Open</li>
-                        <li>• (준비 완료 시) 바로 Step 1 프롬프트 입력</li>
-                    </ul>
-                </div>
-            </div>
-
-            <h3 style="text-align: center; margin-top: 60px; font-size: 1.6rem; font-weight: 700; color: #fff;">
-                나에게 맞는 AI 에디터 선택하기
-            </h3>
-            <p style="text-align: center; color: var(--text-muted); margin-bottom: 30px; font-size: 0.95rem;">
-                코딩 스타일에 완벽하게 동기화될 최적의 무기를 골라보세요.
-            </p>
+            <h2 class="section-title">Phase 0. 나에게 맞는 AI 에디터 선택하기</h2>
+            <p style="text-align: center; color: var(--text-muted); margin-bottom: 40px;">본격적인 바이브코딩에 앞서, 자신의 코딩 스타일과
+                목적에 완벽하게 동기화될 최적의 무기를 골라보세요.</p>
             <div class="comparison-container" style="margin-top: 20px;">
                 <table class="editor-comparison-table">
                     <thead>
@@ -230,7 +293,7 @@
                             <td>
                                 <ul class="pros-cons-list">
                                     <li><strong class="pro">장점:</strong> 대중적인 생태계</li>
-                                    <li><strong class="con">단점:</strong> 프로젝트 전체 문맥 파악 제한적</li>
+                                    <li><strong class="con">단점:</strong> 프로젝트 전체 문맥 파악 제한적.</li>
                                 </ul>
                             </td>
                             <td>
@@ -248,15 +311,64 @@
                         </tr>
                         <tr>
                             <td><strong>비용</strong></td>
-                            <td>AI 플러그인 유료 (본체 무료)</td>
-                            <td>유료 구독형</td>
-                            <td><strong>전면 무료</strong></td>
+                            <td>
+                                <strong>에디터 본체 무료 / AI 플러그인 유료</strong><br>
+                                <span
+                                    style="font-size: 0.85em; color: var(--text-muted); display: inline-block; margin-top: 4px; line-height: 1.4;">
+                                    <span style="color: white;">- Copilot 등 구독 시 다양한 AI 모델 프리미엄 사용 지원</span><br>- 단,
+                                    프로젝트 전체 문맥 파악 및 접근권한이 제한적</span>
+                            </td>
+                            <td>
+                                <strong>에디터 본체 무료 / Pro 요금제 유료</strong><br>
+                                <span
+                                    style="font-size: 0.85em; color: var(--text-muted); display: inline-block; margin-top: 4px; line-height: 1.4;">
+                                    <span style="color: white;">- Pro 구독 : 다양한 AI 모델 프리미엄 사용 지원</span> <br>
+                                    - 무료 플랜 : 개인 API Key 필요</span>
+                            </td>
+                            <td>
+                                <strong style="color: #60a5fa;">에디터 전면 무료</strong><br>
+                                <span
+                                    style="font-size: 0.85em; color: rgba(255,255,255,0.7); display: inline-block; margin-top: 4px; line-height: 1.4; font-weight: normal;">
+                                    <span style="color: white;">- Gemini 구독시는 로그인 연동 허용</span><br>- 그 외 AI 모델은 개인 API
+                                    Key 필요</span>
+                            </td>
                         </tr>
                         <tr>
                             <td><strong>AI 개입 수준</strong></td>
-                            <td>수동적<br>(코드 자동완성, 채팅 보조)</td>
-                            <td>반자동<br>(강력한 인라인 편집, 다중 파일 생성)</td>
-                            <td><strong>완전 자율<br>(계획 수립부터 실행, 검증까지)</strong></td>
+                            <td>
+                                <strong class="custom-tooltip">수동적 ⓘ
+                                    <span class="tooltip-text">
+                                        <strong
+                                            style="color: #93c5fd; display: block; margin-bottom: 6px; font-size: 0.95rem;">💡
+                                            수동적(Passive)이란?</strong>
+                                        개발자가 코드를 작성할 때 다음 구문을 예측해 주거나(자동완성), 채팅창에 질문하면 코드를 짜주는 등 철저히 <strong>개발자의 타이핑을
+                                            보조하는 '조수' 역할</strong>에 머무르는 방식을 뜻합니다.
+                                    </span>
+                                </strong><br>(코드 자동완성, 채팅 보조)
+                            </td>
+                            <td>
+                                <strong class="custom-tooltip">반자동 ⓘ
+                                    <span class="tooltip-text">
+                                        <strong
+                                            style="color: #93c5fd; display: block; margin-bottom: 6px; font-size: 0.95rem;">💡
+                                            반자동(Semi-Autonomous)이란?</strong>
+                                        개발자가 에디터 내에서 AI에게 지시하면 AI가 코드를 빠르게 작성하거나 여러 파일을 수정해 줍니다. 하지만 브라우저 확인, 터미널 실행, 에러
+                                        검증 등 <strong>코드 작성 외의 '실행 및 테스트' 주도권은 여전히 개발자가 직접 쥐고 조작</strong>해야 하는 방식을 뜻합니다.
+                                    </span>
+                                </strong><br>(강력한 인라인 편집, 다중 파일 생성)
+                            </td>
+                            <td>
+                                <strong class="custom-tooltip">완전 자율 ⓘ
+                                    <span class="tooltip-text">
+                                        <strong
+                                            style="color: #93c5fd; display: block; margin-bottom: 6px; font-size: 0.95rem;">💡
+                                            완전 자율형(Fully Autonomous)이란?</strong>
+                                        Cursor 등 에디터 안에서 개발자의 '코드 작성'을 가속화하는 수준을 넘어, 목표만 주어지면 AI가 독립적인 엔지니어처럼 기획안 작성, 파일
+                                        생성, 터미널 명령어(빌드/실행) 조작, 브라우저 디버깅 등 <strong>개발 사이클 전체를 알아서 수행하고 완수하는 방식</strong>을
+                                        뜻합니다.
+                                    </span>
+                                </strong><br><strong>(계획 수립부터 실행, 검증까지)</strong>
+                            </td>
                         </tr>
                         <tr>
                             <td><strong>컨텍스트 이해도</strong></td>
@@ -276,31 +388,125 @@
                             <td>개발 속도를 극대화하고 싶은 프론트/백엔드 실무자</td>
                             <td><strong>복잡한 문제 해결과 기획, 아키텍처 설계에 집중하고 싶은 분</strong></td>
                         </tr>
+                        <!-- 전략 섹션 강조 영역 시작 -->
+                        <tr>
+                            <td colspan="4" style="padding: 0; border: none; height: 30px;"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"
+                                style="background: rgba(59,130,246,0.1); border-top: 2px solid #3b82f6; border-bottom: 0px solid #3b82f6; text-align: center; padding: 25px;">
+                                <h4
+                                    style="margin: 0; display: flex; align-items: center; justify-content: center; gap: 10px; color: #fff; font-weight: 700; font-size: 1.2rem;">
+                                    💡 바이브코딩을 위한 현실적인 에디터 선택 전략
+                                </h4>
+                                <p style="margin: 8px 0 0 0; color: #93c5fd; font-size: 0.95rem; font-weight: normal;">
+                                    나의 현 상황과 목적에 맞춰 가장 적합한 에디터를 결정하는 3가지 핵심 기준입니다.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="color: #93c5fd;"><strong>에디터 포지셔닝</strong></td>
+                            <td>부분적 AI 보조<br><span style="font-size: 0.85em; color: var(--text-muted);">(기존 환경
+                                    유지)</span></td>
+                            <td>작업자 중심의 코딩 가속화<br><span style="font-size: 0.85em; color: var(--text-muted);">(초고속 타이핑
+                                    및 다중 편집 등)</span></td>
+                            <td><strong>AI 주도형 풀사이클(Full-cycle) 수행</strong><br><span
+                                    style="font-size: 0.85em; color: var(--text-muted);">(계획, 설계, 구현, 검증, 배포 등)</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="color: #93c5fd;"><strong>AI 모델의 구독목적</strong></td>
+                            <td>전통적인 직접 코딩 비중이 높아 가벼운 보조 도구 정도만 원할 때</td>
+                            <td>'코딩'에 집중하고 다양한 AI 모델 활용으로 최고의 효율을 뽑고 싶을 때</td>
+                            <td><strong>Gemini를 구독중인 경우 구글환경의 이점을 활용하고 싶을 때</strong></td>
+                        </tr>
+                        <tr>
+                            <td style="color: #93c5fd;"><strong>AI 모델의 활용범위</strong></td>
+                            <td>Copilot에서 제공하는 기본 모델에 종속되어도 무방할 때</td>
+                            <td>개별 AI 구독 없이 Cursor Pro 하나로 여러 모델을 스위칭하고 싶을 때</td>
+                            <td><strong>다양한 AI 모델의 유료 서비스를 지원하는 자체 요금제는 없음</strong></td>
+                        </tr>
+                        <!-- 전략 섹션 강조 영역 끝 -->
                     </tbody>
                 </table>
             </div>
-            <!-- Final Recommendation -->
-            <div
-                style="text-align: center; margin-top: 40px; padding: 25px; background: rgba(59, 130, 246, 0.05); border: 1px solid rgba(59, 130, 246, 0.15); border-radius: 16px;">
-                <p style="margin: 0; font-size: 1.1rem; color: var(--text-color); font-weight: 500; line-height: 1.6;">
-                    💡 <span style="color: var(--text-muted); font-weight: normal;">현실적인 바이브코딩 전략: </span><br>
-                    <span
-                        style="font-weight: normal; font-size: 0.95rem; color: var(--text-muted); display: inline-block; margin-top: 5px;">
-                        빠른 코드 타이핑과 즉각적인 수정이 필요할 땐 <strong style="color: #fff;">Cursor</strong>를,<br>
-                        프로젝트 전체의 구조 설계나 복잡한 에러 해결을 AI에게 위임하고 싶을 땐 <strong style="color: #60a5fa;">Antigravity</strong>를
-                        조합하여 사용하는 것이 좋습니다.
-                    </span>
+
+            <!-- 프롬프트 무관 고유 기능 섹션 -->
+            <div style="margin-top: 80px;">
+                <h3 style="text-align: center; margin-bottom: 10px; font-size: 1.5rem; font-weight: 700; color: #fff;">
+                    프롬프트 그 이상의 무기: 에디터별 고유 AI 기능
+                </h3>
+                <p style="text-align: center; color: var(--text-muted); margin-bottom: 40px; font-size: 0.95rem;">
+                    사용자의 '프롬프트(지시)' 능력과 무관하게, 각 에디터가 시스템적으로 내장하고 있는 바이브코딩 가속 기능들입니다.
                 </p>
+
+                <div class="curriculum-grid">
+                    <!-- VS Code -->
+                    <div class="curriculum-card">
+                        <h4
+                            style="color: #fff; margin-bottom: 20px; font-size: 1.15rem; display: flex; align-items: center; gap: 8px;">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Visual_Studio_Code_1.35_icon.svg"
+                                width="20" height="20" alt="VS Code">
+                            VS Code
+                        </h4>
+                        <ul
+                            style="list-style: none; padding: 0; color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; display: flex; flex-direction: column; gap: 12px;">
+                            <li><strong style="color: #e2e8f0;">고스트 텍스트 (Ghost Text):</strong> 타이핑 중 다음 코드를 예측하여 희미하게 제안
+                            </li>
+                            <li><strong style="color: #e2e8f0;">인라인 챗 (Inline Chat):</strong> 에디터 내부에서 특정 코드 블록을 선택해
+                                즉각적인 리팩토링 수행</li>
+                            <li><strong style="color: #e2e8f0;">터미널 에러 분석:</strong> 발생한 에러 로그에 대해 기본 원인과 해결책 설명</li>
+                        </ul>
+                    </div>
+
+                    <!-- Cursor -->
+                    <div class="curriculum-card">
+                        <h4
+                            style="color: #fff; margin-bottom: 20px; font-size: 1.15rem; display: flex; align-items: center; gap: 8px;">
+                            <span style="font-size: 1.2rem;">⚡</span>
+                            Cursor
+                        </h4>
+                        <ul
+                            style="list-style: none; padding: 0; color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; display: flex; flex-direction: column; gap: 12px;">
+                            <li><strong style="color: #e2e8f0;">Cursor Composer:</strong> 여러 파일에 걸친 대규모 변경사항을 한 번에 생성하고
+                                시각적(Diff)으로 적용</li>
+                            <li><strong style="color: #e2e8f0;">Cursor Tab 예측:</strong> 단순 자동완성을 넘어, 개발자가 다음에 이동할 커서 위치와
+                                다중 줄 수정을 선제적으로 예측</li>
+                            <li><strong style="color: #e2e8f0;">코드베이스 인덱싱:</strong> 묻지 않아도 프로젝트 전체 파일 간의 관계를 색인하여 자동 문맥
+                                파악</li>
+                        </ul>
+                    </div>
+
+                    <!-- Antigravity -->
+                    <div class="curriculum-card"
+                        style="border: 1px solid rgba(59, 130, 246, 0.4); background: rgba(59, 130, 246, 0.05);">
+                        <h4
+                            style="color: #60a5fa; margin-bottom: 20px; font-size: 1.15rem; display: flex; align-items: center; gap: 8px;">
+                            <span style="font-size: 1.2rem;">🚀</span>
+                            Antigravity
+                        </h4>
+                        <ul
+                            style="list-style: none; padding: 0; color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; display: flex; flex-direction: column; gap: 12px;">
+                            <li><strong style="color: #93c5fd;">자율 실행 루프:</strong> 지시 없이도 AI가 직접 터미널 패키지를 설치하고 서버를 실행하며
+                                결과를 모니터링</li>
+                            <li><strong style="color: #93c5fd;">시각적 브라우저 검증:</strong> 렌더링된 웹 화면을 AI가 브라우저로 띄워 눈으로 확인하고
+                                UI 결함을 자율 수정</li>
+                            <li><strong style="color: #93c5fd;">무한 셀프 디버깅:</strong> 에러 발생 시 개발자에게 묻지 않고 스스로 로그를 추적하여 코드를
+                                고치고 재실행</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-    <!-- Process Section -->
+
     <!-- Process Section -->
     <section class="curriculum" id="process">
         <div class="container">
-            <h2 class="section-title" style="margin-bottom: 20px;">Phase 1. 실전 튜토리얼 (따라하기)</h2>
-            <p style="text-align: center; color: var(--text-muted); margin-bottom: 30px;">이론은 끝났습니다. 지금 당장 에디터를 열고 아래
-                4단계 프롬프트를 순서대로 복붙하여 멋진 포트폴리오 사이트를 완성하세요.</p>
+            <h2 class="section-title" style="margin-bottom: 20px;">Phase 1. 전체 흐름 맛보기</h2>
+            <p style="text-align: center; color: var(--text-muted); margin-bottom: 30px; line-height: 1.6;">
+                프로젝트 전체가 어떻게 완성되어 가는지 보여주는 <strong>바이브코딩의 대표 과정</strong>입니다.<br>
+                각 단계별로 <strong>투입되는 프롬프트의 수준에 따라 어떤 결과물이 도출되는지</strong> 그 상관관계를 직접 확인해 보세요.
+            </p>
 
             <!-- Result Preview Button -->
             <div style="text-align: center; margin-bottom: 60px;">
@@ -313,6 +519,7 @@
             </div>
 
             <div class="curriculum-grid" style="margin-bottom: 30px;">
+                <!-- Step 1 -->
                 <div class="curriculum-card clickable-card"
                     style="border: 1px solid rgba(139, 92, 246, 0.3); box-shadow: 0 0 30px rgba(139, 92, 246, 0.05);"
                     onclick="openModal('f1')">
@@ -321,54 +528,89 @@
                         <span class="week-badge" style="background: rgba(139, 92, 246, 0.1); color: #a78bfa;">Step
                             1</span>
                     </div>
-                    <h3>프로젝트 뼈대 및 라우팅</h3>
+                    <h3>프로젝트 구조 설계</h3>
                     <p style="margin-bottom: 25px; line-height: 1.6; color: var(--text-muted); font-size: 0.95rem;">
                         가장 먼저 6개 화면(메인, 로그인, 가입, 게시판, 비즈니스, 가이드)의 라우팅 구조와 공통 레이아웃(Header, Footer)을 확립합니다.
                     </p>
                     <div class="view-prompt-btn">프롬프트 복사하기 ↗</div>
                 </div>
 
+                <!-- Step 2 -->
                 <div class="curriculum-card clickable-card"
-                    style="border: 1px solid rgba(59, 130, 246, 0.3); box-shadow: 0 0 30px rgba(59, 130, 246, 0.05);"
+                    style="border: 1px solid rgba(244, 63, 94, 0.3); box-shadow: 0 0 30px rgba(244, 63, 94, 0.05);"
                     onclick="openModal('f2')">
                     <div
                         style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
-                        <span class="week-badge" style="background: rgba(59, 130, 246, 0.1); color: #60a5fa;">Step
+                        <span class="week-badge" style="background: rgba(244, 63, 94, 0.1); color: #f43f5e;">Step
                             2</span>
                     </div>
-                    <h3>메인 & 비즈니스 화면</h3>
+                    <h3>가이드 및 프로토타입</h3>
                     <p style="margin-bottom: 25px; line-height: 1.6; color: var(--text-muted); font-size: 0.95rem;">
-                        서비스의 얼굴이 되는 화려한 메인 화면과, 핵심 비즈니스 모델을 소개하는 비즈니스 페이지의 UI 컴포넌트를 조립합니다.
+                        본격적인 UI 개발에 앞서 공통 디자인 규칙(색상, 폰트 등)을 세팅하고, 이를 한눈에 볼 수 있는 스타일 가이드 페이지를 구축합니다.
                     </p>
                     <div class="view-prompt-btn">프롬프트 복사하기 ↗</div>
                 </div>
 
+                <!-- Step 3 -->
                 <div class="curriculum-card clickable-card"
-                    style="border: 1px solid rgba(236, 72, 153, 0.3); box-shadow: 0 0 30px rgba(236, 72, 153, 0.05);"
+                    style="border: 1px solid rgba(59, 130, 246, 0.3); box-shadow: 0 0 30px rgba(59, 130, 246, 0.05);"
                     onclick="openModal('f3')">
                     <div
                         style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
-                        <span class="week-badge" style="background: rgba(236, 72, 153, 0.1); color: #f472b6;">Step
+                        <span class="week-badge" style="background: rgba(59, 130, 246, 0.1); color: #60a5fa;">Step
                             3</span>
                     </div>
-                    <h3>인증 & 게시판 화면 (CRUD)</h3>
+                    <h3>대표 화면 구현</h3>
                     <p style="margin-bottom: 25px; line-height: 1.6; color: var(--text-muted); font-size: 0.95rem;">
-                        로그인/회원가입의 폼(Form) UI와 상태값을 보여주는 게시판(Feed) 화면을 구현하여 앱의 핵심 기능을 시각화합니다.
+                        서비스의 얼굴이 되는 대표 화면을 구축하고 퀄리티를 결정짓는 핵심 비주얼과 인터랙티브 애니메이션을 적용합니다.
                     </p>
                     <div class="view-prompt-btn">프롬프트 복사하기 ↗</div>
                 </div>
 
+                <!-- Step 4 -->
                 <div class="curriculum-card clickable-card"
-                    style="border: 1px solid rgba(16, 185, 129, 0.3); box-shadow: 0 0 30px rgba(16, 185, 129, 0.05);"
+                    style="border: 1px solid rgba(236, 72, 153, 0.3); box-shadow: 0 0 30px rgba(236, 72, 153, 0.05);"
                     onclick="openModal('f4')">
                     <div
                         style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
-                        <span class="week-badge" style="background: rgba(16, 185, 129, 0.1); color: #34d399;">Step
+                        <span class="week-badge" style="background: rgba(236, 72, 153, 0.1); color: #f472b6;">Step
                             4</span>
                     </div>
-                    <h3>네비게이션 연결 및 디버깅</h3>
+                    <h3>서브 화면 구현</h3>
                     <p style="margin-bottom: 25px; line-height: 1.6; color: var(--text-muted); font-size: 0.95rem;">
-                        페이지들을 상단 메뉴와 하단 링크로 촘촘하게 연결하고, 모든 화면이 모바일에서 깨지지 않도록 반응형 디버깅을 수행합니다.
+                        제품 소개 랜딩페이지, 유저 커뮤니티, 인증 화면 등 다양한 목적과 레이아웃을 가진 서브 화면들을 짜임새 있게 조립합니다.
+                    </p>
+                    <div class="view-prompt-btn">프롬프트 복사하기 ↗</div>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="curriculum-card clickable-card"
+                    style="border: 1px solid rgba(16, 185, 129, 0.3); box-shadow: 0 0 30px rgba(16, 185, 129, 0.05);"
+                    onclick="openModal('f5')">
+                    <div
+                        style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+                        <span class="week-badge" style="background: rgba(16, 185, 129, 0.1); color: #34d399;">Step
+                            5</span>
+                    </div>
+                    <h3>반응형 및 디버깅</h3>
+                    <p style="margin-bottom: 25px; line-height: 1.6; color: var(--text-muted); font-size: 0.95rem;">
+                        모든 뷰가 자연스럽게 전환되도록 애니메이션을 점검하고, 모바일 기기에서도 화면이 깨지지 않도록 반응형 레이아웃을 디버깅합니다.
+                    </p>
+                    <div class="view-prompt-btn">프롬프트 복사하기 ↗</div>
+                </div>
+
+                <!-- Step 6 -->
+                <div class="curriculum-card clickable-card"
+                    style="border: 1px solid rgba(245, 158, 11, 0.3); box-shadow: 0 0 30px rgba(245, 158, 11, 0.05);"
+                    onclick="openModal('f6')">
+                    <div
+                        style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+                        <span class="week-badge" style="background: rgba(245, 158, 11, 0.1); color: #fbbf24;">Step
+                            6</span>
+                    </div>
+                    <h3>운영 및 고도화</h3>
+                    <p style="margin-bottom: 25px; line-height: 1.6; color: var(--text-muted); font-size: 0.95rem;">
+                        단순 구현을 넘어 SEO 최적화, 404 에러 화면 추가, 불필요한 렌더링 최적화 등 실서비스 런칭 수준의 퀄리티를 확보합니다.
                     </p>
                     <div class="view-prompt-btn">프롬프트 복사하기 ↗</div>
                 </div>
@@ -378,7 +620,7 @@
     <!-- Cheat Sheet Section -->
     <section class="target" id="practical" style="padding-top: 50px; padding-bottom: 100px;">
         <div class="container">
-            <h2 class="section-title" style="margin-bottom: 20px;">Phase 2. 바이브코딩 치트시트</h2>
+            <h2 class="section-title" style="margin-bottom: 20px;">Phase 2. 치트시트 유형</h2>
             <p style="text-align: center; color: var(--text-muted); margin-bottom: 60px;">어떤 도구를 쓰든, 기억나지 않을 때 언제든 열어볼 수
                 있는 실전 가이드 요약본입니다.</p>
 
@@ -401,28 +643,33 @@
                 </div>
                 <div class="curriculum-card clickable-card" onclick="openModal('prompt_rules')"
                     style="cursor: pointer;">
-                    <span class="week-badge" style="background: rgba(168, 85, 247, 0.1); color: #c084fc;">Rules Prompt</span>
+                    <span class="week-badge" style="background: rgba(168, 85, 247, 0.1); color: #c084fc;">Rules
+                        Prompt</span>
                     <h3>학습 및 감시: 커스텀 룰 (Rules)</h3>
-                    <p>작업 중 새로 합의된 규칙을 <strong>하나의 문서(AGENTS.md 등)에 누적 업데이트</strong>하고, AI가 항상 이를 감시(Monitor)하고 준수하도록 지시합니다.</p>
+                    <p>작업 중 새로 합의된 규칙을 <strong>하나의 문서(AGENTS.md 등)에 누적 업데이트</strong>하고, AI가 항상 이를 감시(Monitor)하고 준수하도록
+                        지시합니다.</p>
                     <div class="view-prompt-btn" style="margin-top: 20px; font-weight: 500;">작성 패턴 보기 ↗</div>
                 </div>
                 <div class="curriculum-card clickable-card" onclick="openModal('prompt_architecture')"
                     style="cursor: pointer;">
-                    <span class="week-badge" style="background: rgba(245, 158, 11, 0.1); color: #fbbf24;">Architecture</span>
+                    <span class="week-badge"
+                        style="background: rgba(245, 158, 11, 0.1); color: #fbbf24;">Architecture</span>
                     <h3>설계 우선: 아키텍처 프롬프트</h3>
                     <p>코드를 짜기 전, 구조와 컴포넌트 트리를 먼저 <strong>설계(Plan)받고 검토</strong>하여 시행착오를 줄이는 패턴입니다.</p>
                     <div class="view-prompt-btn" style="margin-top: 20px; font-weight: 500;">작성 패턴 보기 ↗</div>
                 </div>
                 <div class="curriculum-card clickable-card" onclick="openModal('prompt_refactor')"
                     style="cursor: pointer;">
-                    <span class="week-badge" style="background: rgba(45, 212, 191, 0.1); color: #2dd4bf;">Refactor</span>
+                    <span class="week-badge"
+                        style="background: rgba(45, 212, 191, 0.1); color: #2dd4bf;">Refactor</span>
                     <h3>코드 분리: 리팩토링 프롬프트</h3>
                     <p>기능 추가로 거대해진 파일을 <strong>단일 책임 원칙에 맞게 분리</strong>하고, 중복을 제거할 때 사용하는 패턴입니다.</p>
                     <div class="view-prompt-btn" style="margin-top: 20px; font-weight: 500;">작성 패턴 보기 ↗</div>
                 </div>
                 <div class="curriculum-card clickable-card" onclick="openModal('prompt_review')"
                     style="cursor: pointer;">
-                    <span class="week-badge" style="background: rgba(244, 63, 94, 0.1); color: #f43f5e;">Code Review</span>
+                    <span class="week-badge" style="background: rgba(244, 63, 94, 0.1); color: #f43f5e;">Code
+                        Review</span>
                     <h3>품질 보증: 코드 리뷰 프롬프트</h3>
                     <p>AI를 시니어 리뷰어로 설정하여 <strong>보안 취약점, 성능 병목, 엣지 케이스</strong>를 찾고 방어 코드를 작성하게 합니다.</p>
                     <div class="view-prompt-btn" style="margin-top: 20px; font-weight: 500;">작성 패턴 보기 ↗</div>
@@ -500,36 +747,50 @@
     <!-- Work Cycle Section -->
     <section class="curriculum" id="workflow" style="padding-top: 80px; padding-bottom: 80px;">
         <div class="container">
-            <h2 class="section-title" style="margin-bottom: 20px;">Phase 3. 실전 작업 사이클 (Workflow Patterns)</h2>
-            <p style="text-align: center; color: var(--text-muted); margin-bottom: 60px;">프롬프트 템플릿을 넘어, 실제 코딩 작업 시 AI와 어떤 패턴으로 무한 반복 티키타카를 해야 하는지 정의한 4단계 루프입니다.</p>
+            <h2 class="section-title" style="margin-bottom: 20px;">Phase 3. 실전 작업 사이클</h2>
+            <p style="text-align: center; color: var(--text-muted); margin-bottom: 60px;">프롬프트 템플릿을 넘어, 실제 코딩 작업 시 AI와
+                어떤 패턴으로 무한 반복 티키타카를 해야 하는지 정의한 4단계 루프입니다.</p>
 
-            <div class="curriculum-grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px;">
+            <div class="curriculum-grid"
+                style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px;">
                 <div class="curriculum-card">
-                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 12px; background: rgba(99, 102, 241, 0.1); color: #818cf8; font-weight: 700; font-size: 1.1rem; margin-bottom: 20px; border: 1px solid rgba(99, 102, 241, 0.2); box-shadow: 0 4px 12px rgba(99, 102, 241, 0.1);">01</div>
+                    <div
+                        style="display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 12px; background: rgba(99, 102, 241, 0.1); color: #818cf8; font-weight: 700; font-size: 1.1rem; margin-bottom: 20px; border: 1px solid rgba(99, 102, 241, 0.2); box-shadow: 0 4px 12px rgba(99, 102, 241, 0.1);">
+                        01</div>
                     <h3 style="margin-bottom: 15px;">Zero to One<br>(뼈대 구축)</h3>
                     <p style="font-size: 0.95rem; line-height: 1.6; color: var(--text-muted);">
-                        새로운 페이지를 만들 때 무작정 코딩을 시키지 않습니다. <strong>아키텍처 프롬프트</strong>를 이용해 먼저 컴포넌트 구조와 데이터 흐름을 설계받고 확정한 뒤 뼈대 코드 생성을 지시합니다.
+                        새로운 페이지를 만들 때 무작정 코딩을 시키지 않습니다. <strong>아키텍처 프롬프트</strong>를 이용해 먼저 컴포넌트 구조와 데이터 흐름을 설계받고 확정한 뒤
+                        뼈대 코드 생성을 지시합니다.
                     </p>
                 </div>
                 <div class="curriculum-card">
-                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 12px; background: rgba(236, 72, 153, 0.1); color: #f472b6; font-weight: 700; font-size: 1.1rem; margin-bottom: 20px; border: 1px solid rgba(236, 72, 153, 0.2); box-shadow: 0 4px 12px rgba(236, 72, 153, 0.1);">02</div>
+                    <div
+                        style="display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 12px; background: rgba(236, 72, 153, 0.1); color: #f472b6; font-weight: 700; font-size: 1.1rem; margin-bottom: 20px; border: 1px solid rgba(236, 72, 153, 0.2); box-shadow: 0 4px 12px rgba(236, 72, 153, 0.1);">
+                        02</div>
                     <h3 style="margin-bottom: 15px;">Ping-Pong<br>(디테일 수정)</h3>
                     <p style="font-size: 0.95rem; line-height: 1.6; color: var(--text-muted);">
-                        초안이 완성되면, CSS 속성을 하나하나 지시하는 대신 <strong>"그림자가 붕 뜬 느낌으로", "애플 감성처럼 부드럽게"</strong> 등 시각적 형태(What)를 묘사하며 디테일을 깎아나갑니다.
+                        초안이 완성되면, CSS 속성을 하나하나 지시하는 대신 <strong>"그림자가 붕 뜬 느낌으로", "애플 감성처럼 부드럽게"</strong> 등 시각적 형태(What)를
+                        묘사하며 디테일을 깎아나갑니다.
                     </p>
                 </div>
                 <div class="curriculum-card">
-                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 12px; background: rgba(234, 179, 8, 0.1); color: #facc15; font-weight: 700; font-size: 1.1rem; margin-bottom: 20px; border: 1px solid rgba(234, 179, 8, 0.2); box-shadow: 0 4px 12px rgba(234, 179, 8, 0.1);">03</div>
+                    <div
+                        style="display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 12px; background: rgba(234, 179, 8, 0.1); color: #facc15; font-weight: 700; font-size: 1.1rem; margin-bottom: 20px; border: 1px solid rgba(234, 179, 8, 0.2); box-shadow: 0 4px 12px rgba(234, 179, 8, 0.1);">
+                        03</div>
                     <h3 style="margin-bottom: 15px;">Toss & Catch<br>(에러 떠넘기기)</h3>
                     <p style="font-size: 0.95rem; line-height: 1.6; color: var(--text-muted);">
-                        화면이 깨지거나 오류가 났을 때 직접 추측하지 마세요. <strong>[화면 이상 현상 + 콘솔 에러 로그]</strong>를 그대로 복붙하여 AI에게 원인 분석과 완벽한 해결을 일임합니다.
+                        화면이 깨지거나 오류가 났을 때 직접 추측하지 마세요. <strong>[화면 이상 현상 + 콘솔 에러 로그]</strong>를 그대로 복붙하여 AI에게 원인 분석과 완벽한
+                        해결을 일임합니다.
                     </p>
                 </div>
                 <div class="curriculum-card">
-                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 12px; background: rgba(34, 197, 94, 0.1); color: #4ade80; font-weight: 700; font-size: 1.1rem; margin-bottom: 20px; border: 1px solid rgba(34, 197, 94, 0.2); box-shadow: 0 4px 12px rgba(34, 197, 94, 0.1);">04</div>
+                    <div
+                        style="display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 12px; background: rgba(34, 197, 94, 0.1); color: #4ade80; font-weight: 700; font-size: 1.1rem; margin-bottom: 20px; border: 1px solid rgba(34, 197, 94, 0.2); box-shadow: 0 4px 12px rgba(34, 197, 94, 0.1);">
+                        04</div>
                     <h3 style="margin-bottom: 15px;">Refactor & Rule<br>(룰 박제하기)</h3>
                     <p style="font-size: 0.95rem; line-height: 1.6; color: var(--text-muted);">
-                        기능이 완성되면 단일 책임 원칙으로 파일을 분리하고, 이번에 확립된 컨벤션을 <strong>시스템 룰(AGENTS.md)에 즉시 추가</strong>하여 다음 번 실수를 원천 차단합니다.
+                        기능이 완성되면 단일 책임 원칙으로 파일을 분리하고, 이번에 확립된 컨벤션을 <strong>시스템 룰(AGENTS.md)에 즉시 추가</strong>하여 다음 번 실수를
+                        원천 차단합니다.
                     </p>
                 </div>
             </div>
@@ -539,16 +800,21 @@
     <!-- Phase 4 Section -->
     <section class="target" id="archive" style="padding-top: 80px; padding-bottom: 80px;">
         <div class="container">
-            <h2 class="section-title">Phase 4. 프로젝트 자산화 (Asset & Archive)</h2>
-            <p style="text-align: center; color: var(--text-muted); margin-bottom: 60px;">바이브코딩의 진정한 종착지. 프로젝트를 진행하며 축적된 고도화된 룰과 데이터를 나만의 소장용 에셋으로 디벨롭하는 마무리 단계입니다.</p>
-            
+            <h2 class="section-title">Phase 4. 프로젝트 자산화</h2>
+            <p style="text-align: center; color: var(--text-muted); margin-bottom: 60px;">바이브코딩의 진정한 종착지. 프로젝트를 진행하며 축적된
+                고도화된 룰과 데이터를 나만의 소장용 에셋으로 디벨롭하는 마무리 단계입니다.</p>
+
             <div class="curriculum-grid" style="grid-template-columns: 1fr; max-width: 800px; margin: 0 auto;">
-                <div class="curriculum-card" style="display: flex; flex-direction: column; align-items: center; text-align: center; padding: 50px 30px;">
+                <div class="curriculum-card"
+                    style="display: flex; flex-direction: column; align-items: center; text-align: center; padding: 50px 30px;">
                     <div style="font-size: 3.5rem; margin-bottom: 25px;">📦</div>
                     <h3 style="font-size: 1.5rem; margin-bottom: 20px;">준비된 '프롬프트 그룹'으로 소장하기</h3>
-                    <p style="font-size: 1.05rem; line-height: 1.7; color: var(--text-muted); max-width: 650px; word-break: keep-all;">
+                    <p
+                        style="font-size: 1.05rem; line-height: 1.7; color: var(--text-muted); max-width: 650px; word-break: keep-all;">
                         단순히 코드를 완성하고 프로젝트를 끝내는 것이 아닙니다.<br><br>
-                        수많은 실전 사이클을 거치며 최적화된 개별 프롬프트들, 도출된 엣지 케이스, 그리고 고도화된 공통 데이터를 모두 하나로 묶어 <strong>'준비된 프롬프트 그룹'</strong>으로 캡슐화하세요. 이렇게 벼려진 나만의 소장용 프롬프트 에셋은, 다음 프로젝트를 제로베이스가 아닌 완성의 문턱에서 시작하게 해 줄 가장 강력한 무기가 됩니다.
+                        수많은 실전 사이클을 거치며 최적화된 개별 프롬프트들, 도출된 엣지 케이스, 그리고 고도화된 공통 데이터를 모두 하나로 묶어 <strong>'준비된 프롬프트
+                            그룹'</strong>으로 캡슐화하세요. 이렇게 벼려진 나만의 소장용 프롬프트 에셋은, 다음 프로젝트를 제로베이스가 아닌 완성의 문턱에서 시작하게 해 줄 가장 강력한
+                        무기가 됩니다.
                     </p>
                 </div>
             </div>
@@ -558,7 +824,7 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="logo">VibeCoding.</div>
+                <div class="logo">VibeCoding. <span class="version-badge">v1.3</span></div>
                 <p>&copy; 2026 VibeCoding Curriculum. All rights reserved.</p>
             </div>
         </div>
@@ -580,22 +846,32 @@
             'f1': {
                 title: "Step 1: 프로젝트 뼈대 및 라우팅",
                 desc: "총 6개의 화면을 탭 전환형(SPA)으로 묶고, 고급스러운 White Theme 디자인 토큰을 주입합니다.",
-                prompt: "전문 웹 에이전시 퀄리티의 프리미엄 포트폴리오 프로토타입을 만들 거야. 순수 HTML, 바닐라 JS, TailwindCSS(CDN)를 사용해.\n\n[요구사항]\n1. index.html 안에서 JS로 화면(view)을 교체하는 SPA 구조 설계 (main, business, board, login, signup, guide 6개 섹션).\n2. 헤더는 fixed top-0 으로 화면 상단에 고정하고 투명한 글래스모피즘(bg-white/70 backdrop-blur-xl) 효과를 줘서 뒤에 깔릴 비주얼이 비치게 해 줘.\n3. 푸터 영역에는 'Style Guide'라는 이름으로 guide 화면으로 가는 바로가기 링크를 배치해.\n4. 전체 디자인은 맑고 깨끗한 White Theme(bg-slate-50, text-slate-900), Google Fonts 'Inter', 커스텀 Soft drop-shadow를 사용하여 고급스럽게 구성해."
+                prompt: "전문 웹 에이전시 퀄리티의 프리미엄 포트폴리오 프로토타입을 만들 거야. 순수 HTML, 바닐라 JS, TailwindCSS(CDN)를 사용해.\n\n[요구사항]\n1. index.html 안에서 JS로 화면(view)을 교체하는 SPA 구조 설계 (main, business, board, login, signup, guide 6개 섹션).\n2. 헤더는 fixed top-0 으로 화면 상단에 고정하고 투명한 글래스모피즘(bg-white/70 backdrop-blur-xl) 효과를 줘서 뒤에 깔릴 비주얼이 비치게 해 줘.\n3. 푸터 영역을 만들고, 전체 디자인은 맑고 깨끗한 White Theme(bg-slate-50, text-slate-900), Google Fonts 'Inter'를 기본으로 적용해 줘."
             },
             'f2': {
-                title: "Step 2: 비주얼 모션 & 메인 화면",
-                desc: "화면 최상단에 CSS 기반의 역동적인 플루이드 모션 배경을 구현하고 내용을 풍성하게 채웁니다.",
-                prompt: "비주얼(Hero) 영역에 생동감을 불어넣을 거야. 아주 고급스러운 '플루이드 블롭(Fluid Blob)' 모션을 구현해 줘.\n\n1. 메인 및 서브페이지의 비주얼 영역 배경에 3~4개의 거대한 원형(Blob)들이 blur-3xl 효과를 받고 부드럽게 떠다니며 융합하는 CSS 애니메이션(@keyframes)을 구현해 줘. 테마 컬러(Indigo, Pink, Cyan 등)를 활용해.\n2. 메인 화면(main): 플루이드 모션 배경 위에 웅장한 Hero 텍스트와 UI 대시보드 목업(더미 UI 박스)을 조화롭게 배치해 줘.\n3. 비주얼 영역의 높이는 최소 500px 이상으로 시원하게 잡고, 본문 컨텐츠가 헤더 위로 겹치지 않게 상단 여백(padding-top)을 넉넉히 줘."
+                title: "Step 2: 가이드 및 프로토타입",
+                desc: "일관된 UI를 유지하기 위해 공통 디자인 규칙을 세팅하고 가이드 뷰를 구축합니다.",
+                prompt: "본격적인 화면 구현에 앞서 디자인 규칙을 세팅하고, 가이드 화면(view-guide)을 먼저 구축할 거야.\n\n1. 컬러 시스템: Primary(indigo-600), Dark(slate-900), Base BG(slate-50), Accent(cyan-400) 계열로 설정해 줘.\n2. 스타일 가이드 화면 생성: 앞서 만든 'guide' 뷰에 타이포그래피(H1~H3, Body Text), 컬러 스와치(Primary, Dark, Base BG, Accent), 버튼 컴포넌트(Primary, Dark, Outline), 그리고 폼 엘리먼트(Standard Input, Checkbox) 규격들을 시각적인 샘플 박스 형태로 체계적으로 렌더링해 줘."
             },
             'f3': {
-                title: "Step 3: 비즈니스 & 커뮤니티 구현",
-                desc: "비즈니스 화면은 다중 섹션을 가진 랜딩페이지로, 커뮤니티는 8개의 피드를 갖춘 포럼으로 짜임새 있게 구성합니다.",
-                prompt: "이제 세부 화면들의 퀄리티를 실전 수준으로 구성할 차례야.\n\n1. 비즈니스 화면: [플루이드 비주얼 ➔ 핵심 가치 소개(3x2 섀도우 카드) ➔ 주요 통계 수치(Stats) ➔ 하단 띠 배너(CTA)] 순으로 이어지는 완벽한 랜딩 페이지 구조를 짜 줘.\n2. 커뮤니티 화면(board): 활성화된 포럼 느낌이 나도록 구성해. 최상단에 [All, Trending, Q&A] 필터 탭과 검색창을 툴바로 넣고, 그 아래에 각기 다른 내용의 피드 카드 8개를 2단 그리드(Grid)로 나열해 줘. 뷰 최하단엔 1, 2, 3.. 형태의 페이지네이션 UI를 추가해 완성도를 높여."
+                title: "Step 3: 대표 화면 구현",
+                desc: "화면 최상단에 CSS 기반의 역동적인 비주얼 모션을 구현하고 내용을 풍성하게 채웁니다.",
+                prompt: "비주얼(Hero) 영역에 생동감을 불어넣을 거야. 아주 고급스러운 '플루이드 블롭(Fluid Blob)' 모션을 구현해 줘.\n\n1. 비주얼 영역 배경에 3~4개의 거대한 원형(Blob)들이 blur-90px 효과를 받고 부드럽게 떠다니며 융합하는 CSS 애니메이션(@keyframes)을 구현해 줘. 뷰(View)마다 테마 컬러(Indigo, Pink, Cyan, Emerald 등)를 다르게 매칭해 줘.\n2. 메인 화면(main): 플루이드 배경 위에 'Design the Future. Build with AI.' 라는 웅장한 텍스트와 UI 대시보드 목업(더미 UI 박스)을 입체적으로 조화롭게 배치해 줘."
             },
             'f4': {
-                title: "Step 4: 스타일 가이드 & 마무리",
-                desc: "프로젝트에 쓰인 디자인 시스템 컴포넌트를 총망라하는 종합 스타일 가이드 페이지를 구축합니다.",
-                prompt: "마무리 연결 및 디자인 시스템 문서화 작업이야.\n\n1. 가이드 화면(guide): 이 프로토타입의 '디자인 시스템 스타일 가이드' 페이지로 구성해 줘. 타이포그래피(H1~Body), 메인/서브 컬러 팔레트 스와치, 그리고 UI 컴포넌트(버튼 종류별, 인풋 폼 등)를 체계적으로 정리해서 나열해.\n2. 화면 전환 애니메이션: 탭이 바뀔 때 아래에서 위로 살짝 올라오며 나타나는 Fade-in 애니메이션(@keyframes)을 각 섹션에 적용해 줘.\n3. 모바일 반응형: 2단/3단 그리드 구조가 모바일(768px 이하)에서 1열로 떨어지는지 완벽하게 점검해 줘."
+                title: "Step 4: 서브 화면 구현",
+                desc: "서브 화면들을 다중 섹션을 가진 랜딩페이지와 피드를 갖춘 포럼 등으로 다양하게 구성합니다.",
+                prompt: "이제 세부 화면들의 퀄리티를 실전 수준으로 구성할 차례야.\n\n1. 비즈니스(business): [플루이드 비주얼 ➔ 3x2 핵심 솔루션 아이콘 카드 ➔ 주요 통계 수치(Stats)] 순으로 이어지는 완벽한 랜딩 페이지 구조를 짜 줘.\n2. 커뮤니티(board): 활성화된 포럼 느낌이 나도록 최상단에 필터 탭과 검색창을 넣고, 그 아래에 각기 다른 내용의 게시글 카드 8개를 2단 그리드(Grid)로 나열해 줘.\n3. 인증 화면(login, signup): Glassmorphism 스타일의 모달 카드 안에 이메일/비밀번호 폼과 소셜 로그인(Google, GitHub) 버튼을 깔끔하게 배치해 줘."
+            },
+            'f5': {
+                title: "Step 5: 반응형 및 디버깅",
+                desc: "모든 화면이 상하단 네비게이션으로 자연스럽게 전환되도록 연결하고, 모바일 기기에서도 깨지지 않도록 반응형 뷰를 디버깅합니다.",
+                prompt: "마무리 연결 및 모바일 반응형 디버깅 작업이야.\n\n1. 화면 전환 애니메이션: 메뉴 탭을 클릭해서 뷰가 바뀔 때, 화면이 아래에서 위로 살짝 올라오며 나타나는 부드러운 Fade-in 애니메이션(.fade-in)을 추가해 줘.\n2. 모바일 반응형: 비즈니스 화면의 3단 그리드나, 커뮤니티 화면의 2단 그리드가 모바일(768px 이하) 환경에서는 1열로 자연스럽게 떨어지도록 레이아웃 여백을 점검해 줘.\n3. 스크롤바 커스텀: 웹 브라우저의 기본 스크롤바를 얇고 둥근 형태(::-webkit-scrollbar)로 스타일링해서 디자인 완성도를 높여 줘."
+            },
+            'f6': {
+                title: "Step 6: 운영 및 고도화",
+                desc: "단순 구현을 넘어, 실제 서비스 환경에 대비한 성능 개선 및 예외 처리를 튼튼하게 보강합니다.",
+                prompt: "이제 이 사이트를 실제 운영 가능한 수준으로 디테일을 고도화할 거야.\n\n1. 네비게이션 활성화: 사용자가 현재 보고 있는 화면(메인, 비즈니스 등)에 따라 상단 메뉴의 텍스트 색상이 하이라이트 되도록 JS 라우팅 로직을 개선해 줘.\n2. 레이아웃 픽스: 헤더(fixed)가 본문 컨텐츠를 가리지 않도록 모든 view-section 상단에 충분한 여백(padding-top)을 확보해 줘.\n3. 인터랙션: 폼 제출 버튼이나 커뮤니티의 버튼 등을 클릭했을 때 콘솔창에 로그를 남기거나 간단한 alert 창을 띄우도록 해 줘."
             },
             'prompt_system': {
                 title: "⚙️ 핵심 1: 시스템 프롬프트 (System Prompt)",

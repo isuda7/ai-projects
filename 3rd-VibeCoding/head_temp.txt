@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>바이브코딩 (Vibe Coding) | 미래를 여는 코딩 커리큘럼</title>
+    <meta name="description" content="최신 AI와 트렌드를 반영한 바이브코딩 커리큘럼으로 코딩의 새로운 패러다임을 경험하세요.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Outfit:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">VibeCoding.</div>
+                <ul class="nav-links">
+                    <li class="dropdown">
+                        <a href="#about" class="dropbtn">개요 <svg class="dropdown-icon" viewBox="0 0 20 20"
+                                fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                    clip-rule="evenodd" />
+                            </svg></a>
+                        <div class="dropdown-content">
+                            <a href="index.html#about">Intro</a>
+                            <a href="index.html#preparation">에디터 선택</a>
+                            <a href="index.html#process">전체 흐름</a>
+                            <a href="index.html#practical">치트시트</a>
+                            <a href="index.html#workflow">작업 사이클</a>
+                            <a href="index.html#archive">자산화</a>
+                        </div>
+                    </li>
+                    <!-- Environment / Setup -->
+                    <li class="dropdown">
+                        <a href="system.html" class="dropbtn">시스템 <svg class="dropdown-icon"
+                                viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                    clip-rule="evenodd" />
+                            </svg></a>
+                        <div class="dropdown-content">
+                            <a href="system.html#setup">환경설정</a>
+                            <a href="system.html#rules">설계규칙</a>
+                        </div>
+                    </li>
+
+                    <!-- Design System -->
+                    <li class="dropdown">
+                        <a href="guide.html" class="dropbtn">산출물 <svg class="dropdown-icon" viewBox="0 0 20 20"
+                                fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                    clip-rule="evenodd" />
+                            </svg></a>
+                        <div class="dropdown-content">
+                            <a href="guide.html#dashboard">페이지리스트</a>
+                            <a href="guide.html#design-system">디자인시스템</a>
+                            <a href="guide.html#prototype">프로토타입</a>
+                        </div>
+                    </li>
+
+                    <!-- Implementation -->
+                    <li class="dropdown">
+                        <a href="implementation.html" class="dropbtn">구현/검증 <svg class="dropdown-icon"
+                                viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                    clip-rule="evenodd" />
+                            </svg></a>
+                        <div class="dropdown-content">
+                            <a href="implementation.html#micro-prompt">마이크로 프롬프트</a>
+                            <a href="implementation.html#arch-prompt">아키텍쳐 프롬프트</a>
+                            <a href="implementation.html#refactor-prompt">리팩토링 프롬프트</a>
+                            <a href="implementation.html#review-prompt">코드리뷰 프롬프트</a>
+                        </div>
+                    </li>
+
+                    <!-- Conventions -->
+                    <li class="dropdown">
+                        <a href="rules.html" class="dropbtn">학습/감시 <svg class="dropdown-icon"
+                                viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                    clip-rule="evenodd" />
+                            </svg></a>
+                        <div class="dropdown-content">
+                            <a href="rules.html#a11y">웹 접근성 (A11y)</a>
+                            <a href="rules.html#custom-rules">퍼블리싱 커스텀 룰</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- Hero Section -->
+    <section class="hero" id="about">
+        <div class="container">
+            <h1>VibeCoding Guide</h1>
+            <p>AI 페어 프로그래밍을 활용하여 실제 프로덕트를 기획하고 개발하는 실무적인 접근 방식과 단계별 워크플로우를 안내합니다.</p>
