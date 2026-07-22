@@ -13,6 +13,7 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
+    <script src="layout.js"></script>
 </head>
 
 <body>
@@ -20,7 +21,7 @@
     <header>
         <div class="container">
             <nav>
-                <div class="logo">VibeCoding. <span class="version-badge">v1.3</span></div>
+                <div class="logo">VibeCoding. <span class="version-badge">v0.3</span></div>
                 <ul class="nav-links">
                     <li class="dropdown">
                         <a href="index.html#about" class="dropbtn">개요 <svg class="dropdown-icon" viewBox="0 0 20 20" fill="currentColor">
@@ -36,16 +37,17 @@
                         </div>
                     </li>
                     <li class="dropdown">
-                        <a href="system.html" class="dropbtn active">시스템 <svg class="dropdown-icon" viewBox="0 0 20 20" fill="currentColor">
+                        <a href="system.html" class="dropbtn active">시스템 <span class="ing-badge">ING</span> <svg class="dropdown-icon" viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
                             </svg></a>
                         <div class="dropdown-content">
-                            <a href="system.html#setup">환경설정</a>
-                            <a href="system.html#rules">설계규칙</a>
+                            <a href="system.html#overview">Overview</a>
+                            <a href="system.html#setup">개발환경</a>
+                            <a href="system.html#architecture">구조설계</a>
                         </div>
                     </li>
                     <li class="dropdown">
-                        <a href="guide.html" class="dropbtn">산출물 <svg class="dropdown-icon" viewBox="0 0 20 20" fill="currentColor">
+                        <a href="guide.html" class="dropbtn demo-menu">산출물 <svg class="dropdown-icon" viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
                             </svg></a>
                         <div class="dropdown-content">
@@ -55,7 +57,7 @@
                         </div>
                     </li>
                     <li class="dropdown">
-                        <a href="implementation.html" class="dropbtn">구현/검증 <svg class="dropdown-icon" viewBox="0 0 20 20" fill="currentColor">
+                        <a href="implementation.html" class="dropbtn demo-menu">구현/검증 <svg class="dropdown-icon" viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
                             </svg></a>
                         <div class="dropdown-content">
@@ -66,7 +68,7 @@
                         </div>
                     </li>
                     <li class="dropdown">
-                        <a href="rules.html" class="dropbtn">학습/감시 <svg class="dropdown-icon" viewBox="0 0 20 20" fill="currentColor">
+                        <a href="rules.html" class="dropbtn demo-menu">학습/감시 <svg class="dropdown-icon" viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
                             </svg></a>
                         <div class="dropdown-content">
@@ -79,45 +81,356 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero" style="min-height: 40vh; padding-top: 150px; padding-bottom: 50px;">
+    <!-- Overview (Hero) Section -->
+    <section id="overview" class="hero">
         <div class="container">
-            <h1 style="font-size: 3.5rem; margin-bottom: 20px; background: linear-gradient(135deg, #a855f7, #3b82f6); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">시스템 설정</h1>
-            <p style="font-size: 1.2rem; color: var(--text-muted);">바이브코딩의 첫 걸음, 완벽한 환경구축과 명확한 설계 규칙을 세우는 단계입니다.</p>
+            <h2 style="font-size: 1.2rem; text-transform: uppercase; letter-spacing: 4px; color: #a855f7; margin-bottom: 16px;">시스템 프롬프트</h2>
+            <h1 style="font-size: 3.5rem; margin-bottom: 20px;">Overview</h1>
+            <p style="font-size: 1.2rem; color: var(--text-muted); margin-bottom: 60px;">성공적인 바이브코딩을 위해 시스템 프롬프트 단계에서 준비해야 할 두 가지 핵심 축을 파악합니다.</p>
+            
+            <div class="curriculum-grid" style="text-align: left; max-width: 900px; margin: 0 auto;">
+                <div class="curriculum-card">
+                    <div style="font-size: 2.5rem; margin-bottom: 20px;">🛠️</div>
+                    <h3 style="margin-bottom: 24px; font-size: 1.5rem; color: #fff;">개발환경</h3>
+                    <div style="display: flex; flex-direction: column;">
+                        <div style="padding: 16px 0; border-bottom: 1px dashed rgba(255,255,255,0.1);">
+                            <h4 style="color: #e2e8f0; font-size: 1.1rem; margin-bottom: 6px; display: flex; align-items: center; gap: 8px;">
+                                <span style="color: var(--primary-color); font-size: 0.75rem;">▶</span> 기술 스택 (Tech Stack)
+                            </h4>
+                            <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0; line-height: 1.5; padding-left: 18px;">프로젝트에 사용될 프레임워크 및 핵심 라이브러리 종속성 지정</p>
+                        </div>
+                        <div style="padding: 16px 0; border-bottom: 1px dashed rgba(255,255,255,0.1);">
+                            <h4 style="color: #e2e8f0; font-size: 1.1rem; margin-bottom: 6px; display: flex; align-items: center; gap: 8px;">
+                                <span style="color: var(--primary-color); font-size: 0.75rem;">▶</span> 설정 파일 (Configurations)
+                            </h4>
+                            <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0; line-height: 1.5; padding-left: 18px;">package.json, tsconfig.json 등 프로젝트 베이스가 되는 설정 룰</p>
+                        </div>
+                        <div style="padding: 16px 0; border-bottom: 1px dashed rgba(255,255,255,0.1);">
+                            <h4 style="color: #e2e8f0; font-size: 1.1rem; margin-bottom: 6px; display: flex; align-items: center; gap: 8px;">
+                                <span style="color: var(--primary-color); font-size: 0.75rem;">▶</span> 코드 품질 (Lint & Format)
+                            </h4>
+                            <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0; line-height: 1.5; padding-left: 18px;">AI가 코드를 작성할 때 강제로 준수해야 할 ESLint, Prettier 컨벤션</p>
+                        </div>
+                        <div style="padding: 16px 0;">
+                            <h4 style="color: #e2e8f0; font-size: 1.1rem; margin-bottom: 6px; display: flex; align-items: center; gap: 8px;">
+                                <span style="color: var(--primary-color); font-size: 0.75rem;">▶</span> 환경 변수 (Env Variables)
+                            </h4>
+                            <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0; line-height: 1.5; padding-left: 18px;">.env 구조 및 시크릿 키, 포트 번호 등 로컬/운영 환경 관리 기준</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="curriculum-card">
+                    <div style="font-size: 2.5rem; margin-bottom: 20px;">🏗️</div>
+                    <h3 style="margin-bottom: 24px; font-size: 1.5rem; color: #fff;">구조설계</h3>
+                    <div style="display: flex; flex-direction: column;">
+                        <div style="padding: 16px 0; border-bottom: 1px dashed rgba(255,255,255,0.1);">
+                            <h4 style="color: #e2e8f0; font-size: 1.1rem; margin-bottom: 6px; display: flex; align-items: center; gap: 8px;">
+                                <span style="color: var(--primary-color); font-size: 0.75rem;">▶</span> 디렉토리 구조
+                            </h4>
+                            <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0; line-height: 1.5; padding-left: 18px;">AI가 코드를 쉽게 탐색하고 수정할 수 있는 직관적인 폴더 트리 정의</p>
+                        </div>
+                        <div style="padding: 16px 0; border-bottom: 1px dashed rgba(255,255,255,0.1);">
+                            <h4 style="color: #e2e8f0; font-size: 1.1rem; margin-bottom: 6px; display: flex; align-items: center; gap: 8px;">
+                                <span style="color: var(--primary-color); font-size: 0.75rem;">▶</span> 아키텍처 패턴
+                            </h4>
+                            <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0; line-height: 1.5; padding-left: 18px;">컴포넌트 분리 원칙, 모듈화 등 시스템 전반의 설계 기준 수립</p>
+                        </div>
+                        <div style="padding: 16px 0; border-bottom: 1px dashed rgba(255,255,255,0.1);">
+                            <h4 style="color: #e2e8f0; font-size: 1.1rem; margin-bottom: 6px; display: flex; align-items: center; gap: 8px;">
+                                <span style="color: var(--primary-color); font-size: 0.75rem;">▶</span> 상태 및 라우팅
+                            </h4>
+                            <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0; line-height: 1.5; padding-left: 18px;">전역 상태 관리 전략과 화면 전환(라우팅) 계층 구조 설계</p>
+                        </div>
+                        <div style="padding: 16px 0;">
+                            <h4 style="color: #e2e8f0; font-size: 1.1rem; margin-bottom: 6px; display: flex; align-items: center; gap: 8px;">
+                                <span style="color: var(--primary-color); font-size: 0.75rem;">▶</span> IA 및 명세서
+                            </h4>
+                            <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0; line-height: 1.5; padding-left: 18px;">요구사항 정의서와 정보 구조도(IA) 작성을 통한 명확한 목표 설정</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Setup Section -->
-    <section id="setup" class="section">
+    <section id="setup" class="section" style="background: rgba(255, 255, 255, 0.015);">
         <div class="container">
-            <h2 class="section-title">환경설정</h2>
-            <p class="section-desc">IDE 플러그인 설정 및 초기 보일러플레이트 구성 환경을 준비합니다.</p>
+            <h2 class="section-title">개발환경</h2>
+            <p class="section-desc">프로젝트에 사용될 기술 스택, 설정 파일, 코드 품질 기준, 환경 변수 등 AI에게 주입할 핵심 베이스를 정의합니다.</p>
             
-            <div class="curriculum-grid">
-                <div class="curriculum-card" style="text-align: center; padding: 60px 30px;">
-                    <div style="font-size: 3rem; margin-bottom: 20px;">⚙️</div>
-                    <h3 style="margin-bottom: 15px;">설정 가이드 준비 중</h3>
-                    <p style="color: var(--text-muted); line-height: 1.6;">VS Code 및 Cursor 에디터 셋업, 확장 프로그램 추천 등<br>상세 가이드 콘텐츠가 곧 업데이트 될 예정입니다.</p>
+            <div class="curriculum-grid" style="grid-template-columns: repeat(2, 1fr);">
+                <!-- 기술 스택 -->
+                <div class="curriculum-card" style="padding: 30px 24px;">
+                    <h3 style="margin-bottom: 16px; font-size: 1.25rem; color: #fff;">1. 기술 스택 (Tech Stack)</h3>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 16px;">어떤 언어와 프레임워크를 사용할지 명시합니다.</p>
+                    <ul style="list-style: none; padding: 0; color: #94a3b8; font-size: 0.9rem; line-height: 1.6;">
+                        <li><strong class="popover-trigger" data-title="Core Framework" data-content="[Next.js] SSR/SSG 지원, 라우팅 및 API 내장 (React 기반)&#xa;[Vue] 점진적 도입이 가능한 가볍고 직관적인 프레임워크&#xa;[Svelte] 가상 DOM 없이 빌드 타임에 최적화된 컴파일러&#xa;[Vanilla JS] 프레임워크 의존성 없는 순수 자바스크립트" style="color: #e2e8f0;">Core Framework:</strong> <strong style="color: #10b981;">Next.js (React)</strong>, Vue, Svelte, Vanilla JS</li>
+                        <li><strong class="popover-trigger" data-title="Language" data-content="[TypeScript (Strict)] 강력한 정적 타입 검사로 런타임 에러 방지&#xa;[JavaScript (ES6+)] 유연하고 빠른 프로토타이핑, 모던 JS 문법 활용" style="color: #e2e8f0;">Language:</strong> <strong style="color: #10b981;">TypeScript (Strict)</strong>, JavaScript (ES6+)</li>
+                        <li><strong class="popover-trigger" data-title="Styling" data-content="[Tailwind CSS] 유틸리티 클래스 기반, 빠른 마크업 및 일관성&#xa;[SCSS] 변수, 믹스인 등을 활용한 전통적인 CSS 전처리기&#xa;[Styled-components] JS 파일 내에 CSS를 작성하는 CSS-in-JS 패턴" style="color: #e2e8f0;">Styling:</strong> <strong style="color: #10b981;">Tailwind CSS</strong>, SCSS, Styled-components</li>
+                        <li><strong class="popover-trigger" data-title="UI Library / System" data-content="[shadcn/ui] 코드 복사 방식의 커스터마이징 용이한 컴포넌트&#xa;[MUI] Material Design 기반의 방대하고 성숙한 라이브러리&#xa;[디자인 토큰 자체 구축] 외부 라이브러리 없이 직접 컬러, 간격 설계" style="color: #e2e8f0;">UI Library / System:</strong> <strong style="color: #10b981;">shadcn/ui</strong>, MUI, 디자인 토큰 자체 구축</li>
+                    </ul>
+                </div>
+
+                <!-- 설정 파일 -->
+                <div class="curriculum-card" style="padding: 30px 24px;">
+                    <h3 style="margin-bottom: 16px; font-size: 1.25rem; color: #fff;">2. 설정 파일 (Configurations)</h3>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 16px;">프로젝트 루트의 핵심 설정 파일 기준을 세웁니다.</p>
+                    <ul style="list-style: none; padding: 0; color: #94a3b8; font-size: 0.9rem; line-height: 1.6;">
+                        <li><strong class="popover-trigger" data-title="Package Manager" data-content="[npm] Node.js 기본 패키지 매니저, 가장 범용적&#xa;[yarn] Lock 파일을 통한 일관된 버전 관리 및 속도 개선&#xa;[pnpm] 심볼릭 링크를 활용한 디스크 용량 절약 및 초고속 설치&#xa;[bun] 압도적인 속도를 자랑하는 차세대 런타임/패키지 매니저" style="color: #e2e8f0;">Package Manager:</strong> <strong style="color: #10b981;">npm / yarn (버전 고정)</strong>, pnpm, bun</li>
+                        <li><strong class="popover-trigger" data-title="TypeScript" data-content="[Strict 모드] any 타입 금지, 엄격한 null 검사 등 퀄리티 강제&#xa;[Alias (경로 별칭)] '../../' 대신 '@/' 형태로 모듈을 깔끔하게 임포트" style="color: #e2e8f0;">TypeScript:</strong> <strong style="color: #10b981;">tsconfig.json (Strict 모드, Alias)</strong></li>
+                        <li><strong class="popover-trigger" data-title="Bundler & Config" data-content="[next.config.js] Next.js 고유의 라우팅, 이미지 최적화, 웹팩 설정&#xa;[vite.config.ts] esbuild 기반 초고속 HMR 및 빌드(주로 React/Vue)&#xa;[webpack] 생태계가 가장 넓고 복잡한 커스텀 빌드에 유리" style="color: #e2e8f0;">Bundler & Config:</strong> <strong style="color: #10b981;">next.config.js</strong>, vite.config.ts, webpack</li>
+                        <li><strong class="popover-trigger" data-title="Style Config" data-content="[tailwind.config.ts] 테마(색상, 폰트), 플러그인 등 Tailwind 전역 설정&#xa;[postcss.config.js] Autoprefixer 등 CSS 변환 프로세스 설정&#xa;[.editorconfig] 에디터 간 들여쓰기, 줄바꿈 등 기본 포맷 통일" style="color: #e2e8f0;">Style Config:</strong> <strong style="color: #10b981;">tailwind.config.ts</strong>, postcss.config.js, .editorconfig</li>
+                    </ul>
+                </div>
+
+                <!-- 코드 품질 -->
+                <div class="curriculum-card" style="padding: 30px 24px;">
+                    <h3 style="margin-bottom: 16px; font-size: 1.25rem; color: #fff;">3. 코드 품질 (Lint & Format)</h3>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 16px;">AI가 코드를 작성할 때 지켜야 할 컨벤션입니다.</p>
+                    <ul style="list-style: none; padding: 0; color: #94a3b8; font-size: 0.9rem; line-height: 1.6;">
+                        <li><strong class="popover-trigger" data-title="ESLint" data-content="[Airbnb] 가장 널리 쓰이며 매우 엄격한 룰셋 제공&#xa;[Standard] 세미콜론 없이 작성하는 간결한 규칙&#xa;[Custom strict] 프로젝트 성격에 맞춰 특정 룰(import 순서 등) 직접 튜닝" style="color: #e2e8f0;">ESLint:</strong> <strong style="color: #10b981;">Airbnb 룰 기반 (Custom strict)</strong>, Standard</li>
+                        <li><strong class="popover-trigger" data-title="Prettier" data-content="[Tab/Space] 프론트엔드 표준 들여쓰기 크기(주로 2) 지정&#xa;[Single Quote] 문자열에 쌍따옴표 대신 홑따옴표(') 사용 강제&#xa;[세미콜론] ASI(자동 삽입) 오류 방지를 위해 명시적 추가 강제" style="color: #e2e8f0;">Prettier:</strong> <strong style="color: #10b981;">Tab: 2, Single Quote</strong>, 세미콜론 강제</li>
+                        <li><strong class="popover-trigger" data-title="Naming Convention" data-content="[PascalCase] 컴포넌트, 클래스, 타입 이름 (예: UserCard)&#xa;[camelCase] 변수, 함수, 훅, 인스턴스 이름 (예: getUserData)&#xa;[BEM] 블록__엘리먼트--모디파이어 형태의 고전적 CSS 클래스 명명법" style="color: #e2e8f0;">Naming Convention:</strong> <strong style="color: #10b981;">컴포넌트(Pascal), 변수(camel)</strong>, BEM(CSS)</li>
+                        <li><strong class="popover-trigger" data-title="Publishing Rules" data-content="[시맨틱 태그] div 대신 header, main, nav 등 의미에 맞는 태그 사용&#xa;[WAI-ARIA] 스크린 리더 등 보조기기를 위한 속성(aria-label, role 등) 적용" style="color: #e2e8f0;">Publishing Rules:</strong> <strong style="color: #10b981;">시맨틱 태그 준수</strong>, WAI-ARIA 접근성 속성 포함</li>
+                    </ul>
+                </div>
+
+                <!-- 환경 변수 -->
+                <div class="curriculum-card" style="padding: 30px 24px;">
+                    <h3 style="margin-bottom: 16px; font-size: 1.25rem; color: #fff;">4. 자산 및 환경 변수 (Assets & Env)</h3>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 16px;">정적 자산 관리 및 프론트엔드 환경 변수 기준입니다.</p>
+                    <ul style="list-style: none; padding: 0; color: #94a3b8; font-size: 0.9rem; line-height: 1.6;">
+                        <li><strong class="popover-trigger" data-title="File 분리" data-content="[.env.local] 로컬 개발 전용 시크릿 (Git에 절대 올리지 않음)&#xa;[.env.development] 개발 서버용 공통 환경 변수&#xa;[.env.production] 실서비스(운영) 빌드 시 주입되는 환경 변수" style="color: #e2e8f0;">File 분리:</strong> <strong style="color: #10b981;">.env.local</strong>, .env.production</li>
+                        <li><strong class="popover-trigger" data-title="Prefix Rule" data-content="[NEXT_PUBLIC_] Next.js에서 브라우저(클라이언트)에 변수를 노출할 때 필수&#xa;[VITE_] Vite 빌드 도구에서 클라이언트에 노출할 때 사용&#xa;[REACT_APP_] Create React App 환경의 기본 접두사" style="color: #e2e8f0;">Prefix Rule:</strong> <strong style="color: #10b981;">NEXT_PUBLIC_</strong>, VITE_, REACT_APP_</li>
+                        <li><strong class="popover-trigger" data-title="정적 자산(Assets)" data-content="[WebP] PNG/JPG 대비 용량이 작고 품질이 우수한 이미지 포맷&#xa;[SVG] 해상도에 깨지지 않고 CSS로 색상 제어가 용이한 벡터 그래픽&#xa;[public 폴더] 빌드 후 정적으로 서빙되는 파일들 관리 기준" style="color: #e2e8f0;">정적 자산(Assets):</strong> <strong style="color: #10b981;">public/ 폴더 내 최적화 (WebP, SVG)</strong></li>
+                        <li><strong class="popover-trigger" data-title="보안 규칙" data-content="[.gitignore 등록] 실수로 API Key가 커밋되어 유출되는 것 방지&#xa;[서버 사이드 호출] 결제 키 등 민감정보는 클라이언트가 아닌 서버(BFF)에서 호출" style="color: #e2e8f0;">보안 규칙:</strong> <strong style="color: #10b981;">.gitignore에 .env 추가</strong>, API 키 노출 방지</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Rules Section -->
-    <section id="rules" class="section" style="background: rgba(255, 255, 255, 0.02);">
+    <!-- Architecture Section -->
+    <section id="architecture" class="section">
         <div class="container">
-            <h2 class="section-title">설계규칙</h2>
-            <p class="section-desc">명확한 요구사항 정의서와 정보 구조(IA)를 바탕으로 AI에게 제공할 문서를 작성합니다.</p>
+            <h2 class="section-title">구조설계</h2>
+            <p class="section-desc">디렉토리 구조, 아키텍처 패턴, 상태 관리 및 라우팅 전략 등 시스템의 물리적/논리적 뼈대를 설계합니다.</p>
             
-            <div class="curriculum-grid">
-                <div class="curriculum-card" style="text-align: center; padding: 60px 30px;">
-                    <div style="font-size: 3rem; margin-bottom: 20px;">📐</div>
-                    <h3 style="margin-bottom: 15px;">설계 템플릿 준비 중</h3>
-                    <p style="color: var(--text-muted); line-height: 1.6;">화면 상태 명세서 및 IA 작성용 템플릿과<br>실무 예시 콘텐츠가 곧 업데이트 될 예정입니다.</p>
+            <div class="curriculum-grid" style="grid-template-columns: repeat(2, 1fr);">
+                <!-- 디렉토리 구조 -->
+                <div class="curriculum-card" style="padding: 30px 24px;">
+                    <h3 style="margin-bottom: 16px; font-size: 1.25rem; color: #fff;">1. 디렉토리 구조 (Directory)</h3>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 16px;">AI가 프론트엔드 코드를 파악할 수 있는 폴더 트리입니다.</p>
+                    <ul style="list-style: none; padding: 0; color: #94a3b8; font-size: 0.9rem; line-height: 1.6;">
+                        <li><strong class="popover-trigger" data-title="Component Structure" data-content="[Feature-first] 기능(User, Product 등) 단위로 폴더를 나눠 응집도 극대화&#xa;[Type-first] 역할(components, hooks, utils 등) 단위로 분리하는 전통적 방식" style="color: #e2e8f0;">Component Structure:</strong> <strong style="color: #10b981;">Feature-first (기능별 분리)</strong>, Type-first</li>
+                        <li><strong class="popover-trigger" data-title="UI Component" data-content="[Atomic Design] 원자(Atoms), 분자(Molecules), 유기체(Organisms)로 계층적 조립&#xa;[공통 분리] 특정 도메인에 종속되지 않는 버튼, 폼 등을 shared/에 독립" style="color: #e2e8f0;">UI Component:</strong> <strong style="color: #10b981;">Atomic Design (atoms, molecules)</strong>, 공통 분리</li>
+                        <li><strong class="popover-trigger" data-title="Colocation" data-content="[컴포넌트 + 스타일] Button.tsx와 Button.module.css를 하나의 /Button 폴더에 둠&#xa;[컴포넌트 + 테스트] 컴포넌트 바로 옆에 .test.ts 파일을 두어 탐색 비용 최소화" style="color: #e2e8f0;">Colocation:</strong> <strong style="color: #10b981;">컴포넌트와 스타일(CSS) 동일 폴더 내 배치</strong></li>
+                        <li><strong class="popover-trigger" data-title="정적 파일" data-content="[public/images] 배너, 로고 등 픽셀 기반(PNG, WebP) 이미지 폴더&#xa;[public/icons] UI에 쓰이는 SVG 벡터 아이콘 전용 폴더&#xa;[에셋 모듈화] 파일 경로를 상수로 관리하여 오타 및 휴먼에러 방지" style="color: #e2e8f0;">정적 파일:</strong> <strong style="color: #10b981;">public/images, public/icons 등 에셋 구조화</strong></li>
+                    </ul>
+                </div>
+
+                <!-- 아키텍처 패턴 -->
+                <div class="curriculum-card" style="padding: 30px 24px;">
+                    <h3 style="margin-bottom: 16px; font-size: 1.25rem; color: #fff;">2. 아키텍처 패턴 (Architecture)</h3>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 16px;">UI 렌더링과 뷰(View) 로직을 관리하는 패턴입니다.</p>
+                    <ul style="list-style: none; padding: 0; color: #94a3b8; font-size: 0.9rem; line-height: 1.6;">
+                        <li><strong class="popover-trigger" data-title="Logic & UI 분리" data-content="[Custom Hooks 패턴] 컴포넌트 내의 복잡한 상태와 로직을 useAuth, useFetch 등으로 추상화하여 UI 코드를 깔끔하게 유지" style="color: #e2e8f0;">Logic & UI 분리:</strong> <strong style="color: #10b981;">Custom Hooks 패턴 (로직 추상화)</strong></li>
+                        <li><strong class="popover-trigger" data-title="컴포넌트 설계" data-content="[Container] 상태 관리, API 통신 등 '어떻게 동작할지'를 담당&#xa;[Presentational] Props만 받아서 UI를 '어떻게 보여줄지'만 담당하는 순수 컴포넌트" style="color: #e2e8f0;">컴포넌트 설계:</strong> <strong style="color: #10b981;">Container / Presentational 패턴</strong></li>
+                        <li><strong class="popover-trigger" data-title="렌더링 최적화" data-content="[Server Component] 서버에서 렌더링되어 클라이언트로 JS 번들을 보내지 않음 (성능 향상)&#xa;[Client Component] onClick, useState 등 상호작용이 필요한 부분에 한정 사용" style="color: #e2e8f0;">렌더링 최적화:</strong> <strong style="color: #10b981;">Server Component와 Client 분리</strong></li>
+                        <li><strong class="popover-trigger" data-title="스타일링 패턴" data-content="[Utility-first] HTML에 유틸리티 클래스(flex, pt-4)를 조합해 직접 스타일링(Tailwind)&#xa;[CSS Modules] 클래스명 충돌을 방지하기 위해 파일 단위 고유 해시 적용" style="color: #e2e8f0;">스타일링 패턴:</strong> <strong style="color: #10b981;">Utility-first (Tailwind)</strong>, CSS Modules</li>
+                    </ul>
+                </div>
+
+                <!-- 상태 및 라우팅 -->
+                <div class="curriculum-card" style="padding: 30px 24px;">
+                    <h3 style="margin-bottom: 16px; font-size: 1.25rem; color: #fff;">3. 상태 및 라우팅 (State/Routing)</h3>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 16px;">앱의 화면 데이터 흐름과 전환 전략입니다.</p>
+                    <ul style="list-style: none; padding: 0; color: #94a3b8; font-size: 0.9rem; line-height: 1.6;">
+                        <li><strong class="popover-trigger" data-title="Global State (UI)" data-content="[Zustand] 설정이 매우 단순하고 가벼운 최신 훅(Hook) 기반 상태 관리 라이브러리&#xa;[Redux Toolkit] 거대하고 복잡한 규모의 상태 관리에 적합한 엔터프라이즈 표준&#xa;[Jotai] Recoil처럼 아톰(Atom) 단위로 상태를 쪼개어 관리하는 바텀업 방식" style="color: #e2e8f0;">Global State (UI):</strong> <strong style="color: #10b981;">Zustand</strong>, Redux Toolkit, Jotai</li>
+                        <li><strong class="popover-trigger" data-title="Server State (API)" data-content="[React Query] 데이터 캐싱, 로딩/에러 상태, 무효화 및 재시도를 훅으로 완벽히 제공&#xa;[SWR] Vercel이 만든 직관적이고 빠르고 가벼운 데이터 페칭 라이브러리" style="color: #e2e8f0;">Server State (API):</strong> <strong style="color: #10b981;">React Query (TanStack)</strong>, SWR</li>
+                        <li><strong class="popover-trigger" data-title="Routing" data-content="[App Router] Next.js 13+의 디렉토리 기반 최신 라우팅(Layout, RSC 완벽 지원)&#xa;[React Router] SPA(Single Page App) 표준 라우팅 라이브러리" style="color: #e2e8f0;">Routing:</strong> <strong style="color: #10b981;">Next.js App Router (File-based)</strong>, React Router</li>
+                        <li><strong class="popover-trigger" data-title="Data Fetching" data-content="[SSR] 매 요청마다 서버에서 렌더링 (동적 데이터, SEO 최적화)&#xa;[SSG] 빌드 시점에 미리 HTML 생성 (블로그 등 정적 페이지 속도 극대화)&#xa;[CSR] 클라이언트 측에서 JS를 통해 화면을 렌더링 (대시보드 등)" style="color: #e2e8f0;">Data Fetching:</strong> <strong style="color: #10b981;">SSR, SSG, CSR 렌더링 기준 정의</strong></li>
+                    </ul>
+                </div>
+
+                <!-- IA 및 명세서 -->
+                <div class="curriculum-card" style="padding: 30px 24px;">
+                    <h3 style="margin-bottom: 16px; font-size: 1.25rem; color: #fff;">4. UI/UX 명세서 (UI & Spec)</h3>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 16px;">퍼블리싱 전 화면 목표와 시각적 명세를 정의합니다.</p>
+                    <ul style="list-style: none; padding: 0; color: #94a3b8; font-size: 0.9rem; line-height: 1.6;">
+                        <li><strong class="popover-trigger" data-title="Sitemap / Flow" data-content="[GNB (Global)] 앱 전체를 관통하는 메인 상단 메뉴 구조&#xa;[LNB (Local)] 현재 페이지/카테고리에 종속된 서브 사이드 메뉴&#xa;[화면 전환도] 사용자가 특정 버튼 클릭 시 어느 화면으로 넘어갈지 정의" style="color: #e2e8f0;">Sitemap / Flow:</strong> <strong style="color: #10b981;">화면 전환도 및 레이아웃 구조 (GNB, LNB)</strong></li>
+                        <li><strong class="popover-trigger" data-title="Component API" data-content="[Props] Button에 size, color, disabled 등을 어떻게 넘길지 인터페이스 정의&#xa;[Variant] Primary, Secondary, Outline 등 UI의 다양한 시각적 형태 모음" style="color: #e2e8f0;">Component API:</strong> <strong style="color: #10b981;">Props 인터페이스, Variant(상태) 정의</strong></li>
+                        <li><strong class="popover-trigger" data-title="상태 명세서" data-content="[Hover/Active] 마우스 오버 및 클릭 시 피드백 시각 효과 명세&#xa;[Disabled] 비활성화 시 색상 변경 및 마우스 포인터 차단 규칙&#xa;[Skeleton/Loading] 데이터를 불러오는 동안 화면에 띄울 뼈대 UI" style="color: #e2e8f0;">상태 명세서:</strong> <strong style="color: #10b981;">Hover, Active, Disabled 등 UI 상태 정의</strong></li>
+                        <li><strong class="popover-trigger" data-title="반응형 (Responsive)" data-content="[Mobile-first] 모바일 뷰부터 작성하고 화면이 커질수록 레이아웃을 확장하는 기법&#xa;[Breakpoint] sm(640px), md(768px), lg(1024px) 등 기기별 레이아웃 변경 분기점" style="color: #e2e8f0;">반응형 (Responsive):</strong> <strong style="color: #10b981;">Mobile-first 기준 Breakpoint 명세</strong></li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- System Prompt Generator Section -->
+    <section id="prompt-generator" class="section" style="background: rgba(255, 255, 255, 0.015); border-top: 1px solid rgba(255,255,255,0.05); padding-bottom: 100px;">
+        <div class="container">
+            <h2 class="section-title">최종 시스템 프롬프트 (System Prompt)</h2>
+            <p class="section-desc">위의 모든 케이스를 고려하여 도출된 **'실전용 바이브코딩 시스템 프롬프트'** 샘플입니다. (Next.js + Tailwind + Zustand 기준)<br>복사해서 Cursor IDE나 AI 에이전트의 <code>.cursorrules</code> 또는 시스템 프롬프트 설정에 바로 붙여넣으세요.</p>
+            
+            <div style="position: relative; max-width: 900px; margin: 0 auto; background: #0f111a; border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+                <!-- Header -->
+                <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 20px; background: rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.1);">
+                    <div style="display: flex; gap: 8px;">
+                        <span style="width: 12px; height: 12px; border-radius: 50%; background: #ef4444;"></span>
+                        <span style="width: 12px; height: 12px; border-radius: 50%; background: #f59e0b;"></span>
+                        <span style="width: 12px; height: 12px; border-radius: 50%; background: #10b981;"></span>
+                    </div>
+                    <div style="color: #94a3b8; font-size: 0.85rem; font-family: monospace;">.cursorrules</div>
+                    <button id="copyPromptBtn" style="background: rgba(255,255,255,0.1); border: none; color: #fff; padding: 6px 12px; border-radius: 6px; font-size: 0.85rem; cursor: pointer; transition: background 0.2s;" onclick="copySystemPrompt()">
+                        복사하기
+                    </button>
+                </div>
+                <!-- Code Block -->
+                <div style="padding: 24px; overflow-x: auto;">
+                    <pre style="margin: 0; font-family: 'JetBrains Mono', 'Fira Code', Consolas, monospace; font-size: 0.9rem; line-height: 1.6; color: #e2e8f0; white-space: pre-wrap;"><code id="promptContent"># VibeCoding System Prompt
+
+## 1. 개발환경 (Development Environment)
+- **Tech Stack:** Next.js 14 (App Router), React 18, TypeScript (Strict).
+- **Styling:** Tailwind CSS, shadcn/ui.
+- **Config & Lint:** ESLint (Airbnb-based strict rules), Prettier (tabWidth: 2, singleQuote: true).
+- **Environment Variables:**
+  - 사용 시 반드시 `process.env.NEXT_PUBLIC_` 접두사를 준수할 것.
+  - 보안 정보는 클라이언트 사이드에 노출되지 않도록 서버사이드에서만 호출할 것.
+
+## 2. 구조설계 (Structural Design)
+- **Directory Structure (Feature-first):**
+  - 도메인 단위로 폴더를 구성하며, `src/features/{domain}/` 내부에 components, hooks, api, types를 묶어서 배치할 것 (Colocation).
+  - 공통 컴포넌트와 유틸리티는 `src/shared/`에 분리할 것.
+- **Architecture Pattern:**
+  - 비즈니스 로직과 UI를 엄격히 분리할 것. (Custom Hooks 패턴 권장)
+  - 서버 데이터 페칭과 클라이언트 렌더링을 분리(Server Component vs Client Component)할 것.
+- **State & Routing:**
+  - **Global State:** Zustand를 사용하며 스토어는 도메인별로 작게 쪼개서 관리.
+  - **Server State:** React Query (TanStack Query)를 사용하여 캐싱과 무효화를 관리.
+  - **Routing:** Next.js App Router의 File-based 라우팅 규칙 준수 (layout.tsx, page.tsx).
+- **Code Convention:**
+  - 변수 및 함수는 camelCase, 컴포넌트는 PascalCase를 사용할 것.
+  - 모든 함수의 인자와 반환값에 명시적인 TypeScript 타입을 지정할 것 (`any` 사용 금지).
+
+당신은 최고의 시니어 프론트엔드 개발자입니다. 위 규칙을 어기지 말고 최적화되고 유지보수하기 쉬운 코드를 작성하십시오.</code></pre>
+                </div>
+            </div>
+            
+            <script>
+                function copySystemPrompt() {
+                    const content = document.getElementById('promptContent').innerText;
+                    navigator.clipboard.writeText(content).then(() => {
+                        const btn = document.getElementById('copyPromptBtn');
+                        const originalText = btn.innerText;
+                        btn.innerText = '복사 완료! ✅';
+                        btn.style.background = 'rgba(16, 185, 129, 0.2)';
+                        btn.style.color = '#10b981';
+                        
+                        setTimeout(() => {
+                            btn.innerText = '복사하기';
+                            btn.style.background = 'rgba(255,255,255,0.1)';
+                            btn.style.color = '#fff';
+                        }, 2000);
+                    }).catch(err => {
+                        console.error('Failed to copy: ', err);
+                    });
+                }
+            </script>
+        </div>
+    </section>
+
+    <!-- Popover Elements -->
+    <div class="popover-overlay" id="popoverOverlay"></div>
+    <div class="popover-box" id="popoverBox">
+        <div class="popover-header">
+            <h4 class="popover-title" id="popoverTitle">Title</h4>
+            <button class="popover-close" id="popoverClose">&times;</button>
+        </div>
+        <div class="popover-content" id="popoverContent"></div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const triggers = document.querySelectorAll('.popover-trigger');
+            const popoverBox = document.getElementById('popoverBox');
+            const popoverOverlay = document.getElementById('popoverOverlay');
+            const popoverTitle = document.getElementById('popoverTitle');
+            const popoverContent = document.getElementById('popoverContent');
+            const popoverClose = document.getElementById('popoverClose');
+
+            function closePopover() {
+                popoverBox.classList.remove('active');
+                setTimeout(() => {
+                    popoverOverlay.style.display = 'none';
+                    popoverBox.style.visibility = 'hidden';
+                }, 300); // match transition duration
+            }
+
+            popoverOverlay.addEventListener('click', closePopover);
+            popoverClose.addEventListener('click', closePopover);
+
+            triggers.forEach(trigger => {
+                trigger.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    
+                    const title = trigger.getAttribute('data-title');
+                    const contentRaw = trigger.getAttribute('data-content');
+                    
+                    popoverTitle.textContent = title;
+                    
+                    // Parse content: "[Title] Desc \n [Title] Desc"
+                    const lines = contentRaw.split('\n');
+                    let html = '<ul>';
+                    lines.forEach(line => {
+                        const match = line.match(/^\[(.*?)\]\s*(.*)$/);
+                        if(match) {
+                            html += `<li><strong>[${match[1]}]</strong><span>${match[2]}</span></li>`;
+                        } else {
+                            html += `<li>${line}</li>`;
+                        }
+                    });
+                    html += '</ul>';
+                    popoverContent.innerHTML = html;
+
+                    // Show overlay
+                    popoverOverlay.style.display = 'block';
+                    
+                    // Temporarily make visible to calculate height
+                    popoverBox.style.visibility = 'hidden';
+                    popoverBox.style.display = 'block';
+                    
+                    // Position calculation
+                    const rect = trigger.getBoundingClientRect();
+                    const boxRect = popoverBox.getBoundingClientRect();
+                    
+                    let top = rect.top + window.scrollY + rect.height + 12; // 12px gap below text
+                    let left = rect.left + window.scrollX;
+                    
+                    // boundary checks (prevent overflowing window)
+                    if (left + boxRect.width > window.innerWidth) {
+                        left = window.innerWidth - boxRect.width - 24; // 24px padding from screen edge
+                    }
+                    if (top + boxRect.height > window.scrollY + window.innerHeight) {
+                        top = rect.top + window.scrollY - boxRect.height - 12; // show above if not enough space
+                    }
+                    if (left < 10) left = 10;
+
+                    popoverBox.style.top = top + 'px';
+                    popoverBox.style.left = left + 'px';
+                    
+                    // Animate in
+                    popoverBox.style.visibility = 'visible';
+                    // Force reflow
+                    void popoverBox.offsetWidth;
+                    popoverBox.classList.add('active');
+                });
+            });
+        });
+    </script>
 
     <!-- Footer -->
     <footer>
