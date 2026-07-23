@@ -311,6 +311,19 @@ nav {
     color: var(--primary-color);
 }
 
+.dropdown.disabled-menu {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.dropdown.disabled-menu > a {
+    pointer-events: none;
+}
+
+.dropdown.disabled-menu:hover .dropdown-content {
+    display: none !important;
+}
+
 /* Buttons */
 .cta-button {
     background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
@@ -1428,4 +1441,34 @@ footer {
     .curriculum-card {
         padding: 30px 24px;
     }
+}
+/* Workflow Diagram inside Modal */
+.workflow-diagram { display: flex; flex-direction: column; align-items: center; gap: 10px; padding: 20px; background: rgba(0,0,0,0.2); border-radius: 12px; font-family: 'Inter', -apple-system, sans-serif; }
+.wf-step { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 20px; width: 100%; text-align: center; }
+.wf-step.loop-step { border-color: rgba(124, 58, 237, 0.4); box-shadow: 0 0 20px rgba(124, 58, 237, 0.1); }
+.wf-step-title { font-weight: bold; color: #fff; margin-bottom: 15px; font-size: 1.1rem; text-align: center; }
+.wf-cards { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
+.wf-card { background: rgba(124, 58, 237, 0.2); color: #e9d5ff; padding: 10px 20px; border-radius: 8px; font-size: 0.95rem; font-weight: 500; border: 1px solid rgba(124, 58, 237, 0.4); text-align: center; }
+.wf-arrow { color: var(--text-muted); font-size: 0.9rem; margin: 5px 0; text-align: center; }
+.wf-loop-arrow { color: #a78bfa; font-size: 0.85rem; font-weight: bold; text-align: center; }
+
+/* Section Level Popup Button */
+.section-popup-btn {
+    display: inline-block;
+    padding: 12px 28px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    background: rgba(124, 58, 237, 0.25);
+    border: 1px solid rgba(124, 58, 237, 0.5);
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(124, 58, 237, 0.2);
+}
+.section-popup-btn:hover {
+    background: rgba(124, 58, 237, 0.45);
+    border-color: rgba(124, 58, 237, 0.8);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(124, 58, 237, 0.4);
 }
