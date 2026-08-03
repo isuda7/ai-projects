@@ -1,25 +1,18 @@
 # 🧠 PROMPT_PIPELINE.md (프롬프트 파이프라인 총괄 가이드)
 
-이 문서는 프로젝트 내의 모든 프롬프트 규칙을 관리하고, 실행 순서를 총괄하는 **최상위 마스터 문서**입니다. 무작정 프롬프트를 실행하여 코드를 생성하는 것이 아니라, 본 문서에 정의된 체계적인 프로세스와 명명 규칙에 따라 단계적으로 프로젝트를 구축해야 합니다.
+이 문서는 프로젝트 내의 모든 프롬프트 규칙을 관리하고, 새로운 프로젝트(Zero-base) 셋업 시 **AI의 토큰 한계(Token Limits)와 할루시네이션을 방지하기 위해 단계적(Phase)이고 배치(Batch) 단위로 실행하는 최상위 마스터 매뉴얼**입니다. 
+
+절대 모든 프롬프트를 한 번에 실행하지 마시고, 아래의 Phase 1부터 Phase 4까지 순차적으로 AI에게 주입하여 안전하게 코드를 렌더링하세요.
+
+---
 
 ## 1. 📂 프롬프트 문서 명명 및 분류 규칙
-프로젝트 내 모든 프롬프트 파일(`.md`)은 그 목적과 역할에 따라 폴더를 명확히 구분하여 관리합니다.
+프로젝트 내 모든 프롬프트 파일(`.md`)은 그 목적과 역할에 따라 명확히 구분되어 있습니다.
 
-*   **`context/` (컨텍스트 및 환경 설정: `*_CONTEXT_*`)**
-    *   **목적:** AI를 학습시키기 위한 기본 환경, 아키텍처 목적, 상황 등의 전반적인 지식 정보.
-    *   **활용:** 코드 생성 전 AI의 배경지식(Context)을 동기화할 때 참조용으로 사용합니다. (예: `context/PROMPT_CONTEXT_SETTINGS.md`, `context/PROMPT_CONTEXT_COMPONENT.md`)
-
-*   **`template/` (기본 템플릿: `PROMPT_GUIDE_BASE`, `PROMPT_DASHBOARD`)**
-    *   **목적:** 대시보드 화면이나 가이드 페이지를 생성하기 위한 표준 양식 및 뼈대 코드.
-    *   **활용:** 전체적인 레이아웃 및 뼈대를 잡기 위한 템플릿으로 활용합니다.
-
-*   **`foundation/` (파운데이션 가이드: `PROMPT_GUIDE_FA_*`)**
-    *   **목적:** 컬러, 타이포그래피, 그림자 등 디자인 시스템의 기반(Foundation) 요소들을 가이드하는 문서.
-    *   **활용:** 공통 스타일 시스템을 정립하고 자산화할 때 사용합니다.
-
-*   **`component/` (컴포넌트 가이드: `PROMPT_GUIDE_CO_*`)**
-    *   **목적:** 개별 UI 컴포넌트(버튼, 인풋, 모달 등)의 가이드 페이지를 생성하기 위한 지시문.
-    *   **활용:** 새로운 UI 컴포넌트를 설계하고 추가할 때 복사하여 코드를 생성하는 직접적인 지시문으로 사용합니다. (예: `PROMPT_GUIDE_CO_[컴포넌트명].md`)
+*   **`context/` (컨텍스트 및 환경 설정: `*_CONTEXT_*`)**: AI를 학습시키기 위한 기본 환경, 아키텍처 목적, 상황 등의 전반적인 지식 정보. (가장 먼저 주입됨)
+*   **`template/` (기본 템플릿: `PROMPT_GUIDE_BASE`)**: 화면을 렌더링하기 위한 표준 양식 및 레이아웃 뼈대 코드.
+*   **`foundation/` (파운데이션: `PROMPT_GUIDE_FA_*`)**: 컬러, 타이포그래피 등 디자인 시스템의 기반 공통 토큰.
+*   **`component/` (컴포넌트: `PROMPT_GUIDE_CO_*`)**: 개별 UI 컴포넌트(버튼, 인풋, 탭 등) 생성을 위한 지시문.
 
 ---
 
@@ -27,28 +20,97 @@
 이 프로젝트는 철저히 Vanilla 웹 환경을 지향하며 아래의 대원칙을 무조건 따릅니다.
 *   **Tech Stack:** `HTML5`, `Vanilla JavaScript`, `SCSS` 기반으로만 구성됩니다.
 *   **사용 금지:** `React`, `Vue`, `Tailwind CSS`, `Vite`, `TypeScript` 등 모던 프레임워크와 유틸리티 CSS는 일절 배제합니다.
-*   **Bootstrap 정책:** 
-    *   디자인 충돌을 막기 위해 **Bootstrap CSS는 절대 불러오거나 사용하지 않습니다.**
-    *   대신 상호작용(탭, 모달 등)을 위한 **Bootstrap JS는 허용**하며, 이를 위한 최소한의 뼈대 스타일은 `_bs-functional.scss`에 직접 커스텀하여 운영합니다.
-*   **명명 규칙:** 파일명은 `kebab-case`, CSS/SCSS 클래스명은 `snake_case` (BEM 기반)를 엄격히 준수합니다.
+*   **Bootstrap 정책:** 디자인 충돌을 막기 위해 **Bootstrap CSS는 절대 불러오거나 사용하지 않습니다.** (상호작용을 위한 Bootstrap JS만 허용)
+*   **옵션 클래스 (Option Classes):** SCSS 클래스 작성 시 BEM의 복잡한 접두사(`variant_`, `size_` 등)를 금지하고, `.btn .primary .sm`과 같이 철저히 독립된 단어들의 조합과 중첩(Nesting)을 통해 설계합니다.
 
 ---
 
-## 3. 🔄 체계적인 실행 프로세스 (Execution Process)
-프로젝트의 안정적인 아키텍처 구성을 위해 아래의 순서대로 프롬프트를 실행하고 개발을 진행합니다.
+## 3. 🔄 체계적인 실행 프로세스 (Batch Execution Manual)
 
-1.  **환경 설정 (Environment Setup):** Vanilla HTML, SCSS 컴파일 환경 구성 및 레이아웃 폴더 구조 세팅.
-2.  **레이아웃 설정 (Layout Setup):** 전역 공통 헤더/푸터 및 기본 템플릿 영역 렌더링 세팅.
-3.  **가이드와 프론트의 구분 (Separation of Guide and Front):** 사용자 화면(프론트)과 디자인 시스템(가이드) 영역의 메뉴/라우팅 완벽 분리.
-4.  **대시보드와 가이드 템플릿 (Dashboard & Guide Template):** 가이드 메인 진입점(Dashboard)과 가이드 문서 작성을 위한 표준 양식(`template/PROMPT_GUIDE_BASE.md`) 확립.
-5.  **가이드 파운데이션 스켈레톤 추가 (Batch Guide Addition):** 타이포그래피, 컬러, 유틸리티(`_utilities.scss`) 등 파운데이션 요소를 정립.
-6.  **전체 컴포넌트 가이드 일괄 생성 (Batch Generation of Component Guides):** `PROMPT_GUIDE_CO_*` 시리즈를 기반으로 핵심 컴포넌트(Button, Input, Select, Checkbox, Radio, Table, Card, Tabs, Pagination, Dialog, Badge, Alert)들을 **순수 HTML + SCSS** 규격으로 재해석하여 구현.
-7.  **마무리 검수 (Final Review & Checklist):** 프리뷰 오픈형 강제 여부, SCSS 규칙, `colspan` 시 `div` 감싸기 여부 등을 스스로 최종 점검.
+완전히 새로운 채팅방(Zero-base)에서 프로젝트를 구축할 때, 아래의 Phase 단위로 프롬프트 파일의 내용들을 복사하여 AI에게 단계적으로 지시하십시오. 컴포넌트 생성(Phase 3)은 5~8개씩 Batch 단위로 끊어서 실행해야 누락이 발생하지 않습니다.
 
----
+### 🚀 Phase 1: 아키텍처 및 시스템 초기화 (Architecture & Context)
+AI에게 프로젝트의 전반적인 규칙과 코어 룰을 주입하고 빈 디렉토리 뼈대를 셋업하는 단계입니다.
+- **주입 프롬프트**: 
+  1. `context/PROMPT_CONTEXT_01_SETTINGS.md`
+  2. `context/PROMPT_CONTEXT_02_GUIDE_SYSTEM.md`
+  3. `context/PROMPT_CONTEXT_05_SCSS.md`
+- **AI 지시문**: *"위 3개의 규칙을 숙지하고, 프로젝트의 폴더 구조와 빈 파일(`global.scss`, `_base.scss` 등) 뼈대를 우선 생성해."*
 
-## 3. 📐 가이드 규칙 관리 (Guide Rules Management)
+### 🚀 Phase 2: 디자인 시스템 파운데이션 및 템플릿 (Foundation & Template)
+기본 레이아웃 템플릿을 렌더링하고, 디자인 토큰을 구축합니다.
+- **주입 프롬프트**:
+  1. `context/PROMPT_CONTEXT_03_PROPS.md`
+  2. `template/PROMPT_GUIDE_BASE.md`
+  3. `foundation/PROMPT_GUIDE_FA_COLORS.md` 등 파운데이션 프롬프트
+- **AI 지시문**: *"위 규칙을 바탕으로 옵션 클래스 방식을 숙지하고, 가이드 화면의 기본 레이아웃(`layout.html` 등)과 `_colors.scss` 등 파운데이션 코드를 작성해."*
 
-*   **단일 진실 공급원 (SSOT):** 코드 템플릿이나 컴포넌트 스펙 설계 규칙이 변경될 경우, 코드를 먼저 수정하지 말고 반드시 해당 `PROMPT_*.md` 문서를 먼저 업데이트하여 AI와 작업자의 기준을 일치시켜야 합니다.
-*   **표기법 강제 준수:** 파일명은 `kebab-case`, CSS/SCSS 클래스명은 `snake_case` 등의 전역 코드 작성 규칙은 모든 템플릿 프롬프트 내에 고정으로 명시되어 일관성을 유지해야 합니다.
-*   **점진적 자산화:** 새로운 유형의 가이드나 복잡한 패턴이 발견되면 기존 프롬프트 문서들을 참고하여 `PROMPT_GUIDE_05_*.md` 등 번호를 매겨 추가 생성하여 프로젝트의 자산으로 관리합니다.
+### 🚀 Phase 3: 컴포넌트 일괄 구축 (Component Batches)
+48개의 컴포넌트를 우선순위와 연관성에 따라 7개의 Batch로 나누었습니다. 한 번에 하나의 Batch만 복사하여 AI에게 지시하십시오.
+
+**[Batch 1: Core Forms] (최우선 필수 폼 컴포넌트)**
+- `PROMPT_GUIDE_CO_BUTTON.md`
+- `PROMPT_GUIDE_CO_LABEL.md`
+- `PROMPT_GUIDE_CO_INPUT.md`
+- `PROMPT_GUIDE_CO_TEXTAREA.md`
+- `PROMPT_GUIDE_CO_SELECT.md`
+- `PROMPT_GUIDE_CO_CHECKBOX.md`
+- `PROMPT_GUIDE_CO_RADIO_GROUP.md`
+- `PROMPT_GUIDE_CO_SWITCH.md`
+
+**[Batch 2: Core UI & Feedback] (상태 표시 및 피드백)**
+- `PROMPT_GUIDE_CO_BADGE.md`
+- `PROMPT_GUIDE_CO_ALERT.md`
+- `PROMPT_GUIDE_CO_SPINNER.md`
+- `PROMPT_GUIDE_CO_SKELETON.md`
+- `PROMPT_GUIDE_CO_PROGRESS.md`
+- `PROMPT_GUIDE_CO_SONNER.md` (Toast)
+- `PROMPT_GUIDE_CO_AVATAR.md`
+
+**[Batch 3: Navigation & Layout] (네비게이션 및 레이아웃 뼈대)**
+- `PROMPT_GUIDE_CO_TABS.md`
+- `PROMPT_GUIDE_CO_BREADCRUMB.md`
+- `PROMPT_GUIDE_CO_PAGINATION.md`
+- `PROMPT_GUIDE_CO_SEPARATOR.md`
+- `PROMPT_GUIDE_CO_SCROLL_AREA.md`
+- `PROMPT_GUIDE_CO_ASPECT_RATIO.md`
+- `PROMPT_GUIDE_CO_RESIZABLE.md`
+
+**[Batch 4: Overlays & Modals] (레이어 형태의 팝업 컴포넌트)**
+- `PROMPT_GUIDE_CO_DIALOG.md`
+- `PROMPT_GUIDE_CO_ALERT_DIALOG.md`
+- `PROMPT_GUIDE_CO_SHEET.md`
+- `PROMPT_GUIDE_CO_POPOVER.md`
+- `PROMPT_GUIDE_CO_TOOLTIP.md`
+- `PROMPT_GUIDE_CO_HOVER_CARD.md`
+
+**[Batch 5: Menus & Commands] (메뉴 및 복합 조작 창)**
+- `PROMPT_GUIDE_CO_DROPDOWN_MENU.md`
+- `PROMPT_GUIDE_CO_CONTEXT_MENU.md`
+- `PROMPT_GUIDE_CO_MENUBAR.md`
+- `PROMPT_GUIDE_CO_NAVIGATION_MENU.md`
+- `PROMPT_GUIDE_CO_COMMAND.md`
+
+**[Batch 6: Data Display] (데이터 표현 및 덩치가 큰 컴포넌트)**
+- `PROMPT_GUIDE_CO_CARD.md`
+- `PROMPT_GUIDE_CO_TABLE.md`
+- `PROMPT_GUIDE_CO_ACCORDION.md`
+- `PROMPT_GUIDE_CO_COLLAPSIBLE.md`
+- `PROMPT_GUIDE_CO_CAROUSEL.md`
+
+**[Batch 7: Advanced Forms & Misc] (고급 폼 및 기타 특수 컴포넌트)**
+- `PROMPT_GUIDE_CO_FORM.md`
+- `PROMPT_GUIDE_CO_FIELD.md`
+- `PROMPT_GUIDE_CO_SLIDER.md`
+- `PROMPT_GUIDE_CO_TOGGLE.md`
+- `PROMPT_GUIDE_CO_TOGGLE_GROUP.md`
+- `PROMPT_GUIDE_CO_INPUT_OTP.md`
+- `PROMPT_GUIDE_CO_CALENDAR.md`
+- `PROMPT_GUIDE_CO_CHART.md`
+
+- **AI 지시문 (공통)**: *"제공한 Batch N의 프롬프트 스펙을 바탕으로, 순수 HTML 가이드 화면과 SCSS 코드를 완벽히 렌더링해."*
+
+### 🚀 Phase 4: 자가 검수 및 마무리 (Final Review)
+생성된 모든 코드가 프로젝트의 절대 규칙을 어기지 않았는지 점검합니다.
+- **주입 프롬프트**: `context/PROMPT_CONTEXT_06_CHECKLIST.md`
+- **AI 지시문**: *"지금까지 렌더링한 모든 코드(SCSS, HTML)를 체크리스트를 기반으로 자체 검수하고, React 잔재나 Bootstrap CSS 유입, 접두사 규칙 위반이 있는지 확인해서 수정해."*
