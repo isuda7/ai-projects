@@ -1,0 +1,29 @@
+/* global.scss: 프로젝트 전역 SCSS 엔트리 파일 */
+
+// 1. Foundation
+@use 'base';
+@use 'variables';
+@use 'colors';
+@use 'typography';
+@use 'elevator';
+@use 'utilities';
+@use 'bs-functional';
+
+// 2. Components
+// (Components are imported at the end of the file)
+// 3. Layout (가이드 템플릿 등)
+@use 'layout/header';
+@use 'layout/front';
+@use 'guide/template';
+@use 'components/input';
+@use 'components/button';
+@use 'components/select';
+@use 'components/checkbox';
+@use 'components/radio';
+@use 'components/badge';
+@use 'components/alert';
+@use 'components/card';
+@use 'components/table';
+@use 'components/tabs';
+@use 'components/pagination';
+@use 'components/dialog';

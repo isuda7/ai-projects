@@ -1,0 +1,24 @@
+/* _variables.scss: 전역 유틸리티 변수 및 레이아웃 설정 */
+
+:root {
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 48px;
+  --spacing-3xl: 64px;
+
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius: 8px;
+  --radius-lg: 12px;
+  --radius-full: 9999px;
+  
+  /* Layout */
+  --max-width-content: 1200px;
+  --max-width-guide: 1024px;
+  --sidebar-width: 260px;
+  --header-height: 64px;
+}

@@ -1,0 +1,79 @@
+/* _utilities.scss: Minimal custom utilities */
+
+$spacer: 16px;
+$spacers: (
+  0: 0,
+  1: ($spacer * 0.25),
+  2: ($spacer * 0.5),
+  3: $spacer,
+  4: ($spacer * 1.5),
+  5: ($spacer * 3)
+);
+
+/* Spacing Utilities */
+@each $num, $val in $spacers {
+  .m-#{$num} { margin: $val !important; }
+  .mt-#{$num} { margin-top: $val !important; }
+  .mb-#{$num} { margin-bottom: $val !important; }
+  .ml-#{$num}, .ms-#{$num} { margin-left: $val !important; }
+  .mr-#{$num}, .me-#{$num} { margin-right: $val !important; }
+  .mx-#{$num} { margin-left: $val !important; margin-right: $val !important; }
+  .my-#{$num} { margin-top: $val !important; margin-bottom: $val !important; }
+
+  .p-#{$num} { padding: $val !important; }
+  .pt-#{$num} { padding-top: $val !important; }
+  .pb-#{$num} { padding-bottom: $val !important; }
+  .pl-#{$num}, .ps-#{$num} { padding-left: $val !important; }
+  .pr-#{$num}, .pe-#{$num} { padding-right: $val !important; }
+  .px-#{$num} { padding-left: $val !important; padding-right: $val !important; }
+  .py-#{$num} { padding-top: $val !important; padding-bottom: $val !important; }
+}
+
+.mx-auto { margin-left: auto !important; margin-right: auto !important; }
+.my-auto { margin-top: auto !important; margin-bottom: auto !important; }
+
+/* Display & Flexbox Utilities */
+.d-none { display: none !important; }
+.d-block { display: block !important; }
+.d-inline-block { display: inline-block !important; }
+.d-flex { display: flex !important; }
+.d-inline-flex { display: inline-flex !important; }
+
+.flex-column { flex-direction: column !important; }
+.flex-row { flex-direction: row !important; }
+.flex-wrap { flex-wrap: wrap !important; }
+
+.justify-content-start { justify-content: flex-start !important; }
+.justify-content-center { justify-content: center !important; }
+.justify-content-end { justify-content: flex-end !important; }
+.justify-content-between { justify-content: space-between !important; }
+
+.align-items-start { align-items: flex-start !important; }
+.align-items-center { align-items: center !important; }
+.align-items-end { align-items: flex-end !important; }
+.align-items-stretch { align-items: stretch !important; }
+
+/* Text Utilities */
+.text-left, .text-start { text-align: left !important; }
+.text-center { text-align: center !important; }
+.text-right, .text-end { text-align: right !important; }
+
+.fw-normal { font-weight: 400 !important; }
+.fw-medium { font-weight: 500 !important; }
+.fw-bold { font-weight: 700 !important; }
+.fw-bolder { font-weight: 800 !important; }
+
+/* Quick color utilities for prototypes (optional) */
+.text-primary { color: var(--color-primary-600, #2563eb) !important; }
+.text-danger { color: #dc2626 !important; }
+.text-muted { color: var(--color-gray-500, #6b7280) !important; }
+
+/* Common Prototype structure */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}

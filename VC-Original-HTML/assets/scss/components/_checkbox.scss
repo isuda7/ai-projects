@@ -1,0 +1,67 @@
+/* _checkbox.scss */
+.checkbox_wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.checkbox_input {
+  /* Hide default browser checkbox */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+  
+  /* Custom Box */
+  width: 16px;
+  height: 16px;
+  border: 1px solid var(--color-gray-300, #d1d5db);
+  border-radius: 4px;
+  background-color: var(--color-white, #ffffff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  cursor: pointer;
+
+  /* Checkmark icon (SVG) using background */
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 0; /* Hidden by default */
+
+  &:hover {
+    border-color: var(--color-primary-500, #3b82f6);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--color-primary-500, #3b82f6);
+    outline-offset: 2px;
+  }
+
+  &:checked {
+    background-color: var(--color-primary-600, #2563eb);
+    border-color: var(--color-primary-600, #2563eb);
+    background-size: 12px; /* Show checkmark */
+  }
+
+  &:disabled {
+    background-color: var(--color-gray-100, #f3f4f6);
+    border-color: var(--color-gray-300, #d1d5db);
+    cursor: not-allowed;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%239ca3af' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+  }
+}
+
+.checkbox_wrapper input:disabled ~ .checkbox_label {
+  color: var(--color-gray-400, #9ca3af);
+  cursor: not-allowed;
+}
+
+.checkbox_label {
+  font-size: 14px;
+  color: var(--color-gray-700, #374151);
+  line-height: 1.5;
+}

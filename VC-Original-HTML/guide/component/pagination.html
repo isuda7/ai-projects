@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vibe Design System - Pagination Component</title>
+  <link rel="stylesheet" href="/assets/css/global.css">
+</head>
+<body>
+  <div data-include="/layout/header.html"></div>
+  <div class="guide-main-container">
+    <div data-include="/guide/layout/sidebar.html"></div>
+  
+  <main class="guide-content">
+    <div class="guide_wrapper">
+      
+      <header class="guide_header">
+        <h1 class="guide_title_h1">Pagination</h1>
+        <p class="guide_description">
+          긴 목록의 데이터를 여러 페이지로 나누어 탐색할 수 있도록 돕는 네비게이션 컴포넌트입니다.
+        </p>
+      </header>
+
+      <section class="guide_section">
+        <h2 class="guide_title_h2">1. Overview & Specs</h2>
+        
+        <div class="spec_table_wrapper">
+          <table class="spec_table">
+            <thead>
+              <tr>
+                <th>Class</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><code>.pagination</code></td><td>페이지네이션 전체를 감싸는 리스트 컨테이너 (ul)</td></tr>
+              <tr><td><code>.pagination_item</code></td><td>각 개별 리스트 아이템 (li)</td></tr>
+              <tr><td><code>.pagination_link</code>, <code>.pagination_btn</code></td><td>실제 클릭 영역(a, button)</td></tr>
+              <tr><td><code>.active</code></td><td>현재 페이지 표시 (링크에 적용)</td></tr>
+              <tr><td><code>.disabled</code></td><td>이전/다음 버튼 비활성화 시 사용</td></tr>
+              <tr><td><code>.pagination_ellipsis</code></td><td>건너뛰기(...) 표시용 텍스트</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="guide_section">
+        <h2 class="guide_title_h2">2. Basic Usage</h2>
+        <div class="guide_sub_section">
+          <h3 class="guide_title_h3">2.1. Primary State</h3>
+          <p class="guide_description mb-3">가장 일반적인 형태의 숫자 페이징입니다.</p>
+          <div class="guide_preview">
+            
+            <nav aria-label="Page navigation">
+              <ul class="pagination">
+                <li class="pagination_item">
+                  <a href="#" class="pagination_link disabled" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                  </a>
+                </li>
+                <li class="pagination_item"><a href="#" class="pagination_link active" aria-current="page">1</a></li>
+                <li class="pagination_item"><a href="#" class="pagination_link">2</a></li>
+                <li class="pagination_item"><a href="#" class="pagination_link">3</a></li>
+                <li class="pagination_item"><span class="pagination_ellipsis">&hellip;</span></li>
+                <li class="pagination_item"><a href="#" class="pagination_link">10</a></li>
+                <li class="pagination_item">
+                  <a href="#" class="pagination_link" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+
+          </div>
+          <div class="code_block">
+<pre><code>&lt;ul class="pagination"&gt;
+  &lt;li class="pagination_item"&gt;&lt;a class="pagination_link disabled"&gt;&amp;laquo;&lt;/a&gt;&lt;/li&gt;
+  &lt;li class="pagination_item"&gt;&lt;a class="pagination_link active"&gt;1&lt;/a&gt;&lt;/li&gt;
+  &lt;li class="pagination_item"&gt;&lt;span class="pagination_ellipsis"&gt;&amp;hellip;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section class="guide_section">
+        <h2 class="guide_title_h2">3. Variants & States</h2>
+        
+        <div class="guide_sub_section mt-4">
+          <h3 class="guide_title_h3">3.1. Basic (기본 형태)</h3>
+          <div class="guide_preview">
+            <ul class="pagination">
+              <li class="page_item"><button class="page_link" type="button">1</button></li>
+              <li class="page_item active"><button class="page_link" type="button">2</button></li>
+              <li class="page_item"><button class="page_link" type="button">3</button></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="guide_sub_section mt-4">
+          <h3 class="guide_title_h3">3.2. States (Disabled)</h3>
+          <div class="guide_preview">
+            <ul class="pagination">
+              <li class="page_item disabled"><button class="page_link" type="button">Prev</button></li>
+              <li class="page_item active"><button class="page_link" type="button">1</button></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="guide_sub_section mt-4">
+          <h3 class="guide_title_h3">3.3. Sizes (sm, lg)</h3>
+          <div class="guide_preview flex-column align-items-start gap-4">
+            <ul class="pagination sm">
+              <li class="page_item active"><button class="page_link" type="button">1</button></li>
+              <li class="page_item"><button class="page_link" type="button">2</button></li>
+            </ul>
+            <ul class="pagination lg">
+              <li class="page_item active"><button class="page_link" type="button">1</button></li>
+              <li class="page_item"><button class="page_link" type="button">2</button></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/js/include.js"></script>
+</body>
+</html>

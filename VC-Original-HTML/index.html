@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vibe Design System - Publishing Dashboard</title>
+  <link rel="stylesheet" href="/assets/css/global.css">
+  <style>
+    /* Dashboard specific styles */
+    body { background-color: #f8fafc; margin: 0; font-family: inherit; }
+    .dashboard-container {
+      padding: 32px 48px;
+    }
+    .summary-area { display: flex; gap: 12px; margin-bottom: 20px; justify-content: flex-end; align-items: center; }
+    .summary-item { display: flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: 20px; font-size: 13px; font-weight: 700; box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
+    .summary-item.total { background: #f8fafc; border: 1px solid #e2e8f0; color: #475569; }
+    .summary-item.published { background: #ecfdf5; border: 1px solid #a7f3d0; color: #059669; }
+    .summary-item.review { background: #fff7ed; border: 1px solid #fed7aa; color: #ea580c; }
+    .summary-item.draft { background: #f3f4f6; border: 1px solid #e5e7eb; color: #6b7280; }
+    .summary-value { background: rgba(255,255,255,0.7); padding: 2px 8px; border-radius: 12px; font-size: 13px; font-weight: 800; }
+    .dashboard-table { width: 100%; border-collapse: collapse; background: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+    .dashboard-table th { background-color: #edf1fd; text-transform: uppercase; font-weight: 700; padding: 12px 16px; font-size: 12px; color: #334155; text-align: left; }
+    .dashboard-table td { padding: 12px 16px; font-size: 12px; border-bottom: 1px solid #f1f5f9; color: #475569; height: 36px; }
+    /* Toggle row styles */
+    .dashboard-table tr.group_row { background-color: #f8fafc; font-weight: 600; color: #0f172a; cursor: pointer; user-select: none; transition: background-color 0.2s; }
+    .dashboard-table tr.group_row .group-title-wrapper { display: flex; align-items: center; }
+    .dashboard-table tr.group_row:hover { background-color: #e2e8f0; }
+    .dashboard-table tr.group_row .toggle-icon { display: inline-flex; align-items: center; justify-content: center; width: 20px; height: 20px; margin-right: 8px; transition: transform 0.2s ease; transform-origin: center center; color: #64748b; }
+    .dashboard-table tr.group_row.collapsed .toggle-icon { transform: rotate(-90deg); }
+    .dashboard-table tr.item_row:hover { background-color: rgba(15, 23, 42, 0.025); }
+    .dashboard-table tr.item_row.hidden { display: none; }
+    .status-badge { display: inline-block; padding: 4px 8px; border-radius: 4px; font-weight: 600; font-size: 11px; }
+    .status-published { color: #059669; background-color: #ecfdf5; }
+    .status-review { color: #f57c00; background-color: #fff3e0; }
+    .status-draft { color: #9e9e9e; background-color: #f5f5f5; }
+    .link-url { color: #0294de; text-decoration: none; }
+    .link-url:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <!-- 공통 상단 헤더 -->
+  <div data-include="/layout/header.html"></div>
+  <main class="dashboard-container">
+    <div class="summary-area" id="summaryArea">
+      <!-- Summary injected by JS -->
+    </div>
+    <table class="dashboard-table">
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>Path (Menu)</th>
+          <th>Type</th>
+          <th>URL</th>
+          <th>Date</th>
+          <th>Status</th>
+          <th>Remarks</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody">
+        <!-- Rows injected by JS -->
+      </tbody>
+    </table>
+  </main>
+  <script>
+    const guideData = [
+      {
+        groupName: "Foundation & Guidelines",
+        items: [
+          { no: "F01", path: "Colors (색상)", type: "Page", url: "/guide/foundation/colors.html", date: "2026-08-03", status: "Draft", remarks: "진행중" },
+          { no: "F02", path: "Typography (타이포)", type: "Page", url: "/guide/foundation/typography.html", date: "2026-08-03", status: "Draft", remarks: "진행중" },
+          { no: "F03", path: "Elevator (그림자)", type: "Page", url: "/guide/foundation/elevator.html", date: "2026-08-03", status: "Draft", remarks: "진행중" },
+          { no: "F04", path: "Utilities (유틸리티)", type: "Page", url: "/guide/foundation/utilities.html", date: "2026-08-03", status: "Draft", remarks: "진행중" }
+        ]
+      },
+      {
+        groupName: "Components (Core 11)",
+        items: [
+          { no: "C01", path: "Input", type: "Page", url: "/guide/component/input.html", date: "-", status: "Draft", remarks: "예정" },
+          { no: "C02", path: "Button", type: "Page", url: "/guide/component/button.html", date: "-", status: "Draft", remarks: "예정" },
+          { no: "C03", path: "Select", type: "Page", url: "/guide/component/select.html", date: "-", status: "Draft", remarks: "예정" },
+          { no: "C04", path: "Checkbox", type: "Page", url: "/guide/component/checkbox.html", date: "-", status: "Draft", remarks: "예정" },
+          { no: "C05", path: "Radio", type: "Page", url: "/guide/component/radio.html", date: "-", status: "Draft", remarks: "예정" },
+          { no: "C06", path: "Table", type: "Page", url: "/guide/component/table.html", date: "-", status: "Draft", remarks: "예정" },
+          { no: "C07", path: "Card", type: "Page", url: "/guide/component/card.html", date: "-", status: "Draft", remarks: "예정" },
+          { no: "C08", path: "Tabs", type: "Page", url: "/guide/component/tabs.html", date: "-", status: "Draft", remarks: "예정" },
+          { no: "C09", path: "Pagination", type: "Page", url: "/guide/component/pagination.html", date: "-", status: "Draft", remarks: "예정" },
+          { no: "C10", path: "Dialog", type: "Popup", url: "/guide/component/dialog.html", date: "-", status: "Draft", remarks: "예정" },
+          { no: "C11", path: "Badge", type: "Page", url: "/guide/component/badge.html", date: "-", status: "Draft", remarks: "예정" },
+          { no: "C12", path: "Alert", type: "Page", url: "/guide/component/alert.html", date: "-", status: "Draft", remarks: "예정" }
+        ]
+      }
+    ];
+    const frontData = [
+      {
+        groupName: "참고용",
+        items: [
+          { no: "L01", path: "Layout (Template)", type: "Layout", url: "/front/layout/layout.html", date: "2026-08-03", status: "Published", remarks: "기본 레이아웃 구조" },
+          { no: "P01", path: "Prototype (실전용)", type: "Page", url: "/front/layout/prototype.html", date: "2026-08-03", status: "Published", remarks: "include.js 공통 템플릿" }
+        ]
+      },
+      {
+        groupName: "공통",
+        items: [
+          { no: "C01", path: "404 Error", type: "Page", url: "/front/common/404.html", date: "2026-08-03", status: "Published", remarks: "페이지 없음" },
+          { no: "C02", path: "500 Error", type: "Page", url: "/front/common/500.html", date: "2026-08-03", status: "Published", remarks: "서버 오류" }
+        ]
+      },
+      {
+        groupName: "Main",
+        items: [
+          { no: "M01", path: "Home", type: "Page", url: "/front/main/index.html", date: "-", status: "Draft", remarks: "기본 퍼블리싱 대기" }
+        ]
+      }
+    ];
+    let currentTab = 'guide';
+    function renderDashboard() {
+      const data = currentTab === 'guide' ? guideData : frontData;
+      const tbody = document.getElementById('tableBody');
+      const summaryArea = document.getElementById('summaryArea');
+      let total = 0, published = 0, review = 0, draft = 0;
+      let html = '';
+      const chevronSvg = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>`;
+      data.forEach((group, index) => {
+        html += `<tr class="group_row" data-group-index="${index}"><td colspan="7"><div class="group-title-wrapper"><span class="toggle-icon">${chevronSvg}</span>${group.groupName}</div></td></tr>`;
+        group.items.forEach(item => {
+          total++;
+          if (item.status === 'Published') published++;
+          else if (item.status === 'Review') review++;
+          else draft++;
+          const statusClass = item.status === 'Published' ? 'status-published' : item.status === 'Review' ? 'status-review' : 'status-draft';
+          html += `
+            <tr class="item_row" data-group-parent="${index}">
+              <td>${item.no}</td>
+              <td>${item.path}</td>
+              <td>${item.type}</td>
+              <td><a href="${item.url}" class="link-url" target="_blank">${item.url}</a></td>
+              <td>${item.date}</td>
+              <td><span class="status-badge ${statusClass}">${item.status}</span></td>
+              <td>${item.remarks}</td>
+            </tr>
+          `;
+        });
+      });
+      tbody.innerHTML = html;
+      summaryArea.innerHTML = `
+        <div class="summary-item total">
+          <span>Total</span>
+          <span class="summary-value">${total}</span>
+        </div>
+        <div class="summary-item published">
+          <span>Published</span>
+          <span class="summary-value">${published}</span>
+        </div>
+        <div class="summary-item review">
+          <span>Review</span>
+          <span class="summary-value">${review}</span>
+        </div>
+        <div class="summary-item draft">
+          <span>Draft</span>
+          <span class="summary-value">${draft}</span>
+        </div>
+      `;
+      bindToggleEvents();
+    }
+    function bindToggleEvents() {
+      const tbody = document.getElementById('tableBody');
+      tbody.removeEventListener('click', handleToggle);
+      tbody.addEventListener('click', handleToggle);
+    }
+    function handleToggle(e) {
+      const groupRow = e.target.closest('.group_row');
+      if (!groupRow) return;
+      groupRow.classList.toggle('collapsed');
+      const groupIndex = groupRow.getAttribute('data-group-index');
+      const itemRows = document.querySelectorAll(`.item_row[data-group-parent="${groupIndex}"]`);
+      const isCollapsed = groupRow.classList.contains('collapsed');
+      itemRows.forEach(row => {
+        if (isCollapsed) {
+          row.classList.add('hidden');
+        } else {
+          row.classList.remove('hidden');
+        }
+      });
+    }
+    document.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const view = urlParams.get('view');
+      if (view === 'front') {
+        currentTab = 'front';
+      } else {
+        currentTab = 'guide';
+      }
+      renderDashboard();
+    });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/js/include.js"></script>
+</body>
+</html>

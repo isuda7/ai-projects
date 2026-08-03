@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vibe Design System - Select Component</title>
+  <link rel="stylesheet" href="/assets/css/global.css">
+</head>
+<body>
+  <div data-include="/layout/header.html"></div>
+  <div class="guide-main-container">
+    <div data-include="/guide/layout/sidebar.html"></div>
+  
+  <main class="guide-content">
+    <div class="guide_wrapper">
+      
+      <header class="guide_header">
+        <h1 class="guide_title_h1">Select</h1>
+        <p class="guide_description">
+          사용자에게 여러 옵션 중 하나를 선택할 수 있도록 제공하는 드롭다운 형태의 폼 컴포넌트입니다.
+        </p>
+      </header>
+
+      <section class="guide_section">
+        <h2 class="guide_title_h2">1. Overview & Specs</h2>
+        <p class="guide_description">네이티브 <code>&lt;select&gt;</code> 태그에 브라우저 기본 스타일을 초기화하고 디자인 시스템 스타일을 입힙니다.</p>
+        
+        <div class="spec_table_wrapper">
+          <table class="spec_table">
+            <thead>
+              <tr>
+                <th>Class</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><code>.select_field</code></td><td>Select 공통 뼈대 (화살표 커스텀 포함, 필수 적용)</td></tr>
+              <tr><td><code>.sm</code>, <code>.md</code>, <code>.lg</code></td><td>물리적인 폼 높이 지정 (기본은 md)</td></tr>
+              <tr><td><code>.is_error</code></td><td>유효성 검사 실패 시 에러 상태 (적색 테두리)</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="guide_section">
+        <h2 class="guide_title_h2">2. Basic Usage</h2>
+        <div class="guide_sub_section">
+          <h3 class="guide_title_h3">2.1. Primary State</h3>
+          <p class="guide_description mb-3">기본 셀렉트 박스입니다.</p>
+          <div class="guide_preview">
+            <select class="select_field md" style="max-width: 300px;">
+              <option value="" disabled selected>옵션을 선택하세요</option>
+              <option value="1">옵션 1</option>
+              <option value="2">옵션 2</option>
+              <option value="3">옵션 3</option>
+            </select>
+          </div>
+          <div class="code_block">
+<pre><code>&lt;select class="select_field md"&gt;
+  &lt;option value="" disabled selected&gt;옵션을 선택하세요&lt;/option&gt;
+  &lt;option value="1"&gt;옵션 1&lt;/option&gt;
+  &lt;option value="2"&gt;옵션 2&lt;/option&gt;
+&lt;/select&gt;</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section class="guide_section">
+        <h2 class="guide_title_h2">3. Variants & States</h2>
+        
+        <div class="guide_sub_section mt-4">
+          <h3 class="guide_title_h3">3.1. Sizes (sm, md, lg)</h3>
+          <div class="guide_preview flex-column gap-3 align-items-start">
+            <select class="select_field sm"><option>Small Select</option></select>
+            <select class="select_field md"><option>Medium Select (Default)</option></select>
+            <select class="select_field lg"><option>Large Select</option></select>
+          </div>
+        </div>
+
+        <div class="guide_sub_section mt-4">
+          <h3 class="guide_title_h3">3.2. States (Disabled)</h3>
+          <div class="guide_preview flex-column gap-3 align-items-start">
+            <select class="select_field md" disabled><option>Disabled Select</option></select>
+          </div>
+        </div>
+
+        <div class="guide_sub_section mt-4">
+          <h3 class="guide_title_h3">3.3. Validation (Error 상태)</h3>
+          <div class="guide_preview flex-column gap-3 align-items-start">
+            <div class="input_wrapper">
+              <select class="select_field is_error md"><option>Choose...</option></select>
+              <span class="input_helper_text is_error">옵션을 선택해주세요.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/js/include.js"></script>
+</body>
+</html>

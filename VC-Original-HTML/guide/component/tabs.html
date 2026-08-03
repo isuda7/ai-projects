@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vibe Design System - Tabs Component</title>
+  <link rel="stylesheet" href="/assets/css/global.css">
+</head>
+<body>
+  <div data-include="/layout/header.html"></div>
+  <div class="guide-main-container">
+    <div data-include="/guide/layout/sidebar.html"></div>
+  
+  <main class="guide-content">
+    <div class="guide_wrapper">
+      
+      <header class="guide_header">
+        <h1 class="guide_title_h1">Tabs</h1>
+        <p class="guide_description">
+          동일한 맥락 안에서 여러 뷰(View)를 전환할 때 사용하는 네비게이션 컴포넌트입니다.
+        </p>
+      </header>
+
+      <section class="guide_section">
+        <h2 class="guide_title_h2">1. Overview & Specs</h2>
+        <p class="guide_description">JS 모듈과 연동하기 위해 특정 데이터 속성(data-bs-toggle)을 사용합니다.</p>
+        
+        <div class="spec_table_wrapper">
+          <table class="spec_table">
+            <thead>
+              <tr>
+                <th>Class / Attribute</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><code>.tabs_wrapper</code></td><td>탭 영역 전체를 감싸는 래퍼</td></tr>
+              <tr><td><code>.tabs_list</code></td><td>탭 버튼들이 나열되는 메뉴 영역 (ul)</td></tr>
+              <tr><td><code>.tab_btn</code></td><td>개별 탭 버튼 (활성화 시 <code>.active</code> 추가)</td></tr>
+              <tr><td><code>.tab-content</code>, <code>.tab-pane</code></td><td>부트스트랩 JS 연동을 위한 본문 컨텐츠 클래스</td></tr>
+              <tr><td><code>data-bs-toggle="tab"</code></td><td>JS 이벤트 바인딩을 위한 필수 속성</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="guide_section">
+        <h2 class="guide_title_h2">2. Basic Usage</h2>
+        <div class="guide_sub_section">
+          <h3 class="guide_title_h3">2.1. Primary State</h3>
+          <p class="guide_description mb-3">가장 널리 쓰이는 밑줄(Underline) 형태의 탭입니다. 클릭하면 내용이 즉시 전환됩니다.</p>
+          <div class="guide_preview">
+            
+            <div class="tabs_wrapper">
+              <!-- 탭 메뉴 -->
+              <ul class="tabs_list" role="tablist">
+                <li class="tab_item" role="presentation">
+                  <button class="tab_btn active" id="tab1-tab" data-bs-toggle="tab" data-bs-target="#tab1" type="button" role="tab" aria-selected="true">계정 정보</button>
+                </li>
+                <li class="tab_item" role="presentation">
+                  <button class="tab_btn" id="tab2-tab" data-bs-toggle="tab" data-bs-target="#tab2" type="button" role="tab" aria-selected="false">보안 설정</button>
+                </li>
+                <li class="tab_item" role="presentation">
+                  <button class="tab_btn" id="tab3-tab" data-bs-toggle="tab" data-bs-target="#tab3" type="button" role="tab" aria-selected="false">알림(Notification)</button>
+                </li>
+              </ul>
+              
+              <!-- 탭 본문 -->
+              <div class="tab-content">
+                <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
+                  <p style="margin:0; font-size: 14px; color: #4b5563;">계정 정보 탭의 내용이 노출됩니다.</p>
+                </div>
+                <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">
+                  <p style="margin:0; font-size: 14px; color: #4b5563;">보안 설정 탭의 내용이 노출됩니다. (비밀번호 변경 등)</p>
+                </div>
+                <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="tab3-tab">
+                  <p style="margin:0; font-size: 14px; color: #4b5563;">알림 탭의 내용이 노출됩니다.</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="code_block">
+<pre><code>&lt;!-- 구조 축약 --&gt;
+&lt;ul class="tabs_list"&gt;
+  &lt;li class="tab_item"&gt;
+    &lt;button class="tab_btn active" data-bs-toggle="tab" data-bs-target="#tab1"&gt;계정 정보&lt;/button&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="tab-content"&gt;
+  &lt;div class="tab-pane fade show active" id="tab1"&gt;...&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section class="guide_section">
+        <h2 class="guide_title_h2">3. Variants & States</h2>
+        
+        <div class="guide_sub_section mt-4">
+          <h3 class="guide_title_h3">3.1. Basic (Underline 스타일)</h3>
+          <div class="guide_preview w-100">
+            <ul class="tabs_list">
+              <li class="tab_item"><button class="tab_btn active" type="button">Tab 1</button></li>
+              <li class="tab_item"><button class="tab_btn" type="button">Tab 2</button></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="guide_sub_section mt-4">
+          <h3 class="guide_title_h3">3.2. Pills (버튼형 스타일)</h3>
+          <div class="guide_preview w-100">
+            <ul class="tabs_list pills">
+              <li class="tab_item"><button class="tab_btn active" type="button">Pill 1</button></li>
+              <li class="tab_item"><button class="tab_btn" type="button">Pill 2</button></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="guide_sub_section mt-4">
+          <h3 class="guide_title_h3">3.3. Fill / Justified (너비 꽉 채움)</h3>
+          <div class="guide_preview w-100">
+            <ul class="tabs_list fill">
+              <li class="tab_item"><button class="tab_btn active" type="button">Fill 1</button></li>
+              <li class="tab_item"><button class="tab_btn" type="button">Fill 2</button></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/js/include.js"></script>
+</body>
+</html>

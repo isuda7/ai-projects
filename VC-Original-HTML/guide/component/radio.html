@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vibe Design System - Radio Component</title>
+  <link rel="stylesheet" href="/assets/css/global.css">
+</head>
+<body>
+  <div data-include="/layout/header.html"></div>
+  <div class="guide-main-container">
+    <div data-include="/guide/layout/sidebar.html"></div>
+  
+  <main class="guide-content">
+    <div class="guide_wrapper">
+      
+      <header class="guide_header">
+        <h1 class="guide_title_h1">Radio</h1>
+        <p class="guide_description">
+          사용자가 여러 개의 옵션 중 단 하나만을 선택해야 할 때 사용하는 폼 컴포넌트입니다.
+        </p>
+      </header>
+
+      <section class="guide_section">
+        <h2 class="guide_title_h2">1. Overview & Specs</h2>
+        <p class="guide_description">라디오 컴포넌트의 구성 요소와 클래스 사용법입니다.</p>
+        
+        <div class="spec_table_wrapper">
+          <table class="spec_table">
+            <thead>
+              <tr>
+                <th>Class</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><code>.radio_wrapper</code></td><td>라디오버튼과 라벨을 묶어주는 래퍼 (클릭 영역 확장 및 Flex 정렬)</td></tr>
+              <tr><td><code>.radio_input</code></td><td>실제 <code>&lt;input type="radio"&gt;</code> 요소 (기본 스타일 제거 후 커스텀 적용)</td></tr>
+              <tr><td><code>.radio_label</code></td><td>라디오버튼 우측에 표시되는 텍스트 라벨</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="guide_section">
+        <h2 class="guide_title_h2">2. Basic Usage</h2>
+        <div class="guide_sub_section">
+          <h3 class="guide_title_h3">2.1. Primary State</h3>
+          <p class="guide_description mb-3">라벨과 함께 사용되는 기본 라디오버튼 그룹입니다.</p>
+          <div class="guide_preview gap-4">
+            <label class="radio_wrapper">
+              <input type="radio" name="example" class="radio_input" checked>
+              <span class="radio_label">옵션 A</span>
+            </label>
+            <label class="radio_wrapper">
+              <input type="radio" name="example" class="radio_input">
+              <span class="radio_label">옵션 B</span>
+            </label>
+          </div>
+          <div class="code_block">
+<pre><code>&lt;label class="radio_wrapper"&gt;
+  &lt;input type="radio" name="group" class="radio_input" checked&gt;
+  &lt;span class="radio_label"&gt;옵션 A&lt;/span&gt;
+&lt;/label&gt;
+&lt;label class="radio_wrapper"&gt;
+  &lt;input type="radio" name="group" class="radio_input"&gt;
+  &lt;span class="radio_label"&gt;옵션 B&lt;/span&gt;
+&lt;/label&gt;</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section class="guide_section">
+        <h2 class="guide_title_h2">3. Variants & States</h2>
+        
+        <div class="guide_sub_section mt-4">
+          <h3 class="guide_title_h3">3.1. States (Checked, Disabled)</h3>
+          <div class="guide_preview gap-4">
+            <label class="radio_wrapper">
+              <input type="radio" name="demo1" class="radio_input" checked>
+              <span class="radio_label">Checked</span>
+            </label>
+            <label class="radio_wrapper">
+              <input type="radio" name="demo2" class="radio_input" disabled>
+              <span class="radio_label">Disabled</span>
+            </label>
+            <label class="radio_wrapper">
+              <input type="radio" name="demo2" class="radio_input" checked disabled>
+              <span class="radio_label">Checked Disabled</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="guide_sub_section mt-4">
+          <h3 class="guide_title_h3">3.2. With Description (도움말 포함)</h3>
+          <div class="guide_preview flex-column align-items-start">
+            <label class="radio_wrapper has_description">
+              <input type="radio" name="demo3" class="radio_input">
+              <div class="radio_text">
+                <span class="radio_label">프리미엄 요금제</span>
+                <span class="radio_description">월 $9.99에 모든 기능을 사용하세요.</span>
+              </div>
+            </label>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/js/include.js"></script>
+</body>
+</html>
