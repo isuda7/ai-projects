@@ -73,14 +73,8 @@ function updateGlobalGnb() {
       } else if (target === 'guide' && view !== 'front') {
         link.classList.add('active');
       }
-    } else {
-      // Subpage view
-      if (target === 'guide' && currentPath.includes('/guide/')) {
-        link.classList.add('active');
-      } else if (target === 'front' && currentPath.includes('/front/')) {
-        link.classList.add('active');
-      }
     }
+    // Subpage view에서는 헤더의 링크가 대시보드를 가리키므로 활성화하지 않음
   });
 }
 

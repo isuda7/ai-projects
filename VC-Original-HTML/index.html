@@ -19,8 +19,8 @@
     .summary-item.draft { background: #f3f4f6; border: 1px solid #e5e7eb; color: #6b7280; }
     .summary-value { background: rgba(255,255,255,0.7); padding: 2px 8px; border-radius: 12px; font-size: 13px; font-weight: 800; }
     .dashboard-table { width: 100%; border-collapse: collapse; background: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
-    .dashboard-table th { background-color: #edf1fd; text-transform: uppercase; font-weight: 700; padding: 12px 16px; font-size: 12px; color: #334155; text-align: left; }
-    .dashboard-table td { padding: 12px 16px; font-size: 12px; border-bottom: 1px solid #f1f5f9; color: #475569; height: 36px; }
+    .dashboard-table th { background-color: #edf1fd; text-transform: uppercase; font-weight: 700; padding: 8px 16px; font-size: 12px; color: #334155; text-align: left; }
+    .dashboard-table td { padding: 6px 16px; font-size: 12px; border-bottom: 1px solid #f1f5f9; color: #475569; }
     /* Toggle row styles */
     .dashboard-table tr.group_row { background-color: #f8fafc; font-weight: 600; color: #0f172a; cursor: pointer; user-select: none; transition: background-color 0.2s; }
     .dashboard-table tr.group_row .group-title-wrapper { display: flex; align-items: center; }
@@ -62,31 +62,51 @@
     </table>
   </main>
   <script>
-    const guideData = [
+        const guideData = [
       {
-        groupName: "Foundation & Guidelines",
+        groupName: "Foundation",
         items: [
-          { no: "F01", path: "Colors (색상)", type: "Page", url: "/guide/foundation/colors.html", date: "2026-08-03", status: "Draft", remarks: "진행중" },
-          { no: "F02", path: "Typography (타이포)", type: "Page", url: "/guide/foundation/typography.html", date: "2026-08-03", status: "Draft", remarks: "진행중" },
-          { no: "F03", path: "Elevator (그림자)", type: "Page", url: "/guide/foundation/elevator.html", date: "2026-08-03", status: "Draft", remarks: "진행중" },
-          { no: "F04", path: "Utilities (유틸리티)", type: "Page", url: "/guide/foundation/utilities.html", date: "2026-08-03", status: "Draft", remarks: "진행중" }
+          { no: "", path: "Colors", type: "Page", url: "/guide/foundation/colors.html", date: "2026-08-03", status: "Draft", remarks: "진행중" },
+          { no: "", path: "Typography", type: "Page", url: "/guide/foundation/typography.html", date: "2026-08-03", status: "Draft", remarks: "진행중" },
+          { no: "", path: "Elevator", type: "Page", url: "/guide/foundation/elevator.html", date: "2026-08-03", status: "Draft", remarks: "진행중" },
+          { no: "", path: "Utilities", type: "Page", url: "/guide/foundation/utilities.html", date: "2026-08-03", status: "Draft", remarks: "진행중" }
         ]
       },
       {
-        groupName: "Components (Core 11)",
+        groupName: "Elements",
         items: [
-          { no: "C01", path: "Input", type: "Page", url: "/guide/component/input.html", date: "-", status: "Draft", remarks: "예정" },
-          { no: "C02", path: "Button", type: "Page", url: "/guide/component/button.html", date: "-", status: "Draft", remarks: "예정" },
-          { no: "C03", path: "Select", type: "Page", url: "/guide/component/select.html", date: "-", status: "Draft", remarks: "예정" },
-          { no: "C04", path: "Checkbox", type: "Page", url: "/guide/component/checkbox.html", date: "-", status: "Draft", remarks: "예정" },
-          { no: "C05", path: "Radio", type: "Page", url: "/guide/component/radio.html", date: "-", status: "Draft", remarks: "예정" },
-          { no: "C06", path: "Table", type: "Page", url: "/guide/component/table.html", date: "-", status: "Draft", remarks: "예정" },
-          { no: "C07", path: "Card", type: "Page", url: "/guide/component/card.html", date: "-", status: "Draft", remarks: "예정" },
-          { no: "C08", path: "Tabs", type: "Page", url: "/guide/component/tabs.html", date: "-", status: "Draft", remarks: "예정" },
-          { no: "C09", path: "Pagination", type: "Page", url: "/guide/component/pagination.html", date: "-", status: "Draft", remarks: "예정" },
-          { no: "C10", path: "Dialog", type: "Popup", url: "/guide/component/dialog.html", date: "-", status: "Draft", remarks: "예정" },
-          { no: "C11", path: "Badge", type: "Page", url: "/guide/component/badge.html", date: "-", status: "Draft", remarks: "예정" },
-          { no: "C12", path: "Alert", type: "Page", url: "/guide/component/alert.html", date: "-", status: "Draft", remarks: "예정" }
+          { no: "", path: "Badge", type: "Page", url: "/guide/component/badge.html", date: "-", status: "Draft", remarks: "예정" },
+          { no: "", path: "Button", type: "Page", url: "/guide/component/button.html", date: "-", status: "Draft", remarks: "예정" }
+        ]
+      },
+      {
+        groupName: "Forms",
+        items: [
+          { no: "", path: "Checkbox", type: "Page", url: "/guide/component/checkbox.html", date: "-", status: "Draft", remarks: "예정" },
+          { no: "", path: "Input", type: "Page", url: "/guide/component/input.html", date: "-", status: "Draft", remarks: "예정" },
+          { no: "", path: "Radio", type: "Page", url: "/guide/component/radio.html", date: "-", status: "Draft", remarks: "예정" },
+          { no: "", path: "Select", type: "Page", url: "/guide/component/select.html", date: "-", status: "Draft", remarks: "예정" }
+        ]
+      },
+      {
+        groupName: "Navigation",
+        items: [
+          { no: "", path: "Pagination", type: "Page", url: "/guide/component/pagination.html", date: "-", status: "Draft", remarks: "예정" },
+          { no: "", path: "Tabs", type: "Page", url: "/guide/component/tabs.html", date: "-", status: "Draft", remarks: "예정" }
+        ]
+      },
+      {
+        groupName: "Data Display",
+        items: [
+          { no: "", path: "Card", type: "Page", url: "/guide/component/card.html", date: "-", status: "Draft", remarks: "예정" },
+          { no: "", path: "Table", type: "Page", url: "/guide/component/table.html", date: "-", status: "Draft", remarks: "예정" }
+        ]
+      },
+      {
+        groupName: "Feedback & Overlays",
+        items: [
+          { no: "", path: "Alert", type: "Page", url: "/guide/component/alert.html", date: "-", status: "Draft", remarks: "예정" },
+          { no: "", path: "Dialog", type: "Page", url: "/guide/component/dialog.html", date: "-", status: "Draft", remarks: "예정" }
         ]
       }
     ];
@@ -130,7 +150,7 @@
           const statusClass = item.status === 'Published' ? 'status-published' : item.status === 'Review' ? 'status-review' : 'status-draft';
           html += `
             <tr class="item_row" data-group-parent="${index}">
-              <td>${item.no}</td>
+              <td>${total}</td>
               <td>${item.path}</td>
               <td>${item.type}</td>
               <td><a href="${item.url}" class="link-url" target="_blank">${item.url}</a></td>
