@@ -15,6 +15,6 @@
 2. Basic Usage
   - 2.1. Default State
 3. Variants & States
-  - 3.1. Colors (Primary, Primary_Soft, Success, Success_Soft, Warning, Danger 등)
+  - 3.1. Colors (Primary, Success, Warning, Danger)
   - 3.2. Variants (Solid, Outline)
   - 3.3. Dismissible (닫기 버튼 포함형)

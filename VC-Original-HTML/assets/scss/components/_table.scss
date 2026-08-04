@@ -45,4 +45,20 @@
   &.is_striped tbody tr:nth-child(even) {
     background-color: var(--color-gray-50, #f9fafb);
   }
+
+  /* Bordered State */
+  &.is_bordered {
+    border: 1px solid var(--color-gray-200, #e5e7eb);
+    th, td {
+      border: 1px solid var(--color-gray-200, #e5e7eb);
+    }
+  }
+
+  /* Small Size */
+  &.is_small {
+    font-size: 13px;
+    th, td {
+      padding: 8px 12px;
+    }
+  }
 }

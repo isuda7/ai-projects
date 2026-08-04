@@ -15,4 +15,4 @@
 2. Basic Usage
   - 2.1. Default State
 3. Variants & States
-  - 3.1. With Button (Form)
+  - 3.1. With Character Counter (Outside)

@@ -13,7 +13,11 @@
 
 1. Overview & Specs
 2. Basic Usage
-  - 2.1. Default State
+  - 2.1. Primary State
 3. Variants & States
   - 3.1. States (Checked, Disabled)
-  - 3.2. With Description (도움말 텍스트 포함형)
+  - 3.2. With Description (도움말 포함)
+4. Extended Types (Block, Image, Custom)
+  - 4. Block Type
+  - 5. Image Type
+  - 6. Custom Type

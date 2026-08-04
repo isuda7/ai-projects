@@ -9,12 +9,10 @@
 @use 'utilities';
 @use 'bs-functional';
 
-// 2. Components
-// (Components are imported at the end of the file)
-// 3. Layout (가이드 템플릿 등)
-@use 'layout/header';
-@use 'layout/front';
-@use 'guide/template';
+// 2. Layout (가이드 템플릿 등)
+// Layout imports have been moved to guide.scss and front.scss
+
+// 3. Components
 @use 'components/input';
 @use 'components/button';
 @use 'components/select';
@@ -27,3 +25,14 @@
 @use 'components/tabs';
 @use 'components/pagination';
 @use 'components/dialog';
+@use 'components/accordion';
+@use 'components/textarea';
+@use 'components/switch';
+@use 'components/label';
+@use 'components/spinner';
+@use 'components/breadcrumb';
+@use 'components/separator';
+@use 'components/tooltip';
+@use 'components/popover';
+@use 'components/dropdown';
+@use 'components/bullet_list';

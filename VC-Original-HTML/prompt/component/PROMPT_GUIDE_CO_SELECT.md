@@ -13,9 +13,7 @@
 
 1. Overview & Specs
 2. Basic Usage
-  - 2.1. Default State
-
-
+  - 2.1. Primary State
 3. Variants & States
   - 3.1. Sizes (sm, md, lg)
   - 3.2. States (Disabled)

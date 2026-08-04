@@ -1,0 +1,5 @@
+/* front.scss: 프론트엔드 전용 SCSS 엔트리 파일 */
+@use 'global';
+
+// 프론트엔드 전용 레이아웃
+@use 'layout/front';

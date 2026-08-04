@@ -5,12 +5,8 @@
 ## 🗂️ 1. 메뉴 구성 관점 (Menu Configuration Perspective)
 새로운 가이드를 시스템 전체의 숲(메뉴 구조) 안에서 어디에 위치시킬 것인가에 대한 기준입니다.
 
-*   새로운 컴포넌트를 만들면 반드시 `guide/layout.html` (또는 가이드용 공통 사이드바) 파일 내 네비게이션 메뉴를 찾아, 아래 **5대 상위 카테고리 중 가장 알맞은 1곳**에 하위 메뉴로 등록해야 합니다.
-    *   **Elements**: 기초 빌딩 블록 (Button, Badge, Avatar, Skeleton 등)
-    *   **Forms**: 사용자 입력 및 폼 구성 요소 (Input, Checkbox, Select, Field 등)
-    *   **Navigation**: 이동, 탐색 및 메뉴 요소 (Breadcrumb, Pagination, Menu 등)
-    *   **Data Display**: 데이터 및 콘텐츠 시각화 (Table, Card, Accordion 등)
-    *   **Feedback & Overlays**: 팝업, 알림, 상태 피드백 (Dialog, Alert, Tooltip, Spinner 등)
+*   새로운 컴포넌트를 만들면 반드시 `guide/layout/sidebar.html` (또는 가이드용 공통 사이드바) 파일 내 네비게이션 메뉴를 찾아, **`Components` 카테고리(단일 통합 분류)** 아래에 하위 메뉴로 등록해야 합니다.
+*   **폼(Form) 관련 네이밍 규칙**: Input, Select, Checkbox, Radio, Textarea, Switch 등 폼과 관련된 컴포넌트는 개별 파일로 생성합니다. 이때 모든 컴포넌트가 `Components` 단일 카테고리로 통합된 상태라면 메뉴명(Label)에 `Form - Input`과 같이 `Form - ` 접두사를 붙여 오름차순 정렬 시 자연스럽게 그룹핑되게 하십시오. (단, 사용자의 지시로 카테고리를 `Forms` 등 세부 분류로 나눌 경우에는 이 접두사를 빼고 본래 이름만 적습니다.)
 
 ## 🎨 2. 가이드 템플릿 디자인 관점 (Template Design Perspective)
 컴포넌트를 가이드 문서에서 시각적으로 어떻게 보여주고 렌더링할 것인가에 대한 디자인 철학입니다.

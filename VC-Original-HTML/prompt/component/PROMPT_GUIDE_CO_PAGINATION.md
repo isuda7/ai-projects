@@ -13,10 +13,8 @@
 
 1. Overview & Specs
 2. Basic Usage
-  - 2.1. Default State
-
-
+  - 2.1. Primary State
 3. Variants & States
   - 3.1. Basic (기본 형태)
-  - 3.2. States (Disabled 상태)
+  - 3.2. States (Disabled)
   - 3.3. Sizes (sm, lg)

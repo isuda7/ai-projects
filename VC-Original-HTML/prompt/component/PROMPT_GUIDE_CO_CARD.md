@@ -13,8 +13,8 @@
 
 1. Overview & Specs
 2. Basic Usage
-  - 2.1. Default State
+  - 2.1. Primary State
 3. Variants & States
-  - 3.1. Basic (Header, Body, Footer 구조)
-  - 3.2. With Image (상단 이미지 포함형)
-  - 3.3. Interactive (Hover 시 그림자/보더 강조)
+  - 3.1. Basic (Header, Body, Footer)
+  - 3.2. With Image
+  - 3.3. Interactive (Hover 효과)

@@ -19,7 +19,7 @@
 ## 🔄 3. 동기화(Sync) 통제 (Synchronization Rules)
 하나를 추가/수정했을 때 반드시 연결 고리를 잊지 않고 업데이트해야 합니다.
 1. **대시보드 업데이트**: 신규 페이지(가이드 또는 프론트 화면)를 생성했다면, 즉시 루트의 `index.html`을 열고 자바스크립트 데이터 배열(`guideData` 또는 `frontData`)에 새 항목(URL, 날짜, 상태)을 추가하십시오.
-2. **사이드바 메뉴 업데이트**: 새로운 컴포넌트(`guide/component/new.html`)를 만들었다면, 즉시 `guide/layout/sidebar.html` 파일에 접근하여 5대 카테고리(Elements, Forms, Navigation, Data Display, Feedback) 중 가장 알맞은 곳에 메뉴 링크(`<a href="...">`)를 꽂아 넣으십시오.
+2. **사이드바 메뉴 업데이트**: 새로운 컴포넌트(`guide/component/new.html`)를 만들었다면, 즉시 `guide/layout/sidebar.html` 파일에 접근하여 **`Components` 카테고리** 아래에 메뉴 링크(`<a href="...">`)를 꽂아 넣으십시오.
 3. **글로벌 SCSS 추가**: 새로운 컴포넌트 스타일(`_new.scss`)을 만들었다면, 즉시 `assets/scss/global.scss` 파일에 `@use 'components/new';` 구문을 추가하십시오.
 4. **가이드 화면 반영**: `_colors.scss`에 새로운 컬러를 추가하거나 `_button.scss`에 새로운 상태를 추가했다면, 반드시 관련된 가이드 HTML 파일(`colors.html`, `button.html` 등)의 시연 영역(Preview) 코드를 함께 렌더링(업데이트)하여 변경 사항을 증명하십시오.
 

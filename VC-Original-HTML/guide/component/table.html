@@ -4,14 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vibe Design System - Table Component</title>
-  <link rel="stylesheet" href="/assets/css/global.css">
+  <link rel="stylesheet" href="/assets/css/guide.css">
 </head>
 <body>
-  <div data-include="/layout/header.html"></div>
-  <div class="guide-main-container">
+  <div data-include="/guide/layout/header.html"></div>
+  <div class="guide_main_container">
     <div data-include="/guide/layout/sidebar.html"></div>
   
-  <main class="guide-content">
+  <main class="guide_content">
     <div class="guide_wrapper">
       
       <header class="guide_header">
@@ -89,53 +89,63 @@
       <section class="guide_section">
         <h2 class="guide_title_h2">3. Variants & States</h2>
         
-        <div class="guide_sub_section mt-4">
+        <div class="guide_sub_section">
           <h3 class="guide_title_h3">3.1. Basic (기본형)</h3>
-          <div class="guide_preview">
-            <table class="table">
+          <div class="guide_preview flex-column align-items-stretch">
+            <div class="table_wrapper">
+              <table class="data_table">
               <thead><tr><th>No</th><th>Title</th></tr></thead>
               <tbody><tr><td>1</td><td>Row 1</td></tr></tbody>
             </table>
+            </div>
           </div>
         </div>
 
         <div class="guide_sub_section mt-4">
           <h3 class="guide_title_h3">3.2. Striped (지브라 패턴)</h3>
-          <div class="guide_preview">
-            <table class="table striped">
+          <div class="guide_preview flex-column align-items-stretch">
+            <div class="table_wrapper">
+              <table class="data_table is_striped">
               <thead><tr><th>No</th><th>Title</th></tr></thead>
               <tbody><tr><td>1</td><td>Row 1</td></tr><tr><td>2</td><td>Row 2</td></tr></tbody>
             </table>
+            </div>
           </div>
         </div>
 
         <div class="guide_sub_section mt-4">
           <h3 class="guide_title_h3">3.3. Hoverable (행 오버 효과)</h3>
-          <div class="guide_preview">
-            <table class="table hover">
+          <div class="guide_preview flex-column align-items-stretch">
+            <div class="table_wrapper">
+              <table class="data_table is_hoverable">
               <thead><tr><th>No</th><th>Title</th></tr></thead>
               <tbody><tr><td>1</td><td>Hover me</td></tr><tr><td>2</td><td>Hover me too</td></tr></tbody>
             </table>
+            </div>
           </div>
         </div>
 
         <div class="guide_sub_section mt-4">
           <h3 class="guide_title_h3">3.4. Bordered (전체 테두리)</h3>
-          <div class="guide_preview">
-            <table class="table bordered">
+          <div class="guide_preview flex-column align-items-stretch">
+            <div class="table_wrapper">
+              <table class="data_table is_bordered">
               <thead><tr><th>No</th><th>Title</th></tr></thead>
               <tbody><tr><td>1</td><td>Row 1</td></tr></tbody>
             </table>
+            </div>
           </div>
         </div>
 
         <div class="guide_sub_section mt-4">
           <h3 class="guide_title_h3">3.5. Small (컴팩트 사이즈)</h3>
-          <div class="guide_preview">
-            <table class="table sm">
+          <div class="guide_preview flex-column align-items-stretch">
+            <div class="table_wrapper">
+              <table class="data_table is_small">
               <thead><tr><th>No</th><th>Title</th></tr></thead>
               <tbody><tr><td>1</td><td>Row 1</td></tr></tbody>
             </table>
+            </div>
           </div>
         </div>
       </section>

@@ -4,14 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vibe Design System - Checkbox Component</title>
-  <link rel="stylesheet" href="/assets/css/global.css">
+  <link rel="stylesheet" href="/assets/css/guide.css">
 </head>
 <body>
-  <div data-include="/layout/header.html"></div>
-  <div class="guide-main-container">
+  <div data-include="/guide/layout/header.html"></div>
+  <div class="guide_main_container">
     <div data-include="/guide/layout/sidebar.html"></div>
   
-  <main class="guide-content">
+  <main class="guide_content">
     <div class="guide_wrapper">
       
       <header class="guide_header">
@@ -65,7 +65,7 @@
       <section class="guide_section">
         <h2 class="guide_title_h2">3. Variants & States</h2>
         
-        <div class="guide_sub_section mt-4">
+        <div class="guide_sub_section">
           <h3 class="guide_title_h3">3.1. States (Checked, Disabled)</h3>
           <div class="guide_preview gap-4">
             <label class="checkbox_wrapper">
@@ -97,6 +97,101 @@
         </div>
       </section>
 
+          <section class="guide_section">
+        <h2 class="guide_title_h2">4. Extended Types (Block, Image, Custom)</h2>
+
+        <div class="guide_sub_section">
+          <h3 class="guide_title_h3">4. Block Type</h3>
+          <div class="guide_preview w-100">
+            <div class="d-flex flex-column gap-2" style="max-width: 300px;">
+              <label class="checkbox_wrapper block_type">
+                <input type="checkbox" class="checkbox_input" >
+                <span class="checkbox_label">옵션 A</span>
+              </label>
+              <label class="checkbox_wrapper block_type">
+                <input type="checkbox" class="checkbox_input" >
+                <span class="checkbox_label">옵션 B</span>
+              </label>
+            </div>
+          </div>
+          <div class="code_block">
+<pre><code>&lt;label class="checkbox_wrapper block_type"&gt;
+  &lt;input type="checkbox" class="checkbox_input"&gt;
+  &lt;span class="checkbox_label"&gt;옵션 A&lt;/span&gt;
+&lt;/label&gt;</code></pre>
+          </div>
+        </div>
+
+        <div class="guide_sub_section">
+          <h3 class="guide_title_h3">5. Image Type</h3>
+          <div class="guide_preview w-100">
+            <div class="d-flex gap-3" style="max-width: 400px;">
+              <label class="checkbox_wrapper image_type w-50">
+                <input type="checkbox" class="checkbox_input sr_only" >
+                <div class="image_box">
+                  <img src="https://placehold.co/150x150" alt="옵션 1">
+                </div>
+                <span class="checkbox_label fw-medium">스탠다드</span>
+              </label>
+              <label class="checkbox_wrapper image_type w-50">
+                <input type="checkbox" class="checkbox_input sr_only" >
+                <div class="image_box">
+                  <img src="https://placehold.co/150x150" alt="옵션 2">
+                </div>
+                <span class="checkbox_label fw-medium">프리미엄</span>
+              </label>
+            </div>
+          </div>
+          <div class="code_block">
+<pre><code>&lt;label class="checkbox_wrapper image_type"&gt;
+  &lt;input type="checkbox" class="checkbox_input sr_only"&gt;
+  &lt;div class="image_box"&gt;
+    &lt;img src="img.jpg" alt="옵션"&gt;
+  &lt;/div&gt;
+  &lt;span class="checkbox_label"&gt;스탠다드&lt;/span&gt;
+&lt;/label&gt;</code></pre>
+          </div>
+        </div>
+
+        <div class="guide_sub_section">
+          <h3 class="guide_title_h3">6. Custom Type</h3>
+          <div class="guide_preview w-100">
+            <div class="d-flex flex-column gap-3" style="max-width: 400px;">
+              <label class="checkbox_wrapper custom_type">
+                <input type="checkbox" class="checkbox_input sr_only" >
+                <div class="custom_content d-flex justify-content-between align-items-center">
+                  <div>
+                    <h4 class="m-0 fs-6 fw-bold">무료 요금제</h4>
+                    <p class="text-muted m-0 mt-1" style="font-size: 13px;">기본 기능을 제한 없이 사용</p>
+                  </div>
+                  <span class="badge primary">0원</span>
+                </div>
+              </label>
+              
+              <label class="checkbox_wrapper custom_type">
+                <input type="checkbox" class="checkbox_input sr_only" >
+                <div class="custom_content d-flex justify-content-between align-items-center">
+                  <div>
+                    <h4 class="m-0 fs-6 fw-bold">프로 요금제</h4>
+                    <p class="text-muted m-0 mt-1" style="font-size: 13px;">고급 기능과 우선 지원 혜택</p>
+                  </div>
+                  <span class="badge success">추천</span>
+                </div>
+              </label>
+            </div>
+          </div>
+          <div class="code_block">
+<pre><code>&lt;label class="checkbox_wrapper custom_type"&gt;
+  &lt;input type="checkbox" class="checkbox_input sr_only"&gt;
+  &lt;div class="custom_content"&gt;
+    &lt;h4&gt;무료 요금제&lt;/h4&gt;
+    &lt;p&gt;설명 텍스트...&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/label&gt;</code></pre>
+          </div>
+        </div>
+
+      </section>
     </div>
   </main>
   </div>

@@ -1,5 +1,5 @@
-.global-header {
-  background-color: var(--color-gray-900, #111827);
+.guide_topbar {
+  background-color: #0f172a; /* 짙은 남색 (Slate 900) */
   color: var(--color-white, #ffffff);
   height: 64px;
   flex-shrink: 0;
@@ -10,7 +10,7 @@
   box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
-.global-header-inner {
+.guide_topbar_inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -18,7 +18,7 @@
   padding: 0 24px;
 }
 
-.global-header .logo {
+.guide_topbar .logo {
   font-size: 20px;
   font-weight: 800;
   margin: 0;
@@ -30,7 +30,7 @@
   }
 }
 
-.global-gnb ul {
+.guide_gnb ul {
   display: flex;
   gap: 24px;
   list-style: none;
@@ -38,7 +38,7 @@
   padding: 0;
 }
 
-.global-gnb .gnb-link {
+.guide_gnb .gnb_link {
   color: var(--color-gray-300, #d1d5db);
   font-size: 15px;
   font-weight: 600;

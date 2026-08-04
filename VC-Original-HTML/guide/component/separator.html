@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vibe Design System - Separator</title>
+  <link rel="stylesheet" href="/assets/css/guide.css">
+</head>
+<body>
+  <div data-include="/guide/layout/header.html"></div>
+  <div class="guide_main_container">
+    <div data-include="/guide/layout/sidebar.html"></div>
+  
+  <main class="guide_content">
+    <div class="guide_wrapper">
+      <header class="guide_header">
+        <h1 class="guide_title_h1">Separator (구분선)</h1>
+        <p class="guide_description">콘텐츠를 시각적으로 분리하는 얇은 선 컴포넌트입니다.</p>
+      </header>
+
+      <section class="guide_section">
+        <h2 class="guide_title_h2">1. Overview & Specs</h2>
+        <table class="spec_table">
+          <thead><tr><th>Class</th><th>Description</th></tr></thead>
+          <tbody>
+            <tr><td><code>.separator</code></td><td>기본 가로(Horizontal) 1px 구분선</td></tr>
+            <tr><td><code>.vertical</code></td><td>세로(Vertical) 1px 구분선</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="guide_section">
+        <h2 class="guide_title_h2">2. Basic Usage</h2>
+        <div class="guide_sub_section">
+          <h3 class="guide_title_h3">2.1. Horizontal (가로선)</h3>
+          <div class="guide_preview">
+            <div style="width: 100%;">
+              <p>위에 있는 문단입니다.</p>
+              <hr class="separator my-3">
+              <p>구분선 아래에 있는 문단입니다.</p>
+            </div>
+          </div>
+          <div class="code_block">
+<pre><code>&lt;p&gt;Content Above&lt;/p&gt;
+&lt;hr class="separator my-3"&gt;
+&lt;p&gt;Content Below&lt;/p&gt;</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section class="guide_section">
+        <h2 class="guide_title_h2">3. Variants & States</h2>
+        <div class="guide_sub_section">
+          <h3 class="guide_title_h3">3.1. Vertical (세로선)</h3>
+          <div class="guide_preview">
+            <div class="d-flex align-items-center h-100 p-3 bg-white rounded border">
+              <span>Blog</span>
+              <div class="separator vertical mx-3"></div>
+              <span>Docs</span>
+              <div class="separator vertical mx-3"></div>
+              <span>Source</span>
+            </div>
+          </div>
+          <div class="code_block">
+<pre><code>&lt;div class="d-flex align-items-center"&gt;
+  &lt;span&gt;Blog&lt;/span&gt;
+  &lt;div class="separator vertical mx-3"&gt;&lt;/div&gt;
+  &lt;span&gt;Docs&lt;/span&gt;
+  &lt;div class="separator vertical mx-3"&gt;&lt;/div&gt;
+  &lt;span&gt;Source&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/js/include.js"></script>
+</body>
+</html>

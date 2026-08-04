@@ -12,10 +12,10 @@
 ### 가이드 페이지 개별 구성 스펙 (guide/component/dialog.html)
 
 1. Overview & Specs
-2. Basic Usage
-  - 2.1. Default State
-3. Variants & States
-  - 3.1. Basic (기본 모달)
-  - 3.2. Alert Dialog (Danger/경고성 액션 모달)
-  - 3.3. Form Dialog (내부에 Input이 포함된 모달)
-  - 3.4. Sizes (sm, lg)
+2. Variants & States
+  - 2.1. Basic (기본 팝업)
+  - 2.2. Alert Dialog (Danger 모달)
+  - 2.3. Form Dialog (입력 폼 포함)
+  - 2.4. Sizes (sm, lg)
+  - 2.5. Event / Custom (프로모션 팝업)
+  - 2.6. Positions (위치 조정)

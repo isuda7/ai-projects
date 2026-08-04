@@ -1,0 +1,81 @@
+/* _bullet_list.scss */
+
+/* 공통 리스트 아이템 여백 */
+.list_bullet, .list_number, .list_check, .list_unstyled {
+  margin-top: 0;
+  margin-bottom: 16px;
+
+  li {
+    margin-bottom: 8px;
+    color: var(--color-gray-700, #374151);
+    font-size: 14px;
+    line-height: 1.5;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  /* 중첩 리스트 여백 초기화 */
+  ul, ol {
+    margin-top: 8px;
+    margin-bottom: 0;
+  }
+}
+
+/* 1. 기본 점 불릿 (ul) */
+.list_bullet {
+  padding-left: 24px;
+  list-style-type: disc;
+
+  li {
+    list-style-type: inherit;
+  }
+
+  ul {
+    list-style-type: circle;
+    ul {
+      list-style-type: square;
+    }
+  }
+}
+
+/* 2. 숫자 불릿 (ol) */
+.list_number {
+  padding-left: 24px;
+  list-style-type: decimal;
+
+  li {
+    list-style-type: inherit;
+  }
+}
+
+/* 3. 커스텀 체크 불릿 */
+.list_check {
+  padding-left: 0;
+  list-style-type: none;
+
+  li {
+    position: relative;
+    padding-left: 28px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 4px;
+      top: 2px;
+      width: 16px;
+      height: 16px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%232563eb'%3E%3Cpath fill-rule='evenodd' d='M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z' clip-rule='evenodd'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+  }
+}
+
+/* 4. 스타일 없음 (초기화) */
+.list_unstyled {
+  padding-left: 0;
+  list-style-type: none;
+}

@@ -13,7 +13,7 @@
 
 1. Overview & Specs
 2. Basic Usage
-  - 2.1. Default State (primary_soft)
+  - 2.1. Soft Variants (Default)
 3. Variants & States
-  - 3.1. Variants (Solid, Outline)
-  - 3.2. Colors (Primary, Primary_Soft, Success, Success_Soft, Warning, Danger 등)
+  - 3.1. Variants (Soft, Solid, Outline)
+  - 3.2. Colors (Primary, Success, Warning, Danger)

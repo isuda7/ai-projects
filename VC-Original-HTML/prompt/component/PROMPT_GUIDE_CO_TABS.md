@@ -13,12 +13,8 @@
 
 1. Overview & Specs
 2. Basic Usage
-  - 2.1. Default State
+  - 2.1. Primary State
 3. Variants & States
   - 3.1. Basic (Underline 스타일)
   - 3.2. Pills (버튼형 스타일)
   - 3.3. Fill / Justified (너비 꽉 채움)
-**[추가 지침]**
-- 부트스트랩의 `.nav_tabs`를 절대 쓰지 말고, 우리의 규격인 `.tabs_list` 및 `.tab_btn` 클래스를 사용하세요.
-- 변형 탭은 `.tabs_list pills` 또는 `.tabs_list fill` 형태로 사용합니다.
-- 탭 안의 텍스트를 강제 중앙 정렬하지 마세요.

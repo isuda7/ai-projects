@@ -54,68 +54,79 @@ AI에게 프로젝트의 전반적인 규칙과 코어 룰을 주입하고 빈 �
   3. `foundation/PROMPT_GUIDE_FA_COLORS.md` 등 파운데이션 프롬프트
 - **AI 지시문**: *"위 규칙을 바탕으로 옵션 클래스 방식을 숙지하고, 가이드 화면의 기본 레이아웃(`layout.html` 등)과 `_colors.scss` 등 파운데이션 코드를 작성해."*
 
-### 🚀 Phase 3: 컴포넌트 일괄 구축 (Component Batches)
-48개의 컴포넌트를 우선순위와 연관성에 따라 7개의 Batch로 나누었습니다. 한 번에 하나의 Batch만 복사하여 AI에게 지시하십시오.
+### 🚀 Phase 3: 컴포넌트 배치 단위 구축 (Component Batches)
+* batch 1은 기본으로 생성하고, 나머지 배치는 필요에 따라 생성.
 
-**[Batch 1: Core Forms] (최우선 필수 폼 컴포넌트)**
+- **AI 지시문 (Batch 실행 공통 프롬프트)**: 
+  *"다음 전달하는 [Batch N] 목록의 컴포넌트 프롬프트 스펙들을 읽고, 아래 4가지 작업을 일괄 수행해 줘.
+  1. 컴포넌트별 SCSS 파일 생성 (`assets/scss/components/_xxx.scss`)
+  2. 컴포넌트별 가이드 HTML 파일 생성 (`guide/component/xxx.html`)
+  3. `global.scss`에 생성된 SCSS 파일 임포트 추가
+  4. `sidebar.html` 메뉴에 컴포넌트 링크 추가
+  5. 최상위 `index.html` (대시보드)의 `guideData` 배열에 컴포넌트 객체 추가
+  * (주의: 4번 항목 추가 시 폼(Form) 관련 컴포넌트들은 반드시 사이드바의 `<li><a href="#">Forms</a><ul>` 하위 메뉴 안으로 오름차순 배치할 것. 5번 항목 추가 시에는 폼 관련 컴포넌트 이름 앞에 'Form - ' 접두사를 붙여 오름차순으로 정렬할 것)*"
+
+**[Batch 1: 기본 디스플레이 컴포넌트 (Basic Display)]**
+- `PROMPT_GUIDE_CO_BADGE.md`
 - `PROMPT_GUIDE_CO_BUTTON.md`
-- `PROMPT_GUIDE_CO_LABEL.md`
+- `PROMPT_GUIDE_CO_CARD.md`
+- `PROMPT_GUIDE_CO_PAGINATION.md`
+- `PROMPT_GUIDE_CO_TABLE.md`
+- `PROMPT_GUIDE_CO_SEPARATOR.md` (구분선)
+- `PROMPT_GUIDE_CO_BULLET_LIST.md`
+
+**[Batch 2: 핵심 폼 컴포넌트 (Core Form Inputs)]**
 - `PROMPT_GUIDE_CO_INPUT.md`
-- `PROMPT_GUIDE_CO_TEXTAREA.md`
 - `PROMPT_GUIDE_CO_SELECT.md`
 - `PROMPT_GUIDE_CO_CHECKBOX.md`
 - `PROMPT_GUIDE_CO_RADIO_GROUP.md`
-- `PROMPT_GUIDE_CO_SWITCH.md`
+- `PROMPT_GUIDE_CO_TEXTAREA.md`
 
-**[Batch 2: Core UI & Feedback] (상태 표시 및 피드백)**
-- `PROMPT_GUIDE_CO_BADGE.md`
+**[Batch 3: 확장 폼 및 컨트롤 (Advanced Form Controls)]**
+- `PROMPT_GUIDE_CO_LABEL.md` (폼 라벨)
+- `PROMPT_GUIDE_CO_SWITCH.md`
+- `PROMPT_GUIDE_CO_FIELD.md`
+- `PROMPT_GUIDE_CO_FORM.md`
+- `PROMPT_GUIDE_CO_SLIDER.md`
+- `PROMPT_GUIDE_CO_CHIP.md`
+
+**[Batch 4: 메뉴 및 탐색 컴포넌트 (Menus & Navigation)]**
+- `PROMPT_GUIDE_CO_ACCORDION.md`
+- `PROMPT_GUIDE_CO_TABS.md`
+- `PROMPT_GUIDE_CO_COLLAPSIBLE.md`
+- `PROMPT_GUIDE_CO_NAVIGATION_MENU.md`
+- `PROMPT_GUIDE_CO_DROPDOWN_MENU.md`
+
+**[Batch 5: 레이어 및 팝업 컴포넌트 (Overlays & Popups)]**
+- `PROMPT_GUIDE_CO_SONNER.md`
+- `PROMPT_GUIDE_CO_DIALOG_ALERT.md`
+- `PROMPT_GUIDE_CO_DIALOG.md`
+- `PROMPT_GUIDE_CO_POPOVER.md` (팝오버)
+- `PROMPT_GUIDE_CO_TOOLTIP.md` (툴팁)
+
+**[Batch 6: 상태 피드백 및 지표 (Status & Feedback)]**
+- `PROMPT_GUIDE_CO_AVATAR.md`
 - `PROMPT_GUIDE_CO_ALERT.md`
-- `PROMPT_GUIDE_CO_SPINNER.md`
+- `PROMPT_GUIDE_CO_BREADCRUMB.md` (경로 네비게이션)
+- `PROMPT_GUIDE_CO_SPINNER.md` (로딩 스피너)
 - `PROMPT_GUIDE_CO_SKELETON.md`
 - `PROMPT_GUIDE_CO_PROGRESS.md`
-- `PROMPT_GUIDE_CO_SONNER.md` (Toast)
-- `PROMPT_GUIDE_CO_AVATAR.md`
 
-**[Batch 3: Navigation & Layout] (네비게이션 및 레이아웃 뼈대)**
-- `PROMPT_GUIDE_CO_TABS.md`
-- `PROMPT_GUIDE_CO_BREADCRUMB.md`
-- `PROMPT_GUIDE_CO_PAGINATION.md`
-- `PROMPT_GUIDE_CO_SEPARATOR.md`
+**[Batch 7: 확장 컴포넌트]**
+- `PROMPT_GUIDE_CO_CAROUSEL.md`
+- `PROMPT_GUIDE_CO_CALENDAR.md`
+- `PROMPT_GUIDE_CO_CHART.md`
+
+**[Batch 8: 기타 컴포넌트]**
+- `PROMPT_GUIDE_CO_SHEET.md`
+- `PROMPT_GUIDE_CO_HOVER_CARD.md`
 - `PROMPT_GUIDE_CO_SCROLL_AREA.md`
 - `PROMPT_GUIDE_CO_ASPECT_RATIO.md`
 - `PROMPT_GUIDE_CO_RESIZABLE.md`
-
-**[Batch 4: Overlays & Modals] (레이어 형태의 팝업 컴포넌트)**
-- `PROMPT_GUIDE_CO_DIALOG.md`
-- `PROMPT_GUIDE_CO_ALERT_DIALOG.md`
-- `PROMPT_GUIDE_CO_SHEET.md`
-- `PROMPT_GUIDE_CO_POPOVER.md`
-- `PROMPT_GUIDE_CO_TOOLTIP.md`
-- `PROMPT_GUIDE_CO_HOVER_CARD.md`
-
-**[Batch 5: Menus & Commands] (메뉴 및 복합 조작 창)**
-- `PROMPT_GUIDE_CO_DROPDOWN_MENU.md`
 - `PROMPT_GUIDE_CO_CONTEXT_MENU.md`
 - `PROMPT_GUIDE_CO_MENUBAR.md`
-- `PROMPT_GUIDE_CO_NAVIGATION_MENU.md`
 - `PROMPT_GUIDE_CO_COMMAND.md`
 
-**[Batch 6: Data Display] (데이터 표현 및 덩치가 큰 컴포넌트)**
-- `PROMPT_GUIDE_CO_CARD.md`
-- `PROMPT_GUIDE_CO_TABLE.md`
-- `PROMPT_GUIDE_CO_ACCORDION.md`
-- `PROMPT_GUIDE_CO_COLLAPSIBLE.md`
-- `PROMPT_GUIDE_CO_CAROUSEL.md`
-
-**[Batch 7: Advanced Forms & Misc] (고급 폼 및 기타 특수 컴포넌트)**
-- `PROMPT_GUIDE_CO_FORM.md`
-- `PROMPT_GUIDE_CO_FIELD.md`
-- `PROMPT_GUIDE_CO_SLIDER.md`
-- `PROMPT_GUIDE_CO_TOGGLE.md`
-- `PROMPT_GUIDE_CO_TOGGLE_GROUP.md`
-- `PROMPT_GUIDE_CO_INPUT_OTP.md`
-- `PROMPT_GUIDE_CO_CALENDAR.md`
-- `PROMPT_GUIDE_CO_CHART.md`
 
 - **AI 지시문 (공통)**: *"제공한 Batch N의 프롬프트 스펙을 바탕으로, 순수 HTML 가이드 화면과 SCSS 코드를 완벽히 렌더링해."*
 

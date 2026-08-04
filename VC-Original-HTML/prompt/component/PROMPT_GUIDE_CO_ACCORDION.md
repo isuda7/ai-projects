@@ -13,10 +13,9 @@
 
 1. Overview & Specs
 2. Basic Usage
-  - 2.1. Default State
+  - 2.1. Default State (Single Selection)
 3. Variants & States
   - 3.1. Multiple Selection
-  - 3.2. Default Value Opened
-  - 3.3. Block Type (블록형)
-  - 3.4. Line Wall Type (라인벽형)
-  - 3.5. Complex Title Type (타이틀 내 구조 복합형)
+  - 3.3. Block Type
+  - 3.4. Line Wall Type
+  - 3.5. Complex Title Type

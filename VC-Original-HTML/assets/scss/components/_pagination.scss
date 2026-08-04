@@ -59,3 +59,23 @@
   color: var(--color-gray-400, #9ca3af);
   pointer-events: none;
 }
+
+
+/* Sizes */
+.pagination.sm {
+  .pagination_link, .pagination_btn {
+    min-width: 28px;
+    height: 28px;
+    padding: 0 4px;
+    font-size: 13px;
+  }
+}
+.pagination.lg {
+  .pagination_link, .pagination_btn {
+    min-width: 40px;
+    height: 40px;
+    padding: 0 12px;
+    font-size: 16px;
+  }
+}
+

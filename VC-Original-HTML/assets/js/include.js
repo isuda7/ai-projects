@@ -36,13 +36,22 @@ async function includeHTML() {
   updateGlobalGnb();
   updateGlobalLogo();
   initCodeBlocks();
+  
+  // Initialize Bootstrap Tooltips and Popovers if Bootstrap exists
+  if (typeof bootstrap !== 'undefined') {
+    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+    [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+
+    const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]');
+    [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl));
+  }
 }
 
 function updateActiveNav() {
   const currentPath = window.location.pathname;
   let filename = currentPath.split('/').pop() || 'index.html';
   
-  const navLinks = document.querySelectorAll('.guide-nav a');
+  const navLinks = document.querySelectorAll('.guide_nav a');
   navLinks.forEach(link => {
     link.removeAttribute('style');
     link.classList.remove('active');
@@ -60,7 +69,7 @@ function updateGlobalGnb() {
   const urlParams = new URLSearchParams(window.location.search);
   const view = urlParams.get('view');
   
-  const gnbLinks = document.querySelectorAll('.global-gnb .gnb-link');
+  const gnbLinks = document.querySelectorAll('.guide_gnb .gnb_link');
   
   gnbLinks.forEach(link => {
     link.classList.remove('active');
@@ -80,7 +89,7 @@ function updateGlobalGnb() {
 
 function updateGlobalLogo() {
   const currentPath = window.location.pathname;
-  const logoLink = document.querySelector('.global-header .logo a');
+  const logoLink = document.querySelector('.guide_topbar .logo a');
   
   if (logoLink) {
     if (currentPath.endsWith('index.html') || currentPath === '/') {
@@ -148,5 +157,36 @@ function initCodeBlocks() {
     // Move block into wrapper
     block.parentNode.insertBefore(collapseWrapper, block);
     collapseWrapper.appendChild(block);
+
+    // Create Copy Button
+    const copyBtn = document.createElement('button');
+    copyBtn.type = 'button';
+    copyBtn.className = 'code_copy_btn';
+    copyBtn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>`;
+    copyBtn.setAttribute('title', 'Copy code');
+    copyBtn.setAttribute('aria-label', 'Copy code');
+    
+    copyBtn.addEventListener('click', async () => {
+      const codeEl = block.querySelector('code');
+      const codeText = codeEl ? codeEl.innerText.trim() : block.innerText.trim();
+      
+      try {
+        await navigator.clipboard.writeText(codeText);
+        copyBtn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>`;
+        copyBtn.style.color = '#10b981'; // Success color
+        copyBtn.style.borderColor = '#10b981';
+        setTimeout(() => {
+          copyBtn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>`;
+          copyBtn.style.color = '';
+          copyBtn.style.borderColor = '';
+        }, 2000);
+      } catch (err) {
+        console.error('Failed to copy text: ', err);
+      }
+    });
+    
+    block.style.position = 'relative';
+    block.appendChild(copyBtn);
   });
 }
+

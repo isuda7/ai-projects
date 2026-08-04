@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vibe Design System - Breadcrumb</title>
+  <link rel="stylesheet" href="/assets/css/guide.css">
+</head>
+<body>
+  <div data-include="/guide/layout/header.html"></div>
+  <div class="guide_main_container">
+    <div data-include="/guide/layout/sidebar.html"></div>
+  
+  <main class="guide_content">
+    <div class="guide_wrapper">
+      <header class="guide_header">
+        <h1 class="guide_title_h1">Breadcrumb (경로 탐색)</h1>
+        <p class="guide_description">사용자가 현재 웹사이트의 계층 구조 내에서 어디에 있는지 알려주는 내비게이션 컴포넌트입니다.</p>
+      </header>
+
+      <section class="guide_section">
+        <h2 class="guide_title_h2">1. Overview & Specs</h2>
+        <table class="spec_table">
+          <thead><tr><th>Class</th><th>Description</th></tr></thead>
+          <tbody>
+            <tr><td><code>.breadcrumb</code></td><td>ol 컨테이너 클래스 (기본 슬래시 / 구분자)</td></tr>
+            <tr><td><code>.breadcrumb.chevron</code></td><td>구분자를 꺾쇠(›) 모양으로 변경</td></tr>
+            <tr><td><code>.breadcrumb_item</code></td><td>li 요소 클래스</td></tr>
+            <tr><td><code>.active</code></td><td>현재 위치 강조 (링크 비활성)</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="guide_section">
+        <h2 class="guide_title_h2">2. Basic Usage</h2>
+        <div class="guide_sub_section">
+          <h3 class="guide_title_h3">2.1. Default State (Slash)</h3>
+          <div class="guide_preview">
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb_item"><a href="#">Home</a></li>
+                <li class="breadcrumb_item"><a href="#">Library</a></li>
+                <li class="breadcrumb_item active" aria-current="page">Data</li>
+              </ol>
+            </nav>
+          </div>
+          <div class="code_block">
+<pre><code>&lt;nav aria-label="breadcrumb"&gt;
+  &lt;ol class="breadcrumb"&gt;
+    &lt;li class="breadcrumb_item"&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+    &lt;li class="breadcrumb_item"&gt;&lt;a href="#"&gt;Library&lt;/a&gt;&lt;/li&gt;
+    &lt;li class="breadcrumb_item active" aria-current="page"&gt;Data&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/nav&gt;</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section class="guide_section">
+        <h2 class="guide_title_h2">3. Variants & States</h2>
+        <div class="guide_sub_section">
+          <h3 class="guide_title_h3">3.1. Chevron Separator (꺾쇠 모양)</h3>
+          <div class="guide_preview">
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb chevron">
+                <li class="breadcrumb_item"><a href="#">Home</a></li>
+                <li class="breadcrumb_item"><a href="#">Settings</a></li>
+                <li class="breadcrumb_item"><a href="#">Account</a></li>
+                <li class="breadcrumb_item active" aria-current="page">Profile</li>
+              </ol>
+            </nav>
+          </div>
+          <div class="code_block">
+<pre><code>&lt;nav aria-label="breadcrumb"&gt;
+  &lt;ol class="breadcrumb chevron"&gt;
+    &lt;li class="breadcrumb_item"&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+    &lt;li class="breadcrumb_item"&gt;&lt;a href="#"&gt;Settings&lt;/a&gt;&lt;/li&gt;
+    &lt;li class="breadcrumb_item active" aria-current="page"&gt;Profile&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/nav&gt;</code></pre>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/js/include.js"></script>
+</body>
+</html>
