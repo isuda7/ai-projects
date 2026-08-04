@@ -1,0 +1,117 @@
+/* _calendar.scss */
+.calendar {
+  display: inline-block;
+  background-color: var(--color-white, #ffffff);
+  border: 1px solid var(--color-gray-200, #e5e7eb);
+  border-radius: var(--radius, 8px);
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.calendar_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.calendar_title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-gray-900, #111827);
+  margin: 0;
+}
+
+.calendar_nav_btn {
+  background: transparent;
+  border: 1px solid var(--color-gray-200, #e5e7eb);
+  border-radius: 4px;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--color-gray-600, #4b5563);
+  transition: all 0.2s;
+  
+  &:hover {
+    background-color: var(--color-gray-100, #f3f4f6);
+    color: var(--color-gray-900, #111827);
+  }
+}
+
+.calendar_grid {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.calendar_day_header {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--color-gray-500, #6b7280);
+  text-align: center;
+  padding-bottom: 8px;
+}
+
+.calendar_cell {
+  padding: 2px;
+  text-align: center;
+}
+
+.calendar_date {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  font-size: 14px;
+  color: var(--color-gray-900, #111827);
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  transition: background-color 0.2s;
+  margin: 0 auto;
+
+  &:hover:not(.disabled) {
+    background-color: var(--color-gray-100, #f3f4f6);
+  }
+
+  &.disabled {
+    color: var(--color-gray-400, #9ca3af);
+    cursor: not-allowed;
+  }
+
+  &.selected {
+    background-color: var(--color-primary-600, #2563eb);
+    color: var(--color-white, #ffffff);
+    font-weight: 600;
+    
+    &:hover { background-color: var(--color-primary-600, #2563eb); }
+  }
+}
+
+/* Range Selection */
+.calendar_cell.range_start .calendar_date {
+  background-color: var(--color-primary-600, #2563eb);
+  color: var(--color-white, #ffffff);
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.calendar_cell.range_end .calendar_date {
+  background-color: var(--color-primary-600, #2563eb);
+  color: var(--color-white, #ffffff);
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.calendar_cell.in_range {
+  background-color: var(--color-primary-50, #eff6ff);
+}
+.calendar_cell.in_range .calendar_date {
+  background-color: transparent;
+  color: var(--color-primary-800, #1e40af);
+  border-radius: 0;
+}

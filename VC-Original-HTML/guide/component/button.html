@@ -35,13 +35,14 @@
             </thead>
             <tbody>
               <tr><td><code>.btn</code></td><td>버튼 공통 뼈대 (필수 적용)</td></tr>
-              <tr><td><code>.btn_primary</code></td><td>의미적(Semantic) 메인 색상 적용 (기본 버튼 형태)</td></tr>
-              <tr><td><code>.variant_outline</code></td><td>배경 없이 테두리만 있는 스타일</td></tr>
-              <tr><td><code>.variant_ghost</code></td><td>배경과 테두리 모두 없는 투명 텍스트 버튼 스타일</td></tr>
-              <tr><td><code>.color_danger</code></td><td>위험/경고 액션 (적색)</td></tr>
-              <tr><td><code>.size_sm</code>, <code>.size_md</code>, <code>.size_lg</code></td><td>물리적인 버튼 크기 지정 (기본은 md)</td></tr>
-              <tr><td><code>.is_loading</code></td><td>로딩 스피너 애니메이션 활성화 (텍스트 감춤)</td></tr>
-              <tr><td><code>.full_width</code></td><td>부모 요소의 100% 너비 차지</td></tr>
+              <tr><td><code>.primary</code>, <code>.secondary</code></td><td>의미적(Semantic) 테마 색상 지정</td></tr>
+              <tr><td><code>.is_success</code>, <code>.is_error</code>, <code>.is_warning</code>, <code>.is_info</code></td><td>상태(Status) 색상 클래스 지정</td></tr>
+              <tr><td><code>.outline</code></td><td>배경 없이 테두리만 있는 외곽선 스타일</td></tr>
+              <tr><td><code>.ghost</code></td><td>배경과 테두리가 모두 없는 투명 텍스트 버튼 스타일</td></tr>
+              <tr><td><code>.text</code></td><td>텍스트 전용 버튼 스타일 (패딩 최소화)</td></tr>
+              <tr><td><code>.sm</code>, <code>.md</code>, <code>.lg</code>, <code>.icon</code></td><td>물리적인 크기 및 형태 지정 (기본 사이즈는 md)</td></tr>
+              <tr><td><code>.is_loading</code></td><td>상태 클래스: 로딩 스피너 애니메이션 활성화 (텍스트 감춤)</td></tr>
+              <tr><td><code>.full_width</code></td><td>유틸리티: 부모 요소의 100% 너비 차지</td></tr>
             </tbody>
           </table>
         </div>
@@ -78,12 +79,12 @@
         </div>
 
         <div class="guide_sub_section mt-4">
-          <h3 class="guide_title_h3">3.2. Colors (Primary, Danger, Secondary 등)</h3>
+          <h3 class="guide_title_h3">3.2. Theme Colors (Primary, Secondary)</h3>
           <div class="guide_preview gap-3">
             <button type="button" class="btn primary md">Primary</button>
             <button type="button" class="btn secondary md">Secondary</button>
-            <button type="button" class="btn danger md">Danger</button>
-            <button type="button" class="btn danger outline md">Danger Outline</button>
+            
+            
           </div>
         </div>
 
@@ -97,8 +98,25 @@
           </div>
         </div>
 
+                <div class="guide_sub_section mt-4">
+          <h3 class="guide_title_h3">3.4. Status States (Success, Error, Warning, Info)</h3>
+          <p class="guide_description mb-3">검증 결과나 특정 시스템 상태를 명시적으로 나타낼 때 <code>is_</code> 접두사를 사용합니다.</p>
+          <div class="guide_preview gap-3 mb-3">
+            <button type="button" class="btn is_success md">Success</button>
+            <button type="button" class="btn is_error md">Error / Danger</button>
+            <button type="button" class="btn is_warning md">Warning</button>
+            <button type="button" class="btn is_info md">Info</button>
+          </div>
+          <div class="guide_preview gap-3">
+            <button type="button" class="btn is_success outline md">Success Outline</button>
+            <button type="button" class="btn is_error outline md">Error Outline</button>
+            <button type="button" class="btn is_warning outline md">Warning Outline</button>
+            <button type="button" class="btn is_info outline md">Info Outline</button>
+          </div>
+        </div>
+        
         <div class="guide_sub_section mt-4">
-          <h3 class="guide_title_h3">3.4. States (Disabled, Loading)</h3>
+          <h3 class="guide_title_h3">3.5. Action States (Disabled, Loading)</h3>
           <div class="guide_preview gap-3">
             <button type="button" class="btn primary md" disabled>Disabled</button>
             <button type="button" class="btn primary is_loading md">Loading</button>
@@ -106,7 +124,7 @@
         </div>
         
         <div class="guide_sub_section mt-4">
-          <h3 class="guide_title_h3">3.5. Block (Full Width)</h3>
+          <h3 class="guide_title_h3">3.6. Block (Full Width)</h3>
           <div class="guide_preview w-100">
             <button type="button" class="btn primary full_width md">Full Width Button</button>
           </div>

@@ -14,69 +14,41 @@
   <main class="guide_content">
     <div class="guide_wrapper">
       <header class="guide_header">
-        <h1 class="guide_title_h1">Spinner (로딩 스피너)</h1>
-        <p class="guide_description">데이터를 불러오거나 처리 중일 때 상태를 표시하는 로딩 애니메이션 컴포넌트입니다.</p>
+        <h1 class="guide_title_h1">Spinner</h1>
+        <p class="guide_description">데이터 로딩 상태를 시각적으로 나타내는 회전 애니메이션 요소입니다.</p>
       </header>
 
       <section class="guide_section">
         <h2 class="guide_title_h2">1. Overview & Specs</h2>
-        <table class="spec_table">
+        <div class="spec_table_wrapper">
+          <table class="spec_table">
           <thead><tr><th>Class</th><th>Description</th></tr></thead>
           <tbody>
-            <tr><td><code>.spinner</code></td><td>기본 24px 스피너</td></tr>
-            <tr><td><code>.sm</code>, <code>.lg</code></td><td>크기 조절 (16px, 32px)</td></tr>
-            <tr><td><code>.muted</code>, <code>.white</code>, <code>.danger</code></td><td>색상 변형</td></tr>
+            <tr><td><code>.spinner</code></td><td>스피너 기본 요소</td></tr>
+            <tr><td><code>.sm</code>, <code>.md</code>, <code>.lg</code></td><td>크기 지정</td></tr>
+            <tr><td><code>.primary</code>, <code>.white</code>, <code>.gray</code></td><td>색상 지정</td></tr>
           </tbody>
         </table>
-      </section>
-
-      <section class="guide_section">
-        <h2 class="guide_title_h2">2. Basic Usage</h2>
-        <div class="guide_sub_section">
-          <h3 class="guide_title_h3">2.1. Default State</h3>
-          <div class="guide_preview">
-            <div class="spinner"></div>
-          </div>
-          <div class="code_block">
-<pre><code>&lt;div class="spinner"&gt;&lt;/div&gt;</code></pre>
-          </div>
         </div>
       </section>
 
       <section class="guide_section">
-        <h2 class="guide_title_h2">3. Variants & States</h2>
+        <h2 class="guide_title_h2">2. Variants & States</h2>
         <div class="guide_sub_section">
-          <h3 class="guide_title_h3">3.1. Sizes (sm, lg)</h3>
-          <div class="guide_preview d-flex align-items-center gap-4">
-            <div class="spinner sm"></div>
-            <div class="spinner"></div>
-            <div class="spinner lg"></div>
-          </div>
+          <h3 class="guide_title_h3">2.1. Sizes & Colors</h3>
+          <div class="guide_preview d-flex gap-4 align-items-center">
+            <div class="spinner sm primary"></div>
+            <div class="spinner md gray"></div>
+            <div class="spinner lg primary"></div>
+     
           <div class="code_block">
-<pre><code>&lt;div class="spinner sm"&gt;&lt;/div&gt;
-&lt;div class="spinner"&gt;&lt;/div&gt;
-&lt;div class="spinner lg"&gt;&lt;/div&gt;</code></pre>
-          </div>
-        </div>
-
-        <div class="guide_sub_section mt-4">
-          <h3 class="guide_title_h3">3.2. Colors (Primary, Muted, White, Danger)</h3>
-          <div class="guide_preview d-flex align-items-center gap-4">
-            <div class="spinner"></div>
-            <div class="spinner muted"></div>
-            <div class="spinner danger"></div>
-            <div class="d-inline-flex p-3 bg-dark rounded">
-              <div class="spinner white"></div>
-            </div>
-          </div>
-          <div class="code_block">
-<pre><code>&lt;div class="spinner"&gt;&lt;/div&gt;
-&lt;div class="spinner muted"&gt;&lt;/div&gt;
-&lt;div class="spinner danger"&gt;&lt;/div&gt;
-&lt;div class="spinner white"&gt;&lt;/div&gt;</code></pre>
-          </div>
+<pre><code>&lt;div class=&quot;spinner sm primary&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;spinner md gray&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;spinner lg primary&quot;&gt;&lt;/div&gt;</code></pre>
+          </div>     </div>
         </div>
       </section>
+
     </div>
   </main>
   </div>

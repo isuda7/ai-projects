@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vibe Design System - Calendar</title>
+  <link rel="stylesheet" href="/assets/css/guide.css">
+  <style>.visually-hidden { position: absolute !important; width: 1px !important; height: 1px !important; padding: 0 !important; margin: -1px !important; overflow: hidden !important; clip: rect(0, 0, 0, 0) !important; white-space: nowrap !important; border: 0 !important; }</style>
+</head>
+<body>
+  <div data-include="/guide/layout/header.html"></div>
+  <div class="guide_main_container">
+    <div data-include="/guide/layout/sidebar.html"></div>
+  
+  <main class="guide_content">
+    <div class="guide_wrapper">
+      <header class="guide_header">
+        <h1 class="guide_title_h1">Calendar</h1>
+        <p class="guide_description">날짜를 확인하고 단일 또는 다중 선택(Range)을 할 수 있는 달력 컴포넌트입니다.</p>
+      </header>
+
+      <section class="guide_section">
+        <h2 class="guide_title_h2">1. Overview & Specs</h2>
+        <div class="spec_table_wrapper">
+          <table class="spec_table">
+          <thead><tr><th>Class</th><th>Description</th></tr></thead>
+          <tbody>
+            <tr><td><code>.calendar</code></td><td>달력 전체 래퍼</td></tr>
+            <tr><td><code>.calendar_date.selected</code></td><td>선택된 날짜</td></tr>
+            <tr><td><code>.in_range</code>, <code>.range_start</code></td><td>기간(Range) 선택 스타일</td></tr>
+          </tbody>
+        </table>
+        </div>
+      </section>
+
+      <section class="guide_section">
+        <h2 class="guide_title_h2">2. Variants & States</h2>
+        <div class="guide_sub_section">
+          <h3 class="guide_title_h3">2.1. Basic & Range Selection</h3>
+          <div class="guide_preview d-flex gap-5">
+            <!-- Basic Selection -->
+            <div class="calendar">
+              <div class="calendar_header">
+                <button class="calendar_nav_btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg></button>
+                <h4 class="calendar_title">October 2026</h4>
+                <button class="calendar_nav_btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
+              </div>
+              <table class="calendar_grid">
+                <thead>
+                  <tr>
+                    <th class="calendar_day_header">Su</th><th class="calendar_day_header">Mo</th><th class="calendar_day_header">Tu</th><th class="calendar_day_header">We</th>
+                    <th class="calendar_day_header">Th</th><th class="calendar_day_header">Fr</th><th class="calendar_day_header">Sa</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="calendar_cell"><button class="calendar_date disabled">27</button></td>
+                    <td class="calendar_cell"><button class="calendar_date disabled">28</button></td>
+                    <td class="calendar_cell"><button class="calendar_date disabled">29</button></td>
+                    <td class="calendar_cell"><button class="calendar_date disabled">30</button></td>
+                    <td class="calendar_cell"><button class="calendar_date">1</button></td>
+                    <td class="calendar_cell"><button class="calendar_date">2</button></td>
+                    <td class="calendar_cell"><button class="calendar_date">3</button></td>
+                  </tr>
+                  <tr>
+                    <td class="calendar_cell"><button class="calendar_date">4</button></td>
+                    <td class="calendar_cell"><button class="calendar_date selected">5</button></td>
+                    <td class="calendar_cell"><button class="calendar_date">6</button></td>
+                    <td class="calendar_cell"><button class="calendar_date">7</button></td>
+                    <td class="calendar_cell"><button class="calendar_date">8</button></td>
+                    <td class="calendar_cell"><button class="calendar_date">9</button></td>
+                    <td class="calendar_cell"><button class="calendar_date">10</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Range Selection -->
+            <div class="calendar">
+              <div class="calendar_header">
+                <button class="calendar_nav_btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg></button>
+                <h4 class="calendar_title">October 2026</h4>
+                <button class="calendar_nav_btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
+              </div>
+              <table class="calendar_grid">
+                <thead>
+                  <tr>
+                    <th class="calendar_day_header">Su</th><th class="calendar_day_header">Mo</th><th class="calendar_day_header">Tu</th><th class="calendar_day_header">We</th>
+                    <th class="calendar_day_header">Th</th><th class="calendar_day_header">Fr</th><th class="calendar_day_header">Sa</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="calendar_cell"><button class="calendar_date disabled">27</button></td>
+                    <td class="calendar_cell"><button class="calendar_date disabled">28</button></td>
+                    <td class="calendar_cell"><button class="calendar_date disabled">29</button></td>
+                    <td class="calendar_cell"><button class="calendar_date disabled">30</button></td>
+                    <td class="calendar_cell"><button class="calendar_date">1</button></td>
+                    <td class="calendar_cell"><button class="calendar_date">2</button></td>
+                    <td class="calendar_cell"><button class="calendar_date">3</button></td>
+                  </tr>
+                  <tr>
+                    <td class="calendar_cell"><button class="calendar_date">4</button></td>
+                    <td class="calendar_cell range_start"><button class="calendar_date">5</button></td>
+                    <td class="calendar_cell in_range"><button class="calendar_date">6</button></td>
+                    <td class="calendar_cell in_range"><button class="calendar_date">7</button></td>
+                    <td class="calendar_cell in_range"><button class="calendar_date">8</button></td>
+                    <td class="calendar_cell range_end"><button class="calendar_date">9</button></td>
+                    <td class="calendar_cell"><button class="calendar_date">10</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+     
+          <div class="code_block">
+<pre><code>&lt;!-- Basic Selection --&gt;
+&lt;div class=&quot;calendar&quot;&gt;
+  &lt;div class=&quot;calendar_header&quot;&gt;
+    &lt;button class=&quot;calendar_nav_btn&quot;&gt;&lt;svg width=&quot;16&quot; height=&quot;16&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;&gt;&lt;polyline points=&quot;15 18 9 12 15 6&quot;&gt;&lt;/polyline&gt;&lt;/svg&gt;&lt;/button&gt;
+    &lt;h4 class=&quot;calendar_title&quot;&gt;October 2026&lt;/h4&gt;
+    &lt;button class=&quot;calendar_nav_btn&quot;&gt;&lt;svg width=&quot;16&quot; height=&quot;16&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;&gt;&lt;polyline points=&quot;9 18 15 12 9 6&quot;&gt;&lt;/polyline&gt;&lt;/svg&gt;&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;table class=&quot;calendar_grid&quot;&gt;
+    &lt;thead&gt;
+      &lt;tr&gt;
+        &lt;th class=&quot;calendar_day_header&quot;&gt;Su&lt;/th&gt;&lt;th class=&quot;calendar_day_header&quot;&gt;Mo&lt;/th&gt;&lt;th class=&quot;calendar_day_header&quot;&gt;Tu&lt;/th&gt;&lt;th class=&quot;calendar_day_header&quot;&gt;We&lt;/th&gt;
+        &lt;th class=&quot;calendar_day_header&quot;&gt;Th&lt;/th&gt;&lt;th class=&quot;calendar_day_header&quot;&gt;Fr&lt;/th&gt;&lt;th class=&quot;calendar_day_header&quot;&gt;Sa&lt;/th&gt;
+      &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+      &lt;tr&gt;
+        &lt;td class=&quot;calendar_cell&quot;&gt;&lt;button class=&quot;calendar_date disabled&quot;&gt;27&lt;/button&gt;&lt;/td&gt;
+        &lt;td class=&quot;calendar_cell&quot;&gt;&lt;button class=&quot;calendar_date disabled&quot;&gt;28&lt;/button&gt;&lt;/td&gt;
+        &lt;td class=&quot;calendar_cell&quot;&gt;&lt;button class=&quot;calendar_date disabled&quot;&gt;29&lt;/button&gt;&lt;/td&gt;
+        &lt;td class=&quot;calendar_cell&quot;&gt;&lt;button class=&quot;calendar_date disabled&quot;&gt;30&lt;/button&gt;&lt;/td&gt;
+        &lt;td class=&quot;calendar_cell&quot;&gt;&lt;button class=&quot;calendar_date&quot;&gt;1&lt;/button&gt;&lt;/td&gt;
+        &lt;td class=&quot;calendar_cell&quot;&gt;&lt;button class=&quot;calendar_date&quot;&gt;2&lt;/button&gt;&lt;/td&gt;
+        &lt;td class=&quot;calendar_cell&quot;&gt;&lt;button class=&quot;calendar_date&quot;&gt;3&lt;/button&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td class=&quot;calendar_cell&quot;&gt;&lt;button class=&quot;calendar_date&quot;&gt;4&lt;/button&gt;&lt;/td&gt;
+        &lt;td class=&quot;calendar_cell&quot;&gt;&lt;button class=&quot;calendar_date selected&quot;&gt;5&lt;/button&gt;&lt;/td&gt;
+        &lt;td class=&quot;calendar_cell&quot;&gt;&lt;button class=&quot;calendar_date&quot;&gt;6&lt;/button&gt;&lt;/td&gt;
+        &lt;td class=&quot;calendar_cell&quot;&gt;&lt;button class=&quot;calendar_date&quot;&gt;7&lt;/button&gt;&lt;/td&gt;
+        &lt;td class=&quot;calendar_cell&quot;&gt;&lt;button class=&quot;calendar_date&quot;&gt;8&lt;/button&gt;&lt;/td&gt;
+        &lt;td class=&quot;calendar_cell&quot;&gt;&lt;button class=&quot;calendar_date&quot;&gt;9&lt;/button&gt;&lt;/td&gt;
+        &lt;td class=&quot;calendar_cell&quot;&gt;&lt;button class=&quot;calendar_date&quot;&gt;10&lt;/button&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+&lt;/div&gt;
+
+&lt;!-- Range Selection --&gt;
+&lt;div class=&quot;calendar&quot;&gt;
+  &lt;div class=&quot;calendar_header&quot;&gt;
+    &lt;button class=&quot;calendar_nav_btn&quot;&gt;&lt;svg width=&quot;16&quot; height=&quot;16&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;&gt;&lt;polyline points=&quot;15 18 9 12 15 6&quot;&gt;&lt;/polyline&gt;&lt;/svg&gt;&lt;/button&gt;
+    &lt;h4 class=&quot;calendar_title&quot;&gt;October 2026&lt;/h4&gt;
+    &lt;button class=&quot;calendar_nav_btn&quot;&gt;&lt;svg width=&quot;16&quot; height=&quot;16&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;&gt;&lt;polyline points=&quot;9 18 15 12 9 6&quot;&gt;&lt;/polyline&gt;&lt;/svg&gt;&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;table class=&quot;calendar_grid&quot;&gt;
+    &lt;thead&gt;
+      &lt;tr&gt;
+        &lt;th class=&quot;calendar_day_header&quot;&gt;Su&lt;/th&gt;&lt;th class=&quot;calendar_day_header&quot;&gt;Mo&lt;/th&gt;&lt;th class=&quot;calendar_day_header&quot;&gt;Tu&lt;/th&gt;&lt;th class=&quot;calendar_day_header&quot;&gt;We&lt;/th&gt;
+        &lt;th class=&quot;calendar_day_header&quot;&gt;Th&lt;/th&gt;&lt;th class=&quot;calendar_day_header&quot;&gt;Fr&lt;/th&gt;&lt;th class=&quot;calendar_day_header&quot;&gt;Sa&lt;/th&gt;
+      &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+      &lt;tr&gt;
+        &lt;td class=&quot;calendar_cell&quot;&gt;&lt;button class=&quot;calendar_date disabled&quot;&gt;27&lt;/button&gt;&lt;/td&gt;
+        &lt;td class=&quot;calendar_cell&quot;&gt;&lt;button class=&quot;calendar_date disabled&quot;&gt;28&lt;/button&gt;&lt;/td&gt;
+        &lt;td class=&quot;calendar_cell&quot;&gt;&lt;button class=&quot;calendar_date disabled&quot;&gt;29&lt;/button&gt;&lt;/td&gt;
+        &lt;td class=&quot;calendar_cell&quot;&gt;&lt;button class=&quot;calendar_date disabled&quot;&gt;30&lt;/button&gt;&lt;/td&gt;
+        &lt;td class=&quot;calendar_cell&quot;&gt;&lt;button class=&quot;calendar_date&quot;&gt;1&lt;/button&gt;&lt;/td&gt;
+        &lt;td class=&quot;calendar_cell&quot;&gt;&lt;button class=&quot;calendar_date&quot;&gt;2&lt;/button&gt;&lt;/td&gt;
+        &lt;td class=&quot;calendar_cell&quot;&gt;&lt;button class=&quot;calendar_date&quot;&gt;3&lt;/button&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td class=&quot;calendar_cell&quot;&gt;&lt;button class=&quot;calendar_date&quot;&gt;4&lt;/button&gt;&lt;/td&gt;
+        &lt;td class=&quot;calendar_cell range_start&quot;&gt;&lt;button class=&quot;calendar_date&quot;&gt;5&lt;/button&gt;&lt;/td&gt;
+        &lt;td class=&quot;calendar_cell in_range&quot;&gt;&lt;button class=&quot;calendar_date&quot;&gt;6&lt;/button&gt;&lt;/td&gt;
+        &lt;td class=&quot;calendar_cell in_range&quot;&gt;&lt;button class=&quot;calendar_date&quot;&gt;7&lt;/button&gt;&lt;/td&gt;
+        &lt;td class=&quot;calendar_cell in_range&quot;&gt;&lt;button class=&quot;calendar_date&quot;&gt;8&lt;/button&gt;&lt;/td&gt;
+        &lt;td class=&quot;calendar_cell range_end&quot;&gt;&lt;button class=&quot;calendar_date&quot;&gt;9&lt;/button&gt;&lt;/td&gt;
+        &lt;td class=&quot;calendar_cell&quot;&gt;&lt;button class=&quot;calendar_date&quot;&gt;10&lt;/button&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+&lt;/div&gt;</code></pre>
+          </div>     </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/js/include.js"></script>
+</body>
+</html>

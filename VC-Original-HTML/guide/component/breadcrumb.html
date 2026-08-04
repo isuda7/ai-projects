@@ -14,43 +14,62 @@
   <main class="guide_content">
     <div class="guide_wrapper">
       <header class="guide_header">
-        <h1 class="guide_title_h1">Breadcrumb (경로 탐색)</h1>
-        <p class="guide_description">사용자가 현재 웹사이트의 계층 구조 내에서 어디에 있는지 알려주는 내비게이션 컴포넌트입니다.</p>
+        <h1 class="guide_title_h1">Breadcrumb</h1>
+        <p class="guide_description">현재 페이지의 위치를 계층 구조로 보여주는 네비게이션입니다.</p>
       </header>
 
       <section class="guide_section">
         <h2 class="guide_title_h2">1. Overview & Specs</h2>
-        <table class="spec_table">
+        <div class="spec_table_wrapper">
+          <table class="spec_table">
           <thead><tr><th>Class</th><th>Description</th></tr></thead>
           <tbody>
-            <tr><td><code>.breadcrumb</code></td><td>ol 컨테이너 클래스 (기본 슬래시 / 구분자)</td></tr>
-            <tr><td><code>.breadcrumb.chevron</code></td><td>구분자를 꺾쇠(›) 모양으로 변경</td></tr>
-            <tr><td><code>.breadcrumb_item</code></td><td>li 요소 클래스</td></tr>
-            <tr><td><code>.active</code></td><td>현재 위치 강조 (링크 비활성)</td></tr>
+            <tr><td><code>.breadcrumb</code></td><td>Breadcrumb 목록을 감싸는 ul 요소</td></tr>
+            <tr><td><code>.breadcrumb_item</code>, <code>.breadcrumb_link</code></td><td>개별 아이템 및 링크</td></tr>
           </tbody>
         </table>
+        </div>
       </section>
 
       <section class="guide_section">
         <h2 class="guide_title_h2">2. Basic Usage</h2>
         <div class="guide_sub_section">
-          <h3 class="guide_title_h3">2.1. Default State (Slash)</h3>
+          <h3 class="guide_title_h3">2.1. Default State</h3>
           <div class="guide_preview">
-            <nav aria-label="breadcrumb">
-              <ol class="breadcrumb">
-                <li class="breadcrumb_item"><a href="#">Home</a></li>
-                <li class="breadcrumb_item"><a href="#">Library</a></li>
-                <li class="breadcrumb_item active" aria-current="page">Data</li>
-              </ol>
+     
+          <div class="code_block">
+<pre><code></code></pre>
+          </div>       <nav aria-label="breadcrumb">
+              <ul class="breadcrumb">
+                <li class="breadcrumb_item">
+                  <a href="#" class="breadcrumb_link">Home</a>
+                  <span class="breadcrumb_separator">/</span>
+                </li>
+                <li class="breadcrumb_item">
+                  <a href="#" class="breadcrumb_link">Components</a>
+                  <span class="breadcrumb_separator">/</span>
+                </li>
+                <li class="breadcrumb_item">
+                  <a href="#" class="breadcrumb_link active" aria-current="page">Breadcrumb</a>
+                </li>
+              </ul>
             </nav>
           </div>
           <div class="code_block">
 <pre><code>&lt;nav aria-label="breadcrumb"&gt;
-  &lt;ol class="breadcrumb"&gt;
-    &lt;li class="breadcrumb_item"&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
-    &lt;li class="breadcrumb_item"&gt;&lt;a href="#"&gt;Library&lt;/a&gt;&lt;/li&gt;
-    &lt;li class="breadcrumb_item active" aria-current="page"&gt;Data&lt;/li&gt;
-  &lt;/ol&gt;
+  &lt;ul class="breadcrumb"&gt;
+    &lt;li class="breadcrumb_item"&gt;
+      &lt;a href="#" class="breadcrumb_link"&gt;Home&lt;/a&gt;
+      &lt;span class="breadcrumb_separator"&gt;/&lt;/span&gt;
+    &lt;/li&gt;
+    &lt;li class="breadcrumb_item"&gt;
+      &lt;a href="#" class="breadcrumb_link"&gt;Components&lt;/a&gt;
+      &lt;span class="breadcrumb_separator"&gt;/&lt;/span&gt;
+    &lt;/li&gt;
+    &lt;li class="breadcrumb_item"&gt;
+      &lt;a href="#" class="breadcrumb_link active" aria-current="page"&gt;Breadcrumb&lt;/a&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
 &lt;/nav&gt;</code></pre>
           </div>
         </div>
@@ -59,28 +78,55 @@
       <section class="guide_section">
         <h2 class="guide_title_h2">3. Variants & States</h2>
         <div class="guide_sub_section">
-          <h3 class="guide_title_h3">3.1. Chevron Separator (꺾쇠 모양)</h3>
+          <h3 class="guide_title_h3">3.1. With Ellipsis</h3>
           <div class="guide_preview">
-            <nav aria-label="breadcrumb">
-              <ol class="breadcrumb chevron">
-                <li class="breadcrumb_item"><a href="#">Home</a></li>
-                <li class="breadcrumb_item"><a href="#">Settings</a></li>
-                <li class="breadcrumb_item"><a href="#">Account</a></li>
-                <li class="breadcrumb_item active" aria-current="page">Profile</li>
-              </ol>
+     
+          <div class="code_block">
+<pre><code></code></pre>
+          </div>       <nav aria-label="breadcrumb">
+              <ul class="breadcrumb">
+                <li class="breadcrumb_item">
+                  <a href="#" class="breadcrumb_link">Home</a>
+                  <span class="breadcrumb_separator">/</span>
+                </li>
+                <li class="breadcrumb_item">
+                  <span class="breadcrumb_ellipsis">...</span>
+                  <span class="breadcrumb_separator">/</span>
+                </li>
+                <li class="breadcrumb_item">
+                  <a href="#" class="breadcrumb_link">Components</a>
+                  <span class="breadcrumb_separator">/</span>
+                </li>
+                <li class="breadcrumb_item">
+                  <a href="#" class="breadcrumb_link active" aria-current="page">Breadcrumb</a>
+                </li>
+              </ul>
             </nav>
           </div>
           <div class="code_block">
 <pre><code>&lt;nav aria-label="breadcrumb"&gt;
-  &lt;ol class="breadcrumb chevron"&gt;
-    &lt;li class="breadcrumb_item"&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
-    &lt;li class="breadcrumb_item"&gt;&lt;a href="#"&gt;Settings&lt;/a&gt;&lt;/li&gt;
-    &lt;li class="breadcrumb_item active" aria-current="page"&gt;Profile&lt;/li&gt;
-  &lt;/ol&gt;
+  &lt;ul class="breadcrumb"&gt;
+    &lt;li class="breadcrumb_item"&gt;
+      &lt;a href="#" class="breadcrumb_link"&gt;Home&lt;/a&gt;
+      &lt;span class="breadcrumb_separator"&gt;/&lt;/span&gt;
+    &lt;/li&gt;
+    &lt;li class="breadcrumb_item"&gt;
+      &lt;span class="breadcrumb_ellipsis"&gt;...&lt;/span&gt;
+      &lt;span class="breadcrumb_separator"&gt;/&lt;/span&gt;
+    &lt;/li&gt;
+    &lt;li class="breadcrumb_item"&gt;
+      &lt;a href="#" class="breadcrumb_link"&gt;Components&lt;/a&gt;
+      &lt;span class="breadcrumb_separator"&gt;/&lt;/span&gt;
+    &lt;/li&gt;
+    &lt;li class="breadcrumb_item"&gt;
+      &lt;a href="#" class="breadcrumb_link active" aria-current="page"&gt;Breadcrumb&lt;/a&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
 &lt;/nav&gt;</code></pre>
           </div>
         </div>
       </section>
+
     </div>
   </main>
   </div>

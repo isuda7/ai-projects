@@ -1,0 +1,18 @@
+/* _layout.scss */
+/* Front Layout Foundation */
+
+.page_wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+
+
+.page_main {
+  flex: 1;
+  /* Add basic padding or styling if needed */
+  background-color: var(--color-white, #ffffff);
+}
+
+

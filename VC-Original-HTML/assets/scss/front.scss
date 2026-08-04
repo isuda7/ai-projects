@@ -2,4 +2,6 @@
 @use 'global';
 
 // 프론트엔드 전용 레이아웃
-@use 'layout/front';
+@use 'layout/layout';
+@use 'layout/header';
+@use 'layout/footer';
