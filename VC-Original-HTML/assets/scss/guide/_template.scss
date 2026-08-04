@@ -2,7 +2,7 @@
 body:has(.guide_main_container) {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  height: 100vh;
   margin: 0;
   background-color: var(--color-gray-50, #f9fafb);
   overflow: hidden;
@@ -101,12 +101,14 @@ body:has(.guide_main_container) {
     }
 
     &.submenu_toggle {
+      justify-content: space-between;
       .submenu_icon {
         transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        color: var(--color-gray-400);
+        color: var(--color-gray-500);
+        stroke-width: 2.5;
       }
       &:hover .submenu_icon {
-        color: var(--color-gray-700);
+        color: var(--color-gray-800);
       }
       &[aria-expanded="true"] .submenu_icon {
         transform: rotate(180deg);
@@ -131,6 +133,8 @@ body:has(.guide_main_container) {
 .guide_content {
   flex: 1;
   padding: 48px 64px;
+  overflow-y: auto;
+  height: 100%;
   background-color: var(--color-white, #ffffff);
 }
 
@@ -141,6 +145,7 @@ body:has(.guide_main_container) {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-2xl, 32px);
+  padding-bottom: 96px;
 }
 
 .guide_header {
@@ -298,5 +303,66 @@ body:has(.guide_main_container) {
   &:hover {
     color: var(--color-white, #ffffff);
     background-color: rgba(255, 255, 255, 0.2);
+  }
+}
+
+/* Guide Topbar (Header) */
+.guide_topbar {
+  background-color: #0f172a; /* 짙은 남색 (Slate 900) */
+  color: var(--color-white, #ffffff);
+  height: 64px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 50;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.guide_topbar_inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 24px;
+}
+
+.guide_topbar .logo {
+  font-size: 20px;
+  font-weight: 800;
+  margin: 0;
+  letter-spacing: -0.5px;
+  
+  a {
+    color: var(--color-white, #ffffff);
+    text-decoration: none;
+  }
+}
+
+.guide_gnb ul {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.guide_gnb .gnb_link {
+  color: var(--color-gray-300, #d1d5db);
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+
+  &:hover {
+    color: var(--color-white, #ffffff);
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  &.active {
+    color: var(--color-primary-400, #60a5fa);
+    background-color: rgba(96, 165, 250, 0.15);
   }
 }

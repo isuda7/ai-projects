@@ -40,7 +40,14 @@ async function includeHTML() {
   // Initialize Bootstrap Tooltips and Popovers if Bootstrap exists
   if (typeof bootstrap !== 'undefined') {
     const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
-    [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+    [...tooltipTriggerList].map(tooltipTriggerEl => {
+      const isAlways = tooltipTriggerEl.getAttribute('data-bs-show') === 'always';
+      const tooltip = new bootstrap.Tooltip(tooltipTriggerEl, {
+        trigger: isAlways ? 'manual' : 'hover focus'
+      });
+      if (isAlways) tooltip.show();
+      return tooltip;
+    });
 
     const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]');
     [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl));

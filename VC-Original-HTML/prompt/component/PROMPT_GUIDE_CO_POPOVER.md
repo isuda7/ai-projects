@@ -7,6 +7,10 @@
 
 
 - **공통 뼈대**: 반드시 `template/PROMPT_GUIDE_BASE.md`에 정의된 마스터 템플릿 규칙(메뉴 분류, `// @ts-nocheck`, `<GuideSection>`, `<CodeBlock>` 등)을 최우선으로 준수합니다.
+
+> **💡 [핵심 규칙] Popover Dismiss (바닥 클릭 시 닫힘)**
+> 팝오버 요소에는 반드시 `data-bs-trigger="focus"` 속성을 포함하여 사용자가 배경(바깥 영역)을 클릭했을 때 자동으로 닫히도록 구성해야 합니다. Overview Spec 테이블에도 이 옵션을 명시하십시오.
+
 - **개별 구성 스펙**: 이 컴포넌트만의 고유한 스펙과 시연해야 할 화면 구성(Variants)은 아래의 구조를 반드시 따릅니다.
 
 ### 가이드 페이지 개별 구성 스펙 (guide/component/popover.html)

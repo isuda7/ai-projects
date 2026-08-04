@@ -7,6 +7,10 @@
 
 
 - **공통 뼈대**: 반드시 `template/PROMPT_GUIDE_BASE.md`에 정의된 마스터 템플릿 규칙(메뉴 분류, `// @ts-nocheck`, `<GuideSection>`, `<CodeBlock>` 등)을 최우선으로 준수합니다.
+
+> **💡 [핵심 규칙] Tooltip 고정 옵션**
+> 툴팁을 마우스 오버 없이도 항시 띄워두고 싶을 때는 `data-bs-show="always"` 속성을 요소에 추가합니다. Overview Spec 테이블 및 Variants 예시에 이 속성을 명시하십시오.
+
 - **개별 구성 스펙**: 이 컴포넌트만의 고유한 스펙과 시연해야 할 화면 구성(Variants)은 아래의 구조를 반드시 따릅니다.
 
 ### 가이드 페이지 개별 구성 스펙 (guide/component/tooltip.html)

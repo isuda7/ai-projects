@@ -23,10 +23,11 @@
         <table class="spec_table">
           <thead><tr><th>Attribute</th><th>Description</th></tr></thead>
           <tbody>
-            <tr><td><code>data-bs-toggle="popover"</code></td><td>팝오버 활성화를 위한 필수 속성</td></tr>
+            <tr><td><code>data-bs-toggle="popover" data-bs-trigger="focus"</code></td><td>팝오버 활성화를 위한 필수 속성</td></tr>
             <tr><td><code>data-bs-title="..."</code></td><td>팝오버의 제목 (Header 영역)</td></tr>
             <tr><td><code>data-bs-content="..."</code></td><td>팝오버의 본문 (Body 영역)</td></tr>
-          </tbody>
+            <tr><td><code>data-bs-trigger="focus"</code></td><td>바깥(바닥) 영역 클릭 시 팝오버를 닫기 위한 설정 (기본 권장)</td></tr>
+            </tbody>
         </table>
       </section>
 
@@ -35,13 +36,13 @@
         <div class="guide_sub_section">
           <h3 class="guide_title_h3">2.1. Default State (클릭 트리거)</h3>
           <div class="guide_preview">
-            <button type="button" class="btn primary md" data-bs-toggle="popover" data-bs-title="결제 상태 확인" data-bs-content="현재 모든 결제가 정상적으로 승인되었습니다.">
+            <button type="button" class="btn primary md" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-title="결제 상태 확인" data-bs-content="현재 모든 결제가 정상적으로 승인되었습니다.">
               상태 확인하기 (Click)
             </button>
           </div>
           <div class="code_block">
 <pre><code>&lt;button type="button" class="btn primary md" 
-  data-bs-toggle="popover" 
+  data-bs-toggle="popover" data-bs-trigger="focus" 
   data-bs-title="결제 상태 확인" 
   data-bs-content="현재 모든 결제가 정상적으로 승인되었습니다."&gt;
   상태 확인하기
@@ -55,13 +56,13 @@
         <div class="guide_sub_section">
           <h3 class="guide_title_h3">3.1. Placements (방향 설정)</h3>
           <div class="guide_preview d-flex gap-3 flex-wrap">
-            <button type="button" class="btn outline md" data-bs-toggle="popover" data-bs-placement="top" data-bs-content="Top popover">Top</button>
-            <button type="button" class="btn outline md" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Right popover">Right</button>
-            <button type="button" class="btn outline md" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-content="Bottom popover">Bottom</button>
-            <button type="button" class="btn outline md" data-bs-toggle="popover" data-bs-placement="left" data-bs-content="Left popover">Left</button>
+            <button type="button" class="btn outline md" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-placement="top" data-bs-content="Top popover">Top</button>
+            <button type="button" class="btn outline md" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-placement="right" data-bs-content="Right popover">Right</button>
+            <button type="button" class="btn outline md" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-placement="bottom" data-bs-content="Bottom popover">Bottom</button>
+            <button type="button" class="btn outline md" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-placement="left" data-bs-content="Left popover">Left</button>
           </div>
           <div class="code_block">
-<pre><code>&lt;button type="button" class="btn outline md" data-bs-toggle="popover" data-bs-placement="top" data-bs-content="Top popover"&gt;
+<pre><code>&lt;button type="button" class="btn outline md" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-placement="top" data-bs-content="Top popover"&gt;
   Top
 &lt;/button&gt;</code></pre>
           </div>

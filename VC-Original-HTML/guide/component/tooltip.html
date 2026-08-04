@@ -26,7 +26,8 @@
             <tr><td><code>data-bs-toggle="tooltip"</code></td><td>툴팁을 활성화하기 위한 필수 속성</td></tr>
             <tr><td><code>data-bs-placement="top|right|bottom|left"</code></td><td>툴팁이 나타날 방향 설정</td></tr>
             <tr><td><code>data-bs-title="..."</code></td><td>툴팁 내부에 표시될 텍스트</td></tr>
-          </tbody>
+            <tr><td><code>data-bs-show="always"</code></td><td>툴팁을 항상 띄워둔 상태로 고정하는 커스텀 속성</td></tr>
+            </tbody>
         </table>
       </section>
 
@@ -43,6 +44,25 @@
           <div class="code_block">
 <pre><code>&lt;button type="button" class="btn outline md" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Tooltip on top"&gt;
   Tooltip on top
+&lt;/button&gt;</code></pre>
+          </div>
+        </div>
+      
+        <div class="guide_sub_section mt-4">
+          <h3 class="guide_title_h3">2.2. Always Visible (항상 띄워두기)</h3>
+          <p class="guide_description mb-3">가이드 문서 등에서 툴팁을 항시 띄워두어야 할 때 사용합니다.</p>
+          <div class="guide_preview" style="padding-top: 40px;">
+            <button type="button" class="btn primary md" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="항상 노출되는 툴팁" data-bs-show="always">
+              고정 툴팁
+            </button>
+          </div>
+          <div class="code_block">
+<pre><code>&lt;button type="button" class="btn primary md" 
+  data-bs-toggle="tooltip" 
+  data-bs-placement="top" 
+  data-bs-title="항상 노출되는 툴팁" 
+  data-bs-show="always"&gt;
+  고정 툴팁
 &lt;/button&gt;</code></pre>
           </div>
         </div>

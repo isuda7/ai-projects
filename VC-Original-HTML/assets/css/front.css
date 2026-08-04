@@ -1688,9 +1688,7 @@ a.card:hover, .card_interactive:hover {
 .table_wrapper {
   width: 100%;
   overflow-x: auto;
-  border: 1px solid var(--color-gray-200, #e5e7eb);
-  border-radius: var(--radius, 8px);
-  background-color: var(--color-white, #ffffff);
+  /* 가이드용 spec_table과 달리 프론트엔드 표는 기본적으로 래퍼 테두리 없이 개방감을 줍니다 */
 }
 
 .data_table {
@@ -1700,22 +1698,25 @@ a.card:hover, .card_interactive:hover {
   font-size: 14px;
 }
 .data_table th, .data_table td {
-  padding: 12px 16px;
+  padding: 16px 24px;
   border-bottom: 1px solid var(--color-gray-200, #e5e7eb);
 }
 .data_table th {
-  background-color: var(--color-gray-50, #f9fafb);
-  color: var(--color-gray-700, #374151);
-  font-weight: 600;
+  /* 프론트용 고유 헤더 스타일: 투명 배경, 어퍼케이스, 뚜렷한 하단 선 */
+  background-color: transparent;
+  color: var(--color-gray-500, #6b7280);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 2px solid var(--color-gray-200, #e5e7eb);
 }
 .data_table td {
-  color: var(--color-gray-600, #4b5563);
+  color: var(--color-gray-900, #111827);
+  font-weight: 500;
 }
 .data_table tbody tr {
-  transition: background-color 0.2s;
-}
-.data_table tbody tr:last-child td {
-  border-bottom: none;
+  transition: background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .data_table {
   /* Hover State */
@@ -1738,6 +1739,9 @@ a.card:hover, .card_interactive:hover {
 .data_table.is_bordered th, .data_table.is_bordered td {
   border: 1px solid var(--color-gray-200, #e5e7eb);
 }
+.data_table.is_bordered th {
+  background-color: var(--color-gray-50, #f9fafb);
+}
 .data_table {
   /* Small Size */
 }
@@ -1745,7 +1749,10 @@ a.card:hover, .card_interactive:hover {
   font-size: 13px;
 }
 .data_table.is_small th, .data_table.is_small td {
-  padding: 8px 12px;
+  padding: 10px 16px;
+}
+.data_table.is_small th {
+  font-size: 11px;
 }
 
 /* _tabs.scss */
