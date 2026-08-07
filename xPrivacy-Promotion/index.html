@@ -14,6 +14,14 @@
 <body>
     <!-- Top Navigation -->
     <nav class="top-nav">
+        <div class="nav-item" style="margin-bottom: 0.5rem;">
+            <button class="nav-btn" onclick="document.querySelector('[data-target=\'tab-planning\']').click(); setTimeout(() => document.getElementById('tab-planning').scrollTo({top: 0, behavior: 'smooth'}), 20);" style="display: flex; align-items: center;" aria-label="Home">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+            </button>
+        </div>
         <div class="nav-item">
             <button class="nav-btn" data-target="tab-planning">사전 기획</button>
             <div class="sub-nav">
@@ -48,32 +56,31 @@
             <!-- Global Intro (Overview) -->
             <section class="slide" id="slide-0">
                 <div class="content fade-in-up" style="text-align: center;">
-                    <h1 class="title">xPrivacy SNS 채널 운영<br><span class="highlight">Overview</span></h1>
-                    <p class="subtitle" style="margin-bottom: 3rem;">무작정 영상을 찍기 전, 지속 가능한 채널 구축을 위한 3단계 로드맵입니다.</p>
+                    <h1 class="title" style="margin-bottom: 4rem;">xPrivacy SNS 채널 운영<br><span class="highlight">2가지 핵심 전제</span></h1>
 
-                    <div class="channel-tabs mt-4"
-                        style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; text-align: left;">
-                        <div class="channel-card"
-                            style="padding: 2rem; background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 16px;">
-                            <div style="font-size: 2rem; margin-bottom: 1rem;">🧭</div>
-                            <h4 style="color: var(--accent-blue); margin-bottom: 1rem;">Phase 0. 사전 기획</h4>
-                            <p style="font-size: 0.95rem; line-height: 1.6; color: var(--text-muted);">방향성(타겟/톤앤매너) 수립,
-                                제작 방식과 물리적 한계 등 뼈 때리는 현실을 점검하고 파일럿 방향을 도출합니다.</p>
+                    
+                    <div style="max-width: 900px; margin: 0 auto 4rem auto;">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; text-align: left;">
+                            <!-- Premise 1 -->
+                            <div style="background: rgba(122, 40, 203, 0.1); border: 1px solid rgba(122, 40, 203, 0.3); border-radius: 16px; padding: 2.5rem 2rem; position: relative; overflow: hidden; transition: transform 0.3s ease;">
+                                <div style="position: absolute; top: -10px; right: 10px; font-size: 6rem; opacity: 0.05; user-select: none;">🎬</div>
+                                <div style="color: #d6a8ff; font-weight: 800; font-size: 0.9rem; margin-bottom: 1rem; letter-spacing: 1px;">SITUATION</div>
+                                <h3 style="color: #fff; font-size: 1.35rem; line-height: 1.5; margin-bottom: 0; word-break: keep-all; font-weight: 700; letter-spacing: -0.3px;">
+                                    실전으로 <span style="color: #d6a8ff;">제작 가능한 범위</span>를 확인하며 <span style="color: #d6a8ff;">보완</span>하는 과정이 필요한 상황
+                                </h3>
+                            </div>
+                            <!-- Premise 2 -->
+                            <div style="background: rgba(0, 210, 255, 0.05); border: 1px solid rgba(0, 210, 255, 0.2); border-radius: 16px; padding: 2.5rem 2rem; position: relative; overflow: hidden; transition: transform 0.3s ease;">
+                                <div style="position: absolute; top: -10px; right: 10px; font-size: 6rem; opacity: 0.05; user-select: none;">🗺️</div>
+                                <div style="color: var(--accent-blue); font-weight: 800; font-size: 0.9rem; margin-bottom: 1rem; letter-spacing: 1px;">OBJECTIVE</div>
+                                <h3 style="color: #fff; font-size: 1.4rem; line-height: 1.5; margin-bottom: 0; word-break: keep-all; font-weight: 700;">
+                                    실전에 앞서 <span style="color: var(--accent-blue);">막연함을 해소</span>하기 위한<br>
+                                    <span style="color: var(--accent-blue);">전체 흐름 파악</span>을 위한 목적
+                                </h3>
+                            </div>
                         </div>
-                        <div class="channel-card"
-                            style="padding: 2rem; background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 16px;">
-                            <div style="font-size: 2rem; margin-bottom: 1rem;">💡</div>
-                            <h4 style="color: var(--accent-blue); margin-bottom: 1rem;">Phase 1. 콘텐츠 기획</h4>
-                            <p style="font-size: 0.95rem; line-height: 1.6; color: var(--text-muted);">실제 제작 가능 여부와
-                                무관하게, B2B와 B2C 타겟을 아우르는 다양한 아이디어 풀(Pool)을 브레인스토밍합니다.</p>
-                        </div>
-                        <div class="channel-card"
-                            style="padding: 2rem; background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 16px;">
-                            <div style="font-size: 2rem; margin-bottom: 1rem;">⚙️</div>
-                            <h4 style="color: var(--accent-blue); margin-bottom: 1rem;">Phase 2. 운영 기획</h4>
-                            <p style="font-size: 0.95rem; line-height: 1.6; color: var(--text-muted);">알고리즘의 4단계 워크플로우를
-                                공략하고, 채널의 지속 가능성을 위한 파이프라인 최적화 및 액션 아이템을 논의합니다.</p>
-                        </div>
+                        
+                        <!-- Conclusion Block moved to subtitle -->
                     </div>
                 </div>
                 <div class="scroll-indicator">
@@ -84,7 +91,7 @@
             <!-- Slide 1: Title -->
             <section class="slide" id="slide-1">
                 <div class="content fade-in-up">
-                    <div class="badge">Phase 0. 사전 기획</div>
+                    <div class="badge">Phase 1. 사전 기획</div>
                     <h1 class="title">방향성 수립과<br><span class="highlight">현실 점검</span></h1>
                     <p class="subtitle">무작정 시작하기 전, 내부적으로 확인해야 할 기준점과 제작 방식 도출</p>
                 </div>
@@ -374,9 +381,7 @@
                                 되더라도 이를 '실험'으로서 용인하십니까?</p>
                         </div>
                     </div>
-                    <div class="cta-wrapper mt-5">
-                        <button class="cta-button" onclick="alert('의사결정 회의를 소집합니다.')">의사결정 킥오프(Kick-off) 미팅 소집</button>
-                    </div>
+
                 </div>
             </section>
         </div> <!-- End of tab-planning -->
@@ -387,7 +392,7 @@
             <!-- Operation Intro -->
             <section class="slide" id="slide-operation-intro">
                 <div class="content fade-in-up">
-                    <div class="badge">Phase 2. 운영 기획</div>
+                    <div class="badge">Phase 3. 운영 기획</div>
                     <h1 class="title">어떻게<br><span class="highlight">살아남을 것인가?</span></h1>
                     <p class="subtitle">알고리즘의 현실을 돌파하기 위한 단계별 운영 및 관리 전략</p>
                 </div>
@@ -505,7 +510,7 @@
             <!-- Content Intro -->
             <section class="slide" id="slide-content-intro">
                 <div class="content fade-in-up">
-                    <div class="badge">Phase 1. 콘텐츠 기획</div>
+                    <div class="badge">Phase 2. 콘텐츠 기획</div>
                     <h1 class="title">무엇을<br><span class="highlight">만들 것인가?</span></h1>
                     <p class="subtitle">타겟 페르소나와 접근 방식에 따른 실전 콘텐츠 기획안</p>
                 </div>

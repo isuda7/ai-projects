@@ -84,36 +84,36 @@ const modalData = {
     'algo-step-1': {
         title: 'STEP 1. 시드 노출 (스크롤 멈추기)',
         examples: [
-            { text: '<strong>첫 3초의 강력한 시각적 자극</strong><br>모자이크 전/후 비교, 속도감 있는 화면 전환으로 이목 집중', recommended: true, badgeText: '필수' },
-            { text: '<strong>핵심 결과 선공개 (두괄식)</strong><br>가장 흥미로운 장면이나 결과물(완벽히 가려진 얼굴)을 맨 앞에 배치', recommended: true, badgeText: '핵심' },
-            { text: '<strong>과도한 낚시성 인트로 (Clickbait)</strong><br>본문 내용과 상관없는 억지 밈이나 과장된 멘트는 초반 이탈률만 급증시키므로 지양', recommended: false, badgeText: '절대 금지' }
+            { text: '<strong>첫 3초의 강력한 시각적 자극</strong><br>모자이크 전/후 비교, 속도감 있는 화면 전환으로 이목 집중', recommended: true },
+            { text: '<strong>핵심 결과 선공개 (두괄식)</strong><br>가장 흥미로운 장면이나 결과물(완벽히 가려진 얼굴)을 맨 앞에 배치', recommended: true },
+            { text: '<strong>과도한 낚시성 인트로 (Clickbait)</strong><br>본문 내용과 상관없는 억지 밈이나 과장된 멘트는 초반 이탈률만 급증시키므로 지양', recommended: false }
         ],
         summary: '소규모 테스트 그룹(시드)에게 노출되었을 때, <strong>무조건 3초 안에 스크롤을 멈추게 하는 것</strong>이 최우선 목표입니다.'
     },
     'algo-step-2': {
         title: 'STEP 2. 시청 유지 (본론으로 직행)',
         examples: [
-            { text: '<strong>불필요한 인사말 생략</strong><br>"안녕하세요 오늘은~" 같은 형식적인 인삿말을 과감히 삭제하고 곧바로 본론 진입', recommended: true, badgeText: '필수' },
-            { text: '<strong>역동적인 컷편집 (1초 단위)</strong><br>시각적 지루함을 없애기 위해 화자 구도 변경, 화면 줌인/아웃 등을 쉴 새 없이 배치', recommended: true, badgeText: '핵심' },
-            { text: '<strong>루즈한 오디오 공백 방치</strong><br>말과 말 사이의 숨 쉬는 구간(0.5초)조차 스크롤 이탈의 빌미가 되므로 오디오 틈을 완전히 잘라내야 함', recommended: false, badgeText: '금지' }
+            { text: '<strong>불필요한 인사말 생략</strong><br>"안녕하세요 오늘은~" 같은 형식적인 인삿말을 과감히 삭제하고 곧바로 본론 진입', recommended: true },
+            { text: '<strong>역동적인 컷편집 (1초 단위)</strong><br>시각적 지루함을 없애기 위해 화자 구도 변경, 화면 줌인/아웃 등을 쉴 새 없이 배치', recommended: true },
+            { text: '<strong>루즈한 오디오 공백 방치</strong><br>말과 말 사이의 숨 쉬는 구간(0.5초)조차 스크롤 이탈의 빌미가 되므로 오디오 틈을 완전히 잘라내야 함', recommended: false }
         ],
         summary: '스크롤을 멈춘 유저가 영상을 끝까지(또는 길게) 보게 만들어 <strong>시청 지속 시간(Retention)</strong> 지표를 높이는 단계입니다.'
     },
     'algo-step-3': {
         title: 'STEP 3. 인게이지먼트 (행동 끌어내기)',
         examples: [
-            { text: '<strong>저장 유도 (Save) 꿀팁 제공</strong><br>"나중에 필요할 때 보려면 꼭 저장해두세요"라며 실질적인 가치를 담은 정보 제공', recommended: true, badgeText: '핵심' },
-            { text: '<strong>논쟁이나 공감으로 댓글 유도</strong><br>"직장인 공감하시나요?", "여러분이라면 어떻게 하시겠어요?" 등 질문을 던져 소통 유도', recommended: true, badgeText: '추천' },
-            { text: '<strong>맥락 없는 \'좋댓구알\' 구걸</strong><br>아무런 정보 제공 없이 무작정 좋아요와 팔로우를 요구하는 것은 전환율에 악영향을 미침', recommended: false, badgeText: '지양' }
+            { text: '<strong>저장 유도 (Save)</strong><br>"나중에 필요할 때 보려면 꼭 저장해두세요"라며 실질적인 가치를 담은 정보 제공', recommended: true },
+            { text: '<strong>논쟁이나 공감으로 댓글 유도</strong><br>"직장인 공감하시나요?", "여러분이라면 어떻게 하시겠어요?" 등 질문을 던져 소통 유도', recommended: true },
+            { text: '<strong>맥락 없는 \'좋댓구알\' 구걸</strong><br>아무런 정보 제공 없이 무작정 좋아요와 팔로우를 요구하는 것은 전환율에 악영향을 미침', recommended: false }
         ],
         summary: '단순한 시청을 넘어, 플랫폼이 가장 좋아하는 가점 지표인 <strong>저장과 공유(그리고 댓글)</strong>를 인위적으로 이끌어내야 합니다.'
     },
     'algo-step-4': {
         title: 'STEP 4. 대규모 확산 (타겟 페르소나 고정)',
         examples: [
-            { text: '<strong>명확한 채널 정체성 유지</strong><br>xPrivacy 관련 정보, 직장인 썰 등 특정 카테고리를 일관되게 유지하여 알고리즘의 타겟 학습 촉진', recommended: true, badgeText: '필수' },
-            { text: '<strong>꾸준한 업로드 주기 (빈도 유지)</strong><br>알고리즘의 신뢰 지수를 얻기 위해 주 2~3회 일정한 요일과 시간에 꾸준히 업로드', recommended: true, badgeText: '필수' },
-            { text: '<strong>채널 핏에 안 맞는 유행어 맹목적 탑승</strong><br>단순히 뜬다는 이유로 타겟층과 무관한 댄스 챌린지 등을 올리면 알고리즘에 심각한 혼선 초래', recommended: false, badgeText: '주의' }
+            { text: '<strong>명확한 채널 정체성 유지</strong><br>xPrivacy 관련 정보, 직장인 썰 등 특정 카테고리를 일관되게 유지하여 알고리즘의 타겟 학습 촉진', recommended: true },
+            { text: '<strong>꾸준한 업로드 주기 (빈도 유지)</strong><br>알고리즘의 신뢰 지수를 얻기 위해 주 2~3회 일정한 요일과 시간에 꾸준히 업로드', recommended: true },
+            { text: '<strong>채널 핏에 안 맞는 유행어 맹목적 탑승</strong><br>단순히 뜬다는 이유로 타겟층과 무관한 댄스 챌린지 등을 올리면 알고리즘에 심각한 혼선 초래', recommended: false }
         ],
         summary: '시드 테스트를 통과한 영상이 유사 타겟층에게 대량 노출되는 시기입니다. <strong>채널의 핏(주제)이 일관될수록</strong> 더 크고 정확한 풀(Pool)로 확산됩니다.'
     }
@@ -162,10 +162,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 let html = '<ul>';
                 data.examples.forEach(ex => {
                     if (ex.recommended === true) {
-                        const badgeText = ex.badgeText || '추천';
+                        const badgeText = ex.badgeText || '권장';
                         html += `<li class="recommended"><span class="recommended-badge">${badgeText}</span>${ex.text}</li>`;
                     } else if (ex.recommended === false) {
-                        const badgeText = ex.badgeText || '주의';
+                        const badgeText = ex.badgeText || '지양';
                         html += `<li class="warning"><span class="warning-badge">${badgeText}</span>${ex.text}</li>`;
                     } else {
                         html += `<li>${ex.text}</li>`;
