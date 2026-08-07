@@ -47,12 +47,32 @@
 - **Label (Lg/Md/Sm)**: 10px ~ 13px / Line-height: 1.4
 
 ### C. Elevator (`_elevator.scss`)
-UI 요소의 Z축 깊이감을 나타내는 그림자(Box-shadow) 스케일입니다.
-- **Level 1 (`--elevator-1`)**: 미세한 깊이감 (버튼 등)
-- **Level 2 (`--elevator-2`)**: 얕은 그림자 (카드, 드롭다운 등)
-- **Level 3 (`--elevator-3`)**: 중간 그림자 (모달 등)
-- **Level 4 (`--elevator-4`)**: 깊은 그림자 (팝업, 다이얼로그 등)
-- **Level 5 (`--elevator-5`)**: 가장 깊은 그림자 (화면 전체 덮는 레이어 등)
+UI 요소의 Z축 깊이감을 나타내는 그림자(Box-shadow) 및 Z-index 스케일입니다.
+
+**1. Shadow Scale (그림자 깊이)**
+- **Level 0 (`--elevator-none`)**: 없음 (None)
+- **Level 1 (`--elevator-1`)**: 엘리먼트 (Element: Button, Badge)
+- **Level 2 (`--elevator-2`)**: 그룹 (Group: Card, Accordion)
+- **Level 3 (`--elevator-3`)**: 레이어 (Layer: Dropdown, Tooltip)
+- **Level 4 (`--elevator-4`)**: 오버레이 (Overlay: Modal, Popover)
+
+**2. Z-index Scale (요소 겹침 깊이)**
+> **[Z-index 설계 규칙 (여유 공간 확보 전략)]**
+> - **1 ~ 99**: 로컬 컨텍스트 내부에서의 겹침 제어 (요소 호버, 스티키 카드 등)
+> - **100 ~ 999**: 사이트 레이아웃 프레임 및 컨텐츠 위로 뜨는 일반 레이어
+> - **1000 ~ 1999**: 오버레이 영역. 모달 내부에 또 다른 팝오버나 달력이 뜰 수 있음을 고려하여 계층 사이에 100~200 단위의 충분한 여유 공간을 둠.
+> - **9999**: 시스템 알림 등 절대 가려지지 않는 최상단 계층
+
+- **`--zindex-element` (1)**: 탭 활성화 상태, 캐러셀 화살표, 카드 호버 등 내부 엘리먼트 뎁스
+- **`--zindex-group` (10)**: 화면 내 플로팅 버튼(FAB), 스티키(Sticky) 컨텐츠
+- **`--zindex-layout` (100)**: GNB (상단 헤더), LNB (사이드바), 고정 푸터 등 레이아웃 프레임
+- **`--zindex-layer` (200)**: 드롭다운 메뉴, 커스텀 셀렉트박스 옵션 목록
+- **`--zindex-backdrop` (1000)**: 모달/오프캔버스가 뜰 때 깔리는 검은색 딤(Dim) 처리 영역
+- **`--zindex-modal` (1200)**: 팝업 창, 모달 다이얼로그, 바텀 시트, 오프캔버스
+- **`--zindex-popover` (1300)**: 클릭 시 나타나는 정보성 팝오버 (모달 위에도 위치할 수 있음)
+- **`--zindex-datepicker` (1400)**: 달력 선택기 (모달이나 팝오버 등 어떤 상황에서도 최상위에 떠야 함)
+- **`--zindex-tooltip` (1500)**: 마우스 호버 시 즉각적으로 나타나는 아주 작은 정보 팁
+- **`--zindex-toast` (9999)**: 토스트 알림, 글로벌 로딩 스피너 (절대 화면에서 가려지면 안 되는 시스템 메시지)
 
 ## 4. 🛠️ `_base.scss` 초기화 지침 (Reset & Base Styles)
 이 프로젝트에서 `_base.scss`를 작성하여 브라우저 기본 스타일을 초기화할 때는 다음 사항을 반드시 지켜야 합니다.
