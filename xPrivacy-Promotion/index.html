@@ -36,6 +36,7 @@
         <div class="nav-item">
             <button class="nav-btn" data-target="tab-content-planning">콘텐츠 기획</button>
             <div class="sub-nav">
+                <button class="sub-nav-btn" data-scroll="slide-7">콘텐츠 소비 흐름</button>
                 <button class="sub-nav-btn" data-scroll="slide-content-planning">아이디어 풀</button>
                 <button class="sub-nav-btn" data-scroll="slide-content-tutorial">제작 튜토리얼</button>
             </div>
@@ -43,7 +44,7 @@
         <div class="nav-item">
             <button class="nav-btn" data-target="tab-operation">운영 기획</button>
             <div class="sub-nav">
-                <button class="sub-nav-btn" data-scroll="slide-7">알고리즘 작동 원리</button>
+                <button class="sub-nav-btn" data-scroll="slide-7">알고리즘 공략법</button>
                 <button class="sub-nav-btn" data-scroll="slide-8">관리 지표</button>
             </div>
         </div>
@@ -402,62 +403,31 @@
                 </div>
             </section>
 
-            <!-- Slide 7: Algorithm Reality -->
+            <!-- Slide 7: Algorithm Strategy -->
             <section class="slide" id="slide-7">
                 <div class="content fade-in-up">
-                    <h2 class="section-title">01. Algorithm Reality</h2>
-                    <h3 class="main-heading">알고리즘 <span class="highlight">작동 원리 4단계</span></h3>
-                    <p class="mt-2" style="color: var(--text-muted);">알고리즘은 단순한 노출 기계가 아닙니다. 시청자의 행동 흐름에 맞춘 단계별 핵심 공략
-                        포인트입니다.</p>
-
-                    <div class="algorithm-steps mt-4"
-                        style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem;">
-                        <div class="step-card"
-                            style="padding: 1.5rem; background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 12px; display: flex; flex-direction: column;">
-                            <div
-                                style="color: var(--accent-blue); font-weight: bold; margin-bottom: 0.5rem; font-size: 0.9rem;">
-                                STEP 1. 시드 노출</div>
-                            <h4 style="color: #fff; margin-bottom: 1rem; line-height: 1.3;">스크롤 멈추기<br><span
-                                    style="font-size: 0.85rem; color: var(--accent-red);">우선순위: 3초 훅(Hook)</span></h4>
-                            <p style="font-size: 0.9rem; line-height: 1.5; color: var(--text-muted); flex-grow: 1;">알고리즘이 소규모 그룹에 테스트를
-                                돌리는 최초 단계. 무조건 첫 3초의 강력한 시각/청각적 자극으로 이탈(스크롤)을 막는 것이 유일한 목표입니다.</p>
-                            <button class="ex-btn modal-trigger" data-modal="algo-step-1" style="width: 100%; margin-top: 1rem;">자세히 보기</button>
+                    <h2 class="section-title">01. Algorithm Strategy</h2>
+                    <h3 class="main-heading">알고리즘 기차에 <span class="highlight">탑승하는 3대 방법론</span></h3>
+                    <p class="mt-2" style="color: var(--text-muted);">계정 자체가 알고리즘의 간택을 받기 위해 실행해야 할 물리적, 운영적 차원의 전략입니다.</p>
+                    <div class="channel-tabs mt-4"
+                        style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;">
+                        <div class="channel-card"
+                            style="padding: 2rem; background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 16px;">
+                            <div style="font-size: 2rem; margin-bottom: 1rem;">🌊</div>
+                            <h4 style="color: var(--accent-blue); margin-bottom: 1rem;">1. 꾸준한 물량 타격 (Consistency)</h4>
+                            <p style="font-size: 0.95rem; line-height: 1.6;">알고리즘은 활동성이 검증된 계정을 밀어줍니다. 첫 영상이 터지길 기도하는 대신, 알고리즘 풀에 걸릴 때까지 <strong>주 3회 이상 기계적인 업로드</strong>로 임계점을 돌파합니다.</p>
                         </div>
-
-                        <div class="step-card"
-                            style="padding: 1.5rem; background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 12px; display: flex; flex-direction: column;">
-                            <div
-                                style="color: var(--accent-blue); font-weight: bold; margin-bottom: 0.5rem; font-size: 0.9rem;">
-                                STEP 2. 시청 유지</div>
-                            <h4 style="color: #fff; margin-bottom: 1rem; line-height: 1.3;">본론으로 직행<br><span
-                                    style="font-size: 0.85rem; color: var(--accent-red);">우선순위: 군더더기 제거</span></h4>
-                            <p style="font-size: 0.9rem; line-height: 1.5; color: var(--text-muted); flex-grow: 1;">알고리즘을 타고 들어온 유저가
-                                끄지 않도록, 화려한 인사를 생략하고 빠른 템포와 텐션으로 '시청 지속 시간'을 방어합니다.</p>
-                            <button class="ex-btn modal-trigger" data-modal="algo-step-2" style="width: 100%; margin-top: 1rem;">자세히 보기</button>
+                        <div class="channel-card"
+                            style="padding: 2rem; background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 16px;">
+                            <div style="font-size: 2rem; margin-bottom: 1rem;">🎵</div>
+                            <h4 style="color: var(--accent-blue); margin-bottom: 1rem;">2. 트렌딩 오디오 탑승 (Hijacking)</h4>
+                            <p style="font-size: 0.95rem; line-height: 1.6;">플랫폼이 현재 전략적으로 밀어주고 있는 <strong>인기 음원이나 유행하는 템플릿(캡컷 등)</strong>을 무조건 사용하여, 알고리즘의 추천 로직(버스)에 억지로라도 탑승합니다.</p>
                         </div>
-
-                        <div class="step-card"
-                            style="padding: 1.5rem; background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 12px; display: flex; flex-direction: column;">
-                            <div
-                                style="color: var(--accent-blue); font-weight: bold; margin-bottom: 0.5rem; font-size: 0.9rem;">
-                                STEP 3. 인게이지먼트</div>
-                            <h4 style="color: #fff; margin-bottom: 1rem; line-height: 1.3;">행동 끌어내기<br><span
-                                    style="font-size: 0.85rem; color: var(--accent-red);">우선순위: 저장 / 공유</span></h4>
-                            <p style="font-size: 0.9rem; line-height: 1.5; color: var(--text-muted); flex-grow: 1;">알고리즘 확장의 핵심 가점 지표.
-                                '단순한 재미'를 넘어, 나중에 다시 보거나 남에게 알려주기 위한 '꿀팁'을 심어 저장을 유도합니다.</p>
-                            <button class="ex-btn modal-trigger" data-modal="algo-step-3" style="width: 100%; margin-top: 1rem;">자세히 보기</button>
-                        </div>
-
-                        <div class="step-card"
-                            style="padding: 1.5rem; background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 12px; display: flex; flex-direction: column;">
-                            <div
-                                style="color: var(--accent-blue); font-weight: bold; margin-bottom: 0.5rem; font-size: 0.9rem;">
-                                STEP 4. 대규모 확산</div>
-                            <h4 style="color: #fff; margin-bottom: 1rem; line-height: 1.3;">타겟 페르소나 고정<br><span
-                                    style="font-size: 0.85rem; color: var(--accent-red);">우선순위: 채널 일관성</span></h4>
-                            <p style="font-size: 0.9rem; line-height: 1.5; color: var(--text-muted); flex-grow: 1;">테스트를 통과해 유사 타겟층에게
-                                대량 노출되는 단계. 이때 알고리즘이 헷갈리지 않도록 기존 포맷과 주제(핏)를 일관되게 유지해야 합니다.</p>
-                            <button class="ex-btn modal-trigger" data-modal="algo-step-4" style="width: 100%; margin-top: 1rem;">자세히 보기</button>
+                        <div class="channel-card"
+                            style="padding: 2rem; background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 16px;">
+                            <div style="font-size: 2rem; margin-bottom: 1rem;">🚀</div>
+                            <h4 style="color: var(--accent-blue); margin-bottom: 1rem;">3. 초기 트래픽 펌핑 (Pumping)</h4>
+                            <p style="font-size: 0.95rem; line-height: 1.6;">업로드 직후 1~2시간 내의 반응이 노출의 스노우볼을 굴립니다. 발행 즉시 사내 메신저, 개인 SNS, 커뮤니티 등에 링크를 뿌려 <strong>초기 마중물 조회수</strong>를 인위적으로 주입합니다.</p>
                         </div>
                     </div>
                 </div>
@@ -520,9 +490,70 @@
                 </div>
             </section>
 
+            <!-- Slide 7: Algorithm Reality -->
+            <section class="slide" id="slide-7">
+                <div class="content fade-in-up">
+                    <h2 class="section-title">01. Content Consumption Flow</h2>
+                    <h3 class="main-heading">콘텐츠 <span class="highlight">소비 흐름 4단계</span></h3>
+                    <p class="mt-2" style="color: var(--text-muted);">알고리즘은 단순한 노출 기계가 아닙니다. 시청자의 행동 흐름에 맞춘 단계별 핵심 공략
+                        포인트입니다.</p>
+
+                    <div class="algorithm-steps mt-4"
+                        style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem;">
+                        <div class="step-card"
+                            style="padding: 1.5rem; background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 12px; display: flex; flex-direction: column;">
+                            <div
+                                style="color: var(--accent-blue); font-weight: bold; margin-bottom: 0.5rem; font-size: 0.9rem;">
+                                STEP 1. 시드 노출</div>
+                            <h4 style="color: #fff; margin-bottom: 1rem; line-height: 1.3;">스크롤 멈추기<br><span
+                                    style="font-size: 0.85rem; color: var(--accent-red);">우선순위: 3초 훅(Hook)</span></h4>
+                            <p style="font-size: 0.9rem; line-height: 1.5; color: var(--text-muted); flex-grow: 1;">알고리즘이 소규모 그룹에 테스트를
+                                돌리는 최초 단계. 무조건 첫 3초의 강력한 시각/청각적 자극으로 이탈(스크롤)을 막는 것이 유일한 목표입니다.</p>
+                            <button class="ex-btn modal-trigger" data-modal="algo-step-1" style="width: 100%; margin-top: 1rem;">자세히 보기</button>
+                        </div>
+
+                        <div class="step-card"
+                            style="padding: 1.5rem; background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 12px; display: flex; flex-direction: column;">
+                            <div
+                                style="color: var(--accent-blue); font-weight: bold; margin-bottom: 0.5rem; font-size: 0.9rem;">
+                                STEP 2. 시청 유지</div>
+                            <h4 style="color: #fff; margin-bottom: 1rem; line-height: 1.3;">본론으로 직행<br><span
+                                    style="font-size: 0.85rem; color: var(--accent-red);">우선순위: 군더더기 제거</span></h4>
+                            <p style="font-size: 0.9rem; line-height: 1.5; color: var(--text-muted); flex-grow: 1;">알고리즘을 타고 들어온 유저가
+                                끄지 않도록, 화려한 인사를 생략하고 빠른 템포와 텐션으로 '시청 지속 시간'을 방어합니다.</p>
+                            <button class="ex-btn modal-trigger" data-modal="algo-step-2" style="width: 100%; margin-top: 1rem;">자세히 보기</button>
+                        </div>
+
+                        <div class="step-card"
+                            style="padding: 1.5rem; background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 12px; display: flex; flex-direction: column;">
+                            <div
+                                style="color: var(--accent-blue); font-weight: bold; margin-bottom: 0.5rem; font-size: 0.9rem;">
+                                STEP 3. 인게이지먼트</div>
+                            <h4 style="color: #fff; margin-bottom: 1rem; line-height: 1.3;">행동 끌어내기<br><span
+                                    style="font-size: 0.85rem; color: var(--accent-red);">우선순위: 저장 / 공유</span></h4>
+                            <p style="font-size: 0.9rem; line-height: 1.5; color: var(--text-muted); flex-grow: 1;">알고리즘 확장의 핵심 가점 지표.
+                                '단순한 재미'를 넘어, 나중에 다시 보거나 남에게 알려주기 위한 '꿀팁'을 심어 저장을 유도합니다.</p>
+                            <button class="ex-btn modal-trigger" data-modal="algo-step-3" style="width: 100%; margin-top: 1rem;">자세히 보기</button>
+                        </div>
+
+                        <div class="step-card"
+                            style="padding: 1.5rem; background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 12px; display: flex; flex-direction: column;">
+                            <div
+                                style="color: var(--accent-blue); font-weight: bold; margin-bottom: 0.5rem; font-size: 0.9rem;">
+                                STEP 4. 대규모 확산</div>
+                            <h4 style="color: #fff; margin-bottom: 1rem; line-height: 1.3;">타겟 페르소나 고정<br><span
+                                    style="font-size: 0.85rem; color: var(--accent-red);">우선순위: 채널 일관성</span></h4>
+                            <p style="font-size: 0.9rem; line-height: 1.5; color: var(--text-muted); flex-grow: 1;">테스트를 통과해 유사 타겟층에게
+                                대량 노출되는 단계. 이때 알고리즘이 헷갈리지 않도록 기존 포맷과 주제(핏)를 일관되게 유지해야 합니다.</p>
+                            <button class="ex-btn modal-trigger" data-modal="algo-step-4" style="width: 100%; margin-top: 1rem;">자세히 보기</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <section class="long-page" id="slide-content-planning">
                 <div class="content fade-in-up">
-                    <h2 class="section-title">01. Content Blueprint</h2>
+                    <h2 class="section-title">02. Content Blueprint</h2>
                     <h3 class="main-heading">아이디어 참고용 <span class="highlight">콘텐츠 풀 (Pool)</span></h3>
                     <p class="desc">실제 제작 가능 여부와 상관없이, 타겟과 접근 방식을 고려해 자유롭게 도출해 본 아이디어 리스트입니다.</p>
 
@@ -682,7 +713,7 @@
             <!-- Slide: Content Tutorial -->
             <section class="slide tutorial-slide" id="slide-content-tutorial">
                 <div class="content fade-in-up tutorial-content">
-                    <h2 class="section-title">02. Production Tutorial</h2>
+                    <h2 class="section-title">03. Production Tutorial</h2>
                     <h3 class="main-heading">실전 <span class="highlight">콘텐츠 제작 워크플로우</span></h3>
                     <p class="desc mt-2">단순히 툴을 이어 붙이는 것이 아닙니다. <strong>실제 실무자가 30분 만에 숏폼 1개를 뽑아내는 4단계 리얼 워크플로우</strong>입니다.</p>
 
