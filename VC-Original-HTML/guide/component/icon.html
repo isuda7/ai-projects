@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vibe Design System - Icon</title>
+  <link rel="stylesheet" href="/assets/css/guide.css">
+</head>
+
+<body>
+  <div data-include="/guide/layout/header.html"></div>
+  <div class="guide_main_container">
+    <div data-include="/guide/layout/sidebar.html"></div>
+
+    <main class="guide_content">
+      <div class="guide_wrapper">
+        <header class="guide_header">
+          <h1 class="guide_title_h1">Icon</h1>
+          <p class="guide_description">아이콘을 표시하는 기본 컴포넌트입니다. 상세 규격은 추후 작성됩니다.</p>
+        </header>
+
+        <section class="guide_section">
+          <h2 class="guide_title_h2">1. Overview & Specs</h2>
+          <div class="spec_table_wrapper">
+            <table class="spec_table">
+              <thead>
+                <tr>
+                  <th>Class</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>.icon</code></td>
+                  <td>아이콘 기본 래퍼 (기본 24x24)</td>
+                </tr>
+                <tr>
+                  <td><code>.icon-{size}</code></td>
+                  <td>사이즈 모디파이어 (12, 16, 20, 24, 28, 32)</td>
+                </tr>
+                <tr>
+                  <td><code>.icon-hover-group</code></td>
+                  <td>형태가 변하는 롤호버를 감싸는 부모 래퍼 클래스</td>
+                </tr>
+                <tr>
+                  <td><code>.icon-normal</code></td>
+                  <td>롤호버 전 나타나는 기본 아이콘</td>
+                </tr>
+                <tr>
+                  <td><code>.icon-hover</code></td>
+                  <td>롤호버 시 나타나는 대체 아이콘</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="mt-4">
+            <h3 class="guide_title_h3">1.1 SVG Sprite 동작 원리 (Master File)</h3>
+            <div class="guide_description mt-3">
+              <ul class="mb-0 ps-3">
+                <li class="mb-1"><strong>자동 병합 구조:</strong> 개발자가 개별 SVG 파일을 추가하면 빌드 시스템이 단일 파일(<code>sprite.svg</code>)로
+                  스캔 및 컴파일합니다.</li>
+                <li class="mb-1"><strong>통신 최적화:</strong> 최초 1회 로딩 후 브라우저에 캐싱되어 다수의 아이콘 통신 비용이 발생하지 않습니다.</li>
+                <li class="mb-1"><strong>HTML 간소화:</strong> 복잡한 벡터 코드 대신 짧은 <code>&lt;use href="..."&gt;</code> 구문만으로
+                  화면에 렌더링됩니다.</li>
+                <li class="mb-1"><strong>완벽한 CSS 제어:</strong> <code>currentColor</code> 속성을 통해 CSS 색상(color)을 상속받아 롤호버 시
+                  깜빡임 없이 부드럽게 전환됩니다.</li>
+              </ul>
+            </div>
+            <div class="code_block mt-3">
+              <pre><code class="language-xml">&lt;!-- [원본 관리 경로] 개별 SVG 파일 저장 위치: /assets/icons/src/ --&gt;
+&lt;!-- [시스템 출력 경로] 빌드 시스템 병합 결과: /assets/icons/sprite.svg --&gt;
+&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; style=&quot;display: none;&quot;&gt;
+  
+  &lt;!-- 개별 원본 SVG 파일들은 빌드 시 &lt;symbol&gt; 태그로 변환되며 고유 ID가 부여됩니다. --&gt;
+  &lt;!-- stroke=&quot;currentColor&quot; 속성 덕분에 HTML/CSS에서 부여한 글자색상을 100% 흡수합니다. --&gt;
+  &lt;symbol id=&quot;icon-search&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; ...&gt;
+    &lt;circle cx=&quot;11&quot; cy=&quot;11&quot; r=&quot;8&quot;&gt;&lt;/circle&gt;
+    &lt;line x1=&quot;21&quot; y1=&quot;21&quot; x2=&quot;16.65&quot; y2=&quot;16.65&quot;&gt;&lt;/line&gt;
+  &lt;/symbol&gt;
+  
+  &lt;!-- 새로운 아이콘이 필요하면 원본 관리 경로(/assets/icons/src/)에 svg 파일만 추가하면 됩니다. --&gt;
+&lt;/svg&gt;</code></pre>
+            </div>
+          </div>
+
+          <div class="mt-4">
+            <h3 class="guide_title_h3">1.2 빌드 실행 방법 (How to Build)</h3>
+            <div class="guide_description mt-3">
+              <p class="mb-2"><strong>현재 정적 HTML 환경에서는 새로운 SVG 파일을 <code>src</code> 폴더에 추가할 때마다 아래 명령어를 수동으로 실행하여 빌드해
+                  주시면 됩니다.</strong></p>
+            </div>
+            <div class="code_block mt-2">
+              <pre><code class="language-bash">node scripts/build-icons.js</code></pre>
+            </div>
+            <div class="mt-2 p-3 bg-light rounded" style="font-size: 13px; color: #64748b; font-family: monospace;">
+              [실행 결과]<br>
+              🔄 SVG 아이콘 빌드를 시작합니다...<br>
+              &nbsp;&nbsp;✓ 추가됨: icon-search<br>
+              &nbsp;&nbsp;✓ 추가됨: icon-new-icon<br>
+              🎉 성공! 총 O개의 아이콘이 하나의 sprite.svg로 빌드되었습니다.
+            </div>
+          </div>
+        </section>
+
+        <section class="guide_section">
+          <h2 class="guide_title_h2">2. Basic Usage (SVG Sprite)</h2>
+          <div class="guide_sub_section">
+            <h3 class="guide_title_h3">2.1 Standard Color Hover</h3>
+            <p class="guide_description">마우스 호버 시 CSS <code>color</code> 값만 부드럽게 변환되는 기본 유형입니다. (순수 CSS
+              <code>:hover</code> 제어)
+            </p>
+
+            <style>
+              .demo-color-icon {
+                color: var(--color-gray-500, #6b7280);
+                cursor: pointer;
+              }
+
+              .demo-color-icon.primary:hover {
+                color: var(--color-primary-600, #2563eb);
+              }
+
+              .demo-color-icon.danger:hover {
+                color: var(--color-danger-500, #ef4444);
+              }
+            </style>
+
+            <div class="guide_preview d-flex gap-4 align-items-center">
+              <span class="icon demo-color-icon primary">
+                <svg>
+                  <use href="/assets/icons/sprite.svg#icon-search"></use>
+                </svg>
+              </span>
+              <span class="icon demo-color-icon danger">
+                <svg>
+                  <use href="/assets/icons/sprite.svg#icon-trash"></use>
+                </svg>
+              </span>
+            </div>
+            <div class="code_block">
+              <pre><code>&lt;style&gt;
+  .demo-color-icon { color: var(--color-gray-500, #6b7280); cursor: pointer; }
+  .demo-color-icon.primary:hover { color: var(--color-primary-600, #2563eb); }
+  .demo-color-icon.danger:hover { color: var(--color-danger-500, #ef4444); }
+&lt;/style&gt;
+
+&lt;span class=&quot;icon demo-color-icon primary&quot;&gt;
+  &lt;svg&gt;&lt;use href=&quot;/assets/icons/sprite.svg#icon-search&quot;&gt;&lt;/use&gt;&lt;/svg&gt;
+&lt;/span&gt;
+
+&lt;span class=&quot;icon demo-color-icon danger&quot;&gt;
+  &lt;svg&gt;&lt;use href=&quot;/assets/icons/sprite.svg#icon-trash&quot;&gt;&lt;/use&gt;&lt;/svg&gt;
+&lt;/span&gt;</code></pre>
+            </div>
+          </div>
+
+          <div class="guide_sub_section mt-4">
+            <h3 class="guide_title_h3">2.2 Sizes (12px ~ 32px)</h3>
+            <p class="guide_description">기본 24px를 기준으로 4px 단위로 크기를 조절할 수 있습니다.</p>
+            <div class="guide_preview d-flex gap-4 align-items-end border p-4 bg-light rounded">
+              <div class="d-flex flex-column align-items-center gap-2"><span class="icon icon-12 text-primary"><svg>
+                    <use href="/assets/icons/sprite.svg#icon-search"></use>
+                  </svg></span><small>12px</small></div>
+              <div class="d-flex flex-column align-items-center gap-2"><span class="icon icon-16 text-primary"><svg>
+                    <use href="/assets/icons/sprite.svg#icon-search"></use>
+                  </svg></span><small>16px</small></div>
+              <div class="d-flex flex-column align-items-center gap-2"><span class="icon icon-20 text-primary"><svg>
+                    <use href="/assets/icons/sprite.svg#icon-search"></use>
+                  </svg></span><small>20px</small></div>
+              <div class="d-flex flex-column align-items-center gap-2"><span class="icon icon-24 text-primary"><svg>
+                    <use href="/assets/icons/sprite.svg#icon-search"></use>
+                  </svg></span><small>24px</small></div>
+              <div class="d-flex flex-column align-items-center gap-2"><span class="icon icon-28 text-primary"><svg>
+                    <use href="/assets/icons/sprite.svg#icon-search"></use>
+                  </svg></span><small>28px</small></div>
+              <div class="d-flex flex-column align-items-center gap-2"><span class="icon icon-32 text-primary"><svg>
+                    <use href="/assets/icons/sprite.svg#icon-search"></use>
+                  </svg></span><small>32px</small></div>
+            </div>
+            <div class="code_block">
+              <pre><code>&lt;span class=&quot;icon icon-12&quot;&gt;&lt;svg&gt;&lt;use href=&quot;...&quot;&gt;&lt;/use&gt;&lt;/svg&gt;&lt;/span&gt;
+&lt;span class=&quot;icon icon-16&quot;&gt;&lt;svg&gt;&lt;use href=&quot;...&quot;&gt;&lt;/use&gt;&lt;/svg&gt;&lt;/span&gt;
+&lt;span class=&quot;icon icon-32&quot;&gt;&lt;svg&gt;&lt;use href=&quot;...&quot;&gt;&lt;/use&gt;&lt;/svg&gt;&lt;/span&gt;</code></pre>
+            </div>
+          </div>
+
+          <div class="guide_sub_section mt-4">
+            <h3 class="guide_title_h3">2.3 Shape-Shift Hover</h3>
+            <p class="guide_description">네트워크 깜빡임 없이 호버 시 형태가 완전히 전환되는 롤호버 유형입니다.</p>
+            <div class="guide_preview d-flex gap-4 align-items-center">
+              <button type="button" class="btn ghost icon icon-hover-group">
+                <span class="icon icon-normal"><svg>
+                    <use href="/assets/icons/sprite.svg#icon-heart-outline"></use>
+                  </svg></span>
+                <span class="icon icon-hover text-danger"><svg>
+                    <use href="/assets/icons/sprite.svg#icon-heart-solid"></use>
+                  </svg></span>
+              </button>
+              <button type="button" class="btn ghost icon icon-hover-group">
+                <span class="icon icon-normal"><svg>
+                    <use href="/assets/icons/sprite.svg#icon-star-outline"></use>
+                  </svg></span>
+                <span class="icon icon-hover text-warning"><svg>
+                    <use href="/assets/icons/sprite.svg#icon-star-solid"></use>
+                  </svg></span>
+              </button>
+              <button type="button" class="btn ghost icon icon-hover-group">
+                <span class="icon icon-normal"><svg>
+                    <use href="/assets/icons/sprite.svg#icon-folder-closed"></use>
+                  </svg></span>
+                <span class="icon icon-hover text-primary"><svg>
+                    <use href="/assets/icons/sprite.svg#icon-folder-open"></use>
+                  </svg></span>
+              </button>
+            </div>
+            <div class="code_block">
+              <pre><code>&lt;button type="button" class=&quot;btn ghost icon icon-hover-group&quot;&gt;
+  &lt;span class=&quot;icon icon-normal&quot;&gt;
+    &lt;svg&gt;&lt;use href=&quot;/assets/icons/sprite.svg#icon-heart-outline&quot;&gt;&lt;/use&gt;&lt;/svg&gt;
+  &lt;/span&gt;
+  &lt;span class=&quot;icon icon-hover text-danger&quot;&gt;
+    &lt;svg&gt;&lt;use href=&quot;/assets/icons/sprite.svg#icon-heart-solid&quot;&gt;&lt;/use&gt;&lt;/svg&gt;
+  &lt;/span&gt;
+&lt;/button&gt;</code></pre>
+            </div>
+          </div>
+        </section>
+
+        <section class="guide_section">
+          <h2 class="guide_title_h2">3. Icon System</h2>
+          <div class="guide_description">
+            프로젝트 전반에 사용되는 SVG 마스터 심볼 아이콘 목록입니다.
+          </div>
+
+          <div class="mb-2">
+            <small class="text-primary fw-bold d-block mb-1">※ 공통 규칙: 아래 표기된 아이콘 이름 앞에 <code>icon-</code> 접두사를 붙여서
+              호출합니다. (예: <code>icon-search</code>)</small>
+            <small class="text-muted">사용하려는 아이콘의 정확한 ID를 href에 매핑하여 아래와 같이 사용합니다.</small>
+          </div>
+          <div class="code_block mb-5">
+            <pre><code>&lt;span class=&quot;icon&quot;&gt;
+  &lt;svg&gt;&lt;use href=&quot;/assets/icons/sprite.svg#icon-search&quot;&gt;&lt;/use&gt;&lt;/svg&gt;
+&lt;/span&gt;</code></pre>
+          </div>
+
+          <div class="guide_sub_section mt-4">
+            <h3 class="guide_title_h3">3.1 Directional (방향/네비게이션)</h3>
+            <div style="display: grid; grid-template-columns: repeat(8, 1fr); gap: 16px; margin-top: 16px;">
+              <div class="d-flex flex-column align-items-center justify-content-center gap-2"><span class="icon"><svg>
+                    <use href="/assets/icons/sprite.svg#icon-chevron-up"></use>
+                  </svg></span><small class="text-muted text-nowrap" style="font-size: 12px;">chevron-up</small></div>
+              <div class="d-flex flex-column align-items-center justify-content-center gap-2"><span class="icon"><svg>
+                    <use href="/assets/icons/sprite.svg#icon-chevron-down"></use>
+                  </svg></span><small class="text-muted text-nowrap" style="font-size: 12px;">chevron-down</small></div>
+              <div class="d-flex flex-column align-items-center justify-content-center gap-2"><span class="icon"><svg>
+                    <use href="/assets/icons/sprite.svg#icon-chevron-left"></use>
+                  </svg></span><small class="text-muted text-nowrap" style="font-size: 12px;">chevron-left</small></div>
+              <div class="d-flex flex-column align-items-center justify-content-center gap-2"><span class="icon"><svg>
+                    <use href="/assets/icons/sprite.svg#icon-chevron-right"></use>
+                  </svg></span><small class="text-muted text-nowrap" style="font-size: 12px;">chevron-right</small>
+              </div>
+              <div class="d-flex flex-column align-items-center justify-content-center gap-2"><span class="icon"><svg>
+                    <use href="/assets/icons/sprite.svg#icon-arrow-left"></use>
+                  </svg></span><small class="text-muted text-nowrap" style="font-size: 12px;">arrow-left</small></div>
+              <div class="d-flex flex-column align-items-center justify-content-center gap-2"><span class="icon"><svg>
+                    <use href="/assets/icons/sprite.svg#icon-arrow-right"></use>
+                  </svg></span><small class="text-muted text-nowrap" style="font-size: 12px;">arrow-right</small></div>
+              <div class="d-flex flex-column align-items-center justify-content-center gap-2"><span class="icon"><svg>
+                    <use href="/assets/icons/sprite.svg#icon-arrow-up"></use>
+                  </svg></span><small class="text-muted text-nowrap" style="font-size: 12px;">arrow-up</small></div>
+              <div class="d-flex flex-column align-items-center justify-content-center gap-2"><span class="icon"><svg>
+                    <use href="/assets/icons/sprite.svg#icon-arrow-down"></use>
+                  </svg></span><small class="text-muted text-nowrap" style="font-size: 12px;">arrow-down</small></div>
+              <div class="d-flex flex-column align-items-center justify-content-center gap-2"><span class="icon"><svg>
+                    <use href="/assets/icons/sprite.svg#icon-arrow-up-right"></use>
+                  </svg></span><small class="text-muted text-nowrap" style="font-size: 12px;">arrow-up-right</small>
+              </div>
+              <div class="d-flex flex-column align-items-center justify-content-center gap-2"><span class="icon"><svg>
+                    <use href="/assets/icons/sprite.svg#icon-chevron-left-circle"></use>
+                  </svg></span><small class="text-muted text-nowrap"
+                  style="font-size: 12px;">chevron-left-circle</small></div>
+              <div class="d-flex flex-column align-items-center justify-content-center gap-2"><span class="icon"><svg>
+                    <use href="/assets/icons/sprite.svg#icon-chevron-right-circle"></use>
+                  </svg></span><small class="text-muted text-nowrap"
+                  style="font-size: 12px;">chevron-right-circle</small></div>
+              <div class="d-flex flex-column align-items-center justify-content-center gap-2"><span class="icon"><svg>
+                    <use href="/assets/icons/sprite.svg#icon-menu"></use>
+                  </svg></span><small class="text-muted text-nowrap" style="font-size: 12px;">menu</small></div>
+              <div class="d-flex flex-column align-items-center justify-content-center gap-2"><span class="icon"><svg>
+                    <use href="/assets/icons/sprite.svg#icon-close"></use>
+                  </svg></span><small class="text-muted text-nowrap" style="font-size: 12px;">close</small></div>
+            </div>
+          </div>
+
+          <div class="guide_sub_section mt-5">
+            <h3 class="guide_title_h3">3.2 Action & Status (기능/상태)</h3>
+            <div style="display: grid; grid-template-columns: repeat(8, 1fr); gap: 16px; margin-top: 16px;">
+              <div class="d-flex flex-column align-items-center justify-content-center gap-2"><span class="icon"><svg>
+                    <use href="/assets/icons/sprite.svg#icon-search"></use>
+                  </svg></span><small class="text-muted text-nowrap" style="font-size: 12px;">search</small></div>
+              <div class="d-flex flex-column align-items-center justify-content-center gap-2"><span class="icon"><svg>
+                    <use href="/assets/icons/sprite.svg#icon-settings"></use>
+                  </svg></span><small class="text-muted text-nowrap" style="font-size: 12px;">settings</small></div>
+              <div class="d-flex flex-column align-items-center justify-content-center gap-2"><span class="icon"><svg>
+                    <use href="/assets/icons/sprite.svg#icon-plus"></use>
+                  </svg></span><small class="text-muted text-nowrap" style="font-size: 12px;">plus</small></div>
+              <div class="d-flex flex-column align-items-center justify-content-center gap-2"><span class="icon"><svg>
+                    <use href="/assets/icons/sprite.svg#icon-minus"></use>
+                  </svg></span><small class="text-muted text-nowrap" style="font-size: 12px;">minus</small></div>
+              <div class="d-flex flex-column align-items-center justify-content-center gap-2"><span class="icon"><svg>
+                    <use href="/assets/icons/sprite.svg#icon-edit"></use>
+                  </svg></span><small class="text-muted text-nowrap" style="font-size: 12px;">edit</small></div>
+              <div class="d-flex flex-column align-items-center justify-content-center gap-2"><span class="icon"><svg>
+                    <use href="/assets/icons/sprite.svg#icon-trash"></use>
+                  </svg></span><small class="text-muted text-nowrap" style="font-size: 12px;">trash</small></div>
+              <div class="d-flex flex-column align-items-center justify-content-center gap-2"><span class="icon"><svg>
+                    <use href="/assets/icons/sprite.svg#icon-x-circle"></use>
+                  </svg></span><small class="text-muted text-nowrap" style="font-size: 12px;">x-circle</small></div>
+              <div class="d-flex flex-column align-items-center justify-content-center gap-2"><span class="icon"><svg>
+                    <use href="/assets/icons/sprite.svg#icon-refresh"></use>
+                  </svg></span><small class="text-muted text-nowrap" style="font-size: 12px;">refresh</small></div>
+              <div class="d-flex flex-column align-items-center justify-content-center gap-2"><span class="icon"><svg>
+                    <use href="/assets/icons/sprite.svg#icon-info"></use>
+                  </svg></span><small class="text-muted text-nowrap" style="font-size: 12px;">info</small></div>
+              <div class="d-flex flex-column align-items-center justify-content-center gap-2"><span class="icon"><svg>
+                    <use href="/assets/icons/sprite.svg#icon-help"></use>
+                  </svg></span><small class="text-muted text-nowrap" style="font-size: 12px;">help</small></div>
+              <div class="d-flex flex-column align-items-center justify-content-center gap-2"><span class="icon"><svg>
+                    <use href="/assets/icons/sprite.svg#icon-alert"></use>
+                  </svg></span><small class="text-muted text-nowrap" style="font-size: 12px;">alert</small></div>
+              <div class="d-flex flex-column align-items-center justify-content-center gap-2"><span class="icon"><svg>
+                    <use href="/assets/icons/sprite.svg#icon-check"></use>
+                  </svg></span><small class="text-muted text-nowrap" style="font-size: 12px;">check</small></div>
+              <div class="d-flex flex-column align-items-center justify-content-center gap-2"><span class="icon"><svg>
+                    <use href="/assets/icons/sprite.svg#icon-external-link"></use>
+                  </svg></span><small class="text-muted text-nowrap" style="font-size: 12px;">external-link</small></div>
+              <div class="d-flex flex-column align-items-center justify-content-center gap-2"><span class="icon"><svg>
+                    <use href="/assets/icons/sprite.svg#icon-copy"></use>
+                  </svg></span><small class="text-muted text-nowrap" style="font-size: 12px;">copy</small></div>
+              <div class="d-flex flex-column align-items-center justify-content-center gap-2"><span class="icon"><svg>
+                    <use href="/assets/icons/sprite.svg#icon-globe"></use>
+                  </svg></span><small class="text-muted text-nowrap" style="font-size: 12px;">globe</small></div>
+              <div class="d-flex flex-column align-items-center justify-content-center gap-2"><span class="icon"><svg>
+                    <use href="/assets/icons/sprite.svg#icon-user"></use>
+                  </svg></span><small class="text-muted text-nowrap" style="font-size: 12px;">user</small></div>
+              <div class="d-flex flex-column align-items-center justify-content-center gap-2"><span class="icon"><svg>
+                    <use href="/assets/icons/sprite.svg#icon-log-in"></use>
+                  </svg></span><small class="text-muted text-nowrap" style="font-size: 12px;">log-in</small></div>
+              <div class="d-flex flex-column align-items-center justify-content-center gap-2"><span class="icon"><svg>
+                    <use href="/assets/icons/sprite.svg#icon-log-out"></use>
+                  </svg></span><small class="text-muted text-nowrap" style="font-size: 12px;">log-out</small></div>
+              <div class="d-flex flex-column align-items-center justify-content-center gap-2"><span class="icon icon-solid"><svg>
+                    <use href="/assets/icons/sprite.svg#icon-play"></use>
+                  </svg></span><small class="text-muted text-nowrap" style="font-size: 12px;">play</small></div>
+              <div class="d-flex flex-column align-items-center justify-content-center gap-2"><span class="icon icon-solid"><svg>
+                    <use href="/assets/icons/sprite.svg#icon-pause"></use>
+                  </svg></span><small class="text-muted text-nowrap" style="font-size: 12px;">pause</small></div>
+              <div class="d-flex flex-column align-items-center justify-content-center gap-2"><span class="icon icon-solid"><svg>
+                    <use href="/assets/icons/sprite.svg#icon-stop"></use>
+                  </svg></span><small class="text-muted text-nowrap" style="font-size: 12px;">stop</small></div>
+            </div>
+          </div>
+
+          <div class="guide_sub_section mt-5">
+            <h3 class="guide_title_h3">3.3 File Formats (파일 형식)</h3>
+            <div style="display: grid; grid-template-columns: repeat(8, 1fr); gap: 16px; margin-top: 16px;">
+              <div class="d-flex flex-column align-items-center justify-content-center gap-2"><span class="icon icon-solid"><svg>
+                    <use href="/assets/icons/sprite.svg#icon-file-pdf"></use>
+                  </svg></span><small class="text-muted text-nowrap" style="font-size: 12px;">file-pdf</small></div>
+              <div class="d-flex flex-column align-items-center justify-content-center gap-2"><span class="icon icon-solid"><svg>
+                    <use href="/assets/icons/sprite.svg#icon-file-doc"></use>
+                  </svg></span><small class="text-muted text-nowrap" style="font-size: 12px;">file-doc</small></div>
+              <div class="d-flex flex-column align-items-center justify-content-center gap-2"><span class="icon icon-solid"><svg>
+                    <use href="/assets/icons/sprite.svg#icon-file-xls"></use>
+                  </svg></span><small class="text-muted text-nowrap" style="font-size: 12px;">file-xls</small></div>
+              <div class="d-flex flex-column align-items-center justify-content-center gap-2"><span class="icon icon-solid"><svg>
+                    <use href="/assets/icons/sprite.svg#icon-file-zip"></use>
+                  </svg></span><small class="text-muted text-nowrap" style="font-size: 12px;">file-zip</small></div>
+              <div class="d-flex flex-column align-items-center justify-content-center gap-2"><span class="icon icon-solid"><svg>
+                    <use href="/assets/icons/sprite.svg#icon-file-jpg"></use>
+                  </svg></span><small class="text-muted text-nowrap" style="font-size: 12px;">file-jpg</small></div>
+              <div class="d-flex flex-column align-items-center justify-content-center gap-2"><span class="icon icon-solid"><svg>
+                    <use href="/assets/icons/sprite.svg#icon-file-mp4"></use>
+                  </svg></span><small class="text-muted text-nowrap" style="font-size: 12px;">file-mp4</small></div>
+              <div class="d-flex flex-column align-items-center justify-content-center gap-2"><span class="icon icon-solid"><svg>
+                    <use href="/assets/icons/sprite.svg#icon-file-mp3"></use>
+                  </svg></span><small class="text-muted text-nowrap" style="font-size: 12px;">file-mp3</small></div>
+            </div>
+          </div>
+
+          <div class="guide_sub_section mt-5">
+            <h3 class="guide_title_h3">3.4 SNS & Stores (소셜/스토어)</h3>
+            <div style="display: grid; grid-template-columns: repeat(8, 1fr); gap: 16px; margin-top: 16px;">
+              <div class="d-flex flex-column align-items-center justify-content-center gap-2"><span class="icon icon-solid"><svg>
+                    <use href="/assets/icons/sprite.svg#icon-apple"></use>
+                  </svg></span><small class="text-muted text-nowrap" style="font-size: 12px;">apple</small></div>
+              <div class="d-flex flex-column align-items-center justify-content-center gap-2"><span class="icon icon-solid"><svg>
+                    <use href="/assets/icons/sprite.svg#icon-android"></use>
+                  </svg></span><small class="text-muted text-nowrap" style="font-size: 12px;">android</small></div>
+              <div class="d-flex flex-column align-items-center justify-content-center gap-2"><span class="icon icon-solid"><svg>
+                    <use href="/assets/icons/sprite.svg#icon-google-play"></use>
+                  </svg></span><small class="text-muted text-nowrap" style="font-size: 12px;">google-play</small></div>
+              <div class="d-flex flex-column align-items-center justify-content-center gap-2"><span class="icon icon-solid"><svg>
+                    <use href="/assets/icons/sprite.svg#icon-blog"></use>
+                  </svg></span><small class="text-muted text-nowrap" style="font-size: 12px;">blog</small></div>
+              <div class="d-flex flex-column align-items-center justify-content-center gap-2"><span class="icon icon-solid"><svg>
+                    <use href="/assets/icons/sprite.svg#icon-naver"></use>
+                  </svg></span><small class="text-muted text-nowrap" style="font-size: 12px;">naver</small></div>
+              <div class="d-flex flex-column align-items-center justify-content-center gap-2"><span class="icon icon-solid"><svg>
+                    <use href="/assets/icons/sprite.svg#icon-kakao"></use>
+                  </svg></span><small class="text-muted text-nowrap" style="font-size: 12px;">kakao</small></div>
+              <div class="d-flex flex-column align-items-center justify-content-center gap-2"><span class="icon icon-solid"><svg>
+                    <use href="/assets/icons/sprite.svg#icon-youtube"></use>
+                  </svg></span><small class="text-muted text-nowrap" style="font-size: 12px;">youtube</small></div>
+              <div class="d-flex flex-column align-items-center justify-content-center gap-2"><span class="icon icon-solid"><svg>
+                    <use href="/assets/icons/sprite.svg#icon-tiktok"></use>
+                  </svg></span><small class="text-muted text-nowrap" style="font-size: 12px;">tiktok</small></div>
+              <div class="d-flex flex-column align-items-center justify-content-center gap-2"><span class="icon icon-solid"><svg>
+                    <use href="/assets/icons/sprite.svg#icon-instagram"></use>
+                  </svg></span><small class="text-muted text-nowrap" style="font-size: 12px;">instagram</small></div>
+              <div class="d-flex flex-column align-items-center justify-content-center gap-2"><span class="icon icon-solid"><svg>
+                    <use href="/assets/icons/sprite.svg#icon-facebook"></use>
+                  </svg></span><small class="text-muted text-nowrap" style="font-size: 12px;">facebook</small></div>
+              <div class="d-flex flex-column align-items-center justify-content-center gap-2"><span class="icon icon-solid"><svg>
+                    <use href="/assets/icons/sprite.svg#icon-x"></use>
+                  </svg></span><small class="text-muted text-nowrap" style="font-size: 12px;">x</small></div>
+            </div>
+          </div>
+
+          <div class="guide_sub_section mt-5">
+            <h3 class="guide_title_h3">3.5 Shape-Shift (롤호버 전용)</h3>
+            <div style="display: grid; grid-template-columns: repeat(8, 1fr); gap: 16px; margin-top: 16px;">
+              <div class="d-flex flex-column align-items-center justify-content-center gap-2">
+                <button type="button" class="btn ghost icon icon-hover-group">
+                  <span class="icon icon-normal"><svg>
+                      <use href="/assets/icons/sprite.svg#icon-heart-outline"></use>
+                    </svg></span>
+                  <span class="icon icon-hover text-danger"><svg>
+                      <use href="/assets/icons/sprite.svg#icon-heart-solid"></use>
+                    </svg></span>
+                </button>
+                <small class="text-muted text-center" style="font-size: 12px;">heart-outline<br>heart-solid</small>
+              </div>
+              <div class="d-flex flex-column align-items-center justify-content-center gap-2">
+                <button type="button" class="btn ghost icon icon-hover-group">
+                  <span class="icon icon-normal"><svg>
+                      <use href="/assets/icons/sprite.svg#icon-star-outline"></use>
+                    </svg></span>
+                  <span class="icon icon-hover text-warning"><svg>
+                      <use href="/assets/icons/sprite.svg#icon-star-solid"></use>
+                    </svg></span>
+                </button>
+                <small class="text-muted text-center" style="font-size: 12px;">star-outline<br>star-solid</small>
+              </div>
+              <div class="d-flex flex-column align-items-center justify-content-center gap-2">
+                <button type="button" class="btn ghost icon icon-hover-group">
+                  <span class="icon icon-normal"><svg>
+                      <use href="/assets/icons/sprite.svg#icon-eye-open"></use>
+                    </svg></span>
+                  <span class="icon icon-hover"><svg>
+                      <use href="/assets/icons/sprite.svg#icon-eye-off"></use>
+                    </svg></span>
+                </button>
+                <small class="text-muted text-center" style="font-size: 12px;">eye-open<br>eye-off</small>
+              </div>
+              <div class="d-flex flex-column align-items-center justify-content-center gap-2">
+                <button type="button" class="btn ghost icon icon-hover-group">
+                  <span class="icon icon-normal"><svg>
+                      <use href="/assets/icons/sprite.svg#icon-folder-closed"></use>
+                    </svg></span>
+                  <span class="icon icon-hover text-primary"><svg>
+                      <use href="/assets/icons/sprite.svg#icon-folder-open"></use>
+                    </svg></span>
+                </button>
+                <small class="text-muted text-center" style="font-size: 12px;">folder-closed<br>folder-open</small>
+              </div>
+            </div>
+          </div>
+
+        </section>
+
+      </div>
+    </main>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/js/include.js"></script>
+</body>
+
+</html>

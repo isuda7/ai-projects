@@ -3953,3 +3953,4 @@ span.flatpickr-weekday {
 }
 
 /*# sourceMappingURL=global.css.map */
+.icon.icon-solid svg { fill: unset !important; stroke: none !important; }

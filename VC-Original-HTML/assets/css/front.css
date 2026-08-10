@@ -3996,3 +3996,4 @@ span.flatpickr-weekday {
 }
 
 /*# sourceMappingURL=front.css.map */
+.icon.icon-solid svg { fill: unset !important; stroke: none !important; }

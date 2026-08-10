@@ -125,6 +125,22 @@ function initCodeBlocks() {
     btnContainer.style.width = '100%';
     btnContainer.style.marginBottom = '8px';
 
+    // Create main wrapper to hold both the button and the collapsing code block
+    const mainWrapper = document.createElement('div');
+    mainWrapper.className = 'code_block_wrapper';
+
+    // Transfer all margin utility classes from block to mainWrapper
+    // to preserve external spacing without breaking internal layout
+    const marginClasses = Array.from(block.classList).filter(cls => /^m[tyb]?-/.test(cls));
+    marginClasses.forEach(cls => {
+      block.classList.remove(cls);
+      mainWrapper.classList.add(cls);
+    });
+
+    // Explicitly remove margins from the collapsing child to guarantee smooth animation
+    block.style.marginTop = '0';
+    block.style.marginBottom = '0';
+
     // Create button
     const btn = document.createElement('button');
     btn.type = 'button';
@@ -159,10 +175,12 @@ function initCodeBlocks() {
 
     btnContainer.appendChild(btn);
 
-    // Insert button container before block
-    block.parentNode.insertBefore(btnContainer, block);
-    // Move block into wrapper
-    block.parentNode.insertBefore(collapseWrapper, block);
+    // Insert mainWrapper into the DOM
+    block.parentNode.insertBefore(mainWrapper, block);
+    
+    // Move components into the mainWrapper
+    mainWrapper.appendChild(btnContainer);
+    mainWrapper.appendChild(collapseWrapper);
     collapseWrapper.appendChild(block);
 
     // Create Copy Button
