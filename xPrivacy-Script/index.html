@@ -1,0 +1,1843 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>xPrivacy 대표영상 시나리오 기획 워크스페이스</title>
+  <meta name="description" content="사진 및 영상 속 개인정보를 안전하게 보호하는 AI 비식별화 솔루션 xPrivacy의 대표영상 스크립트 기획 및 의사결정을 위한 3단계 전략 워크스페이스입니다.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-theme">
+  <!-- Ambient Glow Backgrounds -->
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+  <div class="ambient-glow glow-3"></div>
+
+  <!-- Header / Navigation Bar -->
+  <header class="site-header" id="siteHeader">
+    <div class="header-container">
+      <a href="#overview" class="brand-logo" id="brandLogo">
+        <div class="logo-icon">
+          <i class="fa-solid fa-shield-halved"></i>
+          <span class="pulse-dot"></span>
+        </div>
+        <div class="logo-text">
+          <span class="brand-title">xPrivacy</span>
+          <span class="brand-badge">SCRIPT STUDIO</span>
+        </div>
+      </a>
+
+      <nav class="main-nav" id="mainNav">
+        <button class="nav-item active" data-tab="overview" id="navOverview">
+          <i class="fa-solid fa-compass"></i>
+          <span>개요 & 비전</span>
+        </button>
+        <button class="nav-item" data-tab="step1" id="navStep1">
+          <span class="step-num">01</span>
+          <span>사고구조 & 프롬프트</span>
+        </button>
+        <button class="nav-item" data-tab="step2" id="navStep2">
+          <span class="step-num">02</span>
+          <span>관점다양성 & 구조화</span>
+        </button>
+        <button class="nav-item" data-tab="step3" id="navStep3">
+          <span class="step-num">03</span>
+          <span>아이디어 & 대표스크립트</span>
+        </button>
+      </nav>
+
+      <div class="header-actions">
+        <button class="btn btn-outline-sm" id="btnHeaderTutorial">
+          <i class="fa-solid fa-graduation-cap"></i>
+          <span>튜토리얼 보기</span>
+        </button>
+        <button class="btn btn-primary-sm" id="btnViewScript">
+          <i class="fa-solid fa-film"></i>
+          <span>대표 대본 보기</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Area with Dynamic Tabs -->
+  <main class="main-content" id="mainContent">
+
+    <!-- ========================================================================= -->
+    <!-- TAB 0: OVERVIEW & BRAND VISION                                            -->
+    <!-- ========================================================================= -->
+    <section class="tab-pane active" id="pane-overview">
+      <!-- Hero Section -->
+      <div class="hero-section">
+        <div class="container">
+          <div class="hero-badge">
+            <i class="fa-solid fa-shield-cat"></i>
+            <span>AI Automated Video/Image De-identification Solution</span>
+          </div>
+          <h1 class="hero-title">
+            보이지 않는 곳까지 완벽한 보호,<br>
+            <span class="gradient-text">xPrivacy 대표영상</span> 기획 워크스페이스
+          </h1>
+          <p class="hero-subtitle">
+            CCTV, 영상, 사진 속 얼굴과 차량번호를 실시간으로 자동 감지하여 완벽하게 비식별화하는 <strong>xPrivacy</strong>.<br>
+            성공적인 대표 영상 제작을 위해 <strong>사고 구조 설계</strong>부터 <strong>관점의 다각화</strong>, <strong>최종 씬별 스크립트</strong>까지 한눈에 탐색하고 결정하세요.
+          </p>
+
+          <div class="hero-stats-grid">
+            <div class="stat-card">
+              <div class="stat-icon"><i class="fa-solid fa-microchip"></i></div>
+              <div class="stat-data">
+                <span class="stat-value">Real-Time</span>
+                <span class="stat-label">초고속 실시간 AI 마스킹</span>
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon"><i class="fa-solid fa-user-shield"></i></div>
+              <div class="stat-data">
+                <span class="stat-value">99.8%</span>
+                <span class="stat-label">얼굴·차량번호 검출 정확도</span>
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+              <div class="stat-data">
+                <span class="stat-value">100%</span>
+                <span class="stat-label">개인정보보호법 컴플라이언스</span>
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon"><i class="fa-solid fa-bullhorn"></i></div>
+              <div class="stat-data">
+                <span class="stat-value">60 Sec</span>
+                <span class="stat-label">골든 타임 대표영상 목표</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive Before & After Simulator Card -->
+          <div class="interactive-preview-card">
+            <div class="preview-header">
+              <div class="preview-title">
+                <i class="fa-solid fa-sliders"></i>
+                <span>xPrivacy AI 비식별화 인터랙티브 시뮬레이터</span>
+              </div>
+              <div class="preview-mode-tags">
+                <button class="mode-btn active" data-mode="cctv"><i class="fa-solid fa-video"></i> 도심 CCTV 모드</button>
+                <button class="mode-btn" data-mode="traffic"><i class="fa-solid fa-car"></i> 도로/차량 모드</button>
+                <button class="mode-btn" data-mode="retail"><i class="fa-solid fa-store"></i> 매장/공공장소</button>
+              </div>
+            </div>
+
+            <div class="comparison-container" id="comparisonContainer">
+              <div class="image-wrapper before-wrapper">
+                <div class="sim-scene sim-cctv-raw" id="simRawScene">
+                  <div class="sim-overlay-info">
+                    <span class="tag-danger"><i class="fa-solid fa-triangle-exclamation"></i> 원본 노출: 얼굴 4명, 번호판 2건 식별 가능</span>
+                  </div>
+                  <!-- Interactive Detection Boxes (Raw State) -->
+                  <div class="detect-box raw-face box-1"><span class="box-tag alert">FACE DETECTED</span></div>
+                  <div class="detect-box raw-face box-2"><span class="box-tag alert">FACE DETECTED</span></div>
+                  <div class="detect-box raw-plate box-3"><span class="box-tag alert">PLATE: 58가 4920</span></div>
+                  <div class="detect-box raw-face box-4"><span class="box-tag alert">FACE DETECTED</span></div>
+                </div>
+                <div class="scene-label label-before">BEFORE : 원본 영상 (개인정보 노출 위험)</div>
+              </div>
+
+              <div class="image-wrapper after-wrapper" id="afterWrapper">
+                <div class="sim-scene sim-cctv-masked" id="simMaskedScene">
+                  <div class="sim-overlay-info">
+                    <span class="tag-success"><i class="fa-solid fa-shield-check"></i> xPrivacy 적용: AI 정밀 가명처리 완료</span>
+                  </div>
+                  <!-- Interactive Detection Boxes (Masked State) -->
+                  <div class="detect-box masked-face box-1"><div class="blur-effect"></div><span class="box-tag success"><i class="fa-solid fa-lock"></i> PROTECTED</span></div>
+                  <div class="detect-box masked-face box-2"><div class="blur-effect"></div><span class="box-tag success"><i class="fa-solid fa-lock"></i> PROTECTED</span></div>
+                  <div class="detect-box masked-plate box-3"><div class="pixel-effect"></div><span class="box-tag success"><i class="fa-solid fa-lock"></i> PLATE MASKED</span></div>
+                  <div class="detect-box masked-face box-4"><div class="blur-effect"></div><span class="box-tag success"><i class="fa-solid fa-lock"></i> PROTECTED</span></div>
+                </div>
+                <div class="scene-label label-after">AFTER : xPrivacy 실시간 AI 비식별화</div>
+              </div>
+
+              <div class="slider-handle" id="sliderHandle">
+                <div class="handle-line"></div>
+                <div class="handle-button">
+                  <i class="fa-solid fa-arrows-left-right"></i>
+                </div>
+              </div>
+            </div>
+            <div class="slider-hint">
+              <i class="fa-solid fa-hand-pointer"></i> 슬라이더를 좌우로 드래그하여 xPrivacy의 완벽한 비식별화 효과를 비교해보세요.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3-Step Strategic Workflow Map -->
+      <div class="workflow-roadmap-section">
+        <div class="container">
+          <div class="section-heading text-center">
+            <span class="section-kicker">STRATEGIC PLANNING ROADMAP</span>
+            <h2 class="section-title">대표영상 제작을 위한 3단계 사고 및 결정 프레임워크</h2>
+            <p class="section-desc">단순한 영상 제작이 아닌, 명확한 사고 체계와 다각적 관점 검토를 거쳐 가장 임팩트 있는 스크립트를 완성합니다.</p>
+          </div>
+
+          <div class="roadmap-grid">
+            <!-- Step Card 1 -->
+            <div class="roadmap-card" data-target-tab="step1">
+              <div class="step-card-header">
+                <span class="step-badge">STAGE 01</span>
+                <span class="step-duration"><i class="fa-solid fa-brain"></i> Fundamental Thinking</span>
+              </div>
+              <h3 class="card-title">사고 구조 & 프롬프트 생성</h3>
+              <p class="card-desc">주제와 상관없이 원하는 본질을 이끌어내는 5대 사고 프레임워크(관계, 구조, 유형, 분류, 관점)와 실시간 메타 프롬프트 스튜디오</p>
+              <ul class="step-feature-list">
+                <li><i class="fa-solid fa-circle-check"></i> 5대 사고력 구조 매트릭스</li>
+                <li><i class="fa-solid fa-circle-check"></i> 인터랙티브 AI 프롬프트 빌더</li>
+                <li><i class="fa-solid fa-circle-check"></i> 기획자 7대 골든 질문지</li>
+              </ul>
+              <button class="btn btn-outline-full">
+                <span>1단계 탐색하기</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+
+            <!-- Step Card 2 -->
+            <div class="roadmap-card highlighted" data-target-tab="step2">
+              <div class="step-card-header">
+                <span class="step-badge">STAGE 02</span>
+                <span class="step-duration"><i class="fa-solid fa-cubes"></i> Architecture & Matrix</span>
+              </div>
+              <h3 class="card-title">관점의 다양성 & 구조화</h3>
+              <p class="card-desc">B2B·공공·기술·시민 4대 관점 다각화와 60초 골든 타임라인 아키텍처, 5대 컨셉 포맷 분류 및 평가 체계</p>
+              <ul class="step-feature-list">
+                <li><i class="fa-solid fa-circle-check"></i> 360° 4대 이해관계자 관점 큐브</li>
+                <li><i class="fa-solid fa-circle-check"></i> 60초 영상 5단계 타임라인 아키텍처</li>
+                <li><i class="fa-solid fa-circle-check"></i> 아이디어 적합도 스코어링 매트릭스</li>
+              </ul>
+              <button class="btn btn-primary-full">
+                <span>2단계 탐색하기</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+
+            <!-- Step Card 3 -->
+            <div class="roadmap-card" data-target-tab="step3">
+              <div class="step-card-header">
+                <span class="step-badge">STAGE 03</span>
+                <span class="step-duration"><i class="fa-solid fa-clapperboard"></i> Signature Scenario</span>
+              </div>
+              <h3 class="card-title">아이디어 구체화 & 대표 스크립트</h3>
+              <p class="card-desc">5대 시나리오 후보군 비교 검토 및 최종 선정된 대표 시나리오(Signature Scenario)의 씬별 상세 스토리보드와 연출 가이드</p>
+              <ul class="step-feature-list">
+                <li><i class="fa-solid fa-circle-check"></i> 5대 시나리오 비교 & 선정 타당성</li>
+                <li><i class="fa-solid fa-circle-check"></i> 씬별(Scene 1~5) 나레이션 & 연출 대본</li>
+                <li><i class="fa-solid fa-circle-check"></i> 모션/FX/사운드 프로덕션 가이드</li>
+              </ul>
+              <button class="btn btn-outline-full">
+                <span>3단계 탐색하기</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 1: STEP 1 - 원하는 것을 이끌어내는 근본적 사고구조 & 프롬프트 생성 (Thinking Engine) -->
+    <!-- ========================================================================= -->
+    <section class="tab-pane" id="pane-step1">
+      <div class="container">
+        <!-- Section Banner -->
+        <div class="step-banner">
+          <div class="banner-tag">STAGE 01. FUNDAMENTAL THINKING & PROMPT STUDIO</div>
+          <h2 class="banner-title">원하는 것을 명확히 이끌어내는 <span class="gradient-text">5단계 근본 사고 구조와 해답</span></h2>
+          <p class="banner-desc">
+            훌륭한 영상과 기획은 화려한 기술이 아니라 '본질을 꿰뚫는 사고 체계'에서 출발합니다.
+            목적의 정의부터 결핍 추적, 가치 치환, 인지 대비, 행동 촉발까지 5단계 사고 프레임워크를 기반으로 AI 프롬프트를 빌드업합니다.
+          </p>
+        </div>
+
+        <!-- Section 1-1: 5대 근본 사고 체계 -->
+        <div class="content-block">
+          <div class="block-header">
+            <div class="block-badge"><i class="fa-solid fa-lightbulb"></i> SECTION 1-1</div>
+            <h3 class="block-title">원하는 본질을 규명하는 5대 근본 사고 체계 (The 5 Core Disciplines)</h3>
+            <p class="block-subtitle">시나리오 기획 시 흔들리지 않는 중심을 잡아주는 5가지 사고의 원칙과 xPrivacy의 명확한 해답입니다.</p>
+          </div>
+
+          <div class="thinking-grid">
+            <!-- 1. 목적과 종착지의 사고 -->
+            <div class="thinking-card deep-card">
+              <div class="card-icon-box bg-purple">
+                <i class="fa-solid fa-bullseye"></i>
+              </div>
+              <div class="card-content">
+                <div class="step-indexer">STEP 01. END-STATE THINKING</div>
+                <h4 class="card-title">1. 목적과 종착지의 사고 (End-State Thinking)</h4>
+                <p class="card-summary">"이 영상이 끝난 1초 뒤, 시청자의 가슴속에 남아야 할 단 하나의 감정은 무엇인가?"</p>
+                <div class="card-detail-box">
+                  <div class="detail-item"><strong>사고의 본질:</strong> 수단에 매몰되지 않고, 영상이 끝난 직후 고객의 뇌리에 각인될 '단 하나의 문장'과 감정을 정의.</div>
+                  <div class="detail-item"><strong>xPrivacy의 답:</strong> <em>"CCTV와 영상 속 개인정보 노출은 치명적 위협이지만, xPrivacy가 있기에 모든 영상 데이터는 완벽히 안전하다는 절대적 신뢰와 안도감."</em></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 2. 인과와 결핍의 사고 -->
+            <div class="thinking-card deep-card">
+              <div class="card-icon-box bg-rose">
+                <i class="fa-solid fa-magnifying-glass-chart"></i>
+              </div>
+              <div class="card-content">
+                <div class="step-indexer">STEP 02. CAUSALITY & VOID THINKING</div>
+                <h4 class="card-title">2. 인과와 결핍에 대한 사고 (Root Problem & Void)</h4>
+                <p class="card-summary">"고객은 지금 무엇이 결핍되어 있으며, 기존 방식은 왜 실패했는가?"</p>
+                <div class="card-detail-box">
+                  <div class="detail-item"><strong>사고의 본질:</strong> 표면적 현상 뒤에 숨은 근본 원인(Root Cause)과 고객이 매일 겪는 실무적·심리적 고통의 인과 사슬을 추적.</div>
+                  <div class="detail-item"><strong>xPrivacy의 답:</strong> <em>"수작업 모자이크는 감당할 수 없을 만큼 느리고(비효율), 단 1프레임의 누락도 법적 과징금과 신뢰 실추로 이어진다는 극심한 불안감."</em></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 3. 가치 치환의 사고 -->
+            <div class="thinking-card deep-card">
+              <div class="card-icon-box bg-emerald">
+                <i class="fa-solid fa-arrow-right-arrow-left"></i>
+              </div>
+              <div class="card-content">
+                <div class="step-indexer">STEP 03. VALUE TRANSLATION</div>
+                <h4 class="card-title">3. 가치 치환의 사고 (Spec to Human Value)</h4>
+                <p class="card-summary">"우리의 기술(Feature)을 고객의 생존과 자유의 언어(Benefit)로 어떻게 바꿀 것인가?"</p>
+                <div class="card-detail-box">
+                  <div class="detail-item"><strong>사고의 본질:</strong> 공급자의 스펙 자랑(0.01초, 알고리즘)을 고객의 경제적 이익과 심리적 해방감으로 1:1 번역.</div>
+                  <div class="detail-item"><strong>xPrivacy의 답:</strong> <em>"실시간 AI 가명처리(기술) = '야근과 수작업 고통에서의 완전한 해방 & 법적 리스크 없는 자유로운 데이터 활용(가치)'"</em></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 4. 인지 대비와 프레이밍의 사고 -->
+            <div class="thinking-card deep-card">
+              <div class="card-icon-box bg-cyan">
+                <i class="fa-solid fa-masks-theater"></i>
+              </div>
+              <div class="card-content">
+                <div class="step-indexer">STEP 04. CONTRAST & FRAMING</div>
+                <h4 class="card-title">4. 인지 대비와 프레이밍의 사고 (Tension & Resolution)</h4>
+                <p class="card-summary">"어떤 긴장감(Tension)을 유발하고, 어떻게 카타르시스(Resolution)를 줄 것인가?"</p>
+                <div class="card-detail-box">
+                  <div class="detail-item"><strong>사고의 본질:</strong> 인간의 뇌는 '극명한 대비'에 반응함. 무방비한 노출의 긴장과 솔루션 적용 후의 평온함을 극대화하여 연출.</div>
+                  <div class="detail-item"><strong>xPrivacy의 답:</strong> <em>"일상 속 빨간색 추적 경고 박스(위험) ↔ xPrivacy 에메랄드 스캔 후 부드러운 블러 쉴드(안도)의 극적인 시각적 전복."</em></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 5. 행동 촉발의 사고 -->
+            <div class="thinking-card deep-card">
+              <div class="card-icon-box bg-amber">
+                <i class="fa-solid fa-fingerprint"></i>
+              </div>
+              <div class="card-content">
+                <div class="step-indexer">STEP 05. ACTION TRIGGER</div>
+                <h4 class="card-title">5. 행동 촉발과 최소 저항의 사고 (Frictionless Action)</h4>
+                <p class="card-summary">"영상이 끝난 1초 뒤, 고객의 손가락이 가장 쉽게 움직일 행동(CTA)은 무엇인가?"</p>
+                <div class="card-detail-box">
+                  <div class="detail-item"><strong>사고의 본질:</strong> 고객이 다음 행동으로 넘어가는 데 있어 진입 장벽(심리적·절차적 저항)을 0으로 만드는 장치를 설계.</div>
+                  <div class="detail-item"><strong>xPrivacy의 답:</strong> <em>"복잡한 영업 문의 대신 '보유한 샘플 영상 1개로 즉시 3초 무료 비식별화 테스트'로 즉각 실행 유도."</em></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 1-2: 5대 사고 기반 AI 프롬프트 스튜디오 -->
+        <div class="content-block" id="prompt-studio-block">
+          <div class="block-header">
+            <div class="block-badge"><i class="fa-solid fa-wand-magic-sparkles"></i> SECTION 1-2</div>
+            <h3 class="block-title">5대 사고 기반 인터랙티브 AI 프롬프트 스튜디오</h3>
+            <p class="block-subtitle">5대 근본 사고 파라미터를 조합하여 LLM(ChatGPT, Claude, Gemini)에 바로 투입할 수 있는 최적화된 시나리오 기획 프롬프트를 자동 생성합니다.</p>
+          </div>
+
+          <div class="prompt-studio-container">
+            <div class="prompt-controls-panel">
+              <div class="panel-heading"><i class="fa-solid fa-sliders"></i> 사고 파라미터 튜닝 (Cognitive Parameters)</div>
+              
+              <!-- Param 1: End-State -->
+              <div class="control-group">
+                <label class="control-label">1단계 [목적의 사고] 영상 시청 후 고객의 최종 상태 (End-State)</label>
+                <div class="chip-group" data-param="endState">
+                  <button class="param-chip active" data-val="trust">"이 솔루션이면 어떤 영상도 100% 안전하다"는 절대적 신뢰</button>
+                  <button class="param-chip" data-val="relief">"수작업 야근 없이 원클릭으로 퇴근한다"는 압도적 해방감</button>
+                  <button class="param-chip" data-val="confidence">"법적 과징금 걱정 없이 AI 비즈니스를 가속화한다"는 확신</button>
+                </div>
+              </div>
+
+              <!-- Param 2: The Void -->
+              <div class="control-group">
+                <label class="control-label">2단계 [결핍의 사고] 타겟 고객군과 근본적인 결핍 (The Void)</label>
+                <div class="chip-group" data-param="target">
+                  <button class="param-chip active" data-val="public">공공·지자체 관제사 : 수작업 야근 고통 및 영상 반출 시 법적 책임 공포</button>
+                  <button class="param-chip" data-val="enterprise">자율주행·AI 연구원 : 페타바이트급 영상 가명처리 속도 병목</button>
+                  <button class="param-chip" data-val="creator">영상 콘텐츠 크리에이터 : 프레임 단위 모자이크 노가다와 초상권 분쟁</button>
+                </div>
+              </div>
+
+              <!-- Param 3: Value Translation -->
+              <div class="control-group">
+                <label class="control-label">3단계 [가치 치환의 사고] 고객의 생존과 자유의 가치 (Value)</label>
+                <div class="chip-group" data-param="value">
+                  <button class="param-chip active" data-val="cost_save">수작업 인건비 90% 절감 & 법적 과징금 리스크 제로화</button>
+                  <button class="param-chip" data-val="speed_up">초당 120fps 처리로 데이터 파이프라인 10배 가속화</button>
+                  <button class="param-chip" data-val="creator_free">원클릭 자동 추적으로 크리에이터의 창작 시간 완벽 보장</button>
+                </div>
+              </div>
+
+              <!-- Param 4: Contrast & Framing -->
+              <div class="control-group">
+                <label class="control-label">4단계 [인지 대비와 프레이밍] 시각적 긴장과 해소 연출 (Contrast)</label>
+                <div class="chip-group" data-param="contrast">
+                  <button class="param-chip active" data-val="red_to_emerald">붉은색 경고 노출 박스(위기) ➔ 에메랄드 스캔 쉴드(안심)의 극적 반전</button>
+                  <button class="param-chip" data-val="dark_office_to_light">지친 야근 사무실(고통) ➔ 원클릭 완료 후 여유로운 퇴근(해방)</button>
+                  <button class="param-chip" data-val="macro_data_flow">수억 개의 데이터 폭포 ➔ xPrivacy 코어를 통과하며 정돈되는 사이버 비주얼</button>
+                </div>
+              </div>
+
+              <!-- Param 5: Action Trigger -->
+              <div class="control-group">
+                <label class="control-label">5단계 [행동 촉발의 사고] 영상 종료 후 최소 저항의 CTA (Action)</label>
+                <div class="chip-group" data-param="cta">
+                  <button class="param-chip active" data-val="free_test">"자사 영상 샘플 1개로 즉시 3초 무료 비식별화 테스트"</button>
+                  <button class="param-chip" data-val="consult_demo">"공공/엔터프라이즈 맞춤형 온프레미스 도입 컨설팅 신청"</button>
+                  <button class="param-chip" data-val="api_key">"개발자를 위한 실시간 비식별화 API 키 즉시 발급"</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="prompt-output-panel">
+              <div class="output-header">
+                <div class="output-title">
+                  <i class="fa-solid fa-code"></i>
+                  <span>5대 사고 기반 AI 기획 메타 프롬프트 (Live Built)</span>
+                </div>
+                <button class="btn-copy" id="btnCopyPrompt">
+                  <i class="fa-solid fa-copy"></i>
+                  <span id="copyText">프롬프트 복사</span>
+                </button>
+              </div>
+              <div class="code-box-wrapper">
+                <pre class="code-box"><code id="promptCodeOutput"></code></pre>
+              </div>
+              <div class="prompt-tip">
+                <i class="fa-solid fa-lightbulb"></i>
+                <span>Tip: 위 프롬프트는 5대 근본 사고 프레임워크가 체계적으로 녹아있어, LLM에 입력 시 표면적이지 않고 본질을 꿰뚫는 스크립트 초안을 즉시 얻을 수 있습니다.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 1-3: 원하는 결과를 이끌어내는 5대 메타 사고 자가진단 -->
+        <div class="content-block">
+          <div class="block-header">
+            <div class="block-badge"><i class="fa-solid fa-clipboard-check"></i> SECTION 1-3</div>
+            <h3 class="block-title">원하는 결과를 끄집어내는 5대 메타 사고 자가진단 (Self-Audit)</h3>
+            <p class="block-subtitle">기획 과정에서 본질을 잃지 않도록 수시로 체크하는 5대 핵심 질문입니다.</p>
+          </div>
+
+          <div class="checklist-grid">
+            <div class="check-item">
+              <div class="check-num">01</div>
+              <div class="check-body">
+                <h5 class="check-title">[목적] 영상 시청 직후 고객의 머릿속에 각인될 단 하나의 감정은 무엇인가?</h5>
+                <p class="check-desc">"개인정보 유출로 인한 처벌 불안감이 완벽히 해소되고 100% 안심할 수 있다는 절대적 신뢰감."</p>
+              </div>
+            </div>
+            <div class="check-item">
+              <div class="check-num">02</div>
+              <div class="check-body">
+                <h5 class="check-title">[결핍] 고객이 지금 당장 돈과 시간을 들여서라도 해결하고 싶은 고통은 무엇인가?</h5>
+                <p class="check-desc">"늘어나는 CCTV 영상 반출 요청과 수작업 모자이크 야근, 단 1건의 누락도 용납되지 않는 법적 책임감."</p>
+              </div>
+            </div>
+            <div class="check-item">
+              <div class="check-num">03</div>
+              <div class="check-body">
+                <h5 class="check-title">[가치] AI 스펙 자랑이 아닌, 고객의 생존 언어로 번역된 혜택은 무엇인가?</h5>
+                <p class="check-desc">"처리 시간 90% 단축으로 업무 지옥 탈출", "법적 분쟁 리스크 제로", "데이터 활용을 통한 AI 비즈니스 가속화".</p>
+              </div>
+            </div>
+            <div class="check-item">
+              <div class="check-num">04</div>
+              <div class="check-body">
+                <h5 class="check-title">[대비] 시청자의 무의식을 깨울 '위험과 해결'의 시각적 충격은 무엇인가?</h5>
+                <p class="check-desc">도심 속 얼굴들이 빨간색 경고창으로 위태롭게 노출되다가, 에메랄드 스캔 라인 한 번으로 순식간에 안전하게 블러 처리되는 극적 대비.</p>
+              </div>
+            </div>
+            <div class="check-item">
+              <div class="check-num">05</div>
+              <div class="check-body">
+                <h5 class="check-title">[행동] 고객이 아무런 심리적 저항 없이 당장 실행할 첫걸음은 무엇인가?</h5>
+                <p class="check-desc">복잡한 문의 폼 대신 "자사 영상 샘플을 업로드하여 3초 만에 xPrivacy의 마스킹 정밀도를 직접 확인해보는 무료 체험".</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 1-4: The 7 Golden Questions Checklist -->
+        <div class="content-block">
+          <div class="block-header">
+            <div class="block-badge"><i class="fa-solid fa-list-check"></i> SECTION 1-4</div>
+            <h3 class="block-title">기획 착수 전 필수 검증: 7대 골든 질문 (The Golden Checklist)</h3>
+            <p class="block-subtitle">스크립트를 쓰기 전 스스로 답해보며 영상의 뼈대를 단단하게 만드는 질문지입니다.</p>
+          </div>
+
+          <div class="checklist-grid">
+            <div class="check-item">
+              <div class="check-num">01</div>
+              <div class="check-body">
+                <h5 class="check-title">영상이 끝난 후 고객이 기억해야 할 단 하나의 문장은 무엇인가?</h5>
+                <p class="check-desc">"xPrivacy는 복잡한 영상 개인정보를 실시간으로 완벽히 가려주는 가장 안전한 AI다."</p>
+              </div>
+            </div>
+            <div class="check-item">
+              <div class="check-num">02</div>
+              <div class="check-body">
+                <h5 class="check-title">첫 5초(Hook)에서 시청자의 이탈을 막을 시각적 충격은 무엇인가?</h5>
+                <p class="check-desc">자신의 얼굴이나 차량번호가 수많은 화면에 무방비하게 노출되는 순간의 긴장감 연출.</p>
+              </div>
+            </div>
+            <div class="check-item">
+              <div class="check-num">03</div>
+              <div class="check-body">
+                <h5 class="check-title">고객이 겪고 있는 가장 고통스러운 현실(Pain Point)은 어디인가?</h5>
+                <p class="check-desc">수백 시간의 CCTV 영상을 일일이 프레임 단위로 수동 모자이크 처리하며 겪는 비효율과 오류.</p>
+              </div>
+            </div>
+            <div class="check-item">
+              <div class="check-num">04</div>
+              <div class="check-body">
+                <h5 class="check-title">xPrivacy의 기술적 탁월성을 직관적인 시각 언어로 어떻게 보여줄 것인가?</h5>
+                <p class="check-desc">복잡한 수식이 아닌, AI가 사람 얼굴과 번호판을 실시간으로 추적하며 실시간으로 픽셀/블러가 부드럽게 입혀지는 비주얼 FX.</p>
+              </div>
+            </div>
+            <div class="check-item">
+              <div class="check-num">05</div>
+              <div class="check-body">
+                <h5 class="check-title">감성(Safety & Peace of Mind)과 이성(Tech & ROI)의 비율은 얼마인가?</h5>
+                <p class="check-desc">초반 30%는 감성적 문제제기(안심), 중후반 70%는 이성적 솔루션(기술력, 속도, 법적 안전망).</p>
+              </div>
+            </div>
+            <div class="check-item">
+              <div class="check-num">06</div>
+              <div class="check-body">
+                <h5 class="check-title">영상을 본 고객이 다음 행동(CTA)으로 무엇을 하길 원하는가?</h5>
+                <p class="check-desc">"무료 체험 신청하기", "솔루션 도입 문의", "자사 영상 샘플 비식별화 테스트".</p>
+              </div>
+            </div>
+            <div class="check-item">
+              <div class="check-num">07</div>
+              <div class="check-body">
+                <h5 class="check-title">경쟁사 및 기존 방식(수작업/단순 필터)과의 결정적 차별점은 무엇인가?</h5>
+                <p class="check-desc">흔들림, 야간, 원거리, 빠른 움직임 속에서도 누락 없는 독보적인 AI 트래킹 정밀도.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 2: STEP 2 - 관점의 다양성 & 아이디어 체계화 (Perspective Matrix)        -->
+    <!-- ========================================================================= -->
+    <section class="tab-pane" id="pane-step2">
+      <div class="container">
+        <!-- Section Banner -->
+        <div class="step-banner">
+          <div class="banner-tag">STAGE 02. PERSPECTIVE DIVERSITY & STRUCTURING</div>
+          <h2 class="banner-title">대표영상을 위한 <span class="gradient-text">다양한 관점과 구조의 체계화</span></h2>
+          <p class="banner-desc">
+            누구를 설득하느냐에 따라 영상의 주인공과 메시지는 180도 달라집니다.
+            4대 이해관계자 관점 매트릭스, 60초 골든 타임라인 아키텍처, 5대 영상 포맷 유형을 체계적으로 분류하여 최적의 아이디어를 도출합니다.
+          </p>
+        </div>
+
+        <!-- Section 2-1: 4대 이해관계자 관점 큐브 -->
+        <div class="content-block">
+          <div class="block-header">
+            <div class="block-badge"><i class="fa-solid fa-users-viewfinder"></i> SECTION 2-1</div>
+            <h3 class="block-title">360° 4대 이해관계자 관점 매트릭스</h3>
+            <p class="block-subtitle">각 고객군이 영상에서 보고 싶어하는 핵심 가치와 트리거 포인트를 비교 분석합니다.</p>
+          </div>
+
+          <div class="perspectives-container">
+            <div class="perspective-tabs" id="perspectivesNav">
+              <button class="p-tab-btn active" data-target="p-public">
+                <i class="fa-solid fa-building-shield"></i>
+                <span>1. 공공기관 / 지자체</span>
+              </button>
+              <button class="p-tab-btn" data-target="p-enterprise">
+                <i class="fa-solid fa-server"></i>
+                <span>2. AI / 빅데이터 기업</span>
+              </button>
+              <button class="p-tab-btn" data-target="p-media">
+                <i class="fa-solid fa-video"></i>
+                <span>3. 미디어 / 콘텐츠 제작사</span>
+              </button>
+              <button class="p-tab-btn" data-target="p-citizen">
+                <i class="fa-solid fa-user-group"></i>
+                <span>4. 일반 시민 / 대중</span>
+              </button>
+            </div>
+
+            <div class="perspective-content-card" id="perspectiveContentCard">
+              <!-- Content rendered via JS or default markup -->
+              <div class="p-pane active" id="p-public">
+                <div class="p-card-grid">
+                  <div class="p-main-info">
+                    <span class="p-badge"><i class="fa-solid fa-landmark"></i> B2G / Public Security</span>
+                    <h4 class="p-title">"수많은 CCTV 영상 반출, 개인정보 침해 없이 100% 안전하게 처리해야 합니다."</h4>
+                    <p class="p-summary">경찰 수사 협조, 민원 열람 요청 등 매일 쏟아지는 영상 반출 요구 속에서 법적 리스크를 완벽히 차단하고 업무 시간을 극적으로 단축하는 것이 핵심 니즈입니다.</p>
+                    
+                    <div class="p-points-list">
+                      <div class="point-row">
+                        <span class="point-label">Pain Point:</span>
+                        <span class="point-val">수작업 마스킹으로 인한 민원 처리 지연, 담당 공무원의 법적 책임 불안감</span>
+                      </div>
+                      <div class="point-row">
+                        <span class="point-label">Key Message:</span>
+                        <span class="point-val">"CCTV 영상 반출 신청부터 비식별화까지, 원클릭으로 법적 컴플라이언스 완벽 준수"</span>
+                      </div>
+                      <div class="point-row">
+                        <span class="point-label">Video Visual:</span>
+                        <span class="point-val">관제센터 대형 모니터월, 수많은 군중 속 특정 인물 외 즉각적인 블러링 처리 연출</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="p-sidebar-metric">
+                    <div class="metric-box">
+                      <span class="m-num">90% ↓</span>
+                      <span class="m-txt">영상 반출 처리 소요 시간 단축</span>
+                    </div>
+                    <div class="metric-box">
+                      <span class="m-num">0 건</span>
+                      <span class="m-txt">개인정보 유출 사고 리스크 제로</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 2-2: 60초 골든 타임라인 아키텍처 -->
+        <div class="content-block">
+          <div class="block-header">
+            <div class="block-badge"><i class="fa-solid fa-timeline"></i> SECTION 2-2</div>
+            <h3 class="block-title">60초 대표영상 필수 5단계 타임라인 아키텍처</h3>
+            <p class="block-subtitle">시청자의 집중도가 유지되는 60초 동안 설득을 완성하는 황금 시간 배분 구조입니다.</p>
+          </div>
+
+          <div class="timeline-architecture">
+            <!-- Phase 1 -->
+            <div class="timeline-phase-card">
+              <div class="phase-time">00 ~ 08s</div>
+              <div class="phase-badge bg-rose">PHASE 1: THE HOOK</div>
+              <h4 class="phase-title">위기 자각 (The Shock)</h4>
+              <p class="phase-desc">우리의 일상이 수많은 렌즈(CCTV, 블랙박스, 스마트폰)에 무방비로 노출되고 있다는 충격적 현실 제시.</p>
+              <div class="phase-element">
+                <span class="el-tag">시각 연출:</span> 줌인되는 카메라 렌즈, 거리 속 사람들의 얼굴과 자동차 번호판에 빨간색 추적 박스 발생
+              </div>
+            </div>
+
+            <!-- Phase 2 -->
+            <div class="timeline-phase-card">
+              <div class="phase-time">08 ~ 22s</div>
+              <div class="phase-badge bg-amber">PHASE 2: PAIN POINT</div>
+              <h4 class="phase-title">고통과 딜레마 (The Dilemma)</h4>
+              <p class="phase-desc">데이터 활용의 필요성과 개인정보보호법의 엄격함 사이에서 수작업 마스킹의 한계와 과징금 위협 강조.</p>
+              <div class="phase-element">
+                <span class="el-tag">시각 연출:</span> 타임라인을 붙잡고 일일이 모자이크를 씌우며 지쳐가는 실무자, 붉은색 경고 알림창
+              </div>
+            </div>
+
+            <!-- Phase 3 -->
+            <div class="timeline-phase-card highlighted-phase">
+              <div class="phase-time">22 ~ 40s</div>
+              <div class="phase-badge bg-cyan">PHASE 3: THE SOLUTION</div>
+              <h4 class="phase-title">xPrivacy 등장 (The Game Changer)</h4>
+              <p class="phase-desc">영상 업로드 즉시 AI가 얼굴·번호판을 초고속으로 실시간 자동 마스킹하는 압도적 기술력 시연.</p>
+              <div class="phase-element">
+                <span class="el-tag">시각 연출:</span> xPrivacy 로고와 함께 에메랄드 스캔 라인이 지나가며 모든 개인정보가 완벽히 비식별화
+              </div>
+            </div>
+
+            <!-- Phase 4 -->
+            <div class="timeline-phase-card">
+              <div class="phase-time">40 ~ 52s</div>
+              <div class="phase-badge bg-emerald">PHASE 4: TECH PROOF</div>
+              <h4 class="phase-title">신뢰와 확장성 (Proof & Scalability)</h4>
+              <p class="phase-desc">야간/원거리/고속이동 환경에서도 완벽한 정확도와 지자체, 공공, 엔터프라이즈 전방위 적용 사례 입증.</p>
+              <div class="phase-element">
+                <span class="el-tag">시각 연출:</span> 다양한 환경(고속도로, 어두운 골목, 복잡한 쇼핑몰)의 분할 화면과 99.8% 정확도 인포그래픽
+              </div>
+            </div>
+
+            <!-- Phase 5 -->
+            <div class="timeline-phase-card">
+              <div class="phase-time">52 ~ 60s</div>
+              <div class="phase-badge bg-purple">PHASE 5: CALL TO ACTION</div>
+              <h4 class="phase-title">미래의 안심 (Call To Action)</h4>
+              <p class="phase-desc">"프라이버시 걱정 없는 안전한 데이터 세상" 슬로건과 함께 즉각적인 무료 테스트 및 도입 안내.</p>
+              <div class="phase-element">
+                <span class="el-tag">시각 연출:</span> xPrivacy 공식 엠블럼, 웹사이트 URL, "지금 바로 무료 체험을 시작하세요" CTA
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 2-3: 5대 영상 포맷 유형 브레인스토밍 -->
+        <div class="content-block">
+          <div class="block-header">
+            <div class="block-badge"><i class="fa-solid fa-shapes"></i> SECTION 2-3</div>
+            <h3 class="block-title">5대 영상 컨셉 포맷 분류 및 특성</h3>
+            <p class="block-subtitle">목표하는 인상과 전달 효과에 따라 선택할 수 있는 5가지 표현 포맷입니다.</p>
+          </div>
+
+          <div class="format-grid">
+            <div class="format-card">
+              <div class="format-header">
+                <span class="format-type">Type A</span>
+                <span class="format-star"><i class="fa-solid fa-star"></i> 추천 1위</span>
+              </div>
+              <h4 class="format-title">테크 & 휴먼 하이브리드형</h4>
+              <p class="format-desc">일상의 감성적 공감 스토리로 시작하여, 첨단 AI 기술의 신뢰성으로 완벽히 매듭짓는 하이엔드 웰메이드 포맷.</p>
+              <div class="format-meta">
+                <span><strong>적합도:</strong> 브랜드 공식 대표영상</span>
+                <span><strong>제작 난이도:</strong> 상 (실사+CG)</span>
+              </div>
+            </div>
+
+            <div class="format-card">
+              <div class="format-header">
+                <span class="format-type">Type B</span>
+              </div>
+              <h4 class="format-title">사이버 스릴러 / 경각심형</h4>
+              <p class="format-desc">영화 '서치'처럼 CCTV 화면과 개인정보 유출의 위험성을 긴박하게 묘사하여 솔루션의 시급성을 극대화.</p>
+              <div class="format-meta">
+                <span><strong>적합도:</strong> 공공/보안 B2B 세일즈</span>
+                <span><strong>제작 난이도:</strong> 중상 (CCTV FX)</span>
+              </div>
+            </div>
+
+            <div class="format-card">
+              <div class="format-header">
+                <span class="format-type">Type C</span>
+              </div>
+              <h4 class="format-title">3D 모션 / 인포그래픽형</h4>
+              <p class="format-desc">세련된 3D 그래픽과 데이터 플로우 애니메이션으로 xPrivacy의 처리 속도와 알고리즘 우수성을 직관적 제시.</p>
+              <div class="format-meta">
+                <span><strong>적합도:</strong> 테크 컨퍼런스, 투자 유치</span>
+                <span><strong>제작 난이도:</strong> 중 (3D 모션)</span>
+              </div>
+            </div>
+
+            <div class="format-card">
+              <div class="format-header">
+                <span class="format-type">Type D</span>
+              </div>
+              <h4 class="format-title">직무 공감 / 오피스 페인포인트형</h4>
+              <p class="format-desc">야근하며 수천 장의 사진을 모자이크 처리하는 실무자의 고통을 유머와 공감으로 풀어낸 위트형 시나리오.</p>
+              <div class="format-meta">
+                <span><strong>적합도:</strong> SNS 마케팅, 실무자 타겟</span>
+                <span><strong>제작 난이도:</strong> 중 (드라마 촬영)</span>
+              </div>
+            </div>
+
+            <div class="format-card">
+              <div class="format-header">
+                <span class="format-type">Type E</span>
+              </div>
+              <h4 class="format-title">프로덕트 라이브 데모형</h4>
+              <p class="format-desc">군더더기 없이 실제 xPrivacy UI 화면에서 영상이 드래그 앤 드롭되고 실시간 처리되는 과정을 그대로 보여주는 직관형.</p>
+              <div class="format-meta">
+                <span><strong>적합도:</strong> 랜딩페이지 시연, 튜토리얼</span>
+                <span><strong>제작 난이도:</strong> 하 (스크린 캡처+UI)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 3: STEP 3 - 아이디어 구체화 & 대표 스크립트 (Signature Scenario)       -->
+    <!-- ========================================================================= -->
+    <section class="tab-pane" id="pane-step3">
+      <div class="container">
+        <!-- Section Banner -->
+        <div class="step-banner">
+          <div class="banner-tag">STAGE 03. CONCRETE IDEAS & SIGNATURE SCRIPT</div>
+          <h2 class="banner-title">실질적 아이디어 구체화 및 <span class="gradient-text">대표 시나리오 & 스크립트</span></h2>
+          <p class="banner-desc">
+            체계적인 검토 끝에 확정된 xPrivacy 60초 공식 대표 영상 대본입니다.
+            각 씬의 영상 구도, 카메라 무빙, 정교한 AI 블러 FX 효과, 신뢰감 넘치는 나레이션, 시각 자막, 사운드 디자인까지 한눈에 확인하세요.
+          </p>
+        </div>
+
+        <!-- Section 3-1: 5대 시나리오 후보군 비교 평가표 -->
+        <div class="content-block">
+          <div class="block-header">
+            <div class="block-badge"><i class="fa-solid fa-table-list"></i> SECTION 3-1</div>
+            <h3 class="block-title">5대 시나리오 컨셉 후보군 비교 및 평가</h3>
+            <p class="block-subtitle">다양한 컨셉 중 브랜드 인지도 구축 및 비즈니스 전환에 가장 효과적인 시나리오를 과학적으로 선정했습니다.</p>
+          </div>
+
+          <div class="table-responsive">
+            <table class="scenario-table">
+              <thead>
+                <tr>
+                  <th>No.</th>
+                  <th>시나리오 명칭 / 컨셉</th>
+                  <th>주요 포맷</th>
+                  <th>메인 타겟</th>
+                  <th>메시지 전달력</th>
+                  <th>제작 완성도</th>
+                  <th>종합 점수</th>
+                  <th>최종 판정</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="selected-row">
+                  <td><span class="badge-num best">01</span></td>
+                  <td><strong>「보이지 않아도 안전한 세상」</strong><br><small class="text-muted">The Invisible Shield</small></td>
+                  <td>테크 & 휴머니즘 하이브리드 (시네마틱)</td>
+                  <td>B2B 의사결정권자 + 공공 + 일반</td>
+                  <td><div class="star-rating">★★★★★</div></td>
+                  <td><div class="star-rating">★★★★★</div></td>
+                  <td><span class="score-pill best">98점</span></td>
+                  <td><span class="status-badge selected"><i class="fa-solid fa-crown"></i> 대표작 선정</span></td>
+                </tr>
+                <tr>
+                  <td><span class="badge-num">02</span></td>
+                  <td><strong>「당신의 얼굴이 전송되었습니다」</strong><br><small class="text-muted">Tracking 24/7</small></td>
+                  <td>사이버 스릴러 / 경각심 강조</td>
+                  <td>공공기관 관제센터, 보안 실무자</td>
+                  <td><div class="star-rating">★★★★☆</div></td>
+                  <td><div class="star-rating">★★★★☆</div></td>
+                  <td><span class="score-pill">89점</span></td>
+                  <td><span class="status-badge">후보군 (B2B 세일즈용)</span></td>
+                </tr>
+                <tr>
+                  <td><span class="badge-num">03</span></td>
+                  <td><strong>「0.01초의 가명처리 혁신」</strong><br><small class="text-muted">Pure Algorithm</small></td>
+                  <td>3D 테크놀로지 & 인포그래픽</td>
+                  <td>AI/빅데이터 개발사, CTO</td>
+                  <td><div class="star-rating">★★★☆☆</div></td>
+                  <td><div class="star-rating">★★★★★</div></td>
+                  <td><span class="score-pill">86점</span></td>
+                  <td><span class="status-badge">후보군 (기술 백서용)</span></td>
+                </tr>
+                <tr>
+                  <td><span class="badge-num">04</span></td>
+                  <td><strong>「김대리의 퇴근을 구원한 xPrivacy」</strong><br><small class="text-muted">Save the Night</small></td>
+                  <td>오피스 직무 공감 시트콤</td>
+                  <td>마케터, 영상 편집 실무자</td>
+                  <td><div class="star-rating">★★★★☆</div></td>
+                  <td><div class="star-rating">★★★☆☆</div></td>
+                  <td><span class="score-pill">82점</span></td>
+                  <td><span class="status-badge">후보군 (SNS 숏폼용)</span></td>
+                </tr>
+                <tr>
+                  <td><span class="badge-num">05</span></td>
+                  <td><strong>「드래그, 드롭, 끝.」</strong><br><small class="text-muted">Live UI Demo</small></td>
+                  <td>원터치 프로덕트 라이브 데모</td>
+                  <td>실제 솔루션 도입 검토자</td>
+                  <td><div class="star-rating">★★★☆☆</div></td>
+                  <td><div class="star-rating">★★★★☆</div></td>
+                  <td><span class="score-pill">80점</span></td>
+                  <td><span class="status-badge">후보군 (랜딩 데모용)</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Section 3-2: 대표 선정 시나리오 및 선정 근거 -->
+        <div class="content-block">
+          <div class="block-header">
+            <div class="block-badge"><i class="fa-solid fa-award"></i> SECTION 3-2</div>
+            <h3 class="block-title">대표 시나리오 (Signature Scenario) 선정 및 심층 선정 이유</h3>
+            <p class="block-subtitle">왜 「보이지 않아도 안전한 세상, xPrivacy」가 최고의 대표영상 시나리오인가?</p>
+          </div>
+
+          <div class="decision-breakdown-card">
+            <div class="decision-header">
+              <div class="winner-title-box">
+                <span class="winner-label"><i class="fa-solid fa-trophy"></i> FINAL SELECTED CONCEPT</span>
+                <h4 class="winner-title">「보이지 않아도 안전한 세상, xPrivacy」 (60초 대표 브랜드 필름)</h4>
+              </div>
+              <div class="winner-keywords">
+                <span class="kw-tag">#실시간AI</span>
+                <span class="kw-tag">#완벽한비식별화</span>
+                <span class="kw-tag">#개인정보보호</span>
+                <span class="kw-tag">#데이터활용의자유</span>
+              </div>
+            </div>
+
+            <div class="decision-reasons-grid">
+              <div class="reason-item">
+                <div class="reason-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+                <div class="reason-content">
+                  <h5 class="reason-heading">1. B2B 신뢰와 대중적 공감의 완벽한 밸런스</h5>
+                  <p class="reason-text">단순히 기술 스펙만 나열하지 않고, '개인정보 보호'라는 사회적 가치(감성)와 '실시간 대용량 자동화'라는 기술적 이점(이성)을 유기적으로 결합하여 모든 타겟층을 설득합니다.</p>
+                </div>
+              </div>
+              <div class="reason-item">
+                <div class="reason-icon"><i class="fa-solid fa-eye"></i></div>
+                <div class="reason-content">
+                  <h5 class="reason-heading">2. 시각적 대비(Contrast)를 통한 즉각적 임팩트</h5>
+                  <p class="reason-text">초반의 '빨간색 위험 노출 박스'와 xPrivacy 적용 후의 '부드러운 보호 쉴드 & 에메랄드 안심 FX'의 극명한 시각적 대비를 통해 말로 설명하지 않아도 솔루션의 가치를 한눈에 전달합니다.</p>
+                </div>
+              </div>
+              <div class="reason-item">
+                <div class="reason-icon"><i class="fa-solid fa-expand"></i></div>
+                <div class="reason-content">
+                  <h5 class="reason-heading">3. 공공·엔터프라이즈·미디어를 아우르는 확장성</h5>
+                  <p class="reason-text">CCTV에 국한되지 않고 스마트시티, 자율주행, 방송 영상, 리테일 등 xPrivacy가 적용될 수 있는 전 산업군으로의 자연스러운 스케일업을 연출할 수 있습니다.</p>
+                </div>
+              </div>
+              <div class="reason-item">
+                <div class="reason-icon"><i class="fa-solid fa-stopwatch"></i></div>
+                <div class="reason-content">
+                  <h5 class="reason-heading">4. 60초 황금 호흡과 높은 완주율(VTR)</h5>
+                  <p class="reason-text">0~8초의 강력한 훅, 20초대의 시원한 솔루션 반전, 40초대의 신뢰 구축, 50초대의 명확한 CTA까지 군더더기 없는 템포로 시청자의 몰입을 끝까지 유지합니다.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 3-3: 씬별(Scene-by-Scene) 대표 스크립트 & 연출 가이드 -->
+        <div class="content-block" id="script-storyboard-block">
+          <div class="block-header">
+            <div class="block-badge"><i class="fa-solid fa-clapperboard"></i> SECTION 3-3</div>
+            <h3 class="block-title">씬별(Scene 1 ~ Scene 5) 상세 스크립트 & 스토리보드</h3>
+            <p class="block-subtitle">실제 촬영, 성우 녹음, 모션그래픽 FX 제작팀이 바로 활용할 수 있는 완벽한 프로덕션 가이드입니다.</p>
+          </div>
+
+          <div class="storyboard-timeline">
+
+            <!-- SCENE 1 -->
+            <div class="scene-card" id="scene-1">
+              <div class="scene-header">
+                <div class="scene-badge">SCENE 01</div>
+                <div class="scene-time"><i class="fa-regular fa-clock"></i> 00:00 ~ 00:08 (8초)</div>
+                <div class="scene-title-tag">The Hook: 무방비하게 노출된 일상</div>
+              </div>
+              <div class="scene-body">
+                <div class="scene-visual-box">
+                  <div class="visual-header"><i class="fa-solid fa-camera"></i> VISUAL & MOTION (화면 연출)</div>
+                  <p class="visual-text">
+                    [화면] 복잡한 도심 교차로 및 번화가 CCTV 시점. 바쁘게 오가는 시민들의 얼굴과 달리는 차량들의 번호판이 <strong>붉은색 경고 타겟 박스</strong>로 타이트하게 트래킹되며 깜빡인다.<br>
+                    카메라가 빠르게 줌인되며 무방비하게 개인정보가 노출되고 있는 현대사회의 차가운 긴장감을 조성.
+                  </p>
+                  <div class="fx-tags">
+                    <span class="fx-badge"><i class="fa-solid fa-wand-magic"></i> FX: Red Alert Bounding Box</span>
+                    <span class="fx-badge">Fast CCTV Digital Zoom</span>
+                    <span class="fx-badge">Glitched Scan Lines</span>
+                  </div>
+                </div>
+
+                <div class="scene-audio-box">
+                  <div class="audio-header"><i class="fa-solid fa-microphone-lines"></i> NA / VO (나레이션 대본)</div>
+                  <p class="vo-text">
+                    "우리가 지나온 모든 순간, 당신의 얼굴과 일상은 안전하게 보호받고 있습니까?"
+                  </p>
+                  <div class="ost-header"><i class="fa-solid fa-closed-captioning"></i> ON-SCREEN TEXT (화면 자막)</div>
+                  <p class="ost-text">하루 평균 150회 노출되는 당신의 개인정보, 과연 안전할까요?</p>
+                  <div class="sfx-header"><i class="fa-solid fa-volume-high"></i> BGM / SOUND FX</div>
+                  <p class="sfx-text">낮은 저음의 긴장감 넘치는 사이버 펄스 비트 + 디지털 타겟 락온 비프음</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- SCENE 2 -->
+            <div class="scene-card" id="scene-2">
+              <div class="scene-header">
+                <div class="scene-badge">SCENE 02</div>
+                <div class="scene-time"><i class="fa-regular fa-clock"></i> 00:08 ~ 00:22 (14초)</div>
+                <div class="scene-title-tag">The Pain Point: 수작업의 늪과 법적 과징금 위협</div>
+              </div>
+              <div class="scene-body">
+                <div class="scene-visual-box">
+                  <div class="visual-header"><i class="fa-solid fa-camera"></i> VISUAL & MOTION (화면 연출)</div>
+                  <p class="visual-text">
+                    [화면] 어두운 사무실, 야근하는 영상 실무자가 마우스로 수백 명의 얼굴을 프레임 단위로 일일이 사각형 모자이크를 씌우며 고통스러워함.<br>
+                    화면 한편에 <strong>[개인정보보호법 위반 과징금 경고]</strong> 그래픽과 쌓여가는 영상 반출 요청서들이 시각적 압박감을 준다.
+                  </p>
+                  <div class="fx-tags">
+                    <span class="fx-badge"><i class="fa-solid fa-wand-magic"></i> FX: Manual Frame Masking UI</span>
+                    <span class="fx-badge">Ticking Clock Timelapse</span>
+                    <span class="fx-badge">Compliance Warning HUD</span>
+                  </div>
+                </div>
+
+                <div class="scene-audio-box">
+                  <div class="audio-header"><i class="fa-solid fa-microphone-lines"></i> NA / VO (나레이션 대본)</div>
+                  <p class="vo-text">
+                    "끝없는 수작업 모자이크, 쏟아지는 영상 반출 요청, 그리고 단 1건의 실수도 용납되지 않는 엄격한 법적 책임까지."
+                  </p>
+                  <div class="ost-header"><i class="fa-solid fa-closed-captioning"></i> ON-SCREEN TEXT (화면 자막)</div>
+                  <p class="ost-text">수작업 모자이크의 한계 ➔ 막대한 시간 소모 & 과징금 리스크</p>
+                  <div class="sfx-header"><i class="fa-solid fa-volume-high"></i> BGM / SOUND FX</div>
+                  <p class="sfx-text">불안감을 증폭시키는 시계 초침 소리 ➔ 무거운 베이스 드롭</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- SCENE 3 -->
+            <div class="scene-card highlighted-scene" id="scene-3">
+              <div class="scene-header">
+                <div class="scene-badge winner-badge"><i class="fa-solid fa-crown"></i> SCENE 03 (CLIMAX)</div>
+                <div class="scene-time"><i class="fa-regular fa-clock"></i> 00:22 ~ 00:40 (18초)</div>
+                <div class="scene-title-tag">The Solution: xPrivacy AI 비식별화의 압도적 혁신</div>
+              </div>
+              <div class="scene-body">
+                <div class="scene-visual-box">
+                  <div class="visual-header"><i class="fa-solid fa-camera"></i> VISUAL & MOTION (화면 연출)</div>
+                  <p class="visual-text">
+                    [화면] 화면 중앙에 <strong>xPrivacy 에메랄드 엠블럼</strong>이 빛나며 푸른빛의 AI 스캔 파동이 화면 전체를 쓸고 지나감!<br>
+                    복잡한 군중의 얼굴과 빠르게 지나가는 차량 번호판이 <strong>0.01초 만에 실시간으로 완벽한 소프트 블러와 가명처리</strong>로 매끄럽게 전환된다.<br>
+                    빨간색 경고창들이 일제히 <strong>초록색 [SECURED / 100% PROTECTED]</strong> 뱃지로 바뀌며 화면이 밝고 세련되게 반전.
+                  </p>
+                  <div class="fx-tags">
+                    <span class="fx-badge success"><i class="fa-solid fa-wand-magic"></i> FX: Emerald AI Scan Sweep</span>
+                    <span class="fx-badge success">Real-Time Multi-Tracking Blur</span>
+                    <span class="fx-badge success">Instant License Plate Pixelation</span>
+                  </div>
+                </div>
+
+                <div class="scene-audio-box">
+                  <div class="audio-header"><i class="fa-solid fa-microphone-lines"></i> NA / VO (나레이션 대본)</div>
+                  <p class="vo-text">
+                    "이제 모든 영상은 xPrivacy를 통해 다시 태어납니다. AI 자동 감지 기술로 얼굴과 번호판을 0.01초 만에 완벽하게 비식별화."
+                  </p>
+                  <div class="ost-header"><i class="fa-solid fa-closed-captioning"></i> ON-SCREEN TEXT (화면 자막)</div>
+                  <p class="ost-text">xPrivacy 실시간 AI 비식별화 | 0.01초 초고속 마스킹 · 99.8% 정밀 추적</p>
+                  <div class="sfx-header"><i class="fa-solid fa-volume-high"></i> BGM / SOUND FX</div>
+                  <p class="sfx-text">청량하고 세련된 일렉트로닉 비트 오픈 + 청명한 AI 쉴드 락인(Lock-in) 사운드</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- SCENE 4 -->
+            <div class="scene-card" id="scene-4">
+              <div class="scene-header">
+                <div class="scene-badge">SCENE 04</div>
+                <div class="scene-time"><i class="fa-regular fa-clock"></i> 00:40 ~ 00:52 (12초)</div>
+                <div class="scene-title-tag">Tech Proof: 흔들림 없는 정확도와 무한한 확장성</div>
+              </div>
+              <div class="scene-body">
+                <div class="scene-visual-box">
+                  <div class="visual-header"><i class="fa-solid fa-camera"></i> VISUAL & MOTION (화면 연출)</div>
+                  <p class="visual-text">
+                    [화면] 4분할 그리드 화면으로 다양한 산업 적용 씬이 파노라마처럼 전개.<br>
+                    (1) 어두운 야간 골목 CCTV ➔ (2) 고속도로 자율주행 영상 ➔ (3) 방송 미디어 콘텐츠 ➔ (4) 스마트 리테일 매장.<br>
+                    극한의 조건(조도 저하, 빠른 이동, 군중 밀집)에서도 단 하나의 누락 없이 완벽히 유지되는 99.8% 검출률 인포그래픽 노출.
+                  </p>
+                  <div class="fx-tags">
+                    <span class="fx-badge"><i class="fa-solid fa-wand-magic"></i> FX: 4-Way Multi-Screen Grid</span>
+                    <span class="fx-badge">Night/High-Speed Robust Tracking</span>
+                    <span class="fx-badge">Trust Shield Badges</span>
+                  </div>
+                </div>
+
+                <div class="scene-audio-box">
+                  <div class="audio-header"><i class="fa-solid fa-microphone-lines"></i> NA / VO (나레이션 대본)</div>
+                  <p class="vo-text">
+                    "공공 관제부터 자율주행 AI 학습, 미디어 콘텐츠까지. 개인정보 유출 걱정 없이 데이터의 가치를 마음껏 확장하세요."
+                  </p>
+                  <div class="ost-header"><i class="fa-solid fa-closed-captioning"></i> ON-SCREEN TEXT (화면 자막)</div>
+                  <p class="ost-text">공공 보안 · 자율주행 AI 데이터 · 미디어 콘텐츠 · 스마트 리테일</p>
+                  <div class="sfx-header"><i class="fa-solid fa-volume-high"></i> BGM / SOUND FX</div>
+                  <p class="sfx-text">경쾌하고 신뢰감 넘치는 템포의 상승형 빌드업 BGM</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- SCENE 5 -->
+            <div class="scene-card" id="scene-5">
+              <div class="scene-header">
+                <div class="scene-badge">SCENE 05</div>
+                <div class="scene-time"><i class="fa-regular fa-clock"></i> 00:52 ~ 01:00 (8초)</div>
+                <div class="scene-title-tag">The CTA: 안심과 도약의 마무리</div>
+              </div>
+              <div class="scene-body">
+                <div class="scene-visual-box">
+                  <div class="visual-header"><i class="fa-solid fa-camera"></i> VISUAL & MOTION (화면 연출)</div>
+                  <p class="visual-text">
+                    [화면] 안전하게 보호된 도심 속을 미소 지으며 걸어가는 시민들의 밝은 표정.<br>
+                    카메라가 하늘로 틸트업(Tilt-up)되며 xPrivacy 3D 엠블럼 로고가 세련되게 등장.<br>
+                    하단에 공식 웹사이트 URL [www.xprivacy.ai] 및 [무료 체험 신청하기 / 도입 문의] 버튼이 인터랙티브하게 빛난다.
+                  </p>
+                  <div class="fx-tags">
+                    <span class="fx-badge"><i class="fa-solid fa-wand-magic"></i> FX: 3D Emblem Reveal</span>
+                    <span class="fx-badge">Sun Flare & Tilt-Up</span>
+                    <span class="fx-badge">Interactive CTA Glow</span>
+                  </div>
+                </div>
+
+                <div class="scene-audio-box">
+                  <div class="audio-header"><i class="fa-solid fa-microphone-lines"></i> NA / VO (나레이션 대본)</div>
+                  <p class="vo-text">
+                    "보이지 않아도 안전한 세상. 개인정보 보호의 가장 스마트한 표준, xPrivacy."
+                  </p>
+                  <div class="ost-header"><i class="fa-solid fa-closed-captioning"></i> ON-SCREEN TEXT (화면 자막)</div>
+                  <p class="ost-text">xPrivacy | 프라이버시 보호의 새로운 표준 (지금 바로 무료 체험을 신청하세요)</p>
+                  <div class="sfx-header"><i class="fa-solid fa-volume-high"></i> BGM / SOUND FX</div>
+                  <p class="sfx-text">웅장하고 깔끔한 브랜드 시그니처 징글 (Signature Brand Chime)로 마무리</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- SECTION 3-3 ALL-IN-ONE MASTER PROMPT BOX -->
+            <div class="prompt-template-box all-in-one-script-box" style="margin-top: 28px;">
+              <div class="template-header">
+                <div class="template-title-group" style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                  <span class="template-badge" style="background: rgba(16, 185, 129, 0.15); color: var(--primary); border: 1px solid var(--primary); font-weight: 700;">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i> ALL-IN-ONE MASTER PROMPT
+                  </span>
+                  <strong style="color: var(--text-main); font-size: 0.95rem;">
+                    위 씬 1~5 전체 스토리보드를 일괄 생성·재현하는 [올인원 대본 프롬프트]
+                  </strong>
+                </div>
+                <button class="btn btn-primary-sm btn-copy-sm" data-copy="prompt-storyboard-allinone">
+                  <i class="fa-solid fa-copy"></i>
+                  <span>올인원 대본 프롬프트 복사</span>
+                </button>
+              </div>
+              <div class="template-desc-bar" style="padding: 10px 16px; background: rgba(0,0,0,0.25); border-bottom: 1px solid var(--border-glass); font-size: 0.82rem; color: var(--text-muted);">
+                <i class="fa-solid fa-circle-info" style="color: var(--primary);"></i> 
+                ChatGPT, Claude, Gemini 등에 아래 프롬프트를 붙여넣으면 위 씬 1~5의 <strong>[화면 연출 / 성우 대본 / 자막 / 효과음]</strong> 전체를 동일한 프로덕션 규격으로 일괄 생성합니다.
+              </div>
+              <pre class="template-code" id="prompt-storyboard-allinone"><code>너는 칸 라이언즈 수상 경력의 브랜드 영상 크리에이티브 디렉터이자 카피라이터야.
+아래의 [1. 사전 기획 5대 사고 뼈대]와 [2. 확정된 씬별(Scene 1 ~ Scene 5) 상세 스토리보드 및 대본]을 바탕으로, AI 실시간 비식별화 솔루션 'xPrivacy'의 60초 브랜드 대표영상을 완벽한 프로덕션 규격으로 완성해줘.
+
+[1. 사전 기획 5대 사고 뼈대]
+- 서비스명: xPrivacy (AI 자동 얼굴·차량번호 비식별화 솔루션)
+- 1. 최종 종착지 (End-State): CCTV 영상 반출 시 개인정보 유출 걱정을 100% 해소하는 절대적 안도감
+- 2. 타겟 & 결핍 (Void & Pain): 수작업 모자이크 야근에 지친 공공 관제사 및 지자체/기업 실무자, 개인정보보호법 위반 과징금 위협
+- 3. 가치 치환 (Value Translation): 0.01초 실시간 비식별화로 작업 시간 90% 단축(칼퇴 보장) 및 법적 과징금 리스크 제로화
+- 4. 시각적 대비 (Visual Contrast): [초반 위기: 어두운 사무실 + 빨간색 경고창] ➔ [후반 해결: 밝은 스마트시티 + 에메랄드 스캔 쉴드]
+- 5. 행동 촉발 (CTA): 자사 영상 1개로 즉시 3초 무료 비식별화 테스트 신청
+
+[2. 확정된 씬별(Scene 1 ~ Scene 5) 상세 스토리보드 및 프로덕션 대본]
+
+■ SCENE 01 (00:00 ~ 00:08 / 8초) - The Hook: 무방비하게 노출된 일상
+- [화면 연출 (VISUAL & MOTION)]: [화면] 복잡한 도심 교차로 및 번화가 CCTV 시점. 바쁘게 오가는 시민들의 얼굴과 달리는 차량들의 번호판이 붉은색 경고 타겟 박스로 타이트하게 트래킹되며 깜빡인다. 카메라가 빠르게 줌인되며 무방비하게 개인정보가 노출되고 있는 현대사회의 차가운 긴장감을 조성. (FX: Red Alert Bounding Box, Fast CCTV Digital Zoom, Glitched Scan Lines)
+- [성우 나레이션 (NA / VO)]: "우리가 지나온 모든 순간, 당신의 얼굴과 일상은 안전하게 보호받고 있습니까?"
+- [화면 핵심 자막 (ON-SCREEN TEXT)]: 하루 평균 150회 노출되는 당신의 개인정보, 과연 안전할까요?
+- [사운드 효과 (BGM / SOUND FX)]: 낮은 저음의 긴장감 넘치는 사이버 펄스 비트 + 디지털 타겟 락온 비프음
+
+■ SCENE 02 (00:08 ~ 00:22 / 14초) - The Pain Point: 수작업의 늪과 법적 과징금 위협
+- [화면 연출 (VISUAL & MOTION)]: [화면] 어두운 사무실, 야근하는 영상 실무자가 마우스로 수백 명의 얼굴을 프레임 단위로 일일이 사각형 모자이크를 씌우며 고통스러워함. 화면 한편에 [개인정보보호법 위반 과징금 경고] 그래픽과 쌓여가는 영상 반출 요청서들이 시각적 압박감을 준다. (FX: Manual Frame Masking UI, Ticking Clock Timelapse, Compliance Warning HUD)
+- [성우 나레이션 (NA / VO)]: "끝없는 수작업 모자이크, 쏟아지는 영상 반출 요청, 그리고 단 1건의 실수도 용납되지 않는 엄격한 법적 책임까지."
+- [화면 핵심 자막 (ON-SCREEN TEXT)]: 수작업 모자이크의 한계 ➔ 막대한 시간 소모 & 과징금 리스크
+- [사운드 효과 (BGM / SOUND FX)]: 불안감을 증폭시키는 시계 초침 소리 ➔ 무거운 베이스 드롭
+
+■ SCENE 03 (00:22 ~ 00:40 / 18초) - The Solution (CLIMAX): xPrivacy AI 비식별화의 압도적 혁신
+- [화면 연출 (VISUAL & MOTION)]: [화면] 화면 중앙에 xPrivacy 에메랄드 엠블럼이 빛나며 푸른빛의 AI 스캔 파동이 화면 전체를 쓸고 지나감! 복잡한 군중의 얼굴과 빠르게 지나가는 차량 번호판이 0.01초 만에 실시간으로 완벽한 소프트 블러와 가명처리로 매끄럽게 전환된다. 빨간색 경고창들이 일제히 초록색 [SECURED / 100% PROTECTED] 뱃지로 바뀌며 화면이 밝고 세련되게 반전. (FX: Emerald AI Scan Sweep, Real-Time Multi-Tracking Blur, Instant License Plate Pixelation)
+- [성우 나레이션 (NA / VO)]: "이제 모든 영상은 xPrivacy를 통해 다시 태어납니다. AI 자동 감지 기술로 얼굴과 번호판을 0.01초 만에 완벽하게 비식별화."
+- [화면 핵심 자막 (ON-SCREEN TEXT)]: xPrivacy 실시간 AI 비식별화 | 0.01초 초고속 마스킹 · 99.8% 정밀 추적
+- [사운드 효과 (BGM / SOUND FX)]: 청량하고 세련된 일렉트로닉 비트 오픈 + 청명한 AI 쉴드 락인(Lock-in) 사운드
+
+■ SCENE 04 (00:40 ~ 00:52 / 12초) - Tech Proof: 흔들림 없는 정확도와 무한한 확장성
+- [화면 연출 (VISUAL & MOTION)]: [화면] 4분할 그리드 화면으로 다양한 산업 적용 씬이 파노라마처럼 전개. (1) 어두운 야간 골목 CCTV ➔ (2) 고속도로 자율주행 영상 ➔ (3) 방송 미디어 콘텐츠 ➔ (4) 스마트 리테일 매장. 극한의 조건(조도 저하, 빠른 이동, 군중 밀집)에서도 단 하나의 누락 없이 완벽히 유지되는 99.8% 검출률 인포그래픽 노출. (FX: 4-Way Multi-Screen Grid, Night/High-Speed Robust Tracking, Trust Shield Badges)
+- [성우 나레이션 (NA / VO)]: "공공 관제부터 자율주행 AI 학습, 미디어 콘텐츠까지. 개인정보 유출 걱정 없이 데이터의 가치를 마음껏 확장하세요."
+- [화면 핵심 자막 (ON-SCREEN TEXT)]: 공공 보안 · 자율주행 AI 데이터 · 미디어 콘텐츠 · 스마트 리테일
+- [사운드 효과 (BGM / SOUND FX)]: 경쾌하고 신뢰감 넘치는 템포의 상승형 빌드업 BGM
+
+■ SCENE 05 (00:52 ~ 01:00 / 8초) - The CTA: 안심과 도약의 마무리
+- [화면 연출 (VISUAL & MOTION)]: [화면] 안전하게 보호된 도심 속을 미소 지으며 걸어가는 시민들의 밝은 표정. 카메라가 하늘로 틸트업(Tilt-up)되며 xPrivacy 3D 엠블럼 로고가 세련되게 등장. 하단에 공식 웹사이트 URL [www.xprivacy.ai] 및 [무료 체험 신청하기 / 도입 문의] 버튼이 인터랙티브하게 빛난다. (FX: 3D Emblem Reveal, Sun Flare & Tilt-Up, Interactive CTA Glow)
+- [성우 나레이션 (NA / VO)]: "보이지 않아도 안전한 세상. 개인정보 보호의 가장 스마트한 표준, xPrivacy."
+- [화면 핵심 자막 (ON-SCREEN TEXT)]: xPrivacy | 프라이버시 보호의 새로운 표준 (지금 바로 무료 체험을 신청하세요)
+- [사운드 효과 (BGM / SOUND FX)]: 웅장하고 깔끔한 브랜드 시그니처 징글 (Signature Brand Chime)로 마무리</code></pre>
+            </div>
+
+            <!-- SECTION 3-3 COMPACT FREE AI PROMPT BOX (Under 3,000 Chars) -->
+            <div class="prompt-template-box all-in-one-compact-box" style="margin-top: 14px;">
+              <div class="template-header">
+                <div class="template-title-group" style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                  <span class="template-badge" style="background: rgba(245, 158, 11, 0.15); color: #f59e0b; border: 1px solid #f59e0b; font-weight: 700;">
+                    <i class="fa-solid fa-bolt"></i> FREE AI COMPACT (2,195자 / 3000자 이내)
+                  </span>
+                  <strong style="color: var(--text-main); font-size: 0.95rem;">
+                    무료 AI용 3000자 이내 축소 [경량화 올인원 대본 프롬프트]
+                  </strong>
+                </div>
+                <button class="btn btn-primary-sm btn-copy-sm" data-copy="prompt-storyboard-compact">
+                  <i class="fa-solid fa-copy"></i>
+                  <span>무료 AI용 축소 프롬프트 복사</span>
+                </button>
+              </div>
+              <div class="template-desc-bar" style="padding: 10px 16px; background: rgba(0,0,0,0.25); border-bottom: 1px solid var(--border-glass); font-size: 0.82rem; color: var(--text-muted);">
+                <i class="fa-solid fa-circle-info" style="color: #f59e0b;"></i> 
+                ChatGPT 무료 버전, Claude 무료 티어, 모바일 환경 등 <strong>입력 글자 수 제한이 있는 무료 AI 플랫폼</strong>에서도 잘림 없이 100% 한 번에 전송 가능한 3000자 이내(2,195자) 최적화 축소 버전입니다.
+              </div>
+              <pre class="template-code" id="prompt-storyboard-compact"><code>너는 칸 라이언즈 수상 경력의 브랜드 영상 크리에이티브 디렉터이자 카피라이터야.
+아래의 [1. 기획 5대 뼈대]와 [2. 60초 5씬 스토리보드]를 바탕으로 AI 실시간 비식별화 'xPrivacy' 60초 브랜드 대표영상 프로덕션 대본을 작성해줘.
+
+[1. 기획 5대 핵심 뼈대]
+- 서비스: xPrivacy (AI 자동 얼굴·차량번호 비식별화 솔루션)
+- 종착지: CCTV 영상 반출 시 개인정보 유출 걱정을 100% 해소하는 절대적 안도감
+- 타겟/결핍: 수작업 모자이크 야근에 지친 공공 관제사·실무자, 과징금 공포
+- 가치치환: 0.01초 실시간 비식별화 ➔ 작업시간 90% 단축(칼퇴 보장) & 법적 리스크 제로
+- 시각대비: [어두운 야근 + 붉은 경고] ➔ [스마트시티 + 에메랄드 스캔 쉴드]
+- 행동촉발: 자사 영상 1개로 즉시 3초 무료 비식별화 테스트 신청
+
+[2. 씬별(Scene 1~5) 상세 스토리보드]
+■ Scene 1 (00~08s | The Hook: 무방비 노출)
+- Visual: 도심 CCTV 시점. 바쁜 시민 얼굴과 차량 번호판에 붉은색 타겟 박스 트래킹 깜빡임. 패스트 줌인으로 차가운 긴장감 연출. (FX: Red Alert Box, Fast Zoom, Glitched Scan)
+- VO: "우리가 지나온 모든 순간, 당신의 얼굴과 일상은 안전하게 보호받고 있습니까?"
+- OST: 하루 평균 150회 노출되는 당신의 개인정보, 과연 안전할까요?
+- SFX: 저음 사이버 펄스 비트 + 타겟 락온 비프음
+
+■ Scene 2 (08~22s | The Pain: 수작업 야근 & 과징금)
+- Visual: 어두운 사무실, 실무자가 마우스로 수백 명 얼굴을 수작업 모자이크하며 지쳐있음. [개인정보보호법 위반 과징금 경고] HUD와 반출 요청서 누적. (FX: Manual Masking UI, Compliance HUD)
+- VO: "끝없는 수작업 모자이크, 쏟아지는 영상 반출 요청, 그리고 단 1건의 실수도 용납되지 않는 엄격한 법적 책임까지."
+- OST: 수작업 모자이크의 한계 ➔ 막대한 시간 소모 & 과징금 리스크
+- SFX: 불안한 시계 초침 소리 ➔ 묵직한 베이스 드롭
+
+■ Scene 3 (22~40s | The Solution: CLIMAX 실시간 비식별화)
+- Visual: xPrivacy 에메랄드 엠블럼 발광과 함께 푸른빛 AI 스캔 파동이 화면 전체 스윕! 군중 얼굴과 번호판이 0.01초 만에 실시간 소프트 블러로 전환. 초록색 [SECURED 100%] 뱃지 반전. (FX: Emerald Scan Sweep, Real-Time Blur)
+- VO: "이제 모든 영상은 xPrivacy를 통해 다시 태어납니다. AI 자동 감지 기술로 얼굴과 번호판을 0.01초 만에 완벽하게 비식별화."
+- OST: xPrivacy 실시간 AI 비식별화 | 0.01초 초고속 마스킹 · 99.8% 정밀 추적
+- SFX: 청량한 일렉트로닉 비트 오픈 + AI 쉴드 락인 사운드
+
+■ Scene 4 (40~52s | Tech Proof: 99.8% 검출 & 확장성)
+- Visual: 4분할 화면 (야간 골목 CCTV, 고속도로 자율주행, 방송 미디어, 스마트 리테일). 악조건에서도 단 1건 누락 없는 99.8% 정밀 검출 인포그래픽. (FX: 4-Way Grid, Trust Badges)
+- VO: "공공 관제부터 자율주행 AI 학습, 미디어 콘텐츠까지. 개인정보 유출 걱정 없이 데이터의 가치를 마음껏 확장하세요."
+- OST: 공공 보안 · 자율주행 AI 데이터 · 미디어 콘텐츠 · 스마트 리테일
+- SFX: 신뢰감 넘치는 템포의 상승형 빌드업 BGM
+
+■ Scene 5 (52~60s | The CTA: 안심과 도약)
+- Visual: 안심하고 미소 짓는 시민들. 하늘 틸트업되며 xPrivacy 3D 엠블럼과 공식 URL [www.xprivacy.ai] 및 [무료체험 신청] 버튼 발광. (FX: 3D Emblem Reveal, Sun Flare, CTA Glow)
+- VO: "보이지 않아도 안전한 세상. 개인정보 보호의 가장 스마트한 표준, xPrivacy."
+- OST: xPrivacy | 프라이버시 보호의 새로운 표준 (지금 바로 무료 체험을 신청하세요)
+- SFX: 웅장한 브랜드 시그니처 징글
+
+[3. 출력 규칙]
+각 씬마다 [화면 연출(Visual)], [성우 대본(VO)], [자막(OST)], [효과음(SFX)]을 빠짐없이 한글로 출력해줘.</code></pre>
+            </div>
+
+            <!-- SECTION 3-3 STYLE & TONE DIRECTIVE PROMPT BOX -->
+            <div class="prompt-template-box all-in-one-style-box" style="margin-top: 14px;">
+              <div class="template-header">
+                <div class="template-title-group" style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                  <span class="template-badge" style="background: rgba(99, 102, 241, 0.15); color: var(--accent-purple); border: 1px solid var(--accent-purple); font-weight: 700;">
+                    <i class="fa-solid fa-paintbrush"></i> STYLE & TONE DIRECTIVE
+                  </span>
+                  <strong style="color: var(--text-main); font-size: 0.95rem;">
+                    [다음 순서] 대본에 적용할 [문체 및 연출 스타일 지정 프롬프트]
+                  </strong>
+                </div>
+                <button class="btn btn-primary-sm btn-copy-sm" data-copy="prompt-style-directive">
+                  <i class="fa-solid fa-copy"></i>
+                  <span>스타일 프롬프트 복사</span>
+                </button>
+              </div>
+              <div class="template-desc-bar" style="padding: 10px 16px; background: rgba(0,0,0,0.25); border-bottom: 1px solid var(--border-glass); font-size: 0.82rem; color: var(--text-muted);">
+                <i class="fa-solid fa-circle-info" style="color: var(--accent-purple);"></i> 
+                위 올인원 대본 생성 후, ChatGPT/Claude 대화창에 이어서 아래 프롬프트를 전송하면 브랜드 영상에 맞는 전문적 어조와 감정 대비 연출이 정교하게 반영됩니다.
+              </div>
+              <pre class="template-code" id="prompt-style-directive"><code>너는 칸 라이언즈 수상 경력의 브랜드 영상 크리에이티브 디렉터이자 카피라이터야.
+작성된 [xPrivacy 60초 대표영상 대본]에 대해 아래의 [문체 및 연출 스타일 가이드라인]을 엄격히 적용하여 완성도를 한 단계 높여줘.
+
+[문체 및 연출 스타일 가이드라인 (Tone & Style Guide)]
+
+1. 어조 및 문장 구성:
+- 브랜드 영상 제작을 위한 전문적이고 체계적인 어조를 사용한다.
+- 명확한 목적 전달을 위해 개조식(포인트 요약)과 서술형 문장을 조화롭게 혼합하여 사용한다.
+
+2. 분위기 및 감정 (Emotional Dynamics):
+- 기술적 혁신과 신뢰감을 강조하는 객관적이고 세련된 비즈니스 톤을 유지한다.
+- 문제 상황에서의 긴장감(CCTV 노출 위기, 수작업 야근, 과징금 공포)과 해결 이후의 안도감(0.01초 실시간 마스킹, 칼퇴 보장)을 극명하게 대비시키는 역동적인 감정 변화를 유도한다.
+
+3. 표현적 특징 (Framework & Terminology):
+- 'The Hook', 'Pain Point', 'The Solution(Climax)', 'Tech Proof', 'The CTA'와 같은 마케팅 프레임워크를 기반으로 작성한다.
+- 시각적 효과(Visual & Motion)와 청각적 요소(BGM / SOUND FX)를 구체적으로 지시하는 전문적인 프로덕션 용어를 적극 활용한다.
+
+4. 구조 및 전개 (Narrative Storytelling):
+- 사전 기획 뼈대(5대 사고 방식)를 토대로 단계별(Scene 1~5)로 전개되는 논리적인 구조를 갖춘다.
+- 문제 인식에서 출발하여 위기 심화 ➔ 해결책 제시 ➔ 기술 증명 ➔ 마지막 행동 촉발(CTA)로 이어지는 설득력 있는 스토리텔링 방식을 취한다.</code></pre>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Section 3-4: 제작 및 디벨롭 실행 로드맵 -->
+        <div class="content-block">
+          <div class="block-header">
+            <div class="block-badge"><i class="fa-solid fa-list-check"></i> SECTION 3-4</div>
+            <h3 class="block-title">프로덕션 실행 및 차후 디벨롭 체크리스트</h3>
+            <p class="block-subtitle">확정된 스크립트를 바탕으로 실제 영상 제작 단계로 넘어가기 위한 가이드라인입니다.</p>
+          </div>
+
+          <div class="production-guide-grid">
+            <div class="guide-box">
+              <h5 class="guide-title"><i class="fa-solid fa-microphone"></i> 1. 성우 (Voice Actor) 톤 가이드</h5>
+              <p class="guide-desc">
+                - <strong>연령대/톤:</strong> 30대 중반의 신뢰감 있고 차분하면서도 명료한 톤 (지적이고 전문적인 느낌)<br>
+                - <strong>호흡:</strong> 0~20초는 진중하고 질문을 던지듯 호소력 있게, 22초 이후는 밝고 명쾌하며 당당한 톤으로 전환.
+              </p>
+            </div>
+            <div class="guide-box">
+              <h5 class="guide-title"><i class="fa-solid fa-palette"></i> 2. 컬러 & 비주얼 키 (Color Key)</h5>
+              <p class="guide-desc">
+                - <strong>경고 단계 (0~20s):</strong> 다크 차콜 (<code>#111827</code>) + 경고 레드 (<code>#EF4444</code>) + 네온 오렌지<br>
+                - <strong>해결 단계 (22~60s):</strong> 하이테크 딥 블루 (<code>#0F172A</code>) + 에메랄드 그린 (<code>#10B981</code>) + 시안 (<code>#06B6D4</code>)
+              </p>
+            </div>
+            <div class="guide-box">
+              <h5 class="guide-title"><i class="fa-solid fa-music"></i> 3. BGM & 효과음 레퍼런스</h5>
+              <p class="guide-desc">
+                - <strong>BGM:</strong> 애플 신제품 키노트 및 테슬라 테크 데모 스타일의 모던 테크 일렉트로닉 (신스 웨이브 & 드럼 비트)<br>
+                - <strong>SFX:</strong> 고해상도 AI 마스킹 락(Lock) 소리, 미래지향적 스캔 빔 효과음.
+              </p>
+            </div>
+            <div class="guide-box">
+              <h5 class="guide-title"><i class="fa-solid fa-video"></i> 4. 촬영 및 그래픽 리소스 배분</h5>
+              <p class="guide-desc">
+                - <strong>실사 촬영/스톡:</strong> 도심 거리, 도로 차량 주행, 사무실 업무 씬 (40%)<br>
+                - <strong>2D/3D 모션그래픽:</strong> xPrivacy 엔진 스캔 FX, 인터랙티브 UI 블러링 시연, 인포그래픽 (60%)
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 3-5: 무료 AI 실무 적용 튜토리얼 배너 -->
+        <div class="tutorial-cta-block">
+          <div class="tutorial-cta-card">
+            <div class="cta-glow-bg"></div>
+            <div class="cta-content-inner">
+              <div class="cta-badge">
+                <i class="fa-solid fa-gift"></i>
+                <span>100% FREE AI TOOLS ONLY · 비용 0원 실전 가이드</span>
+              </div>
+              <h3 class="cta-heading">
+                무료 AI로 10분 만에 <span class="gradient-text">대표영상 완성하는 초간단 실무 튜토리얼</span>
+              </h3>
+              <p class="cta-subheading">
+                기획 & 대본(ChatGPT) ➔ 콘티 이미지(Bing) ➔ 비디오 & 성우(Kling/ElevenLabs) ➔ 종합 편집(CapCut)까지!<br>
+                빈 도화지 상태에서도 100% 무료 사이트와 실전 프롬프트로 바로 제작할 수 있도록 안내합니다.
+              </p>
+              <button class="btn btn-primary-lg" id="btnOpenCurriculumModal">
+                <i class="fa-solid fa-play"></i>
+                <span>무료 AI 실무 튜토리얼 & 프롬프트 가이드 열기</span>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="logo-icon-sm">
+            <i class="fa-solid fa-shield-halved"></i>
+          </div>
+          <span class="footer-brand-title">xPrivacy Video Script Workspace</span>
+        </div>
+        <p class="footer-tagline">AI 자동 얼굴·차량번호 비식별화 솔루션 대표영상 기획 워크스페이스</p>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 xPrivacy Project. All Rights Reserved. Designed for High-Impact Video Production.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Practical Free AI Tutorial Modal (Unified 4-Step Pipeline) -->
+  <div class="modal-overlay" id="curriculumModal" aria-hidden="true">
+    <div class="modal-container">
+      <div class="modal-header">
+        <div class="modal-title-box">
+          <span class="modal-tag"><i class="fa-solid fa-gift"></i> 100% FREE AI PRODUCTION TUTORIAL</span>
+          <h3 class="modal-title">비용 0원! 무료 AI로 완성하는 <span class="gradient-text">60초 대표영상 실무 가이드</span></h3>
+          <p class="modal-subtitle">사전 기획부터 대본 생성, 콘티 이미지, 비디오, 성우, 종합 편집까지 1-2-3-4 단계별 실전 따라하기</p>
+        </div>
+        <button class="modal-close-btn" id="btnCloseCurriculumModal" aria-label="Close modal">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <!-- 4-Step Navigation Tabs -->
+        <div class="curriculum-steps-nav">
+          <button class="c-step-btn active" data-cstep="step1">
+            <span class="c-step-badge">STEP 01</span>
+            <span class="c-step-name"><i class="fa-solid fa-file-lines"></i> 1. 확정 대본 & 타임라인 (Section 3-3)</span>
+          </button>
+          <button class="c-step-btn" data-cstep="step2">
+            <span class="c-step-badge">STEP 02</span>
+            <span class="c-step-name"><i class="fa-solid fa-image"></i> 2. 콘티 이미지 생성 (무료 Image AI)</span>
+          </button>
+          <button class="c-step-btn" data-cstep="step3">
+            <span class="c-step-badge">STEP 03</span>
+            <span class="c-step-name"><i class="fa-solid fa-video"></i> 3. 영상 & 성우 합성 (Kling/ElevenLabs)</span>
+          </button>
+          <button class="c-step-btn" data-cstep="step4">
+            <span class="c-step-badge">STEP 04</span>
+            <span class="c-step-name"><i class="fa-solid fa-film"></i> 4. 종합 편집 & 자막 (CapCut/Vrew)</span>
+          </button>
+        </div>
+
+        <!-- Tab 1: Finalized Master Script (Directly from Section 3-3) -->
+        <div class="c-step-pane active" id="cpane-step1">
+          <div class="step-overview-card">
+            <div class="step-icon-box bg-purple"><i class="fa-solid fa-crown"></i></div>
+            <div class="step-info" style="width: 100%;">
+              <span class="tool-label"><i class="fa-solid fa-shield-halved"></i> Section 3-3에서 기획·검증 완료된 xPrivacy 60초 공식 마스터 대본:</span>
+              <p style="font-size: 0.84rem; color: var(--text-main); margin-top: 4px; line-height: 1.5;">
+                본 튜토리얼의 모든 <strong>콘티 이미지(2단계), 비디오/성우(3단계), 종합 편집(4단계)</strong>은 아래 확정 대본을 기준으로 1:1 완벽하게 연동됩니다.<br>
+                별도로 대본을 새로 짤 필요 없이, 아래의 확정 대본을 복사하여 실무 제작에 바로 투입하시면 됩니다.
+              </p>
+            </div>
+          </div>
+
+          <div class="workflow-process-grid">
+            <div class="process-card">
+              <div class="process-num">01</div>
+              <h5 class="process-title">60초 마스터 대본 확인</h5>
+              <p class="process-desc">씬 1~5의 <strong>타임라인, 화면 연출(Visual), 성우 대본(VO), 자막(OST)</strong>을 확인합니다.</p>
+            </div>
+            <div class="process-card">
+              <div class="process-num">02</div>
+              <h5 class="process-title">대본 원클릭 복사</h5>
+              <p class="process-desc">아래 <strong>[전체 대본 복사]</strong> 버튼을 눌러 확정 대본 전체를 클립보드에 복사해 보관 및 공유합니다.</p>
+            </div>
+            <div class="process-card">
+              <div class="process-num">03</div>
+              <h5 class="process-title">2단계(이미지 생성) 이동</h5>
+              <p class="process-desc">이 대본의 씬 1~5 묘사를 바탕으로 <strong>STEP 02 (무료 콘티 이미지 5장 생성)</strong>로 넘어갑니다.</p>
+            </div>
+          </div>
+
+          <!-- Prompt Box: Section 3-3 Final Master Script -->
+          <div class="prompt-template-box" style="margin-bottom: 14px;">
+            <div class="template-header">
+              <span class="template-badge"><i class="fa-solid fa-file-signature"></i> [Section 3-3 확정본] xPrivacy 60초 5씬 공식 대표영상 마스터 스크립트</span>
+              <button class="btn-copy-sm" data-copy="prompt-script-free">
+                <i class="fa-solid fa-copy"></i>
+                <span>전체 대본 복사</span>
+              </button>
+            </div>
+            <pre class="template-code" id="prompt-script-free"><code>[xPrivacy 60초 브랜드 대표영상 공식 마스터 스크립트 (Section 3-3 확정본)]
+
+■ SCENE 01 (00:00 ~ 00:08 / 8초) - The Hook: 무방비하게 노출된 일상
+- [화면 연출 (Visual)]: 복잡한 도심 교차로 및 번화가 CCTV 시점. 바쁘게 오가는 시민들의 얼굴과 달리는 차량들의 번호판이 붉은색 경고 타겟 박스로 타이트하게 트래킹되며 깜빡임. 패스트 디지털 줌인으로 차가운 긴장감 조성.
+- [성우 나레이션 (VO)]: "우리가 지나온 모든 순간, 당신의 얼굴과 일상은 안전하게 보호받고 있습니까?"
+- [화면 핵심 자막 (OST)]: 하루 평균 150회 노출되는 당신의 개인정보, 과연 안전할까요?
+- [효과음/BGM (SFX)]: 낮은 저음의 긴장감 넘치는 사이버 펄스 비트 + 디지털 타겟 락온 비프음
+
+■ SCENE 02 (00:08 ~ 00:22 / 14초) - The Pain Point: 수작업의 늪과 법적 과징금 위협
+- [화면 연출 (Visual)]: 어두운 사무실, 야근하는 영상 실무자가 수백 명의 얼굴을 프레임 단위로 일일이 사각형 모자이크를 씌우며 고통스러워함. 화면 한편에 [개인정보보호법 위반 과징금 경고] 그래픽과 쌓여가는 영상 반출 요청서들이 시각적 압박감 부여.
+- [성우 나레이션 (VO)]: "끝없는 수작업 모자이크, 쏟아지는 영상 반출 요청, 그리고 단 1건의 실수도 용납되지 않는 엄격한 법적 책임까지."
+- [화면 핵심 자막 (OST)]: 수작업 모자이크의 한계 ➔ 막대한 시간 소모 & 과징금 리스크
+- [효과음/BGM (SFX)]: 불안감을 증폭시키는 시계 초침 소리 ➔ 무거운 베이스 드롭
+
+■ SCENE 03 (00:22 ~ 00:40 / 18초) - The Solution (CLIMAX): xPrivacy AI 비식별화의 압도적 혁신
+- [화면 연출 (Visual)]: 화면 중앙 xPrivacy 에메랄드 엠블럼이 빛나며 푸른빛의 AI 스캔 파동이 화면 전체를 쓸고 지나감! 복잡한 군중의 얼굴과 빠르게 지나가는 차량 번호판이 0.01초 만에 실시간 완벽한 소프트 블러와 가명처리로 매끄럽게 전환. 일제히 초록색 [SECURED / 100% PROTECTED] 뱃지 반전.
+- [성우 나레이션 (VO)]: "이제 모든 영상은 xPrivacy를 통해 다시 태어납니다. AI 자동 감지 기술로 얼굴과 번호판을 0.01초 만에 완벽하게 비식별화."
+- [화면 핵심 자막 (OST)]: xPrivacy 실시간 AI 비식별화 | 0.01초 초고속 마스킹 · 99.8% 정밀 추적
+- [효과음/BGM (SFX)]: 청량하고 세련된 일렉트로닉 비트 오픈 + 청명한 AI 쉴드 락인(Lock-in) 사운드
+
+■ SCENE 04 (00:40 ~ 00:52 / 12초) - Tech Proof: 흔들림 없는 정확도와 무한한 확장성
+- [화면 연출 (Visual)]: 4분할 그리드 화면 (야간 골목 CCTV, 고속도로 자율주행, 방송 미디어, 스마트 리테일). 어두운 조도와 빠른 이동 속도 속에서도 단 1건의 누락 없이 유지되는 99.8% 검출률 인포그래픽.
+- [성우 나레이션 (VO)]: "공공 관제부터 자율주행 AI 학습, 미디어 콘텐츠까지. 개인정보 유출 걱정 없이 데이터의 가치를 마음껏 확장하세요."
+- [화면 핵심 자막 (OST)]: 공공 보안 · 자율주행 AI 데이터 · 미디어 콘텐츠 · 스마트 리테일
+- [효과음/BGM (SFX)]: 경쾌하고 신뢰감 넘치는 템포의 상승형 빌드업 BGM
+
+■ SCENE 05 (00:52 ~ 01:00 / 8초) - The CTA: 안심과 도약의 마무리
+- [화면 연출 (Visual)]: 안전하게 보호된 도심 속을 미소 지으며 걸어가는 시민들의 밝은 표정. 카메라가 하늘로 틸트업(Tilt-up)되며 xPrivacy 3D 엠블럼 로고와 공식 웹사이트 URL [www.xprivacy.ai] 노출.
+- [성우 나레이션 (VO)]: "보이지 않아도 안전한 세상. 개인정보 보호의 가장 스마트한 표준, xPrivacy."
+- [화면 핵심 자막 (OST)]: xPrivacy | 프라이버시 보호의 새로운 표준 (지금 바로 무료 체험을 신청하세요)
+- [효과음/BGM (SFX)]: 웅장하고 깔끔한 브랜드 시그니처 징글 (Signature Brand Chime)</code></pre>
+          </div>
+
+          <!-- Prompt Box: ChatGPT Script Modifier Prompt -->
+          <div class="prompt-template-box">
+            <div class="template-header">
+              <span class="template-badge"><i class="fa-solid fa-sparkles"></i> [선택 사항] 대본 수정·영문 번역용 ChatGPT 프롬프트</span>
+              <button class="btn-copy-sm" data-copy="prompt-script-mod">
+                <i class="fa-solid fa-copy"></i>
+                <span>수정 프롬프트 복사</span>
+              </button>
+            </div>
+            <pre class="template-code" id="prompt-script-mod"><code>너는 칸 라이언즈 수상 경력의 브랜드 영상 크리에이티브 디렉터야.
+위의 [xPrivacy 60초 확정 마스터 스크립트]를 바탕으로, 핵심 메시지와 타임라인 구조(Scene 1~5)를 유지하면서
+[원하는 요청사항: 예: 영어 버전으로 번역해줘 / 20대 타겟에 맞게 더 트렌디한 어조로 바꿔줘]를 반영하여 재작성해줘.</code></pre>
+          </div>
+        </div>
+
+        <!-- Tab 2: Free Image Generation (Scene 1 ~ Scene 5) -->
+        <div class="c-step-pane" id="cpane-step2">
+          <div class="step-overview-card">
+            <div class="step-icon-box bg-rose"><i class="fa-solid fa-palette"></i></div>
+            <div class="step-info" style="width: 100%;">
+              <span class="tool-label"><i class="fa-solid fa-link"></i> 접속할 무료 이미지 생성 AI 사이트 (클릭 시 새 창 이동):</span>
+              <div class="site-cards-row">
+                <a href="https://www.bing.com/create" target="_blank" class="site-card-btn">
+                  <div class="site-icon"><i class="fa-solid fa-paintbrush"></i></div>
+                  <div class="site-info">
+                    <span class="site-name">Bing Image Creator</span>
+                    <span class="site-url">bing.com/create <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                  </div>
+                  <span class="free-badge">DALL-E 3 무료</span>
+                </a>
+                <a href="https://ideogram.ai" target="_blank" class="site-card-btn">
+                  <div class="site-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                  <div class="site-info">
+                    <span class="site-name">Ideogram.ai</span>
+                    <span class="site-url">ideogram.ai <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                  </div>
+                  <span class="free-badge">매일 무료</span>
+                </a>
+                <a href="https://www.seaart.ai" target="_blank" class="site-card-btn">
+                  <div class="site-icon"><i class="fa-solid fa-shapes"></i></div>
+                  <div class="site-info">
+                    <span class="site-name">SeaArt (Flux.1)</span>
+                    <span class="site-url">seaart.ai <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                  </div>
+                  <span class="free-badge">Flux 무료</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="workflow-process-grid">
+            <div class="process-card">
+              <div class="process-num">01</div>
+              <h5 class="process-title">무료 사이트 접속</h5>
+              <p class="process-desc">위 <strong>Bing Image Creator</strong> 또는 <strong>Ideogram</strong> 사이트에 접속합니다.</p>
+            </div>
+            <div class="process-card">
+              <div class="process-num">02</div>
+              <h5 class="process-title">씬별 1:1 매칭 프롬프트 복사</h5>
+              <p class="process-desc">아래 Scene 1부터 Scene 5까지의 영문 프롬프트를 차례로 복사해 붙여넣습니다.</p>
+            </div>
+            <div class="process-card">
+              <div class="process-num">03</div>
+              <h5 class="process-title">5개 콘티 이미지 다운로드</h5>
+              <p class="process-desc">60초 영상의 5개 씬에 딱 맞는 16:9 와이드 콘티 이미지가 완성됩니다.</p>
+            </div>
+          </div>
+
+          <!-- Prompt Box: Scene 1 -->
+          <div class="prompt-template-box" style="margin-bottom: 12px;">
+            <div class="template-header">
+              <span class="template-badge"><i class="fa-solid fa-camera"></i> [Scene 1: 00~08s 오프닝 훅] 도심 CCTV 위험 노출 이미지</span>
+              <button class="btn-copy-sm" data-copy="prompt-img-scene1">
+                <i class="fa-solid fa-copy"></i>
+                <span>프롬프트 복사</span>
+              </button>
+            </div>
+            <pre class="template-code" id="prompt-img-scene1"><code>High-angle CCTV surveillance security camera footage of crowded modern city intersection in Seoul at dusk, multiple pedestrians with subtle glowing red cybernetic bounding warning boxes on faces, dark cyberpunk atmosphere, cinematic lighting, photorealistic 8k, ultra-detailed --ar 16:9</code></pre>
+          </div>
+
+          <!-- Prompt Box: Scene 2 -->
+          <div class="prompt-template-box" style="margin-bottom: 12px;">
+            <div class="template-header">
+              <span class="template-badge"><i class="fa-solid fa-triangle-exclamation"></i> [Scene 2: 08~22s 페인포인트] 수작업 모자이크 야근 & 과징금 경고 이미지</span>
+              <button class="btn-copy-sm" data-copy="prompt-img-scene2">
+                <i class="fa-solid fa-copy"></i>
+                <span>프롬프트 복사</span>
+              </button>
+            </div>
+            <pre class="template-code" id="prompt-img-scene2"><code>Dark office at night, exhausted video editor working on multiple monitors with manual pixelation mosaic software, compliance penalty warning HUD graphics popping up in red neon, dramatic moody lighting, cinematic film grain, photorealistic 8k --ar 16:9</code></pre>
+          </div>
+
+          <!-- Prompt Box: Scene 3 -->
+          <div class="prompt-template-box" style="margin-bottom: 12px;">
+            <div class="template-header">
+              <span class="template-badge"><i class="fa-solid fa-shield-halved"></i> [Scene 3: 22~40s 클라이맥스] xPrivacy 에메랄드 실시간 마스킹 이미지</span>
+              <button class="btn-copy-sm" data-copy="prompt-img-scene3">
+                <i class="fa-solid fa-copy"></i>
+                <span>프롬프트 복사</span>
+              </button>
+            </div>
+            <pre class="template-code" id="prompt-img-scene3"><code>Futuristic cybernetic AI protection interface, glowing neon emerald green scanning grid wave sweeping across city crowd, smooth de-identification privacy blur locking onto faces and license plates, sleek dark navy background, security film aesthetic, 8k --ar 16:9</code></pre>
+          </div>
+
+          <!-- Prompt Box: Scene 4 -->
+          <div class="prompt-template-box" style="margin-bottom: 12px;">
+            <div class="template-header">
+              <span class="template-badge"><i class="fa-solid fa-table-cells-large"></i> [Scene 4: 40~52s 기술 증명] 야간/고속도로 4분할 99.8% 정밀 추적 이미지</span>
+              <button class="btn-copy-sm" data-copy="prompt-img-scene4">
+                <i class="fa-solid fa-copy"></i>
+                <span>프롬프트 복사</span>
+              </button>
+            </div>
+            <pre class="template-code" id="prompt-img-scene4"><code>4-way split screen CCTV and autonomous vehicle camera feeds showing night alleyway, highway traffic, retail store, and broadcast studio, each with green AI tracking bounding boxes and 99.8% accuracy HUD indicators, high-tech security operations visual, 8k --ar 16:9</code></pre>
+          </div>
+
+          <!-- Prompt Box: Scene 5 -->
+          <div class="prompt-template-box">
+            <div class="template-header">
+              <span class="template-badge"><i class="fa-solid fa-crown"></i> [Scene 5: 52~60s 엔딩 CTA] 미소 짓는 시민들과 xPrivacy 3D 엠블럼 이미지</span>
+              <button class="btn-copy-sm" data-copy="prompt-img-scene5">
+                <i class="fa-solid fa-copy"></i>
+                <span>프롬프트 복사</span>
+              </button>
+            </div>
+            <pre class="template-code" id="prompt-img-scene5"><code>Smiling diverse citizens walking confidently in sunlit modern smart city, camera tilting up toward bright blue sky, elegant 3D glowing emerald shield emblem of xPrivacy with sleek corporate typography and website URL overlay, optimistic high-end commercial aesthetic, 8k --ar 16:9</code></pre>
+          </div>
+        </div>
+
+        <!-- Tab 3: Free Video & Audio Generation (Scene 1 ~ Scene 5) -->
+        <div class="c-step-pane" id="cpane-step3">
+          <div class="step-overview-card">
+            <div class="step-icon-box bg-cyan"><i class="fa-solid fa-video"></i></div>
+            <div class="step-info" style="width: 100%;">
+              <span class="tool-label"><i class="fa-solid fa-link"></i> [1] 무료 비디오 AI 사이트 (이미지 ➔ 5초 영상 변환):</span>
+              <div class="site-cards-row" style="margin-bottom: 12px;">
+                <a href="https://klingai.com" target="_blank" class="site-card-btn">
+                  <div class="site-icon"><i class="fa-solid fa-film"></i></div>
+                  <div class="site-info">
+                    <span class="site-name">Kling AI</span>
+                    <span class="site-url">klingai.com <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                  </div>
+                  <span class="free-badge">매일 66 무료</span>
+                </a>
+                <a href="https://hailuoai.video" target="_blank" class="site-card-btn">
+                  <div class="site-icon"><i class="fa-solid fa-clapperboard"></i></div>
+                  <div class="site-info">
+                    <span class="site-name">Hailuo AI (MiniMax)</span>
+                    <span class="site-url">hailuoai.video <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                  </div>
+                  <span class="free-badge">고화질 무료</span>
+                </a>
+                <a href="https://lumalabs.ai/dream-machine" target="_blank" class="site-card-btn">
+                  <div class="site-icon"><i class="fa-solid fa-play"></i></div>
+                  <div class="site-info">
+                    <span class="site-name">Luma Dream Machine</span>
+                    <span class="site-url">lumalabs.ai <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                  </div>
+                  <span class="free-badge">무료 30회</span>
+                </a>
+              </div>
+
+              <span class="tool-label"><i class="fa-solid fa-link"></i> [2] 무료 성우 AI 사이트 (대본 ➔ 음성 MP3 다운로드):</span>
+              <div class="site-cards-row">
+                <a href="https://elevenlabs.io" target="_blank" class="site-card-btn">
+                  <div class="site-icon"><i class="fa-solid fa-microphone-lines"></i></div>
+                  <div class="site-info">
+                    <span class="site-name">ElevenLabs</span>
+                    <span class="site-url">elevenlabs.io <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                  </div>
+                  <span class="free-badge">월 1만자 무료</span>
+                </a>
+                <a href="https://typecast.ai" target="_blank" class="site-card-btn">
+                  <div class="site-icon"><i class="fa-solid fa-headphones"></i></div>
+                  <div class="site-info">
+                    <span class="site-name">Typecast</span>
+                    <span class="site-url">typecast.ai <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                  </div>
+                  <span class="free-badge">한국어 무료체험</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="workflow-process-grid">
+            <div class="process-card">
+              <div class="process-num">01</div>
+              <h5 class="process-title">씬별 이미지 업로드 (Kling/Hailuo)</h5>
+              <p class="process-desc">2단계에서 만든 씬별 이미지를 올리고 아래의 해당 <strong>씬별 모션 프롬프트</strong>를 넣어 5개 클립을 만듭니다.</p>
+            </div>
+            <div class="process-card">
+              <div class="process-num">02</div>
+              <h5 class="process-title">성우 목소리 합성 (ElevenLabs)</h5>
+              <p class="process-desc">위 <strong>ElevenLabs</strong> 사이트에서 30대 비즈니스 보이스 선택 후 아래 60초 성우 대본을 넣고 MP3로 다운로드합니다.</p>
+            </div>
+            <div class="process-card">
+              <div class="process-num">03</div>
+              <h5 class="process-title">5개 비디오 + 1개 MP3 완성</h5>
+              <p class="process-desc">씬 1~5 비디오 클립 5개와 60초 통 나레이션 MP3 파일이 준비됩니다.</p>
+            </div>
+          </div>
+
+          <!-- Video Motion Box: Scene 1 -->
+          <div class="prompt-template-box" style="margin-bottom: 12px;">
+            <div class="template-header">
+              <span class="template-badge"><i class="fa-solid fa-film"></i> [Scene 1 비디오 모션] CCTV 디지털 줌인 & 붉은색 타겟 박스 깜빡임</span>
+              <button class="btn-copy-sm" data-copy="prompt-video-scene1">
+                <i class="fa-solid fa-copy"></i>
+                <span>프롬프트 복사</span>
+              </button>
+            </div>
+            <pre class="template-code" id="prompt-video-scene1"><code>CCTV surveillance camera view, slow ominous digital zoom in on pedestrians, blinking red cybernetic warning boxes tracking faces, subtle glitch scanline effect, cinematic dark atmosphere, 24fps</code></pre>
+          </div>
+
+          <!-- Video Motion Box: Scene 2 -->
+          <div class="prompt-template-box" style="margin-bottom: 12px;">
+            <div class="template-header">
+              <span class="template-badge"><i class="fa-solid fa-film"></i> [Scene 2 비디오 모션] 지친 실무자 카메라 팬 & 빨간색 과징금 경고 팝업</span>
+              <button class="btn-copy-sm" data-copy="prompt-video-scene2">
+                <i class="fa-solid fa-copy"></i>
+                <span>프롬프트 복사</span>
+              </button>
+            </div>
+            <pre class="template-code" id="prompt-video-scene2"><code>Slow camera pan across tired office worker's face to glowing monitor. Red compliance penalty warning popups gently flicker on screen, subtle timelapse clock ticking vibe, cinematic moody lighting, 24fps</code></pre>
+          </div>
+
+          <!-- Video Motion Box: Scene 3 -->
+          <div class="prompt-template-box" style="margin-bottom: 12px;">
+            <div class="template-header">
+              <span class="template-badge"><i class="fa-solid fa-film"></i> [Scene 3 비디오 모션] 에메랄드 스캔 빔 & 얼굴/번호판 블러 락인</span>
+              <button class="btn-copy-sm" data-copy="prompt-video-scene3">
+                <i class="fa-solid fa-copy"></i>
+                <span>프롬프트 복사</span>
+              </button>
+            </div>
+            <pre class="template-code" id="prompt-video-scene3"><code>Slow camera push in with high stability. Glowing neon emerald laser scan wave sweeps smoothly across the crowd, faces seamlessly transition into soft privacy blur with green lock indicators. Cinematic 4k, 24fps motion.</code></pre>
+          </div>
+
+          <!-- Video Motion Box: Scene 4 -->
+          <div class="prompt-template-box" style="margin-bottom: 12px;">
+            <div class="template-header">
+              <span class="template-badge"><i class="fa-solid fa-film"></i> [Scene 4 비디오 모션] 4분할 화면 애니메이션 & 고속/야간 정밀 트래킹</span>
+              <button class="btn-copy-sm" data-copy="prompt-video-scene4">
+                <i class="fa-solid fa-copy"></i>
+                <span>프롬프트 복사</span>
+              </button>
+            </div>
+            <pre class="template-code" id="prompt-video-scene4"><code>Multi-screen split view smoothly animating, dynamic speed blur on highway while AI tracking boxes remain rock steady and accurate on license plates and faces, high tech telemetry data overlay, 24fps</code></pre>
+          </div>
+
+          <!-- Video Motion Box: Scene 5 -->
+          <div class="prompt-template-box" style="margin-bottom: 12px;">
+            <div class="template-header">
+              <span class="template-badge"><i class="fa-solid fa-film"></i> [Scene 5 비디오 모션] 하늘 틸트업 & 3D 에메랄드 엠블럼 등장</span>
+              <button class="btn-copy-sm" data-copy="prompt-video-scene5">
+                <i class="fa-solid fa-copy"></i>
+                <span>프롬프트 복사</span>
+              </button>
+            </div>
+            <pre class="template-code" id="prompt-video-scene5"><code>Camera smoothly tilts up from smiling pedestrians on sunlit street toward the sky. Glowing 3D emerald shield logo gracefully animates into center screen with clean lens flare and shimmering call to action text, 24fps</code></pre>
+          </div>
+
+          <!-- Prompt Box: Voice Script -->
+          <div class="prompt-template-box">
+            <div class="template-header">
+              <span class="template-badge"><i class="fa-solid fa-microphone"></i> ElevenLabs / Typecast에 그대로 넣는 60초 성우 나레이션 대본</span>
+              <button class="btn-copy-sm" data-copy="prompt-voice-script">
+                <i class="fa-solid fa-copy"></i>
+                <span>성우 대본 복사</span>
+              </button>
+            </div>
+            <pre class="template-code" id="prompt-voice-script"><code>우리가 지나온 모든 순간, 당신의 얼굴과 일상은 안전하게 보호받고 있습니까?
+끝없는 수작업 모자이크, 쏟아지는 영상 반출 요청, 그리고 단 1건의 실수도 용납되지 않는 엄격한 법적 책임까지.
+이제 모든 영상은 xPrivacy를 통해 다시 태어납니다.
+AI 자동 감지 기술로 얼굴과 번호판을 0.01초 만에 완벽하게 비식별화.
+공공 보안부터 자율주행, 미디어 콘텐츠까지 개인정보 유출 걱정 없이 데이터의 가치를 마음껏 확장하세요.
+보이지 않아도 안전한 세상. xPrivacy. 지금 바로 무료로 체험해보세요.</code></pre>
+          </div>
+        </div>
+
+        <!-- Tab 4: Free Editing & Captions (CapCut PC / Vrew) -->
+        <div class="c-step-pane" id="cpane-step4">
+          <div class="step-overview-card">
+            <div class="step-icon-box bg-emerald"><i class="fa-solid fa-sliders"></i></div>
+            <div class="step-info" style="width: 100%;">
+              <span class="tool-label"><i class="fa-solid fa-link"></i> 무료 영상 종합 편집 & 자동 자막 사이트 / 프로그램 (클릭 시 이동):</span>
+              <div class="site-cards-row">
+                <a href="https://www.capcut.com" target="_blank" class="site-card-btn">
+                  <div class="site-icon"><i class="fa-solid fa-scissors"></i></div>
+                  <div class="site-info">
+                    <span class="site-name">CapCut PC</span>
+                    <span class="site-url">capcut.com <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                  </div>
+                  <span class="free-badge">완전 무료 PC편집</span>
+                </a>
+                <a href="https://vrew.ai" target="_blank" class="site-card-btn">
+                  <div class="site-icon"><i class="fa-solid fa-closed-captioning"></i></div>
+                  <div class="site-info">
+                    <span class="site-name">Vrew (AI 자막)</span>
+                    <span class="site-url">vrew.ai <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                  </div>
+                  <span class="free-badge">원클릭 자막 무료</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="workflow-process-grid" style="grid-template-columns: repeat(2, 1fr);">
+            <div class="process-card">
+              <div class="process-num">01</div>
+              <h5 class="process-title">타임라인 배치 (3분 소요)</h5>
+              <p class="process-desc"><a href="https://www.capcut.com" target="_blank" class="tool-link">CapCut PC</a> 실행 ➔ 3단계에서 다운로드한 5개 비디오 클립과 성우 MP3를 순서대로 타임라인에 올립니다.</p>
+            </div>
+            <div class="process-card">
+              <div class="process-num">02</div>
+              <h5 class="process-title">1초 자동 자막 생성 (Auto Caption)</h5>
+              <p class="process-desc">CapCut 상단 [텍스트] ➔ [자동 캡션] 클릭 ➔ [한국어] 선택하면 성우 음성에 맞춰 싱크가 완벽한 자막이 자동 생성됩니다.</p>
+            </div>
+            <div class="process-card">
+              <div class="process-num">03</div>
+              <h5 class="process-title">xPrivacy 실물 화면 컷인</h5>
+              <p class="process-desc">Scene 3(22초~40초 구간)에 실제 xPrivacy 프로그램 화면 캡처 영상을 1컷 얹어 실제 솔루션의 진정성을 보여줍니다.</p>
+            </div>
+            <div class="process-card">
+              <div class="process-num">04</div>
+              <h5 class="process-title">1080p 내보내기 (Export)</h5>
+              <p class="process-desc">우측 상단 [내보내기] ➔ 해상도 <strong>1080p</strong> 선택 후 저장하면 비용 0원으로 60초 대표영상 완성!</p>
+            </div>
+          </div>
+
+          <div class="master-checklist-box">
+            <h5 class="check-box-title"><i class="fa-solid fa-circle-check"></i> 비용 0원 무료 제작 파이프라인 총정리 요약</h5>
+            <ul class="master-checks">
+              <li><i class="fa-solid fa-check"></i> <strong>STEP 01 대본:</strong> ChatGPT ➔ [만능 빌더] 또는 [xPrivacy 대본 프롬프트] 복사로 60초 대본 완성</li>
+              <li><i class="fa-solid fa-check"></i> <strong>STEP 02 이미지:</strong> <a href="https://www.bing.com/create" target="_blank" class="tool-link">Bing Image Creator</a> ➔ 씬 1~5 콘티 이미지 5장 생성</li>
+              <li><i class="fa-solid fa-check"></i> <strong>STEP 03 영상/성우:</strong> <a href="https://klingai.com" target="_blank" class="tool-link">Kling AI</a> 비디오 5개 + <a href="https://elevenlabs.io" target="_blank" class="tool-link">ElevenLabs</a> 성우 MP3</li>
+              <li><i class="fa-solid fa-check"></i> <strong>STEP 04 종합편집:</strong> <a href="https://capcut.com" target="_blank" class="tool-link">CapCut (capcut.com)</a> ➔ 자동 자막 생성 후 1080p MP4 출력</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="modal-footer">
+        <div class="modal-footer-info">
+          <i class="fa-solid fa-circle-info"></i>
+          <span>각 탭의 [프롬프트 복사] 버튼을 눌러 무료 AI 사이트에 바로 붙여넣어 제작할 수 있습니다.</span>
+        </div>
+        <button class="btn btn-primary-sm" id="btnCloseModalBottom">
+          <span>확인 및 닫기</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast-notification" id="toast">
+    <i class="fa-solid fa-circle-check"></i>
+    <span id="toastMessage">프롬프트가 클립보드에 복사되었습니다!</span>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
