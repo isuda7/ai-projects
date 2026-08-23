@@ -222,15 +222,15 @@ function initPromptStudio() {
 - 핵심 역량: 딥러닝 비전 AI 기반 실시간 얼굴·차량번호 자동 비식별화(블러링/가명처리) 엔진
 - 독보적 강점: 0.01초 실시간 처리, 99.8% 초정밀 트래킹 검출률, 개인정보보호법 100% 컴플라이언스 준수
 
-[5단계 근본 사고 체계 기반 기획 파라미터]
-1. [목적의 사고 / End-State]: 영상 시청 후 도달해야 할 최종 상태 ➔ ${promptState.endState}
-2. [결핍의 사고 / The Void]: 주인공(타겟)과 해결해야 할 근본 결핍 ➔ ${promptState.target}
-3. [가치 치환의 사고 / Value]: 기술 스펙을 치환한 고객의 핵심 생존 가치 ➔ ${promptState.value}
-4. [인지 대비와 프레이밍 / Contrast]: 시청자 무의식을 깨울 긴장과 해소의 시각 대비 ➔ ${promptState.contrast}
-5. [행동 촉발의 사고 / Action]: 영상 종료 후 유도할 최소 저항의 첫 행동(CTA) ➔ ${promptState.cta}
+[5단계 핵심 생각 체계 기반 기획 파라미터]
+1. [최종 목표 / End-State]: 영상 시청 후 도달해야 할 최종 상태 ➔ ${promptState.endState}
+2. [고객의 고통 / The Void]: 주인공(타겟)과 해결해야 할 근본 문제 ➔ ${promptState.target}
+3. [고객 가치 / Value]: 기술 스펙을 번역한 핵심 실질 혜택 ➔ ${promptState.value}
+4. [시각적 대비 / Contrast]: 시청자 시선을 끌 긴장과 안도의 시각적 대비 ➔ ${promptState.contrast}
+5. [행동 유도 / Action]: 영상 종료 후 망설임 없는 첫 행동(CTA) ➔ ${promptState.cta}
 
 [출력 요구사항]
-위 5대 근본 사고 구조를 완벽히 관통하는 60초 대표영상 시나리오 및 씬별(Scene 1~5) 상세 대본을 작성해 주세요.
+위 5가지 기획 원칙을 완벽히 관통하는 60초 대표영상 시나리오 및 씬별(Scene 1~5) 상세 대본을 작성해 주세요.
 각 씬마다 아래 5개 요소를 구체적으로 명시해야 합니다:
 - Scene Time & Narrative Stage (0~8s Hook ➔ 8~22s Pain ➔ 22~40s Solution ➔ 40~52s Proof ➔ 52~60s CTA)
 - Visual & Camera Motion (화면 구도, 인물의 감정선, 비식별화 그래픽 FX 연출)
