@@ -378,6 +378,34 @@ npx wrangler d1 execute my-production-db --file=./schema.sql`, 'Terminal')}
         </div>
       </div>
     `
+  },
+  {
+    id: 'step-7',
+    title: '7단계: 검증(Staging) 환경 분리',
+    navTitle: '7. 검증과 운영의 분리',
+    icon: 'git-branch',
+    content: `
+      <h1 class="step-title">7단계: 검증(Staging) 환경과 운영(Production) 분리</h1>
+      <p>실제 서비스에서는 운영 DB를 보호하기 위해 개발(Local), 검증(Staging), 운영(Production) 3단계로 인프라를 분리해야 합니다.</p>
+      
+      <h2>1. 검증용 가짜 DB 생성</h2>
+      <p>클라우드에 운영 DB와 별개로 검증용 DB를 생성합니다.</p>
+      \${createCodeBlock('bash', 'npx wrangler d1 create backend-staging-db', 'Terminal')}
+
+      <h2>2. wrangler.toml 환경 분리</h2>
+      <p><code>wrangler.toml</code> 하단에 <code>[env.staging]</code> 블록을 추가하여 검증용 환경을 지시합니다.</p>
+      \${createCodeBlock('toml', \`# 하단에 추가
+[env.staging]
+name = "backend-staging"
+[[env.staging.d1_databases]]
+binding = "DB"
+database_name = "backend-staging-db"
+database_id = "방금_만든_검증용_DB_ID"\`, 'wrangler.toml')}
+
+      <h2>3. 검증 환경으로 배포</h2>
+      <p>명령어 뒤에 <code>--env staging</code> 꼬리표만 붙이면 운영 서버를 건드리지 않고 독립된 검증 서버가 배포됩니다.</p>
+      \${createCodeBlock('bash', 'npx wrangler deploy --env staging', 'Terminal')}
+    `
   }
 ];
 
@@ -452,6 +480,22 @@ const aiCurriculumData = [
       <p>작업한 내용을 클라우드에 배포하고, 혹시라도 에러가 발생하면 AI에게 통째로 물어보는 <strong>'에러 던지기' 기법</strong>을 사용합니다.</p>
       
       ${createCodeBlock('markdown', "[프롬프트]\n모든 작업이 끝났어. 현재 프로젝트를 Cloudflare 프로덕션 서버에 배포하는 명령어를 실행해 줘.\n\n만약 에러가 난다면 아래 로그를 보고 해결해 줘:\n(여기에 빨간색 에러 로그 전체를 복사해서 붙여넣기)", 'AI Prompt')}
+    `
+  },
+  {
+    id: 'ai-step-7',
+    title: '7단계: 운영/검증 환경 분리',
+    navTitle: '7. 환경 분리 바이브코딩',
+    icon: 'git-branch',
+    content: `
+      <h1 class="step-title">7단계: AI에게 환경 분리 지시하기</h1>
+      <p>복잡한 인프라 세팅도 AI에게 꼬리표(Flag) 원리만 지시하면 알아서 가상 서버를 쪼개고 배포해 줍니다.</p>
+      
+      <h2>1. 최초 셋업 지시</h2>
+      ${createCodeBlock('markdown', "[프롬프트]\n현재 프로젝트에 검증(Staging) 환경과 운영(Production) 환경을 완벽하게 분리하려고 해.\n1. Cloudflare D1에 'backend-staging-db'라는 이름으로 검증용 새 DB를 생성해 줘.\n2. 백엔드의 wrangler.toml 파일 하단에 [env.staging] 블록을 만들고, 방금 만든 DB를 연결해 줘.\n3. 검증용 DB에 schema.sql을 마이그레이션 한 뒤, --env staging 플래그를 써서 검증 환경으로 배포해 줘.", 'AI Prompt')}
+
+      <h2>2. 평상시 배포 지시</h2>
+      ${createCodeBlock('markdown', "[프롬프트]\n방금 수정한 코드들 전부 검증(Staging) 서버로 배포해 줘. 배포 완료되면 내가 테스트해 볼 수 있게 검증계 URL 주소 알려줘.", 'AI Prompt')}
     `
   }
 ];
@@ -607,8 +651,23 @@ function renderWorkflow() {
       <div class="workflow-arrow"><i data-lucide="arrow-down"></i></div>
 
       <!-- Step 5 -->
+      <div class="workflow-step" style="border-color: #3b82f6;">
+        <h3><div class="step-number" style="background:#3b82f6;">5</div> 검증(Staging)과 운영(Production) 분배</h3>
+        <div class="workflow-desc">
+          <p><span class="workflow-badge" style="background:rgba(59, 130, 246, 0.1); color:#3b82f6;">Environments</span> <strong>인프라와 도메인 주소 분리</strong></p>
+          <p>배포 명령어 꼬리표(<code>--env staging</code>) 하나로 운영 서버를 건드리지 않고 <strong>완벽히 동일한 쌍둥이 서버(검증용)</strong>를 복제해 냅니다.</p>
+          <ul style="margin-top: 10px; color: var(--text-muted); font-size: 0.95rem;">
+            <li><strong>운영 서버:</strong> <code>name="backend"</code> 설정에 따라 <code>https://backend.*.workers.dev</code> 도메인 자동 발급</li>
+            <li><strong>검증 서버:</strong> <code>name="backend-staging"</code> 설정에 따라 <code>https://backend-staging.*.workers.dev</code> 도메인 자동 발급</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="workflow-arrow"><i data-lucide="arrow-down"></i></div>
+
+      <!-- Step 6 -->
       <div class="workflow-step" style="border-color: #4ade80;">
-        <h3><div class="step-number" style="background:#4ade80;">5</div> 프론트엔드 정문 통과 (실제 서비스 운영)</h3>
+        <h3><div class="step-number" style="background:#4ade80;">6</div> 프론트엔드 정문 통과 (실제 서비스 운영)</h3>
         <div class="workflow-desc">
           <p><span class="workflow-badge" style="background:rgba(74, 222, 128, 0.1); color:#4ade80;">API Frontdoor</span> <strong>관리자 페이지를 통한 정상 데이터 조작</strong></p>
           <p>배포가 끝난 뒤, 실제 운영팀은 3번의 '무식한 뒷문'을 쓰지 않습니다. 우리가 작성한 <code>index.ts</code>가 안전한 정문(API) 역할을 하며, 프론트엔드 관리자 웹사이트는 이 정문을 통해서만 데이터를 조작(수정/삭제)하게 됩니다.</p>

@@ -1,15 +1,18 @@
 {
-  "name": "backend-convention",
+  "name": "frontend-demo",
   "version": "0.0.0",
   "private": true,
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "npm run build && wrangler dev",
+    "deploy": "npm run build && wrangler deploy"
   },
   "devDependencies": {
-    "vite": "^8.2.2"
+    "@cloudflare/vite-plugin": "^1.54.2",
+    "vite": "^8.2.2",
+    "wrangler": "^4.127.1"
   },
   "dependencies": {
     "lucide": "^1.34.0",
