@@ -1,5 +1,6 @@
 **/node_modules/*
 **/dist/*
-**/wrangler/*
 .DS_Store
 *.js
+Backend-Demo/backend/.dev.vars
+/Backend-Demo/backend/.wrangler
