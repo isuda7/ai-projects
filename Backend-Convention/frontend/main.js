@@ -2,44 +2,6 @@ import './style.css'
 
 const curriculumData = [
   {
-    id: 'step-0',
-    title: '아키텍처 개요',
-    navTitle: '0. 아키텍처 개요',
-    icon: 'layout-dashboard',
-    content: `
-      <h1 class="step-title">무료 상업용 스택 선정 및 아키텍처 개요</h1>
-      <p>안녕하세요. 10년 차 시니어 아키텍트 관점에서, 비용이 전혀 들지 않으면서 상업적 이용이 가능한 완벽한 백엔드 아키텍처를 설계해 드립니다.</p>
-      
-      <h2>기술 스택 옵션 비교</h2>
-      <p>현재 모던 웹 생태계에서 0원으로 시작할 수 있는 가장 강력한 두 가지 옵션을 비교해 보겠습니다.</p>
-      
-      <div style="display: flex; gap: 20px; margin: 20px 0;">
-        <div style="flex: 1; padding: 20px; border: 1px solid var(--border-color); border-radius: 8px; background: rgba(255,255,255,0.03);">
-          <h3 style="margin-top: 0; color: #60a5fa;">옵션 A: BaaS 기반 (Supabase + Cloudflare Pages)</h3>
-          <ul>
-            <li><strong>장점:</strong> GUI 대시보드 제공, 인증(Auth) 및 실시간 구독(Realtime) 기본 내장, PostgreSQL의 강력한 기능.</li>
-            <li><strong>단점:</strong> 무료 티어에서 프로젝트가 일정 기간 비활성화되면 일시 정지(Pause)됨. 콜드 스타트 존재.</li>
-          </ul>
-        </div>
-        <div style="flex: 1; padding: 20px; border: 1px solid var(--border-color); border-radius: 8px; background: rgba(255,255,255,0.03);">
-          <h3 style="margin-top: 0; color: #4ade80;">옵션 B: 경량 서버리스 기반 (Cloudflare Workers + Hono + D1 DB)</h3>
-          <ul>
-            <li><strong>장점:</strong> 전 세계 Edge 네트워크에서 실행되어 지연 시간이 0ms에 수렴. <strong>휴면 상태(Pause)가 없으며</strong>, D1(SQLite)을 통한 완벽한 관계형 DB 지원.</li>
-            <li><strong>단점:</strong> GUI가 상대적으로 빈약하여 CLI 및 쿼리로 제어해야 함.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="alert">
-        <i data-lucide="zap" class="alert-icon"></i>
-        <div class="alert-content">
-          <p><strong>최종 선택: 옵션 B (Cloudflare Workers + Hono + D1)</strong></p>
-          <p>상업용 서비스는 <strong>'사용자가 언제 접속하든 즉각적으로 반응'</strong>해야 합니다. 옵션 A는 트래픽이 없을 때 DB가 일시 정지되어 치명적인 콜드 스타트를 유발할 수 있습니다. 반면, 옵션 B는 콜드 스타트가 없으며 하루 10만 건의 넉넉한 무료 API 호출을 제공하므로 정석적인 백엔드 커리큘럼으로 최종 선정했습니다.</p>
-        </div>
-      </div>
-    `
-  },
-  {
     id: 'step-1',
     title: '1단계: 로컬 환경 구성',
     navTitle: '1. 로컬 셋업 (사전 준비)',
@@ -84,12 +46,12 @@ const curriculumData = [
       ${createCodeBlock('bash', 'node -v\nnpm -v', 'Terminal')}
 
       <p>버전 숫자가 정상적으로 출력된다면, 다음 명령어로 프로젝트 뼈대를 자동 생성합니다.</p>
-      ${createCodeBlock('bash', 'npm create hono@latest commercial-backend\n# 1. Select template: 방향키로 cloudflare-workers 선택 후 엔터\n# 2. Install dependencies: yes 입력 후 엔터\n# 3. Package manager: npm 선택 후 엔터\n\n# 폴더 생성이 완료되면 해당 폴더로 진입합니다.\ncd commercial-backend', 'Terminal')}
+      ${createCodeBlock('bash', 'npm create hono@latest backend\n# 1. Select template: 방향키로 cloudflare-workers 선택 후 엔터\n# 2. Install dependencies: yes 입력 후 엔터\n# 3. Package manager: npm 선택 후 엔터\n\n# 폴더 생성이 완료되면 해당 폴더로 진입합니다.\ncd backend', 'Terminal')}
 
       <h2>Step 1-5. VS Code로 프로젝트 폴더 열기 & 환경변수 파일 만들기</h2>
       <ol>
         <li>VS Code 상단 메뉴에서 <strong>[File] -> [Open Folder] (한국어판: [파일] -> [폴더 열기])</strong>를 클릭합니다.</li>
-        <li>방금 생성된 <code>commercial-backend</code> 폴더를 찾아 선택하고 엽니다.</li>
+        <li>방금 생성된 <code>backend</code> 폴더를 찾아 선택하고 엽니다.</li>
         <li>좌측 파일 탐색기 빈 공간을 우클릭하고 <strong>[New File] (새 파일)</strong>을 클릭한 뒤, 파일 이름을 <code>.dev.vars</code> 로 짓습니다. (앞에 마침표 필수!)</li>
         <li>만들어진 파일 안에 아래 코드를 붙여넣습니다. (이 비밀키는 게시글 수정/삭제 시 쓰입니다.)</li>
       </ol>
@@ -142,7 +104,7 @@ CREATE INDEX idx_posts_deleted_at ON posts(deleted_at);`, 'schema.sql')}
       <h2>Step 2-2. 내 컴퓨터(로컬)에 가상 DB 세팅하기 (마이그레이션)</h2>
       <p>방금 <code>schema.sql</code> 파일에 적어둔 테이블 설계도를 <strong>'실제 데이터베이스에 주입해서 진짜 표(Table)로 찍어내는 작업'</strong>을 개발 용어로 <strong>마이그레이션(Migration)</strong>이라고 부릅니다.</p>
       <p>터미널 창에 아래 명령어를 입력하여 내 컴퓨터의 가상 DB에 마이그레이션을 진행하세요.</p>
-      ${createCodeBlock('bash', 'npx wrangler d1 execute my-db --local --file=./schema.sql', 'Terminal')}
+      ${createCodeBlock('bash', 'npx wrangler d1 execute backend-db --local --file=./schema.sql', 'Terminal')}
       
       <p>이 명령어를 치면 내 폴더 안에 <code>.wrangler</code> 라는 숨김 폴더가 생기며, 그 안에 실제 DB 파일이 로컬용으로 세팅됩니다. (진짜 클라우드 DB는 마지막 6단계에서 만듭니다!)</p>
       
@@ -162,13 +124,13 @@ CREATE INDEX idx_posts_deleted_at ON posts(deleted_at);`, 'schema.sql')}
       <ul>
         <li><strong>방법 1. 명령어(CLI)로 직접 SQL 날리기:</strong> 터미널에 아래처럼 치면 단순 조회가 아니라 데이터 추가/삭제도 마음대로 할 수 있습니다.
           ${createCodeBlock('bash', `# 데이터 조회 (Read)
-npx wrangler d1 execute my-db --local --command="SELECT * FROM posts;"
+npx wrangler d1 execute backend-db --local --command="SELECT * FROM posts;"
 
 # 강제로 데이터 밀어넣기 (Create)
-npx wrangler d1 execute my-db --local --command="INSERT INTO posts (title, content, author) VALUES ('직접 넣은 제목', '내용', '관리자');"
+npx wrangler d1 execute backend-db --local --command="INSERT INTO posts (title, content, author) VALUES ('직접 넣은 제목', '내용', '관리자');"
 
 # 데이터 강제 수정 (Update)
-npx wrangler d1 execute my-db --local --command="UPDATE posts SET title='수정됨' WHERE id=1;"`, 'Terminal')}
+npx wrangler d1 execute backend-db --local --command="UPDATE posts SET title='수정됨' WHERE id=1;"`, 'Terminal')}
         </li>
         <li><strong>방법 2. 로컬 DB 엑셀처럼 조작하기 (VS Code 확장):</strong> 명령어 창이 너무 불편하다면, VS Code 확장 프로그램 탭에서 <code>SQLite Viewer</code>를 설치하세요. 탐색기에서 <code>.wrangler/state/v3/d1/</code> 폴더 안의 <code>.sqlite</code> 파일을 클릭하면 엑셀처럼 표 형태로 데이터를 볼 수 있고, 마우스 클릭만으로 값을 수정하고 행을 추가/삭제할 수 있습니다.</li>
         <li><strong>방법 3. 운영(프로덕션) DB 웹 GUI 조작:</strong> 6단계에서 배포를 마치고 나면, Cloudflare 홈페이지 로그인 후 <strong>[Workers 및 Pages] -> [D1]</strong> 메뉴로 들어갑니다. 방금 만든 DB를 클릭하면 웹 브라우저 안에서 직접 행(Row)을 추가하고 테이블을 자유자재로 다루는 GUI 대시보드가 열립니다.</li>
@@ -273,14 +235,14 @@ export default app`, 'src/index.ts')}
       
       <h2>1. wrangler.toml 바인딩(연결) 설정</h2>
       <p>프로젝트 최상단의 <code>wrangler.toml</code> 파일은 Cloudflare에게 내리는 <strong>핵심 지시서</strong>입니다. 여기에 DB ID를 적어두면, 클라우드가 알아서 DB 유저를 만들고 비밀번호를 설정해서 우리 코드(<code>c.env.DB</code>)에 안전하게 연결해 줍니다.</p>
-      ${createCodeBlock('toml', `name = "commercial-backend"
+      ${createCodeBlock('toml', `name = "backend"
 main = "src/index.ts"
 compatibility_date = "2024-03-20"
 
 # [핵심 지시] 내 코드의 'DB'라는 변수에 실제 데이터베이스를 알아서 연결해 달라는 명령어
 [[d1_databases]]
 binding = "DB"
-database_name = "my-db"
+database_name = "backend-db"
 database_id = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" # 추후 6단계 프로덕션 배포 시 기입
 preview_database_id = "DB" # 로컬 테스트용 가상 ID`, 'wrangler.toml')}
 
@@ -354,11 +316,11 @@ async function deletePost(postId) {
       <h2>1. 프로덕션 DB 생성 및 마이그레이션</h2>
       <p>클라우드 상에 실제 운영될 텅 빈 DB를 만들고, 로컬에서 했던 것처럼 설계도를 덮어씌우는 마이그레이션(Migration) 작업을 진행합니다.</p>
       ${createCodeBlock('bash', `# 1. 프로덕션 DB 생성 (빈 깡통 만들기)
-npx wrangler d1 create my-production-db
+npx wrangler d1 create backend-db
 # (출력되는 database_id를 wrangler.toml에 붙여넣으세요)
 
 # 2. 마이그레이션 (빈 깡통에 schema.sql 설계도 적용하기)
-npx wrangler d1 execute my-production-db --file=./schema.sql`, 'Terminal')}
+npx wrangler d1 execute backend-db --remote --file=./schema.sql`, 'Terminal')}
 
       <h2>2. 프로덕션 환경 변수 등록 (Secrets)</h2>
       <p>관리자 비밀번호와 같은 민감한 정보는 <code>wrangler.toml</code>에 적지 않고 안전한 보안 저장소에 등록합니다.</p>
@@ -413,10 +375,42 @@ const aiCurriculumData = [
   {
     id: 'ai-step-1',
     title: '1단계: 프로젝트 환경 구성',
-    navTitle: '1. 폴더 생성 및 Hono 세팅',
-    icon: 'folder-plus',
+    navTitle: '1. 로컬 셋업 (사전 준비)',
+    icon: 'terminal',
     content: `
-      <h1 class="step-title">1단계: 프롬프트로 프로젝트 초기화</h1>
+      <h1 class="step-title">1단계: 로컬 셋업 및 프롬프트 초기화</h1>
+      <p>바이브코딩(Vibe Coding)을 시작하기 전, 컴퓨터에 기본 뼈대를 세팅해야 합니다. 이 과정은 평생 한 번만 하면 됩니다!</p>
+      
+      <h2>Step 1-1. Node.js 설치</h2>
+      <p>JavaScript 생태계의 뼈대입니다. (AI가 터미널 명령어를 실행하려면 내 컴퓨터에 기본적으로 깔려 있어야 합니다.)</p>
+      <ol>
+        <li><a href="https://nodejs.org/" target="_blank" style="color:var(--accent-color);">Node.js 공식 홈페이지(클릭)</a>에 접속합니다.</li>
+        <li><strong>LTS(Long Term Support) 버전</strong>을 다운로드하고 설치합니다. (모든 기본 설정 그대로 '다음'만 누르시면 됩니다.)</li>
+      </ol>
+      
+      <h2>Step 1-2. AI 코드 에디터 (Cursor 등) 설치</h2>
+      <p>일반 에디터 대신, AI가 내장되어 내 코드를 직접 짜주고 터미널 명령어도 대신 쳐주는 에디터가 필요합니다.</p>
+      <ol>
+        <li><a href="https://cursor.com/" target="_blank" style="color:var(--accent-color);">Cursor 공식 홈페이지(클릭)</a>에 접속합니다.</li>
+        <li>본인 운영체제에 맞는 버전을 다운로드하고 설치합니다.</li>
+      </ol>
+      
+      <h2>Step 1-3. Cloudflare 무료 가입</h2>
+      <p>서버를 0원으로 배포하기 위해 사용할 클라우드 플랫폼입니다.</p>
+      <ol>
+        <li><a href="https://dash.cloudflare.com/sign-up" target="_blank" style="color:var(--accent-color);">Cloudflare 가입 페이지(클릭)</a>에 접속합니다.</li>
+        <li>이메일과 비밀번호를 입력하고 가입한 뒤, 이메일 인증을 완료해 둡니다.</li>
+      </ol>
+
+      <div class="alert">
+        <i data-lucide="check-circle" class="alert-icon"></i>
+        <div class="alert-content">
+          <p><strong>사전 준비 완료! 이제 AI에게 지시해 볼까요?</strong></p>
+          <p>Cursor 에디터를 열고 우측 AI 채팅창(단축키 Cmd/Ctrl + L)에 아래 프롬프트를 복사해서 붙여넣으세요.</p>
+        </div>
+      </div>
+
+      <h2>Step 1-4. 프롬프트로 프로젝트 초기화</h2>
       <p>AI에게 <strong>가장 가볍고 빠른 Cloudflare 기반의 Hono 프로젝트</strong>를 만들어 달라고 지시합니다.</p>
       
       ${createCodeBlock('markdown', "[프롬프트]\n너는 10년 차 시니어 백엔드 아키텍트야. \n비용이 0원이고 콜드 스타트가 없는 완벽한 서버리스 백엔드를 만들 거야.\n기술 스택은 Cloudflare Workers + Hono + D1 DB를 사용할 거니까, \n터미널에서 Hono 프로젝트 뼈대를 생성하는 npm CLI 명령어(cloudflare-workers 템플릿 지정)를 알려주고 실행해 줘.", 'AI Prompt')}
@@ -425,7 +419,7 @@ const aiCurriculumData = [
   {
     id: 'ai-step-2',
     title: '2단계: DB 스키마 설계',
-    navTitle: '2. Cloudflare D1 스키마 설계',
+    navTitle: '2. 데이터베이스 설계',
     icon: 'database',
     content: `
       <h1 class="step-title">2단계: DB 스키마 설계 프롬프트</h1>
@@ -437,8 +431,8 @@ const aiCurriculumData = [
   {
     id: 'ai-step-3',
     title: '3단계: 관리자 뒷문 세팅',
-    navTitle: '3. 관리자 전용 DB 직접 조작',
-    icon: 'terminal-square',
+    navTitle: '3. API & 비즈니스 로직',
+    icon: 'code-2',
     content: `
       <h1 class="step-title">3단계: 로컬 테스트 및 마이그레이션 프롬프트</h1>
       <p>방금 만든 스키마를 로컬 가상 DB에 적용하고 테스트 데이터를 넣으라고 지시합니다.</p>
@@ -449,8 +443,8 @@ const aiCurriculumData = [
   {
     id: 'ai-step-4',
     title: '4단계: 백엔드 정문(API) 설계',
-    navTitle: '4. 백엔드 API 로직 작성',
-    icon: 'code-2',
+    navTitle: '4. 보안 및 네트워크 설정',
+    icon: 'lock',
     content: `
       <h1 class="step-title">4단계: API & 인프라 지시서 프롬프트</h1>
       <p>핵심 비즈니스 로직(index.ts)과 인프라 지시서(wrangler.toml)를 한 번에 작성하게 합니다.</p>
@@ -461,8 +455,8 @@ const aiCurriculumData = [
   {
     id: 'ai-step-5',
     title: '5단계: 보안 키 세팅',
-    navTitle: '5. 인증 키 보안 (Secrets)',
-    icon: 'key',
+    navTitle: '5. 로컬 테스트 및 연동',
+    icon: 'monitor-smartphone',
     content: `
       <h1 class="step-title">5단계: 보안 인증 및 미들웨어 프롬프트</h1>
       <p>데이터 조작을 아무나 하지 못하도록 관리자 인증 키를 세팅하고 코드를 수정하게 합니다.</p>
@@ -473,7 +467,7 @@ const aiCurriculumData = [
   {
     id: 'ai-step-6',
     title: '6단계: 프로덕션 배포',
-    navTitle: '6. 클라우드 배포 및 도메인',
+    navTitle: '6. 프로덕션 배포',
     icon: 'cloud-upload',
     content: `
       <h1 class="step-title">6단계: 배포 및 디버깅 프롬프트</h1>
@@ -485,7 +479,7 @@ const aiCurriculumData = [
   {
     id: 'ai-step-7',
     title: '7단계: 운영/검증 환경 분리',
-    navTitle: '7. 환경 분리 바이브코딩',
+    navTitle: '7. 검증과 운영의 분리',
     icon: 'git-branch',
     content: `
       <h1 class="step-title">7단계: AI에게 환경 분리 지시하기</h1>
@@ -517,7 +511,7 @@ function createCodeBlock(language, code, filename) {
 }
 
 let currentStep = 0;
-let currentTab = 'practical'; // 'workflow', 'practical', 'ai'
+let currentTab = 'overview'; // 'overview', 'workflow', 'practical', 'ai'
 
 function init() {
   // Mobile Menu Toggle
@@ -535,6 +529,9 @@ function init() {
       if (currentTab === 'workflow') {
         document.getElementById('sidebar').style.display = 'none';
         renderWorkflow();
+      } else if (currentTab === 'overview') {
+        document.getElementById('sidebar').style.display = 'none';
+        renderOverview();
       } else {
         document.getElementById('sidebar').style.display = 'flex';
         renderSidebar();
@@ -544,8 +541,13 @@ function init() {
   });
 
   // Initial Render
-  renderSidebar();
-  renderStep(0);
+  if (currentTab === 'overview') {
+    document.getElementById('sidebar').style.display = 'none';
+    renderOverview();
+  } else {
+    renderSidebar();
+    renderStep(0);
+  }
 }
 
 function renderSidebar() {
@@ -641,10 +643,10 @@ function renderWorkflow() {
 
       <!-- Step 4 -->
       <div class="workflow-step" style="border-color: #fbbf24;">
-        <h3><div class="step-number" style="background:#fbbf24;">4</div> 클라우드 제출 및 자동 인프라 구축</h3>
+        <h3><div class="step-number" style="background:#fbbf24;">4</div> 이름 정의 및 자동 인프라 구축</h3>
         <div class="workflow-desc">
           <p><span class="workflow-badge" style="background:rgba(251, 191, 36, 0.1); color:#fbbf24;">Cloudflare</span> <strong>서버리스 프로덕션 배포</strong></p>
-          <p>로컬에서 작성한 <code>wrangler.toml</code> 지시서를 클라우드로 배포(Deploy)합니다. Cloudflare는 이 지시서를 읽고 <strong>알아서 가상 서버를 할당하고, 진짜 DB를 만들고, 권한을 연결</strong>해 줍니다. 개발자는 인프라 설정에 단 1분도 쓰지 않습니다.</p>
+          <p>로컬에서 작성한 <code>wrangler.toml</code> 지시서를 클라우드로 배포(Deploy)합니다. <strong>프로젝트 이름과 도메인은 파일 최상단의 <code>name</code> 값에 의해 이때 결정됩니다.</strong> (예: <code>name="backend"</code> 라면 <code>backend.*.workers.dev</code> 도메인 발급). 프로젝트가 여러 개라면 단순히 폴더를 나누고 <code>name</code> 값만 다르게 주면 무한대로 독립적인 서버를 띄울 수 있습니다.</p>
         </div>
       </div>
 
@@ -652,13 +654,13 @@ function renderWorkflow() {
 
       <!-- Step 5 -->
       <div class="workflow-step" style="border-color: #3b82f6;">
-        <h3><div class="step-number" style="background:#3b82f6;">5</div> 검증(Staging)과 운영(Production) 분배</h3>
+        <h3><div class="step-number" style="background:#3b82f6;">5</div> 검증(Staging)과 운영(Production) 분배 및 단계적 배포</h3>
         <div class="workflow-desc">
           <p><span class="workflow-badge" style="background:rgba(59, 130, 246, 0.1); color:#3b82f6;">Environments</span> <strong>인프라와 도메인 주소 분리</strong></p>
-          <p>배포 명령어 꼬리표(<code>--env staging</code>) 하나로 운영 서버를 건드리지 않고 <strong>완벽히 동일한 쌍둥이 서버(검증용)</strong>를 복제해 냅니다.</p>
+          <p>설정 파일 하단에 <code>[env.staging]</code>을 선언하면 물리적으로 분리된 쌍둥이 서버를 만들 수 있습니다. 분기 이후의 단계적 배포 워크플로우는 다음과 같습니다:</p>
           <ul style="margin-top: 10px; color: var(--text-muted); font-size: 0.95rem;">
-            <li><strong>운영 서버:</strong> <code>name="backend"</code> 설정에 따라 <code>https://backend.*.workers.dev</code> 도메인 자동 발급</li>
-            <li><strong>검증 서버:</strong> <code>name="backend-staging"</code> 설정에 따라 <code>https://backend-staging.*.workers.dev</code> 도메인 자동 발급</li>
+            <li><strong>1차 배포 (검증):</strong> <code>npx wrangler deploy --env staging</code> (가짜 DB가 연결된 <code>backend-staging</code> 도메인에서 내부 테스트)</li>
+            <li><strong>2차 배포 (운영):</strong> <code>npx wrangler deploy</code> (진짜 DB가 연결된 <code>backend</code> 도메인으로 최종 실서비스 배포)</li>
           </ul>
         </div>
       </div>
@@ -714,6 +716,49 @@ window.copyToClipboard = function(buttonElement) {
       buttonElement.style.color = '#a3a3a3';
     }, 2000);
   });
+}
+
+function renderOverview() {
+  const contentContainer = document.getElementById('content-container');
+  document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
+  
+  const overviewHTML = `
+    <h1 class="step-title">무료 상업용 스택 선정 및 아키텍처 개요</h1>
+    <p>안녕하세요. 10년 차 시니어 아키텍트 관점에서, 비용이 전혀 들지 않으면서 상업적 이용이 가능한 완벽한 백엔드 아키텍처를 설계해 드립니다.</p>
+    
+    <h2>기술 스택 옵션 비교</h2>
+    <p>현재 모던 웹 생태계에서 0원으로 시작할 수 있는 가장 강력한 두 가지 옵션을 비교해 보겠습니다.</p>
+    
+    <div style="display: flex; gap: 20px; margin: 20px 0; flex-wrap: wrap;">
+      <div style="flex: 1; min-width: 300px; padding: 20px; border: 1px solid var(--border-color); border-radius: 8px; background: rgba(255,255,255,0.03);">
+        <h3 style="margin-top: 0; color: #60a5fa;">옵션 A: BaaS 기반 (Supabase + Cloudflare Pages)</h3>
+        <ul>
+          <li><strong>장점:</strong> GUI 대시보드 제공, 인증(Auth) 및 실시간 구독(Realtime) 기본 내장, PostgreSQL의 강력한 기능.</li>
+          <li><strong>단점:</strong> 무료 티어에서 프로젝트가 일정 기간 비활성화되면 일시 정지(Pause)됨. 콜드 스타트 존재.</li>
+        </ul>
+      </div>
+      <div style="flex: 1; min-width: 300px; padding: 20px; border: 1px solid var(--border-color); border-radius: 8px; background: rgba(255,255,255,0.03);">
+        <h3 style="margin-top: 0; color: #4ade80;">옵션 B: 경량 서버리스 기반 (Cloudflare Workers + Hono + D1 DB)</h3>
+        <ul>
+          <li><strong>장점:</strong> 전 세계 Edge 네트워크에서 실행되어 지연 시간이 0ms에 수렴. <strong>휴면 상태(Pause)가 없으며</strong>, D1(SQLite)을 통한 완벽한 관계형 DB 지원.</li>
+          <li><strong>단점:</strong> GUI가 상대적으로 빈약하여 CLI 및 쿼리로 제어해야 함.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="alert" style="margin-top: 40px;">
+      <i data-lucide="zap" class="alert-icon"></i>
+      <div class="alert-content">
+        <p><strong>최종 선택: 옵션 B (Cloudflare Workers + Hono + D1)</strong></p>
+        <p>상업용 서비스는 <strong>'사용자가 언제 접속하든 즉각적으로 반응'</strong>해야 합니다. 옵션 A는 트래픽이 없을 때 DB가 일시 정지되어 치명적인 콜드 스타트를 유발할 수 있습니다. 반면, 옵션 B는 콜드 스타트가 없으며 하루 10만 건의 넉넉한 무료 API 호출을 제공하므로 정석적인 백엔드 커리큘럼으로 최종 선정했습니다.</p>
+      </div>
+    </div>
+  `;
+  
+  contentContainer.innerHTML = overviewHTML;
+  lucide.createIcons();
+  document.getElementById('sidebar').classList.remove('open');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 // Initialize on DOM Load
