@@ -1,4 +1,3 @@
-import './style.css'
 
 const curriculumData = [
   {
@@ -140,8 +139,8 @@ npx wrangler d1 execute backend-db --local --command="UPDATE posts SET title='�
         <i data-lucide="alert-triangle" class="alert-icon"></i>
         <div class="alert-content">
           <p><strong>잠깐! 그럼 '관리자 페이지'에서 조작하는 것과 무엇이 다른가요?</strong></p>
-          <p>아주 예리한 질문입니다! 위에서 설명한 <strong>'DB 직접 접속'</strong>은 오직 <strong>개발자(최고 관리자)가 에러를 고치거나 초기 데이터를 억지로 밀어 넣을 때 사용하는 비상용 뒷문(Backdoor)</strong>입니다.<br><br>
-          실제 운영팀이나 관리자가 쓸 <strong>'진짜 관리자 웹 화면'</strong>을 만들기 위해서는 이런 무식한 뒷문이 아니라, <strong>안전하게 통제된 정문(API)</strong>을 뚫어주어야 합니다. 그 정문을 만드는 작업이 바로 이어지는 <strong>[3단계: 백엔드 API 작성]</strong>의 핵심입니다!</p>
+          <p>아주 예리한 질문입니다! 위에서 설명한 <strong>'DB 직접 접속'</strong>은 오직 <strong>개발자가 긴급하게 데이터를 보정하거나 초기 데이터를 강제로 주입할 때 사용하는 로우레벨(Low-level) 접근 방식</strong>입니다.<br><br>
+          실제 운영팀이나 비개발자 관리자가 쓸 <strong>'진짜 관리자 웹 화면'</strong>을 만들기 위해서는 직접 접속 권한을 주는 것이 아니라, <strong>안전하게 인가(Auth)되고 통제된 API 엔드포인트</strong>를 구축해야 합니다. 그 API를 만드는 작업이 바로 이어지는 <strong>[3단계: 백엔드 API 작성]</strong>의 핵심입니다!</p>
         </div>
       </div>
     `
@@ -411,9 +410,9 @@ const aiCurriculumData = [
       </div>
 
       <h2>Step 1-4. 프롬프트로 프로젝트 초기화</h2>
-      <p>AI에게 <strong>가장 가볍고 빠른 Cloudflare 기반의 Hono 프로젝트</strong>를 만들어 달라고 지시합니다.</p>
+      <p>AI에게 <strong>가장 가볍고 빠른 Cloudflare 기반의 Hono 프로젝트</strong>를 만들어 달라고 지시합니다. 이때 앞으로 프론트엔드와 파일이 섞이지 않도록, <strong>반드시 <code>backend</code> 폴더 안에 서버를 구축하라고 명시(디렉토리 분리)</strong>해야 합니다.</p>
       
-      ${createCodeBlock('markdown', "[프롬프트]\n너는 10년 차 시니어 백엔드 아키텍트야. \n비용이 0원이고 콜드 스타트가 없는 완벽한 서버리스 백엔드를 만들 거야.\n기술 스택은 Cloudflare Workers + Hono + D1 DB를 사용할 거니까, \n터미널에서 Hono 프로젝트 뼈대를 생성하는 npm CLI 명령어(cloudflare-workers 템플릿 지정)를 알려주고 실행해 줘.", 'AI Prompt')}
+      ${createCodeBlock('markdown', "[프롬프트]\n너는 10년 차 시니어 백엔드 아키텍트야.\n나는 앞으로 프론트엔드와 백엔드를 물리적으로 완벽히 분리해서 구축할 거야.\n비용이 0원이고 콜드 스타트가 없는 서버리스 백엔드(Cloudflare Workers + Hono + D1 DB)를 만들 거니까, \n'backend'라는 이름의 폴더 내부에 Hono 프로젝트 뼈대를 생성하는 npm CLI 명령어(cloudflare-workers 템플릿 지정)를 알려주고 직접 실행해 줘.", 'AI Prompt')}
     `
   },
   {
@@ -430,19 +429,19 @@ const aiCurriculumData = [
   },
   {
     id: 'ai-step-3',
-    title: '3단계: 관리자 뒷문 세팅',
+    title: '3단계: DB 직접 제어(CLI) 세팅',
     navTitle: '3. API & 비즈니스 로직',
     icon: 'code-2',
     content: `
       <h1 class="step-title">3단계: 로컬 테스트 및 마이그레이션 프롬프트</h1>
       <p>방금 만든 스키마를 로컬 가상 DB에 적용하고 테스트 데이터를 넣으라고 지시합니다.</p>
       
-      ${createCodeBlock('markdown', "[프롬프트]\n방금 만든 schema.sql을 바탕으로 로컬 D1 데이터베이스 마이그레이션을 실행하는 wrangler 명령어를 실행해 줘.\n성공적으로 생성되었다면, 개발자인 내가 뒷문으로 데이터를 확인할 수 있도록 더미 데이터를 3개 INSERT 하고 SELECT로 확인하는 명령어까지 차례대로 실행해 줘.", 'AI Prompt')}
+      ${createCodeBlock('markdown', "[프롬프트]\n방금 만든 schema.sql을 바탕으로 로컬 D1 데이터베이스 마이그레이션을 실행하는 wrangler 명령어를 실행해 줘.\n성공적으로 생성되었다면, 개발자인 내가 CLI를 통해 데이터베이스에 직접 접근하고 확인할 수 있도록 더미 데이터를 3개 INSERT 하고 SELECT로 확인하는 명령어까지 차례대로 실행해 줘.", 'AI Prompt')}
     `
   },
   {
     id: 'ai-step-4',
-    title: '4단계: 백엔드 정문(API) 설계',
+    title: '4단계: 백엔드 API 엔드포인트 설계',
     navTitle: '4. 보안 및 네트워크 설정',
     icon: 'lock',
     content: `
@@ -622,7 +621,7 @@ function renderWorkflow() {
           <p>클라우드 웹사이트에 접속해서 버튼을 누르는 대신, AI(Cursor, Copilot 등)에게 기획만 전달하여 로컬 폴더에 단 3가지 핵심 텍스트 파일만 작성합니다.</p>
           <ul style="margin-top: 10px; color: var(--text-muted); font-size: 0.95rem;">
             <li><code>schema.sql</code> : DB 테이블 설계도 (데이터 구조)</li>
-            <li><code>index.ts</code> : 백엔드 로직 정문 API (CRUD)</li>
+            <li><code>index.ts</code> : 백엔드 비즈니스 로직 및 API 엔드포인트 (CRUD)</li>
             <li><code>wrangler.toml</code> : 클라우드 인프라 지시서 (DB 연결, 배포 설정)</li>
           </ul>
         </div>
@@ -632,10 +631,10 @@ function renderWorkflow() {
 
       <!-- Step 3 -->
       <div class="workflow-step">
-        <h3><div class="step-number">3</div> 개발자 전용 뒷문 (DB 강제 통제)</h3>
+        <h3><div class="step-number">3</div> 데이터베이스 직접 제어 (CLI / Console)</h3>
         <div class="workflow-desc">
-          <p><span class="workflow-badge">Backdoor</span> <strong>개발자(최고 관리자)의 직접 조작</strong></p>
-          <p>개발 중이거나 비상 상황일 때, 코드를 거치지 않고 DB를 직접 강제 조작하는 경로입니다. 터미널 명령어(CLI)를 치거나, VS Code SQLite Viewer(엑셀 형태)를 열어 데이터를 내 마음대로 지우고 추가합니다.</p>
+          <p><span class="workflow-badge">Direct Access</span> <strong>개발자의 데이터 직접 통제</strong></p>
+          <p>개발 중이거나 비상 상황일 때, 코드를 거치지 않고 DB를 직접 제어하는 로우레벨(Low-level) 접근 경로입니다. 터미널 명령어(CLI)를 치거나, VS Code SQLite Viewer(엑셀 형태)를 열어 데이터를 강제로 추가/삭제합니다.</p>
         </div>
       </div>
 
@@ -669,10 +668,10 @@ function renderWorkflow() {
 
       <!-- Step 6 -->
       <div class="workflow-step" style="border-color: #4ade80;">
-        <h3><div class="step-number" style="background:#4ade80;">6</div> 프론트엔드 정문 통과 (실제 서비스 운영)</h3>
+        <h3><div class="step-number" style="background:#4ade80;">6</div> 프론트엔드 연동 (실제 서비스 운영)</h3>
         <div class="workflow-desc">
-          <p><span class="workflow-badge" style="background:rgba(74, 222, 128, 0.1); color:#4ade80;">API Frontdoor</span> <strong>관리자 페이지를 통한 정상 데이터 조작</strong></p>
-          <p>배포가 끝난 뒤, 실제 운영팀은 3번의 '무식한 뒷문'을 쓰지 않습니다. 우리가 작성한 <code>index.ts</code>가 안전한 정문(API) 역할을 하며, 프론트엔드 관리자 웹사이트는 이 정문을 통해서만 데이터를 조작(수정/삭제)하게 됩니다.</p>
+          <p><span class="workflow-badge" style="background:rgba(74, 222, 128, 0.1); color:#4ade80;">API Integration</span> <strong>인가된 클라이언트를 통한 데이터 조작</strong></p>
+          <p>배포가 끝난 뒤, 실제 운영 환경에서는 3번 단계의 'DB 직접 제어(CLI)' 방식을 사용하지 않습니다. 우리가 작성한 <code>index.ts</code>가 안전하게 통제된 API 엔드포인트 역할을 하며, 프론트엔드 웹사이트는 오직 이 API를 통해서만 데이터를 조작(수정/삭제)하게 됩니다.</p>
         </div>
       </div>
 
@@ -753,6 +752,29 @@ function renderOverview() {
         <p>상업용 서비스는 <strong>'사용자가 언제 접속하든 즉각적으로 반응'</strong>해야 합니다. 옵션 A는 트래픽이 없을 때 DB가 일시 정지되어 치명적인 콜드 스타트를 유발할 수 있습니다. 반면, 옵션 B는 콜드 스타트가 없으며 하루 10만 건의 넉넉한 무료 API 호출을 제공하므로 정석적인 백엔드 커리큘럼으로 최종 선정했습니다.</p>
       </div>
     </div>
+
+    <h2 style="margin-top: 40px;">프로젝트 폴더 구조 및 네이밍(도메인) 컨벤션</h2>
+    <p>백엔드와 프론트엔드는 역할이 완전히 다르므로, 반드시 물리적인 폴더와 프로젝트 이름을 분리해서 관리하는 것이 정석입니다.</p>
+    
+    <div style="background: rgba(0,0,0,0.2); padding: 15px; border-radius: 8px; border: 1px solid var(--border-color); margin-bottom: 20px;">
+      <pre style="margin: 0; color: #a3a3a3; font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; line-height: 1.5;">
+📦 my-commercial-project (최상위 작업 폴더)
+ ┣ 📂 <strong style="color: #4ade80;">backend/</strong> (서버 로직 및 DB)
+ ┃ ┗ 📜 wrangler.toml <span style="color: #6b7280;">-> name = "backend"</span>
+ ┗ 📂 <strong style="color: #60a5fa;">frontend/</strong> (사용자가 보는 웹/앱 UI 화면)
+   ┗ 📜 wrangler.jsonc <span style="color: #6b7280;">-> name = "frontend"</span>
+      </pre>
+    </div>
+    
+    <ul style="color: var(--text-muted); font-size: 0.95rem;">
+      <li><strong>백엔드 (backend):</strong> 데이터베이스와 통신하며 비즈니스 로직을 처리하는 안 보이는 뇌와 심장입니다.<br>
+      <span style="color: #4ade80;">💡 도메인 결정:</span> <code>wrangler.toml</code>의 <code>name = "backend"</code> 설정이 곧 API 통신을 위한 주소(예: <code>backend.xxx.workers.dev</code>)가 됩니다.</li>
+      
+      <li style="margin-top: 10px;"><strong>프론트엔드 (frontend):</strong> 사용자가 직접 보고 클릭하는 화면입니다. (React, Vue, Vanilla JS 등)<br>
+      <span style="color: #60a5fa;">💡 도메인 결정:</span> 프론트엔드 폴더의 <code>wrangler.jsonc</code>(혹은 <code>wrangler.toml</code>)에 적힌 <code>name = "frontend"</code> 설정이 곧 일반 사용자가 접속하는 실제 웹사이트 주소(예: <code>frontend.xxx.workers.dev</code>)를 결정합니다.</li>
+    </ul>
+    
+    <p style="margin-top: 15px;">이렇게 역할을 완벽히 분리해 두면, 나중에 프론트엔드 화면 디자인을 완전히 갈아엎어도 백엔드의 데이터는 안전하게 보존됩니다. <br><strong>이 가이드 커리큘럼은 위 구조 중 <code>backend</code> 폴더를 완벽하게 구축하는 방법에 집중합니다.</strong></p>
   `;
   
   contentContainer.innerHTML = overviewHTML;

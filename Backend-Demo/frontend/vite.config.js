@@ -5,12 +5,5 @@ import { cloudflare } from "@cloudflare/vite-plugin";
 
 export default defineConfig({
   plugins: [cloudflare()],
-  build: {
-    rollupOptions: {
-      input: {
-        main: resolve(__dirname, 'index.html'),
-        demo: resolve(__dirname, 'src/demo/index.html')
-      }
-    }
-  }
+  build: {}
 })
