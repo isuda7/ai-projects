@@ -1,0 +1,117 @@
+// _accordion.scss
+.accordion {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.accordion_item {
+  border-bottom: 1px solid var(--color-gray-200);
+  
+  &:first-of-type {
+    border-top: 1px solid var(--color-gray-200);
+  }
+}
+
+.accordion_header {
+  margin: 0;
+}
+
+.accordion_btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 16px 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-gray-900);
+  background-color: transparent;
+  border: 0;
+  text-align: left;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  
+  &:hover {
+    color: var(--color-primary-500);
+  }
+
+  // Chevron arrow
+  &::after {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-left: auto;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    transition: transform 0.2s ease-in-out;
+  }
+
+  // Active state (expanded)
+  &:not(.collapsed)::after {
+    transform: rotate(-180deg);
+  }
+}
+
+.accordion_body {
+  padding: 0 0 16px 0;
+  font-size: 14px;
+  color: var(--color-gray-500);
+  line-height: 1.6;
+}
+
+/* Variant: Block Type */
+.accordion.block {
+  gap: 8px;
+  
+  .accordion_item {
+    border: 1px solid var(--color-gray-200);
+    border-radius: var(--radius);
+    overflow: hidden;
+    
+    &:first-of-type {
+      border-top: 1px solid var(--color-gray-200);
+    }
+  }
+  
+  .accordion_btn {
+    padding: 16px;
+    background-color: var(--color-gray-50);
+    
+    &:not(.collapsed) {
+      background-color: var(--color-white);
+      border-bottom: 1px solid var(--color-gray-200);
+    }
+  }
+  
+  .accordion_body {
+    padding: 16px;
+  }
+}
+
+/* Variant: Line Wall Type */
+.accordion.line_wall {
+  border-left: 2px solid var(--color-gray-200);
+  padding-left: 16px;
+  
+  .accordion_item {
+    border: none;
+    margin-bottom: 16px;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  
+  .accordion_btn {
+    padding: 8px 0;
+    font-size: 18px;
+  }
+  
+  .accordion_body {
+    padding: 8px 0;
+  }
+}

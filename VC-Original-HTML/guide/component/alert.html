@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vibe Design System - Alert</title>
+  <link rel="stylesheet" href="/assets/css/guide.css">
+</head>
+<body>
+  <div data-include="/guide/layout/header.html"></div>
+  <div class="guide_main_container">
+    <div data-include="/guide/layout/sidebar.html"></div>
+  
+  <main class="guide_content">
+    <div class="guide_wrapper">
+      <header class="guide_header">
+        <h1 class="guide_title_h1">Alert</h1>
+        <p class="guide_description">사용자에게 중요한 상태 메시지나 경고를 전달하는 컴포넌트입니다.</p>
+      </header>
+
+      <section class="guide_section">
+        <h2 class="guide_title_h2">1. Overview & Specs</h2>
+        <div class="spec_table_wrapper">
+          <table class="spec_table">
+          <thead><tr><th>Class</th><th>Description</th></tr></thead>
+          <tbody>
+            <tr><td><code>.alert</code></td><td>Alert 기본 컨테이너</td></tr>
+            <tr><td><code>.primary</code>, <code>.success</code>, <code>.warning</code>, <code>.danger</code></td><td>컬러 테마</td></tr>
+            <tr><td><code>.outline</code></td><td>채우기 없는 외곽선 스타일</td></tr>
+          </tbody>
+        </table>
+        </div>
+      </section>
+
+      <section class="guide_section">
+        <h2 class="guide_title_h2">2. Variants & States</h2>
+        <div class="guide_sub_section">
+          <h3 class="guide_title_h3">2.1. Colors</h3>
+          <div class="guide_preview d-flex flex-column gap-3">
+            <div class="alert primary">
+              <svg class="alert_icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+              <div class="alert_content">
+                <p class="alert_title">Information</p>
+                <p class="alert_desc">A new software update is available. See what's new in version 2.0.4.</p>
+              </div>
+            </div>
+            <div class="alert danger">
+              <svg class="alert_icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+              <div class="alert_content">
+                <p class="alert_title">Error</p>
+                <p class="alert_desc">Your session has expired. Please log in again.</p>
+              </div>
+            </div>
+     
+          <div class="code_block">
+<pre><code>&lt;div class=&quot;alert primary&quot;&gt;
+  &lt;svg class=&quot;alert_icon&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot;&gt;&lt;circle cx=&quot;12&quot; cy=&quot;12&quot; r=&quot;10&quot;&gt;&lt;/circle&gt;&lt;line x1=&quot;12&quot; y1=&quot;16&quot; x2=&quot;12&quot; y2=&quot;12&quot;&gt;&lt;/line&gt;&lt;line x1=&quot;12&quot; y1=&quot;8&quot; x2=&quot;12.01&quot; y2=&quot;8&quot;&gt;&lt;/line&gt;&lt;/svg&gt;
+  &lt;div class=&quot;alert_content&quot;&gt;
+    &lt;p class=&quot;alert_title&quot;&gt;Information&lt;/p&gt;
+    &lt;p class=&quot;alert_desc&quot;&gt;A new software update is available. See what&#x27;s new in version 2.0.4.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;alert danger&quot;&gt;
+  &lt;svg class=&quot;alert_icon&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot;&gt;&lt;circle cx=&quot;12&quot; cy=&quot;12&quot; r=&quot;10&quot;&gt;&lt;/circle&gt;&lt;line x1=&quot;12&quot; y1=&quot;8&quot; x2=&quot;12&quot; y2=&quot;12&quot;&gt;&lt;/line&gt;&lt;line x1=&quot;12&quot; y1=&quot;16&quot; x2=&quot;12.01&quot; y2=&quot;16&quot;&gt;&lt;/line&gt;&lt;/svg&gt;
+  &lt;div class=&quot;alert_content&quot;&gt;
+    &lt;p class=&quot;alert_title&quot;&gt;Error&lt;/p&gt;
+    &lt;p class=&quot;alert_desc&quot;&gt;Your session has expired. Please log in again.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+          </div>     </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/js/include.js"></script>
+</body>
+</html>

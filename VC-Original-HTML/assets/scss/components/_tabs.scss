@@ -1,0 +1,84 @@
+/* _tabs.scss */
+.tabs_wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.tabs_list {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+  border-bottom: 1px solid var(--color-gray-200, #e5e7eb);
+}
+
+.tab_item {
+  margin-bottom: -1px;
+}
+
+.tab_btn {
+  display: block;
+  padding: 12px 16px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-bottom-width: 2px;
+  color: var(--color-gray-500, #6b7280);
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+
+  &:hover, &:focus {
+    color: var(--color-gray-700, #374151);
+    border-bottom-color: var(--color-gray-300, #d1d5db);
+  }
+
+  &.active {
+    color: var(--color-primary-600, #2563eb);
+    border-bottom-color: var(--color-primary-600, #2563eb);
+  }
+}
+
+.tab_content {
+  padding: 24px 0;
+}
+
+/* Variants */
+.tabs_list.pills {
+  border-bottom: none;
+  gap: 8px;
+  
+  .tab_item { margin-bottom: 0; }
+  
+  .tab_btn {
+    border: none;
+    border-radius: var(--radius, 8px);
+    background-color: var(--color-gray-100, #f3f4f6);
+    color: var(--color-gray-600, #4b5563);
+    padding: 8px 16px;
+    
+    &:hover { background-color: var(--color-gray-200, #e5e7eb); }
+    
+    &.active {
+      background-color: var(--color-primary-600, #2563eb);
+      color: #fff;
+    }
+  }
+}
+
+.tabs_list.fill {
+  display: flex;
+  width: 100%;
+  
+  .tab_item {
+    flex: 1 1 auto;
+  }
+  
+  .tab_btn {
+    width: 100%;
+  }
+}
+
+/* Note: .tab-pane and .active logic is handled by _bs-functional.scss for Bootstrap JS compatibility */

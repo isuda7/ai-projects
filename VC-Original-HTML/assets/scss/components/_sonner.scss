@@ -1,0 +1,143 @@
+/* _sonner.scss */
+.sonner_toast {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px;
+  background-color: var(--color-white, #ffffff);
+  border: 1px solid var(--color-gray-200, #e5e7eb);
+  border-radius: var(--radius, 8px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  max-width: 356px;
+  width: 100%;
+  pointer-events: auto;
+  will-change: transform, opacity;
+}
+
+.sonner_icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  margin-top: 2px;
+}
+
+.sonner_content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sonner_title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-gray-900, #111827);
+  margin: 0;
+}
+
+.sonner_desc {
+  font-size: 13px;
+  color: var(--color-gray-500, #6b7280);
+  margin: 0;
+}
+
+.sonner_actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+/* Variants (States) */
+.sonner_toast.is_success .sonner_icon { color: var(--color-success-600, #10b981); }
+.sonner_toast.is_error .sonner_icon { color: var(--color-danger-600, #ef4444); }
+.sonner_toast.is_info .sonner_icon { color: var(--color-primary-600, #3b82f6); }
+.sonner_toast.is_warning .sonner_icon { color: var(--color-warning-500, #f59e0b); }
+
+/* Container */
+.sonner_container {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 9999;
+  pointer-events: none;
+  
+  /* Default position (Bottom Right) */
+  bottom: 24px;
+  right: 24px;
+}
+
+/* Positions */
+.sonner_container.top_right {
+  top: 24px;
+  bottom: auto;
+  right: 24px;
+  left: auto;
+}
+.sonner_container.top_left {
+  top: 24px;
+  bottom: auto;
+  left: 24px;
+  right: auto;
+}
+.sonner_container.top_center {
+  top: 24px;
+  bottom: auto;
+  left: 50%;
+  transform: translateX(-50%);
+  right: auto;
+}
+.sonner_container.bottom_right {
+  bottom: 24px;
+  top: auto;
+  right: 24px;
+  left: auto;
+}
+.sonner_container.bottom_left {
+  bottom: 24px;
+  top: auto;
+  left: 24px;
+  right: auto;
+}
+.sonner_container.bottom_center {
+  bottom: 24px;
+  top: auto;
+  left: 50%;
+  transform: translateX(-50%);
+  right: auto;
+}
+
+/* Animations */
+/* When toast appears in bottom, it slides UP */
+.sonner_container:not(.top_right):not(.top_left):not(.top_center) .sonner_toast {
+  animation: sonner-slide-up 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* When toast appears in top, it slides DOWN */
+.sonner_container.top_right .sonner_toast,
+.sonner_container.top_left .sonner_toast,
+.sonner_container.top_center .sonner_toast {
+  animation: sonner-slide-down 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes sonner-slide-up {
+  0% { opacity: 0; transform: translateY(100%) scale(0.9); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes sonner-slide-down {
+  0% { opacity: 0; transform: translateY(-100%) scale(0.9); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* State (is_leave) */
+.sonner_toast.is_leave {
+  animation: sonner-leave 0.3s forwards !important;
+}
+
+@keyframes sonner-leave {
+  0% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(0.9); }
+}

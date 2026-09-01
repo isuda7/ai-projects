@@ -1,0 +1,70 @@
+/* _table.scss */
+.table_wrapper {
+  width: 100%;
+  overflow-x: auto;
+  /* 가이드용 spec_table과 달리 프론트엔드 표는 기본적으로 래퍼 테두리 없이 개방감을 줍니다 */
+}
+
+.data_table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 14px;
+  
+  th, td {
+    padding: 16px 24px;
+    border-bottom: 1px solid var(--color-gray-200, #e5e7eb);
+  }
+
+  th {
+    /* 프론트용 고유 헤더 스타일: 투명 배경, 어퍼케이스, 뚜렷한 하단 선 */
+    background-color: transparent;
+    color: var(--color-gray-500, #6b7280);
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-bottom: 2px solid var(--color-gray-200, #e5e7eb);
+  }
+
+  td {
+    color: var(--color-gray-900, #111827);
+    font-weight: 500;
+  }
+
+  tbody tr {
+    transition: background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Hover State */
+  &.is_hoverable tbody tr:hover {
+    background-color: var(--color-gray-50, #f9fafb);
+  }
+
+  /* Striped State */
+  &.is_striped tbody tr:nth-child(even) {
+    background-color: var(--color-gray-50, #f9fafb);
+  }
+
+  /* Bordered State */
+  &.is_bordered {
+    border: 1px solid var(--color-gray-200, #e5e7eb);
+    th, td {
+      border: 1px solid var(--color-gray-200, #e5e7eb);
+    }
+    th {
+      background-color: var(--color-gray-50, #f9fafb);
+    }
+  }
+
+  /* Small Size */
+  &.is_small {
+    font-size: 13px;
+    th, td {
+      padding: 10px 16px;
+    }
+    th {
+      font-size: 11px;
+    }
+  }
+}

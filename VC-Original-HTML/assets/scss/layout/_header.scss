@@ -1,0 +1,14 @@
+/* _header.scss */
+.page_header {
+  background-color: var(--color-white, #ffffff);
+  border-bottom: 1px solid var(--color-gray-200, #e5e7eb);
+  padding: 16px 0;
+  flex-shrink: 0;
+
+  .logo {
+    font-size: 24px;
+    font-weight: 800;
+    margin: 0;
+    color: var(--color-primary-600, #2563eb);
+  }
+}

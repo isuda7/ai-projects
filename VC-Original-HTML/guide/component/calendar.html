@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vibe Design System - Calendar & Scheduler</title>
+  <link rel="stylesheet" href="/assets/css/guide.css">
+  
+  <!-- Flatpickr CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/plugins/monthSelect/style.css">
+  
+  <style>.visually-hidden { position: absolute !important; width: 1px !important; height: 1px !important; padding: 0 !important; margin: -1px !important; overflow: hidden !important; clip: rect(0, 0, 0, 0) !important; white-space: nowrap !important; border: 0 !important; }</style>
+</head>
+<body>
+  <div data-include="/guide/layout/header.html"></div>
+  <div class="guide_main_container">
+    <div data-include="/guide/layout/sidebar.html"></div>
+  
+  <main class="guide_content">
+    <div class="guide_wrapper">
+      <header class="guide_header">
+        <h1 class="guide_title_h1">Calendar & Scheduler</h1>
+        <p class="guide_description">폼(Form)에서 입력용으로 쓰는 Datepicker(Flatpickr)와, 구글 캘린더처럼 화면 가득 띄우는 스케줄러(FullCalendar)를 분리하여 제공합니다.</p>
+      </header>
+
+      <!-- ==============================================
+           FLATPICKR (DATEPICKER) 
+      =============================================== -->
+      <section class="guide_section">
+        <h2 class="guide_title_h2">1. Datepicker (Flatpickr)</h2>
+        <p class="guide_description mb-4">입력창에 날짜나 시간을 입력받을 때 사용합니다. Vibe 테마가 적용되어 있습니다.</p>
+        
+        <div class="guide_sub_section">
+          <h3 class="guide_title_h3">1.1. Basic Popup & Range</h3>
+          <div class="guide_preview d-flex gap-4 flex-wrap">
+            <div style="width: 250px;">
+              <label class="form-label" style="font-size:14px; font-weight:500; margin-bottom:8px; display:block;">단일 날짜 선택 (Basic)</label>
+              <input type="text" class="form-control datepicker popup-calendar" placeholder="YYYY-MM-DD" style="width: 100%; padding: 8px 12px; border: 1px solid #e5e7eb; border-radius: 6px;">
+            </div>
+            
+            <div style="width: 250px;">
+              <label class="form-label" style="font-size:14px; font-weight:500; margin-bottom:8px; display:block;">기간 선택 (Range)</label>
+              <input type="text" class="form-control datepicker range-calendar" placeholder="Select date range" style="width: 100%; padding: 8px 12px; border: 1px solid #e5e7eb; border-radius: 6px;">
+            </div>
+          </div>
+          <div class="code_block mt-3">
+<pre><code>&lt;!-- HTML --&gt;
+&lt;div style="width: 250px;"&gt;
+  &lt;label class="form-label"&gt;단일 날짜 선택 (Basic)&lt;/label&gt;
+  &lt;input type="text" class="form-control datepicker popup-calendar" placeholder="YYYY-MM-DD"&gt;
+&lt;/div&gt;
+
+&lt;div style="width: 250px;"&gt;
+  &lt;label class="form-label"&gt;기간 선택 (Range)&lt;/label&gt;
+  &lt;input type="text" class="form-control datepicker range-calendar" placeholder="Select date range"&gt;
+&lt;/div&gt;
+
+&lt;!-- JS --&gt;
+&lt;script&gt;
+// 1. 달력 초기화
+flatpickr(".popup-calendar", { dateFormat: "Y-m-d" });
+flatpickr(".range-calendar", { mode: "range", dateFormat: "Y-m-d" });
+
+// 2. 스크롤 분리 현상 방지 (화면 내 스크롤 시 위치 재계산)
+window.addEventListener('scroll', function() {
+  document.querySelectorAll('.datepicker').forEach(function(input) {
+    if (input._flatpickr && input._flatpickr.isOpen) {
+      input._flatpickr._positionCalendar();
+    }
+  });
+}, true);
+&lt;/script&gt;</code></pre>
+          </div>
+        </div>
+
+        <div class="guide_sub_section mt-5">
+          <h3 class="guide_title_h3">1.2. Extended Usage (시간, 다중, 제한)</h3>
+          <div class="guide_preview d-flex gap-4 flex-wrap">
+            <div style="width: 250px;">
+              <label class="form-label" style="font-size:14px; font-weight:500; margin-bottom:8px; display:block;">날짜 + 시간 (Time Picker)</label>
+              <input type="text" class="form-control datepicker time-calendar" placeholder="Select Date & Time" style="width: 100%; padding: 8px 12px; border: 1px solid #e5e7eb; border-radius: 6px;">
+            </div>
+            
+            <div style="width: 250px;">
+              <label class="form-label" style="font-size:14px; font-weight:500; margin-bottom:8px; display:block;">다중 선택 (Multiple)</label>
+              <input type="text" class="form-control datepicker multi-calendar" placeholder="Select multiple dates" style="width: 100%; padding: 8px 12px; border: 1px solid #e5e7eb; border-radius: 6px;">
+            </div>
+            
+            <div style="width: 250px;">
+              <label class="form-label" style="font-size:14px; font-weight:500; margin-bottom:8px; display:block;">오늘 이전 선택 불가 (Min Date)</label>
+              <input type="text" class="form-control datepicker min-calendar" placeholder="Select future date" style="width: 100%; padding: 8px 12px; border: 1px solid #e5e7eb; border-radius: 6px;">
+            </div>
+            <div style="width: 250px;">
+              <label class="form-label" style="font-size:14px; font-weight:500; margin-bottom:8px; display:block;">년/월 선택 (Month Picker)</label>
+              <input type="text" class="form-control datepicker month-calendar" placeholder="YYYY-MM" style="width: 100%; padding: 8px 12px; border: 1px solid #e5e7eb; border-radius: 6px;">
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ==============================================
+           FULLCALENDAR (SCHEDULER) 
+      =============================================== -->
+      <section class="guide_section mt-5">
+        <h2 class="guide_title_h2">2. Scheduler (FullCalendar)</h2>
+        <p class="guide_description mb-4">회의실 예약, 개인 연차, 프로젝트 일정 등 복잡한 스케줄을 그리드 형태로 보여주는 대형 달력입니다.</p>
+        
+        <div class="guide_sub_section">
+          <h3 class="guide_title_h3">2.1. Month View (월간 일정표)</h3>
+          
+          <!-- 스케줄러는 프리뷰 박스(패딩) 없이 넓게 쓰도록 guide_preview 밖으로 뺍니다 -->
+          <div class="mt-4 mb-4">
+            <div id="scheduler-calendar"></div>
+          </div>
+          
+          <div class="code_block">
+<pre><code>&lt;!-- HTML --&gt;
+&lt;div id="scheduler-calendar"&gt;&lt;/div&gt;
+
+&lt;!-- JS --&gt;
+&lt;script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js'&gt;&lt;/script&gt;
+&lt;script&gt;
+document.addEventListener('DOMContentLoaded', function() {
+  var calendarEl = document.getElementById('scheduler-calendar');
+  var calendar = new FullCalendar.Calendar(calendarEl, {
+    initialView: 'dayGridMonth',
+    headerToolbar: {
+      left: 'prev,next today',
+      center: 'title',
+      right: 'dayGridMonth,timeGridWeek,timeGridDay'
+    },
+    events: [ { title: '회의', start: '2026-10-10' } ]
+  });
+  calendar.render();
+});
+&lt;/script&gt;</code></pre>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Flatpickr JS -->
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/plugins/monthSelect/index.js"></script>
+  
+  <!-- FullCalendar JS -->
+  <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js'></script>
+  
+  <script src="/assets/js/include.js"></script>
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      
+      // Fix for Flatpickr detaching when scrolling inside a container
+      window.addEventListener('scroll', function() {
+        document.querySelectorAll('.datepicker').forEach(function(input) {
+          if (input._flatpickr && input._flatpickr.isOpen) {
+            input._flatpickr._positionCalendar();
+          }
+        });
+      }, true); // capture: true catches scroll events from any inner container
+
+      // 1. Initialize Flatpickr (Datepicker)
+      flatpickr(".popup-calendar", { dateFormat: "Y-m-d" });
+      flatpickr(".range-calendar", { mode: "range", dateFormat: "Y-m-d" });
+      flatpickr(".time-calendar", { enableTime: true, dateFormat: "Y-m-d H:i" });
+      flatpickr(".multi-calendar", { mode: "multiple", dateFormat: "Y-m-d" });
+      flatpickr(".min-calendar", { minDate: "today", dateFormat: "Y-m-d" });
+      flatpickr(".month-calendar", {
+        plugins: [
+          new monthSelectPlugin({
+            shorthand: true, // defaults to false
+            dateFormat: "Y-m", // defaults to "F Y"
+            altFormat: "Y년 m월", // defaults to "F Y"
+            theme: "light" // defaults to "light"
+          })
+        ],
+        altInput: true
+      });
+      
+      // 2. Initialize FullCalendar (Scheduler)
+      var calendarEl = document.getElementById('scheduler-calendar');
+      
+      // Generate some dummy dates based on current date to ensure events always show up
+      var today = new Date();
+      var y = today.getFullYear();
+      var m = String(today.getMonth() + 1).padStart(2, '0');
+      var d = String(today.getDate()).padStart(2, '0');
+      
+      var calendar = new FullCalendar.Calendar(calendarEl, {
+        initialView: 'dayGridMonth',
+        headerToolbar: {
+          left: 'prev,next today',
+          center: 'title',
+          right: 'dayGridMonth,timeGridWeek,timeGridDay'
+        },
+        height: 600,
+        buttonText: {
+          today: '오늘',
+          month: '월',
+          week: '주',
+          day: '일'
+        },
+        events: [
+          {
+            title: '디자인 시스템 회의',
+            start: `${y}-${m}-05T10:00:00`,
+            end: `${y}-${m}-05T12:00:00`
+          },
+          {
+            title: '여름 휴가',
+            start: `${y}-${m}-12`,
+            end: `${y}-${m}-15`,
+            className: 'fc-event-warning' // Custom class for yellow color
+          },
+          {
+            title: '정기 점검',
+            start: `${y}-${m}-${d}T23:00:00`,
+            className: 'fc-event-danger' // Custom class for red color
+          },
+          {
+            title: '신규 프로젝트 킥오프',
+            start: `${y}-${m}-22`
+          }
+        ]
+      });
+      calendar.render();
+    });
+  </script>
+</body>
+</html>

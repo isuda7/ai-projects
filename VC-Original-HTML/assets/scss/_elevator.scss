@@ -1,0 +1,27 @@
+/* _elevator.scss: UI 깊이감을 표현하는 그림자 설정 */
+
+:root {
+  /* Box Shadows (Elevator Scale) */
+  --elevator-none: none;
+  --elevator-1: 0 1px 2px 0 rgba(0, 0, 0, 0.05); /* Element (Button, Badge) */
+  --elevator-2: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* Group (Card, Accordion) */
+  --elevator-3: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Layer (Dropdown, Tooltip) */
+  --elevator-4: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); /* Overlay (Modal, Popover) */
+
+  /* Z-Index (Elevator Depth) */
+  /* [규칙]
+     - 1~99: 로컬 컨텍스트 내부에서의 겹침 제어 (요소 호버, 스티키 카드 등)
+     - 100~999: 사이트 레이아웃 프레임 및 컨텐츠 위로 뜨는 일반 레이어
+     - 1000~1999: 오버레이 영역. 모달, 팝오버 등이 서로 겹칠 때를 대비해 100~200 단위로 여유를 둠
+     - 9999: 시스템 알림 등 절대 가려지지 않는 최상단 계층 */
+  --zindex-element: 1;
+  --zindex-group: 10;
+  --zindex-layout: 100;
+  --zindex-layer: 200;
+  --zindex-backdrop: 1000;
+  --zindex-modal: 1200;
+  --zindex-popover: 1300;
+  --zindex-datepicker: 1400;
+  --zindex-tooltip: 1500;
+  --zindex-toast: 9999;
+}

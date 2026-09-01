@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mindmap - Prompt Convention</title>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Markmap & D3.js -->
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <script src="https://cdn.jsdelivr.net/npm/markmap-lib"></script>
+    <script src="https://cdn.jsdelivr.net/npm/markmap-view"></script>
+
+    <style>
+        .mindmap-main {
+            padding: 0 !important;
+            margin-top: 80px !important;
+            max-width: 100%;
+            height: calc(100vh - 80px);
+            display: flex;
+            position: relative;
+        }
+
+        /* 탭 UI 스타일 */
+        .mindmap-tabs {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 1rem;
+            z-index: 10;
+            background: rgba(0, 0, 0, 0.4);
+            padding: 0.5rem;
+            border-radius: 30px;
+            border: 1px solid var(--glass-border);
+            backdrop-filter: blur(10px);
+        }
+
+        .mindmap-tab {
+            background: transparent;
+            color: var(--text-secondary);
+            border: none;
+            padding: 0.6rem 1.5rem;
+            border-radius: 20px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .mindmap-tab:hover {
+            color: #fff;
+        }
+
+        .mindmap-tab.active {
+            background: var(--accent-1);
+            color: #fff;
+            box-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
+        }
+
+        .mermaid-wrapper {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Markmap SVG Styling */
+        #markmap {
+            width: 100%;
+            height: 100%;
+            cursor: grab;
+        }
+
+        #markmap:active {
+            cursor: grabbing;
+        }
+
+        /* 다크모드/네온 테마에 맞는 Markmap CSS 강제 덮어쓰기 */
+        #markmap text,
+        #markmap foreignObject,
+        #markmap div,
+        #markmap p {
+            fill: #f0f0f5 !important;
+            color: #f0f0f5 !important;
+            font-family: 'Inter', sans-serif !important;
+        }
+
+        .markmap-node circle {
+            stroke: var(--accent-1) !important;
+            fill: var(--bg-dark) !important;
+            stroke-width: 2px !important;
+        }
+
+        .markmap-link {
+            stroke: rgba(99, 102, 241, 0.4) !important;
+            stroke-width: 2px !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="blob-bg blob-1"></div>
+    <div class="blob-bg blob-2"></div>
+
+    <!-- Header Include -->
+    <div id="header-placeholder"></div>
+
+    <main class="mindmap-main">
+        <!-- 탭 컨테이너 -->
+        <div class="mindmap-tabs">
+            <button class="mindmap-tab active" data-target="theory">🧠 이론적 체계 (Taxonomy)</button>
+            <button class="mindmap-tab" data-target="practical">🛠️ 실무적 가이드 (Practical)</button>
+        </div>
+
+        <section class="content-section active" style="width: 100%; height: 100%;">
+            <div class="mermaid-wrapper">
+                <svg id="markmap"></svg>
+
+                <!-- 탭 1: 철학적 체계 마크다운 -->
+                <script type="text/template" id="mindmap-theory">
+# 👑 프롬프트 마스터리 (Prompt Mastery)
+
+## 1. 🧠 사고 체계 (프롬프트 도달 전)
+### 메타 인지 (질문의 발견)
+- 역방향 프롬프팅
+- 자기 객관화 및 상황 진단
+### 형태와 해부 (무엇으로 이루어졌는가)
+- 구조: 상하위 계층과 뼈대 파악
+- 구성: 필수 부품과 요소 도출
+- 층위: 물리적/논리적 추상화 단계 파악
+### 톱니바퀴와 흐름 (어떻게 굴러가는가)
+- 순서: 시간적, 절차적 진행 흐름
+- 원리: 내부 동작 법칙과 알고리즘
+- 체계: 요소들이 맞물려 돌아가는 생태계
+- 생명주기: 탄생부터 소멸까지의 변화
+### 연결과 영향 (어떤 관계인가)
+- 관계: 상호작용 및 의존성 파악
+- 인과: 명확한 원인과 결과 도출
+- 비교: 공통점, 차이점, 대립 구조
+### 시야와 해석 (어떤 렌즈인가)
+- 관점: 특정 분야의 렌즈를 씌운 해석
+- 본질: 표면을 걷어낸 궁극의 코어 가치
+
+## 2. 🗺️ 아키텍처 (시스템 구조와 거점)
+### 🧠 마인드맵 (전체 조망)
+- 이론적 체계 (프롬프트 마스터리 3대 축)
+- 실무적 체계 (베이스캠프 IA)
+### 🚀 플레이북 (실무 실행)
+#### 로드맵 (5단계 여정)
+- 진단 (Phase 0)
+- 도출 (Phase 1)
+- 설계 (Phase 2)
+- 적용 (Phase 3)
+- 검증 (Phase 4)
+#### 프레임워크 (템플릿)
+- 생각의 캔버스 (목적, 대상, 제약, 형식)
+- 작성 공식 (RTF, CREATE, XML 구조화)
+#### 워크플로우 (파이프라인)
+- 단일 프롬프트 튜닝
+- 프롬프트 체이닝
+- 의도 라우팅 모델
+- 평가자 순환 루프
+- 자율 에이전트 (ReAct)
+### 🎓 아카데미 (학습 훈련)
+- 튜토리얼 (초심자 가이드)
+- 커리큘럼 (수준별 코스)
+### 📚 레퍼런스 (지식 참조)
+#### 12대 탐색 키워드 사전
+- 형태와 해부 (구조, 구성, 층위)
+- 톱니바퀴와 흐름 (순서, 원리, 체계, 생명주기)
+- 연결과 영향 (관계, 인과, 비교)
+- 시야와 해석 (관점, 본질)
+#### 프롬프트 기법 유형
+- 기초 (제로샷, 퓨샷, 페르소나)
+- 추론 (CoT, ToT)
+- 템플릿 (XML, RAG)
+
+## 3. 📝 컨벤션 (규약과 통제)
+### 파이프라인 워크플로우
+#### 1. 프롬프트 튜닝
+- 기획 및 사고 (마인드셋 / 페르소나)
+- 목적과 제약 조건 설정
+#### 2. 프롬프트 체이닝 (연속 프롬프팅)
+- 단계별 분리
+- 중간 결과물 검증
+#### 3. 라우팅 모델 (경로 지정)
+- 의도 분류
+- 최적화된 하위 모델 배정
+#### 4. 평가자 워크플로우
+- 자체 교정
+- 피드백 루프 (순환 피드백)
+#### 5. 자율 에이전트
+- 목표 부여
+- 상황 분석 및 행동
+### 프롬프트 기법
+#### 기초 기법
+- 제로샷 (단일 지시) / 퓨샷 (예제 제공)
+- 페르소나 (역할 부여)
+#### 추론 및 논리
+- 생각의 사슬 (CoT: 단계별 추론)
+- 생각의 나무 (ToT: 다중 경로 탐색)
+#### 맥락 및 템플릿
+- 마크다운/XML 구조화
+- 검색 증강 생성 (RAG)
+### 보안 및 가드레일
+#### 환각(거짓 정보) 방지
+- 문맥 내 답변 강제 / 출처 명시
+#### 악의적 공격(탈옥) 방어
+- 시스템 프롬프트 무시 차단
+#### 일관성 유지
+- 출력 포맷(Schema) 강제
+### 응용 분야
+- 코딩 및 개발
+- 글쓰기 및 창작
+- 데이터 분석 및 파싱
+                </script>
+
+                <!-- 탭 2: 실무적 체계 마크다운 -->
+                <script type="text/template" id="mindmap-practical">
+# 프롬프트 실무 가이드
+## 1. 🗺️ 로드맵 (5단계 여정)
+### 진단 (Phase 0)
+- 역방향 프롬프팅
+### 도출 (Phase 1)
+- 12대 탐색 키워드로 뼈대 잡기
+### 설계 (Phase 2)
+- 아키텍처 및 파이프라인 결정
+### 적용 (Phase 3)
+- 논리와 맥락 주입 (CoT, RAG)
+### 검증 (Phase 4)
+- 환각 방지 및 자체 교정
+## 2. 🔑 12대 키워드 사전
+### 형태와 해부 (구조, 구성, 층위)
+### 톱니바퀴와 흐름 (순서, 원리, 체계, 생명주기)
+### 연결과 영향 (관계, 인과, 비교)
+### 시야와 해석 (관점, 본질)
+## 3. 🧠 프레임워크 템플릿
+### 생각의 캔버스 (4요소)
+- 목적 (Objective)
+- 대상 (Audience)
+- 제약 (Constraints)
+- 형식 (Format)
+### 질문 작성 공식
+- RTF 공식 (역할/작업/형식)
+- CREATE 공식 (6하원칙 상세화)
+- XML 구조화 포맷 (태그 기반)
+## 4. ⚙️ 파이프라인 워크플로우
+### 단일 튜닝
+### 프롬프트 체이닝 (순차 분리)
+### 의도 라우팅 (경로 지정)
+### 평가자 (순환 피드백)
+### 자율 에이전트 (ReAct)
+## 5. 🛡️ 기법 및 가드레일
+### 추론 유도
+- 생각의 사슬 (CoT)
+- 다중 경로 탐색 (ToT)
+### 맥락 주입 (RAG)
+### 보안
+- 환각(Hallucination) 방어
+- 악의적 공격(Jailbreak) 방어
+                </script>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Include -->
+    <div id="footer-placeholder" style="display: none;"></div>
+
+    <script src="script.js"></script>
+
+    <!-- Markmap Render Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const { Transformer, Markmap } = window.markmap;
+            const transformer = new Transformer();
+
+            // Create Markmap instance once
+            const mm = Markmap.create('#markmap', {
+                autoFit: false,
+                color: () => '#8b5cf6',
+                paddingX: 50,
+                paddingY: 20,
+                spacingHorizontal: 100,
+                spacingVertical: 20,
+                style: (id) => `${id} text, ${id} foreignObject, ${id} p, ${id} div { font-size: 20px !important; }`
+            });
+
+            // 마인드맵 렌더링 함수
+            function renderMindmap(type) {
+                const markdownContent = document.getElementById(`mindmap-${type}`).textContent.trim();
+                const { root } = transformer.transform(markdownContent);
+                mm.setData(root);
+
+                // 렌더링 지연 후 배율 고정
+                setTimeout(() => {
+                    mm.svg.call(mm.zoom.transform, d3.zoomIdentity.translate(200, 80).scale(0.9));
+                }, 100);
+            }
+
+            // 초기 렌더링 (이론 탭)
+            renderMindmap('theory');
+
+            // 탭 클릭 이벤트 바인딩
+            const tabs = document.querySelectorAll('.mindmap-tab');
+            tabs.forEach(tab => {
+                tab.addEventListener('click', (e) => {
+                    // 활성 상태 변경
+                    tabs.forEach(t => t.classList.remove('active'));
+                    e.target.classList.add('active');
+
+                    // 해당 타겟 마인드맵 렌더링
+                    const target = e.target.getAttribute('data-target');
+                    renderMindmap(target);
+                });
+            });
+
+            // 더블클릭 시 스케일 복귀
+            mm.svg.on("dblclick.zoom", () => {
+                mm.svg.transition().duration(500).call(mm.zoom.transform, d3.zoomIdentity.translate(200, 200).scale(0.9));
+            });
+        });
+    </script>
+</body>
+
+</html>

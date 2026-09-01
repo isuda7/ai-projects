@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playbook - Prompt Convention</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .page-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 1rem 0 3rem 0;
+            position: relative;
+            z-index: 10;
+        }
+        .page-tab {
+            background: rgba(0, 0, 0, 0.4);
+            color: var(--text-secondary);
+            border: 1px solid var(--glass-border);
+            padding: 0.8rem 2rem;
+            border-radius: 30px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            font-family: 'Inter', sans-serif;
+        }
+        .page-tab:hover { color: #fff; border-color: rgba(255,255,255,0.3); }
+        .page-tab.active {
+            background: var(--accent-1);
+            color: #fff;
+            border-color: transparent;
+            box-shadow: 0 0 15px rgba(139, 92, 246, 0.5);
+        }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; animation: fadeIn 0.5s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        
+        .roadmap-container {
+            position: relative;
+            width: 100%;
+            margin: 4rem auto;
+            padding-left: 3.5rem;
+        }
+        /* Vertical Line */
+        .roadmap-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 24px;
+            width: 4px;
+            background: linear-gradient(to bottom, #f43f5e, #8b5cf6, #3b82f6, #10b981, #f59e0b);
+            border-radius: 4px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 4rem;
+        }
+
+        /* Timeline Dot */
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -3.5rem; /* Aligns exactly with the vertical line */
+            top: 0;
+            width: 24px;
+            height: 24px;
+            background: var(--bg-dark);
+            border: 4px solid var(--accent-1);
+            border-radius: 50%;
+            z-index: 1;
+            box-shadow: 0 0 15px var(--accent-1);
+            transform: translateX(10px);
+        }
+
+        .phase-label {
+            font-size: 0.95rem;
+            color: var(--accent-1);
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content {
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid var(--glass-border);
+            border-radius: 15px;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .timeline-content:hover {
+            transform: translateX(10px);
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+
+        .phase-title {
+            font-size: 1.8rem;
+            color: var(--text-primary);
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .phase-desc {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+        }
+
+        .components-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .components-title {
+            font-size: 1.05rem;
+            color: var(--text-primary);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .components-title::before {
+            content: '📌';
+            font-size: 1.2rem;
+        }
+
+        .components-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .component-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 1.2rem;
+            flex: 1 1 calc(33.333% - 1rem);
+            min-width: 220px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            transition: background 0.3s ease;
+        }
+        
+        .component-card:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .component-name {
+            color: #fff;
+            font-weight: 800;
+            font-size: 1.15rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .component-detail {
+            color: var(--accent-2);
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        /* Specific Phase Colors */
+        .phase-0::before { border-color: #f43f5e; box-shadow: 0 0 15px #f43f5e; }
+        .phase-0 .phase-label { color: #f43f5e; }
+        
+        .phase-1::before { border-color: #8b5cf6; box-shadow: 0 0 15px #8b5cf6; }
+        .phase-1 .phase-label { color: #8b5cf6; }
+        
+        .phase-2::before { border-color: #3b82f6; box-shadow: 0 0 15px #3b82f6; }
+        .phase-2 .phase-label { color: #3b82f6; }
+
+        .phase-3::before { border-color: #10b981; box-shadow: 0 0 15px #10b981; }
+        .phase-3 .phase-label { color: #10b981; }
+
+        .phase-4::before { border-color: #f59e0b; box-shadow: 0 0 15px #f59e0b; }
+        .phase-4 .phase-label { color: #f59e0b; }
+.grid-canvas {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .canvas-box {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .canvas-box:hover {
+            transform: translateY(-5px);
+        }
+
+        .canvas-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .canvas-title {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .canvas-title.c-obj { color: #3b82f6; }
+        .canvas-title.c-aud { color: #f43f5e; }
+        .canvas-title.c-con { color: #f59e0b; }
+        .canvas-title.c-fmt { color: #10b981; }
+
+        .canvas-desc {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        .formula-section {
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid var(--glass-border);
+            border-radius: 15px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .formula-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+            flex-wrap: wrap;
+        }
+
+        .formula-name {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--accent-1);
+        }
+        
+        .formula-badge {
+            background: rgba(99, 102, 241, 0.2);
+            color: var(--accent-1);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            border: 1px solid rgba(99, 102, 241, 0.4);
+        }
+
+        .formula-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .formula-part {
+            background: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-2);
+            padding: 1rem;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .formula-part strong {
+            display: block;
+            color: var(--text-primary);
+            margin-bottom: 0.3rem;
+            font-size: 1.05rem;
+        }
+        
+        .formula-part span {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .code-block {
+            background: #1e1e2e;
+            border-radius: 8px;
+            padding: 1.5rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.95rem;
+            color: #cdd6f4;
+            line-height: 1.6;
+            overflow-x: auto;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            position: relative;
+            white-space: pre-wrap;
+        }
+        
+        .code-label {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-secondary);
+            padding: 0.2rem 0.8rem;
+            font-size: 0.75rem;
+            border-radius: 0 8px 0 8px;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .hl-tag { color: #f38ba8; }
+        .hl-cmt { color: #a6adc8; font-weight: bold; background: rgba(255,255,255,0.05); padding: 0.1rem 0.3rem; border-radius: 4px; }
+.workflow-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .workflow-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--glass-border);
+            border-radius: 15px;
+            padding: 2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .workflow-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(99, 102, 241, 0.5);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+        .workflow-title {
+            color: var(--accent-1);
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .workflow-purpose {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.5;
+        }
+        .workflow-steps {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            align-items: center;
+        }
+        .workflow-step {
+            background: rgba(99, 102, 241, 0.15);
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            color: #fff;
+        }
+        .workflow-arrow {
+            color: var(--accent-2);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="blob-bg blob-1"></div>
+    <div class="blob-bg blob-2"></div>
+
+    <div id="header-placeholder"></div>
+
+    <main>
+        <div class="page-tabs">
+    <button class="page-tab active" data-target="tab-roadmap">1. 로드맵 (여정)</button>
+    <button class="page-tab " data-target="tab-framework">2. 프레임워크 (포맷)</button>
+    <button class="page-tab " data-target="tab-workflow">3. 워크플로우 (파이프라인)</button>
+</div>
+
+        <section id="tab-roadmap" class="tab-content content-section active">
+<div class="glass-card full-width">
+                <h2>🗺️ 프롬프트 마스터리 로드맵</h2>
+                <p>아무것도 모르는 백지상태에서 시작하여 완벽한 결과물을 도출하는 끝점까지, 프롬프트 엔지니어링의 전체 여정을 <strong>세로 흐름(타임라인)과 단계별 가로 구성</strong>으로 정리한 종합 상황판입니다.</p>
+                
+                <div class="roadmap-container">
+                    
+                    <!-- Phase 0 -->
+                    <div class="timeline-item phase-0">
+                        <div class="timeline-content">
+                            <div class="phase-label">Phase 0. 메타 인지 (Diagnosis)</div>
+                            <div class="phase-title">질문의 발견</div>
+                            <div class="phase-desc">
+                                <strong>상태:</strong> 내가 무엇을 모르는지조차 모르는 백지상태.<br>
+                                키워드를 억지로 쥐어짜는 대신, AI에게 내 상황을 진단받고 올바른 질문 자체를 찾아내는 역방향 탐색 단계입니다.
+                            </div>
+                            <div class="components-wrapper">
+                                <div class="components-title">해당 단계 필수 요소 (Actions)</div>
+                                <div class="components-row">
+                                    <div class="component-card">
+                                        <div class="component-name">역방향 프롬프팅</div>
+                                        <div class="component-detail">AI에게 나를 위한 '질문 리스트' 제안 요구</div>
+                                    </div>
+                                    <div class="component-card">
+                                        <div class="component-name">상황 진단</div>
+                                        <div class="component-detail">나의 현재 수준, 제약, 목표를 솔직하게 서술</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Phase 1 -->
+                    <div class="timeline-item phase-1">
+                        <div class="timeline-content">
+                            <div class="phase-label">Phase 1. 의도 도출 (Discovery)</div>
+                            <div class="phase-title">지식의 모양 결정</div>
+                            <div class="phase-desc">
+                                <strong>상태:</strong> 알고자 하는 도메인의 구체적인 타겟팅이 필요한 상태.<br>
+                                AI에게 요구할 결과물의 구조, 흐름, 인과 등을 12대 탐색 키워드를 통해 정확하게 조준합니다.
+                            </div>
+                            <div class="components-wrapper">
+                                <div class="components-title">해당 단계 필수 요소 (4대 영역 키워드)</div>
+                                <div class="components-row">
+                                    <div class="component-card">
+                                        <div class="component-name">형태와 해부</div>
+                                        <div class="component-detail">구조, 구성, 층위를 파악하여 뼈대 도출</div>
+                                    </div>
+                                    <div class="component-card">
+                                        <div class="component-name">톱니바퀴와 흐름</div>
+                                        <div class="component-detail">순서, 원리, 체계, 생명주기로 작동방식 파악</div>
+                                    </div>
+                                    <div class="component-card">
+                                        <div class="component-name">연결과 해석</div>
+                                        <div class="component-detail">관계, 인과, 비교, 관점, 본질을 꿰뚫는 해석</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Phase 2 -->
+                    <div class="timeline-item phase-2">
+                        <div class="timeline-content">
+                            <div class="phase-label">Phase 2. 아키텍처 설계 (Architecture)</div>
+                            <div class="phase-title">파이프라인 뼈대 잡기</div>
+                            <div class="phase-desc">
+                                <strong>상태:</strong> 어떤 방식으로 AI와 대화할지 시스템적 뼈대를 구축하는 상태.<br>
+                                단순 질문으로 끝낼지, 여러 번 쪼갤지, 에이전트에게 통째로 맡길지 전체 워크플로우를 결정합니다.
+                            </div>
+                            <div class="components-wrapper">
+                                <div class="components-title">해당 단계 필수 요소 (Workflow Patterns)</div>
+                                <div class="components-row">
+                                    <div class="component-card">
+                                        <div class="component-name">단일 튜닝</div>
+                                        <div class="component-detail">한 턴에 정교한 지시 (마인드셋 / 제약조건)</div>
+                                    </div>
+                                    <div class="component-card">
+                                        <div class="component-name">연속 체이닝</div>
+                                        <div class="component-detail">작업을 분리하여 순차적으로 주고받기 실행</div>
+                                    </div>
+                                    <div class="component-card">
+                                        <div class="component-name">라우팅 & 에이전트</div>
+                                        <div class="component-detail">의도 분류 및 자율 행동(ReAct) 전문가 위임</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Phase 3 -->
+                    <div class="timeline-item phase-3">
+                        <div class="timeline-content">
+                            <div class="phase-label">Phase 3. 기법 적용 (Techniques)</div>
+                            <div class="phase-title">논리와 맥락 주입</div>
+                            <div class="phase-desc">
+                                <strong>상태:</strong> 뼈대 위에 실제 텍스트를 작성하고 성능을 끌어올리는 상태.<br>
+                                AI의 추론 능력을 극대화하고 외부 데이터를 연결하여 결과물의 퀄리티를 폭발시킵니다.
+                            </div>
+                            <div class="components-wrapper">
+                                <div class="components-title">해당 단계 필수 요소 (Prompting Techniques)</div>
+                                <div class="components-row">
+                                    <div class="component-card">
+                                        <div class="component-name">추론 유도</div>
+                                        <div class="component-detail">생각의 사슬(CoT), 다중 경로 탐색(ToT) 적용</div>
+                                    </div>
+                                    <div class="component-card">
+                                        <div class="component-name">예제 및 포맷팅</div>
+                                        <div class="component-detail">퓨샷(Few-Shot), 마크다운/XML 구조화 지시</div>
+                                    </div>
+                                    <div class="component-card">
+                                        <div class="component-name">맥락 주입</div>
+                                        <div class="component-detail">검색 증강 생성(RAG), 외부 전문 데이터 연결</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Phase 4 -->
+                    <div class="timeline-item phase-4">
+                        <div class="timeline-content">
+                            <div class="phase-label">Phase 4. 검증 및 최적화 (Security & Guardrails)</div>
+                            <div class="phase-title">안전망 구축과 피드백</div>
+                            <div class="phase-desc">
+                                <strong>상태:</strong> 결과물이 도출되었으나 팩트체크와 일관성 검증이 필요한 상태.<br>
+                                환각을 방지하고, 악의적 공격을 차단하며, 자체 교정 루프를 돌려 흠결 없는 최종 완성본을 만듭니다.
+                            </div>
+                            <div class="components-wrapper">
+                                <div class="components-title">해당 단계 필수 요소 (Guardrails & Evaluator)</div>
+                                <div class="components-row">
+                                    <div class="component-card">
+                                        <div class="component-name">환각 방지</div>
+                                        <div class="component-detail">출처 명시, 근거 기반 답변 강제 (Citation)</div>
+                                    </div>
+                                    <div class="component-card">
+                                        <div class="component-name">자체 교정 루프</div>
+                                        <div class="component-detail">평가자(Evaluator) 워크플로우를 통한 셀프 리뷰</div>
+                                    </div>
+                                    <div class="component-card">
+                                        <div class="component-name">보안 룰</div>
+                                        <div class="component-detail">탈옥(Jailbreak) 방어 및 답변 일관성 제약</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+</section>
+<section id="tab-framework" class="tab-content content-section ">
+<!-- Part 1: 생각의 포맷 -->
+            <div class="glass-card full-width">
+                <h2>🧠 생각의 포맷 : 프롬프트 캔버스</h2>
+                <p>무언가를 하려고 할 때, 키보드에 손을 올리기 전 머릿속에 떠다니는 아이디어를 명확한 4개의 칸으로 쪼개어 정리하는 <strong>멘탈 모델</strong>입니다.</p>
+                
+                <div class="grid-canvas">
+                    <div class="canvas-box" style="border-top: 3px solid #3b82f6;">
+                        <div class="canvas-icon">🎯</div>
+                        <div class="canvas-title c-obj">1. Objective (목적)</div>
+                        <div class="canvas-desc">
+                            이 작업의 궁극적인 목표는 무엇인가?<br>
+                            단순한 요약인가, 창의적인 아이디어 도출인가, 아니면 복잡한 코드 작성인가? 목적이 뚜렷해야 AI가 방향을 잃지 않습니다.
+                        </div>
+                    </div>
+                    <div class="canvas-box" style="border-top: 3px solid #f43f5e;">
+                        <div class="canvas-icon">👥</div>
+                        <div class="canvas-title c-aud">2. Audience (대상)</div>
+                        <div class="canvas-desc">
+                            최종 결과물을 읽거나 사용할 사람은 누구인가?<br>
+                            초등학생인지, 해당 분야의 전문가인지, 혹은 시스템(API)인지에 따라 설명의 깊이와 어조(Tone)가 완전히 달라져야 합니다.
+                        </div>
+                    </div>
+                    <div class="canvas-box" style="border-top: 3px solid #f59e0b;">
+                        <div class="canvas-icon">🚧</div>
+                        <div class="canvas-title c-con">3. Constraints (제약)</div>
+                        <div class="canvas-desc">
+                            절대 하면 안 되는 것, 반드시 지켜야 할 조건은 무엇인가?<br>
+                            글자 수 제한, 사용 금지 단어, 특정 포맷 유지 등 AI의 환각과 폭주를 막는 가장 강력한 <strong>안전벨트</strong>입니다.
+                        </div>
+                    </div>
+                    <div class="canvas-box" style="border-top: 3px solid #10b981;">
+                        <div class="canvas-icon">📦</div>
+                        <div class="canvas-title c-fmt">4. Format (형식)</div>
+                        <div class="canvas-desc">
+                            어떤 껍데기로 결과를 반환받을 것인가?<br>
+                            표(Table), 마크다운, JSON, 보고서 형태 등 출력물의 시각적, 구조적 형태를 정확히 지정해야 후가공이 편해집니다.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Part 2: 질문의 포맷 -->
+            <div class="glass-card full-width">
+                <h2>⌨️ 질문의 포맷 : 프롬프트 공식 템플릿</h2>
+                <p>위에서 정리한 생각(캔버스)을 AI가 가장 잘 알아듣는 '표준화된 텍스트 공식'으로 치환하는 방법입니다. 상황에 맞게 템플릿을 복사하여 괄호 안을 채워 사용하세요.</p>
+
+                <!-- Formula 1 -->
+                <div class="formula-section">
+                    <div class="formula-header">
+                        <div class="formula-name">1. RTF 공식</div>
+                        <div class="formula-badge">초보자 / 빠른 작업용</div>
+                    </div>
+                    <div class="formula-grid">
+                        <div class="formula-part"><strong>Role (역할)</strong><span>AI에게 전문가 페르소나 부여</span></div>
+                        <div class="formula-part"><strong>Task (작업)</strong><span>명확하고 구체적인 지시</span></div>
+                        <div class="formula-part"><strong>Format (형식)</strong><span>원하는 출력 형태 지정</span></div>
+                    </div>
+                    <div class="code-block">
+                        <div class="code-label">Copy Template</div>
+<span class="hl-cmt"># Role</span>
+당신은 10년 차 수석 마케터입니다.
+
+<span class="hl-cmt"># Task</span>
+신규 출시되는 무선 이어폰의 핵심 타겟 고객 3개 그룹을 분석하고, 각 그룹별 소구 포인트(Selling Point)를 도출해 주세요.
+
+<span class="hl-cmt"># Format</span>
+분석 결과는 마크다운 표(Table) 형태로 정리하여 출력해 주세요.
+                    </div>
+                </div>
+
+                <!-- Formula 2 -->
+                <div class="formula-section">
+                    <div class="formula-header">
+                        <div class="formula-name">2. CREATE 공식</div>
+                        <div class="formula-badge">중급 / 상세한 논리 작업용</div>
+                    </div>
+                    <div class="formula-grid">
+                        <div class="formula-part" style="border-color: #f43f5e;"><strong>Context (맥락)</strong><span>작업의 배경지식</span></div>
+                        <div class="formula-part" style="border-color: #f97316;"><strong>Request (요청)</strong><span>가장 핵심적인 지시</span></div>
+                        <div class="formula-part" style="border-color: #eab308;"><strong>Explanation (설명)</strong><span>세부 조건 및 부연</span></div>
+                        <div class="formula-part" style="border-color: #22c55e;"><strong>Action (행동)</strong><span>수행해야 할 구체적 액션</span></div>
+                        <div class="formula-part" style="border-color: #3b82f6;"><strong>Tone (어조)</strong><span>결과물의 톤앤매너</span></div>
+                        <div class="formula-part" style="border-color: #8b5cf6;"><strong>Extras (추가)</strong><span>제외할 것, 제약조건</span></div>
+                    </div>
+                    <div class="code-block">
+                        <div class="code-label">Copy Template</div>
+<span class="hl-cmt"># Context (맥락)</span>
+우리는 현재 20대 대학생을 타겟으로 하는 모바일 플래너 앱을 개발 중입니다.
+
+<span class="hl-cmt"># Request (요청)</span>
+앱의 랜딩 페이지에 들어갈 메인 카피(Headline) 5가지를 도출해 주세요.
+
+<span class="hl-cmt"># Explanation (설명)</span>
+대학생들의 시간 관리 어려움(과제, 알바, 취업 준비)에 깊이 공감하는 방향이어야 합니다.
+
+<span class="hl-cmt"># Action (행동)</span>
+각 카피마다 왜 이 문구를 선택했는지 1줄의 심리학적 근거를 덧붙이세요.
+
+<span class="hl-cmt"># Tone (어조)</span>
+위트 있고 친구처럼 친근하지만, 신뢰감을 주는 어조를 사용하세요.
+
+<span class="hl-cmt"># Extras (제약 및 추가)</span>
+'혁신적인', '최고의' 같은 상투적인 단어는 절대 사용하지 마세요.
+                    </div>
+                </div>
+
+                <!-- Formula 3 -->
+                <div class="formula-section">
+                    <div class="formula-header">
+                        <div class="formula-name">3. XML 구조화 포맷</div>
+                        <div class="formula-badge">전문가 / 복잡한 시스템 연동용</div>
+                    </div>
+                    <p style="color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.5;">XML 태그를 사용하여 AI에게 주입할 '데이터'와 '지시사항'을 컴퓨터 프로그램처럼 엄격하게 분리하는 가장 강력한 포맷입니다.</p>
+                    <div class="code-block">
+                        <div class="code-label">Copy Template</div>
+당신은 제공된 문서를 바탕으로 사용자 질문에 답하는 챗봇 시스템입니다.
+
+<span class="hl-tag">&lt;instructions&gt;</span>
+1. 오직 <span class="hl-tag">&lt;context&gt;</span> 안에 제공된 정보만을 사용하여 답변하세요.
+2. 외부 지식을 사용하거나 추론하여 답변을 지어내지 마세요.
+3. 정보가 부족하다면 "주어진 문서에서 찾을 수 없습니다"라고만 답변하세요.
+4. 답변은 <span class="hl-tag">&lt;response&gt;</span> 태그 안에 작성하세요.
+<span class="hl-tag">&lt;/instructions&gt;</span>
+
+<span class="hl-tag">&lt;context&gt;</span>
+(이곳에 AI가 참고해야 할 긴 문서나 데이터를 삽입합니다)
+<span class="hl-tag">&lt;/context&gt;</span>
+
+<span class="hl-tag">&lt;user_query&gt;</span>
+(이곳에 사용자의 실제 질문을 삽입합니다)
+<span class="hl-tag">&lt;/user_query&gt;</span>
+                    </div>
+                </div>
+
+            </div>
+</section>
+<section id="tab-workflow" class="tab-content content-section ">
+<div class="glass-card full-width">
+                <h2>🔄 5대 프롬프트 워크플로우 (Workflows)</h2>
+                <p>현대 프롬프트 엔지니어링은 단일 문장 작성을 넘어, <strong>목적에 맞는 최적의 파이프라인 아키텍처를 설계</strong>하는 것입니다. AI의 성능을 극대화하는 대표적인 5가지 워크플로우 유형을 확인하세요.</p>
+                
+                <div class="workflow-grid">
+                    <!-- 1. Tuning -->
+                    <div class="workflow-card">
+                        <div class="workflow-title">🛠️ 1. 프롬프트 튜닝 (Tuning Workflow)</div>
+                        <div class="workflow-purpose"><strong>목적:</strong> 가장 이상적인 단일 프롬프트 템플릿을 '개발'하고 최적화하는 과정</div>
+                        <div class="workflow-steps">
+                            <div class="workflow-step">요구사항 및 페르소나 정의</div> <span class="workflow-arrow">➔</span>
+                            <div class="workflow-step">초안 작성</div> <span class="workflow-arrow">➔</span>
+                            <div class="workflow-step">테스트 실행</div> <span class="workflow-arrow">➔</span>
+                            <div class="workflow-step">결과 분석 및 반복 개선</div>
+                        </div>
+                    </div>
+
+                    <!-- 2. Chaining -->
+                    <div class="workflow-card">
+                        <div class="workflow-title">🔗 2. 프롬프트 체이닝 (Chaining Workflow)</div>
+                        <div class="workflow-purpose"><strong>목적:</strong> 한 번에 처리하기 벅찬 복잡한 작업을 여러 단계의 프롬프트로 쪼개어(분할 정복) 논리적 오류를 방지하고 출력의 안정성을 극대화</div>
+                        <div class="workflow-steps">
+                            <div class="workflow-step">Task Decomposition</div> <span class="workflow-arrow">➔</span>
+                            <div class="workflow-step">Step 1: 데이터 추출</div> <span class="workflow-arrow">➔</span>
+                            <div class="workflow-step">Step 2: 데이터 분석</div> <span class="workflow-arrow">➔</span>
+                            <div class="workflow-step">Step 3: 최종 포맷팅</div>
+                        </div>
+                    </div>
+
+                    <!-- 3. Routing -->
+                    <div class="workflow-card">
+                        <div class="workflow-title">🔀 3. 라우팅 (Routing Workflow)</div>
+                        <div class="workflow-purpose"><strong>목적:</strong> 사용자의 다양한 입력 의도를 사전에 파악하여, 해당 작업에 가장 특화된 '전문가 프롬프트'로 동적 분기 처리</div>
+                        <div class="workflow-steps">
+                            <div class="workflow-step">사용자 입력</div> <span class="workflow-arrow">➔</span>
+                            <div class="workflow-step">의도 분류 (Classifier)</div> <span class="workflow-arrow">➔</span>
+                            <div class="workflow-step">Expert Prompt 분기 (A/B/C)</div> <span class="workflow-arrow">➔</span>
+                            <div class="workflow-step">결과 반환</div>
+                        </div>
+                    </div>
+
+                    <!-- 4. Evaluator-Optimizer -->
+                    <div class="workflow-card">
+                        <div class="workflow-title">⚖️ 4. 평가-최적화 (Evaluator-Optimizer Workflow)</div>
+                        <div class="workflow-purpose"><strong>목적:</strong> 정답이 명확하지 않은 창작물(코드, 문학, 번역 등)의 품질을 '생성자'와 '평가자' 모델 간의 피드백 루프를 통해 극한으로 향상</div>
+                        <div class="workflow-steps">
+                            <div class="workflow-step">Generator (초안 생성)</div> <span class="workflow-arrow">➔</span>
+                            <div class="workflow-step">Evaluator (비판 및 피드백)</div> <span class="workflow-arrow">➔</span>
+                            <div class="workflow-step">Optimizer (수정 반영)</div> <span class="workflow-arrow">➔</span>
+                            <div class="workflow-step">Loop (목표 달성 시 종료)</div>
+                        </div>
+                    </div>
+
+                    <!-- 5. Agentic -->
+                    <div class="workflow-card">
+                        <div class="workflow-title">🤖 5. 자율 에이전트 (Agentic ReAct Workflow)</div>
+                        <div class="workflow-purpose"><strong>목적:</strong> 모델이 단순히 텍스트를 생성하는 것을 넘어, 스스로 생각하고 외부 도구(API, 검색, 코드 실행기)를 사용해 자율적으로 문제를 해결</div>
+                        <div class="workflow-steps">
+                            <div class="workflow-step">Goal (목표 부여)</div> <span class="workflow-arrow">➔</span>
+                            <div class="workflow-step">Thought (상황 분석 및 계획)</div> <span class="workflow-arrow">➔</span>
+                            <div class="workflow-step">Action (도구 실행)</div> <span class="workflow-arrow">➔</span>
+                            <div class="workflow-step">Observation (관찰)</div> <span class="workflow-arrow">➔</span>
+                            <div class="workflow-step">Final Answer</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+</section>
+
+    </main>
+
+    <div id="footer-placeholder" style="display: none;"></div>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabs = document.querySelectorAll('.page-tab');
+            const contents = document.querySelectorAll('.tab-content');
+            tabs.forEach(tab => {
+                tab.addEventListener('click', (e) => {
+                    tabs.forEach(t => t.classList.remove('active'));
+                    contents.forEach(c => c.classList.remove('active'));
+                    e.target.classList.add('active');
+                    const targetId = e.target.getAttribute('data-target');
+                    document.getElementById(targetId).classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

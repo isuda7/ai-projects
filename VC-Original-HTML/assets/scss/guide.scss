@@ -1,0 +1,5 @@
+/* guide.scss: 가이드/문서 전용 SCSS 엔트리 파일 */
+@use 'global';
+
+// 가이드 전용 레이아웃 및 템플릿
+@use 'guide/template';

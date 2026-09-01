@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vibe Design System - Accordion</title>
+  <link rel="stylesheet" href="/assets/css/guide.css">
+</head>
+
+<body>
+  <div data-include="/guide/layout/header.html"></div>
+  <div class="guide_main_container">
+    <div data-include="/guide/layout/sidebar.html"></div>
+
+    <main class="guide_content">
+      <div class="guide_wrapper">
+
+        <header class="guide_header">
+          <h1 class="guide_title_h1">Accordion</h1>
+          <p class="guide_description">
+            방대한 양의 컨텐츠를 접고 펼칠 수 있도록 하여, 화면의 시각적 복잡도를 줄여주는 컴포넌트입니다.
+          </p>
+        </header>
+
+        <section class="guide_section">
+          <h2 class="guide_title_h2">1. Overview & Specs</h2>
+          <div class="spec_table_wrapper">
+            <table class="spec_table">
+              <thead>
+                <tr>
+                  <th>Class</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>.accordion</code></td>
+                  <td>아코디언 전체 래퍼 클래스</td>
+                </tr>
+                <tr>
+                  <td><code>.accordion_item</code></td>
+                  <td>각 개별 아코디언 아이템 블록</td>
+                </tr>
+                <tr>
+                  <td><code>.accordion_btn</code></td>
+                  <td>열고 닫는 토글 버튼 (Bootstrap JS <code>data-bs-toggle="collapse"</code> 사용)</td>
+                </tr>
+                <tr>
+                  <td><code>.collapse</code> / <code>.show</code></td>
+                  <td>본문 숨김/노출을 제어하는 Bootstrap 유틸 클래스</td>
+                </tr>
+                <tr>
+                  <td><code>.block</code>, <code>.line_wall</code></td>
+                  <td>아코디언 디자인 스타일 변형(Variant) 독립 클래스</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="guide_section">
+          <h2 class="guide_title_h2">2. Basic Usage</h2>
+          <div class="guide_sub_section">
+            <h3 class="guide_title_h3">2.1. Default State (Single Selection)</h3>
+            <p class="guide_description">기본 아코디언은 하나의 항목이 열리면 다른 항목이 닫힙니다. (<code>data-bs-parent</code> 사용)</p>
+            <div class="guide_preview">
+              <div class="accordion" id="accordionDefault">
+                <div class="accordion_item">
+                  <h3 class="accordion_header">
+                    <button class="accordion_btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                      aria-expanded="true">
+                      디자인 시스템의 목적은 무엇인가요?
+                    </button>
+                  </h3>
+                  <div id="collapseOne" class="collapse show" data-bs-parent="#accordionDefault">
+                    <div class="accordion_body">
+                      디자인 시스템은 일관성 있는 사용자 경험을 제공하고, 디자이너와 개발자 간의 협업 효율성을 극대화하기 위한 컴포넌트와 가이드라인의 집합입니다.
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion_item">
+                  <h3 class="accordion_header">
+                    <button class="accordion_btn collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#collapseTwo" aria-expanded="false">
+                      바닐라 HTML/SCSS를 고집하는 이유?
+                    </button>
+                  </h3>
+                  <div id="collapseTwo" class="collapse" data-bs-parent="#accordionDefault">
+                    <div class="accordion_body">
+                      특정 프레임워크(React, Vue 등)에 종속되지 않고 어떤 환경에서든 즉시 가져다 사용할 수 있는 가장 근본적이고 가벼운 범용 시스템을 구축하기 위함입니다.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="code_block">
+              <pre><code>&lt;div class="accordion" id="accordionDefault"&gt;
+  &lt;div class="accordion_item"&gt;
+    &lt;h3 class="accordion_header"&gt;
+      &lt;button class="accordion_btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"&gt;
+        제목 1
+      &lt;/button&gt;
+    &lt;/h3&gt;
+    &lt;div id="collapseOne" class="collapse show" data-bs-parent="#accordionDefault"&gt;
+      &lt;div class="accordion_body"&gt;내용 1&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+          </div>
+        </section>
+
+        <section class="guide_section">
+          <h2 class="guide_title_h2">3. Variants & States</h2>
+
+          <div class="guide_sub_section">
+            <h3 class="guide_title_h3">3.1. Multiple Selection</h3>
+            <p class="guide_description"><code>data-bs-parent</code> 속성을 제거하면 여러 개를 동시에 열어둘 수 있습니다.</p>
+            <div class="guide_preview w-100">
+              <div class="accordion">
+                <div class="accordion_item">
+                  <h3 class="accordion_header"><button class="accordion_btn collapsed" type="button"
+                      data-bs-toggle="collapse" data-bs-target="#multi1">다중 선택 아이템 1</button></h3>
+                  <div id="multi1" class="collapse">
+                    <div class="accordion_body">첫 번째 내용입니다.</div>
+                  </div>
+                </div>
+                <div class="accordion_item">
+                  <h3 class="accordion_header"><button class="accordion_btn collapsed" type="button"
+                      data-bs-toggle="collapse" data-bs-target="#multi2">다중 선택 아이템 2</button></h3>
+                  <div id="multi2" class="collapse">
+                    <div class="accordion_body">두 번째 내용입니다. 서로 독립적으로 작동합니다.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="code_block">
+              <pre><code>&lt;!-- data-bs-parent 속성 제거 --&gt;
+&lt;div class="accordion"&gt;
+  &lt;div class="accordion_item"&gt;
+    &lt;h3 class="accordion_header"&gt;...&lt;/h3&gt;
+    &lt;div id="multi1" class="collapse"&gt;...&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+          </div>
+
+          <div class="guide_sub_section mt-4">
+            <h3 class="guide_title_h3">3.3. Block Type</h3>
+            <div class="guide_preview w-100">
+              <div class="accordion block">
+                <div class="accordion_item">
+                  <h3 class="accordion_header"><button class="accordion_btn collapsed" type="button"
+                      data-bs-toggle="collapse" data-bs-target="#block1">결제 수단 안내</button></h3>
+                  <div id="block1" class="collapse">
+                    <div class="accordion_body">신용카드, 카카오페이, 무통장 입금을 지원합니다.</div>
+                  </div>
+                </div>
+                <div class="accordion_item">
+                  <h3 class="accordion_header"><button class="accordion_btn collapsed" type="button"
+                      data-bs-toggle="collapse" data-bs-target="#block2">환불 규정</button></h3>
+                  <div id="block2" class="collapse">
+                    <div class="accordion_body">결제 후 7일 이내 전액 환불 가능합니다.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="code_block">
+              <pre><code>&lt;!-- .block 클래스 추가 --&gt;
+&lt;div class="accordion block"&gt;
+  &lt;div class="accordion_item"&gt;...&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+          </div>
+
+          <div class="guide_sub_section mt-4">
+            <h3 class="guide_title_h3">3.4. Line Wall Type</h3>
+            <div class="guide_preview w-100">
+              <div class="accordion line_wall">
+                <div class="accordion_item">
+                  <h3 class="accordion_header"><button class="accordion_btn collapsed" type="button"
+                      data-bs-toggle="collapse" data-bs-target="#wall1">2026년 하반기 업데이트</button></h3>
+                  <div id="wall1" class="collapse">
+                    <div class="accordion_body">새로운 다크모드가 추가되었습니다.</div>
+                  </div>
+                </div>
+                <div class="accordion_item">
+                  <h3 class="accordion_header"><button class="accordion_btn collapsed" type="button"
+                      data-bs-toggle="collapse" data-bs-target="#wall2">2026년 상반기 업데이트</button></h3>
+                  <div id="wall2" class="collapse">
+                    <div class="accordion_body">성능 최적화가 이루어졌습니다.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="code_block">
+              <pre><code>&lt;!-- .line_wall 클래스 추가 --&gt;
+&lt;div class="accordion line_wall"&gt;
+  &lt;div class="accordion_item"&gt;...&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+          </div>
+
+          <div class="guide_sub_section mt-4">
+            <h3 class="guide_title_h3">3.5. Complex Title Type</h3>
+            <div class="guide_preview w-100">
+              <div class="accordion">
+                <div class="accordion_item">
+                  <h3 class="accordion_header">
+                    <button class="accordion_btn collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#complex1">
+                      <div class="d-flex align-items-center gap-2">
+                        <span class="badge primary">공지</span>
+                        <span>시스템 점검 안내</span>
+                      </div>
+                    </button>
+                  </h3>
+                  <div id="complex1" class="collapse">
+                    <div class="accordion_body">8월 15일 새벽 2시부터 서버 점검이 있습니다.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="code_block">
+              <pre><code>&lt;button class="accordion_btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#complex1"&gt;
+  &lt;div class="d-flex align-items-center gap-2"&gt;
+    &lt;span class="badge primary"&gt;공지&lt;/span&gt;
+    &lt;span&gt;시스템 점검 안내&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/button&gt;</code></pre>
+            </div>
+          </div>
+
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/js/include.js"></script>
+</body>
+
+</html>

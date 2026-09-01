@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vibe Design System - Badge Component</title>
+  <link rel="stylesheet" href="/assets/css/guide.css">
+</head>
+<body>
+  <div data-include="/guide/layout/header.html"></div>
+  <div class="guide_main_container">
+    <div data-include="/guide/layout/sidebar.html"></div>
+  
+  <main class="guide_content">
+    <div class="guide_wrapper">
+      
+      <header class="guide_header">
+        <h1 class="guide_title_h1">Badge</h1>
+        <p class="guide_description">
+          상태, 태그, 카테고리 등을 강조하여 시각적으로 표시하는 작은 레이블 컴포넌트입니다.
+        </p>
+      </header>
+
+      <section class="guide_section">
+        <h2 class="guide_title_h2">1. Overview & Specs</h2>
+        <p class="guide_description">뱃지의 핵심 클래스와 기본 사용법입니다.</p>
+        
+        <div class="spec_table_wrapper">
+          <table class="spec_table">
+            <thead>
+              <tr>
+                <th>Class</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><code>.badge</code></td><td>뱃지 공통 뼈대 (필수 적용)</td></tr>
+              <tr><td><code>.badge_primary</code>, <code>.badge_success</code> 등</td><td>의미적 색상을 띈 부드러운 배경색(Soft) 배지</td></tr>
+              <tr><td><code>.badge_solid_primary</code> 등</td><td>진한 배경색을 띈 솔리드 배지</td></tr>
+              <tr><td><code>.badge_outline</code></td><td>배경 없이 테두리만 있는 배지</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="guide_section">
+        <h2 class="guide_title_h2">2. Basic Usage</h2>
+        <div class="guide_sub_section">
+          <h3 class="guide_title_h3">2.1. Soft Variants (Default)</h3>
+          <p class="guide_description mb-3">가장 많이 쓰이는 부드러운 배경의 배지 형태입니다.</p>
+          <div class="guide_preview gap-2">
+            <span class="badge primary_soft">Primary</span>
+            <span class="badge secondary_soft">Secondary</span>
+            <span class="badge success_soft">Success</span>
+            <span class="badge warning_soft">Warning</span>
+            <span class="badge danger_soft">Danger</span>
+          </div>
+          <div class="code_block">
+<pre><code>&lt;span class="badge primary_soft"&gt;Primary&lt;/span&gt;
+&lt;span class="badge success_soft"&gt;Success&lt;/span&gt;</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section class="guide_section">
+        <h2 class="guide_title_h2">3. Variants & States</h2>
+        
+        <div class="guide_sub_section">
+          <h3 class="guide_title_h3">3.1. Variants (Soft, Solid, Outline)</h3>
+          <div class="guide_preview gap-2">
+            <span class="badge primary_soft">Soft Badge</span>
+            <span class="badge primary">Solid Badge</span>
+            <span class="badge outline">Outline Badge</span>
+          </div>
+        </div>
+
+        <div class="guide_sub_section mt-4">
+          <h3 class="guide_title_h3">3.2. Colors (Primary, Success, Warning, Danger)</h3>
+          <div class="guide_preview gap-2">
+            <span class="badge primary_soft">Primary</span>
+            <span class="badge success_soft">Success</span>
+            <span class="badge warning_soft">Warning</span>
+            <span class="badge danger_soft">Danger</span>
+            <span class="badge secondary_soft">Secondary</span>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/js/include.js"></script>
+</body>
+</html>

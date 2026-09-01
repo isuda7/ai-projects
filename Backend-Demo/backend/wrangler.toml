@@ -1,0 +1,8 @@
+name = "backend"
+main = "src/index.ts"
+compatibility_date = "2026-08-31"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "backend-db"
+database_id = "e4a6eef6-c793-430b-9d2b-b9169c4b9b4a"

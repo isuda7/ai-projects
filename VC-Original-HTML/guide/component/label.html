@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vibe Design System - Label</title>
+  <link rel="stylesheet" href="/assets/css/guide.css">
+</head>
+<body>
+  <div data-include="/guide/layout/header.html"></div>
+  <div class="guide_main_container">
+    <div data-include="/guide/layout/sidebar.html"></div>
+  
+  <main class="guide_content">
+    <div class="guide_wrapper">
+      <header class="guide_header">
+        <h1 class="guide_title_h1">Label (폼 라벨)</h1>
+        <p class="guide_description">입력 폼 필드의 제목이나 설명을 나타내는 라벨 컴포넌트입니다.</p>
+      </header>
+
+      <section class="guide_section">
+        <h2 class="guide_title_h2">1. Overview & Specs</h2>
+        <div class="spec_table_wrapper">
+          <table class="spec_table">
+          <thead><tr><th>Class</th><th>Description</th></tr></thead>
+          <tbody>
+            <tr><td><code>.form_label</code></td><td>라벨 기본 스타일</td></tr>
+            <tr><td><code>.required</code></td><td>필수 입력 항목 표시 (빨간 별표)</td></tr>
+            <tr><td><code>.disabled</code></td><td>비활성화 시 흐려지는 스타일</td></tr>
+          </tbody>
+        </table>
+        </div>
+      </section>
+
+      <section class="guide_section">
+        <h2 class="guide_title_h2">2. Basic Usage</h2>
+        <div class="guide_sub_section">
+          <h3 class="guide_title_h3">2.1. Primary State</h3>
+          <div class="guide_preview">
+            <div>
+              <label class="form_label" for="email">이메일 주소</label>
+              <input type="email" id="email" class="input_field" placeholder="example@email.com">
+            </div>
+          </div>
+          <div class="code_block">
+<pre><code>&lt;label class="form_label" for="email"&gt;이메일 주소&lt;/label&gt;
+&lt;input type="email" id="email" class="input_field" placeholder="example@email.com"&gt;</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section class="guide_section">
+        <h2 class="guide_title_h2">3. Variants & States</h2>
+        <div class="guide_sub_section">
+          <h3 class="guide_title_h3">3.1. Required (필수값)</h3>
+          <div class="guide_preview">
+            <div>
+              <label class="form_label required" for="password">비밀번호</label>
+              <input type="password" id="password" class="input_field" placeholder="비밀번호를 입력하세요">
+            </div>
+          </div>
+          <div class="code_block">
+<pre><code>&lt;label class="form_label required" for="password"&gt;비밀번호&lt;/label&gt;
+&lt;input type="password" id="password" class="input_field"&gt;</code></pre>
+          </div>
+        </div>
+
+        <div class="guide_sub_section mt-4">
+          <h3 class="guide_title_h3">3.2. Disabled (비활성)</h3>
+          <div class="guide_preview">
+            <div>
+              <label class="form_label disabled" for="disabled_input">비활성 필드</label>
+              <input type="text" id="disabled_input" class="input_field" disabled placeholder="입력할 수 없습니다">
+            </div>
+          </div>
+          <div class="code_block">
+<pre><code>&lt;label class="form_label disabled" for="disabled_input"&gt;비활성 필드&lt;/label&gt;
+&lt;input type="text" id="disabled_input" class="input_field" disabled&gt;</code></pre>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/js/include.js"></script>
+</body>
+</html>

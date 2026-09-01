@@ -1,0 +1,106 @@
+/* _bs-functional.scss: 필수 Bootstrap JS 연동 기능 스타일 */
+/* 부트스트랩 JS(모달, 탭, 콜랩스 등)가 작동하기 위한 최소한의 구조적(표시/숨김/전환) 스타일입니다. 디자인 요소는 포함하지 않습니다. */
+
+/* 1. Transitions (Fade) */
+.fade {
+  transition: opacity 0.15s linear;
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+  }
+}
+.fade:not(.show) {
+  opacity: 0;
+}
+.fade.show {
+  opacity: 1;
+}
+
+/* 2. Collapse (아코디언, 드롭다운 등) */
+.collapse:not(.show) {
+  display: none;
+}
+.collapsing {
+  height: 0;
+  overflow: hidden;
+  transition: height 0.35s ease;
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+  }
+}
+
+/* 3. Dropdowns */
+.dropdown-menu {
+  position: absolute;
+  z-index: 1000;
+  display: none;
+  /* Design will be handled by custom component CSS */
+}
+.dropdown-menu.show {
+  display: block;
+}
+
+/* 4. Modals */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1055;
+  display: none;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  outline: 0;
+}
+.modal-dialog {
+  position: relative;
+  width: auto;
+  margin: 1.75rem auto;
+  pointer-events: none;
+}
+.modal.fade .modal-dialog {
+  transition: transform 0.3s ease-out;
+  transform: translate(0, -50px);
+}
+.modal.show .modal-dialog {
+  transform: none;
+}
+.modal-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  pointer-events: auto;
+  /* Design will be handled by custom component CSS */
+}
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1050;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
+}
+.modal-backdrop.fade { opacity: 0; }
+.modal-backdrop.show { opacity: 0.5; }
+
+/* 5. Navs & Tabs */
+.tab-content > .tab-pane {
+  display: none;
+}
+.tab-content > .active {
+  display: block;
+}
+
+/* 6. Tooltips & Popovers (기본 감춤) */
+.tooltip, .popover {
+  position: absolute;
+  z-index: 1080;
+  display: block;
+  margin: 0;
+  opacity: 0;
+}
+.tooltip.show, .popover.show {
+  opacity: 1;
+}

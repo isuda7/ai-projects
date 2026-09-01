@@ -1,0 +1,304 @@
+/* _dialog.scss */
+/* Premium Modal Design over Bootstrap */
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1055;
+  display: none;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  outline: 0;
+}
+
+.modal-dialog {
+  position: relative;
+  width: auto;
+  margin: 1.75rem auto;
+  pointer-events: none;
+  max-width: 500px;
+}
+
+/* Base Premium Dialog */
+.modal-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  pointer-events: auto;
+  background-color: var(--color-white, #ffffff);
+  background-clip: padding-box;
+  /* Removed strict borders, added premium soft shadow and large radius */
+  border: none;
+  border-radius: var(--radius-xl, 16px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  outline: 0;
+}
+
+.modal-header {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 24px 16px;
+  border-bottom: none; /* Premium look: no hard line */
+  border-top-left-radius: var(--radius-xl, 16px);
+  border-top-right-radius: var(--radius-xl, 16px);
+}
+
+.modal-title {
+  margin-bottom: 0;
+  line-height: 1.4;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-gray-900, #111827);
+}
+
+.modal-body {
+  position: relative;
+  flex: 1 1 auto;
+  padding: 0 24px 24px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--color-gray-600, #4b5563);
+}
+
+/* Premium footer */
+.modal-footer {
+  display: flex;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 16px 24px 24px;
+  border-top: none; /* No hard line */
+  border-bottom-right-radius: var(--radius-xl, 16px);
+  border-bottom-left-radius: var(--radius-xl, 16px);
+  gap: 12px;
+  background-color: transparent;
+}
+
+
+/* ----------------------------------------------------
+   Variant: iOS Style Alert
+------------------------------------------------------ */
+.modal-dialog.modal-alert-ios {
+  max-width: 270px;
+  margin: auto; /* Center vertically */
+  display: flex;
+  align-items: center;
+  min-height: calc(100% - 3.5rem);
+  
+  .modal-content {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 14px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+  }
+
+  .modal-header {
+    padding: 20px 16px 6px;
+    justify-content: center;
+    .modal-title {
+      font-size: 17px;
+      font-weight: 600;
+      text-align: center;
+    }
+  }
+
+  .modal-body {
+    padding: 0 16px 20px;
+    font-size: 13px;
+    text-align: center;
+    color: var(--color-gray-700, #374151);
+  }
+
+  .modal-footer {
+    padding: 0;
+    gap: 0;
+    flex-direction: row;
+    border-top: 1px solid rgba(0, 0, 0, 0.1); /* iOS hairline */
+    
+    .btn {
+      flex: 1;
+      height: 44px;
+      border: none;
+      border-radius: 0;
+      background: transparent;
+      color: #007aff;
+      font-size: 17px;
+      font-weight: 400;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+      &:hover, &:focus, &:active {
+        background-color: rgba(0,0,0,0.05);
+        color: #007aff;
+        box-shadow: none;
+        outline: none;
+      }
+      
+      &.danger {
+        color: #ff3b30;
+      }
+      
+      &.fw-bold {
+        font-weight: 600;
+      }
+    }
+    
+    /* Vertical separator if there are two buttons */
+    .btn + .btn {
+      border-left: 1px solid rgba(0, 0, 0, 0.1);
+    }
+  }
+}
+
+/* Modal Sizes */
+.modal-sm { max-width: 300px; }
+.modal-lg { max-width: 800px; }
+
+/* Transitions */
+.modal.fade .modal-dialog {
+  transition: transform 0.3s ease-out;
+  transform: scale(0.95);
+}
+.modal.show .modal-dialog {
+  transform: scale(1);
+}
+
+
+/* Close Button in Header */
+.modal-close-btn {
+  background: transparent;
+  border: none;
+  padding: 8px;
+  margin: -8px -8px -8px auto;
+  cursor: pointer;
+  color: var(--color-gray-400, #9ca3af);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: all 0.2s;
+
+  &:hover {
+    color: var(--color-gray-700, #374151);
+    background-color: var(--color-gray-100, #f3f4f6);
+  }
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+
+/* ----------------------------------------------------
+   Variant: Custom / Event Popup
+------------------------------------------------------ */
+.modal-dialog.modal-custom {
+  .modal-content {
+    overflow: hidden;
+    padding: 0;
+  }
+  
+  .modal-body {
+    padding: 0;
+    
+    img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+    }
+  }
+
+  .modal-footer {
+    padding: 12px 16px;
+    background-color: var(--color-gray-50, #f9fafb);
+    justify-content: space-between;
+    
+    /* Typically 'Do not show for 7 days' vs 'Close' */
+    .checkbox_wrapper {
+      margin: 0;
+      .checkbox_label {
+        font-size: 13px;
+        color: var(--color-gray-600);
+      }
+    }
+  }
+
+  /* Absolute close button overlaid on image */
+  .modal-close-absolute {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: rgba(0,0,0,0.4);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: background-color 0.2s;
+    
+    &:hover {
+      background: rgba(0,0,0,0.7);
+    }
+    
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
+
+/* ----------------------------------------------------
+   Variant: Positions (Centered & Bottom)
+------------------------------------------------------ */
+.modal-dialog-centered {
+  display: flex;
+  align-items: center;
+  min-height: calc(100% - 3.5rem);
+}
+
+/* Hide scrollbar on modal container for bottom sheet to prevent animation flicker */
+.modal:has(.modal-dialog-bottom) {
+  overflow: hidden;
+}
+
+.modal-dialog-bottom {
+  display: flex;
+  align-items: flex-end;
+  min-height: 100%;
+  margin: 0 auto;
+  
+  .modal-content {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    max-height: 95vh;
+  }
+  
+  .modal-body {
+    overflow-y: auto; /* Scroll internally */
+  }
+}
+
+/* Specific transitions for bottom modal */
+.modal.fade .modal-dialog-bottom {
+  transition: transform 0.3s ease-out;
+  transform: translate(0, 100%);
+}
+.modal.show .modal-dialog-bottom {
+  transform: none;
+}

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vibe Design System - Publishing Dashboard</title>
+  <link rel="stylesheet" href="/assets/css/guide.css">
+  <style>
+    /* Dashboard specific styles */
+    body { background-color: #f8fafc; margin: 0; font-family: inherit; }
+    .dashboard-container {
+      padding: 32px 48px;
+    }
+    .summary-area { display: flex; gap: 12px; margin-bottom: 20px; justify-content: flex-end; align-items: center; }
+    .summary-item { display: flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: 20px; font-size: 13px; font-weight: 700; box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
+    .summary-item.total { background: #f8fafc; border: 1px solid #e2e8f0; color: #475569; }
+    .summary-item.published { background: #ecfdf5; border: 1px solid #a7f3d0; color: #059669; }
+    .summary-item.draft { background: #f3f4f6; border: 1px solid #e5e7eb; color: #6b7280; }
+    .summary-value { background: rgba(255,255,255,0.7); padding: 2px 8px; border-radius: 12px; font-size: 13px; font-weight: 800; }
+    .dashboard-table { width: 100%; border-collapse: collapse; background: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+    .dashboard-table th { background-color: #edf1fd; text-transform: uppercase; font-weight: 700; padding: 8px 16px; font-size: 12px; color: #334155; text-align: left; }
+    .dashboard-table td { padding: 6px 16px; font-size: 12px; border-bottom: 1px solid #f1f5f9; color: #475569; }
+    /* Toggle row styles */
+    .dashboard-table tr.group_row { background-color: #f8fafc; font-weight: 600; color: #0f172a; cursor: pointer; user-select: none; transition: background-color 0.2s; }
+    .dashboard-table tr.group_row .group-title-wrapper { display: flex; align-items: center; }
+    .dashboard-table tr.group_row:hover { background-color: #e2e8f0; }
+    .dashboard-table tr.group_row .toggle-icon { display: inline-flex; align-items: center; justify-content: center; width: 20px; height: 20px; margin-right: 8px; transition: transform 0.2s ease; transform-origin: center center; color: #64748b; }
+    .dashboard-table tr.group_row.collapsed .toggle-icon { transform: rotate(-90deg); }
+    .dashboard-table tr.item_row:hover { background-color: rgba(15, 23, 42, 0.025); }
+    .dashboard-table tr.item_row.hidden { display: none; }
+    .status-badge { display: inline-block; padding: 4px 8px; border-radius: 4px; font-weight: 600; font-size: 11px; }
+    .status-published { color: #059669; background-color: #ecfdf5; }
+    .status-draft { color: #9e9e9e; background-color: #f5f5f5; }
+    .link-url { color: #0294de; text-decoration: none; }
+    .link-url:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <!-- 공통 상단 헤더 -->
+  <div data-include="/guide/layout/header.html"></div>
+  <main class="dashboard-container">
+    <div class="summary-area" id="summaryArea">
+      <!-- Summary injected by JS -->
+    </div>
+    <table class="dashboard-table">
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>Path (Menu)</th>
+          <th>Type</th>
+          <th>URL</th>
+          <th>Date</th>
+          <th>Status</th>
+          <th>Remarks</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody">
+        <!-- Rows injected by JS -->
+      </tbody>
+    </table>
+  </main>
+  <script>
+                const guideData = [
+      {
+        groupName: "Foundation",
+        items: [
+          { no: "", path: "Colors", type: "Page", url: "/guide/foundation/colors.html", date: "2026-08-03", status: "Draft", remarks: "진행중" },
+          { no: "", path: "Typography", type: "Page", url: "/guide/foundation/typography.html", date: "2026-08-03", status: "Draft", remarks: "진행중" },
+          { no: "", path: "Elevator", type: "Page", url: "/guide/foundation/elevator.html", date: "2026-08-03", status: "Draft", remarks: "진행중" },
+          { no: "", path: "Utilities", type: "Page", url: "/guide/foundation/utilities.html", date: "2026-08-03", status: "Draft", remarks: "진행중" }
+        ]
+      },
+      {
+        groupName: "Components",
+        items: [
+          { no: "", path: "Accordion", type: "Page", url: "/guide/component/accordion.html", date: "-", status: "Draft", remarks: "진행중" },
+          { no: "", path: "Alert", type: "Page", url: "/guide/component/alert.html", date: "-", status: "Draft", remarks: "진행중" },
+          { no: "", path: "Avatar", type: "Page", url: "/guide/component/avatar.html", date: "-", status: "Draft", remarks: "진행중" },
+          { no: "", path: "Badge", type: "Page", url: "/guide/component/badge.html", date: "-", status: "Draft", remarks: "예정" },
+          { no: "", path: "Breadcrumb", type: "Page", url: "/guide/component/breadcrumb.html", date: "-", status: "Draft", remarks: "진행중" },
+          { no: "", path: "Bullet List", type: "Page", url: "/guide/component/bullet_list.html", date: "-", status: "Draft", remarks: "진행중" },
+          { no: "", path: "Button", type: "Page", url: "/guide/component/button.html", date: "-", status: "Draft", remarks: "예정" },
+          { no: "", path: "Calendar", type: "Page", url: "/guide/component/calendar.html", date: "-", status: "Draft", remarks: "진행중" },
+          { no: "", path: "Card", type: "Page", url: "/guide/component/card.html", date: "-", status: "Draft", remarks: "예정" },
+          { no: "", path: "Carousel", type: "Page", url: "/guide/component/carousel.html", date: "-", status: "Draft", remarks: "진행중" },
+          { no: "", path: "Dialog", type: "Page", url: "/guide/component/dialog.html", date: "-", status: "Draft", remarks: "예정" },
+          { no: "", path: "Dropdown Menu", type: "Page", url: "/guide/component/dropdown_menu.html", date: "-", status: "Draft", remarks: "진행중" },
+          { no: "", path: "Icon", type: "Page", url: "/guide/component/icon.html", date: "-", status: "Draft", remarks: "예정" },
+          { no: "", path: "Form - Checkbox", type: "Page", url: "/guide/component/checkbox.html", date: "-", status: "Draft", remarks: "예정" },
+          { no: "", path: "Form - Input", type: "Page", url: "/guide/component/input.html", date: "-", status: "Draft", remarks: "예정" },
+          { no: "", path: "Form - Label", type: "Page", url: "/guide/component/label.html", date: "-", status: "Draft", remarks: "진행중" },
+          { no: "", path: "Form - Radio", type: "Page", url: "/guide/component/radio.html", date: "-", status: "Draft", remarks: "예정" },
+          { no: "", path: "Form - Select", type: "Page", url: "/guide/component/select.html", date: "-", status: "Draft", remarks: "예정" },
+          { no: "", path: "Form - Switch", type: "Page", url: "/guide/component/switch.html", date: "-", status: "Draft", remarks: "진행중" },
+          { no: "", path: "Form - Textarea", type: "Page", url: "/guide/component/textarea.html", date: "-", status: "Draft", remarks: "진행중" },
+          { no: "", path: "Pagination", type: "Page", url: "/guide/component/pagination.html", date: "-", status: "Draft", remarks: "예정" },
+          { no: "", path: "Popover", type: "Page", url: "/guide/component/popover.html", date: "-", status: "Draft", remarks: "진행중" },
+          { no: "", path: "Progress", type: "Page", url: "/guide/component/progress.html", date: "-", status: "Draft", remarks: "진행중" },
+          { no: "", path: "Separator", type: "Page", url: "/guide/component/separator.html", date: "-", status: "Draft", remarks: "진행중" },
+          { no: "", path: "Skeleton", type: "Page", url: "/guide/component/skeleton.html", date: "-", status: "Draft", remarks: "진행중" },
+          { no: "", path: "Sonner", type: "Page", url: "/guide/component/sonner.html", date: "-", status: "Draft", remarks: "진행중" },
+          { no: "", path: "Spinner", type: "Page", url: "/guide/component/spinner.html", date: "-", status: "Draft", remarks: "진행중" },
+          { no: "", path: "Table", type: "Page", url: "/guide/component/table.html", date: "-", status: "Draft", remarks: "예정" },
+          { no: "", path: "Tabs", type: "Page", url: "/guide/component/tabs.html", date: "-", status: "Draft", remarks: "예정" },
+          { no: "", path: "Tooltip", type: "Page", url: "/guide/component/tooltip.html", date: "-", status: "Draft", remarks: "진행중" }
+        ]
+      }
+    ];
+    const frontData = [
+      {
+        groupName: "참고용",
+        items: [
+          { no: "L01", path: "Layout (Template)", type: "Layout", url: "/front/layout/layout.html", date: "-", status: "Draft", remarks: "진행중" },
+          { no: "P01", path: "Prototype (실전용)", type: "Page", url: "/front/layout/prototype.html", date: "-", status: "Draft", remarks: "진행중" }
+        ]
+      },
+      {
+        groupName: "공통",
+        items: [
+          { no: "C01", path: "404 Error", type: "Page", url: "/front/common/404.html", date: "-", status: "Draft", remarks: "진행중" },
+          { no: "C02", path: "500 Error", type: "Page", url: "/front/common/500.html", date: "-", status: "Draft", remarks: "진행중" }
+        ]
+      },
+      {
+        groupName: "Main",
+        items: [
+          { no: "M01", path: "Home", type: "Page", url: "/front/main/index.html", date: "-", status: "Draft", remarks: "기본 퍼블리싱 대기" }
+        ]
+      }
+    ];
+    let currentTab = 'guide';
+    function renderDashboard() {
+      const data = currentTab === 'guide' ? guideData : frontData;
+      const tbody = document.getElementById('tableBody');
+      const summaryArea = document.getElementById('summaryArea');
+      let total = 0, published = 0, draft = 0;
+      let html = '';
+      const chevronSvg = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>`;
+      data.forEach((group, index) => {
+        html += `<tr class="group_row" data-group-index="${index}"><td colspan="7"><div class="group-title-wrapper"><span class="toggle-icon">${chevronSvg}</span>${group.groupName}</div></td></tr>`;
+        group.items.forEach(item => {
+          total++;
+          if (item.status === 'Published') published++;
+          else draft++;
+          const statusClass = item.status === 'Published' ? 'status-published' : 'status-draft';
+          html += `
+            <tr class="item_row" data-group-parent="${index}">
+              <td>${total}</td>
+              <td>${item.path}</td>
+              <td>${item.type}</td>
+              <td><a href="${item.url}" class="link-url" target="_blank">${item.url}</a></td>
+              <td>${item.date}</td>
+              <td><span class="status-badge ${statusClass}">${item.status}</span></td>
+              <td>${item.remarks}</td>
+            </tr>
+          `;
+        });
+      });
+      tbody.innerHTML = html;
+      summaryArea.innerHTML = `
+        <div class="summary-item total">
+          <span>Total</span>
+          <span class="summary-value">${total}</span>
+        </div>
+        <div class="summary-item published">
+          <span>Published</span>
+          <span class="summary-value">${published}</span>
+        </div>
+        <div class="summary-item draft">
+          <span>Draft</span>
+          <span class="summary-value">${draft}</span>
+        </div>
+      `;
+      bindToggleEvents();
+    }
+    function bindToggleEvents() {
+      const tbody = document.getElementById('tableBody');
+      tbody.removeEventListener('click', handleToggle);
+      tbody.addEventListener('click', handleToggle);
+    }
+    function handleToggle(e) {
+      const groupRow = e.target.closest('.group_row');
+      if (!groupRow) return;
+      groupRow.classList.toggle('collapsed');
+      const groupIndex = groupRow.getAttribute('data-group-index');
+      const itemRows = document.querySelectorAll(`.item_row[data-group-parent="${groupIndex}"]`);
+      const isCollapsed = groupRow.classList.contains('collapsed');
+      itemRows.forEach(row => {
+        if (isCollapsed) {
+          row.classList.add('hidden');
+        } else {
+          row.classList.remove('hidden');
+        }
+      });
+    }
+    document.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const view = urlParams.get('view');
+      if (view === 'front') {
+        currentTab = 'front';
+      } else {
+        currentTab = 'guide';
+      }
+      renderDashboard();
+    });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/js/include.js"></script>
+</body>
+</html>

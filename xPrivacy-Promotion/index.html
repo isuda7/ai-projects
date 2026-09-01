@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>xPrivacy - SNS 운영 사전 기획 보고서</title>
+    <meta name="description" content="xPrivacy SNS 채널 운영 전 방향성 수립 및 의사결정을 위한 사전 기획안">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <!-- Top Navigation -->
+    <nav class="top-nav">
+        <div class="nav-item" style="margin-bottom: 0.5rem;">
+            <button class="nav-btn" onclick="document.querySelector('[data-target=\'tab-planning\']').click(); setTimeout(() => document.getElementById('tab-planning').scrollTo({top: 0, behavior: 'smooth'}), 20);" style="display: flex; align-items: center;" aria-label="Home">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+            </button>
+        </div>
+        <div class="nav-item">
+            <button class="nav-btn" data-target="tab-planning">사전 기획</button>
+            <div class="sub-nav">
+                <button class="sub-nav-btn" data-scroll="slide-2">핵심 질문</button>
+                <button class="sub-nav-btn" data-scroll="slide-3">접근 방식</button>
+                <button class="sub-nav-btn" data-scroll="slide-4">제작 방식</button>
+                <button class="sub-nav-btn" data-scroll="slide-5">우리의 현실</button>
+                <button class="sub-nav-btn" data-scroll="slide-6">테스트 제안</button>
+                <button class="sub-nav-btn" data-scroll="slide-9">결정의 시간</button>
+            </div>
+        </div>
+        <div class="nav-item">
+            <button class="nav-btn" data-target="tab-content-planning">콘텐츠 기획</button>
+            <div class="sub-nav">
+                <button class="sub-nav-btn" data-scroll="slide-content-planning">아이디어 풀</button>
+                <button class="sub-nav-btn" data-scroll="slide-content-tutorial">제작 튜토리얼</button>
+                <button class="sub-nav-btn" data-scroll="slide-content-consumption">콘텐츠 소비 흐름</button>
+            </div>
+        </div>
+        <div class="nav-item">
+            <button class="nav-btn" data-target="tab-operation">운영 기획</button>
+            <div class="sub-nav">
+                <button class="sub-nav-btn" data-scroll="slide-7">알고리즘 공략법</button>
+                <button class="sub-nav-btn" data-scroll="slide-8">관리 지표</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <!-- TAB 1: 사전 기획 -->
+        <div id="tab-planning" class="tab-content active">
+
+            <!-- Global Intro (Overview) -->
+            <section class="slide" id="slide-0">
+                <div class="content fade-in-up" style="text-align: center;">
+                    <h1 class="title" style="margin-bottom: 4rem;">xPrivacy SNS 채널 운영<br><span class="highlight">2가지 핵심 전제</span></h1>
+
+
+                    <div style="max-width: 900px; margin: 0 auto 4rem auto;">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; text-align: left;">
+                            <!-- Premise 1 -->
+                            <div style="background: rgba(122, 40, 203, 0.1); border: 1px solid rgba(122, 40, 203, 0.3); border-radius: 16px; padding: 2.5rem 2rem; position: relative; overflow: hidden; transition: transform 0.3s ease;">
+                                <div style="position: absolute; top: -10px; right: 10px; font-size: 6rem; opacity: 0.05; user-select: none;">🎬</div>
+                                <div style="color: #d6a8ff; font-weight: 800; font-size: 0.9rem; margin-bottom: 1rem; letter-spacing: 1px;">SITUATION</div>
+                                <h3 style="color: #fff; font-size: 1.35rem; line-height: 1.5; margin-bottom: 0; word-break: keep-all; font-weight: 700; letter-spacing: -0.3px;">
+                                    실전으로 <span style="color: #d6a8ff;">제작 가능한 범위</span>를 확인하며 <span style="color: #d6a8ff;">보완</span>하는 과정이 필요한 상황
+                                </h3>
+                            </div>
+                            <!-- Premise 2 -->
+                            <div style="background: rgba(0, 210, 255, 0.05); border: 1px solid rgba(0, 210, 255, 0.2); border-radius: 16px; padding: 2.5rem 2rem; position: relative; overflow: hidden; transition: transform 0.3s ease;">
+                                <div style="position: absolute; top: -10px; right: 10px; font-size: 6rem; opacity: 0.05; user-select: none;">🗺️</div>
+                                <div style="color: var(--accent-blue); font-weight: 800; font-size: 0.9rem; margin-bottom: 1rem; letter-spacing: 1px;">OBJECTIVE</div>
+                                <h3 style="color: #fff; font-size: 1.4rem; line-height: 1.5; margin-bottom: 0; word-break: keep-all; font-weight: 700;">
+                                    실전에 앞서 <span style="color: var(--accent-blue);">막연함을 해소</span>하기 위한<br>
+                                    <span style="color: var(--accent-blue);">전체 흐름 파악</span>을 위한 목적
+                                </h3>
+                            </div>
+                        </div>
+
+                        <!-- Conclusion Block moved to subtitle -->
+                    </div>
+                </div>
+                <div class="scroll-indicator">
+                    <span>스크롤하여 기획 시작하기</span>
+                    <div class="arrow"></div>
+                </div>
+            </section>
+            <!-- Slide 1: Title -->
+            <section class="slide" id="slide-1">
+                <div class="content fade-in-up">
+                    <div class="badge">Phase 1. 사전 기획</div>
+                    <h1 class="title">방향성 수립과<br><span class="highlight">현실 점검</span></h1>
+                    <p class="subtitle">무작정 시작하기 전, 내부적으로 확인해야 할 기준점과 제작 방식 도출</p>
+                </div>
+                <div class="scroll-indicator">
+                    <span>스크롤하여 넘기기</span>
+                    <div class="arrow"></div>
+                </div>
+            </section>
+
+            <!-- Slide 2: The Core Problems -->
+            <section class="slide" id="slide-2">
+                <div class="content fade-in-up">
+                    <h2 class="section-title">01. Key Questions</h2>
+                    <h3 class="main-heading">무작정 시작하기 전,<br><span class="accent-red">우리가 확인해야 할 4가지 핵심 질문</span></h3>
+                    <div class="grid-2-col mt-4">
+                        <div class="card">
+                            <div class="card-icon">📱</div>
+                            <h4>어디서 (Channel)</h4>
+                            <p>모든 채널을 동시에 완벽하게 할 수는 없습니다.<br>숏폼, 인스타, 틱톡, 블로그 중 어디에 집중할 것인가요?</p>
+                            <button class="ex-btn mt-2" data-modal="q-where">비교 자료 보기</button>
+                        </div>
+                        <div class="card">
+                            <div class="card-icon">🤔</div>
+                            <h4>누구에게 (Targeting)</h4>
+                            <p>공공기관부터 B2B 기업, 일반 크리에이터(B2C)까지<br>거시적 관점에서 어떤 시장(유형)을 최우선 공략할 것인가요?</p>
+                            <button class="ex-btn mt-2" data-modal="q-who">타겟 분류 보기</button>
+                        </div>
+                        <div class="card">
+                            <div class="card-icon">🎭</div>
+                            <h4>어떤 느낌으로 (Tone & Manner)</h4>
+                            <p>전문적이고 신뢰감 있는 IT 서비스처럼 보일 것인가요,<br>아니면 친근하고 유쾌한 B급 감성으로 갈 것인가요?</p>
+                            <button class="ex-btn mt-2" data-modal="q-tone">유형 및 대안 보기</button>
+                        </div>
+                        <div class="card">
+                            <div class="card-icon">⚙️</div>
+                            <h4>어떻게 만들 것인가 (Production)</h4>
+                            <p>최소한의 리소스로 최대한의 효율을 뽑아내기 위해<br>대행사(우리)가 어떤 프로덕션 방식(풀-제작, AI 공장화, 인플루언서)으로 운영할 것인가요?</p>
+                            <button class="ex-btn mt-2" data-modal="q-how">제작 요건 보기</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 3: Content Approach -->
+            <section class="slide" id="slide-3">
+                <div class="content fade-in-up">
+                    <h2 class="section-title">02. Content Approach</h2>
+                    <h3 class="main-heading">콘텐츠 <span class="highlight">접근 방식</span></h3>
+                    <p class="desc">서비스의 성격과 타겟(B2B/B2C)에 맞춰 4가지 마케팅 소구점 중 메인 방향을 선택해야 합니다.</p>
+                    <div class="grid-2-col mt-4">
+                        <div class="card">
+                            <div class="card-icon">🏢</div>
+                            <h4>[B2G/B2B] 신뢰성 중심의 활용 시나리오</h4>
+                            <p>초기 레퍼런스가 부족한 점을 고려해, 가상의 실무 위기 상황(법적 리스크)을 해결하는 시나리오 연출로 신뢰도를 구축합니다.</p>
+                            <button class="ex-btn mt-2" data-modal="content-a">접근법 분석 보기</button>
+                        </div>
+                        <div class="card">
+                            <div class="card-icon">⚡</div>
+                            <h4>[B2B/B2C] 직관적인 테크 데모 (Tech Demo)</h4>
+                            <p>복잡한 서론 없이, 영상 업로드부터 비식별화까지의 압도적인 속도(비포/애프터)만 빠르게 보여줍니다.</p>
+                            <button class="ex-btn mt-2" data-modal="content-b">접근법 분석 보기</button>
+                        </div>
+                        <div class="card">
+                            <div class="card-icon">😂</div>
+                            <h4>[B2C] 유쾌한 상황극 / 밈 (Meme)</h4>
+                            <p>무료 이미지나 유행하는 짤방에 AI 더빙만 얹어, 모자이크 노가다의 고통을 100% 무촬영 숏폼으로 연출합니다.</p>
+                            <button class="ex-btn mt-2" data-modal="content-c">접근법 분석 보기</button>
+                        </div>
+                        <div class="card">
+                            <div class="card-icon">💡</div>
+                            <h4>[B2B/B2C] 정보성 큐레이션 (Infographic)</h4>
+                            <p>"내 브이로그가 불법이 되는 3가지 순간" 등 초상권 관련 지식을 꿀팁(Tip) 형태로 유익하게 풀어줍니다.</p>
+                            <button class="ex-btn mt-2" data-modal="content-d">접근법 분석 보기</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 4: Production Method -->
+            <section class="slide" id="slide-4"
+                style="height: auto; min-height: 100vh; padding-bottom: 5rem; padding-top: 3rem;">
+                <div class="content fade-in-up" style="margin: 0 auto; display: block; text-align: left;">
+                    <h2 class="section-title">03. Production Method (Reality Check)</h2>
+                    <h3 class="main-heading">콘텐츠 <span class="highlight">제작 방식</span></h3>
+                    <p class="mt-2" style="color: var(--text-muted);">별도의 촬영 없이 사내에서 기획 및 제작할 수 있는 6가지 포맷입니다.</p>
+
+                    <div class="reality-list mt-4"
+                        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+
+                        <div class="target-card" style="text-align: left; padding: 1.5rem;">
+                            <h4 style="color: var(--accent-blue); margin-bottom: 0.5rem; line-height: 1.4;">
+                                1. 텍스트 + AI 음성<br>
+                                <span style="color: #fff; font-size: 1rem;">(라디오형)</span>
+                            </h4>
+                            <p style="font-size: 0.95rem;"><strong>방식:</strong> 정지된 배경 이미지 한 장에 자막과 AI 성우(TTS) 더빙만 입힙니다.
+                            </p>
+                            <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 0.5rem;"><strong>현실
+                                    체크:</strong> 촬영 불필요. 제작 난이도 최하. 오직 대본(카피라이팅)의 필력에 조회수가 100% 좌우됩니다.</p>
+                        </div>
+
+                        <div class="target-card" style="text-align: left; padding: 1.5rem;">
+                            <h4 style="color: var(--accent-blue); margin-bottom: 0.5rem; line-height: 1.4;">
+                                2. PC 화면 녹화<br>
+                                <span style="color: #fff; font-size: 1rem;">(데모형)</span>
+                            </h4>
+                            <p style="font-size: 0.95rem;"><strong>방식:</strong> xPrivacy 솔루션이 모자이크를 처리하는 모니터 화면만
+                                녹화(Screencast)합니다.</p>
+                            <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 0.5rem;"><strong>현실
+                                    체크:</strong> 촬영/얼굴 노출 없음. 기술적 성능을 가장 직관적으로 보여주지만 시각적 재미(밈)는 떨어질 수 있습니다.</p>
+                        </div>
+
+                        <div class="target-card" style="text-align: left; padding: 1.5rem;">
+                            <h4 style="color: var(--accent-blue); margin-bottom: 0.5rem; line-height: 1.4;">
+                                3. 무료 스톡 영상<br>
+                                <span style="color: #fff; font-size: 1rem;">(푸티지형)</span>
+                            </h4>
+                            <p style="font-size: 0.95rem;"><strong>방식:</strong> 무료 영상 소스(Pexels 등)에서 '당황하는 직장인' 영상을 다운받아
+                                자막을 얹습니다.</p>
+                            <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 0.5rem;"><strong>현실
+                                    체크:</strong> 장비 없이도 전문적인 비주얼 확보 가능. 하지만 다른 채널에서 본 듯한 뻔한 기성품 느낌이 날 수 있습니다.</p>
+                        </div>
+
+                        <div class="target-card" style="text-align: left; padding: 1.5rem;">
+                            <h4 style="color: var(--accent-blue); margin-bottom: 0.5rem; line-height: 1.4;">
+                                4. 유행 짤방 편집<br>
+                                <span style="color: #fff; font-size: 1rem;">(밈/카드뉴스)</span>
+                            </h4>
+                            <p style="font-size: 0.95rem;"><strong>방식:</strong> 인터넷 유명 짤방(Meme)이나 이미지 몇 장을 이어 붙여 슬라이드나
+                                숏폼으로 구성합니다.</p>
+                            <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 0.5rem;"><strong>현실
+                                    체크:</strong> 유저 친화적이고 유머러스함. 기획자의 센스가 절대적이며, 원본 짤방의 저작권 리스크를 체크해야 합니다.</p>
+                        </div>
+
+                        <div class="target-card" style="text-align: left; padding: 1.5rem;">
+                            <h4 style="color: var(--accent-blue); margin-bottom: 0.5rem; line-height: 1.4;">
+                                5. AI 생성 이미지<br>
+                                <span style="color: #fff; font-size: 1rem;">(컷툰형)</span>
+                            </h4>
+                            <p style="font-size: 0.95rem;"><strong>방식:</strong> 미드저니 등 생성형 AI로 원하는 상황(예: 벌금 맞는 사장님) 이미지를
+                                뽑아 만화처럼 엮습니다.</p>
+                            <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 0.5rem;"><strong>현실
+                                    체크:</strong> 머릿속 기획을 완벽하게 시각화할 수 있고 초상권 부담이 0(Zero)입니다. 프롬프트 작성 숙련도가 필요합니다.</p>
+                        </div>
+
+                        <div class="target-card" style="text-align: left; padding: 1.5rem;">
+                            <h4 style="color: var(--accent-blue); margin-bottom: 0.5rem; line-height: 1.4;">
+                                6. 데이터 시각화<br>
+                                <span style="color: #fff; font-size: 1rem;">(인포그래픽)</span>
+                            </h4>
+                            <p style="font-size: 0.95rem;"><strong>방식:</strong> 모자이크 편집 소요 시간, 비용 절감액 등 통계 수치를 강조하는 심플한
+                                모션 그래픽.</p>
+                            <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 0.5rem;"><strong>현실
+                                    체크:</strong> B2B나 공공기관 담당자에게 전문성/신뢰를 주기에 최적입니다. 템플릿(미리캔버스 등) 툴 의존도가 높습니다.</p>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 5: Resource Audit -->
+            <section class="slide" id="slide-5">
+                <div class="content fade-in-up">
+                    <h2 class="section-title">04. Fact Check</h2>
+                    <h3 class="main-heading">우리의 <span class="highlight">뼈 때리는 현실</span></h3>
+                    <div class="grid-2-col mt-4">
+                        <div class="content-box"
+                            style="border-color: var(--accent-red); background: rgba(255, 75, 75, 0.05);">
+                            <div class="box-header"
+                                style="color: var(--accent-red); margin-bottom: 1rem; border-bottom: 1px solid rgba(255,75,75,0.2); padding-bottom: 0.5rem;">
+                                우리가 직면한 진짜 문제 🚨</div>
+                            <div style="display: flex; flex-direction: column; gap: 1rem;">
+                                <div>
+                                    <strong style="color: #fff; display: block; margin-bottom: 0.2rem;">1. 기획과 구현의
+                                        미스매치</strong>
+                                    <span style="font-size: 0.95rem;">기획을 했더라도, 현재 우리의 툴(AI, 편집) 숙련도로 그것을 실제로 구현할 수 있을지
+                                        견적을 낼 수 없음</span>
+                                </div>
+                                <div>
+                                    <strong style="color: #fff; display: block; margin-bottom: 0.2rem;">2. 무의미한 탁상공론
+                                        리스크</strong>
+                                    <span style="font-size: 0.95rem;">회의실에서 완벽하게 기획해도, 막상 툴을 열면 막혀서 폐기될 확률이 높음</span>
+                                </div>
+                                <div>
+                                    <strong style="color: #fff; display: block; margin-bottom: 0.2rem;">3. 물리적 리소스(시간)의
+                                        한계</strong>
+                                    <span style="font-size: 0.95rem;">전담팀 없이 다른 업무(본업)와 병행하며 자투리 시간을 쪼개 써야 하는 빡빡한
+                                        현실</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content-box"
+                            style="border-color: var(--accent-blue); background: rgba(0, 210, 255, 0.05);">
+                            <div class="box-header"
+                                style="color: var(--accent-blue); margin-bottom: 1rem; border-bottom: 1px solid rgba(0,210,255,0.2); padding-bottom: 0.5rem;">
+                                그래서 도출된 우리의 전략 (실험주의) 💡</div>
+                            <div style="display: flex; flex-direction: column; gap: 1.2rem;">
+                                <div>
+                                    <strong style="color: #fff; display: block; margin-bottom: 0.2rem;">1. 완벽한 기획 대신 "일단
+                                        실험"</strong>
+                                    <span style="font-size: 0.95rem;">마스터플랜을 짜는 대신, 모든 기획을 테스트베드로 삼아 직접 부딪혀봄</span>
+                                </div>
+                                <div>
+                                    <strong style="color: #fff; display: block; margin-bottom: 0.2rem;">2. 프로토타입(시안)
+                                        우선주의</strong>
+                                    <span style="font-size: 0.95rem;">탁상공론 전에, 10초라도 먼저 캡컷/AI로 만들어보고 가능성을 타진함</span>
+                                </div>
+                                <div>
+                                    <strong style="color: #fff; display: block; margin-bottom: 0.2rem;">3. 빠른 실패를 통한 포맷
+                                        발굴</strong>
+                                    <span style="font-size: 0.95rem;">퀄리티 집착을 버리고, 우리가 '지속 가능하게' 쳐낼 수 있는 폼을 찾음</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 6: Pilot Test -->
+            <section class="slide" id="slide-6">
+                <div class="content fade-in-up">
+                    <h2 class="section-title">05. Strategy Proposal</h2>
+                    <h3 class="main-heading">결론: 리스크를 줄이는 <span class="highlight">파일럿 테스트 제안</span></h3>
+                    <div class="channel-tabs mt-4"
+                        style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;">
+                        <div class="channel-card"
+                            style="padding: 2rem; background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 16px;">
+                            <div style="font-size: 2rem; margin-bottom: 1rem;">🖥️</div>
+                            <h4 style="color: var(--accent-blue); margin-bottom: 1rem;">트랙 A: 테크 데모<br><span
+                                    style="font-size: 0.9rem; color: var(--text-muted); font-weight: normal;">(화면 녹화
+                                    튜토리얼)</span></h4>
+                            <p style="font-size: 0.95rem; line-height: 1.6;"><strong>콘텐츠:</strong> 복잡한 서론 없이 xPrivacy가
+                                모자이크를 처리하는 과정을 화면 녹화로만 보여줌</p>
+                            <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 0.5rem;">
+                                <strong>목적:</strong> 제품의 압도적 성능(비포/애프터) 어필<br><strong>리소스:</strong> 최하 (하루 10분 컷)</p>
+                        </div>
+                        <div class="channel-card"
+                            style="padding: 2rem; background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 16px;">
+                            <div style="font-size: 2rem; margin-bottom: 1rem;">😂</div>
+                            <h4 style="color: var(--accent-blue); margin-bottom: 1rem;">트랙 B: B급 밈/상황극<br><span
+                                    style="font-size: 0.9rem; color: var(--text-muted); font-weight: normal;">(이미지+AI
+                                    더빙)</span></h4>
+                            <p style="font-size: 0.95rem; line-height: 1.6;"><strong>콘텐츠:</strong> 무료 이미지나 유행 짤방에 AI 성우
+                                더빙만 얹어 숏폼 상황극을 100% 무촬영으로 제작</p>
+                            <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 0.5rem;">
+                                <strong>목적:</strong> 공감대 형성을 통한 자발적 숏폼 바이럴<br><strong>리소스:</strong> 하 (기획/센스 의존도 높음)</p>
+                        </div>
+                        <div class="channel-card"
+                            style="padding: 2rem; background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 16px;">
+                            <div style="font-size: 2rem; margin-bottom: 1rem;">💡</div>
+                            <h4 style="color: var(--accent-blue); margin-bottom: 1rem;">트랙 C: 정보성 큐레이션<br><span
+                                    style="font-size: 0.9rem; color: var(--text-muted); font-weight: normal;">(무료 템플릿
+                                    양산)</span></h4>
+                            <p style="font-size: 0.95rem; line-height: 1.6;"><strong>콘텐츠:</strong> "브이로그가 불법이 되는 순간" 등
+                                초상권 지식을 카드뉴스/숏폼 템플릿으로 발행</p>
+                            <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 0.5rem;">
+                                <strong>목적:</strong> 타겟 유저(PD, 마케터)의 '저장/공유' 유도<br><strong>리소스:</strong> 중 (정보 취합 및 디자인
+                                필요)</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 9: Next Step -->
+            <section class="slide" id="slide-9">
+                <div class="content fade-in-up">
+                    <h2 class="section-title">06. Action Item</h2>
+                    <h3 class="main-heading">이제, <span class="highlight">결정해야 할 시간입니다.</span></h3>
+                    <p class="mt-2" style="color: var(--text-muted);">성공적인 킥오프를 위해 다음 3가지 사항에 대한 명확한 확인이 필요합니다.</p>
+                    <div class="channel-tabs mt-4"
+                        style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;">
+                        <div class="channel-card"
+                            style="padding: 2rem; background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 16px;">
+                            <h4 style="color: var(--accent-blue); margin-bottom: 1rem;">📝 1. 파일럿 테스트 승인</h4>
+                            <p style="font-size: 0.95rem; line-height: 1.6;">예산 없이 진행되는 4주간의 '3-Track 실험' 프로젝트의 시작을
+                                승인하십니까?</p>
+                        </div>
+                        <div class="channel-card"
+                            style="padding: 2rem; background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 16px;">
+                            <h4 style="color: var(--accent-blue); margin-bottom: 1rem;">⏱️ 2. 리소스(시간) 보장</h4>
+                            <p style="font-size: 0.95rem; line-height: 1.6;">본업과 병행하는 실무자가 콘텐츠 제작에 매주 최소 3~5시간을 온전히 할애할
+                                수 있도록 업무 시간을 보장하십니까?</p>
+                        </div>
+                        <div class="channel-card"
+                            style="padding: 2rem; background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 16px;">
+                            <h4 style="color: var(--accent-blue); margin-bottom: 1rem;">🛡️ 3. B급 톤앤매너 용인</h4>
+                            <p style="font-size: 0.95rem; line-height: 1.6;">테스트 과정에서 기존의 딱딱한 기업 이미지와 다른 B급 밈/상황극이 업로드
+                                되더라도 이를 '실험'으로서 용인하십니까?</p>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        </div> <!-- End of tab-planning -->
+
+        <!-- TAB 3: 운영 기획 -->
+        <div id="tab-operation" class="tab-content">
+
+            <!-- Operation Intro -->
+            <section class="slide" id="slide-operation-intro">
+                <div class="content fade-in-up">
+                    <div class="badge">Phase 3. 운영 기획</div>
+                    <h1 class="title">어떻게<br><span class="highlight">살아남을 것인가?</span></h1>
+                    <p class="subtitle">알고리즘의 현실을 돌파하기 위한 단계별 운영 및 관리 전략</p>
+                </div>
+                <div class="scroll-indicator">
+                    <span>스크롤하여 넘기기</span>
+                    <div class="arrow"></div>
+                </div>
+            </section>
+
+            <!-- Slide 7: Algorithm Strategy -->
+            <section class="slide" id="slide-7">
+                <div class="content fade-in-up">
+                    <h2 class="section-title">01. Algorithm Strategy</h2>
+                    <h3 class="main-heading">알고리즘 기차에 <span class="highlight">탑승하는 3대 방법론</span></h3>
+                    <p class="mt-2" style="color: var(--text-muted);">계정 자체가 알고리즘의 간택을 받기 위해 실행해야 할 물리적, 운영적 차원의 전략입니다.</p>
+                    <div class="channel-tabs mt-4"
+                        style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;">
+                        <div class="channel-card"
+                            style="padding: 2rem; background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 16px;">
+                            <div style="font-size: 2rem; margin-bottom: 1rem;">🌊</div>
+                            <h4 style="color: var(--accent-blue); margin-bottom: 1rem;">1. 꾸준한 물량 타격 (Consistency)</h4>
+                            <p style="font-size: 0.95rem; line-height: 1.6;">알고리즘은 활동성이 검증된 계정을 밀어줍니다. 첫 영상이 터지길 기도하는 대신, 알고리즘 풀에 걸릴 때까지 <strong>주 3회 이상 기계적인 업로드</strong>로 임계점을 돌파합니다.</p>
+                        </div>
+                        <div class="channel-card"
+                            style="padding: 2rem; background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 16px;">
+                            <div style="font-size: 2rem; margin-bottom: 1rem;">🎵</div>
+                            <h4 style="color: var(--accent-blue); margin-bottom: 1rem;">2. 트렌딩 오디오 탑승 (Hijacking)</h4>
+                            <p style="font-size: 0.95rem; line-height: 1.6;">플랫폼이 현재 전략적으로 밀어주고 있는 <strong>인기 음원이나 유행하는 템플릿(캡컷 등)</strong>을 무조건 사용하여, 알고리즘의 추천 로직(버스)에 억지로라도 탑승합니다.</p>
+                        </div>
+                        <div class="channel-card"
+                            style="padding: 2rem; background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 16px;">
+                            <div style="font-size: 2rem; margin-bottom: 1rem;">🚀</div>
+                            <h4 style="color: var(--accent-blue); margin-bottom: 1rem;">3. 초기 트래픽 펌핑 (Pumping)</h4>
+                            <p style="font-size: 0.95rem; line-height: 1.6;">업로드 직후 1~2시간 내의 반응이 노출의 스노우볼을 굴립니다. 발행 즉시 사내 메신저, 개인 SNS, 커뮤니티 등에 링크를 뿌려 <strong>초기 마중물 조회수</strong>를 인위적으로 주입합니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 8: Operation Management -->
+            <section class="slide" id="slide-8">
+                <div class="content fade-in-up">
+                    <h2 class="section-title">02. Operation Management</h2>
+                    <h3 class="main-heading">운영 시작 후, <span class="highlight">무엇을 관리할 것인가?</span></h3>
+                    <p class="mt-2" style="color: var(--text-muted);">파일럿 테스트 이후 채널이 본격적으로 굴러가기 시작할 때 추적해야 할 3가지 핵심 관리
+                        포인트입니다.</p>
+                    <div class="channel-tabs mt-4"
+                        style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;">
+                        <div class="channel-card"
+                            style="padding: 2rem; background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 16px;">
+                            <div style="font-size: 2rem; margin-bottom: 1rem;">📈</div>
+                            <h4 style="color: var(--accent-blue); margin-bottom: 1rem;">1. 진짜 지표 추적<br><span
+                                    style="font-size: 0.9rem; color: var(--text-muted); font-weight: normal;">(허수
+                                    걷어내기)</span></h4>
+                            <p style="font-size: 0.95rem; line-height: 1.6;">단순 조회수(노출)가 아닌, 실질적인 <strong>시청 지속
+                                    시간</strong>과 <strong>저장/공유 비율</strong>을 추적하여 알고리즘 점수와 콘텐츠의 진짜 가치를 판단합니다.</p>
+                        </div>
+                        <div class="channel-card"
+                            style="padding: 2rem; background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 16px;">
+                            <div style="font-size: 2rem; margin-bottom: 1rem;">♻️</div>
+                            <h4 style="color: var(--accent-blue); margin-bottom: 1rem;">2. 파이프라인 최적화<br><span
+                                    style="font-size: 0.9rem; color: var(--text-muted); font-weight: normal;">(지속
+                                    가능성)</span></h4>
+                            <p style="font-size: 0.95rem; line-height: 1.6;">본업에 지장을 주지 않도록 기획-제작-업로드의 루틴을
+                                <strong>템플릿화</strong>하고, 주 단위로 제작 소요 시간을 지속적으로 단축시킵니다.</p>
+                        </div>
+                        <div class="channel-card"
+                            style="padding: 2rem; background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 16px;">
+                            <div style="font-size: 2rem; margin-bottom: 1rem;">🎯</div>
+                            <h4 style="color: var(--accent-blue); margin-bottom: 1rem;">3. 기민한 피드백 루프<br><span
+                                    style="font-size: 0.9rem; color: var(--text-muted); font-weight: normal;">(선택과
+                                    집중)</span></h4>
+                            <p style="font-size: 0.95rem; line-height: 1.6;">3개의 파일럿 트랙 중 유의미한 반응이 오는 <strong>하나의 포맷에
+                                    리소스를 집중</strong>하고, 나머지는 미련 없이 폐기하여 핏(Fit)을 날카롭게 좁힙니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div> <!-- End of tab-operation -->
+
+        <!-- TAB 2: 콘텐츠 기획 -->
+        <div id="tab-content-planning" class="tab-content">
+
+            <!-- Content Intro -->
+            <section class="slide" id="slide-content-intro">
+                <div class="content fade-in-up">
+                    <div class="badge">Phase 2. 콘텐츠 기획</div>
+                    <h1 class="title">무엇을, 어떻게<br><span class="highlight">만들 것인가?</span></h1>
+                    <p class="subtitle">타겟 페르소나와 접근 방식에 따른 실전 콘텐츠 기획안</p>
+                </div>
+                <div class="scroll-indicator">
+                    <span>스크롤하여 넘기기</span>
+                    <div class="arrow"></div>
+                </div>
+            </section>
+
+            <section class="long-page" id="slide-content-planning">
+                <div class="content fade-in-up">
+                    <h2 class="section-title">01. Content Blueprint</h2>
+                    <h3 class="main-heading">아이디어 참고용 <span class="highlight">콘텐츠 풀 (Pool)</span></h3>
+                    <p class="desc">실제 제작 가능 여부와 상관없이, 타겟과 접근 방식을 고려해 자유롭게 도출해 본 아이디어 리스트입니다.</p>
+
+                    <div class="idea-container mt-4">
+
+                        <!-- 카테고리 1 -->
+                        <div class="category-section">
+                            <h3 class="category-header" style="color: var(--accent-red);">😡 1. 공감/일상 (Pain-point)</h3>
+                            <div class="category-body">
+                                <div class="idea-grid">
+                                    <div class="idea-card">
+                                        <div class="idea-hook">"저기요 지워주세요"</div>
+                                        <div class="idea-desc">길거리 브이로그 중 행인이 다가와 영상 내리라고 화내는 POV 상황극 (원클릭 해결)</div>
+                                    </div>
+                                    <div class="idea-card">
+                                        <div class="idea-hook">"전 남친/여친 흔적 지우기"</div>
+                                        <div class="idea-desc">릴스 내리기 아까울 때 전 애인 얼굴만 타겟팅해서 가리는 꿀팁</div>
+                                    </div>
+                                    <div class="idea-card">
+                                        <div class="idea-hook">"야외 댄스 챌린지 빌런"</div>
+                                        <div class="idea-desc">뒤에서 춤 구경하며 시선 강탈하는 아저씨, 드래그 한 번으로 지우기</div>
+                                    </div>
+                                    <div class="idea-card">
+                                        <div class="idea-hook">"카페 진상 손님 가리기"</div>
+                                        <div class="idea-desc">예쁜 카페 브이로그에 찍힌 코 파는 손님 클릭 한 번으로 날려버리기</div>
+                                    </div>
+                                    <div class="idea-card">
+                                        <div class="idea-hook">"모자이크 깜빡한 대참사"</div>
+                                        <div class="idea-desc">모자이크 하나 놓쳐서 맘카페에 박제될 뻔한 유튜버 식은땀 썰</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 카테고리 2 -->
+                        <div class="category-section">
+                            <h3 class="category-header" style="color: var(--accent-blue);">⚡️ 2. 기능 과시 (Tech & Magic)
+                            </h3>
+                            <div class="category-body">
+                                <div class="idea-grid">
+                                    <div class="idea-card">
+                                        <div class="idea-hook">"월리를 찾아라 모자이크 편"</div>
+                                        <div class="idea-desc">명동 한복판 영상에서 1초 만에 100명 얼굴 동시 블러링 (노컷 데모)</div>
+                                    </div>
+                                    <div class="idea-card">
+                                        <div class="idea-hook">"비트 드롭 블러링"</div>
+                                        <div class="idea-desc">트렌딩 비트에 맞춰 쿵짝짝 할 때마다 군중 얼굴이 팝업처럼 가려지는 ASMR</div>
+                                    </div>
+                                    <div class="idea-card">
+                                        <div class="idea-hook">"마라톤 대회 모자이크"</div>
+                                        <div class="idea-desc">쉴 새 없이 움직이는 수천 명의 러너들 얼굴 AI 극한 트래킹 테스트</div>
+                                    </div>
+                                    <div class="idea-card">
+                                        <div class="idea-hook">"CCTV 100배속 비식별화"</div>
+                                        <div class="idea-desc">범죄 수사물 느낌으로 CCTV 속 차량 번호판/얼굴 실시간 모자이크</div>
+                                    </div>
+                                    <div class="idea-card">
+                                        <div class="idea-hook">"마우스 딸깍 챌린지"</div>
+                                        <div class="idea-desc">기존 편집 노가다 화면 vs xPrivacy 단축키 1번 화면 속도 100배 비교</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 카테고리 3 -->
+                        <div class="category-section">
+                            <h3 class="category-header" style="color: var(--accent-purple);">🚨 3. 공포 마케팅 (Fear & Legal)
+                            </h3>
+                            <div class="category-body">
+                                <div class="idea-grid">
+                                    <div class="idea-card">
+                                        <div class="idea-hook">"초상권 고소장 언박싱"</div>
+                                        <div class="idea-desc">무심코 올린 여행 브이로그 때문에 경찰서에서 연락 온 썰툰</div>
+                                    </div>
+                                    <div class="idea-card">
+                                        <div class="idea-hook">"모자이크 알바 썼다가 피 본 썰"</div>
+                                        <div class="idea-desc">대충 가려서 결국 벌금 낸 스타트업 대표의 분노 브이로그</div>
+                                    </div>
+                                    <div class="idea-card">
+                                        <div class="idea-hook">"이것도 초상권 침해라고요?"</div>
+                                        <div class="idea-desc">식당 남의 테이블, 어디까지 가려야 할까? OX 퀴즈 숏폼</div>
+                                    </div>
+                                    <div class="idea-card">
+                                        <div class="idea-hook">"계정 수익 정지 당한 이유"</div>
+                                        <div class="idea-desc">신고 누적으로 채널 날아간 유튜버의 눈물 줄줄 후회 (페이크 다큐)</div>
+                                    </div>
+                                    <div class="idea-card">
+                                        <div class="idea-hook">"CCTV 유출 벌금 3천만 원"</div>
+                                        <div class="idea-desc">아파트 관리소장님이 엘리베이터 영상 잘못 썼다가 징계받은 사연</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 카테고리 4 -->
+                        <div class="category-section">
+                            <h3 class="category-header" style="color: #ffb703;">😂 4. B급/유머 (Meme)</h3>
+                            <div class="category-body">
+                                <div class="idea-grid">
+                                    <div class="idea-card">
+                                        <div class="idea-hook">"모자이크 깎는 노인"</div>
+                                        <div class="idea-desc">골방에서 장인정신으로 프레임 단위 모자이크를 하다가 쓰러지는 패러디</div>
+                                    </div>
+                                    <div class="idea-card">
+                                        <div class="idea-hook">"퇴사 통보 브이로그"</div>
+                                        <div class="idea-desc">2시간짜리 행사 영상 내일까지 모자이크 하라는 부장님 ➡️ 바로 퇴사 박는 썰</div>
+                                    </div>
+                                    <div class="idea-card">
+                                        <div class="idea-hook">"관짝소년단 패러디"</div>
+                                        <div class="idea-desc">얼굴 안 가린 순간 춤추는 관짝소년단 등장, 솔루션 쓰자마자 실망하고 돌아감</div>
+                                    </div>
+                                    <div class="idea-card">
+                                        <div class="idea-hook">"강형욱 호통 밈"</div>
+                                        <div class="idea-desc">"보호자님! 뒤에 사람 안 가릴 거면 영상 찍지 마세요!" 호통 패러디</div>
+                                    </div>
+                                    <div class="idea-card">
+                                        <div class="idea-hook">"무한도전 해골 밈"</div>
+                                        <div class="idea-desc">펑! 소리와 함께 엑스트라들 얼굴에 무도 해골 마크가 박히는 B급 합성</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 카테고리 5 -->
+                        <div class="category-section">
+                            <h3 class="category-header" style="color: #06d6a0;">🏢 5. 눈물의 직장인 (Office Drama)</h3>
+                            <div class="category-body">
+                                <div class="idea-grid">
+                                    <div class="idea-card">
+                                        <div class="idea-hook">"홍보팀 막내의 반란"</div>
+                                        <div class="idea-desc">체육대회 영상(시민 500명) 지시받고 10분 만에 끝낸 뒤 칼퇴하는 숏폼</div>
+                                    </div>
+                                    <div class="idea-card">
+                                        <div class="idea-hook">"대행사 PD의 썩소"</div>
+                                        <div class="idea-desc">납품 10분 전에 "뒤에 사람 다 가려주세요" 피드백 받고 썩소 짓는 썰</div>
+                                    </div>
+                                    <div class="idea-card">
+                                        <div class="idea-hook">"회사 돈으로 결제받는 법"</div>
+                                        <div class="idea-desc">"제 야근 수당보다 앱 구독료가 쌉니다"라고 패기 있게 기안 올리는 썰</div>
+                                    </div>
+                                    <div class="idea-card">
+                                        <div class="idea-hook">"생방송 방송 사고"</div>
+                                        <div class="idea-desc">뉴스 자료화면 모자이크 렌더링 덜 돼서 짤릴 뻔한 막내 PD의 후기</div>
+                                    </div>
+                                    <div class="idea-card">
+                                        <div class="idea-hook">"스타트업 마케터 생존기"</div>
+                                        <div class="idea-desc">직원들로 홍보 영상 찍는데 얼굴 팔리기 싫다길래 얼굴 다 가려주는 썰</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide: Content Tutorial -->
+            <section class="slide tutorial-slide" id="slide-content-tutorial">
+                <div class="content fade-in-up tutorial-content">
+                    <h2 class="section-title">02. Production Tutorial</h2>
+                    <h3 class="main-heading">실전 <span class="highlight">콘텐츠 제작 워크플로우</span></h3>
+                    <p class="desc mt-2">단순히 툴을 이어 붙이는 것이 아닙니다. <strong>실제 실무자가 30분 만에 숏폼 1개를 뽑아내는 4단계 리얼 워크플로우</strong>입니다.</p>
+
+                    <div class="channel-tabs mt-4 workflow-grid">
+                        <!-- Step 1 -->
+                        <div class="workflow-card">
+                            <div class="workflow-badge bg-dark">소요시간: 5분</div>
+                            <div class="workflow-icon">✂️</div>
+                            <h4 class="workflow-title">1. 원석 캐내기 (가편집)</h4>
+                            <p class="workflow-desc">무거운 원본(30분) 전체를 모자이크 할 필요 없습니다. 스마트폰 갤러리나 기본 사진앱에서 오늘 쓸 알짜배기 '30초'만 미리 잘라냅니다.</p>
+                            <div class="workflow-tools">
+                                <strong>사용 툴:</strong> 스마트폰 기본 갤러리
+                            </div>
+                        </div>
+
+                        <!-- Step 2 -->
+                        <div class="workflow-card">
+                            <div class="workflow-badge bg-red">소요시간: 1분</div>
+                            <div class="workflow-icon">🪄</div>
+                            <h4 class="workflow-title">2. 초상권 클리어</h4>
+                            <p class="workflow-desc">잘라낸 30초짜리 영상을 xPrivacy에 던져 넣습니다. 화질 저하 없이 클릭 한 번으로 모든 행인의 얼굴과 사생활 정보를 날려버립니다.</p>
+                            <div class="workflow-tools">
+                                <strong>사용 툴:</strong> xPrivacy 솔루션
+                            </div>
+                        </div>
+
+                        <!-- Step 3 -->
+                        <div class="workflow-card">
+                            <div class="workflow-badge bg-dark">소요시간: 10분</div>
+                            <div class="workflow-icon">🎙️</div>
+                            <h4 class="workflow-title">3. 더빙 및 자동 자막</h4>
+                            <p class="workflow-desc">모자이크가 끝난 깨끗한 영상을 편집 툴로 가져옵니다. 내가 직접 말할 필요 없이 AI 성우(TTS)를 입히고 '자동 캡션'을 생성합니다.</p>
+                            <div class="workflow-tools">
+                                <strong>사용 툴:</strong> Vrew, 캡컷(CapCut)
+                            </div>
+                        </div>
+
+                        <!-- Step 4 -->
+                        <div class="workflow-card">
+                            <div class="workflow-badge bg-purple">소요시간: 10분</div>
+                            <div class="workflow-icon">🚀</div>
+                            <h4 class="workflow-title">4. 어그로 장착 및 배포</h4>
+                            <p class="workflow-desc">알고리즘의 선택을 받기 위한 화룡점정 단계입니다. 펑! 하는 효과음과 트렌딩 BGM을 입히고 릴스, 쇼츠에 즉시 업로드합니다.</p>
+                            <div class="workflow-tools">
+                                <strong>사용 툴:</strong> 인스타그램, 유튜브
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 마무리 코멘트 -->
+                    <div class="workflow-footer-box fade-in-up">
+                        <h4 class="footer-title">
+                            <span class="footer-icon">💡</span> 기획의 한계와 현실적인 돌파구
+                        </h4>
+                        <p class="footer-desc">
+                            현재와 같이 '무료 AI'에만 의존하는 제작 방식은 장기적인 콘텐츠 퀄리티와 표현력에 분명한 한계가 존재합니다. <br>
+                            따라서 채널의 지속적인 성장을 위해서는 이러한 의존성을 극복할 수 있도록 <strong class="text-main">더욱 다양한 기획 접근법과 현실적인 제작 대안을 지속적으로 모색</strong>해야 합니다.
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <!-- Slide: Content Consumption Flow -->
+            <section class="slide" id="slide-content-consumption">
+                <div class="content fade-in-up">
+                    <h2 class="section-title">03. Content Consumption Flow</h2>
+                    <h3 class="main-heading">콘텐츠 <span class="highlight">소비 흐름 4단계</span></h3>
+                    <p class="mt-2" style="color: var(--text-muted);">알고리즘은 단순한 노출 기계가 아닙니다. 시청자의 행동 흐름에 맞춘 단계별 핵심 공략
+                        포인트입니다.</p>
+
+                    <div class="algorithm-steps mt-4"
+                        style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem;">
+                        <div class="step-card"
+                            style="padding: 1.5rem; background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 12px; display: flex; flex-direction: column;">
+                            <div
+                                style="color: var(--accent-blue); font-weight: bold; margin-bottom: 0.5rem; font-size: 0.9rem;">
+                                STEP 1. 시드 노출</div>
+                            <h4 style="color: #fff; margin-bottom: 1rem; line-height: 1.3;">스크롤 멈추기<br><span
+                                    style="font-size: 0.85rem; color: var(--accent-red);">우선순위: 3초 훅(Hook)</span></h4>
+                            <p style="font-size: 0.9rem; line-height: 1.5; color: var(--text-muted); flex-grow: 1;">알고리즘이 소규모 그룹에 테스트를
+                                돌리는 최초 단계. 무조건 첫 3초의 강력한 시각/청각적 자극으로 이탈(스크롤)을 막는 것이 유일한 목표입니다.</p>
+                            <button class="ex-btn modal-trigger" data-modal="algo-step-1" style="width: 100%; margin-top: 1rem;">자세히 보기</button>
+                        </div>
+
+                        <div class="step-card"
+                            style="padding: 1.5rem; background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 12px; display: flex; flex-direction: column;">
+                            <div
+                                style="color: var(--accent-blue); font-weight: bold; margin-bottom: 0.5rem; font-size: 0.9rem;">
+                                STEP 2. 시청 유지</div>
+                            <h4 style="color: #fff; margin-bottom: 1rem; line-height: 1.3;">본론으로 직행<br><span
+                                    style="font-size: 0.85rem; color: var(--accent-red);">우선순위: 군더더기 제거</span></h4>
+                            <p style="font-size: 0.9rem; line-height: 1.5; color: var(--text-muted); flex-grow: 1;">알고리즘을 타고 들어온 유저가
+                                끄지 않도록, 화려한 인사를 생략하고 빠른 템포와 텐션으로 '시청 지속 시간'을 방어합니다.</p>
+                            <button class="ex-btn modal-trigger" data-modal="algo-step-2" style="width: 100%; margin-top: 1rem;">자세히 보기</button>
+                        </div>
+
+                        <div class="step-card"
+                            style="padding: 1.5rem; background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 12px; display: flex; flex-direction: column;">
+                            <div
+                                style="color: var(--accent-blue); font-weight: bold; margin-bottom: 0.5rem; font-size: 0.9rem;">
+                                STEP 3. 인게이지먼트</div>
+                            <h4 style="color: #fff; margin-bottom: 1rem; line-height: 1.3;">행동 끌어내기<br><span
+                                    style="font-size: 0.85rem; color: var(--accent-red);">우선순위: 저장 / 공유</span></h4>
+                            <p style="font-size: 0.9rem; line-height: 1.5; color: var(--text-muted); flex-grow: 1;">알고리즘 확장의 핵심 가점 지표.
+                                '단순한 재미'를 넘어, 나중에 다시 보거나 남에게 알려주기 위한 '꿀팁'을 심어 저장을 유도합니다.</p>
+                            <button class="ex-btn modal-trigger" data-modal="algo-step-3" style="width: 100%; margin-top: 1rem;">자세히 보기</button>
+                        </div>
+
+                        <div class="step-card"
+                            style="padding: 1.5rem; background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 12px; display: flex; flex-direction: column;">
+                            <div
+                                style="color: var(--accent-blue); font-weight: bold; margin-bottom: 0.5rem; font-size: 0.9rem;">
+                                STEP 4. 대규모 확산</div>
+                            <h4 style="color: #fff; margin-bottom: 1rem; line-height: 1.3;">타겟 페르소나 고정<br><span
+                                    style="font-size: 0.85rem; color: var(--accent-red);">우선순위: 채널 일관성</span></h4>
+                            <p style="font-size: 0.9rem; line-height: 1.5; color: var(--text-muted); flex-grow: 1;">테스트를 통과해 유사 타겟층에게
+                                대량 노출되는 단계. 이때 알고리즘이 헷갈리지 않도록 기존 포맷과 주제(핏)를 일관되게 유지해야 합니다.</p>
+                            <button class="ex-btn modal-trigger" data-modal="algo-step-4" style="width: 100%; margin-top: 1rem;">자세히 보기</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            </div> <!-- End of tab-content-planning -->
+        <!-- Modal Overlay -->
+        <div id="modal-overlay" class="modal-overlay">
+            <div class="modal-content">
+                <button id="modal-close" class="modal-close">&times;</button>
+                <h3 id="modal-title" class="modal-title"></h3>
+                <div id="modal-body" class="modal-body"></div>
+            </div>
+        </div>
+
+    </main>
+    <script src="./script.js"></script>
+</body>
+
+</html>

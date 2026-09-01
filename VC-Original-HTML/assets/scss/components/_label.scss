@@ -1,0 +1,21 @@
+/* _label.scss */
+.form_label {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-gray-700, #374151);
+  margin-bottom: 6px;
+  
+  /* Required asterisk */
+  &.required::after {
+    content: '*';
+    color: var(--color-danger, #ef4444);
+    margin-left: 4px;
+  }
+  
+  /* Disabled state */
+  &.disabled {
+    color: var(--color-gray-400, #9ca3af);
+    cursor: not-allowed;
+  }
+}

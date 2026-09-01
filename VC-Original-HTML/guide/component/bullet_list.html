@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vibe Design System - Bullet List</title>
+  <link rel="stylesheet" href="/assets/css/guide.css">
+</head>
+<body>
+  <div data-include="/guide/layout/header.html"></div>
+  <div class="guide_main_container">
+    <div data-include="/guide/layout/sidebar.html"></div>
+  
+  <main class="guide_content">
+    <div class="guide_wrapper">
+      <header class="guide_header">
+        <h1 class="guide_title_h1">Bullet List (글머리 기호)</h1>
+        <p class="guide_description">항목을 나열할 때 사용하는 리스트 스타일 컴포넌트입니다. 점, 숫자, 커스텀 아이콘 등 다양한 형태를 지원합니다.</p>
+      </header>
+
+      <section class="guide_section">
+        <h2 class="guide_title_h2">1. Overview & Specs</h2>
+        <div class="spec_table_wrapper">
+          <table class="spec_table">
+          <thead><tr><th>Class</th><th>Description</th></tr></thead>
+          <tbody>
+            <tr><td><code>.list_bullet</code></td><td>기본 점(Disc) 형태의 리스트 (ul 권장)</td></tr>
+            <tr><td><code>.list_number</code></td><td>숫자 형태의 리스트 (ol 권장)</td></tr>
+            <tr><td><code>.list_check</code></td><td>체크마크(SVG) 아이콘이 적용된 리스트</td></tr>
+            <tr><td><code>.list_unstyled</code></td><td>기호와 여백이 모두 제거된 기본 컨테이너 리스트</td></tr>
+          </tbody>
+        </table>
+        </div>
+      </section>
+
+      <section class="guide_section">
+        <h2 class="guide_title_h2">2. Basic Usage</h2>
+        
+        <div class="guide_sub_section">
+          <h3 class="guide_title_h3">2.1. Basic Bullet (기본 기호)</h3>
+          <div class="guide_preview">
+            <ul class="list_bullet">
+              <li>디자인 시스템 구축 가이드라인</li>
+              <li>프론트엔드 아키텍처 설계
+                <ul class="list_bullet">
+                  <li>컴포넌트 폴더 구조</li>
+                  <li>SCSS 네이밍 규칙</li>
+                </ul>
+              </li>
+              <li>접근성 및 시맨틱 마크업 검토</li>
+            </ul>
+          </div>
+          <div class="code_block">
+<pre><code>&lt;ul class="list_bullet"&gt;
+  &lt;li&gt;항목 1&lt;/li&gt;
+  &lt;li&gt;항목 2
+    &lt;ul class="list_bullet"&gt;
+      &lt;li&gt;중첩 항목&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+          </div>
+        </div>
+
+        <div class="guide_sub_section mt-4">
+          <h3 class="guide_title_h3">2.2. Numbered (순서형)</h3>
+          <div class="guide_preview">
+            <ol class="list_number">
+              <li>저장소 클론 받기</li>
+              <li>패키지 의존성 설치 (`npm install`)</li>
+              <li>로컬 개발 서버 실행 (`npm start`)</li>
+            </ol>
+          </div>
+          <div class="code_block">
+<pre><code>&lt;ol class="list_number"&gt;
+  &lt;li&gt;저장소 클론 받기&lt;/li&gt;
+  &lt;li&gt;패키지 의존성 설치&lt;/li&gt;
+  &lt;li&gt;로컬 개발 서버 실행&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section class="guide_section">
+        <h2 class="guide_title_h2">3. Variants & States</h2>
+        
+        <div class="guide_sub_section">
+          <h3 class="guide_title_h3">3.1. Checkmark (체크 리스트)</h3>
+          <div class="guide_preview">
+            <ul class="list_check">
+              <li>반응형 레이아웃 작업 완료</li>
+              <li>다크모드 토큰 연동 완료</li>
+              <li>웹 접근성(a11y) 기준 통과</li>
+            </ul>
+          </div>
+          <div class="code_block">
+<pre><code>&lt;ul class="list_check"&gt;
+  &lt;li&gt;반응형 레이아웃 작업 완료&lt;/li&gt;
+  &lt;li&gt;다크모드 토큰 연동 완료&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+          </div>
+        </div>
+
+        <div class="guide_sub_section mt-4">
+          <h3 class="guide_title_h3">3.2. Unstyled (스타일 없음)</h3>
+          <div class="guide_preview">
+            <ul class="list_unstyled">
+              <li>순수 텍스트 항목 1</li>
+              <li>순수 텍스트 항목 2</li>
+              <li>순수 텍스트 항목 3</li>
+            </ul>
+          </div>
+          <div class="code_block">
+<pre><code>&lt;ul class="list_unstyled"&gt;
+  &lt;li&gt;순수 텍스트 항목 1&lt;/li&gt;
+  &lt;li&gt;순수 텍스트 항목 2&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/js/include.js"></script>
+</body>
+</html>
