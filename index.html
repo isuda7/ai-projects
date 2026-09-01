@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Projects Hub</title>
+    <style>
+        :root {
+            --bg-color: #0f1115;
+            --card-bg: #1e2128;
+            --text-color: #e5e7eb;
+            --text-muted: #9ca3af;
+            --border-color: #374151;
+            --accent-color: #3b82f6;
+            --hover-bg: #272a33;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        header {
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        h1::before {
+            content: "⚡";
+        }
+
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 1.5rem;
+            transition: all 0.2s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            border-color: var(--accent-color);
+            background-color: var(--hover-bg);
+            transform: translateY(-2px);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-color);
+        }
+
+        .card-desc {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .card-link {
+            display: inline-block;
+            background-color: transparent;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: 1px solid var(--border-color);
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            text-align: center;
+            transition: all 0.2s;
+        }
+
+        .card-link:hover {
+            background-color: rgba(59, 130, 246, 0.1);
+            border-color: var(--accent-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AI Projects Hub</h1>
+            <p class="subtitle">Workspace Projects Index</p>
+        </header>
+
+        <div class="grid">
+            <!-- Backend Projects -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">Backend-Convention</div>
+                </div>
+                <div class="card-desc">상업용 백엔드 아키텍처 가이드 및 커리큘럼 문서 (HTML)</div>
+                <a href="./Backend-Convention/" class="card-link">Open Project &rarr;</a>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">Backend-Demo</div>
+                </div>
+                <div class="card-desc">게시판 형태의 실전 데모 프론트엔드 및 백엔드 (Workers/D1)</div>
+                <a href="./Backend-Demo/frontend/" class="card-link">Open Project &rarr;</a>
+            </div>
+
+            <!-- VC Projects -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">VC-Convention</div>
+                </div>
+                <div class="card-desc">바이브 코딩 컨벤션 프로젝트</div>
+                <a href="./VC-Convention/" class="card-link">Open Project &rarr;</a>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">VC-Original</div>
+                </div>
+                <div class="card-desc">바이브 코딩 리액트 프로젝트</div>
+                <a href="./VC-Original/" class="card-link">Open Project &rarr;</a>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">VC-Original-HTML</div>
+                </div>
+                <div class="card-desc">바이브 코딩 HTML 프로젝트</div>
+                <a href="./VC-Original-HTML/" class="card-link">Open Project &rarr;</a>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">VC-Prompt</div>
+                </div>
+                <div class="card-desc">바이브 코딩 프롬프트 데이터 모음</div>
+                <a href="./VC-Prompt/" class="card-link">Open Project &rarr;</a>
+            </div>
+
+            <!-- xPrivacy Projects -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">xPrivacy-Promotion</div>
+                </div>
+                <div class="card-desc">xPrivacy 채널운영 방법</div>
+                <a href="./xPrivacy-Promotion/" class="card-link">Open Project &rarr;</a>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">xPrivacy-Script</div>
+                </div>
+                <div class="card-desc">xPrivacy 대표영상 스크립트</div>
+                <a href="./xPrivacy-Script/" class="card-link">Open Project &rarr;</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
