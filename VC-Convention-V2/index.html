@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>프롬프트 전체 구조</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Outfit:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+<header class="top" id="side">
+  <div class="top-bar">
+    <a class="brand" href="#map"><strong>프롬프트 전체 구조</strong><span>5개 영역 · 16개 기준</span></a>
+    <nav class="nav" id="nav" aria-label="주 메뉴"></nav>
+    <div class="top-actions">
+      <button class="theme-btn" id="themeBtn" type="button">화면 테마 전환</button>
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mega">목차</button>
+    </div>
+  </div>
+  <div class="mega" id="mega">
+    <div class="mega-inner">
+      <nav class="mega-cols" id="megaCols" aria-label="전체 목차"></nav>
+      <div class="legend">
+        <span>항목의 성격에 따라 정리 방식이 달라집니다.</span>
+        <span><span class="tag" data-k="설명">설명</span> 문장과 키워드</span>
+        <span><span class="tag" data-k="순서">순서</span> 워크플로우</span>
+        <span><span class="tag" data-k="단계">단계</span> 계단형 단계도</span>
+        <span><span class="tag" data-k="유형">유형</span> 카드와 비교표</span>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="app">
+  <main id="main" tabindex="-1"></main>
+</div>
+<script>
+const AREAS = [
+  {id:1,name:'작동',q:'프롬프트는 어떻게 작동하는가',
+   intro:'프롬프트가 왜 그런 결과를 내는지에 대한 바탕입니다.',
+   note:'이 영역은 현상의 <b>원인</b>을 다룹니다. 결과로 나타나는 문제는 5 한계에서 다룹니다.',
+   items:[
+    {code:'1-1',name:'프롬프트 원리',basis:'생성 방식 기준',kind:'설명',entries:[
+      ['다음 토큰 예측','앞 내용을 보고 가장 그럴듯한 다음 조각을 생성합니다.'],
+      ['확률적 생성','같은 질문에도 매번 답이 조금씩 달라질 수 있습니다.'],
+      ['학습 시점의 지식 한계','학습 이후에 생긴 정보는 알지 못합니다.']]},
+    {code:'1-2',name:'프롬프트 맥락',basis:'입력 범위 기준',kind:'설명',entries:[
+      ['토큰과 컨텍스트 윈도우','한 번에 처리할 수 있는 길이는 토큰 단위로 정해집니다.'],
+      ['위치 효과','처음과 끝에 둔 정보가 더 잘 반영되는 경향이 있습니다.'],
+      ['대화 누적','앞선 대화가 이후 답변에 계속 영향을 줍니다.'],
+      ['맥락 초과 시 손실','길이가 넘치면 앞부분의 정보가 흐려지거나 잘립니다.']]},
+    {code:'1-3',name:'프롬프트 변수',basis:'설정·모델 기준',kind:'유형',entries:[
+      ['Temperature','답의 무작위성과 다양성을 조절합니다.'],
+      ['출력 길이','한 번에 생성할 최대 분량입니다.'],
+      ['추론 모드','답하기 전에 더 길게 생각하는 기능의 사용 여부입니다.'],
+      ['모델 종류·버전','같은 프롬프트라도 모델마다 결과가 다릅니다.']]}
+   ]},
+  {id:2,name:'노하우',q:'프롬프트 노하우는 무엇인가',
+   intro:'한 번의 요청을 잘 쓰는 방법입니다. 유형으로 상황을 판단하고, 단계로 깊이를 정하고, 체계로 작성합니다.',
+   items:[
+    {code:'2-1',name:'프롬프트 체계',basis:'작성 순서 기준',kind:'순서',entries:[
+      ['역할·맥락','누구로서, 어떤 배경에서 답하는가'],
+      ['목표','최종적으로 얻고 싶은 것'],
+      ['입력 자료','판단 근거가 되는 데이터와 문서'],
+      ['제약 조건','범위, 분량, 톤, 하지 말 것'],
+      ['예시','원하는 결과의 샘플'],
+      ['출력 형식','표, JSON, 개조식 등 결과의 모양'],
+      ['점검 요청','스스로 확인할 기준']],
+     tip:'간단한 요청은 <b>목표</b>만으로 충분합니다. 결과가 어긋나면 빠진 칸을 찾으세요. 긴 자료는 앞에, 질문은 뒤에 두는 편이 대체로 좋습니다.'},
+    {code:'2-2',name:'프롬프트 단계',basis:'추론 단계 기준',kind:'단계',entries:[
+      ['직접 지시','단순 질문, 익숙한 작업'],
+      ['예시 제공','형식과 톤을 맞출 때'],
+      ['단계적 추론','계산, 논리, 판단 문제'],
+      ['작업 분해','보고서, 복합 분석'],
+      ['자기 검증','정확도가 중요한 결과물'],
+      ['다중 탐색','기획, 전략, 아이디어']],
+     tip:'높은 단계가 더 좋은 것이 아닙니다. 문제 난이도에 맞는 <b>최소 단계</b>를 고르세요. 도구 활용은 4-3 연결에서 다룹니다.'},
+    {code:'2-3',name:'프롬프트 유형',basis:'상황 선택 기준',kind:'유형',table:['유형','상황','핵심 포인트','주로 쓰는 단계'],entries:[
+      ['정보형','질문, 설명, 개념 이해','대상 수준을 명시','1'],
+      ['생성형','글쓰기, 카피, 창작','톤·독자·예시 제공','2, 6'],
+      ['변환형','요약, 번역, 형식 변환','보존할 것과 버릴 것 명시','1, 2'],
+      ['분석형','비교, 평가, 정보 추출','판단 기준을 먼저 제시','3, 5'],
+      ['문제해결형','코딩, 계획, 의사결정','제약과 성공 기준을 명확히','3, 4, 5'],
+      ['대화·역할형','튜터, 면접 연습, 롤플레이','역할 규칙과 진행 방식','1, 2'],
+      ['다단계 작업형','조사, 자동화, 연속 작업','목표·중단 조건·보고 방식','4, 그리고 4-3 연결']]}
+   ],
+   workflow:{title:'실행 워크플로우',desc:'2번과 3번을 잇는 실제 사용 흐름입니다.',steps:[
+      ['상황 판단','2-3 유형: 지금 하려는 일이 어떤 종류인가'],
+      ['깊이 결정','2-2 단계: 어느 수준까지 생각하게 할 것인가'],
+      ['작성','2-1 체계: 일곱 칸 중 필요한 칸을 채운다'],
+      ['검증·개선','3-3 관리: 테스트하고, 잘 된 것은 3-1 자산으로 저장']],
+     tip:'결과가 기대와 다르면 <b>5 한계</b>에서 원인 유형을 확인하고 해당 단계로 돌아갑니다.'}},
+  {id:3,name:'운영',q:'프롬프트 운영은 어떻게 하는가',
+   intro:'잘 만든 프롬프트를 재사용하고, 검증하고, 개선하는 방법입니다.',
+   items:[
+    {code:'3-1',name:'프롬프트 자산',basis:'재사용 기준',kind:'유형',entries:[
+      ['시스템 프롬프트','대화 전체에 적용되는 기본 지침'],
+      ['프로젝트·사용자 지침','특정 작업 공간이나 개인에게 고정되는 설정'],
+      ['스킬','작업별 지침·예시·규칙을 묶어 필요할 때 불러 쓰는 패키지'],
+      ['템플릿','빈칸만 바꿔 반복 사용하는 프롬프트']]},
+    {code:'3-2',name:'프롬프트 통제',basis:'검증 기준',kind:'유형',entries:[
+      ['평가자 프롬프트','다른 출력을 기준에 따라 채점 (LLM-as-a-judge)'],
+      ['가드레일','위험하거나 규칙 위반인 입출력을 차단'],
+      ['모니터링','에이전트 작업을 중간중간 점검'],
+      ['사람 검토','중요한 단계에서 사람이 확인 (Human-in-the-loop)']]},
+    {code:'3-3',name:'프롬프트 관리',basis:'개선 기준',kind:'순서',entries:[
+      ['테스트 세트 구성','성능을 확인할 고정된 질문과 사례 모음'],
+      ['평가 지표 설정','정확도, 형식 준수율 등 비교 기준'],
+      ['버전 비교','두 버전을 같은 조건에서 비교 (A/B)'],
+      ['이력 기록','무엇을 왜 바꿨는지 남김']]}
+   ]},
+  {id:4,name:'확장',q:'프롬프트는 어디까지 확장되는가',
+   intro:'텍스트 채팅 바깥으로 넓어지는 영역입니다.',
+   items:[
+    {code:'4-1',name:'프롬프트 매체',basis:'모달리티 기준',kind:'유형',entries:[
+      ['텍스트','글 생성과 대화'],['코드','코드 작성, 수정, 설명'],['이미지 생성','텍스트로 이미지를 만드는 프롬프트'],
+      ['이미지·문서 이해','사진, 스크린샷, PDF를 읽고 분석'],['음성','말로 묻고 답하는 상호작용']]},
+    {code:'4-2',name:'프롬프트 환경',basis:'사용 경로 기준',kind:'유형',entries:[
+      ['채팅 인터페이스','대화형으로 직접 사용'],['API','서비스나 프로그램에 연결해 사용'],['에이전트 도구','코딩·작업 자동화 도구 안에서 사용']]},
+    {code:'4-3',name:'프롬프트 연결',basis:'외부 정보 기준',kind:'유형',entries:[
+      ['검색 기반 생성 (RAG)','문서를 검색해 답변 근거로 활용'],['도구 호출','검색, 계산, 코드 실행 등 기능 사용'],
+      ['메모리','이전 대화 정보를 기억해 활용'],['외부 서비스 연동','메일, 캘린더, 문서 도구 등과 연결 (MCP 등)']]}
+   ]},
+  {id:5,name:'한계',q:'프롬프트의 한계는 무엇인가',
+   intro:'잘 써도 생기는 문제들입니다.',
+   note:'네 기준은 <b>위협과 문제 자체</b>를 다룹니다. 막는 수단은 3-2 통제에서 다룹니다.',
+   items:[
+    {code:'5-1',name:'프롬프트 오류',basis:'정확성 기준',kind:'유형',entries:[
+      ['환각','사실이 아닌 내용을 그럴듯하게 생성'],['지시 누락','조건 일부를 무시하거나 빠뜨림'],
+      ['일관성 부족','같은 요청에도 결과가 흔들림'],['취약 영역','정밀 계산, 긴 문서의 세부 사항']]},
+    {code:'5-2',name:'프롬프트 편향',basis:'공정성 기준',kind:'유형',entries:[
+      ['데이터 편향','학습 데이터의 치우침이 답에 반영'],['아첨 경향','사용자 의견에 맞춰주려는 성향 (Sycophancy)'],
+      ['언어·문화 편중','영어권 관점이 기본값이 되는 경향'],['표현 민감성','질문 표현만 바꿔도 결론이 달라짐']]},
+    {code:'5-3',name:'프롬프트 보안',basis:'공격 기준',kind:'유형',entries:[
+      ['프롬프트 인젝션','입력 자료 속 숨은 지시로 모델을 조종'],['탈옥','안전 규칙을 우회하려는 시도'],
+      ['정보 유출','시스템 프롬프트나 민감 정보가 외부로 노출']]},
+    {code:'5-4',name:'프롬프트 윤리',basis:'법·책임 기준',kind:'유형',entries:[
+      ['개인정보 입력','민감한 정보를 스스로 넣는 판단'],['저작권','생성물과 입력 자료의 권리 문제'],
+      ['결과 사용의 책임','검증 없이 결과를 그대로 쓸 때의 책임']]}
+   ]}
+];
+
+const ROAD = [
+  ['1단계','이해','영역 1','결과가 왜 그렇게 나오는지 설명할 수 있다'],
+  ['2단계','작성','영역 2','상황에 맞는 단계와 체계로 직접 쓴다'],
+  ['3단계','운영','영역 3','잘 된 프롬프트를 저장하고 검증·개선한다'],
+  ['4단계','확장과 점검','영역 4, 5','다른 매체·환경으로 넓히고 한계를 관리한다']
+];
+const RULES = [
+  ['하나의 원리로 나눈다','작동 → 노하우 → 운영 → 확장 → 한계'],
+  ['성격을 하나만 붙인다','설명, 순서, 단계, 유형 중 하나'],
+  ['한 개념은 한 곳에만 둔다','다른 곳에서 필요하면 위치만 참조'],
+  ['개수는 내용이 정한다','대칭을 위해 늘리거나 줄이지 않음'],
+  ['새 질문으로 검증한다','안 맞으면 가지를 추가하고, 두 곳에 맞으면 경계를 다시 정함']
+];
+const BOUNDS = [
+  ['도구 활용','4-3 연결','2-2 단계는 순수 추론만 다룸'],
+  ['모델별 차이','1-3 변수','4-2 환경은 사용 경로만 다룸'],
+  ['원인과 문제','1 작동 / 5 한계','원인은 1, 결과로 나타나는 문제는 5'],
+  ['위협과 대응','5-3 보안 / 3-2 통제','위협 자체는 5-3, 막는 수단은 3-2'],
+  ['유출과 입력','5-3 보안 / 5-4 윤리','공격으로 새는 것은 5-3, 스스로 넣는 판단은 5-4'],
+  ['지침과 외부 정보','3-1 자산 / 4-3 연결','내가 만든 지침은 3-1, 끌어오는 정보는 4-3']
+];
+
+const $ = s => document.querySelector(s);
+const tag = k => `<span class="tag" data-k="${k}">${k}</span>`;
+const cid = code => 'c' + code;
+
+function renderNav(active){
+  let h = `<a class="top-link" href="#map"${active==='map'?' aria-current="page"':''}>전체 지도</a>`;
+  let m = '';
+  for(const a of AREAS){
+    h += `<a class="top-link" href="#a${a.id}"${active==='a'+a.id?' aria-current="page"':''}><b>${a.id}</b>${a.name}</a>`;
+    m += `<div class="mega-col"><a class="area-link" href="#a${a.id}"${active==='a'+a.id?' aria-current="page"':''}><b>${a.id}</b><span>${a.name}</span></a><ul class="subs">`;
+    for(const it of a.items) m += `<li><a href="#${cid(it.code)}"><span>${it.code} ${it.name.replace('프롬프트 ','')}</span>${tag(it.kind)}</a></li>`;
+    m += `</ul></div>`;
+  }
+  $('#nav').innerHTML = h;
+  $('#megaCols').innerHTML = m;
+}
+
+function renderItem(it){
+  let body = '';
+  if(it.kind==='설명'){
+    body = '<dl class="desc">' + it.entries.map(e=>`<dt>${e[0]}</dt><dd>${e[1]}</dd>`).join('') + '</dl>';
+  } else if(it.kind==='순서'){
+    body = '<ol class="flow">' + it.entries.map(e=>`<li><h3>${e[0]}</h3><p>${e[1]}</p></li>`).join('') + '</ol>';
+  } else if(it.kind==='단계'){
+    const n = it.entries.length;
+    body = '<ol class="stairs">' + it.entries.map((e,i)=>`<li><b>${i+1}단계</b><h3>${e[0]}</h3><p>${e[1]}</p></li>`).join('') + '</ol>';
+  } else if(it.table){
+    body = '<div class="table-wrap"><table><thead><tr>' + it.table.map(t=>`<th scope="col">${t}</th>`).join('') + '</tr></thead><tbody>' +
+      it.entries.map(r=>'<tr>'+r.map(c=>`<td>${c}</td>`).join('')+'</tr>').join('') + '</tbody></table></div>';
+  } else {
+    body = '<div class="cards">' + it.entries.map(e=>`<div class="card"><h3>${e[0]}</h3><p>${e[1]}</p></div>`).join('') + '</div>';
+  }
+  return `<section class="block" id="${cid(it.code)}">
+    <div class="block-head"><span class="code">${it.code}</span><h2>${it.name}</h2>${tag(it.kind)}</div>
+    <p class="basis">${it.basis}</p>${body}${it.tip?`<div class="note">${it.tip}</div>`:''}</section>`;
+}
+
+function renderArea(a){
+  let h = `<div class="view"><p class="code">영역 ${a.id}</p><h1>${a.q}</h1><p class="lead">${a.intro}</p>`;
+  h += a.items.map(renderItem).join('');
+  if(a.workflow){
+    const w = a.workflow;
+    h += `<section class="block" id="wf"><div class="block-head"><h2>${w.title}</h2>${tag('순서')}</div><p class="basis">${w.desc}</p>
+      <ol class="flow">${w.steps.map(s=>`<li><h3>${s[0]}</h3><p>${s[1]}</p></li>`).join('')}</ol><div class="note">${w.tip}</div></section>`;
+  }
+  if(a.note) h += `<div class="note">${a.note}</div>`;
+  const prev = AREAS.find(x=>x.id===a.id-1), next = AREAS.find(x=>x.id===a.id+1);
+  h += `<nav class="pager" aria-label="영역 이동">${prev?`<a href="#a${prev.id}">← ${prev.id} ${prev.name}</a>`:'<a href="#map">← 전체 지도</a>'}${next?`<a href="#a${next.id}">${next.id} ${next.name} →</a>`:'<a href="#map">전체 지도 →</a>'}</nav></div>`;
+  return h;
+}
+
+function renderMap(){
+  let h = `<div class="view"><h1>프롬프트 전체 구조</h1><p class="lead">원리에서 한계까지, 프롬프트를 이미 써본 사람이 일반적인 작업에 쓰는 내용을 5개 영역 16개 기준으로 정리했습니다. 지도의 항목을 누르면 해당 내용으로 이동합니다.</p>`;
+  h += `<div class="map" role="navigation" aria-label="마인드맵"><div class="root"><div>프롬프트</div></div><div class="branches">`;
+  for(const a of AREAS){
+    h += `<div class="branch"><a class="branch-head" href="#a${a.id}"><b>영역 ${a.id}</b><span>${a.name}</span><small>${a.q}</small></a>`;
+    for(const it of a.items) h += `<a class="leaf" href="#${cid(it.code)}"><span>${it.code} ${it.name.replace('프롬프트 ','')}</span>${tag(it.kind)}</a>`;
+    h += `</div>`;
+  }
+  h += `</div></div>`;
+  h += `<section class="block" id="roadmap"><div class="block-head"><h2>로드맵</h2>${tag('순서')}</div><p class="basis">지도를 가로질러 익히는 순서입니다. 각 문장은 다음 단계로 넘어가는 완료 기준입니다.</p><ol class="road">` +
+    ROAD.map(r=>`<li><b>${r[0]} · ${r[2]}</b><strong>${r[1]}</strong><p>${r[3]}</p></li>`).join('') + `</ol></section>`;
+  h += `<section class="block" id="criteria"><div class="block-head"><h2>이 구조의 기준</h2></div><p class="basis">최소 기준(특정 상황 하나)과 최대 기준(입문용 정의·역사) 사이의 실무 표준입니다.</p>
+    <div class="crit"><div class="card"><h3>대상</h3><p>프롬프트를 이미 써본 사용자</p></div><div class="card"><h3>범위</h3><p>특정 도구나 직무에 묶이지 않는 일반 프롬프트 작업</p></div><div class="card"><h3>포함 조건</h3><p>프롬프트의 결과나 판단에 직접 영향을 주는가</p></div></div>
+    <ol class="rules">${RULES.map(r=>`<li><b>${r[0]}</b><span>${r[1]}</span></li>`).join('')}</ol></section>`;
+  h += `<section class="block" id="bounds"><div class="block-head"><h2>경계 규칙</h2></div><p class="basis">겹치기 쉬운 개념은 한 곳에 고정하고, 다른 곳에서는 참조만 합니다.</p>
+    <div class="table-wrap"><table><thead><tr><th scope="col">개념</th><th scope="col">주 위치</th><th scope="col">구분</th></tr></thead><tbody>${BOUNDS.map(b=>`<tr><td>${b[0]}</td><td>${b[1]}</td><td>${b[2]}</td></tr>`).join('')}</tbody></table></div></section>`;
+  h += `<section class="block" id="howto"><div class="block-head"><h2>새 질문의 자리 찾기</h2>${tag('순서')}</div><p class="basis">어떤 질문이든 세 번 물으면 위치와 정리 방식이 정해집니다.</p>
+    <ol class="flow"><li><h3>영역</h3><p>무엇에 대한 질문인가</p></li><li><h3>기준</h3><p>열여섯 기준 중 어디에 속하는가</p></li><li><h3>성격</h3><p>설명, 순서, 단계, 유형 중 무엇으로 정리하는가</p></li></ol>
+    <div class="note">예: “시스템 프롬프트를 어떻게 테스트하나?” → 3 운영, 3-3 관리, 순서 성격이므로 워크플로우로 정리합니다. 어디에도 맞지 않으면 가지를 추가하고, 두 곳에 맞으면 경계를 다시 정합니다.</div></section></div>`;
+  return h;
+}
+
+function route(){
+  const t = (location.hash || '#map').slice(1);
+  let view = 'map', target = null;
+  if(/^a[1-5]$/.test(t)) view = t;
+  else if(/^c[1-5]-[1-4]$/.test(t)) { view = 'a' + t[1]; target = t; }
+  else if(['roadmap','criteria','bounds','howto'].includes(t)) { view = 'map'; target = t; }
+  else if(t==='wf'){ view='a2'; target='wf'; }
+  const main = $('#main');
+  main.innerHTML = view==='map' ? renderMap() : renderArea(AREAS[+view[1]-1]);
+  renderNav(view);
+  document.title = view==='map' ? '프롬프트 전체 구조' : `${AREAS[+view[1]-1].id} ${AREAS[+view[1]-1].name} · 프롬프트 전체 구조`;
+  const el = target && document.getElementById(target);
+  if(el) el.scrollIntoView({block:'start',behavior:'instant'}); else window.scrollTo(0,0);
+  closeMenu();
+}
+const side = $('#side'), btn = $('#menuBtn');
+function closeMenu(){ side.classList.remove('open'); btn.setAttribute('aria-expanded','false'); }
+side.addEventListener('mouseleave', ()=>side.classList.remove('closed'));
+side.addEventListener('click', e=>{ if(e.target.closest('a')) side.classList.add('closed'); });
+btn.addEventListener('click', ()=>{ const o = side.classList.toggle('open'); btn.setAttribute('aria-expanded', String(o)); });
+$('#themeBtn').addEventListener('click', ()=>{
+  const r = document.documentElement;
+  const cur = r.dataset.theme || 'dark';
+  r.dataset.theme = cur === 'dark' ? 'light' : 'dark';
+  try{ localStorage.setItem('theme', r.dataset.theme); }catch(e){}
+});
+try{ const s = localStorage.getItem('theme'); if(s) document.documentElement.dataset.theme = s; }catch(e){}
+const syncOffset = ()=>{ document.documentElement.style.scrollPaddingTop = side.offsetHeight + 'px'; };
+syncOffset();
+new ResizeObserver(syncOffset).observe(side);
+window.addEventListener('hashchange', route);
+route();
+if(document.fonts) document.fonts.ready.then(()=>{ const el = document.getElementById(location.hash.slice(1)); if(el) el.scrollIntoView({block:'start',behavior:'instant'}); });
+</script>
+</body>
+</html>

@@ -1,0 +1,198 @@
+/* ==========================================================================
+   Layout — sticky top header + hover mega menu, main column, responsive
+   ========================================================================== */
+.app { position: relative; z-index: 1; }
+
+main {
+  width: 100%;
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 56px clamp(20px, 5vw, 72px) 96px;
+}
+
+/* Top header */
+.top {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--nav-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+.top-bar {
+  display: flex;
+  align-items: center;
+  gap: var(--s-5);
+  max-width: 1280px;
+  margin: 0 auto;
+  min-height: var(--header-h);
+  padding: 0 var(--s-5);
+}
+
+.brand { display: block; flex-shrink: 0; }
+.brand strong {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  line-height: 1.25;
+  background: linear-gradient(90deg, var(--text-heading), var(--text-muted));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.brand span { font-size: var(--fs-caption); color: var(--text-muted); }
+
+.nav { display: flex; align-items: center; gap: var(--s-1); margin-left: auto; }
+.top-link {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: var(--r-sm);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  transition: color var(--t-base), background var(--t-base);
+}
+.top-link b { font-size: 0.8rem; color: var(--secondary); }
+.top-link:hover { color: var(--primary-light); background: var(--glass-hover); }
+.top-link[aria-current="page"] { color: var(--primary-light); background: var(--tint-primary); }
+
+.top-actions { display: flex; align-items: center; gap: var(--s-2); flex-shrink: 0; }
+.menu-btn { display: none; }
+
+/* Mega menu — 헤더에 마우스를 올리면 전체 메뉴가 펼쳐진다 */
+.mega {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(8px);
+  pointer-events: none;
+  background: var(--bg-elevated);
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+  transition: opacity var(--t-base) var(--ease), transform var(--t-base) var(--ease), visibility var(--t-base);
+}
+.top:hover:not(.closed) .mega,
+.top:focus-within:not(.closed) .mega {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.mega-inner { max-width: 1280px; margin: 0 auto; padding: var(--s-5) var(--s-5) var(--s-5); }
+.mega-cols { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: var(--s-5); }
+
+.mega-col { padding-top: var(--s-3); border-top: 2px solid var(--border); transition: border-color var(--t-base); }
+.mega-col:hover { border-top-color: var(--primary); }
+.area-link {
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+  padding: 6px 8px;
+  border-radius: var(--r-sm);
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-heading);
+  transition: background var(--t-base), color var(--t-base);
+}
+.area-link b { color: var(--secondary); font-size: 0.875rem; }
+.area-link:hover { background: var(--glass-hover); color: var(--primary-light); }
+.area-link[aria-current="page"] { color: var(--primary-light); }
+
+.subs { list-style: none; margin: var(--s-1) 0 0; padding: 0; }
+.subs a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--s-2);
+  padding: 5px 8px;
+  border-radius: var(--r-sm);
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  transition: color var(--t-fast), background var(--t-fast);
+}
+.subs a:hover { color: var(--primary-light); background: var(--glass-hover); }
+.subs .tag { padding: 0 8px; font-size: 0.7rem; }
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2) var(--s-5);
+  align-items: center;
+  margin-top: var(--s-5);
+  padding-top: var(--s-4);
+  border-top: 1px solid var(--border);
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+}
+
+/* Page-level blocks */
+section.block { margin: 0 0 var(--s-8); }
+.block-head { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; margin-bottom: var(--s-1); }
+.lead { font-size: var(--fs-lead); color: var(--text-muted); max-width: 62ch; margin: 0 0 var(--s-7); }
+.basis { color: var(--text-muted); font-size: var(--fs-small); margin: 0 0 var(--s-4); }
+.code { font-family: var(--font-heading); font-weight: 700; color: var(--secondary); font-size: 0.9375rem; }
+
+.pager {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--s-3);
+  margin-top: var(--s-6);
+  padding-top: var(--s-5);
+  border-top: 1px solid var(--border);
+}
+.pager a { color: var(--primary-light); font-weight: 600; transition: color var(--t-fast); }
+.pager a:hover { color: var(--text-heading); }
+
+/* 작은 화면: 상단 바 + 목차 버튼으로 전체 메뉴 토글 (hover 없음) */
+@media (max-width: 900px) {
+  html { scroll-padding-top: calc(env(safe-area-inset-top, 0px) + var(--header-h)); }
+  .top { padding-top: env(safe-area-inset-top, 0px); }
+  .top-bar { padding: 0 var(--s-4); gap: var(--s-3); }
+  .nav { display: none; }
+  .top-actions { margin-left: auto; }
+  .menu-btn {
+    display: block;
+    padding: 8px 16px;
+    background: var(--glass);
+    border: 1px solid var(--border);
+    border-radius: var(--r-pill);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background var(--t-base);
+  }
+  .menu-btn:hover { background: var(--glass-hover); }
+  .theme-btn { margin-top: 0; padding: 8px 12px; }
+
+  .mega {
+    display: none;
+    position: static;
+    visibility: visible;
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+    max-height: calc(100vh - 70px);
+    overflow-y: auto;
+    box-shadow: none;
+  }
+  .top:hover:not(.closed) .mega,
+  .top:focus-within:not(.closed) .mega { display: none; }
+  .top.open .mega,
+  .top.open:hover:not(.closed) .mega,
+  .top.open:focus-within:not(.closed) .mega { display: block; }
+  .mega-inner { padding: var(--s-4); }
+  .mega-cols { grid-template-columns: 1fr; gap: var(--s-3); }
+  main { padding-top: var(--s-6); }
+}
+
+@media (max-width: 600px) {
+  .top-bar { flex-wrap: wrap; row-gap: var(--s-2); padding-block: var(--s-2); }
+  .top-actions { width: 100%; justify-content: space-between; }
+}
